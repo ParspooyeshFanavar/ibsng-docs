@@ -1,0 +1,4296 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://localhost:1236/IBSng/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="IBSng" targetNamespace="http://localhost:1236/IBSng/">
+    <wsdl:documentation>Returns suggested amount for payments</wsdl:documentation>
+    <wsdl:types><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://localhost:1236/IBSng/">
+	<xsd:complexType name="UserDailyArchiveLogs">
+		<xsd:sequence>
+			<xsd:element name="user_id" type="xsd:long"></xsd:element>
+			<xsd:sequence minOccurs="0" maxOccurs="unbounded">
+				<xsd:element name="logs" type="tns:UserDailyArchiveLogFileList"></xsd:element>
+			</xsd:sequence>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="UserDailyArchiveLogFileList">
+		<xsd:sequence>
+			<xsd:element name="log_name" type="xsd:string"></xsd:element>
+			<xsd:sequence minOccurs="0" maxOccurs="unbounded">
+				<xsd:element name="files" type="tns:FileInfo"></xsd:element>
+			</xsd:sequence>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="FileInfo">
+		<xsd:sequence>
+			<xsd:element name="filename" type="xsd:string"></xsd:element>
+			<xsd:element name="size" type="xsd:long"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="NotificationProfile">
+		<xsd:sequence>
+			<xsd:element name="notification_profile_id"
+				type="xsd:int">
+			</xsd:element>
+			<xsd:element name="notification_profile_name"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element name="notification_rules"
+				type="tns:NotificationRule" minOccurs="0" maxOccurs="unbounded">
+			</xsd:element>
+			<xsd:element name="owner_isp_name" type="xsd:string"></xsd:element>
+			<xsd:element name="notification_profile_comment" type="xsd:string"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="NotificationRule">
+		<xsd:sequence>
+			<xsd:element name="notification_rule_id" type="xsd:int">
+			</xsd:element>
+			<xsd:element name="notification_profile_id"
+				type="xsd:int">
+			</xsd:element>
+			<xsd:element name="notification_type" type="xsd:string"></xsd:element>
+			<xsd:element name="notification_threshold"
+				type="xsd:double">
+			</xsd:element>
+			<xsd:element name="message_type" type="xsd:string"></xsd:element>
+			<xsd:element name="message_template" type="xsd:string"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="NotificationProfileList">
+		<xsd:sequence>
+			<xsd:element name="profiles" type="tns:NotificationProfile" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="VoIPTariff">
+		<xsd:sequence>
+			<xsd:element name="voip_tariff_id" type="xsd:int"></xsd:element>
+			<xsd:element name="voip_tariff_name" type="xsd:string"></xsd:element>
+			<xsd:element name="voip_tariff_comment" type="xsd:string"></xsd:element>
+			<xsd:element name="isp_name" type="xsd:string"></xsd:element>
+			<xsd:element name="strip_prefixes"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element name="number_of_prefixes" type="xsd:int"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="VoIPTariffPrefix">
+		<xsd:sequence>
+			<xsd:element name="prefix_id" type="xsd:long"></xsd:element>
+			<xsd:element name="prefix_name" type="xsd:string"></xsd:element>
+			<xsd:element name="prefix_code" type="xsd:string"></xsd:element>
+			<xsd:element name="prefix_group_name" type="xsd:string"></xsd:element>
+			<xsd:element name="effective_date" type="xsd:string"></xsd:element>
+			<xsd:element name="add_date" type="xsd:string"></xsd:element>
+			<xsd:element name="status" type="xsd:string"></xsd:element>
+			<xsd:element name="cpm" type="xsd:double"></xsd:element>
+			<xsd:element name="announcement_cpm" type="xsd:double"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="VoIPTariffList">
+		<xsd:sequence>
+			<xsd:element name="voip_tariffs" type="tns:VoIPTariff" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="VoIPTariffPrefixList">
+		<xsd:sequence>
+			<xsd:element name="prefix_list" type="tns:VoIPTariffPrefix" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="Map">
+		<xsd:sequence>
+			<xsd:element name="names" type="xsd:anySimpleType" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+			<xsd:element name="values" type="xsd:anySimpleType" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="List">
+		<xsd:sequence>
+			<xsd:element name="list" type="xsd:anySimpleType" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PaginateAttributes">
+		<xsd:sequence>
+			<xsd:element name="from" type="xsd:int"></xsd:element>
+			<xsd:element name="to" type="xsd:int"></xsd:element>
+			<xsd:element name="sort_by" type="xsd:string"></xsd:element>
+			<xsd:element name="is_desc" type="xsd:boolean"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PaymentGateway">
+		<xsd:sequence>
+			<xsd:element name="gateway_id" type="xsd:int" minOccurs="1" maxOccurs="1"></xsd:element>
+			<xsd:element name="gateway_name" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+			<xsd:element name="gateway_type" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+			<xsd:element name="owner_isp_name" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+			<xsd:element name="priority" type="xsd:int" minOccurs="1" maxOccurs="1"></xsd:element>
+			<xsd:element name="comment" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+			<xsd:element name="attributes" type="tns:Map" minOccurs="1" maxOccurs="1"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PaymentGatewayList">
+		<xsd:sequence>
+			<xsd:element name="payment_gateways" type="tns:PaymentGateway" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="ImportFilePortionModel">
+		<xsd:sequence>
+			<xsd:element name="filename" type="xsd:string"></xsd:element>
+			<xsd:element name="total_size" type="xsd:int"></xsd:element>
+			<xsd:element name="portion" type="xsd:string"></xsd:element>
+			<xsd:element name="remaining" type="xsd:int"></xsd:element>
+			<xsd:element name="sequence_id" type="xsd:int"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ImportFilesStatusList">
+		<xsd:sequence>
+			<xsd:element name="import_files_status_list"
+				type="tns:ImportFileStatus" maxOccurs="unbounded" minOccurs="0">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="ImportFileStatus">
+		<xsd:sequence>
+			<xsd:element name="filename" type="xsd:string"></xsd:element>
+			<xsd:element name="status" type="xsd:string"></xsd:element>
+			<xsd:element name="total_size" type="xsd:double"></xsd:element>
+			<xsd:element name="saved_size" type="xsd:double"></xsd:element>
+			<xsd:element name="total_users" type="xsd:double"></xsd:element>
+			<xsd:element name="import_succeed" type="xsd:double"></xsd:element>
+			<xsd:element name="import_failed" type="xsd:double"></xsd:element>
+                    <xsd:element name="import_ignored" type="xsd:double"></xsd:element>
+                    <xsd:element name="start_time" type="xsd:string"></xsd:element>
+			<xsd:element name="end_time" type="xsd:string"></xsd:element>
+			<xsd:element name="msg" type="xsd:string"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="UserImportRequestModel">
+		<xsd:sequence>
+			<xsd:element name="ignore_negative_credit" type="xsd:int"></xsd:element>
+			<xsd:element name="do_backup" type="xsd:int"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CallerIDBlackListModel">
+		<xsd:sequence>
+			<xsd:element name="caller_ids" type="tns:BlackListedCallerID" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="BlackListedCallerID">
+		<xsd:sequence>
+			<xsd:element name="id" type="xsd:long" minOccurs="1"
+				maxOccurs="1">
+			</xsd:element>
+			<xsd:element name="caller_id" type="xsd:string"
+				minOccurs="1" maxOccurs="1">
+			</xsd:element>
+			<xsd:element name="isp_name" type="xsd:string" minOccurs="1"
+				maxOccurs="1">
+			</xsd:element>
+			<xsd:element name="ras_desc" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="OnlinePayment">
+		<xsd:sequence>
+			<xsd:element name="payment_id" type="xsd:int" minOccurs="1"
+				maxOccurs="1">
+			</xsd:element>
+			<xsd:element name="amount" type="xsd:double" minOccurs="1"
+				maxOccurs="1">
+			</xsd:element>
+			<xsd:element name="requester_id" type="xsd:int" minOccurs="1"
+				maxOccurs="1">
+			</xsd:element>
+			<xsd:element name="requester_type" type="xsd:string" minOccurs="1"
+				maxOccurs="1">
+			</xsd:element>			
+			<xsd:element name="gateway_id" type="xsd:int" minOccurs="1"
+				maxOccurs="1">
+			</xsd:element>
+			<xsd:element name="unique_id" type="xsd:string"
+				minOccurs="1" maxOccurs="1">
+			</xsd:element>
+			<xsd:element name="payment_date" type="xsd:string"
+				minOccurs="1" maxOccurs="1">
+			</xsd:element>
+			<xsd:element name="attributes" type="tns:Map" minOccurs="1"
+				maxOccurs="1" nillable="true">
+			</xsd:element>
+			<xsd:element name="requester_repr" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="true"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="OnlinePaymentList">
+		<xsd:sequence>
+			<xsd:element name="payments" type="tns:OnlinePayment" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="OnlinePaymentSuggestionList">
+		<xsd:sequence>
+			<xsd:element name="payment_suggestions" type="tns:OnlinePaymentSuggestion" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="OnlinePaymentSuggestion">
+		<xsd:sequence>
+			<xsd:element name="suggestion_id" type="xsd:string"
+				minOccurs="1" maxOccurs="1">
+			</xsd:element>
+			<xsd:element name="amount" type="xsd:double" minOccurs="1"
+				maxOccurs="1">
+			</xsd:element>
+			<xsd:element name="description" type="xsd:string"
+				minOccurs="1" maxOccurs="1">
+			</xsd:element>
+			<xsd:element name="editable" type="xsd:boolean" minOccurs="1" maxOccurs="1"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="VoIPProvider">
+		<xsd:sequence>
+			<xsd:element name="provider_id" type="xsd:int" minOccurs="1"
+				maxOccurs="1">
+			</xsd:element>
+			<xsd:element name="provider_name" type="xsd:string"
+				minOccurs="1" maxOccurs="1">
+			</xsd:element>
+			<xsd:element name="provider_ip" type="xsd:string"
+				minOccurs="1" maxOccurs="1">
+			</xsd:element>
+			<xsd:element name="comment" type="xsd:string" minOccurs="1"
+				maxOccurs="1">
+			</xsd:element>
+			<xsd:element name="isp_name" type="xsd:string" minOccurs="1"
+				maxOccurs="1">
+			</xsd:element>
+			<xsd:element name="outbound_prefix" type="xsd:string"
+				minOccurs="1" maxOccurs="1">
+			</xsd:element>
+			<xsd:element name="max_concurrent" type="xsd:int"
+				minOccurs="1" maxOccurs="1">
+			</xsd:element>
+			<xsd:element name="asr" type="xsd:int" minOccurs="1"
+				maxOccurs="1">
+			</xsd:element>
+			<xsd:element name="acd" type="xsd:int" minOccurs="1"
+				maxOccurs="1">
+			</xsd:element>
+			<xsd:element name="current_calls_number" type="xsd:int"
+				minOccurs="1" maxOccurs="1">
+			</xsd:element>
+			<xsd:element name="provider_mapped_user_id" type="xsd:int"
+				minOccurs="1" maxOccurs="1">
+			</xsd:element>
+			<xsd:element name="tried_calls_number" type="xsd:int"
+				minOccurs="1" maxOccurs="1">
+			</xsd:element>
+			<xsd:element name="strip_prefixes" type="xsd:string"
+				minOccurs="1" maxOccurs="1">
+			</xsd:element>
+			<xsd:element name="protocol" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+			<xsd:element name="port" type="xsd:int" minOccurs="1" maxOccurs="1"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="VoIPProviderList">
+		<xsd:sequence>
+			<xsd:element name="voip_providers" type="tns:VoIPProvider" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="VoIPRoute">
+            	<xsd:sequence>
+            		<xsd:element name="route_id" type="xsd:int"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="prefixes"
+            			type="tns:VoIPRoutePrefixList" minOccurs="1"
+            			maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="comment" type="xsd:string"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="effective_date" type="xsd:string"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="priority" type="xsd:int"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="asr" type="xsd:int" minOccurs="1"
+            			maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="acd" type="xsd:int" minOccurs="1"
+            			maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="disabled" type="xsd:boolean"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="voip_route_providers"
+            			type="tns:VoIPRouteProviderList" minOccurs="1"
+            			maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="max_concurrent" type="xsd:int"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="routing_profile_name"
+            			type="xsd:string" minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="routing_algorithm_name"
+            			type="xsd:string" minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="providers_number" type="xsd:int"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="prefixes_number" type="xsd:int"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="hunt_stop" type="xsd:boolean"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="current_calls_number" type="xsd:int" minOccurs="1" maxOccurs="1"></xsd:element>
+            	</xsd:sequence>
+	</xsd:complexType>
+
+            <xsd:complexType name="VoIPRoutePrefix">
+            	<xsd:sequence>
+            		<xsd:element name="prefix_code" type="xsd:string"></xsd:element>
+            		<xsd:element name="prefix_name" type="xsd:string"></xsd:element>
+            		<xsd:element name="prefix_max_cpm" type="xsd:float"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="VoIPRouteList">
+            	<xsd:sequence>
+            		<xsd:element name="voip_routes"
+            			type="tns:VoIPRoute" minOccurs="0" maxOccurs="unbounded">
+            		</xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="VoIPRoutingProfile">
+            	<xsd:sequence>
+            		<xsd:element name="routing_profile_id"
+            			type="xsd:int" minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="routing_profile_name"
+            			type="xsd:string" minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="comment" type="xsd:string"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="isp_name" type="xsd:string"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="voip_routes"
+            			type="tns:VoIPRouteList" minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="voip_routes_number" type="xsd:int" minOccurs="1" maxOccurs="1"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="VoIPRoutingProfileList">
+            	<xsd:sequence>
+            		<xsd:element name="routing_profiles" type="tns:VoIPRoutingProfile" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:complexType name="VoIPRoutePrefixList">
+            	<xsd:sequence>
+            		<xsd:element name="voip_route_prefixes" type="tns:VoIPRoutePrefix" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:complexType name="ExtraChargeRule">
+            	<xsd:sequence>
+            		<xsd:element name="start_from" type="xsd:string"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="period" type="xsd:string"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="period_value" type="xsd:string"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="change_target" type="xsd:string"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+                    <xsd:element name="change_action" type="xsd:string"
+                        minOccurs="1" maxOccurs="1">
+                    </xsd:element>
+            		<xsd:element name="amount" type="xsd:float"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="negate_credit" type="xsd:boolean"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="rule_id" type="xsd:int"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="pay_back" type="xsd:boolean"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="description" type="xsd:string"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ignore_first_time" type="xsd:boolean" minOccurs="1" maxOccurs="1"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="ExtraChargeProfile">
+            	<xsd:sequence>
+            		<xsd:element name="profile_name" type="xsd:string"
+            			minOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="profile_id" type="xsd:int"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="comment" type="xsd:string"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="rules"
+            			type="tns:ExtraChargeRuleList" minOccurs="1"
+            			maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="isp_name" type="xsd:string"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="rules_number" type="xsd:int"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="effective_hour" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:complexType name="ExtraChargeRuleList">
+            	<xsd:sequence>
+            		<xsd:element name="extra_charge_rules" type="tns:ExtraChargeRule" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="ExtraChargeProfileList">
+            	<xsd:sequence>
+            		<xsd:element name="extra_charge_profiles" type="tns:ExtraChargeProfile" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:complexType name="VoIPProviderSnapShot">
+            	<xsd:sequence>
+            		<xsd:element name="date_epoch" type="xsd:int" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+            		<xsd:element name="acd" type="xsd:float" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+            		<xsd:element name="asr" type="xsd:float" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+            		<xsd:element name="current_calls_number" type="xsd:int" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="VoIPProviderSnapShotList">
+            	<xsd:sequence>
+            		<xsd:element name="voip_provider_snapshots" type="tns:VoIPProviderSnapShot" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="RegionModel">
+            	<xsd:sequence>
+            		<xsd:element name="region_id" type="xsd:int"></xsd:element>
+            		<xsd:element name="region_name" type="xsd:string"></xsd:element>
+            		<xsd:element name="comment" type="xsd:string"></xsd:element>
+            		<xsd:element name="provinces" type="tns:ProvinceModel" maxOccurs="unbounded" minOccurs="0"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:complexType name="ProvinceModel">
+            	<xsd:sequence>
+            		<xsd:element name="province_id" type="xsd:int"></xsd:element>
+            		<xsd:element name="region_id" type="xsd:int"></xsd:element>
+            		<xsd:element name="province_name" type="xsd:string"></xsd:element>
+            		<xsd:element name="comment" type="xsd:string"></xsd:element>
+            		<xsd:element name="cities" type="tns:CityModel"
+            			maxOccurs="unbounded" minOccurs="0">
+            		</xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:complexType name="CityModel">
+            	<xsd:sequence>
+            		<xsd:element name="city_id" type="xsd:int"></xsd:element>
+            		<xsd:element name="province_id" type="xsd:int"></xsd:element>
+            		<xsd:element name="city_name" type="xsd:string"></xsd:element>
+            		<xsd:element name="comment" type="xsd:string"></xsd:element>
+            		<xsd:element name="has_telco_centers" type="xsd:boolean"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="RegionModelList">
+            	<xsd:sequence>
+            		<xsd:element name="region_model_list"
+            			type="tns:RegionModel" maxOccurs="unbounded"
+            			minOccurs="0">
+            		</xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="TelcoCenterModel">
+            	<xsd:sequence>
+            		<xsd:element name="telco_center_id"
+            			type="xsd:int">
+            		</xsd:element>
+            		<xsd:element name="city_id" type="xsd:int"></xsd:element>
+            		<xsd:element name="telco_center_name"
+            			type="xsd:string">
+            		</xsd:element>
+            		<xsd:element name="comment" type="xsd:string"></xsd:element>
+            		<xsd:element name="devices" type="tns:DeviceModel"
+            			maxOccurs="unbounded" minOccurs="0">
+            		</xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:complexType name="DeviceModel">
+            	<xsd:sequence>
+            		<xsd:element name="device_id" type="xsd:int"></xsd:element>
+            		<xsd:element name="telco_center_id"
+            			type="xsd:int">
+            		</xsd:element>
+            		<xsd:element name="device_name" type="xsd:string"></xsd:element>
+            		<xsd:element name="comment" type="xsd:string"></xsd:element>
+            		<xsd:element name="ports" type="tns:PortModel"
+            			maxOccurs="unbounded" minOccurs="0">
+            		</xsd:element>
+					<xsd:element name="has_ports" type="xsd:boolean"></xsd:element>            		
+            	</xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:complexType name="PortModel">
+            	<xsd:sequence>
+            		<xsd:element name="port_id" type="xsd:int"></xsd:element>
+            		<xsd:element name="device_id"
+            			type="xsd:int">
+            		</xsd:element>
+            		<xsd:element name="port_name" type="xsd:string"></xsd:element>
+            		<xsd:element name="comment" type="xsd:string"></xsd:element>
+            		<xsd:element name="mapped_user" type="xsd:int"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="TelcoCenterModelList">
+            	<xsd:sequence>
+            		<xsd:element name="telco_center_model_list"
+            			type="tns:TelcoCenterModel" maxOccurs="unbounded" minOccurs="0">
+            		</xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="AdminAccessibleLocations">
+            	<xsd:sequence>
+            		<xsd:element name="is_god" type="xsd:boolean"></xsd:element>
+            		<xsd:element name="region" type="xsd:int"
+            			maxOccurs="unbounded" minOccurs="0">
+            		</xsd:element>
+            		<xsd:element name="province" type="xsd:int"
+            			maxOccurs="unbounded" minOccurs="0">
+            		</xsd:element>
+            		<xsd:element name="city" type="xsd:int"
+            			maxOccurs="unbounded" minOccurs="0">
+            		</xsd:element>
+            		<xsd:element name="telco_center" type="xsd:int"
+            			maxOccurs="unbounded" minOccurs="0">
+            		</xsd:element>
+            		<xsd:element name="device" type="xsd:int"
+            			maxOccurs="unbounded" minOccurs="0">
+            		</xsd:element>
+            		<xsd:element name="port" type="xsd:int"
+            			maxOccurs="unbounded" minOccurs="0">
+            		</xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+	    <xsd:complexType name="InvoiceList">
+            	<xsd:sequence>
+            		<xsd:element name="invoices" type="tns:Invoice" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:complexType name="Invoice">
+            	<xsd:sequence>
+            		<xsd:element name="invoice_id" type="xsd:int"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="invoice_issue_date"
+            			type="xsd:string" minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="period_start" type="xsd:string"
+            			minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="period_end" type="xsd:string"
+            			minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="comment" type="xsd:string"
+            			minOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="sum_up_amount" type="xsd:float"
+            			minOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="paid_amount" type="xsd:float"
+            			minOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="is_paid" type="xsd:boolean"
+            			minOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="is_active" type="xsd:boolean"
+            			minOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="user_id" type="xsd:int"
+            			minOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="previous_due" type="xsd:float"
+            			minOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="invoice_items"
+            			type="tns:InvoiceItem" minOccurs="0"
+            			maxOccurs="unbounded">
+            		</xsd:element>
+            		<xsd:element name="roundup_amount" type="xsd:float"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="user_name" type="xsd:string"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="address" type="xsd:string"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="rule_id" type="xsd:int"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="email" type="xsd:string"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="phone" type="xsd:string"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="pi_issue_date" type="xsd:string"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="postal_code" type="xsd:string"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="owner_name" type="xsd:string"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="effective_amount"
+            			type="xsd:float" minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="rule_description" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:complexType name="InvoiceItem">
+            	<xsd:sequence>
+            		<xsd:element name="invoice_item_id"
+            			type="xsd:int" minOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="amount" type="xsd:float" minOccurs="1" maxOccurs="1"></xsd:element>
+            		<xsd:element name="description" type="xsd:string" minOccurs="1"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:complexType name="InvoiceItemDetails">
+            	<xsd:sequence>
+            		<xsd:element name="key" type="xsd:string"></xsd:element>
+            		<xsd:element name="value" type="xsd:string"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="LDAPDomain">
+            	<xsd:sequence>
+            		<xsd:element name="ldap_domain_id" type="xsd:int"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ldap_domain_name"
+            			type="xsd:string" minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="sync_period" type="xsd:int"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="priority" type="xsd:int"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="automatically_sync_users"
+            			type="xsd:boolean" minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="isp_name" type="xsd:string"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ldap_servers"
+            			type="tns:LDAPServer" minOccurs="0"
+            			maxOccurs="unbounded">
+            		</xsd:element>
+            		<xsd:element name="comment" type="xsd:string"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="lower_case_users_on_sync"
+            			type="xsd:boolean" minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="change_existing_user_group"
+            		    type="xsd:boolean" maxOccurs="1" minOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="group_mapping" type="tns:LDAPGroupMappingItem"
+            		    minOccurs="0" maxOccurs="unbounded" nillable="true">
+            		</xsd:element>
+            		<xsd:element name="default_group" type="xsd:string"
+            			minOccurs="1" maxOccurs="1" nillable="true">
+            	    </xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="PortModelList">
+            	<xsd:sequence>
+            		<xsd:element name="port_model_list"
+            			type="tns:PortModel" maxOccurs="unbounded" minOccurs="0">
+            		</xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+	    <xsd:complexType name="InvoiceProfile">
+            	<xsd:sequence>
+            		<xsd:element name="profile_id" type="xsd:int"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="profile_name" type="xsd:string"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="isp_name" type="xsd:string"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="comment" type="xsd:string"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="rules" type="tns:InvoiceRuleList"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="InvoiceProfileList">
+            	<xsd:sequence>
+            		<xsd:element name="profiles"
+            			type="tns:InvoiceProfile" minOccurs="0" maxOccurs="unbounded">
+            		</xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:complexType name="InvoiceRule">
+            	<xsd:sequence>
+            		<xsd:element name="rule_id" type="xsd:int"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="description" type="xsd:string"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="invoice_template_name"
+            			type="xsd:string" minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="pi_template_name"
+            			type="xsd:string" maxOccurs="1" minOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="date_type"
+            			type="xsd:string" maxOccurs="1" minOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="language"
+            			type="xsd:string" maxOccurs="1" minOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="pi_exp_days" type="xsd:int"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="roundup_scale" type="xsd:int"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="auto_invoice_event"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="auto_invoice_threshold"
+            			type="xsd:int" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="allow_user_issue_invoice"
+            			type="xsd:boolean" minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="invoice_rule_items"
+            			type="tns:InvoiceRuleItemList" minOccurs="1"
+            			maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="action" type="xsd:string"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="action_args" type="xsd:string"
+            			minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="disabled" type="xsd:boolean" minOccurs="1" maxOccurs="1"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:complexType name="InvoiceRuleItem">
+            	<xsd:sequence>
+            		<xsd:element name="rule_item_id" type="xsd:int"
+            			minOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="formula" type="xsd:string"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="description" type="xsd:string"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="is_bonus" type="xsd:boolean"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="none_effective"
+            			type="xsd:boolean" minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:complexType name="ProformaInvoice">
+            	<xsd:sequence>
+            		<xsd:element name="pi_id" type="xsd:int"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="issue_date" type="xsd:string"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="comment" type="xsd:string"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="sum_up_amount" type="xsd:float"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="previous_due" type="xsd:float"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="roundup_amount" type="xsd:float"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="user_id" type="xsd:int"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="address" type="xsd:string"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="expired" type="xsd:boolean"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="rule_id" type="xsd:int"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="add_user" type="xsd:boolean"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="pi_items"
+            			type="tns:ProformaInvoiceItem" minOccurs="0"
+            			maxOccurs="unbounded">
+            		</xsd:element>
+            		<xsd:element name="phone" type="xsd:string"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="email" type="xsd:string"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="user_name" type="xsd:string"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="pi_add_user_details"
+            			type="tns:Map" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="postal_code" type="xsd:string"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="owner_name" type="xsd:string"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="effective_amount"
+            			type="xsd:float" minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="rule_description" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:complexType name="ProformaInvoiceItem">
+            	<xsd:sequence>
+            		<xsd:element name="pi_item_id" type="xsd:int" minOccurs="1" maxOccurs="1"></xsd:element>
+            		<xsd:element name="amount" type="xsd:float" minOccurs="1" maxOccurs="1"></xsd:element>
+            		<xsd:element name="description" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="InvoiceTemplate">
+            	<xsd:sequence>
+            		<xsd:element name="template_id" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+            		<xsd:element name="template_name" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+            		<xsd:element name="isp_name" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+            	</xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:complexType name="InvoiceRuleList">
+            	<xsd:sequence>
+            		<xsd:element name="rules" type="tns:InvoiceRule" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:complexType name="InvoiceRuleItemList">
+            	<xsd:sequence>
+            		<xsd:element name="rule_items" type="tns:InvoiceRuleItem" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="Batch">
+            	<xsd:sequence>
+            		<xsd:element name="batch_id" type="xsd:int"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="batch_name" type="xsd:string"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="is_locked" type="xsd:boolean"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="credit" type="xsd:float"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="can_create_user"
+            			type="xsd:boolean" minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="can_recharge_user"
+            			type="xsd:boolean" minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="change_target" type="xsd:string"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+                    <xsd:element name="change_action" type="xsd:string"
+                        minOccurs="1" maxOccurs="1">
+                    </xsd:element>
+            		<xsd:element name="isp_name" type="xsd:string"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="comment" type="xsd:string"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="creation_date" type="xsd:string"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="allow_use_by_children_isp" type="xsd:boolean" minOccurs="1" maxOccurs="1"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:complexType name="VoucherList">
+            	<xsd:sequence>
+            		<xsd:element name="vouchers" type="tns:Voucher" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:complexType name="Voucher">
+            	<xsd:sequence>
+            		<xsd:element name="voucher_id" type="xsd:int"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="is_used" type="xsd:boolean"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="pin" type="xsd:string"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="batch_id" type="xsd:int"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="used_date" type="xsd:string"
+            			minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="user_id" type="xsd:int"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="serial" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+            
+            <xsd:element name="NewElement" type="xsd:string"></xsd:element>
+        
+            <xsd:complexType name="BatchList">
+            	<xsd:sequence>
+            		<xsd:element name="batches" type="tns:Batch" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="Session">
+            	<xsd:sequence>
+            		<xsd:element name="session_id" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+            		<xsd:element name="auth_type" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+            		<xsd:element name="auth_name" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+            		<xsd:element name="auth_pass" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+            		<xsd:element name="auth_remoteaddr" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+            		<xsd:element name="last_request_epoch" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="IssuePIAttrsList">
+            	<xsd:sequence>
+            		<xsd:element name="pi_attrs" type="tns:IssuePIAttrs" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:complexType name="IssuePIAttrs">
+            	<xsd:sequence>
+            		<xsd:element name="rule_id" type="xsd:int" minOccurs="1" maxOccurs="1"></xsd:element>
+            		<xsd:element name="user_id" type="xsd:int" minOccurs="1" maxOccurs="1"></xsd:element>
+            		<xsd:element name="add_user" type="xsd:boolean" minOccurs="1" maxOccurs="1"></xsd:element>
+            		<xsd:element name="comment" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+            		<xsd:element name="add_user_details" type="tns:Map" minOccurs="0" maxOccurs="1"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="ProformaInvoiceList">
+            	<xsd:sequence>
+            		<xsd:element name="invoices" type="tns:ProformaInvoice" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="VoIPRouteProvider">
+            	<xsd:sequence>
+            		<xsd:element name="voip_provider"
+            			type="tns:VoIPProvider" minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="priority" type="xsd:int"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="asr" type="xsd:float"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="acd" type="xsd:float"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="current_calls_number" type="xsd:int" minOccurs="1" maxOccurs="1"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:complexType name="VoIPRouteProviderList">
+            	<xsd:sequence>
+            		<xsd:element name="voip_route_providers" type="tns:VoIPRouteProvider" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+</xsd:schema></wsdl:types>
+    <wsdl:message name="pingRequest">
+    <wsdl:part name="ping" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="pingResponse">
+    <wsdl:part name="pong" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="loginRequest">
+  	<wsdl:part name="auth_type" type="xsd:string"></wsdl:part>
+  	<wsdl:part name="auth_username" type="xsd:string"></wsdl:part>
+  	<wsdl:part name="auth_password" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="loginResponse">
+  	<wsdl:part name="successful" type="xsd:boolean"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="transferDepositRequest">
+  	<wsdl:part name="pin" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="transferDepositResponse">
+  	<wsdl:part name="deposit_change" type="xsd:float"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="listUserDailyArchiveLogsRequest">
+  	<wsdl:part name="user_id" type="xsd:long"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="listUserDailyArchiveLogsResponse">
+  	<wsdl:part name="archived_logs"
+  		type="tns:UserDailyArchiveLogs">
+  	</wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getUserDailyArchivedLogRequest">
+  	<wsdl:part name="user_id" type="xsd:long"></wsdl:part>
+  	<wsdl:part name="log_name" type="xsd:string"></wsdl:part>
+  	<wsdl:part name="filename" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getUserDailyArchivedLogResponse">
+  	<wsdl:part name="contents" type="xsd:base64Binary"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="forceArchiveForUserRequest">
+  	<wsdl:part name="user_id" type="xsd:long"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="forceArchiveForUserResponse">
+  </wsdl:message>
+  <wsdl:message name="addNotificationProfileRequest">
+  	<wsdl:part name="notification_profile_name" type="xsd:string"></wsdl:part>
+  	<wsdl:part name="notification_profile_comment" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addNotificationProfileResponse">
+  	<wsdl:part name="notification_profile_id" type="xsd:int">
+  	</wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getNotificationProfilesRequest">
+  </wsdl:message>
+  <wsdl:message name="getNotificationProfilesResponse">
+  	<wsdl:part name="profiles" type="tns:NotificationProfileList"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getNotificationProfileByNameRequest">
+  	<wsdl:part name="notification_profile_name" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getNotificationProfileByNameResponse">
+  	<wsdl:part name="notification_profile"
+  		type="tns:NotificationProfile">
+  	</wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addNotificationRuleRequest">
+  	<wsdl:part name="notification_rule" type="tns:NotificationRule"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addNotificationRuleResponse">
+  </wsdl:message>
+  <wsdl:message name="deleteNotificationProfileRequest">
+  	<wsdl:part name="notification_profile_name" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteNotificationProfileResponse">
+  </wsdl:message>
+  <wsdl:message name="deleteNotificationRuleRequest">
+  	<wsdl:part name="notification_rule" type="tns:NotificationRule"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteNotificationRuleResponse">
+  </wsdl:message>
+  <wsdl:message name="updateNotificationProfileRequest">
+  	<wsdl:part name="notification_profile"
+  		type="tns:NotificationProfile">
+  	</wsdl:part>
+  	
+  </wsdl:message>
+  <wsdl:message name="updateNotificationProfileResponse">
+  </wsdl:message>
+  <wsdl:message name="updateNotificationRuleRequest">
+  	<wsdl:part name="notification_rule" type="tns:NotificationRule"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateNotificationRuleResponse">
+  </wsdl:message>
+  <wsdl:message name="addVoIPTariffRequest">
+  	<wsdl:part name="voip_tariff" type="tns:VoIPTariff"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addVoIPTariffResponse">
+  </wsdl:message>
+  <wsdl:message name="getVoIPTariffByNameRequest">
+  	<wsdl:part name="voip_tariff_name" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getVoIPTariffByNameResponse">
+  	<wsdl:part name="voip_tariff" type="tns:VoIPTariff"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getVoIPTariffsRequest">
+  </wsdl:message>
+  <wsdl:message name="getVoIPTariffsResponse">
+  	<wsdl:part name="voip_tariffs" type="tns:VoIPTariffList"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateVoIPTariffRequest">
+  	<wsdl:part name="voip_tariff" type="tns:VoIPTariff"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateVoIPTariffResponse">
+  </wsdl:message>
+  <wsdl:message name="deleteVoIPTariffRequest">
+  	<wsdl:part name="voip_tariff" type="tns:VoIPTariff"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteVoIPTariffResponse">
+  </wsdl:message>
+  <wsdl:message name="addVoIPTariffPrefixRequest">
+  	<wsdl:part name="prefix_list" type="tns:VoIPTariffPrefixList"></wsdl:part>
+  	<wsdl:part name="voip_tariff_name" type="xsd:string"></wsdl:part>
+  	<wsdl:part name="duplicate_action" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addVoIPTariffPrefixResponse">
+  </wsdl:message>
+  <wsdl:message name="addVoIPTariffPrefixFromCSVRequest">
+  	<wsdl:part name="prefixes_csv" type="xsd:string"></wsdl:part>
+  	<wsdl:part name="default_prefix_template"
+  		type="tns:VoIPTariffPrefix">
+  	</wsdl:part>
+  	<wsdl:part name="voip_tariff_name" type="xsd:string"></wsdl:part>
+  	<wsdl:part name="duplicate_action" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addVoIPTariffPrefixFromCSVResponse">
+  </wsdl:message>
+  <wsdl:message name="updateVoIPTariffPrefixRequest">
+  	<wsdl:part name="prefix" type="tns:VoIPTariffPrefix">
+  		<wsdl:documentation>
+  			Updates a prefix. prefix_id is taken as unique identifier
+  			and can not be changed.
+  		</wsdl:documentation>
+  	</wsdl:part>
+  	<wsdl:part name="voip_tariff_name" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateVoIPTariffPrefixResponse">
+  </wsdl:message>
+  <wsdl:message name="searchVoIPTariffPrefixesRequest">
+  	<wsdl:part name="voip_tariff_name" type="xsd:string"></wsdl:part>
+  	<wsdl:part name="conditions" type="tns:Map"></wsdl:part>
+  	<wsdl:part name="paginate_attributes" type="tns:PaginateAttributes"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="searchVoIPTariffPrefixesResponse">
+  	<wsdl:part name="prefix_list" type="tns:VoIPTariffPrefixList"></wsdl:part>
+  	<wsdl:part name="total_results_count" type="xsd:int"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteVoIPTariffPrefixesRequest">
+  	<wsdl:part name="voip_tariff_name" type="xsd:string"></wsdl:part>
+  	<wsdl:part name="conditions" type="tns:Map"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteVoIPTariffPrefixesResponse">
+  </wsdl:message>
+  <wsdl:message name="setVoIPTariffPrefixBlockStatusRequest">
+  	<wsdl:part name="voip_tariff_name" type="xsd:string"></wsdl:part>
+  	<wsdl:part name="conditions" type="tns:Map"></wsdl:part>
+  	<wsdl:part name="block_status" type="xsd:boolean"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="setVoIPTariffPrefixBlockStatusResponse">
+  </wsdl:message>
+  <wsdl:message name="copyVoIPTariffPrefixesRequest">
+  	<wsdl:part name="from_voip_tariff_name" type="xsd:string"></wsdl:part>
+  	<wsdl:part name="to_voip_tariff_name" type="xsd:string"></wsdl:part>
+  	<wsdl:part name="conditions" type="tns:Map"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="copyVoIPTariffPrefixesResponse">
+  </wsdl:message>
+  <wsdl:message name="findVoIPTariffPrefixCandidatesForDestinationRequest">
+  	<wsdl:part name="voip_tariff_name" type="xsd:string"></wsdl:part>
+  	<wsdl:part name="destination" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findVoIPTariffPrefixCandidatesForDestinationResponse">
+        <wsdl:part name="prefix_list" type="tns:VoIPTariffPrefixList"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addVoIPTariffPrefix_faultMsg">
+  	<wsdl:part name="fault" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getVoIPTariffPrefixGroupNamesRequest">
+  </wsdl:message>
+  <wsdl:message name="getVoIPTariffPrefixGroupNamesResponse">
+  	<wsdl:part name="prefix_group_names" type="tns:List"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addPaymentGatewayRequest">
+  	<wsdl:part name="payment_gateway" type="tns:PaymentGateway"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addPaymentGatewayResponse">
+  </wsdl:message>
+  <wsdl:message name="updatePaymentGatewayRequest">
+  	<wsdl:part name="payment_gateway" type="tns:PaymentGateway">
+  		<wsdl:documentation></wsdl:documentation>
+  	</wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updatePaymentGatewayResponse">
+  </wsdl:message>
+  <wsdl:message name="deletePaymentGatewayRequest">
+  	<wsdl:part name="payment_gateway_name" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deletePaymentGatewayResponse">
+  </wsdl:message>
+  <wsdl:message name="getAllPaymentGatewaysRequest">
+  </wsdl:message>
+  <wsdl:message name="getAllPaymentGatewaysResponse">
+  	<wsdl:part name="payment_gateway_list"
+  		type="tns:PaymentGatewayList">
+  	</wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPaymentGatewayTypesRequest">
+  </wsdl:message>
+  <wsdl:message name="getPaymentGatewayTypesResponse">
+  	<wsdl:part name="payment_gateway_types" type="tns:List"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getISPNamesRequest">
+  </wsdl:message>
+  <wsdl:message name="getISPNamesResponse">
+  	<wsdl:part name="isp_names" type="tns:List"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAvailablePaymentGatewaysRequest">
+  </wsdl:message>
+  <wsdl:message name="getAvailablePaymentGatewaysResponse">
+  	<wsdl:part name="payment_gateway_types" type="tns:List"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPaymentSuggestedAmountRequest">
+  </wsdl:message>
+  <wsdl:message name="getPaymentSuggestedAmountResponse">
+  	<wsdl:part name="suggestion_list"
+  		type="tns:OnlinePaymentSuggestionList">
+  		<wsdl:documentation>Returns</wsdl:documentation>
+  	</wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="preparePaymentRequest">
+  	<wsdl:part name="gateway_type" type="xsd:string"></wsdl:part>
+  	<wsdl:part name="amount" type="xsd:double"></wsdl:part>
+  	<wsdl:part name="unique_id" type="xsd:string"></wsdl:part>
+  	<wsdl:part name="attribute_map" type="tns:Map"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="preparePaymentResponse">
+  	<wsdl:part name="url" type="xsd:string">
+  		<wsdl:documentation>URL that user will be redirected to</wsdl:documentation></wsdl:part>
+  	<wsdl:part name="web_attributes" type="tns:Map">
+  		<wsdl:documentation>Web Attributes to be sent to bank</wsdl:documentation></wsdl:part>
+  	<wsdl:part name="redirect_method" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="manualVerifyPaymentRequest">
+  	<wsdl:part name="payment_id" type="xsd:long">
+  		<wsdl:documentation>Payment ID</wsdl:documentation>
+  	</wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="manualVerifyPaymentResponse">
+  </wsdl:message>
+  <wsdl:message name="manualApplyPaymentRequest">
+  	<wsdl:part name="payment_id" type="xsd:long">
+  		<wsdl:documentation>Payment ID</wsdl:documentation>
+  	</wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="manualApplyPaymentResponse">
+  </wsdl:message>
+  <wsdl:message name="purgePaymentRequest">
+  	<wsdl:part name="payment_id" type="xsd:long">
+  		<wsdl:documentation>Payment ID</wsdl:documentation>
+  	</wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="purgePaymentResponse">
+  </wsdl:message>
+  <wsdl:message name="searchPendingOnlinePaymentsRequest">
+  	<wsdl:part name="conds" type="tns:Map"></wsdl:part>
+  	<wsdl:part name="paginate_attributes" type="tns:PaginateAttributes"></wsdl:part>
+  	<wsdl:part name="role" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="searchPendingOnlinePaymentsResponse">
+  	<wsdl:part name="payments" type="tns:OnlinePaymentList"></wsdl:part>
+  	<wsdl:part name="total_count" type="xsd:int"></wsdl:part>
+  </wsdl:message>
+
+
+  <wsdl:message name="userImportSaveImportFilePortionRequest">
+        <wsdl:part name="file_portion_model" type="tns:ImportFilePortionModel"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="userImportSaveImportFilePortionResponse">
+  </wsdl:message>
+  <wsdl:message name="userImportGetImportFilesStatusRequest">
+  </wsdl:message>
+  <wsdl:message name="userImportGetImportFilesStatusResponse">
+        <wsdl:part name="files_status_list" type="tns:ImportFilesStatusList"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="userImportDoActionOnFileRequest">
+        <wsdl:part name="filename" type="xsd:string"></wsdl:part>
+        <wsdl:part name="action" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="userImportDoActionOnFileResponse">
+  </wsdl:message>
+  <wsdl:message name="userImportGetFileImportLogRequest">
+  	<wsdl:part name="filename" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="userImportGetFileImportLogResponse">
+        <wsdl:part name="import_log" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="userImportStartFileImportRequest">
+        <wsdl:part name="filename" type="xsd:string"></wsdl:part>
+        <wsdl:part name="user_import_request_model" type="tns:UserImportRequestModel"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="userImportStartFileImportResponse">
+  </wsdl:message>
+  <wsdl:message name="getStatisticsDataForChartRequest">
+  	<wsdl:part name="stats_type" type="xsd:string"></wsdl:part>
+  	<wsdl:part name="number_of_seconds" type="xsd:int"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getStatisticsDataForChartResponse">
+  	<wsdl:part name="chart_y_values" type="tns:List"></wsdl:part>
+  	<wsdl:part name="chart_x_values" type="tns:List"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getChartStatisticsTypesRequest">
+  </wsdl:message>
+  <wsdl:message name="getChartStatisticsTypesResponse">
+  	<wsdl:part name="stats_type_list" type="tns:List"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="blackListCallerIDsRequest">
+  	<wsdl:part name="caller_id_blacklist_model" type="tns:CallerIDBlackListModel"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="blackListCallerIDsResponse">
+  </wsdl:message>
+  <wsdl:message name="removeCallerIDsFromBlackListRequest">
+  	<wsdl:part name="caller_id_blacklist_model" type="tns:CallerIDBlackListModel"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeCallerIDsFromBlackListResponse">
+  </wsdl:message>
+  <wsdl:message name="getBlackListedCallerIDsRequest">
+  </wsdl:message>
+  <wsdl:message name="getBlackListedCallerIDsResponse">
+  	<wsdl:part name="caller_id_blacklist"
+  		type="tns:CallerIDBlackListModel">
+  	</wsdl:part>
+  </wsdl:message>
+
+  <wsdl:message name="addVoIPProviderRequest">
+  	<wsdl:part name="voip_provider" type="tns:VoIPProvider"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addVoIPProviderResponse">
+  </wsdl:message>
+  <wsdl:message name="updateVoIPProviderRequest">
+  	<wsdl:part name="voip_provider" type="tns:VoIPProvider"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateVoIPProviderResponse">
+  </wsdl:message>
+  <wsdl:message name="deleteVoIPProviderRequest">
+  	<wsdl:part name="voip_provider_name" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteVoIPProviderResponse">
+  </wsdl:message>
+  <wsdl:message name="getVoIPProvidersRequest">
+  </wsdl:message>
+  <wsdl:message name="getVoIPProvidersResponse">
+  	<wsdl:part name="voip_providers" type="tns:VoIPProviderList"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getVoIPProviderByNameRequest">
+  	<wsdl:part name="voip_provider_name" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getVoIPProviderByNameResponse">
+  	<wsdl:part name="voip_provider" type="tns:VoIPProvider"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addVoIPRouteRequest">
+  	<wsdl:part name="voip_route" type="tns:VoIPRoute"></wsdl:part>
+  	<wsdl:part name="routing_profile_name" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addVoIPRouteResponse">
+  </wsdl:message>
+  <wsdl:message name="updateVoIPRouteRequest">
+  	<wsdl:part name="voip_route" type="tns:VoIPRoute"></wsdl:part>
+  	<wsdl:part name="routing_profile_name" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateVoIPRouteResponse">
+  </wsdl:message>
+  <wsdl:message name="deleteVoIPRouteRequest">
+  	<wsdl:part name="voip_route_id" type="xsd:int"></wsdl:part>
+  	<wsdl:part name="routing_profile_name" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteVoIPRouteResponse">
+  </wsdl:message>
+  <wsdl:message name="getVoIPRoutesRequest">
+  </wsdl:message>
+  <wsdl:message name="getVoIPRoutesResponse">
+  	<wsdl:part name="voip_routes" type="tns:VoIPRouteList"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addVoIPRoutingProfileRequest">
+  	<wsdl:part name="routing_profile" type="tns:VoIPRoutingProfile"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addVoIPRoutingProfileResponse">
+  </wsdl:message>
+  <wsdl:message name="updateVoIPRoutingProfileRequest">
+  	<wsdl:part name="routing_profile" type="tns:VoIPRoutingProfile"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateVoIPRoutingProfileResponse">
+  </wsdl:message>
+  <wsdl:message name="deleteVoIPRoutingProfileRequest">
+  	<wsdl:part name="routing_profile_name" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteVoIPRoutingProfileResponse">
+  </wsdl:message>
+  <wsdl:message name="getVoIPRoutingProfilesRequest">
+  </wsdl:message>
+  <wsdl:message name="getVoIPRoutingProfilesResponse">
+  	<wsdl:part name="routing_profiles" type="tns:VoIPRoutingProfileList"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getVoIPRoutingProfileByNameRequest">
+  	<wsdl:part name="routing_profile_name" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getVoIPRoutingProfileByNameResponse">
+  	<wsdl:part name="routing_profile" type="tns:VoIPRoutingProfile"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getVoIPRouteByIDRequest">
+  	<wsdl:part name="voip_route_id" type="xsd:int"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getVoIPRouteByIDResponse">
+  	<wsdl:part name="voip_route" type="tns:VoIPRoute"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getVoIPRoutingProfileByIDRequest">
+  	<wsdl:part name="routing_profile_id" type="xsd:int"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getVoIPRoutingProfileByIDResponse">
+  	<wsdl:part name="routing_profile" type="tns:VoIPRoutingProfile"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getVoIPTariffByIDRequest">
+  	<wsdl:part name="voip_tariff_id" type="xsd:int"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getVoIPTariffByIDResponse">
+  	<wsdl:part name="voip_tariff" type="tns:VoIPTariff"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getVoIPProviderByIDRequest">
+  	<wsdl:part name="voip_provider_id" type="xsd:int"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getVoIPProviderByIDResponse">
+  	<wsdl:part name="voip_provider" type="tns:VoIPProvider"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRoutingProfileByIDRequest">
+  	<wsdl:part name="routing_profile_id" type="xsd:int"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRoutingProfileByIDResponse">
+  	<wsdl:part name="routing_profile" type="tns:VoIPRoutingProfile"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="NewOperation_faultMsg">
+  	<wsdl:part name="fault" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getVoIPRoutingAlgorithmNamesRequest">
+  </wsdl:message>
+  <wsdl:message name="getVoIPRoutingAlgorithmNamesResponse">
+  	<wsdl:part name="routing_algorithm_names" type="tns:List"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addRegionRequest">
+        <wsdl:part name="region_model" type="tns:RegionModel"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addRegionResponse">
+        <wsdl:part name="region_id" type="xsd:integer"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateRegionRequest">
+        <wsdl:part name="update_region_model_list" type="tns:RegionModelList"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateRegionResponse">
+  </wsdl:message>
+  <wsdl:message name="deleteRegionRequest">
+        <wsdl:part name="delete_region_id" type="xsd:int"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteRegionResponse">
+  </wsdl:message>
+  <wsdl:message name="getAllRegionModelsRequest">
+  </wsdl:message>
+  <wsdl:message name="getAllRegionModelsResponse">
+        <wsdl:part name="all_region_models_list" type="tns:RegionModelList"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRegionModelRequest">
+        <wsdl:part name="region_id" type="xsd:int"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRegionModelResponse">
+        <wsdl:part name="region_model" type="tns:RegionModel"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addTelcoCenterRequest">
+        <wsdl:part name="telco_center_model" type="tns:TelcoCenterModel"></wsdl:part>
+        <wsdl:part name="region_id" type="xsd:int"></wsdl:part>
+        <wsdl:part name="province_id" type="xsd:int"></wsdl:part>
+        <wsdl:part name="city_id" type="xsd:int"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addTelcoCenterResponse">
+        <wsdl:part name="telco_center_id" type="xsd:int"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCityTelcoCentersRequest">
+        <wsdl:part name="region_id" type="xsd:int"></wsdl:part>
+        <wsdl:part name="province_id" type="xsd:int"></wsdl:part>
+        <wsdl:part name="city_id" type="xsd:int"></wsdl:part>
+        <wsdl:part name="exclude_ports" type="xsd:boolean"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCityTelcoCentersResponse">
+        <wsdl:part name="city_telco_centers" type="tns:TelcoCenterModelList"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteTelcoCenterRequest">
+        <wsdl:part name="telco_center_id" type="xsd:int"></wsdl:part>
+        <wsdl:part name="region_id" type="xsd:int"></wsdl:part>
+        <wsdl:part name="province_id" type="xsd:int"></wsdl:part>
+        <wsdl:part name="city_id" type="xsd:int"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteTelcoCenterResponse">
+  </wsdl:message>
+  <wsdl:message name="updateTelcoCenterRequest">
+        <wsdl:part name="update_telco_center_model_list" type="tns:TelcoCenterModelList"></wsdl:part>
+        <wsdl:part name="region_id" type="xsd:int"></wsdl:part>
+        <wsdl:part name="province_id" type="xsd:int"></wsdl:part>
+        <wsdl:part name="city_id" type="xsd:int"></wsdl:part>
+        <wsdl:part name="exclude_ports" type="xsd:boolean"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateTelcoCenterResponse">
+  </wsdl:message>
+  <wsdl:message name="addExtraChargeProfileRequest">
+  	<wsdl:part name="extra_charge_profile" type="tns:ExtraChargeProfile"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addExtraChargeProfileResponse">
+  </wsdl:message>
+  <wsdl:message name="updateExtraChargeProfileRequest">
+  	<wsdl:part name="extra_charge_profile" type="tns:ExtraChargeProfile"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateExtraChargeProfileResponse">
+  </wsdl:message>
+  <wsdl:message name="deleteExtraChargeProfileRequest">
+  	<wsdl:part name="extra_charge_profile_name" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteExtraChargeProfileResponse">
+  </wsdl:message>
+  <wsdl:message name="getExtraChargeProfileByNameRequest">
+  	<wsdl:part name="extra_charge_profile_name" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getExtraChargeProfileByNameResponse">
+  	<wsdl:part name="extra_charge_profile" type="tns:ExtraChargeProfile"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getExtraChargeProfileByIDRequest">
+  	<wsdl:part name="extra_charge_profile_id" type="xsd:int"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getExtraChargeProfileByIDResponse">
+  	<wsdl:part name="extra_charge_profile" type="tns:ExtraChargeProfile"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getExtraChargeProfilesRequest">
+  </wsdl:message>
+  <wsdl:message name="getExtraChargeProfilesResponse">
+  	<wsdl:part name="extra_charge_profiles" type="tns:ExtraChargeProfileList"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getVoIPProviderSnapShotRequest">
+  	<wsdl:part name="provider_name" type="xsd:string"></wsdl:part>
+  	<wsdl:part name="date_from" type="xsd:string"></wsdl:part>
+  	<wsdl:part name="date_to" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getVoIPProviderSnapShotResponse">
+  	<wsdl:part name="provider_snapshot" type="tns:VoIPProviderSnapShot"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAccessibleLocationsRequest">
+  </wsdl:message>
+  <wsdl:message name="getAccessibleLocationsResponse">
+        <wsdl:part name="accessible_locations_model" type="tns:AdminAccessibleLocations"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="issueProformaInvoiceRequest">
+  	<wsdl:part name="issue_pi_attrs_obj_list" type="tns:IssuePIAttrsList"></wsdl:part>
+  	<wsdl:part name="arbitrary_amount" type="xsd:float"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="issueProformaInvoiceResponse">
+  	<wsdl:part name="issued_pis" type="tns:ProformaInvoiceList"></wsdl:part>
+  	<wsdl:part name="failed_users" type="tns:List"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getInvoiceByIDRequest">
+  	<wsdl:part name="invoice_id" type="xsd:int"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getInvoiceByIDResponse">
+  	<wsdl:part name="invoice_obj" type="tns:Invoice"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getInvoiceWithRuleByInvoiceIDRequest">
+  	<wsdl:part name="invoice_id" type="xsd:int"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getInvoiceWithRuleByInvoiceIDResponse">
+  	<wsdl:part name="invoice_obj" type="tns:Invoice"></wsdl:part>
+  	<wsdl:part name="rule_obj" type="tns:InvoiceRule"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="searchInvoicesRequest">
+  	<wsdl:part name="conds" type="tns:Map"></wsdl:part>
+  	<wsdl:part name="paginate_attributes" type="tns:PaginateAttributes"></wsdl:part>
+  	<wsdl:part name="role" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="searchInvoicesResponse">
+  	<wsdl:part name="invoices" type="tns:InvoiceList"></wsdl:part>
+  	<wsdl:part name="total_count" type="xsd:int"></wsdl:part>
+  </wsdl:message>
+    <wsdl:message name="addInvoiceProfileRequest">
+  	<wsdl:part name="invoice_profile" type="tns:InvoiceProfile"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addInvoiceProfileResponse">
+  </wsdl:message>
+  <wsdl:message name="getDevicePortsRequest">
+        <wsdl:part name="device_id" type="xsd:int"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDevicePortsResponse">
+        <wsdl:part name="device_ports" type="tns:PortModelList"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllInvoiceProfileNamesRequest">
+  </wsdl:message>
+  <wsdl:message name="getAllInvoiceSettingNamesResponse">
+  	<wsdl:part name="setting_template_names" type="tns:List"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllInvoiceSettingNamesRequest">
+  </wsdl:message>
+    <wsdl:message name="NewMessage">
+    	<wsdl:part name="invoice_profile_name" type="tns:List"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getAllInvoiceProfilesRequest">
+    </wsdl:message>
+    <wsdl:message name="getAllInvoiceProfilesResponse">
+    	<wsdl:part name="invoice_profiles" type="tns:InvoiceProfileList"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getInvoiceProfileByIDRequest">
+    	<wsdl:part name="profile_id" type="xsd:int"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getInvoiceProfileByIDResponse">
+    	<wsdl:part name="invoice_profile" type="tns:InvoiceProfile"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="updateInvoiceProfileRequest">
+    	<wsdl:part name="invoice_profile" type="tns:InvoiceProfile"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="updateInvoiceProfileResponse">
+    </wsdl:message>
+    <wsdl:message name="deleteInvoiceProfileRequest">
+    	<wsdl:part name="profile_id" type="xsd:int"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="deleteInvoiceProfileResponse">
+    </wsdl:message>
+    <wsdl:message name="addInvoiceTemplateRequest">
+    	<wsdl:part name="invoice_template" type="tns:InvoiceTemplate"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="addInvoiceTemplateResponse">
+    </wsdl:message>
+    <wsdl:message name="deleteInvoiceTemplateRequest">
+    	<wsdl:part name="template_name" type="xsd:string"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="deleteInvoiceTemplateResponse">
+    </wsdl:message>
+    <wsdl:message name="getInvoiceTemplateByIDRequest">
+    	<wsdl:part name="template_id" type="xsd:int"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getInvoiceTemplateByIDResponse">
+    	<wsdl:part name="invoice_template" type="tns:InvoiceTemplate"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getInvoiceTemplateByNameRequest">
+    	<wsdl:part name="template_name" type="xsd:string"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getInvoiceTemplateByNameResponse">
+    	<wsdl:part name="invoice_template" type="tns:InvoiceTemplate"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getAllTemplateNamesRequest">
+    </wsdl:message>
+    <wsdl:message name="getAllTemplateNamesResponse">
+    	<wsdl:part name="template_names" type="tns:List"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getInvoiceProfileByNameRequest">
+    	<wsdl:part name="profile_name" type="xsd:string"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getInvoiceProfileByNameResponse">
+    	<wsdl:part name="invoice_profile" type="tns:InvoiceProfile"></wsdl:part>
+    </wsdl:message>
+  <wsdl:message name="voucherAddBatchRequest">
+  	<wsdl:part name="batch_model" type="tns:Batch"></wsdl:part>
+  	<wsdl:part name="pin_prefix" type="xsd:string"></wsdl:part>
+  	<wsdl:part name="pin_len" type="xsd:int"></wsdl:part>
+  	<wsdl:part name="count" type="xsd:int"></wsdl:part>
+  	<wsdl:part name="serial_prefix" type="xsd:string"></wsdl:part>
+  	<wsdl:part name="serial_start" type="xsd:long"></wsdl:part>
+  	
+  </wsdl:message>
+  <wsdl:message name="voucherAddBatchResponse">
+        <wsdl:part name="batch_id" type="xsd:int"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="voucherGetBatchByIDRequest">
+  	<wsdl:part name="batch_id" type="xsd:int"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="voucherGetBatchByIDResponse">
+  	<wsdl:part name="batch_model" type="tns:Batch"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="voucherSearchBatchRequest">
+  	<wsdl:part name="conds" type="tns:Map"></wsdl:part>
+  	<wsdl:part name="paginate_attributes" type="tns:PaginateAttributes"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="voucherSearchBatchResponse">
+  	<wsdl:part name="batch_list" type="tns:BatchList"></wsdl:part>
+  	<wsdl:part name="total_count" type="xsd:int"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="searchVoucherRequest">
+  	<wsdl:part name="conds" type="tns:Map"></wsdl:part>
+  	<wsdl:part name="paginate_attributes" type="tns:PaginateAttributes"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="searchVoucherResponse">
+  	<wsdl:part name="voucher_list" type="tns:VoucherList"></wsdl:part>
+  	<wsdl:part name="total_count" type="xsd:int"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="NewOperationRequest">
+  	<wsdl:part name="NewOperationRequest" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="NewOperationResponse">
+  	<wsdl:part name="NewOperationResponse" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="voucherAddBatch_faultMsg">
+  </wsdl:message>
+  <wsdl:message name="addVouchersRequest">
+  	<wsdl:part name="batch_id" type="xsd:int"></wsdl:part>
+  	<wsdl:part name="pin_prefix" type="xsd:string"></wsdl:part>
+  	<wsdl:part name="pin_len" type="xsd:int"></wsdl:part>
+  	<wsdl:part name="count" type="xsd:int"></wsdl:part>
+  	<wsdl:part name="serial_prefix" type="xsd:string"></wsdl:part>
+  	<wsdl:part name="serial_start" type="xsd:long"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addVouchersResponse">
+  </wsdl:message>
+  <wsdl:message name="addVoucherRequest">
+  	<wsdl:part name="batch_id" type="xsd:int"></wsdl:part>
+  	<wsdl:part name="count" type="xsd:int"></wsdl:part>
+  	<wsdl:part name="pin_prefix" type="xsd:string"></wsdl:part>
+  	<wsdl:part name="pin_len" type="xsd:int"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addVoucherResponse">
+  </wsdl:message>
+  <wsdl:message name="getVoucherByIDRequest">
+  	<wsdl:part name="voucher_id" type="xsd:int"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getVoucherByIDResponse">
+  	<wsdl:part name="voucher_model" type="tns:Voucher"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="voucherChangeBatchLockStatusRequest">
+  	<wsdl:part name="batch_id" type="xsd:int"></wsdl:part>
+  	<wsdl:part name="lock" type="xsd:boolean"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="voucherChangeBatchLockStatusResponse">
+  </wsdl:message>
+  <wsdl:message name="getAuthDataRequest">
+  	<wsdl:part name="session_id" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAuthDataResponse">
+  	<wsdl:part name="auth_data" type="tns:Session"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="expireSessionRequest">
+  	<wsdl:part name="session_id" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="expireSessionResponse">
+  </wsdl:message>
+  <wsdl:message name="invoicePutUserOnDeptRequest">
+  	<wsdl:part name="pi_id_list" type="tns:List"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="invoicePutUserOnDeptResponse">
+        <wsdl:part name="failed_user_ids" type="tns:List"></wsdl:part>
+        <wsdl:part name="successful_user_ids" type="tns:List"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="proformaInvoicePaidRequest">
+  	<wsdl:part name="pi_id_list" type="tns:List"></wsdl:part>
+  	<wsdl:part name="paid_amount_list" type="tns:List"></wsdl:part>
+  	<wsdl:part name="payment_comment_list" type="tns:List"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="proformaInvoicePaidResponse">
+        <wsdl:part name="user_ids" type="tns:List"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="invoicePaidRequest">
+  	<wsdl:part name="invoice_id_list" type="tns:List"></wsdl:part>
+  	<wsdl:part name="paid_amount_list" type="tns:List"></wsdl:part>
+  	<wsdl:part name="payment_comment_list" type="tns:List"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="invoicePaidResponse">
+        <wsdl:part name="user_ids" type="tns:List"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPIByIDRequest">
+  	<wsdl:part name="pi_id" type="xsd:int"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPIByIDResponse">
+  	<wsdl:part name="pi_obj" type="tns:ProformaInvoice"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPIWithRuleByPIIDRequest">
+  	<wsdl:part name="pi_id" type="xsd:int"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPIWithRuleByPIIDResponse">
+  	<wsdl:part name="pi_obj" type="tns:ProformaInvoice"></wsdl:part>
+  	<wsdl:part name="rule_obj" type="tns:InvoiceRule"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="searchProformaInvoicesRequest">
+  	<wsdl:part name="conds" type="tns:Map"></wsdl:part>
+  	<wsdl:part name="paginate_attributes" type="tns:PaginateAttributes"></wsdl:part>
+  	<wsdl:part name="role" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="searchProformaInvoicesResponse">
+  	<wsdl:part name="invoices" type="tns:ProformaInvoiceList"></wsdl:part>
+  	<wsdl:part name="total_count" type="xsd:int"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getInvoiceProfileByUserIDRequest">
+  	<wsdl:part name="user_id" type="xsd:int"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getInvoiceProfileByUserIDResponse">
+  	<wsdl:part name="invoice_profile" type="tns:InvoiceProfile"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getInvoiceProfileByGroupNameRequest">
+  	<wsdl:part name="group_name" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getInvoiceProfileByGroupNameResponse">
+  	<wsdl:part name="invoice_profile" type="tns:InvoiceProfile"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getGroupNamesRequest">
+  </wsdl:message>
+  <wsdl:message name="getGroupNamesResponse">
+  	<wsdl:part name="group_names" type="tns:List"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getGroupCreditsRequest">
+  </wsdl:message>
+  <wsdl:message name="getGroupCreditsResponse">
+  	<wsdl:part name="group_credits" type="tns:Map"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getInvoiceTemplateNameByRuleIDRequest">
+  	<wsdl:part name="rule_id" type="xsd:int"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getInvoiceTemplateNameByRuleIDResponse">
+  	<wsdl:part name="template_name" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPITemplateNameByRuleIDRequest">
+  	<wsdl:part name="rule_id" type="xsd:int"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPITemplateNameByRuleIDResponse">
+  	<wsdl:part name="template_name" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getInvoiceRuleByIDRequest">
+  	<wsdl:part name="rule_id" type="xsd:int"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getInvoiceRuleByIDResponse">
+  	<wsdl:part name="rule_obj" type="tns:InvoiceRule"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="NewOperationRequest1">
+  	<wsdl:part name="NewOperationRequest1" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="NewOperationResponse1">
+  	<wsdl:part name="NewOperationResponse1" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="proformaInvoicePaid_faultMsg">
+  	<wsdl:part name="fault" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getVoIPRoutingLogForDestinationRequest">
+  	<wsdl:part name="routing_profile_name" type="xsd:string"></wsdl:part>
+  	<wsdl:part name="destination" type="xsd:string"></wsdl:part>
+  	<wsdl:part name="hunt_limit" type="xsd:int"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getVoIPRoutingLogForDestinationResponse">
+  	<wsdl:part name="log" type="tns:List"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="verifyPaymentRequest">
+  	<wsdl:part name="unique_id" type="xsd:string"></wsdl:part>
+  	<wsdl:part name="web_attributes" type="tns:Map"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="verifyPaymentResponse">
+  	<wsdl:part name="amount" type="xsd:double"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="IBSng">
+    <wsdl:operation name="ping">
+      <wsdl:documentation>Ping operation can be used to test server connectivity</wsdl:documentation>
+      <wsdl:input message="tns:pingRequest"/>
+      <wsdl:output message="tns:pingResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="login">
+    	<wsdl:documentation>Login tests user authentication, and returns True on successful login.
+auth_type can be one of: ADMIN, NORMAL_USER, VOIP_USER, ANOYMOUS</wsdl:documentation>
+    	<wsdl:input message="tns:loginRequest"></wsdl:input>
+    	<wsdl:output message="tns:loginResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="transferDeposit">
+    	<wsdl:documentation>Transfers deposit of user with normal username pin, into caller deposit</wsdl:documentation>
+    	<wsdl:input message="tns:transferDepositRequest"></wsdl:input>
+    	<wsdl:output message="tns:transferDepositResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listUserDailyArchiveLogs">
+    	<wsdl:documentation>Returns a list of archived logs and their corresponding file names</wsdl:documentation>
+    	<wsdl:input message="tns:listUserDailyArchiveLogsRequest"></wsdl:input>
+    	<wsdl:output message="tns:listUserDailyArchiveLogsResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserDailyArchivedLog">
+    	<wsdl:documentation>Returns content of an archived log</wsdl:documentation>
+    	<wsdl:input message="tns:getUserDailyArchivedLogRequest"></wsdl:input>
+    	<wsdl:output message="tns:getUserDailyArchivedLogResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="forceArchiveForUser">
+    	<wsdl:input message="tns:forceArchiveForUserRequest"></wsdl:input>
+    	<wsdl:output message="tns:forceArchiveForUserResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addNotificationProfile">
+    	<wsdl:documentation>Adds a new notification profile</wsdl:documentation>
+    	<wsdl:input message="tns:addNotificationProfileRequest"></wsdl:input>
+    	<wsdl:output message="tns:addNotificationProfileResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNotificationProfiles">
+    	<wsdl:documentation>returns a list of all notification profiles, requester admin has access to.</wsdl:documentation>
+    	<wsdl:input message="tns:getNotificationProfilesRequest"></wsdl:input>
+    	<wsdl:output message="tns:getNotificationProfilesResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNotificationProfileByName">
+    	<wsdl:input message="tns:getNotificationProfileByNameRequest"></wsdl:input>
+    	<wsdl:output message="tns:getNotificationProfileByNameResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addNotificationRule">
+    	<wsdl:input message="tns:addNotificationRuleRequest"></wsdl:input>
+    	<wsdl:output message="tns:addNotificationRuleResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteNotificationProfile">
+    	<wsdl:input message="tns:deleteNotificationProfileRequest"></wsdl:input>
+    	<wsdl:output message="tns:deleteNotificationProfileResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteNotificationRule">
+    	<wsdl:input message="tns:deleteNotificationRuleRequest"></wsdl:input>
+    	<wsdl:output message="tns:deleteNotificationRuleResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateNotificationProfile">
+    	<wsdl:input message="tns:updateNotificationProfileRequest"></wsdl:input>
+    	<wsdl:output message="tns:updateNotificationProfileResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateNotificationRule">
+    	<wsdl:input message="tns:updateNotificationRuleRequest"></wsdl:input>
+    	<wsdl:output message="tns:updateNotificationRuleResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addVoIPTariff">
+    	<wsdl:documentation>Adds a new VoIP Tariff. ID of VoIPTariff ComplexObject is ignored and will be generated automatically</wsdl:documentation>
+    	<wsdl:input message="tns:addVoIPTariffRequest"></wsdl:input>
+    	<wsdl:output message="tns:addVoIPTariffResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVoIPTariffByName">
+    	<wsdl:documentation>Given name of a VoIP Tariff, Returns it's model</wsdl:documentation>
+    	<wsdl:input message="tns:getVoIPTariffByNameRequest"></wsdl:input>
+    	<wsdl:output message="tns:getVoIPTariffByNameResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVoIPTariffs">
+    	<wsdl:documentation>Returns a list of VoIPTariffs</wsdl:documentation>
+    	<wsdl:input message="tns:getVoIPTariffsRequest"></wsdl:input>
+    	<wsdl:output message="tns:getVoIPTariffsResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateVoIPTariff">
+    	<wsdl:input message="tns:updateVoIPTariffRequest"></wsdl:input>
+    	<wsdl:output message="tns:updateVoIPTariffResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteVoIPTariff">
+    	<wsdl:input message="tns:deleteVoIPTariffRequest"></wsdl:input>
+    	<wsdl:output message="tns:deleteVoIPTariffResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addVoIPTariffPrefix">
+    	<wsdl:documentation>Adds One or more VoIPTariffPrefix</wsdl:documentation>
+    	<wsdl:input message="tns:addVoIPTariffPrefixRequest"></wsdl:input>
+    	<wsdl:output message="tns:addVoIPTariffPrefixResponse"></wsdl:output>
+        </wsdl:operation>
+    <wsdl:operation name="addVoIPTariffPrefixFromCSV">
+    	<wsdl:documentation>Adds VoIPTariffPrefix from CSV.  First line is act as column idetifiers that can be 
+prefix_code
+prefix_name
+cpm
+announcement_cpm
+prefix_group_name
+effective_date (in gregorian YYYY-MM-DD HH:MM format).
+
+If any of columns does not exists in csv text, default is taken from default_prefix_template</wsdl:documentation>
+    	<wsdl:input message="tns:addVoIPTariffPrefixFromCSVRequest"></wsdl:input>
+    	<wsdl:output message="tns:addVoIPTariffPrefixFromCSVResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateVoIPTariffPrefix">
+    	<wsdl:input message="tns:updateVoIPTariffPrefixRequest"></wsdl:input>
+    	<wsdl:output message="tns:updateVoIPTariffPrefixResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchVoIPTariffPrefixes">
+    	<wsdl:documentation></wsdl:documentation>
+    	<wsdl:input message="tns:searchVoIPTariffPrefixesRequest"></wsdl:input>
+    	<wsdl:output message="tns:searchVoIPTariffPrefixesResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteVoIPTariffPrefixes">
+    	<wsdl:input message="tns:deleteVoIPTariffPrefixesRequest"></wsdl:input>
+    	<wsdl:output message="tns:deleteVoIPTariffPrefixesResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setVoIPTariffPrefixBlockStatus">
+    	<wsdl:input message="tns:setVoIPTariffPrefixBlockStatusRequest"></wsdl:input>
+    	<wsdl:output message="tns:setVoIPTariffPrefixBlockStatusResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="copyVoIPTariffPrefixes">
+    	<wsdl:documentation>Copy Prefixe of VoIPTariff &quot;from_voip_tariff_name&quot; that matches with the condition &quot;conditions&quot;, to VoIPTariff &quot;to_voip_tariff_name&quot;</wsdl:documentation>
+    	<wsdl:input message="tns:copyVoIPTariffPrefixesRequest"></wsdl:input>
+    	<wsdl:output message="tns:copyVoIPTariffPrefixesResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findVoIPTariffPrefixCandidatesForDestination">
+    	<wsdl:input message="tns:findVoIPTariffPrefixCandidatesForDestinationRequest"></wsdl:input>
+    	<wsdl:output message="tns:findVoIPTariffPrefixCandidatesForDestinationResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVoIPTariffPrefixGroupNames">
+    	<wsdl:input message="tns:getVoIPTariffPrefixGroupNamesRequest"></wsdl:input>
+    	<wsdl:output message="tns:getVoIPTariffPrefixGroupNamesResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addPaymentGateway">
+    	<wsdl:documentation>Add a payment gateway.
+Gateway ID and owner ISP will be filled automatically and input is ignored
+</wsdl:documentation>
+    	<wsdl:input message="tns:addPaymentGatewayRequest"></wsdl:input>
+    	<wsdl:output message="tns:addPaymentGatewayResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updatePaymentGateway">
+    	<wsdl:input message="tns:updatePaymentGatewayRequest"></wsdl:input>
+    	<wsdl:output message="tns:updatePaymentGatewayResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deletePaymentGateway">
+    	<wsdl:input message="tns:deletePaymentGatewayRequest"></wsdl:input>
+    	<wsdl:output message="tns:deletePaymentGatewayResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllPaymentGateways">
+    	<wsdl:input message="tns:getAllPaymentGatewaysRequest"></wsdl:input>
+    	<wsdl:output message="tns:getAllPaymentGatewaysResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPaymentGatewayTypes">
+    	<wsdl:documentation>Returns a list of all available payment gateway types</wsdl:documentation>
+    	<wsdl:input message="tns:getPaymentGatewayTypesRequest"></wsdl:input>
+    	<wsdl:output message="tns:getPaymentGatewayTypesResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getISPNames">
+    	<wsdl:documentation>Returns a list of isp names requester admin has access to</wsdl:documentation>
+    	<wsdl:input message="tns:getISPNamesRequest"></wsdl:input>
+    	<wsdl:output message="tns:getISPNamesResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAvailablePaymentGateways">
+    	<wsdl:documentation>Will be called by a user and returns gateway payment types available for this user</wsdl:documentation>
+    	<wsdl:input message="tns:getAvailablePaymentGatewaysRequest"></wsdl:input>
+    	<wsdl:output message="tns:getAvailablePaymentGatewaysResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPaymentSuggestedAmount">
+    	<wsdl:documentation>Returns a dictionary, that keys hold the description, and value is the amount of payment.
+-1 as value will allow user to enter arbitary value
+</wsdl:documentation>
+    	<wsdl:input message="tns:getPaymentSuggestedAmountRequest"></wsdl:input>
+    	<wsdl:output message="tns:getPaymentSuggestedAmountResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="preparePayment">
+    	<wsdl:documentation>Prepare for payment by a gateway of type &quot;gateway_type&quot; and amount of &quot;amount&quot;. Creates an payment to be verifed later</wsdl:documentation>
+    	<wsdl:input message="tns:preparePaymentRequest"></wsdl:input>
+    	<wsdl:output message="tns:preparePaymentResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="manualVerifyPayment">
+    	<wsdl:input message="tns:manualVerifyPaymentRequest"></wsdl:input>
+    	<wsdl:output message="tns:manualVerifyPaymentResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="manualApplyPayment">
+    	<wsdl:input message="tns:manualApplyPaymentRequest"></wsdl:input>
+    	<wsdl:output message="tns:manualApplyPaymentResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="purgePayment">
+    	<wsdl:input message="tns:purgePaymentRequest"></wsdl:input>
+    	<wsdl:output message="tns:purgePaymentResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="userImportSaveImportFilePortion">
+    	<wsdl:input message="tns:userImportSaveImportFilePortionRequest"></wsdl:input>
+    	<wsdl:output message="tns:userImportSaveImportFilePortionResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="userImportGetImportFilesStatus">
+    	<wsdl:input message="tns:userImportGetImportFilesStatusRequest"></wsdl:input>
+    	<wsdl:output message="tns:userImportGetImportFilesStatusResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="userImportDoActionOnFile">
+    	<wsdl:input message="tns:userImportDoActionOnFileRequest"></wsdl:input>
+    	<wsdl:output message="tns:userImportDoActionOnFileResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="userImportGetFileImportLog">
+    	<wsdl:input message="tns:userImportGetFileImportLogRequest"></wsdl:input>
+    	<wsdl:output message="tns:userImportGetFileImportLogResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="userImportStartFileImport">
+    	<wsdl:input message="tns:userImportStartFileImportRequest"></wsdl:input>
+    	<wsdl:output message="tns:userImportStartFileImportResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStatisticsDataForChart">
+    	<wsdl:input message="tns:getStatisticsDataForChartRequest"></wsdl:input>
+    	<wsdl:output message="tns:getStatisticsDataForChartResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getChartStatisticsTypes">
+    	<wsdl:input message="tns:getChartStatisticsTypesRequest"></wsdl:input>
+    	<wsdl:output message="tns:getChartStatisticsTypesResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="blackListCallerIDs">
+    	<wsdl:input message="tns:blackListCallerIDsRequest"></wsdl:input>
+    	<wsdl:output message="tns:blackListCallerIDsResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeCallerIDsFromBlackList">
+    	<wsdl:input message="tns:removeCallerIDsFromBlackListRequest"></wsdl:input>
+    	<wsdl:output message="tns:removeCallerIDsFromBlackListResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBlackListedCallerIDs">
+    	<wsdl:input message="tns:getBlackListedCallerIDsRequest"></wsdl:input>
+    	<wsdl:output message="tns:getBlackListedCallerIDsResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchPendingOnlinePayments">
+    	<wsdl:input message="tns:searchPendingOnlinePaymentsRequest"></wsdl:input>
+    	<wsdl:output message="tns:searchPendingOnlinePaymentsResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addVoIPProvider">
+    	<wsdl:input message="tns:addVoIPProviderRequest"></wsdl:input>
+    	<wsdl:output message="tns:addVoIPProviderResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateVoIPProvider">
+    	<wsdl:input message="tns:updateVoIPProviderRequest"></wsdl:input>
+    	<wsdl:output message="tns:updateVoIPProviderResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteVoIPProvider">
+    	<wsdl:input message="tns:deleteVoIPProviderRequest"></wsdl:input>
+    	<wsdl:output message="tns:deleteVoIPProviderResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVoIPProviders">
+    	<wsdl:input message="tns:getVoIPProvidersRequest"></wsdl:input>
+    	<wsdl:output message="tns:getVoIPProvidersResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVoIPProviderByName">
+    	<wsdl:input message="tns:getVoIPProviderByNameRequest"></wsdl:input>
+    	<wsdl:output message="tns:getVoIPProviderByNameResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addVoIPRoute">
+    	<wsdl:input message="tns:addVoIPRouteRequest"></wsdl:input>
+    	<wsdl:output message="tns:addVoIPRouteResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateVoIPRoute">
+    	<wsdl:input message="tns:updateVoIPRouteRequest"></wsdl:input>
+    	<wsdl:output message="tns:updateVoIPRouteResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteVoIPRoute">
+    	<wsdl:input message="tns:deleteVoIPRouteRequest"></wsdl:input>
+    	<wsdl:output message="tns:deleteVoIPRouteResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVoIPRoutes">
+    	<wsdl:input message="tns:getVoIPRoutesRequest"></wsdl:input>
+    	<wsdl:output message="tns:getVoIPRoutesResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addVoIPRoutingProfile">
+    	<wsdl:input message="tns:addVoIPRoutingProfileRequest"></wsdl:input>
+    	<wsdl:output message="tns:addVoIPRoutingProfileResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateVoIPRoutingProfile">
+    	<wsdl:input message="tns:updateVoIPRoutingProfileRequest"></wsdl:input>
+    	<wsdl:output message="tns:updateVoIPRoutingProfileResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteVoIPRoutingProfile">
+    	<wsdl:input message="tns:deleteVoIPRoutingProfileRequest"></wsdl:input>
+    	<wsdl:output message="tns:deleteVoIPRoutingProfileResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVoIPRoutingProfiles">
+    	<wsdl:input message="tns:getVoIPRoutingProfilesRequest"></wsdl:input>
+    	<wsdl:output message="tns:getVoIPRoutingProfilesResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVoIPRoutingProfileByName">
+    	<wsdl:input message="tns:getVoIPRoutingProfileByNameRequest"></wsdl:input>
+    	<wsdl:output message="tns:getVoIPRoutingProfileByNameResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVoIPRouteByID">
+    	<wsdl:input message="tns:getVoIPRouteByIDRequest"></wsdl:input>
+    	<wsdl:output message="tns:getVoIPRouteByIDResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVoIPTariffByID">
+    	<wsdl:input message="tns:getVoIPTariffByIDRequest"></wsdl:input>
+    	<wsdl:output message="tns:getVoIPTariffByIDResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVoIPProviderByID">
+    	<wsdl:input message="tns:getVoIPProviderByIDRequest"></wsdl:input>
+    	<wsdl:output message="tns:getVoIPProviderByIDResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVoIPRoutingProfileByID">
+    	<wsdl:input message="tns:getVoIPRoutingProfileByIDRequest"></wsdl:input>
+    	<wsdl:output message="tns:getVoIPRoutingProfileByIDResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVoIPRoutingAlgorithmNames">
+    	<wsdl:input message="tns:getVoIPRoutingAlgorithmNamesRequest"></wsdl:input>
+    	<wsdl:output message="tns:getVoIPRoutingAlgorithmNamesResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addRegion">
+    	<wsdl:input message="tns:addRegionRequest"></wsdl:input>
+    	<wsdl:output message="tns:addRegionResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateRegion">
+    	<wsdl:input message="tns:updateRegionRequest"></wsdl:input>
+    	<wsdl:output message="tns:updateRegionResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteRegion">
+    	<wsdl:input message="tns:deleteRegionRequest"></wsdl:input>
+    	<wsdl:output message="tns:deleteRegionResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllRegionModels">
+    	<wsdl:input message="tns:getAllRegionModelsRequest"></wsdl:input>
+    	<wsdl:output message="tns:getAllRegionModelsResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRegionModel">
+    	<wsdl:input message="tns:getRegionModelRequest"></wsdl:input>
+    	<wsdl:output message="tns:getRegionModelResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addTelcoCenter">
+    	<wsdl:input message="tns:addTelcoCenterRequest"></wsdl:input>
+    	<wsdl:output message="tns:addTelcoCenterResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCityTelcoCenters">
+    	<wsdl:input message="tns:getCityTelcoCentersRequest"></wsdl:input>
+    	<wsdl:output message="tns:getCityTelcoCentersResponse"></wsdl:output>
+    </wsdl:operation><wsdl:operation name="deleteTelcoCenter">
+    	<wsdl:input message="tns:deleteTelcoCenterRequest"></wsdl:input>
+    	<wsdl:output message="tns:deleteTelcoCenterResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateTelcoCenter">
+    	<wsdl:input message="tns:updateTelcoCenterRequest"></wsdl:input>
+    	<wsdl:output message="tns:updateTelcoCenterResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addExtraChargeProfile">
+    	<wsdl:input message="tns:addExtraChargeProfileRequest"></wsdl:input>
+    	<wsdl:output message="tns:addExtraChargeProfileResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateExtraChargeProfile">
+    	<wsdl:input message="tns:updateExtraChargeProfileRequest"></wsdl:input>
+    	<wsdl:output message="tns:updateExtraChargeProfileResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteExtraChargeProfile">
+    	<wsdl:input message="tns:deleteExtraChargeProfileRequest"></wsdl:input>
+    	<wsdl:output message="tns:deleteExtraChargeProfileResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getExtraChargeProfileByName">
+    	<wsdl:input message="tns:getExtraChargeProfileByNameRequest"></wsdl:input>
+    	<wsdl:output message="tns:getExtraChargeProfileByNameResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getExtraChargeProfileByID">
+    	<wsdl:input message="tns:getExtraChargeProfileByIDRequest"></wsdl:input>
+    	<wsdl:output message="tns:getExtraChargeProfileByIDResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getExtraChargeProfiles">
+    	<wsdl:input message="tns:getExtraChargeProfilesRequest"></wsdl:input>
+    	<wsdl:output message="tns:getExtraChargeProfilesResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVoIPProviderSnapShot">
+    	<wsdl:input message="tns:getVoIPProviderSnapShotRequest"></wsdl:input>
+    	<wsdl:output message="tns:getVoIPProviderSnapShotResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAccessibleLocations">
+    	<wsdl:input message="tns:getAccessibleLocationsRequest"></wsdl:input>
+    	<wsdl:output message="tns:getAccessibleLocationsResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="issueProformaInvoice">
+    	<wsdl:input message="tns:issueProformaInvoiceRequest"></wsdl:input>
+    	<wsdl:output message="tns:issueProformaInvoiceResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInvoiceByID">
+    	<wsdl:input message="tns:getInvoiceByIDRequest"></wsdl:input>
+    	<wsdl:output message="tns:getInvoiceByIDResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInvoiceWithRuleByInvoiceID">
+    	<wsdl:input message="tns:getInvoiceWithRuleByInvoiceIDRequest"></wsdl:input>
+    	<wsdl:output message="tns:getInvoiceWithRuleByInvoiceIDResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchInvoices">
+    	<wsdl:input message="tns:searchInvoicesRequest"></wsdl:input>
+    	<wsdl:output message="tns:searchInvoicesResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addInvoiceProfile">
+    	<wsdl:input message="tns:addInvoiceProfileRequest"></wsdl:input>
+    	<wsdl:output message="tns:addInvoiceProfileResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDevicePorts">
+    	<wsdl:input message="tns:getDevicePortsRequest"></wsdl:input>
+    	<wsdl:output message="tns:getDevicePortsResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllInvoiceProfileNames">
+            <wsdl:input
+            	message="tns:getAllInvoiceProfileNamesRequest">
+            </wsdl:input>
+            <wsdl:output message="tns:NewMessage"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllInvoiceProfiles">
+    	<wsdl:input message="tns:getAllInvoiceProfilesRequest"></wsdl:input>
+    	<wsdl:output message="tns:getAllInvoiceProfilesResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInvoiceProfileByID">
+    	<wsdl:input message="tns:getInvoiceProfileByIDRequest"></wsdl:input>
+    	<wsdl:output message="tns:getInvoiceProfileByIDResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateInvoiceProfile">
+    	<wsdl:input message="tns:updateInvoiceProfileRequest"></wsdl:input>
+    	<wsdl:output message="tns:updateInvoiceProfileResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteInvoiceProfile">
+    	<wsdl:input message="tns:deleteInvoiceProfileRequest"></wsdl:input>
+    	<wsdl:output message="tns:deleteInvoiceProfileResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addInvoiceTemplate">
+    	<wsdl:input message="tns:addInvoiceTemplateRequest"></wsdl:input>
+    	<wsdl:output message="tns:addInvoiceTemplateResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteInvoiceTemplate">
+    	<wsdl:input message="tns:deleteInvoiceTemplateRequest"></wsdl:input>
+    	<wsdl:output message="tns:deleteInvoiceTemplateResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInvoiceTemplateByID">
+    	<wsdl:input message="tns:getInvoiceTemplateByIDRequest"></wsdl:input>
+    	<wsdl:output message="tns:getInvoiceTemplateByIDResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInvoiceTemplateByName">
+    	<wsdl:input message="tns:getInvoiceTemplateByNameRequest"></wsdl:input>
+    	<wsdl:output message="tns:getInvoiceTemplateByNameResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllTemplateNames">
+    	<wsdl:input message="tns:getAllTemplateNamesRequest"></wsdl:input>
+    	<wsdl:output message="tns:getAllTemplateNamesResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInvoiceProfileByName">
+    	<wsdl:input message="tns:getInvoiceProfileByNameRequest"></wsdl:input>
+    	<wsdl:output message="tns:getInvoiceProfileByNameResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="voucherAddBatch">
+    	<wsdl:input message="tns:voucherAddBatchRequest"></wsdl:input>
+    	<wsdl:output message="tns:voucherAddBatchResponse"></wsdl:output>
+        </wsdl:operation>
+    <wsdl:operation name="voucherGetBatchByID">
+    	<wsdl:input message="tns:voucherGetBatchByIDRequest"></wsdl:input>
+    	<wsdl:output message="tns:voucherGetBatchByIDResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="voucherSearchBatch">
+    	<wsdl:input message="tns:voucherSearchBatchRequest"></wsdl:input>
+    	<wsdl:output message="tns:voucherSearchBatchResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchVoucher">
+    	<wsdl:input message="tns:searchVoucherRequest"></wsdl:input>
+    	<wsdl:output message="tns:searchVoucherResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addVouchers">
+    	<wsdl:input message="tns:addVouchersRequest"></wsdl:input>
+    	<wsdl:output message="tns:addVouchersResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVoucherByID">
+    	<wsdl:input message="tns:getVoucherByIDRequest"></wsdl:input>
+    	<wsdl:output message="tns:getVoucherByIDResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="voucherChangeBatchLockStatus">
+    	<wsdl:input message="tns:voucherChangeBatchLockStatusRequest"></wsdl:input>
+    	<wsdl:output message="tns:voucherChangeBatchLockStatusResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAuthData">
+    	<wsdl:input message="tns:getAuthDataRequest"></wsdl:input>
+    	<wsdl:output message="tns:getAuthDataResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="expireSession">
+    	<wsdl:input message="tns:expireSessionRequest"></wsdl:input>
+    	<wsdl:output message="tns:expireSessionResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="invoicePutUserOnDept">
+    	<wsdl:input message="tns:invoicePutUserOnDeptRequest"></wsdl:input>
+    	<wsdl:output message="tns:invoicePutUserOnDeptResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="proformaInvoicePaid">
+    	<wsdl:input message="tns:proformaInvoicePaidRequest"></wsdl:input>
+    	<wsdl:output message="tns:proformaInvoicePaidResponse"></wsdl:output>
+        </wsdl:operation>
+    <wsdl:operation name="invoicePaid">
+    	<wsdl:input message="tns:invoicePaidRequest"></wsdl:input>
+    	<wsdl:output message="tns:invoicePaidResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPIByID">
+    	<wsdl:input message="tns:getPIByIDRequest"></wsdl:input>
+    	<wsdl:output message="tns:getPIByIDResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPIWithRuleByPIID">
+    	<wsdl:input message="tns:getPIWithRuleByPIIDRequest"></wsdl:input>
+    	<wsdl:output message="tns:getPIWithRuleByPIIDResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchProformaInvoices">
+    	<wsdl:input message="tns:searchProformaInvoicesRequest"></wsdl:input>
+    	<wsdl:output message="tns:searchProformaInvoicesResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInvoiceProfileByUserID">
+    	<wsdl:input message="tns:getInvoiceProfileByUserIDRequest"></wsdl:input>
+    	<wsdl:output message="tns:getInvoiceProfileByUserIDResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInvoiceProfileByGroupName">
+    	<wsdl:input message="tns:getInvoiceProfileByGroupNameRequest"></wsdl:input>
+    	<wsdl:output message="tns:getInvoiceProfileByGroupNameResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGroupNames">
+    	<wsdl:input message="tns:getGroupNamesRequest"></wsdl:input>
+    	<wsdl:output message="tns:getGroupNamesResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGroupCredits">
+    	<wsdl:input message="tns:getGroupCreditsRequest"></wsdl:input>
+    	<wsdl:output message="tns:getGroupCreditsResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInvoiceTemplateNameByRuleID">
+    	<wsdl:input message="tns:getInvoiceTemplateNameByRuleIDRequest"></wsdl:input>
+    	<wsdl:output message="tns:getInvoiceTemplateNameByRuleIDResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPITemplateNameByRuleID">
+    	<wsdl:input message="tns:getPITemplateNameByRuleIDRequest"></wsdl:input>
+    	<wsdl:output message="tns:getPITemplateNameByRuleIDResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInvoiceRuleByID">
+    	<wsdl:input message="tns:getInvoiceRuleByIDRequest"></wsdl:input>
+    	<wsdl:output message="tns:getInvoiceRuleByIDResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVoIPRoutingLogForDestination">
+    	<wsdl:input message="tns:getVoIPRoutingLogForDestinationRequest"></wsdl:input>
+    	<wsdl:output message="tns:getVoIPRoutingLogForDestinationResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verifyPayment">
+    	<wsdl:input message="tns:verifyPaymentRequest"></wsdl:input>
+    	<wsdl:output message="tns:verifyPaymentResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="IBSngSOAP" type="tns:IBSng">
+  	<soap:binding style="rpc"
+  		transport="http://schemas.xmlsoap.org/soap/http" />
+  	<wsdl:operation name="ping">
+  		<soap:operation soapAction="http://localhost:1236/IBSng/ping" />
+  		<wsdl:input>
+  			<soap:body
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+  				namespace="http://localhost:1236/IBSng/" use="encoded" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+  				namespace="http://localhost:1236/IBSng/" use="encoded" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="login">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/login" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="transferDeposit">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/transferDeposit" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="listUserDailyArchiveLogs">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/listUserDailyArchiveLogs" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getUserDailyArchivedLog">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getUserDailyArchivedLog" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="forceArchiveForUser">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/forceArchiveForUser" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="addNotificationProfile">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/addNotificationProfile" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getNotificationProfiles">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getNotificationProfiles" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getNotificationProfileByName">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getNotificationProfileByName" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="addNotificationRule">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/addNotificationRule" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="deleteNotificationProfile">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/deleteNotificationProfile" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="deleteNotificationRule">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/deleteNotificationRule" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="updateNotificationProfile">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/updateNotificationProfile" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="updateNotificationRule">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/updateNotificationRule" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="addVoIPTariff">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/addVoIPTariff" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getVoIPTariffByName">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getVoIPTariffByName" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getVoIPTariffs">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getVoIPTariffs" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="updateVoIPTariff">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/updateVoIPTariff" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="deleteVoIPTariff">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/deleteVoIPTariff" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="addVoIPTariffPrefix">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/addVoIPTariffPrefix" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="addVoIPTariffPrefixFromCSV">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/addVoIPTariffPrefixFromCSV" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="updateVoIPTariffPrefix">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/updateVoIPTariffPrefix" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="searchVoIPTariffPrefixes">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/searchVoIPTariffPrefixes" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="deleteVoIPTariffPrefixes">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/deleteVoIPTariffPrefixes" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="setVoIPTariffPrefixBlockStatus">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/setVoIPTariffPrefixBlockStatus" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="copyVoIPTariffPrefixes">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/copyVoIPTariffPrefixes" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation
+  		name="findVoIPTariffPrefixCandidatesForDestination">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/findVoIPTariffPrefixCandidatesForDestination" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getVoIPTariffPrefixGroupNames">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getVoIPTariffPrefixGroupNames" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="addPaymentGateway">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/addPaymentGateway" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="updatePaymentGateway">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/updatePaymentGateway" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="deletePaymentGateway">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/deletePaymentGateway" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getAllPaymentGateways">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getAllPaymentGateways" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getPaymentGatewayTypes">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getPaymentGatewayTypes" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getISPNames">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getISPNames" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getAvailablePaymentGateways">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getAvailablePaymentGateways" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getPaymentSuggestedAmount">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getPaymentSuggestedAmount" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="preparePayment">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/preparePayment" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="manualVerifyPayment">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/manualVerifyPayment" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="manualApplyPayment">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/manualApplyPayment" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="purgePayment">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/purgePayment" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="userImportSaveImportFilePortion">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/userImportSaveImportFilePortion" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="userImportGetImportFilesStatus">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/userImportGetImportFilesStatus" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="userImportDoActionOnFile">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/userImportDoActionOnFile" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="userImportGetFileImportLog">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/userImportGetFileImportLog" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="userImportStartFileImport">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/userImportStartFileImport" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getStatisticsDataForChart">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getStatisticsDataForChart" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getChartStatisticsTypes">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getChartStatisticsTypes" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="blackListCallerIDs">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/blackListCallerIDs" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="removeCallerIDsFromBlackList">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/removeCallerIDsFromBlackList" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getBlackListedCallerIDs">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getBlackListedCallerIDs" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="searchPendingOnlinePayments">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/searchPendingOnlinePayments" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="ping">
+  		<soap:operation soapAction="http://localhost:1236/IBSng/ping" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+
+  	<wsdl:operation name="addVoIPProvider">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/addVoIPProvider" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="updateVoIPProvider">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/updateVoIPProvider" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="deleteVoIPProvider">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/deleteVoIPProvider" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getVoIPProviders">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getVoIPProviders" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getVoIPProviderByName">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getVoIPProviderByName" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="addVoIPRoute">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/addVoIPRoute" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="updateVoIPRoute">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/updateVoIPRoute" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="deleteVoIPRoute">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/deleteVoIPRoute" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getVoIPRoutes">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getVoIPRoutes" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="addVoIPRoutingProfile">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/addVoIPRoutingProfile" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="updateVoIPRoutingProfile">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/updateVoIPRoutingProfile" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="deleteVoIPRoutingProfile">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/deleteVoIPRoutingProfile" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getVoIPRoutingProfiles">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getVoIPRoutingProfiles" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getVoIPRoutingProfileByName">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getVoIPRoutingProfileByName" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getVoIPRouteByID">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getVoIPRouteByID" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getVoIPTariffByID">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getVoIPTariffByID" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getVoIPProviderByID">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getVoIPProviderByID" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getVoIPRoutingProfileByID">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getVoIPRoutingProfileByID" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getVoIPRoutingAlgorithmNames">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getVoIPRoutingAlgorithmNames" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+
+  	<wsdl:operation name="addRegion">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/addRegion" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="updateRegion">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/updateRegion" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="deleteRegion">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/deleteRegion" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getAllRegionModels">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getAllRegionModels" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getRegionModel">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getRegionModel" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="addTelcoCenter">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/addTelcoCenter" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getCityTelcoCenters">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getCityTelcoCenters" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="deleteTelcoCenter">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/deleteTelcoCenter" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="updateTelcoCenter">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/updateTelcoCenter" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+
+  	<wsdl:operation name="addExtraChargeProfile">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/addExtraChargeProfile" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="updateExtraChargeProfile">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/updateExtraChargeProfile" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="deleteExtraChargeProfile">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/deleteExtraChargeProfile" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getExtraChargeProfileByName">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getExtraChargeProfileByName" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getExtraChargeProfileByID">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getExtraChargeProfileByID" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getExtraChargeProfiles">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getExtraChargeProfiles" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getVoIPProviderSnapShot">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getVoIPProviderSnapShot" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getAccessibleLocations">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getAccessibleLocations" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="issueProformaInvoice">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/issueProformaInvoice" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getInvoiceByID">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getInvoiceByID" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getInvoiceWithRuleByInvoiceID">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getInvoiceWithRuleByInvoiceID" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="searchInvoices">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/searchInvoices" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="addInvoiceProfile">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/addInvoiceProfile" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getDevicePorts">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getDevicePorts" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getAllInvoiceProfileNames">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getAllInvoiceProfileNames" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getAllInvoiceProfiles">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getAllInvoiceProfiles" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getInvoiceProfileByID">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getInvoiceProfileByID" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="updateInvoiceProfile">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/updateInvoiceProfile">
+  		</soap:operation>
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  			</soap:body>
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  			</soap:body>
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="deleteInvoiceProfile">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/deleteInvoiceProfile">
+  		</soap:operation>
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  			</soap:body>
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  			</soap:body>
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="addInvoiceTemplate">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/addInvoiceTemplate">
+  		</soap:operation>
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  			</soap:body>
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  			</soap:body>
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="deleteInvoiceTemplate">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/deleteInvoiceTemplate">
+  		</soap:operation>
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  			</soap:body>
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  			</soap:body>
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getInvoiceTemplateByID">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getInvoiceTemplateByID">
+  		</soap:operation>
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  			</soap:body>
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  			</soap:body>
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getInvoiceTemplateByName">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getInvoiceTemplateByName">
+  		</soap:operation>
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  			</soap:body>
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  			</soap:body>
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getAllTemplateNames">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getAllTemplateNames">
+  		</soap:operation>
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  			</soap:body>
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  			</soap:body>
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getInvoiceProfileByName">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getInvoiceProfileByName" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="voucherChangeBatchLockStatus">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/voucherChangeBatchLockStatus" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="voucherGetBatchByID">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/voucherGetBatchByID" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="voucherSearchBatch">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/voucherSearchBatch" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="searchVoucher">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/searchVoucher" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="addVouchers">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/addVouchers" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getVoucherByID">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getVoucherByID" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="voucherAddBatch">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/voucherAddBatch" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getAuthData">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getAuthData" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="expireSession">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/expireSession" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="invoicePutUserOnDept">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/invoicePutUserOnDept" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="proformaInvoicePaid">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/proformaInvoicePaid" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="invoicePaid">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/invoicePaid" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getPIByID">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getPIByID" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getPIWithRuleByPIID">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getPIWithRuleByPIID" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="searchProformaInvoices">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/searchProformaInvoices" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getInvoiceProfileByUserID">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getInvoiceProfileByUserID" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getInvoiceProfileByGroupName">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getInvoiceProfileByGroupName" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getGroupNames">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getGroupNames" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getGroupCredits">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getGroupCredits" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getInvoiceTemplateNameByRuleID">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getInvoiceTemplateNameByRuleID" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getPITemplateNameByRuleID">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getPITemplateNameByRuleID" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getInvoiceRuleByID">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getInvoiceRuleByID" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getVoIPRoutingLogForDestination">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/getVoIPRoutingLogForDestination" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="verifyPayment">
+  		<soap:operation
+  			soapAction="http://localhost:1236/IBSng/verifyPayment" />
+  		<wsdl:input>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="encoded"
+  				namespace="http://localhost:1236/IBSng/"
+  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="IBSng">
+    <wsdl:port binding="tns:IBSngSOAP" name="IBSngSOAP">
+      <soap:address location="http://127.0.0.1:1236/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
