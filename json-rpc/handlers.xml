@@ -74,6 +74,29 @@
       <output type="list" length="-1" item_type="str" comment="List of admin usernames">
       </output>
     </method>
+    <method name="getAllAdminInfos" auth_type="ADMIN" requires_perm="SEE ADMIN INFO"
+        comment="only returns admins that requester admin has access to.
+        Added in tag 320">
+      <input type="dict">
+        <param name="isp_name" type="str" comment="admins of specific ISP" oprtional="true"/>
+      </input>
+      <output type="list" length="-1" item_type="dict" comment="List of admin informations">
+        <item type="dict" comment="admin info dict">
+          <param name="admin_id" type="int" comment="" />
+          <param name="username" type="str" comment="" />
+          <param name="name" type="str" comment="" />
+          <param name="email" type="str" comment="" />
+          <param name="comment" type="str" comment="" />
+          <param name="isp_name" type="str" comment="" />
+          <param name="creator_admin_username" type="str" comment="" />
+          <param name="locked" type="bool" comment="" />
+          <param name="last_request_ip" type="str" comment="" />
+          <param name="last_activity" type="int" comment="Epoch Time of admin's last activity" />
+          <param name="online_status" type="bool" comment="true if online, false if offline" />
+          <param name="admin_has_otp" type="bool" comment="" />
+        </item>
+      </output>
+    </method>
     <method name="updateAdminInfo" auth_type="ADMIN" requires_perm="CHANGE ADMIN INFO" comment="">
       <input type="dict">
         <param name="admin_id" type="int" comment="" />
@@ -544,13 +567,41 @@
       <output type="list" length="-1" item_type="str" comment="list of ISP names" />
     </method>
     <method name="listISPsWithIDs" auth_type="ADMIN" requires_perm=""
-        comment="return a list of ISP IDs and names that the admin has access to">
+        comment="return a list of ISP IDs and names that the admin has access to.
+        Added in tag 320">
       <input type="dict">
       </input>
       <output type="list" length="-1" item_type="list">
         <item type="list" length="2" comment="isp_id and isp_name">
           <item index="0" type="int" comment="isp_id" />
           <item index="1" type="str" comment="isp_name" />
+        </item>
+      </output>
+    </method>
+    <method name="getAllISPInfos" auth_type="ADMIN" requires_perm=""
+        comment="returns list of ISP informations that the admin has access to.
+        Added in tag 320">
+      <input type="dict">
+      </input>
+      <output type="list" length="-1" item_type="dict" comment="">
+        <item type="dict" comment="isp info dict">
+          <param name="isp_id" type="int" comment="" />
+          <param name="isp_name" type="str" comment="" />
+          <param name="parent_isp_name" type="str" comment="" />
+          <param name="isp_has_deposit_limit" type="bool" comment="" />
+          <param name="isp_deposit" type="float" comment="" />
+          <param name="isp_mapped_user_id" type="int" comment="" />
+          <param name="isp_mapped_user_repr" type="str" comment="" />
+          <param name="isp_mapped_user_credit" type="float" comment="" />
+          <param name="isp_online_users_count" type="int" comment="added in C_dev_326" />
+          <param name="isp_locked" type="bool" comment="" />
+          <param name="isp_auth_domain" type="str" comment="" />
+          <param name="isp_web_domain" type="str" comment="" />
+          <param name="isp_email" type="str" comment="" />
+          <param name="prevent_neg_deposit_login" type="bool" comment="" />
+          <param name="isp_comment" type="str" comment="" />
+          <param name="isp_failed_username" type="str" comment="removed in C_dev_326" />
+          <param name="isp_failed_user_id" type="str" comment="removed in C_dev_326" />
         </item>
       </output>
     </method>
@@ -975,7 +1026,8 @@
       <output type="list" length="-1" item_type="str" comment="list of group names" />
     </method>
     <method name="listGroupsWithIDs" auth_type="ADMIN" requires_perm=""
-              comment="return a list of group IDs and names, that requester admin can change service to">
+              comment="return a list of group IDs and names, that requester admin can change service to.
+              Added in tag 320">
       <input type="dict">
         <param name="active_only" type="bool" optional="true" comment="pass true if you only want active groups"/>
       </input>
@@ -983,6 +1035,24 @@
         <item type="list" length="2" comment="one group (id and name)">
           <item index="0" type="int" comment="group_id" />
           <item index="1" type="str" comment="group_name" />
+        </item>
+      </output>
+    </method>
+    <method name="listGroupInfos" auth_type="ADMIN" requires_perm=""
+        comment="return list of group informations, that requester admin has access to.
+        Added in tag 320">
+      <input type="dict">
+        <param name="active_only" type="bool" optional="true" comment="pass true if you only want active groups"/>
+      </input>
+      <output type="list" length="-1" item_type="dict" comment="list of group informations">
+        <item type="dict" comment="group info dict">
+          <param name="group_id" type="int" comment="" />
+          <param name="group_name" type="str" comment="" />
+          <param name="comment" type="str" comment="" />
+          <param name="isp_id" type="int" comment="" />
+          <param name="isp_name" type="name" comment="" />
+          <param name="raw_attrs" type="dict" comment="dates are gregorian" />
+          <param name="attrs" type="dict" comment="dates are based on request date_type" />
         </item>
       </output>
     </method>
