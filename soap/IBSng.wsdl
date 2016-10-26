@@ -811,79 +811,7 @@
             		<xsd:element name="rule_items" type="tns:InvoiceRuleItem" minOccurs="0" maxOccurs="unbounded"></xsd:element>
             	</xsd:sequence>
             </xsd:complexType>
-            <xsd:complexType name="Batch">
-            	<xsd:sequence>
-            		<xsd:element name="batch_id" type="xsd:int"
-            			minOccurs="1" maxOccurs="1">
-            		</xsd:element>
-            		<xsd:element name="batch_name" type="xsd:string"
-            			minOccurs="1" maxOccurs="1">
-            		</xsd:element>
-            		<xsd:element name="is_locked" type="xsd:boolean"
-            			minOccurs="1" maxOccurs="1">
-            		</xsd:element>
-            		<xsd:element name="credit" type="xsd:float"
-            			minOccurs="1" maxOccurs="1">
-            		</xsd:element>
-            		<xsd:element name="can_create_user"
-            			type="xsd:boolean" minOccurs="1" maxOccurs="1">
-            		</xsd:element>
-            		<xsd:element name="can_recharge_user"
-            			type="xsd:boolean" minOccurs="1" maxOccurs="1">
-            		</xsd:element>
-            		<xsd:element name="change_target" type="xsd:string"
-            			minOccurs="1" maxOccurs="1">
-            		</xsd:element>
-            		<xsd:element name="isp_name" type="xsd:string"
-            			minOccurs="1" maxOccurs="1">
-            		</xsd:element>
-            		<xsd:element name="comment" type="xsd:string"
-            			minOccurs="1" maxOccurs="1">
-            		</xsd:element>
-            		<xsd:element name="creation_date" type="xsd:string"
-            			minOccurs="1" maxOccurs="1">
-            		</xsd:element>
-            		<xsd:element name="allow_use_by_children_isp" type="xsd:boolean" minOccurs="1" maxOccurs="1"></xsd:element>
-            	</xsd:sequence>
-            </xsd:complexType>
-
-            <xsd:complexType name="VoucherList">
-            	<xsd:sequence>
-            		<xsd:element name="vouchers" type="tns:Voucher" minOccurs="0" maxOccurs="unbounded"></xsd:element>
-            	</xsd:sequence>
-            </xsd:complexType>
-
-            <xsd:complexType name="Voucher">
-            	<xsd:sequence>
-            		<xsd:element name="voucher_id" type="xsd:int"
-            			minOccurs="1" maxOccurs="1">
-            		</xsd:element>
-            		<xsd:element name="is_used" type="xsd:boolean"
-            			minOccurs="1" maxOccurs="1">
-            		</xsd:element>
-            		<xsd:element name="pin" type="xsd:string"
-            			minOccurs="1" maxOccurs="1">
-            		</xsd:element>
-            		<xsd:element name="batch_id" type="xsd:int"
-            			minOccurs="1" maxOccurs="1">
-            		</xsd:element>
-            		<xsd:element name="used_date" type="xsd:string"
-            			minOccurs="0" maxOccurs="1">
-            		</xsd:element>
-            		<xsd:element name="user_id" type="xsd:int"
-            			minOccurs="1" maxOccurs="1">
-            		</xsd:element>
-            		<xsd:element name="serial" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
-            	</xsd:sequence>
-            </xsd:complexType>
-            
             <xsd:element name="NewElement" type="xsd:string"></xsd:element>
-        
-            <xsd:complexType name="BatchList">
-            	<xsd:sequence>
-            		<xsd:element name="batches" type="tns:Batch" minOccurs="0" maxOccurs="unbounded"></xsd:element>
-            	</xsd:sequence>
-            </xsd:complexType>
             <xsd:complexType name="Session">
             	<xsd:sequence>
             		<xsd:element name="session_id" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
@@ -1466,77 +1394,11 @@
     <wsdl:message name="getInvoiceProfileByNameResponse">
     	<wsdl:part name="invoice_profile" type="tns:InvoiceProfile"></wsdl:part>
     </wsdl:message>
-  <wsdl:message name="voucherAddBatchRequest">
-  	<wsdl:part name="batch_model" type="tns:Batch"></wsdl:part>
-  	<wsdl:part name="pin_prefix" type="xsd:string"></wsdl:part>
-  	<wsdl:part name="pin_len" type="xsd:int"></wsdl:part>
-  	<wsdl:part name="count" type="xsd:int"></wsdl:part>
-  	<wsdl:part name="serial_prefix" type="xsd:string"></wsdl:part>
-  	<wsdl:part name="serial_start" type="xsd:long"></wsdl:part>
-  	
-  </wsdl:message>
-  <wsdl:message name="voucherAddBatchResponse">
-        <wsdl:part name="batch_id" type="xsd:int"></wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="voucherGetBatchByIDRequest">
-  	<wsdl:part name="batch_id" type="xsd:int"></wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="voucherGetBatchByIDResponse">
-  	<wsdl:part name="batch_model" type="tns:Batch"></wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="voucherSearchBatchRequest">
-  	<wsdl:part name="conds" type="tns:Map"></wsdl:part>
-  	<wsdl:part name="paginate_attributes" type="tns:PaginateAttributes"></wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="voucherSearchBatchResponse">
-  	<wsdl:part name="batch_list" type="tns:BatchList"></wsdl:part>
-  	<wsdl:part name="total_count" type="xsd:int"></wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="searchVoucherRequest">
-  	<wsdl:part name="conds" type="tns:Map"></wsdl:part>
-  	<wsdl:part name="paginate_attributes" type="tns:PaginateAttributes"></wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="searchVoucherResponse">
-  	<wsdl:part name="voucher_list" type="tns:VoucherList"></wsdl:part>
-  	<wsdl:part name="total_count" type="xsd:int"></wsdl:part>
-  </wsdl:message>
   <wsdl:message name="NewOperationRequest">
   	<wsdl:part name="NewOperationRequest" type="xsd:string"></wsdl:part>
   </wsdl:message>
   <wsdl:message name="NewOperationResponse">
   	<wsdl:part name="NewOperationResponse" type="xsd:string"></wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="voucherAddBatch_faultMsg">
-  </wsdl:message>
-  <wsdl:message name="addVouchersRequest">
-  	<wsdl:part name="batch_id" type="xsd:int"></wsdl:part>
-  	<wsdl:part name="pin_prefix" type="xsd:string"></wsdl:part>
-  	<wsdl:part name="pin_len" type="xsd:int"></wsdl:part>
-  	<wsdl:part name="count" type="xsd:int"></wsdl:part>
-  	<wsdl:part name="serial_prefix" type="xsd:string"></wsdl:part>
-  	<wsdl:part name="serial_start" type="xsd:long"></wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="addVouchersResponse">
-  </wsdl:message>
-  <wsdl:message name="addVoucherRequest">
-  	<wsdl:part name="batch_id" type="xsd:int"></wsdl:part>
-  	<wsdl:part name="count" type="xsd:int"></wsdl:part>
-  	<wsdl:part name="pin_prefix" type="xsd:string"></wsdl:part>
-  	<wsdl:part name="pin_len" type="xsd:int"></wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="addVoucherResponse">
-  </wsdl:message>
-  <wsdl:message name="getVoucherByIDRequest">
-  	<wsdl:part name="voucher_id" type="xsd:int"></wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="getVoucherByIDResponse">
-  	<wsdl:part name="voucher_model" type="tns:Voucher"></wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="voucherChangeBatchLockStatusRequest">
-  	<wsdl:part name="batch_id" type="xsd:int"></wsdl:part>
-  	<wsdl:part name="lock" type="xsd:boolean"></wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="voucherChangeBatchLockStatusResponse">
   </wsdl:message>
   <wsdl:message name="getAuthDataRequest">
   	<wsdl:part name="session_id" type="xsd:string"></wsdl:part>
@@ -2010,34 +1872,6 @@ If any of columns does not exists in csv text, default is taken from default_pre
     <wsdl:operation name="getInvoiceProfileByName">
     	<wsdl:input message="tns:getInvoiceProfileByNameRequest"></wsdl:input>
     	<wsdl:output message="tns:getInvoiceProfileByNameResponse"></wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="voucherAddBatch">
-    	<wsdl:input message="tns:voucherAddBatchRequest"></wsdl:input>
-    	<wsdl:output message="tns:voucherAddBatchResponse"></wsdl:output>
-        </wsdl:operation>
-    <wsdl:operation name="voucherGetBatchByID">
-    	<wsdl:input message="tns:voucherGetBatchByIDRequest"></wsdl:input>
-    	<wsdl:output message="tns:voucherGetBatchByIDResponse"></wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="voucherSearchBatch">
-    	<wsdl:input message="tns:voucherSearchBatchRequest"></wsdl:input>
-    	<wsdl:output message="tns:voucherSearchBatchResponse"></wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="searchVoucher">
-    	<wsdl:input message="tns:searchVoucherRequest"></wsdl:input>
-    	<wsdl:output message="tns:searchVoucherResponse"></wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="addVouchers">
-    	<wsdl:input message="tns:addVouchersRequest"></wsdl:input>
-    	<wsdl:output message="tns:addVouchersResponse"></wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="getVoucherByID">
-    	<wsdl:input message="tns:getVoucherByIDRequest"></wsdl:input>
-    	<wsdl:output message="tns:getVoucherByIDResponse"></wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="voucherChangeBatchLockStatus">
-    	<wsdl:input message="tns:voucherChangeBatchLockStatusRequest"></wsdl:input>
-    	<wsdl:output message="tns:voucherChangeBatchLockStatusResponse"></wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="getAuthData">
     	<wsdl:input message="tns:getAuthDataRequest"></wsdl:input>
@@ -3309,104 +3143,6 @@ If any of columns does not exists in csv text, default is taken from default_pre
   	<wsdl:operation name="getInvoiceProfileByName">
   		<soap:operation
   			soapAction="http://localhost:1236/IBSng/getInvoiceProfileByName" />
-  		<wsdl:input>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:input>
-  		<wsdl:output>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:output>
-  	</wsdl:operation>
-  	<wsdl:operation name="voucherChangeBatchLockStatus">
-  		<soap:operation
-  			soapAction="http://localhost:1236/IBSng/voucherChangeBatchLockStatus" />
-  		<wsdl:input>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:input>
-  		<wsdl:output>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:output>
-  	</wsdl:operation>
-  	<wsdl:operation name="voucherGetBatchByID">
-  		<soap:operation
-  			soapAction="http://localhost:1236/IBSng/voucherGetBatchByID" />
-  		<wsdl:input>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:input>
-  		<wsdl:output>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:output>
-  	</wsdl:operation>
-  	<wsdl:operation name="voucherSearchBatch">
-  		<soap:operation
-  			soapAction="http://localhost:1236/IBSng/voucherSearchBatch" />
-  		<wsdl:input>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:input>
-  		<wsdl:output>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:output>
-  	</wsdl:operation>
-  	<wsdl:operation name="searchVoucher">
-  		<soap:operation
-  			soapAction="http://localhost:1236/IBSng/searchVoucher" />
-  		<wsdl:input>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:input>
-  		<wsdl:output>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:output>
-  	</wsdl:operation>
-  	<wsdl:operation name="addVouchers">
-  		<soap:operation
-  			soapAction="http://localhost:1236/IBSng/addVouchers" />
-  		<wsdl:input>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:input>
-  		<wsdl:output>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:output>
-  	</wsdl:operation>
-  	<wsdl:operation name="getVoucherByID">
-  		<soap:operation
-  			soapAction="http://localhost:1236/IBSng/getVoucherByID" />
-  		<wsdl:input>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:input>
-  		<wsdl:output>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:output>
-  	</wsdl:operation>
-  	<wsdl:operation name="voucherAddBatch">
-  		<soap:operation
-  			soapAction="http://localhost:1236/IBSng/voucherAddBatch" />
   		<wsdl:input>
   			<soap:body use="encoded"
   				namespace="http://localhost:1236/IBSng/"
