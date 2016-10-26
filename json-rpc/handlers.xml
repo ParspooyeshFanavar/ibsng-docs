@@ -2433,10 +2433,170 @@
     </method>
   </handler>
   <handler name="notification" comment="">
-    <method name="getNotificationProfileNames" auth_type="ADMIN" requires_perm="CHANGE USER ATTRIBUTES" comment="">
+    <method name="getNotificationProfileNames" auth_type="ADMIN" requires_perm=""
+      comment="list of notification profile names that admin has access to.">
       <input type="dict">
       </input>
       <output type="list" length="-1" item_type="str" comment="list of profile names" />
+    </method>
+    <method name="getNotificationProfiles" auth_type="ADMIN" requires_perm="CHANGE NOTIFICATION"
+    comment="list of notification profile informations that admin has access to.">
+      <input type="dict">
+      </input>
+      <output type="list" length="-1" item_type="dict" comment="list of profile infos">
+        <item type="dict" comment="profile info">
+          <param name="notification_profile_id" type="int" comment="" />
+          <param name="notification_profile_name" type="str" comment="" />
+          <param name="notification_profile_comment" type="str" comment="" />
+          <param name="notification_rules" type="list" length="-1" item_type="dict" comment="">
+            <item type="dict" comment="rule dict">
+              <param name="notification_rule_id" type="int" comment="" />
+              <param name="notification_profile_id" type="int" comment="" />
+              <param name="notification_threshold" type="float" comment="" />
+              <param name="message_type" type="choice" comment="">
+                <choice value="sms" />
+                <choice value="email" />
+                <choice value="email_to_isp" />
+                <choice value="ibsng_message" />
+                <choice value="url" comment="call a URL specified in `message_template`, added in tag 312" />
+                <choice value="user_event" comment="added in tag (NO TAG YET)"/>
+              </param>
+              <param name="notification_type" type="choice" comment="">
+                 <choice value="expiration_date" />
+                 <choice value="credit" />
+                 <choice value="renew" />
+                 <choice value="birth_day" />
+                 <choice value="online_payment" />
+                 <choice value="first_login" />
+                 <choice value="credit_change" />
+                 <choice value="deposit_change" />
+              </param>
+              <param name="message_template" type="str" comment="" />
+            </item>
+          </param>
+          <param name="isp_id" type="int" comment="" />
+          <param name="owner_isp_name" type="str" comment="" />
+        </item>
+      </output>
+    </method>
+    <method name="addNotificationProfile" auth_type="ADMIN" requires_perm="CHANGE NOTIFICATION" comment="">
+      <input type="dict">
+        <param name="notification_profile_name" type="str" comment="" />
+        <param name="notification_profile_comment" type="str" comment="" />
+      </input>
+      <output type="int" comment="the new notification_profile_id" />
+    </method>
+    <method name="updateNotificationProfile" auth_type="ADMIN" requires_perm="CHANGE NOTIFICATION" comment="">
+      <input type="dict">
+        <param name="notification_profile_id" type="int" comment="" />
+        <param name="notification_profile_name" type="str" comment="" />
+        <param name="notification_profile_comment" type="str" comment="" />
+      </input>
+      <output type="null" comment="" />
+    </method>
+    <method name="getNotificationProfileByName" auth_type="ADMIN" requires_perm="" comment="">
+      <input type="dict">
+        <param name="notification_profile_name" type="str" comment="" />
+      </input>
+      <output type="dict" comment="">
+        <param name="notification_profile_id" type="int" comment="" />
+        <param name="notification_profile_name" type="str" comment="" />
+        <param name="notification_profile_comment" type="str" comment="" />
+        <param name="notification_rules" type="list" length="-1" item_type="dict" comment="">
+          <item type="dict" comment="rule dict">
+            <param name="notification_rule_id" type="int" comment="" />
+            <param name="notification_profile_id" type="int" comment="" />
+            <param name="notification_threshold" type="float" comment="" />
+            <param name="message_type" type="choice" comment="">
+              <choice value="sms" />
+              <choice value="email" />
+              <choice value="email_to_isp" />
+              <choice value="ibsng_message" />
+              <choice value="url" comment="call a URL specified in `message_template`, added in tag 312" />
+              <choice value="user_event" comment="added in tag (NO TAG YET)"/>
+            </param>
+            <param name="notification_type" type="choice" comment="">
+               <choice value="expiration_date" />
+               <choice value="credit" />
+               <choice value="renew" />
+               <choice value="birth_day" />
+               <choice value="online_payment" />
+               <choice value="first_login" />
+               <choice value="credit_change" />
+               <choice value="deposit_change" />
+            </param>
+            <param name="message_template" type="str" comment="" />
+          </item>
+        </param>
+        <param name="isp_id" type="int" comment="" />
+        <param name="owner_isp_name" type="str" comment="" />
+      </output>
+    </method>
+    <method name="deleteNotificationProfile" auth_type="ADMIN" requires_perm="CHANGE NOTIFICATION" comment="">
+      <input type="dict" comment="">
+        <param name="notification_profile_name" type="" comment="" />
+      </input>
+      <output type="null" />
+    </method>
+    <method name="addNotificationRule" auth_type="ADMIN" requires_perm="CHANGE NOTIFICATION" comment="">
+      <input type="dict">
+        <param name="notification_profile_id" type="int" comment="" />
+        <param name="notification_type" type="choice" comment="">
+          <choice value="expiration_date" />
+          <choice value="credit" />
+          <choice value="renew" />
+          <choice value="birth_day" />
+          <choice value="online_payment" />
+          <choice value="first_login" />
+          <choice value="credit_change" />
+          <choice value="deposit_change" />
+        </param>
+        <param name="notification_threshold" type="float" comment="" />
+        <param name="message_type" type="choice" comment="">
+          <choice value="sms" />
+          <choice value="email" />
+          <choice value="email_to_isp" />
+          <choice value="ibsng_message" />
+          <choice value="url" comment="call a URL specified in `message_template`, added in tag 312" />
+          <choice value="user_event" comment="added in tag (NO TAG YET)"/>
+        </param>
+        <param name="message_template" type="str" comment="" />
+      </input>
+      <output type="null" />
+    </method>
+    <method name="deleteNotificationRule" auth_type="ADMIN" requires_perm="CHANGE NOTIFICATION">
+      <input type="dict">
+        <param name="notification_profile_id" type="int" />
+        <param name="notification_rule_id" type="int" />
+      </input>
+      <output type="null" />
+    </method>
+    <method name="updateNotificationRule" auth_type="ADMIN" requires_perm="CHANGE NOTIFICATION">
+      <input type="dict">
+        <param name="notification_rule_id" type="int" />
+        <param name="notification_profile_id" type="int" />
+        <param name="notification_type" type="choice">
+          <choice value="expiration_date" />
+          <choice value="credit" />
+          <choice value="renew" />
+          <choice value="birth_day" />
+          <choice value="online_payment" />
+          <choice value="first_login" />
+          <choice value="credit_change" />
+          <choice value="deposit_change" />
+        </param>
+        <param name="notification_threshold" type="float" />
+        <param name="message_type" type="choice">
+          <choice value="sms" />
+          <choice value="email" />
+          <choice value="email_to_isp" />
+          <choice value="ibsng_message" />
+          <choice value="url" comment="call a URL specified in `message_template`, added in tag 312" />
+          <choice value="user_event" comment="added in tag (NO TAG YET)"/>
+        </param>
+        <param name="message_template" type="str" />
+      </input>
+      <output type="null" />
     </method>
   </handler>
   <handler name="online_payment" comment="">
