@@ -2440,15 +2440,8 @@
     </method>
   </handler>
   <handler name="online_payment" comment="">
-    <method name="getAllGatewayNames" auth_type="ADMIN" requires_perm="SEE ONLINE PAYMENT" comment="">
-      <input type="dict">
-      </input>
-      <output type="dict">
-        <param name="gateway_names" type="list" length="-1" item_type="str" comment="list of gateway names" />
-      </output>
-    </method>
-    <method name="getAvailablePaymentGateways" auth_type="USER, ADMIN" requires_perm=""
-        comment="list of gateway names that are available and usable for user">
+    <method name="getAvailableGatewayTypes" auth_type="USER, ADMIN"
+          comment="list of gateway names that are available and usable for user">
       <input type="dict">
       </input>
       <output type="list" length="-1" item_type="choice" comment="list of gateway types">
@@ -2462,6 +2455,158 @@
           <choice value="Tejarat" />
           <choice value="ZarinPal" />
         </item>
+      </output>
+    </method>
+    <method name="getPaymentAmountSuggestions" auth_type="USER, ADMIN" comment="">
+      <input type="dict">
+      </input>
+      <output type="list" length="-1" item_type="list" comment="">
+        <item type="list" length="4">
+          <item index="0" type="choice" comment="suggestion_id">
+            <choice type="str" value="renew_credit" />
+            <choice type="str" value="recharge_credit" />
+            <choice type="str" value="arbitrary" />
+            <choice type="str" value="recharge_from_renew_deposit" comment="only in C_invoice branch"/>
+          </item>
+          <item index="1" type="float" comment="amount"></item>
+          <item index="2" type="str" comment="description"></item>
+          <item index="3" type="bool" comment="editable"></item>
+        </item>
+      </output>
+    </method>
+    <method name="preparePayment" auth_type="USER, ADMIN"
+      comment="Added in tag C_dev_326">
+      <input type="dict">
+        <param name="gateway_type" type="choice" comment="">
+          <choice value="Melli-shahparak" />
+          <choice value="Eghtesad_Novin" />
+          <choice value="Mellat-Shaparak" />
+          <choice value="Parsian" />
+          <choice value="Pasargad" />
+          <choice value="Saman" />
+          <choice value="Tejarat" />
+          <choice value="ZarinPal" />
+        </param>
+        <param name="amount" type="float" comment="" />
+        <param name="unique_id" type="str" comment="" />
+        <param name="callback_url" type="str" comment="" />
+        <param name="attributes" type="dict" comment="you can put all the parameters you want here">
+          <param name="no_action" optional="true" type=""
+            comment="if you put this in attributes, we won't perform any action (credit / deposit / invoice) after verifying payment" />
+        </param>
+      </input>
+      <output type="dict" comment="">
+        <param name="web_attributes" type="dict" comment="" />
+        <param name="redirect_method" type="choice" comment="">
+          <choice value="POST" />
+          <choice value="GET" />
+        </param>
+        <param name="url" type="str" comment="Redirect URL" />
+      </output>
+    </method>
+    <method name="verifyPayment" auth_type="USER, ADMIN"
+      comment="Added in tag C_dev_326">
+      <input type="dict">
+        <param name="unique_id" type="str" comment="" />
+        <param name="web_attributes" type="dict" comment="" />
+      </input>
+      <output type="dict" comment="">
+        <param name="amount" type="float" comment="" />
+        <param name="ref_id" type="str" comment="Bank Reference ID" />
+      </output>
+    </method>
+    <method name="addGateway" auth_type="ADMIN" requires_perm="CHANGE ONLINE PAYMENT"
+      comment="Added in tag C_dev_326">
+      <input type="dict">
+        <param name="gateway_name" type="str" comment=""></param>
+        <param name="gateway_type" type="choice" comment="">
+          <choice type="str" value="Eghtesad_Novin" />
+          <choice type="str" value="Mellat-Shaparak" />
+          <choice type="str" value="Melli-shahparak" />
+          <choice type="str" value="Parsian" />
+          <choice type="str" value="Pasargad" />
+          <choice type="str" value="Saman" />
+          <choice type="str" value="Tejarat" />
+          <choice type="str" value="ZarinPal" />
+        </param>
+        <param name="owner_isp_name" type="str" comment=""></param>
+        <param name="priority" type="int" comment=""></param>
+        <param name="comment" type="str" comment=""></param>
+        <param name="attributes" type="dict" comment=""></param>
+      </input>
+      <output type="null">
+      </output>
+    </method>
+    <method name="updateGateway" auth_type="ADMIN" requires_perm="CHANGE ONLINE PAYMENT"
+      comment="Added in tag C_dev_326">
+      <input type="dict">
+        <param name="gateway_id" type="int" comment=""></param>
+        <param name="gateway_name" type="str" comment=""></param>
+        <param name="owner_isp_name" type="str" comment=""></param>
+        <param name="priority" type="int" comment=""></param>
+        <param name="comment" type="str" comment=""></param>
+        <param name="attributes" type="dict" comment=""></param>
+      </input>
+      <output type="null">
+      </output>
+    </method>
+    <method name="deleteGateway" auth_type="ADMIN" requires_perm="CHANGE ONLINE PAYMENT"
+      comment="Added in tag C_dev_326">
+      <input type="dict">
+        <param name="gateway_name" type="str" comment=""></param>
+      </input>
+      <output type="null">
+      </output>
+    </method>
+    <method name="getAllGatewayTypes" auth_type="ADMIN" requires_perm="SEE ONLINE PAYMENT"
+      comment="Added in tag C_dev_326">
+      <input type="dict">
+      </input>
+      <output type="list" length="-1" item_type="str" comment="list of gateway types">
+      </output>
+    </method>
+    <method name="getAllGatewayNames" auth_type="ADMIN" requires_perm="SEE ONLINE PAYMENT"
+      comment="Added in tag C_dev_326">
+      <input type="dict">
+      </input>
+      <output type="dict">
+        <param name="gateway_names" type="list" length="-1" item_type="str" comment="list of gateway names" />
+      </output>
+    </method>
+    <method name="getAllGatewayInfos" auth_type="ADMIN" requires_perm="CHANGE ONLINE PAYMENT"
+      comment="Added in tag C_dev_326">
+      <input type="dict">
+      </input>
+      <output type="list" item_type="dict">
+        <item type="dict" comment="gateway attributes">
+          <param name="gateway_id" type="int" comment=""></param>
+          <param name="gateway_name" type="str" comment=""></param>
+          <param name="gateway_type" type="choice" comment="">
+            <choice type="str" value="Eghtesad_Novin" />
+            <choice type="str" value="Mellat-Shaparak" />
+            <choice type="str" value="Melli-shahparak" />
+            <choice type="str" value="Parsian" />
+            <choice type="str" value="Pasargad" />
+            <choice type="str" value="Saman" />
+            <choice type="str" value="Tejarat" />
+            <choice type="str" value="ZarinPal" />
+          </param>
+          <param name="isp_id" type="int" comment=""></param>
+          <param name="owner_isp_name" type="str" comment=""></param>
+          <param name="priority" type="int" comment=""></param>
+          <param name="comment" type="str" comment=""></param>
+          <param name="attributes" type="dict" comment=""></param>
+          <param name="dict_attributes" type="dict" comment=""></param>
+        </item>
+      </output>
+    </method>
+    <method name="purgePayment" auth_type="ADMIN" requires_perm="PURGE ONLINE PAYMENT"
+      comment="Added in tag C_dev_326">
+      <input type="dict">
+        <param name="payment_id" type="int" comment="">
+        </param>
+      </input>
+      <output type="dict">
       </output>
     </method>
   </handler>
