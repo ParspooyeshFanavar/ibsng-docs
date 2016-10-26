@@ -116,23 +116,6 @@
 			<xsd:element name="is_desc" type="xsd:boolean"></xsd:element>
 		</xsd:sequence>
 	</xsd:complexType>
-	<xsd:complexType name="PaymentGateway">
-		<xsd:sequence>
-			<xsd:element name="gateway_id" type="xsd:int" minOccurs="1" maxOccurs="1"></xsd:element>
-			<xsd:element name="gateway_name" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
-			<xsd:element name="gateway_type" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
-			<xsd:element name="owner_isp_name" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
-			<xsd:element name="priority" type="xsd:int" minOccurs="1" maxOccurs="1"></xsd:element>
-			<xsd:element name="comment" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
-			<xsd:element name="attributes" type="tns:Map" minOccurs="1" maxOccurs="1"></xsd:element>
-		</xsd:sequence>
-	</xsd:complexType>
-	<xsd:complexType name="PaymentGatewayList">
-		<xsd:sequence>
-			<xsd:element name="payment_gateways" type="tns:PaymentGateway" minOccurs="0" maxOccurs="unbounded"></xsd:element>
-		</xsd:sequence>
-	</xsd:complexType>
-
 	<xsd:complexType name="ImportFilePortionModel">
 		<xsd:sequence>
 			<xsd:element name="filename" type="xsd:string"></xsd:element>
@@ -191,64 +174,6 @@
 			<xsd:element name="ras_desc" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
 		</xsd:sequence>
 	</xsd:complexType>
-
-	<xsd:complexType name="OnlinePayment">
-		<xsd:sequence>
-			<xsd:element name="payment_id" type="xsd:int" minOccurs="1"
-				maxOccurs="1">
-			</xsd:element>
-			<xsd:element name="amount" type="xsd:double" minOccurs="1"
-				maxOccurs="1">
-			</xsd:element>
-			<xsd:element name="requester_id" type="xsd:int" minOccurs="1"
-				maxOccurs="1">
-			</xsd:element>
-			<xsd:element name="requester_type" type="xsd:string" minOccurs="1"
-				maxOccurs="1">
-			</xsd:element>			
-			<xsd:element name="gateway_id" type="xsd:int" minOccurs="1"
-				maxOccurs="1">
-			</xsd:element>
-			<xsd:element name="unique_id" type="xsd:string"
-				minOccurs="1" maxOccurs="1">
-			</xsd:element>
-			<xsd:element name="payment_date" type="xsd:string"
-				minOccurs="1" maxOccurs="1">
-			</xsd:element>
-			<xsd:element name="attributes" type="tns:Map" minOccurs="1"
-				maxOccurs="1" nillable="true">
-			</xsd:element>
-			<xsd:element name="requester_repr" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="true"></xsd:element>
-		</xsd:sequence>
-	</xsd:complexType>
-
-	<xsd:complexType name="OnlinePaymentList">
-		<xsd:sequence>
-			<xsd:element name="payments" type="tns:OnlinePayment" minOccurs="0" maxOccurs="unbounded"></xsd:element>
-		</xsd:sequence>
-	</xsd:complexType>
-
-	<xsd:complexType name="OnlinePaymentSuggestionList">
-		<xsd:sequence>
-			<xsd:element name="payment_suggestions" type="tns:OnlinePaymentSuggestion" minOccurs="0" maxOccurs="unbounded"></xsd:element>
-		</xsd:sequence>
-	</xsd:complexType>
-
-	<xsd:complexType name="OnlinePaymentSuggestion">
-		<xsd:sequence>
-			<xsd:element name="suggestion_id" type="xsd:string"
-				minOccurs="1" maxOccurs="1">
-			</xsd:element>
-			<xsd:element name="amount" type="xsd:double" minOccurs="1"
-				maxOccurs="1">
-			</xsd:element>
-			<xsd:element name="description" type="xsd:string"
-				minOccurs="1" maxOccurs="1">
-			</xsd:element>
-			<xsd:element name="editable" type="xsd:boolean" minOccurs="1" maxOccurs="1"></xsd:element>
-		</xsd:sequence>
-	</xsd:complexType>
-
 	<xsd:complexType name="VoIPProvider">
 		<xsd:sequence>
 			<xsd:element name="provider_id" type="xsd:int" minOccurs="1"
@@ -1236,98 +1161,11 @@
   <wsdl:message name="getVoIPTariffPrefixGroupNamesResponse">
   	<wsdl:part name="prefix_group_names" type="tns:List"></wsdl:part>
   </wsdl:message>
-  <wsdl:message name="addPaymentGatewayRequest">
-  	<wsdl:part name="payment_gateway" type="tns:PaymentGateway"></wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="addPaymentGatewayResponse">
-  </wsdl:message>
-  <wsdl:message name="updatePaymentGatewayRequest">
-  	<wsdl:part name="payment_gateway" type="tns:PaymentGateway">
-  		<wsdl:documentation></wsdl:documentation>
-  	</wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="updatePaymentGatewayResponse">
-  </wsdl:message>
-  <wsdl:message name="deletePaymentGatewayRequest">
-  	<wsdl:part name="payment_gateway_name" type="xsd:string"></wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="deletePaymentGatewayResponse">
-  </wsdl:message>
-  <wsdl:message name="getAllPaymentGatewaysRequest">
-  </wsdl:message>
-  <wsdl:message name="getAllPaymentGatewaysResponse">
-  	<wsdl:part name="payment_gateway_list"
-  		type="tns:PaymentGatewayList">
-  	</wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="getPaymentGatewayTypesRequest">
-  </wsdl:message>
-  <wsdl:message name="getPaymentGatewayTypesResponse">
-  	<wsdl:part name="payment_gateway_types" type="tns:List"></wsdl:part>
-  </wsdl:message>
   <wsdl:message name="getISPNamesRequest">
   </wsdl:message>
   <wsdl:message name="getISPNamesResponse">
   	<wsdl:part name="isp_names" type="tns:List"></wsdl:part>
   </wsdl:message>
-  <wsdl:message name="getAvailablePaymentGatewaysRequest">
-  </wsdl:message>
-  <wsdl:message name="getAvailablePaymentGatewaysResponse">
-  	<wsdl:part name="payment_gateway_types" type="tns:List"></wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="getPaymentSuggestedAmountRequest">
-  </wsdl:message>
-  <wsdl:message name="getPaymentSuggestedAmountResponse">
-  	<wsdl:part name="suggestion_list"
-  		type="tns:OnlinePaymentSuggestionList">
-  		<wsdl:documentation>Returns</wsdl:documentation>
-  	</wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="preparePaymentRequest">
-  	<wsdl:part name="gateway_type" type="xsd:string"></wsdl:part>
-  	<wsdl:part name="amount" type="xsd:double"></wsdl:part>
-  	<wsdl:part name="unique_id" type="xsd:string"></wsdl:part>
-  	<wsdl:part name="attribute_map" type="tns:Map"></wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="preparePaymentResponse">
-  	<wsdl:part name="url" type="xsd:string">
-  		<wsdl:documentation>URL that user will be redirected to</wsdl:documentation></wsdl:part>
-  	<wsdl:part name="web_attributes" type="tns:Map">
-  		<wsdl:documentation>Web Attributes to be sent to bank</wsdl:documentation></wsdl:part>
-  	<wsdl:part name="redirect_method" type="xsd:string"></wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="manualVerifyPaymentRequest">
-  	<wsdl:part name="payment_id" type="xsd:long">
-  		<wsdl:documentation>Payment ID</wsdl:documentation>
-  	</wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="manualVerifyPaymentResponse">
-  </wsdl:message>
-  <wsdl:message name="manualApplyPaymentRequest">
-  	<wsdl:part name="payment_id" type="xsd:long">
-  		<wsdl:documentation>Payment ID</wsdl:documentation>
-  	</wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="manualApplyPaymentResponse">
-  </wsdl:message>
-  <wsdl:message name="purgePaymentRequest">
-  	<wsdl:part name="payment_id" type="xsd:long">
-  		<wsdl:documentation>Payment ID</wsdl:documentation>
-  	</wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="purgePaymentResponse">
-  </wsdl:message>
-  <wsdl:message name="searchPendingOnlinePaymentsRequest">
-  	<wsdl:part name="conds" type="tns:Map"></wsdl:part>
-  	<wsdl:part name="paginate_attributes" type="tns:PaginateAttributes"></wsdl:part>
-  	<wsdl:part name="role" type="xsd:string"></wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="searchPendingOnlinePaymentsResponse">
-  	<wsdl:part name="payments" type="tns:OnlinePaymentList"></wsdl:part>
-  	<wsdl:part name="total_count" type="xsd:int"></wsdl:part>
-  </wsdl:message>
-
-
   <wsdl:message name="userImportSaveImportFilePortionRequest">
         <wsdl:part name="file_portion_model" type="tns:ImportFilePortionModel"></wsdl:part>
   </wsdl:message>
@@ -1897,13 +1735,6 @@
   <wsdl:message name="getVoIPRoutingLogForDestinationResponse">
   	<wsdl:part name="log" type="tns:List"></wsdl:part>
   </wsdl:message>
-  <wsdl:message name="verifyPaymentRequest">
-  	<wsdl:part name="unique_id" type="xsd:string"></wsdl:part>
-  	<wsdl:part name="web_attributes" type="tns:Map"></wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="verifyPaymentResponse">
-  	<wsdl:part name="amount" type="xsd:double"></wsdl:part>
-  </wsdl:message>
   <wsdl:portType name="IBSng">
     <wsdl:operation name="ping">
       <wsdl:documentation>Ping operation can be used to test server connectivity</wsdl:documentation>
@@ -2040,63 +1871,10 @@ If any of columns does not exists in csv text, default is taken from default_pre
     	<wsdl:input message="tns:getVoIPTariffPrefixGroupNamesRequest"></wsdl:input>
     	<wsdl:output message="tns:getVoIPTariffPrefixGroupNamesResponse"></wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="addPaymentGateway">
-    	<wsdl:documentation>Add a payment gateway.
-Gateway ID and owner ISP will be filled automatically and input is ignored
-</wsdl:documentation>
-    	<wsdl:input message="tns:addPaymentGatewayRequest"></wsdl:input>
-    	<wsdl:output message="tns:addPaymentGatewayResponse"></wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="updatePaymentGateway">
-    	<wsdl:input message="tns:updatePaymentGatewayRequest"></wsdl:input>
-    	<wsdl:output message="tns:updatePaymentGatewayResponse"></wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="deletePaymentGateway">
-    	<wsdl:input message="tns:deletePaymentGatewayRequest"></wsdl:input>
-    	<wsdl:output message="tns:deletePaymentGatewayResponse"></wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="getAllPaymentGateways">
-    	<wsdl:input message="tns:getAllPaymentGatewaysRequest"></wsdl:input>
-    	<wsdl:output message="tns:getAllPaymentGatewaysResponse"></wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="getPaymentGatewayTypes">
-    	<wsdl:documentation>Returns a list of all available payment gateway types</wsdl:documentation>
-    	<wsdl:input message="tns:getPaymentGatewayTypesRequest"></wsdl:input>
-    	<wsdl:output message="tns:getPaymentGatewayTypesResponse"></wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="getISPNames">
     	<wsdl:documentation>Returns a list of isp names requester admin has access to</wsdl:documentation>
     	<wsdl:input message="tns:getISPNamesRequest"></wsdl:input>
     	<wsdl:output message="tns:getISPNamesResponse"></wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="getAvailablePaymentGateways">
-    	<wsdl:documentation>Will be called by a user and returns gateway payment types available for this user</wsdl:documentation>
-    	<wsdl:input message="tns:getAvailablePaymentGatewaysRequest"></wsdl:input>
-    	<wsdl:output message="tns:getAvailablePaymentGatewaysResponse"></wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="getPaymentSuggestedAmount">
-    	<wsdl:documentation>Returns a dictionary, that keys hold the description, and value is the amount of payment.
--1 as value will allow user to enter arbitary value
-</wsdl:documentation>
-    	<wsdl:input message="tns:getPaymentSuggestedAmountRequest"></wsdl:input>
-    	<wsdl:output message="tns:getPaymentSuggestedAmountResponse"></wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="preparePayment">
-    	<wsdl:documentation>Prepare for payment by a gateway of type &quot;gateway_type&quot; and amount of &quot;amount&quot;. Creates an payment to be verifed later</wsdl:documentation>
-    	<wsdl:input message="tns:preparePaymentRequest"></wsdl:input>
-    	<wsdl:output message="tns:preparePaymentResponse"></wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="manualVerifyPayment">
-    	<wsdl:input message="tns:manualVerifyPaymentRequest"></wsdl:input>
-    	<wsdl:output message="tns:manualVerifyPaymentResponse"></wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="manualApplyPayment">
-    	<wsdl:input message="tns:manualApplyPaymentRequest"></wsdl:input>
-    	<wsdl:output message="tns:manualApplyPaymentResponse"></wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="purgePayment">
-    	<wsdl:input message="tns:purgePaymentRequest"></wsdl:input>
-    	<wsdl:output message="tns:purgePaymentResponse"></wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="userImportSaveImportFilePortion">
     	<wsdl:input message="tns:userImportSaveImportFilePortionRequest"></wsdl:input>
@@ -2137,10 +1915,6 @@ Gateway ID and owner ISP will be filled automatically and input is ignored
     <wsdl:operation name="getBlackListedCallerIDs">
     	<wsdl:input message="tns:getBlackListedCallerIDsRequest"></wsdl:input>
     	<wsdl:output message="tns:getBlackListedCallerIDsResponse"></wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="searchPendingOnlinePayments">
-    	<wsdl:input message="tns:searchPendingOnlinePaymentsRequest"></wsdl:input>
-    	<wsdl:output message="tns:searchPendingOnlinePaymentsResponse"></wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="addVoIPProvider">
     	<wsdl:input message="tns:addVoIPProviderRequest"></wsdl:input>
@@ -2446,10 +2220,6 @@ Gateway ID and owner ISP will be filled automatically and input is ignored
     <wsdl:operation name="getVoIPRoutingLogForDestination">
     	<wsdl:input message="tns:getVoIPRoutingLogForDestinationRequest"></wsdl:input>
     	<wsdl:output message="tns:getVoIPRoutingLogForDestinationResponse"></wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="verifyPayment">
-    	<wsdl:input message="tns:verifyPaymentRequest"></wsdl:input>
-    	<wsdl:output message="tns:verifyPaymentResponse"></wsdl:output>
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="IBSngSOAP" type="tns:IBSng">
@@ -2847,163 +2617,9 @@ Gateway ID and owner ISP will be filled automatically and input is ignored
   				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
   		</wsdl:output>
   	</wsdl:operation>
-  	<wsdl:operation name="addPaymentGateway">
-  		<soap:operation
-  			soapAction="http://localhost:1236/IBSng/addPaymentGateway" />
-  		<wsdl:input>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:input>
-  		<wsdl:output>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:output>
-  	</wsdl:operation>
-  	<wsdl:operation name="updatePaymentGateway">
-  		<soap:operation
-  			soapAction="http://localhost:1236/IBSng/updatePaymentGateway" />
-  		<wsdl:input>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:input>
-  		<wsdl:output>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:output>
-  	</wsdl:operation>
-  	<wsdl:operation name="deletePaymentGateway">
-  		<soap:operation
-  			soapAction="http://localhost:1236/IBSng/deletePaymentGateway" />
-  		<wsdl:input>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:input>
-  		<wsdl:output>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:output>
-  	</wsdl:operation>
-  	<wsdl:operation name="getAllPaymentGateways">
-  		<soap:operation
-  			soapAction="http://localhost:1236/IBSng/getAllPaymentGateways" />
-  		<wsdl:input>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:input>
-  		<wsdl:output>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:output>
-  	</wsdl:operation>
-  	<wsdl:operation name="getPaymentGatewayTypes">
-  		<soap:operation
-  			soapAction="http://localhost:1236/IBSng/getPaymentGatewayTypes" />
-  		<wsdl:input>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:input>
-  		<wsdl:output>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:output>
-  	</wsdl:operation>
   	<wsdl:operation name="getISPNames">
   		<soap:operation
   			soapAction="http://localhost:1236/IBSng/getISPNames" />
-  		<wsdl:input>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:input>
-  		<wsdl:output>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:output>
-  	</wsdl:operation>
-  	<wsdl:operation name="getAvailablePaymentGateways">
-  		<soap:operation
-  			soapAction="http://localhost:1236/IBSng/getAvailablePaymentGateways" />
-  		<wsdl:input>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:input>
-  		<wsdl:output>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:output>
-  	</wsdl:operation>
-  	<wsdl:operation name="getPaymentSuggestedAmount">
-  		<soap:operation
-  			soapAction="http://localhost:1236/IBSng/getPaymentSuggestedAmount" />
-  		<wsdl:input>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:input>
-  		<wsdl:output>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:output>
-  	</wsdl:operation>
-  	<wsdl:operation name="preparePayment">
-  		<soap:operation
-  			soapAction="http://localhost:1236/IBSng/preparePayment" />
-  		<wsdl:input>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:input>
-  		<wsdl:output>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:output>
-  	</wsdl:operation>
-  	<wsdl:operation name="manualVerifyPayment">
-  		<soap:operation
-  			soapAction="http://localhost:1236/IBSng/manualVerifyPayment" />
-  		<wsdl:input>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:input>
-  		<wsdl:output>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:output>
-  	</wsdl:operation>
-  	<wsdl:operation name="manualApplyPayment">
-  		<soap:operation
-  			soapAction="http://localhost:1236/IBSng/manualApplyPayment" />
-  		<wsdl:input>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:input>
-  		<wsdl:output>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:output>
-  	</wsdl:operation>
-  	<wsdl:operation name="purgePayment">
-  		<soap:operation
-  			soapAction="http://localhost:1236/IBSng/purgePayment" />
   		<wsdl:input>
   			<soap:body use="encoded"
   				namespace="http://localhost:1236/IBSng/"
@@ -3144,20 +2760,6 @@ Gateway ID and owner ISP will be filled automatically and input is ignored
   	<wsdl:operation name="getBlackListedCallerIDs">
   		<soap:operation
   			soapAction="http://localhost:1236/IBSng/getBlackListedCallerIDs" />
-  		<wsdl:input>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:input>
-  		<wsdl:output>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:output>
-  	</wsdl:operation>
-  	<wsdl:operation name="searchPendingOnlinePayments">
-  		<soap:operation
-  			soapAction="http://localhost:1236/IBSng/searchPendingOnlinePayments" />
   		<wsdl:input>
   			<soap:body use="encoded"
   				namespace="http://localhost:1236/IBSng/"
@@ -4259,20 +3861,6 @@ Gateway ID and owner ISP will be filled automatically and input is ignored
   	<wsdl:operation name="getVoIPRoutingLogForDestination">
   		<soap:operation
   			soapAction="http://localhost:1236/IBSng/getVoIPRoutingLogForDestination" />
-  		<wsdl:input>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:input>
-  		<wsdl:output>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:output>
-  	</wsdl:operation>
-  	<wsdl:operation name="verifyPayment">
-  		<soap:operation
-  			soapAction="http://localhost:1236/IBSng/verifyPayment" />
   		<wsdl:input>
   			<soap:body use="encoded"
   				namespace="http://localhost:1236/IBSng/"
