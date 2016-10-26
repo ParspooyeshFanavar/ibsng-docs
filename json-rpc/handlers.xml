@@ -7834,8 +7834,8 @@
           <param name="is_used" type="bool" optional="true" comment="true means voucher is used" />
           <param name="isp_names" type="list, str" optional="true" comment="list of isp names, or string of one isp name" />
         </param>
-        <param name="index_from" type="int" comment="" />
-        <param name="index_to" type="int" comment="" />
+        <param name="from" type="int" comment="" />
+        <param name="to" type="int" comment="" />
         <param name="sort_by" type="choice" comment="">
           <choice value="pin" comment="" />
           <choice value="voucher_id" comment="" />
@@ -7869,8 +7869,8 @@
           <param name="credit_from" type="float" optional="true" comment="" />
           <param name="credit_to" type="float" optional="true" comment="" />
         </param>
-        <param name="index_from" type="int" comment="" />
-        <param name="index_to" type="int" comment="" />
+        <param name="from" type="int" comment="" />
+        <param name="to" type="int" comment="" />
         <param name="sort_by" type="choice" comment="">
           <choice value="batch_id" comment="" />
           <choice value="batch_name" comment="" />
@@ -7941,6 +7941,129 @@
         <param name="batch_creation_date" type="str_datetime" comment="" />
         <param name="batch_isp_id" type="int" comment="int" />
         <param name="batch_allow_use_by_children_isp" type="bool" comment="" />
+      </output>
+    </method>
+    <method name="voucherAddBatch" auth_type="ADMIN" requires_perm="CHANGE VOUCHER"
+        comment="">
+      <input type="dict">
+        <param name="batch_dict" type="dict" comment="">
+          <param name="batch_name" type="str" comment="" />
+          <param name="is_locked" type="bool" default="False" comment="" />
+          <param name="credit" type="float" comment="" />
+          <param name="can_recharge_user" type="bool" comment="" />
+          <param name="can_create_user" type="bool" comment="" />
+          <param name="change_target" type="choice" comment="">
+            <choice value="credit" comment="Credit" />
+            <choice value="deposit" comment="Renew Deposit" />
+            <choice value="deposit_recharge" comment="Recharge Deposit" />
+          </param>
+          <param name="allow_use_by_children_isp" type="bool" comment="" />
+          <param name="comment" type="str" comment="" />
+        </param>
+        <param name="pin_prefix" type="str" comment="" />
+        <param name="pin_len" type="int" comment="" />
+        <param name="serial_prefix" type="str" comment="" />
+        <param name="serial_start" type="int" comment="" />
+        <param name="count" type="int" comment="" />
+      </input>
+      <output type="int" comment="batch_id" />
+    </method>
+    <method name="voucherChangeBatchLockStatus" auth_type="ADMIN" requires_perm="CHANGE VOUCHER"
+        comment="">
+      <input type="dict">
+        <param name="batch_id" type="int" />
+        <param name="lock" type="bool" />
+      </input>
+      <output type="null" />
+    </method>
+    <method name="voucherGetBatchByID" auth_type="ADMIN" requires_perm="SEE VOUCHER"
+        comment="">
+      <input type="dict">
+        <param name="batch_id" type="int" />
+      </input>
+      <output type="dict" comment="batch info dict">
+        <param name="batch_id" type="int" comment="" />
+        <param name="batch_name" type="str" comment="" />
+        <param name="is_locked" type="bool" comment="" />
+        <param name="credit" type="float" comment="" />
+        <param name="can_recharge_user" type="bool" comment="" />
+        <param name="can_create_user" type="bool" comment="" />
+        <param name="change_target" type="choice" comment="">
+          <choice value="credit" comment="Credit" />
+          <choice value="deposit" comment="Renew Deposit" />
+          <choice value="deposit_recharge" comment="Recharge Deposit" />
+        </param>
+        <param name="isp_name" type="str" />
+        <param name="creation_date" type="str_datetime" />
+        <param name="allow_use_by_children_isp" type="bool" comment="" />
+        <param name="comment" type="str" comment="" />
+      </output>
+    </method>
+    <method name="getVoucherByID" auth_type="ADMIN" requires_perm="SEE VOUCHER"
+        comment="">
+      <input type="dict">
+        <param name="voucher_id" type="int" />
+      </input>
+      <output type="dict">
+        <param name="voucher_id" type="int" />
+        <param name="batch_id" type="int" />
+        <param name="pin" type="str" />
+        <param name="serial" type="str" />
+        <param name="is_used" type="bool" />
+        <param name="user_id" type="int" />
+        <param name="used_date" type="str_datetime" />
+      </output>
+    </method>
+    <method name="voucherSearchBatch" auth_type="ADMIN" requires_perm="SEE VOUCHER"
+        comment="">
+      <input type="dict">
+        <param name="conds" type="dict">
+          <param name="isp_names" type="list, str" optional="true"
+            comment="list of isp names, or string of one isp name" />
+          <param name="batch_ids" type="str" multi_str="true" optional="true"
+            comment="comma-separated Batch IDs" />
+          <param name="batch_names" type="str" multi_str="true" optional="true"
+            comment="comma-separated Batch Names" />
+          <param name="is_locked" type="bool" optional="true" comment="" />
+          <param name="can_recharge_user" type="bool" optional="true" comment="" />
+          <param name="can_create_user" type="bool" optional="true" comment="" />
+          <param name="credit_from" type="float" optional="true"
+            comment="only batches with credit &gt;= {credit_from}" />
+          <param name="credit_to" type="float" optional="true"
+            comment="only batches with credit &lt;= {credit_to}" />
+        </param>
+        <param name="from" type="int" comment="for pagination" />
+        <param name="to" type="int" comment="for pagination" />
+        <param name="sort_by" type="choice">
+          <choice value="batch_id" />
+          <choice value="batch_name" />
+          <choice value="credit" />
+        </param>
+        <param name="desc" type="bool" />
+      </input>
+      <output type="dict">
+        <param name="total_rows" type="int" comment="total number of results" />
+        <param name="report" type="list" item_type="dict" comment="">
+          <item type="dict" comment="batch info dict">
+            <param name="batch_id" type="int" />
+            <param name="batch_name" type="str" />
+            <param name="is_locked" type="bool" />
+            <param name="credit" type="float" />
+            <param name="can_create_user" type="bool" />
+            <param name="can_recharge_user" type="bool" />
+            <param name="change_target" type="choice">
+              <choice value="credit" comment="Credit" />
+              <choice value="deposit" comment="Renew Deposit" />
+              <choice value="deposit_recharge" comment="Recharge Deposit" />
+            </param>
+            <param name="comment" type="str" />
+            <param name="creation_date" type="str_datetime" />
+            <param name="isp_id" type="int" />
+            <param name="allow_use_by_children_isp" type="bool" />
+            <param name="is_locked" type="bool" />
+            <param name="isp_name" type="str" />
+          </item>
+        </param>
       </output>
     </method>
   </handler>
