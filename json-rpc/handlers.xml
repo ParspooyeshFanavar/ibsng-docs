@@ -999,6 +999,257 @@
       <output type="list" length="-1" item_type="str" comment="list of profile names">
       </output>
     </method>
+    <method name="addExtraChargeProfile" auth_type="ADMIN" requires_perm="CHANGE EXTRA CHARGE" comment="">
+      <input type="dict">
+        <param name="profile_name" type="str" />
+        <param name="comment" type="str" />
+        <param name="effective_hour" type="str" comment="format: HH:MM" />
+        <param name="rules" type="list" item_type="dict">
+          <item type="dict" comment="rule info dict">
+            <param name="start_from" type="choice">
+              <choice value="user_creation_date" />
+              <choice value="user_real_first_login" />
+              <choice value="package_first_login" />
+              <choice value="user_expiration_date" />
+              <choice value="child_user_activation_fee" />
+              <choice value="child_user_creation_date" />
+              <choice value="child_active_user_creation_date" />
+            </param>
+            <param name="description" type="str" />
+            <param name="period" type="choice">
+              <choice value="monthly" />
+              <choice value="start_of_month" />
+              <choice value="daily" />
+              <choice value="none" />
+            </param>
+            <param name="period_value" type="choice">
+              <choice value="gregorian" />
+              <choice value="jalali" />
+            </param>
+            <param name="change_target" type="choice">
+              <choice value="credit" />
+              <choice value="deposit" />
+              <choice value="night_free" />
+            </param>
+            <param name="change_action" type="choice">
+              <choice value="SET" />
+              <choice value="ADD" />
+              <choice value="MULTIPLY" />
+            </param>
+            <param name="amount" type="float" />
+            <param name="negate_credit" type="bool" />
+            <param name="pay_back" type="bool" />
+            <param name="ignore_first_time" type="bool" />
+          </item>
+        </param>
+      </input>
+      <output type="int" comment="extra_charge_profile_id" />
+    </method>
+    <method name="updateExtraChargeProfile" auth_type="ADMIN" requires_perm="CHANGE EXTRA CHARGE" comment="">
+      <input type="dict">
+        <param name="profile_id" type="int" />
+        <param name="profile_name" type="str" />
+        <param name="comment" type="str" />
+        <param name="effective_hour" type="str" comment="format: HH:MM" />
+        <param name="rules" type="list" item_type="dict">
+          <item type="dict" comment="rule info dict">
+            <param name="rule_id" type="int" default="-1" comment="leave -1 for new rules" />
+            <param name="start_from" type="choice">
+              <choice value="user_creation_date" />
+              <choice value="user_real_first_login" />
+              <choice value="package_first_login" />
+              <choice value="user_expiration_date" />
+              <choice value="child_user_activation_fee" />
+              <choice value="child_user_creation_date" />
+              <choice value="child_active_user_creation_date" />
+            </param>
+            <param name="description" type="str" />
+            <param name="period" type="choice">
+              <choice value="monthly" />
+              <choice value="start_of_month" />
+              <choice value="daily" />
+              <choice value="none" />
+            </param>
+            <param name="period_value" type="choice">
+              <choice value="gregorian" />
+              <choice value="jalali" />
+            </param>
+            <param name="change_target" type="choice">
+              <choice value="credit" />
+              <choice value="deposit" />
+              <choice value="night_free" />
+            </param>
+            <param name="change_action" type="choice">
+              <choice value="SET" />
+              <choice value="ADD" />
+              <choice value="MULTIPLY" />
+            </param>
+            <param name="amount" type="float" />
+            <param name="negate_credit" type="bool" />
+            <param name="pay_back" type="bool" />
+            <param name="ignore_first_time" type="bool" />
+          </item>
+        </param>
+      </input>
+      <output type="null" />
+    </method>
+    <method name="deleteExtraChargeProfile" auth_type="ADMIN" requires_perm="CHANGE EXTRA CHARGE" comment="">
+      <input type="dict">
+        <param name="profile_name" type="str" />
+      </input>
+      <output type="null"></output>
+    </method>
+    <method name="getExtraChargeProfiles" auth_type="ADMIN" requires_perm="SEE EXTRA CHARGE" comment="">
+      <input type="dict">
+      </input>
+      <output type="list" item_type="dict">
+        <item type="dict" item_type="profile info dict">
+          <param name="profile_id" type="int" />
+          <param name="profile_name" type="str" />
+          <param name="comment" type="str" />
+          <param name="effective_hour" type="str" comment="format: HH:MM" />
+          <param name="rules" type="list" item_type="dict">
+            <item type="dict" comment="rule info dict">
+              <param name="rule_id" type="int" />
+              <param name="start_from" type="choice">
+                <choice value="user_creation_date" />
+                <choice value="user_real_first_login" />
+                <choice value="package_first_login" />
+                <choice value="user_expiration_date" />
+                <choice value="child_user_activation_fee" />
+                <choice value="child_user_creation_date" />
+                <choice value="child_active_user_creation_date" />
+              </param>
+              <param name="description" type="str" />
+              <param name="period" type="choice">
+                <choice value="monthly" />
+                <choice value="start_of_month" />
+                <choice value="daily" />
+                <choice value="none" />
+              </param>
+              <param name="period_value" type="choice">
+                <choice value="gregorian" />
+                <choice value="jalali" />
+              </param>
+              <param name="change_target" type="choice">
+                <choice value="credit" />
+                <choice value="deposit" />
+                <choice value="night_free" />
+              </param>
+              <param name="change_action" type="choice">
+                <choice value="SET" />
+                <choice value="ADD" />
+                <choice value="MULTIPLY" />
+              </param>
+              <param name="amount" type="float" />
+              <param name="negate_credit" type="bool" />
+              <param name="pay_back" type="bool" />
+              <param name="ignore_first_time" type="bool" />
+            </item>
+          </param>
+        </item>
+      </output>
+    </method>
+    <method name="getExtraChargeProfileByName" auth_type="ADMIN" requires_perm="SEE EXTRA CHARGE" comment="">
+      <input type="dict">
+        <param name="profile_name" type="str" />
+      </input>
+      <output type="dict">
+        <param name="profile_id" type="int" />
+        <param name="profile_name" type="str" />
+        <param name="comment" type="str" />
+        <param name="effective_hour" type="str" comment="format: HH:MM" />
+        <param name="rules" type="list" item_type="dict">
+          <item type="dict" comment="rule info dict">
+            <param name="rule_id" type="int" />
+            <param name="start_from" type="choice">
+              <choice value="user_creation_date" />
+              <choice value="user_real_first_login" />
+              <choice value="package_first_login" />
+              <choice value="user_expiration_date" />
+              <choice value="child_user_activation_fee" />
+              <choice value="child_user_creation_date" />
+              <choice value="child_active_user_creation_date" />
+            </param>
+            <param name="description" type="str" />
+            <param name="period" type="choice">
+              <choice value="monthly" />
+              <choice value="start_of_month" />
+              <choice value="daily" />
+              <choice value="none" />
+            </param>
+            <param name="period_value" type="choice">
+              <choice value="gregorian" />
+              <choice value="jalali" />
+            </param>
+            <param name="change_target" type="choice">
+              <choice value="credit" />
+              <choice value="deposit" />
+              <choice value="night_free" />
+            </param>
+            <param name="change_action" type="choice">
+              <choice value="SET" />
+              <choice value="ADD" />
+              <choice value="MULTIPLY" />
+            </param>
+            <param name="amount" type="float" />
+            <param name="negate_credit" type="bool" />
+            <param name="pay_back" type="bool" />
+            <param name="ignore_first_time" type="bool" />
+          </item>
+        </param>
+      </output>
+    </method>
+    <method name="getExtraChargeProfileByID" auth_type="ADMIN" requires_perm="SEE EXTRA CHARGE" comment="">
+      <input type="dict">
+        <param name="profile_id" type="int" />
+      </input>
+      <output type="dict">
+        <param name="profile_id" type="int" />
+        <param name="profile_name" type="str" />
+        <param name="comment" type="str" />
+        <param name="effective_hour" type="str" comment="format: HH:MM" />
+        <param name="rules" type="list" item_type="dict">
+          <item type="dict" comment="rule info dict">
+            <param name="rule_id" type="int" />
+            <param name="start_from" type="choice">
+              <choice value="user_creation_date" />
+              <choice value="user_real_first_login" />
+              <choice value="package_first_login" />
+              <choice value="user_expiration_date" />
+              <choice value="child_user_activation_fee" />
+              <choice value="child_user_creation_date" />
+              <choice value="child_active_user_creation_date" />
+            </param>
+            <param name="description" type="str" />
+            <param name="period" type="choice">
+              <choice value="monthly" />
+              <choice value="start_of_month" />
+              <choice value="daily" />
+              <choice value="none" />
+            </param>
+            <param name="period_value" type="choice">
+              <choice value="gregorian" />
+              <choice value="jalali" />
+            </param>
+            <param name="change_target" type="choice">
+              <choice value="credit" />
+              <choice value="deposit" />
+              <choice value="night_free" />
+            </param>
+            <param name="change_action" type="choice">
+              <choice value="SET" />
+              <choice value="ADD" />
+              <choice value="MULTIPLY" />
+            </param>
+            <param name="amount" type="float" />
+            <param name="negate_credit" type="bool" />
+            <param name="pay_back" type="bool" />
+            <param name="ignore_first_time" type="bool" />
+          </item>
+        </param>
+      </output>
+    </method>
   </handler>
   <handler name="group" comment="">
     <method name="addNewGroup" auth_type="ADMIN" requires_perm="CHANGE GROUP" comment="">
