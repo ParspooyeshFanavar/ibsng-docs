@@ -288,77 +288,6 @@
             	</xsd:sequence>
             </xsd:complexType>
 
-            <xsd:complexType name="ExtraChargeRule">
-            	<xsd:sequence>
-            		<xsd:element name="start_from" type="xsd:string"
-            			minOccurs="1" maxOccurs="1">
-            		</xsd:element>
-            		<xsd:element name="period" type="xsd:string"
-            			minOccurs="1" maxOccurs="1">
-            		</xsd:element>
-            		<xsd:element name="period_value" type="xsd:string"
-            			minOccurs="1" maxOccurs="1">
-            		</xsd:element>
-            		<xsd:element name="change_target" type="xsd:string"
-            			minOccurs="1" maxOccurs="1">
-            		</xsd:element>
-                    <xsd:element name="change_action" type="xsd:string"
-                        minOccurs="1" maxOccurs="1">
-                    </xsd:element>
-            		<xsd:element name="amount" type="xsd:float"
-            			minOccurs="1" maxOccurs="1">
-            		</xsd:element>
-            		<xsd:element name="negate_credit" type="xsd:boolean"
-            			minOccurs="1" maxOccurs="1">
-            		</xsd:element>
-            		<xsd:element name="rule_id" type="xsd:int"
-            			minOccurs="1" maxOccurs="1">
-            		</xsd:element>
-            		<xsd:element name="pay_back" type="xsd:boolean"
-            			minOccurs="1" maxOccurs="1">
-            		</xsd:element>
-            		<xsd:element name="description" type="xsd:string"
-            			minOccurs="1" maxOccurs="1">
-            		</xsd:element>
-            		<xsd:element name="ignore_first_time" type="xsd:boolean" minOccurs="1" maxOccurs="1"></xsd:element>
-            	</xsd:sequence>
-            </xsd:complexType>
-            <xsd:complexType name="ExtraChargeProfile">
-            	<xsd:sequence>
-            		<xsd:element name="profile_name" type="xsd:string"
-            			minOccurs="1">
-            		</xsd:element>
-            		<xsd:element name="profile_id" type="xsd:int"
-            			minOccurs="1" maxOccurs="1">
-            		</xsd:element>
-            		<xsd:element name="comment" type="xsd:string"
-            			minOccurs="1" maxOccurs="1">
-            		</xsd:element>
-            		<xsd:element name="rules"
-            			type="tns:ExtraChargeRuleList" minOccurs="1"
-            			maxOccurs="1">
-            		</xsd:element>
-            		<xsd:element name="isp_name" type="xsd:string"
-            			minOccurs="1" maxOccurs="1">
-            		</xsd:element>
-            		<xsd:element name="rules_number" type="xsd:int"
-            			minOccurs="1" maxOccurs="1">
-            		</xsd:element>
-            		<xsd:element name="effective_hour" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
-            	</xsd:sequence>
-            </xsd:complexType>
-
-            <xsd:complexType name="ExtraChargeRuleList">
-            	<xsd:sequence>
-            		<xsd:element name="extra_charge_rules" type="tns:ExtraChargeRule" minOccurs="0" maxOccurs="unbounded"></xsd:element>
-            	</xsd:sequence>
-            </xsd:complexType>
-            <xsd:complexType name="ExtraChargeProfileList">
-            	<xsd:sequence>
-            		<xsd:element name="extra_charge_profiles" type="tns:ExtraChargeProfile" minOccurs="0" maxOccurs="unbounded"></xsd:element>
-            	</xsd:sequence>
-            </xsd:complexType>
-
             <xsd:complexType name="VoIPProviderSnapShot">
             	<xsd:sequence>
             		<xsd:element name="date_epoch" type="xsd:int" minOccurs="0" maxOccurs="unbounded"></xsd:element>
@@ -1244,38 +1173,6 @@
   </wsdl:message>
   <wsdl:message name="updateTelcoCenterResponse">
   </wsdl:message>
-  <wsdl:message name="addExtraChargeProfileRequest">
-  	<wsdl:part name="extra_charge_profile" type="tns:ExtraChargeProfile"></wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="addExtraChargeProfileResponse">
-  </wsdl:message>
-  <wsdl:message name="updateExtraChargeProfileRequest">
-  	<wsdl:part name="extra_charge_profile" type="tns:ExtraChargeProfile"></wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="updateExtraChargeProfileResponse">
-  </wsdl:message>
-  <wsdl:message name="deleteExtraChargeProfileRequest">
-  	<wsdl:part name="extra_charge_profile_name" type="xsd:string"></wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="deleteExtraChargeProfileResponse">
-  </wsdl:message>
-  <wsdl:message name="getExtraChargeProfileByNameRequest">
-  	<wsdl:part name="extra_charge_profile_name" type="xsd:string"></wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="getExtraChargeProfileByNameResponse">
-  	<wsdl:part name="extra_charge_profile" type="tns:ExtraChargeProfile"></wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="getExtraChargeProfileByIDRequest">
-  	<wsdl:part name="extra_charge_profile_id" type="xsd:int"></wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="getExtraChargeProfileByIDResponse">
-  	<wsdl:part name="extra_charge_profile" type="tns:ExtraChargeProfile"></wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="getExtraChargeProfilesRequest">
-  </wsdl:message>
-  <wsdl:message name="getExtraChargeProfilesResponse">
-  	<wsdl:part name="extra_charge_profiles" type="tns:ExtraChargeProfileList"></wsdl:part>
-  </wsdl:message>
   <wsdl:message name="getVoIPProviderSnapShotRequest">
   	<wsdl:part name="provider_name" type="xsd:string"></wsdl:part>
   	<wsdl:part name="date_from" type="xsd:string"></wsdl:part>
@@ -1770,30 +1667,6 @@ If any of columns does not exists in csv text, default is taken from default_pre
     <wsdl:operation name="updateTelcoCenter">
     	<wsdl:input message="tns:updateTelcoCenterRequest"></wsdl:input>
     	<wsdl:output message="tns:updateTelcoCenterResponse"></wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="addExtraChargeProfile">
-    	<wsdl:input message="tns:addExtraChargeProfileRequest"></wsdl:input>
-    	<wsdl:output message="tns:addExtraChargeProfileResponse"></wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="updateExtraChargeProfile">
-    	<wsdl:input message="tns:updateExtraChargeProfileRequest"></wsdl:input>
-    	<wsdl:output message="tns:updateExtraChargeProfileResponse"></wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="deleteExtraChargeProfile">
-    	<wsdl:input message="tns:deleteExtraChargeProfileRequest"></wsdl:input>
-    	<wsdl:output message="tns:deleteExtraChargeProfileResponse"></wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="getExtraChargeProfileByName">
-    	<wsdl:input message="tns:getExtraChargeProfileByNameRequest"></wsdl:input>
-    	<wsdl:output message="tns:getExtraChargeProfileByNameResponse"></wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="getExtraChargeProfileByID">
-    	<wsdl:input message="tns:getExtraChargeProfileByIDRequest"></wsdl:input>
-    	<wsdl:output message="tns:getExtraChargeProfileByIDResponse"></wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="getExtraChargeProfiles">
-    	<wsdl:input message="tns:getExtraChargeProfilesRequest"></wsdl:input>
-    	<wsdl:output message="tns:getExtraChargeProfilesResponse"></wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="getVoIPProviderSnapShot">
     	<wsdl:input message="tns:getVoIPProviderSnapShotRequest"></wsdl:input>
@@ -2783,90 +2656,6 @@ If any of columns does not exists in csv text, default is taken from default_pre
   		</wsdl:output>
   	</wsdl:operation>
 
-  	<wsdl:operation name="addExtraChargeProfile">
-  		<soap:operation
-  			soapAction="http://localhost:1236/IBSng/addExtraChargeProfile" />
-  		<wsdl:input>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:input>
-  		<wsdl:output>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:output>
-  	</wsdl:operation>
-  	<wsdl:operation name="updateExtraChargeProfile">
-  		<soap:operation
-  			soapAction="http://localhost:1236/IBSng/updateExtraChargeProfile" />
-  		<wsdl:input>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:input>
-  		<wsdl:output>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:output>
-  	</wsdl:operation>
-  	<wsdl:operation name="deleteExtraChargeProfile">
-  		<soap:operation
-  			soapAction="http://localhost:1236/IBSng/deleteExtraChargeProfile" />
-  		<wsdl:input>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:input>
-  		<wsdl:output>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:output>
-  	</wsdl:operation>
-  	<wsdl:operation name="getExtraChargeProfileByName">
-  		<soap:operation
-  			soapAction="http://localhost:1236/IBSng/getExtraChargeProfileByName" />
-  		<wsdl:input>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:input>
-  		<wsdl:output>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:output>
-  	</wsdl:operation>
-  	<wsdl:operation name="getExtraChargeProfileByID">
-  		<soap:operation
-  			soapAction="http://localhost:1236/IBSng/getExtraChargeProfileByID" />
-  		<wsdl:input>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:input>
-  		<wsdl:output>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:output>
-  	</wsdl:operation>
-  	<wsdl:operation name="getExtraChargeProfiles">
-  		<soap:operation
-  			soapAction="http://localhost:1236/IBSng/getExtraChargeProfiles" />
-  		<wsdl:input>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:input>
-  		<wsdl:output>
-  			<soap:body use="encoded"
-  				namespace="http://localhost:1236/IBSng/"
-  				encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-  		</wsdl:output>
-  	</wsdl:operation>
   	<wsdl:operation name="getVoIPProviderSnapShot">
   		<soap:operation
   			soapAction="http://localhost:1236/IBSng/getVoIPProviderSnapShot" />
