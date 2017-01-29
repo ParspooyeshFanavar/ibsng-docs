@@ -3329,6 +3329,40 @@
         </param>
       </output>
     </method>
+	<method name="getConnectionUsages" auth_type="ADMIN" requires_perm="SEE CONNECTION LOGS" comment="">
+	  <input type="dict">
+		<param name="conds" type="dict" comment="the same as 'report.getConnections' method" />
+		<param name="from" type="int" comment="start index, for pagination" />
+		<param name="to" type="int" comment="end index, for pagination" />
+		<param name="order_by" type="choice" comment="">
+		  <choice value="total_credit" />
+		  <choice value="total_duration" />
+		  <choice value="total_in_bytes" />
+		  <choice value="total_out_bytes" />
+		</param>
+	  </input>
+	  <output type="dict" comment="">
+		<param name="total_rows" type="int" comment="Number of total rows" />
+		<param name="report" type="list" length="-1" comment="">
+		  <item type="dict">
+			<param name="user_id" type="int" comment="User ID" />
+			<param name="username" type="str" comment="User username" />
+			<param name="serial" type="str" comment="User serial" />
+			<param name="group_name" type="str" comment="User group name" />
+			<param name="isp_name" type="str" comment="User ISP name" />
+			<param name="creation_date" type="str" comment="User creation date" />
+			<param name="name" type="str" comment="Name of user" />
+			<param name="sub_service_name" type="Sub service name" comment="" />
+			<param name="sub_service_charging" type="str" comment="Sub service charging name" />
+			<param name="seb_service_qos" type="str" comment="Sub service QOS name" />
+			<param name="total_credit" type="int" comment="Total credit" />
+			<param name="total_duration" type="int" comment="Total duration" />
+			<param name="total_in_bytes" type="" comment="Total in bytes" />
+			<param name="total_out_bytes" type="" comment="Total out bytes" />
+		  </item>
+		</param>
+	  </output>
+	</method>
     <method name="getExpiredUsers" auth_type="ADMIN" requires_perm="SEE CONNECTION LOGS" comment="">
       <input type="dict">
         <param name="conds" type="dict" comment="the same as user.searchUser" />
