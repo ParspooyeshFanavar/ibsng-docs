@@ -74,29 +74,6 @@
       <output type="list" length="-1" item_type="str" comment="List of admin usernames">
       </output>
     </method>
-    <method name="getAllAdminInfos" auth_type="ADMIN" requires_perm="SEE ADMIN INFO"
-        comment="only returns admins that requester admin has access to.
-        Added in tag 320">
-      <input type="dict">
-        <param name="isp_name" type="str" comment="admins of specific ISP" oprtional="true"/>
-      </input>
-      <output type="list" length="-1" item_type="dict" comment="List of admin informations">
-        <item type="dict" comment="admin info dict">
-          <param name="admin_id" type="int" comment="" />
-          <param name="username" type="str" comment="" />
-          <param name="name" type="str" comment="" />
-          <param name="email" type="str" comment="" />
-          <param name="comment" type="str" comment="" />
-          <param name="isp_name" type="str" comment="" />
-          <param name="creator_admin_username" type="str" comment="" />
-          <param name="locked" type="bool" comment="" />
-          <param name="last_request_ip" type="str" comment="" />
-          <param name="last_activity" type="int" comment="Epoch Time of admin's last activity" />
-          <param name="online_status" type="bool" comment="true if online, false if offline" />
-          <param name="admin_has_otp" type="bool" comment="" />
-        </item>
-      </output>
-    </method>
     <method name="updateAdminInfo" auth_type="ADMIN" requires_perm="CHANGE ADMIN INFO" comment="">
       <input type="dict">
         <param name="admin_id" type="int" comment="" />
@@ -567,41 +544,13 @@
       <output type="list" length="-1" item_type="str" comment="list of ISP names" />
     </method>
     <method name="listISPsWithIDs" auth_type="ADMIN" requires_perm=""
-        comment="return a list of ISP IDs and names that the admin has access to.
-        Added in tag 320">
+        comment="return a list of ISP IDs and names that the admin has access to">
       <input type="dict">
       </input>
       <output type="list" length="-1" item_type="list">
         <item type="list" length="2" comment="isp_id and isp_name">
           <item index="0" type="int" comment="isp_id" />
           <item index="1" type="str" comment="isp_name" />
-        </item>
-      </output>
-    </method>
-    <method name="getAllISPInfos" auth_type="ADMIN" requires_perm=""
-        comment="returns list of ISP informations that the admin has access to.
-        Added in tag 320">
-      <input type="dict">
-      </input>
-      <output type="list" length="-1" item_type="dict" comment="">
-        <item type="dict" comment="isp info dict">
-          <param name="isp_id" type="int" comment="" />
-          <param name="isp_name" type="str" comment="" />
-          <param name="parent_isp_name" type="str" comment="" />
-          <param name="isp_has_deposit_limit" type="bool" comment="" />
-          <param name="isp_deposit" type="float" comment="" />
-          <param name="isp_mapped_user_id" type="int" comment="" />
-          <param name="isp_mapped_user_repr" type="str" comment="" />
-          <param name="isp_mapped_user_credit" type="float" comment="" />
-          <param name="isp_online_users_count" type="int" comment="added in C_dev_326" />
-          <param name="isp_locked" type="bool" comment="" />
-          <param name="isp_auth_domain" type="str" comment="" />
-          <param name="isp_web_domain" type="str" comment="" />
-          <param name="isp_email" type="str" comment="" />
-          <param name="prevent_neg_deposit_login" type="bool" comment="" />
-          <param name="isp_comment" type="str" comment="" />
-          <param name="isp_failed_username" type="str" comment="removed in C_dev_326" />
-          <param name="isp_failed_user_id" type="str" comment="removed in C_dev_326" />
         </item>
       </output>
     </method>
@@ -1026,8 +975,7 @@
       <output type="list" length="-1" item_type="str" comment="list of group names" />
     </method>
     <method name="listGroupsWithIDs" auth_type="ADMIN" requires_perm=""
-              comment="return a list of group IDs and names, that requester admin can change service to.
-              Added in tag 320">
+              comment="return a list of group IDs and names, that requester admin can change service to">
       <input type="dict">
         <param name="active_only" type="bool" optional="true" comment="pass true if you only want active groups"/>
       </input>
@@ -1035,24 +983,6 @@
         <item type="list" length="2" comment="one group (id and name)">
           <item index="0" type="int" comment="group_id" />
           <item index="1" type="str" comment="group_name" />
-        </item>
-      </output>
-    </method>
-    <method name="listGroupInfos" auth_type="ADMIN" requires_perm=""
-        comment="return list of group informations, that requester admin has access to.
-        Added in tag 320">
-      <input type="dict">
-        <param name="active_only" type="bool" optional="true" comment="pass true if you only want active groups"/>
-      </input>
-      <output type="list" length="-1" item_type="dict" comment="list of group informations">
-        <item type="dict" comment="group info dict">
-          <param name="group_id" type="int" comment="" />
-          <param name="group_name" type="str" comment="" />
-          <param name="comment" type="str" comment="" />
-          <param name="isp_id" type="int" comment="" />
-          <param name="isp_name" type="name" comment="" />
-          <param name="raw_attrs" type="dict" comment="dates are gregorian" />
-          <param name="attrs" type="dict" comment="dates are based on request date_type" />
         </item>
       </output>
     </method>
@@ -1538,6 +1468,17 @@
         </item>
       </output>
     </method>
+    <!-- FIXME
+    <method name="assignEPToUser" auth_type="ADMIN" requires_perm="" comment="">
+      <input type="dict">
+        <param name="user_id" type="int" comment="" />
+        <param name="end_point_id" type="int" comment="" />
+      </input>
+      <output type="" comment="">
+        <param name="" type="" comment="" />
+      </output>
+    </method>
+    !-->
     <method name="unAssingAllFromGroup" auth_type="ADMIN" requires_perm="CHANGE PROVIDERS" comment="">
       <input type="dict">
         <param name="provider_name" type="str" comment="" />
@@ -2440,15 +2381,7 @@
     </method>
   </handler>
   <handler name="online_payment" comment="">
-    <method name="getAllGatewayNames" auth_type="ADMIN" requires_perm="SEE ONLINE PAYMENT" comment="">
-      <input type="dict">
-      </input>
-      <output type="dict">
-        <param name="gateway_names" type="list" length="-1" item_type="str" comment="list of gateway names" />
-      </output>
-    </method>
-    <method name="getAvailablePaymentGateways" auth_type="USER, ADMIN" requires_perm=""
-        comment="list of gateway names that are available and usable for user">
+    <method name="getAvailableGatewayTypes" auth_type="USER, ADMIN" requires_perm="list of gateway names that are available and usable for user" comment="">
       <input type="dict">
       </input>
       <output type="list" length="-1" item_type="choice" comment="list of gateway types">
@@ -2462,6 +2395,165 @@
           <choice value="Tejarat" />
           <choice value="ZarinPal" />
         </item>
+      </output>
+    </method>
+    <method name="getPaymentAmountSuggestions" auth_type="USER, ADMIN" comment="">
+      <input type="dict">
+      </input>
+      <output type="list" length="-1" item_type="list" comment="">
+        <item type="list" length="4">
+          <item index="0" type="choice" comment="suggestion_id">
+            <choice type="str" value="renew_credit" />
+            <choice type="str" value="recharge_credit" />
+            <choice type="str" value="arbitrary" />
+            <choice type="str" value="recharge_from_renew_deposit" comment="only in C_invoice branch"/>
+          </item>
+          <item index="1" type="float" comment="amount"></item>
+          <item index="2" type="str" comment="description"></item>
+          <item index="3" type="bool" comment="editable"></item>
+        </item>
+      </output>
+    </method>
+    <method name="preparePayment" auth_type="USER, ADMIN" requires_perm="" comment="">
+      <input type="dict">
+        <param name="gateway_type" type="choice" comment="">
+          <choice value="Melli-shahparak" />
+          <choice value="Eghtesad_Novin" />
+          <choice value="Mellat-Shaparak" />
+          <choice value="Parsian" />
+          <choice value="Pasargad" />
+          <choice value="Saman" />
+          <choice value="Tejarat" />
+          <choice value="ZarinPal" />
+        </param>
+        <param name="amount" type="float" comment="" />
+        <param name="unique_id" type="str" comment="" />
+        <param name="callback_url" type="str" comment="" />
+        <param name="attributes" type="dict" comment="you can put all the parameters you want here">
+          <param name="no_action" optional="true" type=""
+            comment="if you put this in attributes, we won't perform any action (credit / deposit / invoice) after verifying payment" />
+        </param>
+      </input>
+      <output type="dict" comment="">
+        <param name="web_attributes" type="dict" comment="" />
+        <param name="redirect_method" type="choice" comment="">
+          <choice value="POST" />
+          <choice value="GET" />
+        </param>
+        <param name="url" type="str" comment="Redirect URL" />
+      </output>
+    </method>
+    <method name="verifyPayment" auth_type="USER, ADMIN" requires_perm="" comment="">
+      <input type="dict">
+        <param name="unique_id" type="str" comment="" />
+        <param name="web_attributes" type="dict" comment="" />
+      </input>
+      <output type="dict" comment="">
+        <param name="amount" type="float" comment="" />
+        <param name="ref_id" type="str" comment="Bank Reference ID" />
+      </output>
+    </method>
+    <method name="addGateway" auth_type="ADMIN" requires_perm="CHANGE ONLINE PAYMENT" comment="">
+      <input type="dict">
+        <param name="gateway_name" type="str" comment=""></param>
+        <param name="gateway_type" type="choice" comment="">
+          <choice type="str" value="Eghtesad_Novin" />
+          <choice type="str" value="Mellat-Shaparak" />
+          <choice type="str" value="Melli-shahparak" />
+          <choice type="str" value="Parsian" />
+          <choice type="str" value="Pasargad" />
+          <choice type="str" value="Saman" />
+          <choice type="str" value="Tejarat" />
+          <choice type="str" value="ZarinPal" />
+        </param>
+        <param name="owner_isp_name" type="str" comment=""></param>
+        <param name="priority" type="int" comment=""></param>
+        <param name="comment" type="str" comment=""></param>
+        <param name="attributes" type="dict" comment=""></param>
+      </input>
+      <output type="null">
+      </output>
+    </method>
+    <method name="updateGateway" auth_type="ADMIN" requires_perm="CHANGE ONLINE PAYMENT" comment="">
+      <input type="dict">
+        <param name="gateway_id" type="int" comment=""></param>
+        <param name="gateway_name" type="str" comment=""></param>
+        <param name="owner_isp_name" type="str" comment=""></param>
+        <param name="priority" type="int" comment=""></param>
+        <param name="comment" type="str" comment=""></param>
+        <param name="attributes" type="dict" comment=""></param>
+      </input>
+      <output type="null">
+      </output>
+    </method>
+    <method name="deleteGateway" auth_type="ADMIN" requires_perm="CHANGE ONLINE PAYMENT" comment="">
+      <input type="dict">
+        <param name="gateway_name" type="str" comment=""></param>
+      </input>
+      <output type="null">
+      </output>
+    </method>
+    <method name="getAllGatewayTypes" auth_type="ADMIN" requires_perm="SEE ONLINE PAYMENT" comment="">
+      <input type="dict">
+      </input>
+      <output type="list" length="-1" item_type="str" comment="list of gateway types">
+      </output>
+    </method>
+    <method name="getAllGatewayNames" auth_type="ADMIN" requires_perm="SEE ONLINE PAYMENT" comment="">
+      <input type="dict">
+      </input>
+      <output type="dict">
+        <param name="gateway_names" type="list" length="-1" item_type="str" comment="list of gateway names" />
+      </output>
+    </method>
+    <method name="getAllGatewayInfos" auth_type="ADMIN" requires_perm="CHANGE ONLINE PAYMENT" comment="">
+      <input type="dict">
+      </input>
+      <output type="list" item_type="dict">
+        <item type="dict" comment="gateway attributes">
+          <param name="gateway_id" type="int" comment=""></param>
+          <param name="gateway_name" type="str" comment=""></param>
+          <param name="gateway_type" type="choice" comment="">
+            <choice type="str" value="Eghtesad_Novin" />
+            <choice type="str" value="Mellat-Shaparak" />
+            <choice type="str" value="Melli-shahparak" />
+            <choice type="str" value="Parsian" />
+            <choice type="str" value="Pasargad" />
+            <choice type="str" value="Saman" />
+            <choice type="str" value="Tejarat" />
+            <choice type="str" value="ZarinPal" />
+          </param>
+          <param name="isp_id" type="int" comment=""></param>
+          <param name="owner_isp_name" type="str" comment=""></param>
+          <param name="priority" type="int" comment=""></param>
+          <param name="comment" type="str" comment=""></param>
+          <param name="attributes" type="dict" comment=""></param>
+          <param name="dict_attributes" type="dict" comment=""></param>
+        </item>
+      </output>
+    </method>
+    <method name="manualVerifyPayment" auth_type="ADMIN" requires_perm="VERIFY ONLINE PAYMENT" comment="">
+      <input type="dict">
+        <param name="payment_id" type="int" comment="">
+        </param>
+      </input>
+      <output type="dict">
+      </output>
+    </method>
+    <method name="manualApplyPayment" auth_type="ADMIN" requires_perm="APPLY ONLINE PAYMENT" comment="">
+      <input type="dict">
+        <param name="payment_id" type="int" comment="">
+        </param>
+      </input>
+      <output type="dict">
+      </output>
+    </method>
+    <method name="purgePayment" auth_type="ADMIN" requires_perm="PURGE ONLINE PAYMENT" comment="">
+      <input type="dict">
+        <param name="payment_id" type="int" comment="">
+        </param>
+      </input>
+      <output type="dict">
       </output>
     </method>
   </handler>
@@ -3252,16 +3344,14 @@
           <item type="list" length="-1" item_type="list">
             <item type="list" length="9">
               <item index="0" type="int" comment="user_id" />
-              <item index="1" type="dict" comment="user dict">
-                <param name="group_name" type="str" comment="" />
-                <param name="isp_name" type="str" comment="" />
-                <param name="creation_date" type="str_datetime" comment="" />
-                <param name="user_name" type="str" comment="" />
-                <param name="serial" type="str" comment="" />
-                <param name="name" type="str" comment="user's real name" />
-              </item>
-              <item index="2" type="float" comment="total_download_bytes" />
-              <item index="3" type="float" comment="total_upload_bytes" />
+              <item index="1" type="str" comment="username" />
+              <item index="2" type="str" comment="user's serial" />
+              <item index="3" type="str" comment="user's group_name" />
+              <item index="4" type="str" comment="user's isp_name" />
+              <item index="5" type="str" comment="user's creation_date" />
+              <item index="6" type="str" comment="user's full name" />
+              <item index="7" type="float" comment="total_download_bytes" />
+              <item index="8" type="float" comment="total_upload_bytes" />
             </item>
           </item>
         </param>
@@ -3284,15 +3374,13 @@
           <item type="list" length="-1" item_type="list">
             <item type="list" length="9">
               <item index="0" type="int" comment="user_id" />
-              <item index="1" type="dict" comment="user dict">
-                <param name="group_name" type="str" comment="" />
-                <param name="isp_name" type="str" comment="" />
-                <param name="creation_date" type="str_datetime" comment="" />
-                <param name="user_name" type="str" comment="" />
-                <param name="serial" type="str" comment="" />
-                <param name="name" type="str" comment="user's real name" />
-              </item>
-              <item index="2" type="float" comment="total_credit_used" />
+              <item index="1" type="str" comment="username" />
+              <item index="2" type="str" comment="user's serial" />
+              <item index="3" type="str" comment="user's group_name" />
+              <item index="4" type="str" comment="user's isp_name" />
+              <item index="5" type="str" comment="user's creation_date" />
+              <item index="6" type="str" comment="user's full name" />
+              <item index="7" type="float" comment="total_credit_used" />
             </item>
           </item>
         </param>
@@ -3315,54 +3403,18 @@
           <item type="list" length="-1" item_type="list">
             <item type="list" length="9">
               <item index="0" type="int" comment="user_id" />
-              <item index="1" type="dict" comment="user dict">
-                <param name="group_name" type="str" comment="" />
-                <param name="isp_name" type="str" comment="" />
-                <param name="creation_date" type="str_datetime" comment="" />
-                <param name="user_name" type="str" comment="" />
-                <param name="serial" type="str" comment="" />
-                <param name="name" type="str" comment="user's real name" />
-              </item>
-              <item index="2" type="float" comment="total_duration, seconds" />
+              <item index="1" type="str" comment="username" />
+              <item index="2" type="str" comment="user's serial" />
+              <item index="3" type="str" comment="user's group_name" />
+              <item index="4" type="str" comment="user's isp_name" />
+              <item index="5" type="str" comment="user's creation_date" />
+              <item index="6" type="str" comment="user's full name" />
+              <item index="7" type="float" comment="total_duration, seconds" />
             </item>
           </item>
         </param>
       </output>
     </method>
-	<method name="getConnectionUsages" auth_type="ADMIN" requires_perm="SEE CONNECTION LOGS" comment="">
-	  <input type="dict">
-		<param name="conds" type="dict" comment="the same as 'report.getConnections' method" />
-		<param name="from" type="int" comment="start index, for pagination" />
-		<param name="to" type="int" comment="end index, for pagination" />
-		<param name="order_by" type="choice" comment="">
-		  <choice value="total_credit" />
-		  <choice value="total_duration" />
-		  <choice value="total_in_bytes" />
-		  <choice value="total_out_bytes" />
-		</param>
-	  </input>
-	  <output type="dict" comment="">
-		<param name="total_rows" type="int" comment="Number of total rows" />
-		<param name="report" type="list" length="-1" comment="">
-		  <item type="dict">
-			<param name="user_id" type="int" comment="User ID" />
-			<param name="username" type="str" comment="User username" />
-			<param name="serial" type="str" comment="User serial" />
-			<param name="group_name" type="str" comment="User group name" />
-			<param name="isp_name" type="str" comment="User ISP name" />
-			<param name="creation_date" type="str" comment="User creation date" />
-			<param name="name" type="str" comment="Name of user" />
-			<param name="sub_service_name" type="Sub service name" comment="" />
-			<param name="sub_service_charging" type="str" comment="Sub service charging name" />
-			<param name="seb_service_qos" type="str" comment="Sub service QOS name" />
-			<param name="total_credit" type="int" comment="Total credit" />
-			<param name="total_duration" type="int" comment="Total duration" />
-			<param name="total_in_bytes" type="" comment="Total in bytes" />
-			<param name="total_out_bytes" type="" comment="Total out bytes" />
-		  </item>
-		</param>
-	  </output>
-	</method>
     <method name="getExpiredUsers" auth_type="ADMIN" requires_perm="SEE CONNECTION LOGS" comment="">
       <input type="dict">
         <param name="conds" type="dict" comment="the same as user.searchUser" />
@@ -4292,7 +4344,7 @@
           <choice value="months" />
           <choice value="days" />
           <choice value="hours" />
-          <choice value="minutes" />          
+          <choice value="minutes" />
         </param>
       </input>
       <output type="null" />
@@ -5000,126 +5052,1174 @@
         <item index="2" type="int" comment="upload rate" />
       </output>
     </method>
-    <method name="getOnlinesSnapShot" auth_type="ADMIN" requires_perm="SEE ONLINE SNAPSHOTS" comment="">
-      <!-- remove? FIXME !-->
-      <input type="dict">
-        <param name="conds" type="dict" comment="">
-          <param name="ras_ips" type="list, str" comment="" />
-          <param name="isp_names" type="list, str" comment="" />
-        </param>
-        <param name="type" type="choice" comment="">
-          <choice value="internet" comment="" />
-          <choice value="voip" comment="" />
-        </param>
-      </input>
-      <output type="list" length="5" comment="">
-        <item index="0" type="list" length="-1" comment="result">
-          <item type="list" length="2" comment="">
-            <item index="0" type="int" comment="epoch time" />
-            <item index="1" type="int" comment="number of online users" />
-          </item>
-        </item>
-        <item index="1" type="int" comment="minimum" />
-        <item index="2" type="int" comment="maximum" />
-        <item index="3" type="int" comment="average" />
-        <item index="4" type="str" comment="time zone, 'Asia/Tehran' for example" />
-      </output>
-    </method>
-    <!--
     <method name="getBWSnapShot" auth_type="" requires_perm="" comment="">
-      <input type="dict">
-        <param name="" type="" comment="" />
+       <input type="dict">
+        <param name="conds" type="dict" comment="mandatory">
+          <key type="str" comment="group_name_key" />
+          <value type="list" comment="group_name_value">
+            <item name="group-name" type="str"></item>
+          </value>
+        </param>
+        <param name="date_from" type="choice" comment="start date and time, format '%Y-%m-%d %H:%M'">
+          <choice value="gregorian" />
+          <choice value="jalali" />
+        </param>
+        <param name="date_to" type="choice" comment="start date and time, format '%Y-%m-%d %H:%M'">
+          <choice value="gregorian" />
+          <choice value="jalali" />
+        </param>
+        <param name="date_to_unit" type="choice" comment="start date and time, format '%Y-%m-%d %H:%M'">
+          <choice value="gregorian" />
+          <choice value="jalali" />
+        </param>
       </input>
       <output type="" comment="">
         <param name="" type="" comment="" />
       </output>
     </method>
-    <method name="getGroupBWSnapShot" auth_type="" requires_perm="" comment="">
+    <method name="getGroupBWSnapShot" auth_type="ADMIN" requires_perm="conds" comment="">
       <input type="dict">
-        <param name="" type="" comment="" />
+        <param name="conds" type="dict" comment="mandatory">
+          <key type="str" comment="group_name_key" />
+          <value type="list" comment="group_name_value">
+            <item name="group-name" type="str"></item>
+          </value>
+        </param>
+        <param name="date_from" type="choice" comment="start date and time, format '%Y-%m-%d %H:%M'">
+          <choice value="gregorian" />
+          <choice value="jalali" />
+        </param>
+        <param name="date_to" type="choice" comment="start date and time, format '%Y-%m-%d %H:%M'">
+          <choice value="gregorian" />
+          <choice value="jalali" />
+        </param>
+        <param name="date_to_unit" type="choice" comment="start date and time, format '%Y-%m-%d %H:%M'">
+          <choice value="gregorian" />
+          <choice value="jalali" />
+        </param>
       </input>
-      <output type="" comment="">
-        <param name="" type="" comment="" />
+      <output type="dict" comment="">
+        <key type="str" comment=""/>
+        <value type="str" value="None" comment=""/>
+        <key type="str" value="result" comment=""/>
+        <value type="list" value="">
+          <item index="0" type="list" comment="">
+            <item index="0" type="list" length="3">
+              <item index="0" type="float" comment=""></item>
+              <item index="1" type="float" comment=""></item>
+              <item index="2" type="float" comment=""></item>
+            </item>
+          </item>
+          <item index="1" name="timezone" type="str" value="Asia/Tehran" comment=""/>
+        </value>
       </output>
     </method>
-    <method name="getISPBWSnapShot" auth_type="" requires_perm="" comment="">
+    <method name="getISPBWSnapShot" auth_type="ADMIN" requires_perm="conds" comment="">
       <input type="dict">
-        <param name="" type="" comment="" />
+        <param name="conds" type="dict" comment="mandatory">
+          <key type="str" comment="isp_name_key" />
+          <value type="list" comment="isp_name_value">
+            <item name="isp_name" type="str"></item>
+          </value>
+        </param>
+        <param name="date_from" type="choice" comment="start date and time, format '%Y-%m-%d %H:%M'">
+          <choice value="gregorian" />
+          <choice value="jalali" />
+        </param>
+        <param name="date_to" type="choice" comment="start date and time, format '%Y-%m-%d %H:%M'">
+          <choice value="gregorian" />
+          <choice value="jalali" />
+        </param>
+        <param name="date_to_unit" type="choice" comment="start date and time, format '%Y-%m-%d %H:%M'">
+          <choice value="gregorian" />
+          <choice value="jalali" />
+        </param>
       </input>
-      <output type="" comment="">
-        <param name="" type="" comment="" />
+      <output type="dict" comment="">
+        <key type="str" comment=""/>
+        <value type="str" value="None" comment=""/>
+        <key type="str" value="result" comment=""/>
+        <value type="list" value="">
+          <item index="0" type="list" comment="">
+            <item index="0" type="list" length="3">
+              <item index="0" type="float" comment=""></item>
+              <item index="1" type="float" comment=""></item>
+              <item index="2" type="float" comment=""></item>
+            </item>
+          </item>
+          <item index="1" name="timezone" type="str" value="Asia/Tehran" comment=""/>
+        </value>
       </output>
     </method>
-    <method name="getRasBWSnapShot" auth_type="" requires_perm="" comment="">
+    <method name="getRasBWSnapShot" auth_type="ADMIN" requires_perm="conds" comment="">
       <input type="dict">
-        <param name="" type="" comment="" />
+        <param name="conds" type="dict" comment="mandatory">
+          <key type="str" comment="ras_ip_key" />
+          <value type="list" comment="ras_ip_value">
+            <item name="ras-ip" type="str"></item>
+          </value>
+        </param>
+        <param name="date_from" type="choice" comment="start date and time, format '%Y-%m-%d %H:%M'">
+          <choice value="gregorian" />
+          <choice value="jalali" />
+        </param>
+        <param name="date_to" type="choice" comment="start date and time, format '%Y-%m-%d %H:%M'">
+          <choice value="gregorian" />
+          <choice value="jalali" />
+        </param>
+        <param name="date_to_unit" type="choice" comment="start date and time, format '%Y-%m-%d %H:%M'">
+          <choice value="gregorian" />
+          <choice value="jalali" />
+        </param>
       </input>
-      <output type="" comment="">
-        <param name="" type="" comment="" />
+      <output type="dict" comment="">
+        <key type="str" comment=""/>
+        <value type="str" value="None" comment=""/>
+        <key type="str" value="result" comment=""/>
+        <value type="list" value="">
+          <item index="0" type="list" comment="">
+            <item index="0" type="list" length="3">
+              <item index="0" type="float" comment=""></item>
+              <item index="1" type="float" comment=""></item>
+              <item index="2" type="float" comment=""></item>
+            </item>
+          </item>
+          <item index="1" name="timezone" type="str" value="Asia/Tehran" comment=""/>
+        </value>
       </output>
     </method>
-    !-->
+
   </handler>
   <handler name="stat" comment="">
+
     <method name="getStatistics" auth_type="ADMIN" requires_perm="GOD" comment="">
       <input type="dict">
       </input>
-      <output type="list" length="23" comment="">
-        <item type="list" length="2" comment="">
-          <item index="0" type="str" comment="stat key"></item>
-          <item index="1" type="list" length="2" comment="stat value and unit">
-            <item index="0" type="int, float" comment="stat value"></item>
-            <item index="1" type="choice" comment="stat unit">
-              <choice value="int" comment="" />
-              <choice value="seconds" comment="" />
+      <output type="dict" comment="">
+        <param name="result" type="list" length="" comment="">
+          <item index="0" type="list" length="2" comment="">
+              <item index="0" type="str" value="DB_queries" comment=""/>
+              <item index="1" type="list" length="2" comment="">
+                <item index="0" type="int" value="544" comment="" />
+                <item index="1" type="int" comment=""/>
+              </item>
             </item>
-          </item>
-        </item>
+            <item index="2" type="list" length="2" comment="">
+              <item index="0" type="str" value="load_avg" comment=""/>
+              <item index="1" type="list" length="2">
+                <item index="0" type="float" value="12.74" comment=""/>
+                <item index="1" type="str" comment=""/>
+              </item>
+            </item>
+
+            <item index="3" type="list" length="2" comment="">
+              <item index="0" type="str" value="memory_usage"/>
+              <item index="1" type="list" length="2">
+                <item index="0" type="int" value="325492736" comment=""/>
+                <item index="1" type="str_byte" value=""/>
+              </item>
+            </item>
+
+            <item index="4" type="list" length="2" comment="">
+              <item index="0" type="str" value="server_avg_response_time"/>
+              <item index="1" type="list" length="2">
+                <item index="0" type="float" value="0.0410904376362" comment=""/>
+                <item index="1" type="int" comment="seconds"/>
+              </item>
+            </item>
+
+            <item index="5" type="list" length="2" comment="">
+              <item index="0" type="str" value="server_max_response_time"/>
+              <item index="1" type="list" length="2">
+                <item index="0" type="float" value="2.89572691917" comment=""/>
+                <item index="1" type="int" comment="seconds"/>
+              </item>
+            </item>
+
+            <item index="6" type="list" length="2" comment="">
+              <item index="0" type="str" value="server_total_requests"/>
+              <item index="1" type="list" length="2">
+                <item index="0" type="int" value="1516" comment=""/>
+                <item index="1" type="int" comment=""/>
+              </item>
+            </item>
+
+            <item index="7" type="list" length="2" comment="">
+              <item index="0" type="str" value="soap_server_avg_response_time"/>
+              <item index="1" type="list" length="2">
+                <item index="0" type="int" value="0" comment=""/>
+                <item index="1" type="int" comment="seconds"/>
+              </item>
+            </item>
+
+            <item index="8" type="list" length="2" comment="">
+              <item index="0" type="str" value="soap_server_max_response_time"/>
+              <item index="1" type="list" length="2">
+                <item index="0" type="int" value="0" comment=""/>
+                <item index="1" type="int" comment="seconds"/>
+              </item>
+            </item>
+
+            <item index="8" type="list" length="2" comment="">
+              <item index="0" type="str" value="soap_server_total_requests"/>
+              <item index="1" type="list" length="2">
+                <item index="0" type="int" value="0" comment=""/>
+                <item index="1" type="int" comment=""/>
+              </item>
+            </item>
+
+            <item index="9" type="list" length="2" comment="">
+              <item index="0" type="str" value="uptime"/>
+              <item index="1" type="list" length="2">
+                <item index="0" type="float" value="405753.861897" comment=""/>
+                <item index="1" type="int" comment="seconds"/>
+              </item>
+            </item>
+        </param>
+        <param name="id" type="int"  value="None" comment=""/>
+        <param name="error" type="str" value="None" comment=""/>
       </output>
     </method>
     <method name="getAllStatsByStatCategory" auth_type="ADMIN" requires_perm="GOD" comment="">
       <input type="dict">
       </input>
       <output type="dict" comment="">
-        <key type="str" comment="category name" />
-        <value type="dict" comment="">
-          <key type="str" comment="stat name" />
-          <value type="list" length="2" comment="">
-            <item index="0" type="str" comment="stat name" />
-            <item index="1" type="list" length="5">
-              <item index="0" type="list" length="4" comment="">
-                <item index="0" value="5min" type="str" comment="" />
-                <item index="1" value="300" type="int" comment="seconds" />
-                <item index="2" type="float" comment="" />
-                <item index="3" type="int" comment="" />
+
+          <key type="str" comment="category error"/>
+          <value type="str" value="None" comment="">
+          </value>
+
+          <key type="str" value="result" comment="result" />
+          <value type="dict" comment="">
+
+            <key type="str" value="max_concurrent" comment="max_concurrent"/>
+            <value typye="dict">
+              <key type="str" comment="stat name" />
+                <value type="list" length="2" comment="">
+                  <item index="0" type="str" value="Maximum Concurrent Session Violation" comment="stat name" />
+                  <item index="1" type="list" length="5">
+                    <item index="0" type="list" length="4" comment="">
+                      <item index="0" value="5min" type="str" comment="" />
+                      <item index="1" value="300" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                    <item index="1" type="list" length="4" comment="">
+                      <item index="0" value="1hour" type="str" comment="" />
+                      <item index="1" value="3600" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                    <item index="2" type="list" length="4" comment="">
+                      <item index="0" value="8hour" type="str" comment="" />
+                      <item index="1" value="28800" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                    <item index="3" type="list" length="4" comment="">
+                      <item index="0" value="1day" type="str" comment="" />
+                      <item index="1" value="86400" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                    <item index="4" type="list" length="4" comment="">
+                      <item index="0" value="1week" type="str" comment="" />
+                      <item index="1" value="604800" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                  </item>
+                </value>
+
+                <key type="str" comment="re onlines"/>
+                <value type="list" length="2" comment="">
+                  <item index="0" type="str" value="Re-Onlines" comment=""/>
+                  <item index="1" type="list" comment="">
+                    <item index="0" type="" comment="">
+                      <item index="0" value="5min" type="str" comment="" />
+                      <item index="1" value="300" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                    <item index="1" type="" comment="">
+                      <item index="0" value="1hour" type="str" comment="" />
+                      <item index="1" value="3600" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                    <item index="2" type="" comment=""></item>
+                    <item index="3" type="" comment=""></item>
+                    <item index="4" type="" comment=""></item>
+                  </item>
+                  <item index="2" type="list" length="4" comment="">
+                      <item index="0" value="8hour" type="str" comment="" />
+                      <item index="1" value="28800" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                  <item index="3" type="list" length="4" comment="">
+                      <item index="0" value="1day" type="str" comment="" />
+                      <item index="1" value="86400" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                  <item index="4" type="list" length="4" comment="">
+                      <item index="0" value="1week" type="str" comment="" />
+                      <item index="1" value="604800" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                </value>
+
+                <key type="str" comment="update_user"/>
+                <value type="list" length="2" comment="">
+                  <item index="0" type="str" value="Update Online Session Requests" comment=""/>
+                  <item index="1" type="list" comment="">
+                    <item index="0" type="" comment="">
+                      <item index="0" value="5min" type="str" comment="" />
+                      <item index="1" value="300" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                    <item index="1" type="" comment="">
+                      <item index="0" value="1hour" type="str" comment="" />
+                      <item index="1" value="3600" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                    <item index="2" type="" comment=""></item>
+                    <item index="3" type="" comment=""></item>
+                    <item index="4" type="" comment=""></item>
+                  </item>
+                  <item index="2" type="list" length="4" comment="">
+                      <item index="0" value="8hour" type="str" comment="" />
+                      <item index="1" value="28800" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                  <item index="3" type="list" length="4" comment="">
+                      <item index="0" value="1day" type="str" comment="" />
+                      <item index="1" value="86400" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                  <item index="4" type="list" length="4" comment="">
+                      <item index="0" value="1week" type="str" comment="" />
+                      <item index="1" value="604800" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                </value>
+
+                <key type="str" comment="internet_authenticate"/>
+                <value type="list" length="2" comment="">
+                  <item index="0" type="str" value="Authenticate Requests" comment=""/>
+                  <item index="1" type="list" comment="">
+                    <item index="0" type="" comment="">
+                      <item index="0" value="5min" type="str" comment="" />
+                      <item index="1" value="300" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                    <item index="1" type="" comment="">
+                      <item index="0" value="1hour" type="str" comment="" />
+                      <item index="1" value="3600" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                    <item index="2" type="" comment=""></item>
+                    <item index="3" type="" comment=""></item>
+                    <item index="4" type="" comment=""></item>
+                  </item>
+                  <item index="2" type="list" length="4" comment="">
+                      <item index="0" value="8hour" type="str" comment="" />
+                      <item index="1" value="28800" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                  <item index="3" type="list" length="4" comment="">
+                      <item index="0" value="1day" type="str" comment="" />
+                      <item index="1" value="86400" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                  <item index="4" type="list" length="4" comment="">
+                      <item index="0" value="1week" type="str" comment="" />
+                      <item index="1" value="604800" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                </value>
+
+                <key type="str" value="check_onlines_failed" comment=""/>
+                <value type="list" length="2" comment="">
+                  <item index="0" type="str" value="Check Online Fails" comment=""/>
+                  <item index="1" type="list" comment="">
+                    <item index="0" type="" comment="">
+                      <item index="0" value="5min" type="str" comment="" />
+                      <item index="1" value="300" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                    <item index="1" type="" comment="">
+                      <item index="0" value="1hour" type="str" comment="" />
+                      <item index="1" value="3600" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                    <item index="2" type="" comment=""></item>
+                    <item index="3" type="" comment=""></item>
+                    <item index="4" type="" comment=""></item>
+                  </item>
+                  <item index="2" type="list" length="4" comment="">
+                      <item index="0" value="8hour" type="str" comment="" />
+                      <item index="1" value="28800" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                  <item index="3" type="list" length="4" comment="">
+                      <item index="0" value="1day" type="str" comment="" />
+                      <item index="1" value="86400" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                  <item index="4" type="list" length="4" comment="">
+                      <item index="0" value="1week" type="str" comment="" />
+                      <item index="1" value="604800" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                </value>
+
+                <key type="str" value="internet_reauthorize" comment=""/>
+                <value type="list" length="2" comment="">
+                  <item index="0" type="str" value="Reauthorize Requests" comment=""/>
+                  <item index="1" type="list" comment="">
+                    <item index="0" type="" comment="">
+                      <item index="0" value="5min" type="str" comment="" />
+                      <item index="1" value="300" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                    <item index="1" type="" comment="">
+                      <item index="0" value="1hour" type="str" comment="" />
+                      <item index="1" value="3600" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                    <item index="2" type="" comment=""></item>
+                    <item index="3" type="" comment=""></item>
+                    <item index="4" type="" comment=""></item>
+                  </item>
+                  <item index="2" type="list" length="4" comment="">
+                      <item index="0" value="8hour" type="str" comment="" />
+                      <item index="1" value="28800" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                  <item index="3" type="list" length="4" comment="">
+                      <item index="0" value="1day" type="str" comment="" />
+                      <item index="1" value="86400" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                  <item index="4" type="list" length="4" comment="">
+                      <item index="0" value="1week" type="str" comment="" />
+                      <item index="1" value="604800" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                </value>
+
+                <key type="str" value="acc_not_started" comment=""/>
+                <value type="list" length="2" comment="">
+                  <item index="0" type="str" value="Accounting Not Started" comment=""/>
+                  <item index="1" type="list" comment="">
+                    <item index="0" type="" comment="">
+                      <item index="0" value="5min" type="str" comment="" />
+                      <item index="1" value="300" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                    <item index="1" type="" comment="">
+                      <item index="0" value="1hour" type="str" comment="" />
+                      <item index="1" value="3600" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                    <item index="2" type="" comment=""></item>
+                    <item index="3" type="" comment=""></item>
+                    <item index="4" type="" comment=""></item>
+                  </item>
+                  <item index="2" type="list" length="4" comment="">
+                      <item index="0" value="8hour" type="str" comment="" />
+                      <item index="1" value="28800" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                  <item index="3" type="list" length="4" comment="">
+                      <item index="0" value="1day" type="str" comment="" />
+                      <item index="1" value="86400" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                  <item index="4" type="list" length="4" comment="">
+                      <item index="0" value="1week" type="str" comment="" />
+                      <item index="1" value="604800" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                </value>
+
+                <key type="str" value="duplicate_port" comment=""/>
+                <value type="list" length="2" comment="">
+                  <item index="0" type="str" value="Duplicate Ports" comment=""/>
+                  <item index="1" type="list" comment="">
+                    <item index="0" type="" comment="">
+                      <item index="0" value="5min" type="str" comment="" />
+                      <item index="1" value="300" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                    <item index="1" type="" comment="">
+                      <item index="0" value="1hour" type="str" comment="" />
+                      <item index="1" value="3600" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                    <item index="2" type="" comment=""></item>
+                    <item index="3" type="" comment=""></item>
+                    <item index="4" type="" comment=""></item>
+                  </item>
+                  <item index="2" type="list" length="4" comment="">
+                      <item index="0" value="8hour" type="str" comment="" />
+                      <item index="1" value="28800" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                  <item index="3" type="list" length="4" comment="">
+                      <item index="0" value="1day" type="str" comment="" />
+                      <item index="1" value="86400" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                  <item index="4" type="list" length="4" comment="">
+                      <item index="0" value="1week" type="str" comment="" />
+                      <item index="1" value="604800" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                </value>
+
+                <key type="str" value="duplicate_mac" comment=""/>
+                <value type="list" length="2" comment="">
+                  <item index="0" type="str" value="Duplicate Macs" comment=""/>
+                  <item index="1" type="list" comment="">
+                    <item index="0" type="" comment="">
+                      <item index="0" value="5min" type="str" comment="" />
+                      <item index="1" value="300" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                    <item index="1" type="" comment="">
+                      <item index="0" value="1hour" type="str" comment="" />
+                      <item index="1" value="3600" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                    <item index="2" type="" comment=""></item>
+                    <item index="3" type="" comment=""></item>
+                    <item index="4" type="" comment=""></item>
+                  </item>
+                  <item index="2" type="list" length="4" comment="">
+                      <item index="0" value="8hour" type="str" comment="" />
+                      <item index="1" value="28800" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                  <item index="3" type="list" length="4" comment="">
+                      <item index="0" value="1day" type="str" comment="" />
+                      <item index="1" value="86400" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                  <item index="4" type="list" length="4" comment="">
+                      <item index="0" value="1week" type="str" comment="" />
+                      <item index="1" value="604800" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                </value>
+
+                <key type="str" value="start_accounting" comment=""/>
+                <value type="list" length="2" comment="">
+                  <item index="0" type="str" value="Start Accounting" comment=""/>
+                  <item index="1" type="list" comment="">
+                    <item index="0" type="" comment="">
+                      <item index="0" value="5min" type="str" comment="" />
+                      <item index="1" value="300" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                    <item index="1" type="" comment="">
+                      <item index="0" value="1hour" type="str" comment="" />
+                      <item index="1" value="3600" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                    <item index="2" type="" comment=""></item>
+                    <item index="3" type="" comment=""></item>
+                    <item index="4" type="" comment=""></item>
+                  </item>
+                  <item index="2" type="list" length="4" comment="">
+                      <item index="0" value="8hour" type="str" comment="" />
+                      <item index="1" value="28800" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                  <item index="3" type="list" length="4" comment="">
+                      <item index="0" value="1day" type="str" comment="" />
+                      <item index="1" value="86400" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                  <item index="4" type="list" length="4" comment="">
+                      <item index="0" value="1week" type="str" comment="" />
+                      <item index="1" value="604800" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                </value>
+
+                <key type="str" comment="auth_accept"/>
+                <value type="list" length="2" value="auth_accept" comment="">
+                  <item index="0" type="str" value="Authentication Accepts" comment=""/>
+                  <item index="1" type="list" comment="">
+                    <item index="0" type="" comment="">
+                      <item index="0" value="5min" type="str" comment="" />
+                      <item index="1" value="300" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                    <item index="1" type="" comment="">
+                      <item index="0" value="1hour" type="str" comment="" />
+                      <item index="1" value="3600" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                  </item>
+                  <item index="2" type="list" length="4" comment="">
+                      <item index="0" value="8hour" type="str" comment="" />
+                      <item index="1" value="28800" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                  <item index="3" type="list" length="4" comment="">
+                      <item index="0" value="1day" type="str" comment="" />
+                      <item index="1" value="86400" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                  <item index="4" type="list" length="4" comment="">
+                      <item index="0" value="1week" type="str" comment="" />
+                      <item index="1" value="604800" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                </value>
+
+                <key type="str" value="recalc_next_event" comment=""/>
+                <value type="list" length="2" comment="">
+                  <item index="0" type="str" value="Next Event Recalculation" comment=""/>
+                  <item index="1" type="list" comment="">
+                    <item index="0" type="" comment="">
+                      <item index="0" value="5min" type="str" comment="" />
+                      <item index="1" value="300" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                    <item index="1" type="" comment="">
+                      <item index="0" value="1hour" type="str" comment="" />
+                      <item index="1" value="3600" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                    <item index="2" type="" comment=""></item>
+                    <item index="3" type="" comment=""></item>
+                    <item index="4" type="" comment=""></item>
+                  </item>
+                  <item index="2" type="list" length="4" comment="">
+                      <item index="0" value="8hour" type="str" comment="" />
+                      <item index="1" value="28800" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                  <item index="3" type="list" length="4" comment="">
+                      <item index="0" value="1day" type="str" comment="" />
+                      <item index="1" value="86400" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                  <item index="4" type="list" length="4" comment="">
+                      <item index="0" value="1week" type="str" comment="" />
+                      <item index="1" value="604800" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                </value>
+
+                <key type="str" comment="internet_stop"/>
+                <value type="list" length="2" value="internet_stop" comment="">
+                  <item index="0" type="str" value="Session Stops" comment=""/>
+                  <item index="1" type="list" comment="">
+                    <item index="0" type="" comment="">
+                      <item index="0" value="5min" type="str" comment="" />
+                      <item index="1" value="300" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                    <item index="1" type="" comment="">
+                      <item index="0" value="1hour" type="str" comment="" />
+                      <item index="1" value="3600" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                    <item index="2" type="" comment=""></item>
+                    <item index="3" type="" comment=""></item>
+                    <item index="4" type="" comment=""></item>
+                  </item>
+                  <item index="2" type="list" length="4" comment="">
+                      <item index="0" value="8hour" type="str" comment="" />
+                      <item index="1" value="28800" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                  <item index="3" type="list" length="4" comment="">
+                      <item index="0" value="1day" type="str" comment="" />
+                      <item index="1" value="86400" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                  <item index="4" type="list" length="4" comment="">
+                      <item index="0" value="1week" type="str" comment="" />
+                      <item index="1" value="604800" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                </value>
+
+                <key type="str" value="auth_reject" comment=""/>
+                <value type="list" length="2" comment="">
+                  <item index="0" type="str" value="Authentication Rejects" comment=""/>
+                  <item index="1" type="list" comment="">
+                    <item index="0" type="" comment="">
+                      <item index="0" value="5min" type="str" comment="" />
+                      <item index="1" value="300" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                    <item index="1" type="" comment="">
+                      <item index="0" value="1hour" type="str" comment="" />
+                      <item index="1" value="3600" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                    <item index="2" type="" comment=""></item>
+                    <item index="3" type="" comment=""></item>
+                    <item index="4" type="" comment=""></item>
+                  </item>
+                  <item index="2" type="list" length="4" comment="">
+                      <item index="0" value="8hour" type="str" comment="" />
+                      <item index="1" value="28800" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                  <item index="3" type="list" length="4" comment="">
+                      <item index="0" value="1day" type="str" comment="" />
+                      <item index="1" value="86400" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                  <item index="4" type="list" length="4" comment="">
+                      <item index="0" value="1week" type="str" comment="" />
+                      <item index="1" value="604800" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                </value>
+
+                <key type="str" value="late_response" comment=""/>
+                <value type="list" length="2" comment="">
+                  <item index="0" type="str" value="Late Responses" comment=""/>
+                  <item index="1" type="list" comment="">
+                    <item index="0" type="" comment="">
+                      <item index="0" value="5min" type="str" comment="" />
+                      <item index="1" value="300" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                    <item index="1" type="" comment="">
+                      <item index="0" value="1hour" type="str" comment="" />
+                      <item index="1" value="3600" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                    <item index="2" type="" comment=""></item>
+                    <item index="3" type="" comment=""></item>
+                    <item index="4" type="" comment=""></item>
+                  </item>
+                  <item index="2" type="list" length="4" comment="">
+                      <item index="0" value="8hour" type="str" comment="" />
+                      <item index="1" value="28800" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                  <item index="3" type="list" length="4" comment="">
+                      <item index="0" value="1day" type="str" comment="" />
+                      <item index="1" value="86400" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                  <item index="4" type="list" length="4" comment="">
+                      <item index="0" value="1week" type="str" comment="" />
+                      <item index="1" value="604800" type="int" comment="seconds" />
+                      <item index="2" type="float" comment="" />
+                      <item index="3" type="int" comment="" />
+                    </item>
+                </value>
+
+            </value>
+
+            <key type="str" value="radius" comment=""/>
+            <value type="dict">
+
+              <key type="str" value="acc_requests" comment=""/>
+              <value type="list" length="2" comment="">
+                <item index="0" type="str" value="Accounting Requests" comment=""/>
+                <item index="1" type="list" comment="">
+                <item index="0" type="" comment="">
+                  <item index="0" value="5min" type="str" comment="" />
+                  <item index="1" value="300" type="int" comment="seconds" />
+                  <item index="2" type="float" comment="" />
+                  <item index="3" type="int" comment="" />
+                </item>
+                <item index="1" type="" comment="">
+                  <item index="0" value="1hour" type="str" comment="" />
+                  <item index="1" value="3600" type="int" comment="seconds" />
+                  <item index="2" type="float" comment="" />
+                  <item index="3" type="int" comment="" />
+                </item>
+                <item index="2" type="" comment=""></item>
+                <item index="3" type="" comment=""></item>
+                <item index="4" type="" comment=""></item>
               </item>
-              <item index="1" type="list" length="4" comment="">
-                <item index="0" value="1hour" type="str" comment="" />
-                <item index="1" value="3600" type="int" comment="seconds" />
-                <item index="2" type="float" comment="" />
-                <item index="3" type="int" comment="" />
+                <item index="2" type="list" length="4" comment="">
+                  <item index="0" value="8hour" type="str" comment="" />
+                  <item index="1" value="28800" type="int" comment="seconds" />
+                  <item index="2" type="float" comment="" />
+                  <item index="3" type="int" comment="" />
+                </item>
+                <item index="3" type="list" length="4" comment="">
+                  <item index="0" value="1day" type="str" comment="" />
+                  <item index="1" value="86400" type="int" comment="seconds" />
+                  <item index="2" type="float" comment="" />
+                  <item index="3" type="int" comment="" />
+                </item>
+                <item index="4" type="list" length="4" comment="">
+                  <item index="0" value="1week" type="str" comment="" />
+                  <item index="1" value="604800" type="int" comment="seconds" />
+                  <item index="2" type="float" comment="" />
+                  <item index="3" type="int" comment="" />
+                </item>
+              </value>
+
+              <key type="str" value="reject_cache_hits" comment=""/>
+              <value type="list" length="2" comment="">
+                <item index="0" type="str" value="Reject Cache Hits" comment=""/>
+                <item index="1" type="list" comment="">
+                  <item index="0" type="" comment="">
+                    <item index="0" value="5min" type="str" comment="" />
+                    <item index="1" value="300" type="int" comment="seconds" />
+                    <item index="2" type="float" comment="" />
+                    <item index="3" type="int" comment="" />
+                  </item>
+                  <item index="1" type="" comment="">
+                    <item index="0" value="1hour" type="str" comment="" />
+                    <item index="1" value="3600" type="int" comment="seconds" />
+                    <item index="2" type="float" comment="" />
+                    <item index="3" type="int" comment="" />
+                  </item>
+                  <item index="2" type="" comment=""></item>
+                  <item index="3" type="" comment=""></item>
+                  <item index="4" type="" comment=""></item>
+                </item>
+                <item index="2" type="list" length="4" comment="">
+                    <item index="0" value="8hour" type="str" comment="" />
+                    <item index="1" value="28800" type="int" comment="seconds" />
+                    <item index="2" type="float" comment="" />
+                    <item index="3" type="int" comment="" />
+                  </item>
+                <item index="3" type="list" length="4" comment="">
+                    <item index="0" value="1day" type="str" comment="" />
+                    <item index="1" value="86400" type="int" comment="seconds" />
+                    <item index="2" type="float" comment="" />
+                    <item index="3" type="int" comment="" />
+                  </item>
+                <item index="4" type="list" length="4" comment="">
+                    <item index="0" value="1week" type="str" comment="" />
+                    <item index="1" value="604800" type="int" comment="seconds" />
+                    <item index="2" type="float" comment="" />
+                    <item index="3" type="int" comment="" />
+                  </item>
+              </value>
+
+              <key type="str"  value="auth_requests" comment=""/>
+              <value type="list" length="2" comment="">
+              <item index="0" type="str" value="Authentication Requests" comment=""/>
+              <item index="1" type="list" comment="">
+                <item index="0" type="" comment="">
+                  <item index="0" value="5min" type="str" comment="" />
+                  <item index="1" value="300" type="int" comment="seconds" />
+                  <item index="2" type="float" comment="" />
+                  <item index="3" type="int" comment="" />
+                </item>
+                <item index="1" type="" comment="">
+                  <item index="0" value="1hour" type="str" comment="" />
+                  <item index="1" value="3600" type="int" comment="seconds" />
+                  <item index="2" type="float" comment="" />
+                  <item index="3" type="int" comment="" />
+                </item>
+                <item index="2" type="" comment=""></item>
+                <item index="3" type="" comment=""></item>
+                <item index="4" type="" comment=""></item>
               </item>
               <item index="2" type="list" length="4" comment="">
-                <item index="0" value="8hour" type="str" comment="" />
-                <item index="1" value="28800" type="int" comment="seconds" />
-                <item index="2" type="float" comment="" />
-                <item index="3" type="int" comment="" />
-              </item>
+                  <item index="0" value="8hour" type="str" comment="" />
+                  <item index="1" value="28800" type="int" comment="seconds" />
+                  <item index="2" type="float" comment="" />
+                  <item index="3" type="int" comment="" />
+                </item>
               <item index="3" type="list" length="4" comment="">
-                <item index="0" value="1day" type="str" comment="" />
-                <item index="1" value="86400" type="int" comment="seconds" />
-                <item index="2" type="float" comment="" />
-                <item index="3" type="int" comment="" />
-              </item>
+                  <item index="0" value="1day" type="str" comment="" />
+                  <item index="1" value="86400" type="int" comment="seconds" />
+                  <item index="2" type="float" comment="" />
+                  <item index="3" type="int" comment="" />
+                </item>
               <item index="4" type="list" length="4" comment="">
-                <item index="0" value="1week" type="str" comment="" />
-                <item index="1" value="604800" type="int" comment="seconds" />
-                <item index="2" type="float" comment="" />
-                <item index="3" type="int" comment="" />
+                  <item index="0" value="1week" type="str" comment="" />
+                  <item index="1" value="604800" type="int" comment="seconds" />
+                  <item index="2" type="float" comment="" />
+                  <item index="3" type="int" comment="" />
+                </item>
+            </value>
+              <key type="str" value="acc_alive_requests" comment=""/>
+              <value type="list" length="2" comment="">
+              <item index="0" type="str" value="Update Accounting Requests" comment=""/>
+              <item index="1" type="list" comment="">
+                <item index="0" type="" comment="">
+                  <item index="0" value="5min" type="str" comment="" />
+                  <item index="1" value="300" type="int" comment="seconds" />
+                  <item index="2" type="float" comment="" />
+                  <item index="3" type="int" comment="" />
+                </item>
+                <item index="1" type="" comment="">
+                  <item index="0" value="1hour" type="str" comment="" />
+                  <item index="1" value="3600" type="int" comment="seconds" />
+                  <item index="2" type="float" comment="" />
+                  <item index="3" type="int" comment="" />
+                </item>
+                <item index="2" type="" comment=""></item>
+                <item index="3" type="" comment=""></item>
+                <item index="4" type="" comment=""></item>
               </item>
-            </item>
+              <item index="2" type="list" length="4" comment="">
+                  <item index="0" value="8hour" type="str" comment="" />
+                  <item index="1" value="28800" type="int" comment="seconds" />
+                  <item index="2" type="float" comment="" />
+                  <item index="3" type="int" comment="" />
+                </item>
+              <item index="3" type="list" length="4" comment="">
+                  <item index="0" value="1day" type="str" comment="" />
+                  <item index="1" value="86400" type="int" comment="seconds" />
+                  <item index="2" type="float" comment="" />
+                  <item index="3" type="int" comment="" />
+                </item>
+              <item index="4" type="list" length="4" comment="">
+                  <item index="0" value="1week" type="str" comment="" />
+                  <item index="1" value="604800" type="int" comment="seconds" />
+                  <item index="2" type="float" comment="" />
+                  <item index="3" type="int" comment="" />
+                </item>
+            </value>
+              <key type="str" value="duplicate_packets" comment=""/>
+              <value type="list" length="2" comment="">
+              <item index="0" type="str" value="" comment=""/>
+              <item index="1" type="list" comment="">
+                <item index="0" type="" comment="">
+                  <item index="0" value="5min" type="str" comment="" />
+                  <item index="1" value="300" type="int" comment="seconds" />
+                  <item index="2" type="float" comment="" />
+                  <item index="3" type="int" comment="" />
+                </item>
+                <item index="1" type="" comment="">
+                  <item index="0" value="1hour" type="str" comment="" />
+                  <item index="1" value="3600" type="int" comment="seconds" />
+                  <item index="2" type="float" comment="" />
+                  <item index="3" type="int" comment="" />
+                </item>
+                <item index="2" type="" comment=""></item>
+                <item index="3" type="" comment=""></item>
+                <item index="4" type="" comment=""></item>
+              </item>
+              <item index="2" type="list" length="4" comment="">
+                  <item index="0" value="8hour" type="str" comment="" />
+                  <item index="1" value="28800" type="int" comment="seconds" />
+                  <item index="2" type="float" comment="" />
+                  <item index="3" type="int" comment="" />
+                </item>
+              <item index="3" type="list" length="4" comment="">
+                  <item index="0" value="1day" type="str" comment="" />
+                  <item index="1" value="86400" type="int" comment="seconds" />
+                  <item index="2" type="float" comment="" />
+                  <item index="3" type="int" comment="" />
+                </item>
+              <item index="4" type="list" length="4" comment="">
+                  <item index="0" value="1week" type="str" comment="" />
+                  <item index="1" value="604800" type="int" comment="seconds" />
+                  <item index="2" type="float" comment="" />
+                  <item index="3" type="int" comment="" />
+                </item>
+            </value>
+              <key type="str" value="auth_replies" comment=""/>
+              <value type="list" length="2" comment="">
+              <item index="0" type="str" value="Authentication Replies" comment=""/>
+              <item index="1" type="list" comment="">
+                <item index="0" type="" comment="">
+                  <item index="0" value="5min" type="str" comment="" />
+                  <item index="1" value="300" type="int" comment="seconds" />
+                  <item index="2" type="float" comment="" />
+                  <item index="3" type="int" comment="" />
+                </item>
+                <item index="1" type="" comment="">
+                  <item index="0" value="1hour" type="str" comment="" />
+                  <item index="1" value="3600" type="int" comment="seconds" />
+                  <item index="2" type="float" comment="" />
+                  <item index="3" type="int" comment="" />
+                </item>
+                <item index="2" type="" comment=""></item>
+                <item index="3" type="" comment=""></item>
+                <item index="4" type="" comment=""></item>
+              </item>
+              <item index="2" type="list" length="4" comment="">
+                  <item index="0" value="8hour" type="str" comment="" />
+                  <item index="1" value="28800" type="int" comment="seconds" />
+                  <item index="2" type="float" comment="" />
+                  <item index="3" type="int" comment="" />
+                </item>
+              <item index="3" type="list" length="4" comment="">
+                  <item index="0" value="1day" type="str" comment="" />
+                  <item index="1" value="86400" type="int" comment="seconds" />
+                  <item index="2" type="float" comment="" />
+                  <item index="3" type="int" comment="" />
+                </item>
+              <item index="4" type="list" length="4" comment="">
+                  <item index="0" value="1week" type="str" comment="" />
+                  <item index="1" value="604800" type="int" comment="seconds" />
+                  <item index="2" type="float" comment="" />
+                  <item index="3" type="int" comment="" />
+                </item>
+            </value>
+            </value>
+
+            <key type="str" value="ws" comment="ws"/>
+            <value type="dict">
+              <key type="str" value="ws_response_time" comment=""/>
+              <value type="list" length="2" comment="">
+              <item index="0" type="str" value="Web Service Response Time" comment=""/>
+              <item index="1" type="list" comment="">
+                <item index="0" type="" comment="">
+                  <item index="0" value="5min" type="str" comment="" />
+                  <item index="1" value="300" type="int" comment="seconds" />
+                  <item index="2" type="float" comment="" />
+                  <item index="3" type="int" comment="" />
+                </item>
+                <item index="1" type="" comment="">
+                  <item index="0" value="1hour" type="str" comment="" />
+                  <item index="1" value="3600" type="int" comment="seconds" />
+                  <item index="2" type="float" comment="" />
+                  <item index="3" type="int" comment="" />
+                </item>
+                <item index="2" type="" comment=""></item>
+                <item index="3" type="" comment=""></item>
+                <item index="4" type="" comment=""></item>
+              </item>
+              <item index="2" type="list" length="4" comment="">
+                  <item index="0" value="8hour" type="str" comment="" />
+                  <item index="1" value="28800" type="int" comment="seconds" />
+                  <item index="2" type="float" comment="" />
+                  <item index="3" type="int" comment="" />
+                </item>
+              <item index="3" type="list" length="4" comment="">
+                  <item index="0" value="1day" type="str" comment="" />
+                  <item index="1" value="86400" type="int" comment="seconds" />
+                  <item index="2" type="float" comment="" />
+                  <item index="3" type="int" comment="" />
+                </item>
+              <item index="4" type="list" length="4" comment="">
+                  <item index="0" value="1week" type="str" comment="" />
+                  <item index="1" value="604800" type="int" comment="seconds" />
+                  <item index="2" type="float" comment="" />
+                  <item index="3" type="int" comment="" />
+                </item>
+            </value>
+              <key type="str" value="ws_requests" comment=""/>
+              <value type="list" length="2" comment="">
+              <item index="0" type="str" value="Web Service Requests" comment=""/>
+              <item index="1" type="list" comment="">
+                <item index="0" type="" comment="">
+                  <item index="0" value="5min" type="str" comment="" />
+                  <item index="1" value="300" type="int" comment="seconds" />
+                  <item index="2" type="float" comment="" />
+                  <item index="3" type="int" comment="" />
+                </item>
+                <item index="1" type="" comment="">
+                  <item index="0" value="1hour" type="str" comment="" />
+                  <item index="1" value="3600" type="int" comment="seconds" />
+                  <item index="2" type="float" comment="" />
+                  <item index="3" type="int" comment="" />
+                </item>
+                <item index="2" type="" comment=""></item>
+                <item index="3" type="" comment=""></item>
+                <item index="4" type="" comment=""></item>
+              </item>
+              <item index="2" type="list" length="4" comment="">
+                  <item index="0" value="8hour" type="str" comment="" />
+                  <item index="1" value="28800" type="int" comment="seconds" />
+                  <item index="2" type="float" comment="" />
+                  <item index="3" type="int" comment="" />
+                </item>
+              <item index="3" type="list" length="4" comment="">
+                  <item index="0" value="1day" type="str" comment="" />
+                  <item index="1" value="86400" type="int" comment="seconds" />
+                  <item index="2" type="float" comment="" />
+                  <item index="3" type="int" comment="" />
+                </item>
+              <item index="4" type="list" length="4" comment="">
+                  <item index="0" value="1week" type="str" comment="" />
+                  <item index="1" value="604800" type="int" comment="seconds" />
+                  <item index="2" type="float" comment="" />
+                  <item index="3" type="int" comment="" />
+                </item>
+            </value>
+            </value>
+
+
           </value>
-        </value>
+
+          <key type="str" comment="id"/>
+          <value type="int" value="None" comment="">
+          </value>
+
       </output>
     </method>
     <method name="getUserQueueStats" auth_type="ADMIN" requires_perm="GOD" comment="">
@@ -5168,6 +6268,15 @@
       </input>
       <output type="int" comment="number of updated notifications" />
     </method>
+    <!--
+    removeNotifications is NOT WORKING, FIXME
+    <method name="removeNotifications" auth_type="ADMIN" requires_perm="" comment="">
+      <input type="dict">
+        <param name="notification_ids" type="list" length="-1" item_type="int" comment="" />
+      </input>
+      <output type="int" comment="number of removed notifications" />
+    </method>
+    !-->
   </handler>
   <handler name="telephony_support" comment="">
     <method name="callerIDAuthenticate" auth_type="ADMIN" requires_perm="TELEPHONY SUPPORT" comment="">
@@ -5506,7 +6615,7 @@
           <param name="time_periodic_accounting_monthly_reset" type="str_datetime" optional="true" comment="Monthly Time: Next Reset" />
           <param name="traffic_periodic_accounting_monthly" type="str" optional="true" comment="Monthly Traffic: Monthly Reset Type">
             <choice value="gregorian" />
-            <choice value="jalali" />            
+            <choice value="jalali" />
           </param>
           <param name="traffic_periodic_accounting_monthly_limit" type="str_int" optional="true" comment="Monthly Traffic: Monthly Traffic Limit" />
           <param name="traffic_periodic_accounting_monthly_usage" type="str_int" optional="true" comment="Monthly Traffic: This Period Usage" />
@@ -5562,7 +6671,7 @@
             <choice value="Hours" comment="" />
             <choice value="Days" comment="" />
             <choice value="Months" comment="1 month means 30 days" />
-            <choice value="Years" comment="1 month means 365 days" /> 
+            <choice value="Years" comment="1 month means 365 days" />
           </param>
           <param name="rel_exp_date_negative_credit" type="int" optional="true" requires_param="rel_exp_date_negative_credit_unit" comment="User Info: Exp Dates: Negative Credit Expiration Date: Negative Credit Relative Expiration Date" />
           <param name="rel_exp_date_negative_credit_unit" type="choice" optional="true" comment="User Info: Exp Dates: Negative Credit Expiration Date: Negative Credit Relative Expiration Date">
@@ -5869,7 +6978,7 @@
           <param name="time_periodic_accounting_monthly_reset" type="str_datetime" optional="true" comment="Monthly Time: Next Reset" />
           <param name="traffic_periodic_accounting_monthly" type="str" optional="true" comment="Monthly Traffic: Monthly Reset Type">
             <choice value="gregorian" />
-            <choice value="jalali" />            
+            <choice value="jalali" />
           </param>
           <param name="traffic_periodic_accounting_monthly_limit" type="str_int" optional="true" comment="Monthly Traffic: Monthly Traffic Limit" />
           <param name="traffic_periodic_accounting_monthly_usage" type="str_int" optional="true" comment="Monthly Traffic: This Period Usage" />
@@ -7239,7 +8348,7 @@
       <output type="null" comment="" />
     </method>
     <method name="setFeshfesheParams" auth_type="ADMIN" requires_perm="CHANGE USER ATTRIBUTES"
-        comment="Added in tag 320, See: http://wiki.parspooyesh.com/index.php/Feshfeshe">
+        comment="See: http://wiki.parspooyesh.com/index.php/Feshfeshe">
       <input type="dict">
         <param name="user_id" type="int" comment=""></param>
         <param name="traffic" type="int" comment="Traffic, in Mega Bytes"></param>
@@ -7673,7 +8782,7 @@
       </output>
     </method>
   </handler>
-  <handler name="invoice" comment="based on branch C_invoice">
+  <handler name="invoice" comment="based on branch C_invoice_staging">
     <method name="getInvoiceProfileNames" auth_type="ADMIN" requires_perm="SEE INVOICE PROFILE" comment="">
       <input type="dict">
         <param name="conds" type="dict" comment="">
