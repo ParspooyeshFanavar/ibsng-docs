@@ -999,6 +999,257 @@
       <output type="list" length="-1" item_type="str" comment="list of profile names">
       </output>
     </method>
+    <method name="addExtraChargeProfile" auth_type="ADMIN" requires_perm="CHANGE EXTRA CHARGE" comment="">
+      <input type="dict">
+        <param name="profile_name" type="str" />
+        <param name="comment" type="str" />
+        <param name="effective_hour" type="str" comment="format: HH:MM" />
+        <param name="rules" type="list" item_type="dict">
+          <item type="dict" comment="rule info dict">
+            <param name="start_from" type="choice">
+              <choice value="user_creation_date" />
+              <choice value="user_real_first_login" />
+              <choice value="package_first_login" />
+              <choice value="user_expiration_date" />
+              <choice value="child_user_activation_fee" />
+              <choice value="child_user_creation_date" />
+              <choice value="child_active_user_creation_date" />
+            </param>
+            <param name="description" type="str" />
+            <param name="period" type="choice">
+              <choice value="monthly" />
+              <choice value="start_of_month" />
+              <choice value="daily" />
+              <choice value="none" />
+            </param>
+            <param name="period_value" type="choice">
+              <choice value="gregorian" />
+              <choice value="jalali" />
+            </param>
+            <param name="change_target" type="choice">
+              <choice value="credit" />
+              <choice value="deposit" />
+              <choice value="night_free" />
+            </param>
+            <param name="change_action" type="choice">
+              <choice value="SET" />
+              <choice value="ADD" />
+              <choice value="MULTIPLY" />
+            </param>
+            <param name="amount" type="float" />
+            <param name="negate_credit" type="bool" />
+            <param name="pay_back" type="bool" />
+            <param name="ignore_first_time" type="bool" />
+          </item>
+        </param>
+      </input>
+      <output type="int" comment="extra_charge_profile_id" />
+    </method>
+    <method name="updateExtraChargeProfile" auth_type="ADMIN" requires_perm="CHANGE EXTRA CHARGE" comment="">
+      <input type="dict">
+        <param name="profile_id" type="int" />
+        <param name="profile_name" type="str" />
+        <param name="comment" type="str" />
+        <param name="effective_hour" type="str" comment="format: HH:MM" />
+        <param name="rules" type="list" item_type="dict">
+          <item type="dict" comment="rule info dict">
+            <param name="rule_id" type="int" default="-1" comment="leave -1 for new rules" />
+            <param name="start_from" type="choice">
+              <choice value="user_creation_date" />
+              <choice value="user_real_first_login" />
+              <choice value="package_first_login" />
+              <choice value="user_expiration_date" />
+              <choice value="child_user_activation_fee" />
+              <choice value="child_user_creation_date" />
+              <choice value="child_active_user_creation_date" />
+            </param>
+            <param name="description" type="str" />
+            <param name="period" type="choice">
+              <choice value="monthly" />
+              <choice value="start_of_month" />
+              <choice value="daily" />
+              <choice value="none" />
+            </param>
+            <param name="period_value" type="choice">
+              <choice value="gregorian" />
+              <choice value="jalali" />
+            </param>
+            <param name="change_target" type="choice">
+              <choice value="credit" />
+              <choice value="deposit" />
+              <choice value="night_free" />
+            </param>
+            <param name="change_action" type="choice">
+              <choice value="SET" />
+              <choice value="ADD" />
+              <choice value="MULTIPLY" />
+            </param>
+            <param name="amount" type="float" />
+            <param name="negate_credit" type="bool" />
+            <param name="pay_back" type="bool" />
+            <param name="ignore_first_time" type="bool" />
+          </item>
+        </param>
+      </input>
+      <output type="null" />
+    </method>
+    <method name="deleteExtraChargeProfile" auth_type="ADMIN" requires_perm="CHANGE EXTRA CHARGE" comment="">
+      <input type="dict">
+        <param name="profile_name" type="str" />
+      </input>
+      <output type="null"></output>
+    </method>
+    <method name="getExtraChargeProfiles" auth_type="ADMIN" requires_perm="SEE EXTRA CHARGE" comment="">
+      <input type="dict">
+      </input>
+      <output type="list" item_type="dict">
+        <item type="dict" item_type="profile info dict">
+          <param name="profile_id" type="int" />
+          <param name="profile_name" type="str" />
+          <param name="comment" type="str" />
+          <param name="effective_hour" type="str" comment="format: HH:MM" />
+          <param name="rules" type="list" item_type="dict">
+            <item type="dict" comment="rule info dict">
+              <param name="rule_id" type="int" />
+              <param name="start_from" type="choice">
+                <choice value="user_creation_date" />
+                <choice value="user_real_first_login" />
+                <choice value="package_first_login" />
+                <choice value="user_expiration_date" />
+                <choice value="child_user_activation_fee" />
+                <choice value="child_user_creation_date" />
+                <choice value="child_active_user_creation_date" />
+              </param>
+              <param name="description" type="str" />
+              <param name="period" type="choice">
+                <choice value="monthly" />
+                <choice value="start_of_month" />
+                <choice value="daily" />
+                <choice value="none" />
+              </param>
+              <param name="period_value" type="choice">
+                <choice value="gregorian" />
+                <choice value="jalali" />
+              </param>
+              <param name="change_target" type="choice">
+                <choice value="credit" />
+                <choice value="deposit" />
+                <choice value="night_free" />
+              </param>
+              <param name="change_action" type="choice">
+                <choice value="SET" />
+                <choice value="ADD" />
+                <choice value="MULTIPLY" />
+              </param>
+              <param name="amount" type="float" />
+              <param name="negate_credit" type="bool" />
+              <param name="pay_back" type="bool" />
+              <param name="ignore_first_time" type="bool" />
+            </item>
+          </param>
+        </item>
+      </output>
+    </method>
+    <method name="getExtraChargeProfileByName" auth_type="ADMIN" requires_perm="SEE EXTRA CHARGE" comment="">
+      <input type="dict">
+        <param name="profile_name" type="str" />
+      </input>
+      <output type="dict">
+        <param name="profile_id" type="int" />
+        <param name="profile_name" type="str" />
+        <param name="comment" type="str" />
+        <param name="effective_hour" type="str" comment="format: HH:MM" />
+        <param name="rules" type="list" item_type="dict">
+          <item type="dict" comment="rule info dict">
+            <param name="rule_id" type="int" />
+            <param name="start_from" type="choice">
+              <choice value="user_creation_date" />
+              <choice value="user_real_first_login" />
+              <choice value="package_first_login" />
+              <choice value="user_expiration_date" />
+              <choice value="child_user_activation_fee" />
+              <choice value="child_user_creation_date" />
+              <choice value="child_active_user_creation_date" />
+            </param>
+            <param name="description" type="str" />
+            <param name="period" type="choice">
+              <choice value="monthly" />
+              <choice value="start_of_month" />
+              <choice value="daily" />
+              <choice value="none" />
+            </param>
+            <param name="period_value" type="choice">
+              <choice value="gregorian" />
+              <choice value="jalali" />
+            </param>
+            <param name="change_target" type="choice">
+              <choice value="credit" />
+              <choice value="deposit" />
+              <choice value="night_free" />
+            </param>
+            <param name="change_action" type="choice">
+              <choice value="SET" />
+              <choice value="ADD" />
+              <choice value="MULTIPLY" />
+            </param>
+            <param name="amount" type="float" />
+            <param name="negate_credit" type="bool" />
+            <param name="pay_back" type="bool" />
+            <param name="ignore_first_time" type="bool" />
+          </item>
+        </param>
+      </output>
+    </method>
+    <method name="getExtraChargeProfileByID" auth_type="ADMIN" requires_perm="SEE EXTRA CHARGE" comment="">
+      <input type="dict">
+        <param name="profile_id" type="int" />
+      </input>
+      <output type="dict">
+        <param name="profile_id" type="int" />
+        <param name="profile_name" type="str" />
+        <param name="comment" type="str" />
+        <param name="effective_hour" type="str" comment="format: HH:MM" />
+        <param name="rules" type="list" item_type="dict">
+          <item type="dict" comment="rule info dict">
+            <param name="rule_id" type="int" />
+            <param name="start_from" type="choice">
+              <choice value="user_creation_date" />
+              <choice value="user_real_first_login" />
+              <choice value="package_first_login" />
+              <choice value="user_expiration_date" />
+              <choice value="child_user_activation_fee" />
+              <choice value="child_user_creation_date" />
+              <choice value="child_active_user_creation_date" />
+            </param>
+            <param name="description" type="str" />
+            <param name="period" type="choice">
+              <choice value="monthly" />
+              <choice value="start_of_month" />
+              <choice value="daily" />
+              <choice value="none" />
+            </param>
+            <param name="period_value" type="choice">
+              <choice value="gregorian" />
+              <choice value="jalali" />
+            </param>
+            <param name="change_target" type="choice">
+              <choice value="credit" />
+              <choice value="deposit" />
+              <choice value="night_free" />
+            </param>
+            <param name="change_action" type="choice">
+              <choice value="SET" />
+              <choice value="ADD" />
+              <choice value="MULTIPLY" />
+            </param>
+            <param name="amount" type="float" />
+            <param name="negate_credit" type="bool" />
+            <param name="pay_back" type="bool" />
+            <param name="ignore_first_time" type="bool" />
+          </item>
+        </param>
+      </output>
+    </method>
   </handler>
   <handler name="group" comment="">
     <method name="addNewGroup" auth_type="ADMIN" requires_perm="CHANGE GROUP" comment="">
@@ -2433,22 +2684,175 @@
     </method>
   </handler>
   <handler name="notification" comment="">
-    <method name="getNotificationProfileNames" auth_type="ADMIN" requires_perm="CHANGE USER ATTRIBUTES" comment="">
+    <method name="getNotificationProfileNames" auth_type="ADMIN" requires_perm=""
+      comment="list of notification profile names that admin has access to.">
       <input type="dict">
       </input>
       <output type="list" length="-1" item_type="str" comment="list of profile names" />
     </method>
-  </handler>
-  <handler name="online_payment" comment="">
-    <method name="getAllGatewayNames" auth_type="ADMIN" requires_perm="SEE ONLINE PAYMENT" comment="">
+    <method name="getNotificationProfiles" auth_type="ADMIN" requires_perm="CHANGE NOTIFICATION"
+    comment="list of notification profile informations that admin has access to.">
       <input type="dict">
       </input>
-      <output type="dict">
-        <param name="gateway_names" type="list" length="-1" item_type="str" comment="list of gateway names" />
+      <output type="list" length="-1" item_type="dict" comment="list of profile infos">
+        <item type="dict" comment="profile info">
+          <param name="notification_profile_id" type="int" comment="" />
+          <param name="notification_profile_name" type="str" comment="" />
+          <param name="notification_profile_comment" type="str" comment="" />
+          <param name="notification_rules" type="list" length="-1" item_type="dict" comment="">
+            <item type="dict" comment="rule dict">
+              <param name="notification_rule_id" type="int" comment="" />
+              <param name="notification_profile_id" type="int" comment="" />
+              <param name="notification_threshold" type="float" comment="" />
+              <param name="message_type" type="choice" comment="">
+                <choice value="sms" />
+                <choice value="email" />
+                <choice value="email_to_isp" />
+                <choice value="ibsng_message" />
+                <choice value="url" comment="call a URL specified in `message_template`, added in tag 312" />
+                <choice value="user_event" comment="added in tag (NO TAG YET)"/>
+              </param>
+              <param name="notification_type" type="choice" comment="">
+                 <choice value="expiration_date" />
+                 <choice value="credit" />
+                 <choice value="renew" />
+                 <choice value="birth_day" />
+                 <choice value="online_payment" />
+                 <choice value="first_login" />
+                 <choice value="credit_change" />
+                 <choice value="deposit_change" />
+              </param>
+              <param name="message_template" type="str" comment="" />
+            </item>
+          </param>
+          <param name="isp_id" type="int" comment="" />
+          <param name="owner_isp_name" type="str" comment="" />
+        </item>
       </output>
     </method>
-    <method name="getAvailablePaymentGateways" auth_type="USER, ADMIN" requires_perm=""
-        comment="list of gateway names that are available and usable for user">
+    <method name="addNotificationProfile" auth_type="ADMIN" requires_perm="CHANGE NOTIFICATION" comment="">
+      <input type="dict">
+        <param name="notification_profile_name" type="str" comment="" />
+        <param name="notification_profile_comment" type="str" comment="" />
+      </input>
+      <output type="int" comment="the new notification_profile_id" />
+    </method>
+    <method name="updateNotificationProfile" auth_type="ADMIN" requires_perm="CHANGE NOTIFICATION" comment="">
+      <input type="dict">
+        <param name="notification_profile_id" type="int" comment="" />
+        <param name="notification_profile_name" type="str" comment="" />
+        <param name="notification_profile_comment" type="str" comment="" />
+      </input>
+      <output type="null" comment="" />
+    </method>
+    <method name="getNotificationProfileByName" auth_type="ADMIN" requires_perm="" comment="">
+      <input type="dict">
+        <param name="notification_profile_name" type="str" comment="" />
+      </input>
+      <output type="dict" comment="">
+        <param name="notification_profile_id" type="int" comment="" />
+        <param name="notification_profile_name" type="str" comment="" />
+        <param name="notification_profile_comment" type="str" comment="" />
+        <param name="notification_rules" type="list" length="-1" item_type="dict" comment="">
+          <item type="dict" comment="rule dict">
+            <param name="notification_rule_id" type="int" comment="" />
+            <param name="notification_profile_id" type="int" comment="" />
+            <param name="notification_threshold" type="float" comment="" />
+            <param name="message_type" type="choice" comment="">
+              <choice value="sms" />
+              <choice value="email" />
+              <choice value="email_to_isp" />
+              <choice value="ibsng_message" />
+              <choice value="url" comment="call a URL specified in `message_template`, added in tag 312" />
+              <choice value="user_event" comment="added in tag (NO TAG YET)"/>
+            </param>
+            <param name="notification_type" type="choice" comment="">
+               <choice value="expiration_date" />
+               <choice value="credit" />
+               <choice value="renew" />
+               <choice value="birth_day" />
+               <choice value="online_payment" />
+               <choice value="first_login" />
+               <choice value="credit_change" />
+               <choice value="deposit_change" />
+            </param>
+            <param name="message_template" type="str" comment="" />
+          </item>
+        </param>
+        <param name="isp_id" type="int" comment="" />
+        <param name="owner_isp_name" type="str" comment="" />
+      </output>
+    </method>
+    <method name="deleteNotificationProfile" auth_type="ADMIN" requires_perm="CHANGE NOTIFICATION" comment="">
+      <input type="dict" comment="">
+        <param name="notification_profile_name" type="" comment="" />
+      </input>
+      <output type="null" />
+    </method>
+    <method name="addNotificationRule" auth_type="ADMIN" requires_perm="CHANGE NOTIFICATION" comment="">
+      <input type="dict">
+        <param name="notification_profile_id" type="int" comment="" />
+        <param name="notification_type" type="choice" comment="">
+          <choice value="expiration_date" />
+          <choice value="credit" />
+          <choice value="renew" />
+          <choice value="birth_day" />
+          <choice value="online_payment" />
+          <choice value="first_login" />
+          <choice value="credit_change" />
+          <choice value="deposit_change" />
+        </param>
+        <param name="notification_threshold" type="float" comment="" />
+        <param name="message_type" type="choice" comment="">
+          <choice value="sms" />
+          <choice value="email" />
+          <choice value="email_to_isp" />
+          <choice value="ibsng_message" />
+          <choice value="url" comment="call a URL specified in `message_template`, added in tag 312" />
+          <choice value="user_event" comment="added in tag (NO TAG YET)"/>
+        </param>
+        <param name="message_template" type="str" comment="" />
+      </input>
+      <output type="null" />
+    </method>
+    <method name="deleteNotificationRule" auth_type="ADMIN" requires_perm="CHANGE NOTIFICATION">
+      <input type="dict">
+        <param name="notification_profile_id" type="int" />
+        <param name="notification_rule_id" type="int" />
+      </input>
+      <output type="null" />
+    </method>
+    <method name="updateNotificationRule" auth_type="ADMIN" requires_perm="CHANGE NOTIFICATION">
+      <input type="dict">
+        <param name="notification_rule_id" type="int" />
+        <param name="notification_profile_id" type="int" />
+        <param name="notification_type" type="choice">
+          <choice value="expiration_date" />
+          <choice value="credit" />
+          <choice value="renew" />
+          <choice value="birth_day" />
+          <choice value="online_payment" />
+          <choice value="first_login" />
+          <choice value="credit_change" />
+          <choice value="deposit_change" />
+        </param>
+        <param name="notification_threshold" type="float" />
+        <param name="message_type" type="choice">
+          <choice value="sms" />
+          <choice value="email" />
+          <choice value="email_to_isp" />
+          <choice value="ibsng_message" />
+          <choice value="url" comment="call a URL specified in `message_template`, added in tag 312" />
+          <choice value="user_event" comment="added in tag (NO TAG YET)"/>
+        </param>
+        <param name="message_template" type="str" />
+      </input>
+      <output type="null" />
+    </method>
+  </handler>
+  <handler name="online_payment" comment="">
+    <method name="getAvailableGatewayTypes" auth_type="USER, ADMIN"
+          comment="list of gateway names that are available and usable for user">
       <input type="dict">
       </input>
       <output type="list" length="-1" item_type="choice" comment="list of gateway types">
@@ -2462,6 +2866,158 @@
           <choice value="Tejarat" />
           <choice value="ZarinPal" />
         </item>
+      </output>
+    </method>
+    <method name="getPaymentAmountSuggestions" auth_type="USER, ADMIN" comment="">
+      <input type="dict">
+      </input>
+      <output type="list" length="-1" item_type="list" comment="">
+        <item type="list" length="4">
+          <item index="0" type="choice" comment="suggestion_id">
+            <choice type="str" value="renew_credit" />
+            <choice type="str" value="recharge_credit" />
+            <choice type="str" value="arbitrary" />
+            <choice type="str" value="recharge_from_renew_deposit" comment="only in C_invoice branch"/>
+          </item>
+          <item index="1" type="float" comment="amount"></item>
+          <item index="2" type="str" comment="description"></item>
+          <item index="3" type="bool" comment="editable"></item>
+        </item>
+      </output>
+    </method>
+    <method name="preparePayment" auth_type="USER, ADMIN"
+      comment="Added in tag C_dev_326">
+      <input type="dict">
+        <param name="gateway_type" type="choice" comment="">
+          <choice value="Melli-shahparak" />
+          <choice value="Eghtesad_Novin" />
+          <choice value="Mellat-Shaparak" />
+          <choice value="Parsian" />
+          <choice value="Pasargad" />
+          <choice value="Saman" />
+          <choice value="Tejarat" />
+          <choice value="ZarinPal" />
+        </param>
+        <param name="amount" type="float" comment="" />
+        <param name="unique_id" type="str" comment="" />
+        <param name="callback_url" type="str" comment="" />
+        <param name="attributes" type="dict" comment="you can put all the parameters you want here">
+          <param name="no_action" optional="true" type=""
+            comment="if you put this in attributes, we won't perform any action (credit / deposit / invoice) after verifying payment" />
+        </param>
+      </input>
+      <output type="dict" comment="">
+        <param name="web_attributes" type="dict" comment="" />
+        <param name="redirect_method" type="choice" comment="">
+          <choice value="POST" />
+          <choice value="GET" />
+        </param>
+        <param name="url" type="str" comment="Redirect URL" />
+      </output>
+    </method>
+    <method name="verifyPayment" auth_type="USER, ADMIN"
+      comment="Added in tag C_dev_326">
+      <input type="dict">
+        <param name="unique_id" type="str" comment="" />
+        <param name="web_attributes" type="dict" comment="" />
+      </input>
+      <output type="dict" comment="">
+        <param name="amount" type="float" comment="" />
+        <param name="ref_id" type="str" comment="Bank Reference ID" />
+      </output>
+    </method>
+    <method name="addGateway" auth_type="ADMIN" requires_perm="CHANGE ONLINE PAYMENT"
+      comment="Added in tag C_dev_326">
+      <input type="dict">
+        <param name="gateway_name" type="str" comment=""></param>
+        <param name="gateway_type" type="choice" comment="">
+          <choice type="str" value="Eghtesad_Novin" />
+          <choice type="str" value="Mellat-Shaparak" />
+          <choice type="str" value="Melli-shahparak" />
+          <choice type="str" value="Parsian" />
+          <choice type="str" value="Pasargad" />
+          <choice type="str" value="Saman" />
+          <choice type="str" value="Tejarat" />
+          <choice type="str" value="ZarinPal" />
+        </param>
+        <param name="owner_isp_name" type="str" comment=""></param>
+        <param name="priority" type="int" comment=""></param>
+        <param name="comment" type="str" comment=""></param>
+        <param name="attributes" type="dict" comment=""></param>
+      </input>
+      <output type="null">
+      </output>
+    </method>
+    <method name="updateGateway" auth_type="ADMIN" requires_perm="CHANGE ONLINE PAYMENT"
+      comment="Added in tag C_dev_326">
+      <input type="dict">
+        <param name="gateway_id" type="int" comment=""></param>
+        <param name="gateway_name" type="str" comment=""></param>
+        <param name="owner_isp_name" type="str" comment=""></param>
+        <param name="priority" type="int" comment=""></param>
+        <param name="comment" type="str" comment=""></param>
+        <param name="attributes" type="dict" comment=""></param>
+      </input>
+      <output type="null">
+      </output>
+    </method>
+    <method name="deleteGateway" auth_type="ADMIN" requires_perm="CHANGE ONLINE PAYMENT"
+      comment="Added in tag C_dev_326">
+      <input type="dict">
+        <param name="gateway_name" type="str" comment=""></param>
+      </input>
+      <output type="null">
+      </output>
+    </method>
+    <method name="getAllGatewayTypes" auth_type="ADMIN" requires_perm="SEE ONLINE PAYMENT"
+      comment="Added in tag C_dev_326">
+      <input type="dict">
+      </input>
+      <output type="list" length="-1" item_type="str" comment="list of gateway types">
+      </output>
+    </method>
+    <method name="getAllGatewayNames" auth_type="ADMIN" requires_perm="SEE ONLINE PAYMENT"
+      comment="Added in tag C_dev_326">
+      <input type="dict">
+      </input>
+      <output type="dict">
+        <param name="gateway_names" type="list" length="-1" item_type="str" comment="list of gateway names" />
+      </output>
+    </method>
+    <method name="getAllGatewayInfos" auth_type="ADMIN" requires_perm="CHANGE ONLINE PAYMENT"
+      comment="Added in tag C_dev_326">
+      <input type="dict">
+      </input>
+      <output type="list" item_type="dict">
+        <item type="dict" comment="gateway attributes">
+          <param name="gateway_id" type="int" comment=""></param>
+          <param name="gateway_name" type="str" comment=""></param>
+          <param name="gateway_type" type="choice" comment="">
+            <choice type="str" value="Eghtesad_Novin" />
+            <choice type="str" value="Mellat-Shaparak" />
+            <choice type="str" value="Melli-shahparak" />
+            <choice type="str" value="Parsian" />
+            <choice type="str" value="Pasargad" />
+            <choice type="str" value="Saman" />
+            <choice type="str" value="Tejarat" />
+            <choice type="str" value="ZarinPal" />
+          </param>
+          <param name="isp_id" type="int" comment=""></param>
+          <param name="owner_isp_name" type="str" comment=""></param>
+          <param name="priority" type="int" comment=""></param>
+          <param name="comment" type="str" comment=""></param>
+          <param name="attributes" type="dict" comment=""></param>
+          <param name="dict_attributes" type="dict" comment=""></param>
+        </item>
+      </output>
+    </method>
+    <method name="purgePayment" auth_type="ADMIN" requires_perm="PURGE ONLINE PAYMENT"
+      comment="Added in tag C_dev_326">
+      <input type="dict">
+        <param name="payment_id" type="int" comment="">
+        </param>
+      </input>
+      <output type="dict">
       </output>
     </method>
   </handler>
@@ -7563,8 +8119,8 @@
           <param name="is_used" type="bool" optional="true" comment="true means voucher is used" />
           <param name="isp_names" type="list, str" optional="true" comment="list of isp names, or string of one isp name" />
         </param>
-        <param name="index_from" type="int" comment="" />
-        <param name="index_to" type="int" comment="" />
+        <param name="from" type="int" comment="" />
+        <param name="to" type="int" comment="" />
         <param name="sort_by" type="choice" comment="">
           <choice value="pin" comment="" />
           <choice value="voucher_id" comment="" />
@@ -7598,8 +8154,8 @@
           <param name="credit_from" type="float" optional="true" comment="" />
           <param name="credit_to" type="float" optional="true" comment="" />
         </param>
-        <param name="index_from" type="int" comment="" />
-        <param name="index_to" type="int" comment="" />
+        <param name="from" type="int" comment="" />
+        <param name="to" type="int" comment="" />
         <param name="sort_by" type="choice" comment="">
           <choice value="batch_id" comment="" />
           <choice value="batch_name" comment="" />
@@ -7672,6 +8228,129 @@
         <param name="batch_allow_use_by_children_isp" type="bool" comment="" />
       </output>
     </method>
+    <method name="voucherAddBatch" auth_type="ADMIN" requires_perm="CHANGE VOUCHER"
+        comment="">
+      <input type="dict">
+        <param name="batch_dict" type="dict" comment="">
+          <param name="batch_name" type="str" comment="" />
+          <param name="is_locked" type="bool" default="False" comment="" />
+          <param name="credit" type="float" comment="" />
+          <param name="can_recharge_user" type="bool" comment="" />
+          <param name="can_create_user" type="bool" comment="" />
+          <param name="change_target" type="choice" comment="">
+            <choice value="credit" comment="Credit" />
+            <choice value="deposit" comment="Renew Deposit" />
+            <choice value="deposit_recharge" comment="Recharge Deposit" />
+          </param>
+          <param name="allow_use_by_children_isp" type="bool" comment="" />
+          <param name="comment" type="str" comment="" />
+        </param>
+        <param name="pin_prefix" type="str" comment="" />
+        <param name="pin_len" type="int" comment="" />
+        <param name="serial_prefix" type="str" comment="" />
+        <param name="serial_start" type="int" comment="" />
+        <param name="count" type="int" comment="" />
+      </input>
+      <output type="int" comment="batch_id" />
+    </method>
+    <method name="voucherChangeBatchLockStatus" auth_type="ADMIN" requires_perm="CHANGE VOUCHER"
+        comment="">
+      <input type="dict">
+        <param name="batch_id" type="int" />
+        <param name="lock" type="bool" />
+      </input>
+      <output type="null" />
+    </method>
+    <method name="voucherGetBatchByID" auth_type="ADMIN" requires_perm="SEE VOUCHER"
+        comment="">
+      <input type="dict">
+        <param name="batch_id" type="int" />
+      </input>
+      <output type="dict" comment="batch info dict">
+        <param name="batch_id" type="int" comment="" />
+        <param name="batch_name" type="str" comment="" />
+        <param name="is_locked" type="bool" comment="" />
+        <param name="credit" type="float" comment="" />
+        <param name="can_recharge_user" type="bool" comment="" />
+        <param name="can_create_user" type="bool" comment="" />
+        <param name="change_target" type="choice" comment="">
+          <choice value="credit" comment="Credit" />
+          <choice value="deposit" comment="Renew Deposit" />
+          <choice value="deposit_recharge" comment="Recharge Deposit" />
+        </param>
+        <param name="isp_name" type="str" />
+        <param name="creation_date" type="str_datetime" />
+        <param name="allow_use_by_children_isp" type="bool" comment="" />
+        <param name="comment" type="str" comment="" />
+      </output>
+    </method>
+    <method name="getVoucherByID" auth_type="ADMIN" requires_perm="SEE VOUCHER"
+        comment="">
+      <input type="dict">
+        <param name="voucher_id" type="int" />
+      </input>
+      <output type="dict">
+        <param name="voucher_id" type="int" />
+        <param name="batch_id" type="int" />
+        <param name="pin" type="str" />
+        <param name="serial" type="str" />
+        <param name="is_used" type="bool" />
+        <param name="user_id" type="int" />
+        <param name="used_date" type="str_datetime" />
+      </output>
+    </method>
+    <method name="voucherSearchBatch" auth_type="ADMIN" requires_perm="SEE VOUCHER"
+        comment="">
+      <input type="dict">
+        <param name="conds" type="dict">
+          <param name="isp_names" type="list, str" optional="true"
+            comment="list of isp names, or string of one isp name" />
+          <param name="batch_ids" type="str" multi_str="true" optional="true"
+            comment="comma-separated Batch IDs" />
+          <param name="batch_names" type="str" multi_str="true" optional="true"
+            comment="comma-separated Batch Names" />
+          <param name="is_locked" type="bool" optional="true" comment="" />
+          <param name="can_recharge_user" type="bool" optional="true" comment="" />
+          <param name="can_create_user" type="bool" optional="true" comment="" />
+          <param name="credit_from" type="float" optional="true"
+            comment="only batches with credit &gt;= {credit_from}" />
+          <param name="credit_to" type="float" optional="true"
+            comment="only batches with credit &lt;= {credit_to}" />
+        </param>
+        <param name="from" type="int" comment="for pagination" />
+        <param name="to" type="int" comment="for pagination" />
+        <param name="sort_by" type="choice">
+          <choice value="batch_id" />
+          <choice value="batch_name" />
+          <choice value="credit" />
+        </param>
+        <param name="desc" type="bool" />
+      </input>
+      <output type="dict">
+        <param name="total_rows" type="int" comment="total number of results" />
+        <param name="report" type="list" item_type="dict" comment="">
+          <item type="dict" comment="batch info dict">
+            <param name="batch_id" type="int" />
+            <param name="batch_name" type="str" />
+            <param name="is_locked" type="bool" />
+            <param name="credit" type="float" />
+            <param name="can_create_user" type="bool" />
+            <param name="can_recharge_user" type="bool" />
+            <param name="change_target" type="choice">
+              <choice value="credit" comment="Credit" />
+              <choice value="deposit" comment="Renew Deposit" />
+              <choice value="deposit_recharge" comment="Recharge Deposit" />
+            </param>
+            <param name="comment" type="str" />
+            <param name="creation_date" type="str_datetime" />
+            <param name="isp_id" type="int" />
+            <param name="allow_use_by_children_isp" type="bool" />
+            <param name="is_locked" type="bool" />
+            <param name="isp_name" type="str" />
+          </item>
+        </param>
+      </output>
+    </method>
   </handler>
   <handler name="invoice" comment="based on branch C_invoice">
     <method name="getInvoiceProfileNames" auth_type="ADMIN" requires_perm="SEE INVOICE PROFILE" comment="">
@@ -7690,79 +8369,967 @@
       <output type="list" length="-1" item_type="str" comment="list of profile names">
       </output>
     </method>
+    <method name="getInvoiceProfiles" auth_type="ADMIN" requires_perm="SEE INVOICE PROFILE" comment="">
+      <input type="dict">
+      </input>
+      <output type="list" length="-1" item_type="dict" comment="">
+        <item type="dict" comment="profile info dict">
+          <param name="profile_id" type="int" />
+          <param name="profile_name" type="str" />
+          <param name="isp_name" type="str" />
+          <param name="comment" type="str" />
+          <param name="rules" type="list" length="-1">
+            <item type="dict" comment="rule info dict">
+              <param name="rule_id" type="int" />
+              <param name="description" type="str" />
+              <param name="invoice_template_name" type="str" />
+              <param name="pi_template_name" type="str" />
+              <param name="date_type" type="choice">
+                <choice value="jalali" />
+                <choice value="gregorian" />
+              </param>
+              <param name="language" type="choice">
+                <choice value="fa" />
+                <choice value="en" />
+              </param>
+              <param name="pi_exp_days" type="int" />
+              <param name="roundup_scale" type="int" />
+              <param name="auto_invoice_event" type="choice">
+                <choice value="null" />
+                <choice value="credit_finished" />
+                <choice value="exp_date" />
+                <choice value="always" />
+              </param>
+              <param name="auto_invoice_threshold" type="int" />
+              <param name="allow_user_issue_invoice" type="bool" />
+              <param name="action" type="choice">
+                <choice value="change_service" />
+                <choice value="renew" />
+                <choice value="renew_with_next_group" />
+                <choice value="recharge" />
+                <choice value="increase_deposit" />
+                <choice value="increase_deposit_by_group_credit" />
+                <choice value="increase_recharge_deposit" />
+                <choice value="increase_credit" />
+                <choice value="increase_deposit_constant" />
+                <choice value="increase_recharge_deposit_constant" />
+                <choice value="increase_credit_constant" />
+                <choice value="set_deposit_constant" />
+                <choice value="set_credit_constant" />
+              </param>
+              <param name="action_args" type="str" comment="" />
+              <param name="disabled" type="bool" />
+              <param name="invoice_rule_items" type="list" item_type="dict" length="-1">
+                <item type="dict" comment="rule item info dict">
+                  <param name="rule_item_id" type="int" />
+                  <param name="description" type="str" />
+                  <param name="formula" type="str" />
+                  <param name="is_bonus" type="bool" />
+                  <param name="none_effective" type="bool" />
+                </item>
+              </param>
+            </item>
+          </param>
+        </item>
+      </output>
+    </method>
+    <method name="getInvoiceProfileByName" auth_type="ADMIN" requires_perm="SEE INVOICE PROFILE" comment="">
+      <input type="dict">
+        <param name="profile_name" type="str" />
+      </input>
+      <output type="dict" comment="">
+        <param name="profile_id" type="int" />
+        <param name="profile_name" type="str" />
+        <param name="isp_name" type="str" />
+        <param name="comment" type="str" />
+        <param name="rules" type="list" length="-1">
+          <item type="dict" comment="rule info dict">
+            <param name="rule_id" type="int" />
+            <param name="description" type="str" />
+            <param name="invoice_template_name" type="str" />
+            <param name="pi_template_name" type="str" />
+            <param name="date_type" type="choice">
+              <choice value="jalali" />
+              <choice value="gregorian" />
+            </param>
+            <param name="language" type="choice">
+              <choice value="fa" />
+              <choice value="en" />
+            </param>
+            <param name="pi_exp_days" type="int" />
+            <param name="roundup_scale" type="int" />
+            <param name="auto_invoice_event" type="choice">
+              <choice value="null" />
+              <choice value="credit_finished" />
+              <choice value="exp_date" />
+              <choice value="always" />
+            </param>
+            <param name="auto_invoice_threshold" type="int" />
+            <param name="allow_user_issue_invoice" type="bool" />
+            <param name="action" type="choice">
+              <choice value="change_service" />
+              <choice value="renew" />
+              <choice value="renew_with_next_group" />
+              <choice value="recharge" />
+              <choice value="increase_deposit" />
+              <choice value="increase_deposit_by_group_credit" />
+              <choice value="increase_recharge_deposit" />
+              <choice value="increase_credit" />
+              <choice value="increase_deposit_constant" />
+              <choice value="increase_recharge_deposit_constant" />
+              <choice value="increase_credit_constant" />
+              <choice value="set_deposit_constant" />
+              <choice value="set_credit_constant" />
+            </param>
+            <param name="action_args" type="str" comment="" />
+            <param name="disabled" type="bool" />
+            <param name="invoice_rule_items" type="list" item_type="dict" length="-1">
+              <item type="dict" comment="rule item info dict">
+                <param name="rule_item_id" type="int" />
+                <param name="description" type="str" />
+                <param name="formula" type="str" />
+                <param name="is_bonus" type="bool" />
+                <param name="none_effective" type="bool" />
+              </item>
+            </param>
+          </item>
+        </param>
+      </output>
+    </method>
+    <method name="getInvoiceProfileByID" auth_type="ADMIN" requires_perm="SEE INVOICE PROFILE" comment="">
+      <input type="dict">
+        <param name="profile_id" type="int" />
+      </input>
+      <output type="dict" comment="">
+        <param name="profile_id" type="int" />
+        <param name="profile_name" type="str" />
+        <param name="isp_name" type="str" />
+        <param name="comment" type="str" />
+        <param name="rules" type="list" length="-1">
+          <item type="dict" comment="rule info dict">
+            <param name="rule_id" type="int" />
+            <param name="description" type="str" />
+            <param name="invoice_template_name" type="str" />
+            <param name="pi_template_name" type="str" />
+            <param name="date_type" type="choice">
+              <choice value="jalali" />
+              <choice value="gregorian" />
+            </param>
+            <param name="language" type="choice">
+              <choice value="fa" />
+              <choice value="en" />
+            </param>
+            <param name="pi_exp_days" type="int" />
+            <param name="roundup_scale" type="int" />
+            <param name="auto_invoice_event" type="choice">
+              <choice value="null" />
+              <choice value="credit_finished" />
+              <choice value="exp_date" />
+              <choice value="always" />
+            </param>
+            <param name="auto_invoice_threshold" type="int" />
+            <param name="allow_user_issue_invoice" type="bool" />
+            <param name="action" type="choice">
+              <choice value="change_service" />
+              <choice value="renew" />
+              <choice value="renew_with_next_group" />
+              <choice value="recharge" />
+              <choice value="increase_deposit" />
+              <choice value="increase_deposit_by_group_credit" />
+              <choice value="increase_recharge_deposit" />
+              <choice value="increase_credit" />
+              <choice value="increase_deposit_constant" />
+              <choice value="increase_recharge_deposit_constant" />
+              <choice value="increase_credit_constant" />
+              <choice value="set_deposit_constant" />
+              <choice value="set_credit_constant" />
+            </param>
+            <param name="action_args" type="str" comment="" />
+            <param name="disabled" type="bool" />
+            <param name="invoice_rule_items" type="list" item_type="dict" length="-1">
+              <item type="dict" comment="rule item info dict">
+                <param name="rule_item_id" type="int" />
+                <param name="description" type="str" />
+                <param name="formula" type="str" />
+                <param name="is_bonus" type="bool" />
+                <param name="none_effective" type="bool" />
+              </item>
+            </param>
+          </item>
+        </param>
+      </output>
+    </method>
+    <method name="getInvoiceProfileByUserID" auth_type="ADMIN" requires_perm="SEE INVOICE PROFILE" comment="">
+      <input type="dict">
+        <param name="user_id" type="int" />
+      </input>
+      <output type="dict" comment="">
+        <param name="profile_id" type="int" />
+        <param name="profile_name" type="str" />
+        <param name="isp_name" type="str" />
+        <param name="comment" type="str" />
+        <param name="rules" type="list" length="-1">
+          <item type="dict" comment="rule info dict">
+            <param name="rule_id" type="int" />
+            <param name="description" type="str" />
+            <param name="invoice_template_name" type="str" />
+            <param name="pi_template_name" type="str" />
+            <param name="date_type" type="choice">
+              <choice value="jalali" />
+              <choice value="gregorian" />
+            </param>
+            <param name="language" type="choice">
+              <choice value="fa" />
+              <choice value="en" />
+            </param>
+            <param name="pi_exp_days" type="int" />
+            <param name="roundup_scale" type="int" />
+            <param name="auto_invoice_event" type="choice">
+              <choice value="null" />
+              <choice value="credit_finished" />
+              <choice value="exp_date" />
+              <choice value="always" />
+            </param>
+            <param name="auto_invoice_threshold" type="int" />
+            <param name="allow_user_issue_invoice" type="bool" />
+            <param name="action" type="choice">
+              <choice value="change_service" />
+              <choice value="renew" />
+              <choice value="renew_with_next_group" />
+              <choice value="recharge" />
+              <choice value="increase_deposit" />
+              <choice value="increase_deposit_by_group_credit" />
+              <choice value="increase_recharge_deposit" />
+              <choice value="increase_credit" />
+              <choice value="increase_deposit_constant" />
+              <choice value="increase_recharge_deposit_constant" />
+              <choice value="increase_credit_constant" />
+              <choice value="set_deposit_constant" />
+              <choice value="set_credit_constant" />
+            </param>
+            <param name="action_args" type="str" comment="" />
+            <param name="disabled" type="bool" />
+            <param name="invoice_rule_items" type="list" item_type="dict" length="-1">
+              <item type="dict" comment="rule item info dict">
+                <param name="rule_item_id" type="int" />
+                <param name="description" type="str" />
+                <param name="formula" type="str" />
+                <param name="is_bonus" type="bool" />
+                <param name="none_effective" type="bool" />
+              </item>
+            </param>
+          </item>
+        </param>
+      </output>
+    </method>
+    <method name="getInvoiceProfileByGroupName" auth_type="ADMIN" requires_perm="SEE INVOICE PROFILE" comment="">
+      <input type="dict">
+        <param name="group_name" type="str" />
+      </input>
+      <output type="dict" comment="">
+        <param name="profile_id" type="int" />
+        <param name="profile_name" type="str" />
+        <param name="isp_name" type="str" />
+        <param name="comment" type="str" />
+        <param name="rules" type="list" length="-1">
+          <item type="dict" comment="rule info dict">
+            <param name="rule_id" type="int" />
+            <param name="description" type="str" />
+            <param name="invoice_template_name" type="str" />
+            <param name="pi_template_name" type="str" />
+            <param name="date_type" type="choice">
+              <choice value="jalali" />
+              <choice value="gregorian" />
+            </param>
+            <param name="language" type="choice">
+              <choice value="fa" />
+              <choice value="en" />
+            </param>
+            <param name="pi_exp_days" type="int" />
+            <param name="roundup_scale" type="int" />
+            <param name="auto_invoice_event" type="choice">
+              <choice value="null" />
+              <choice value="credit_finished" />
+              <choice value="exp_date" />
+              <choice value="always" />
+            </param>
+            <param name="auto_invoice_threshold" type="int" />
+            <param name="allow_user_issue_invoice" type="bool" />
+            <param name="action" type="choice">
+              <choice value="change_service" />
+              <choice value="renew" />
+              <choice value="renew_with_next_group" />
+              <choice value="recharge" />
+              <choice value="increase_deposit" />
+              <choice value="increase_deposit_by_group_credit" />
+              <choice value="increase_recharge_deposit" />
+              <choice value="increase_credit" />
+              <choice value="increase_deposit_constant" />
+              <choice value="increase_recharge_deposit_constant" />
+              <choice value="increase_credit_constant" />
+              <choice value="set_deposit_constant" />
+              <choice value="set_credit_constant" />
+            </param>
+            <param name="action_args" type="str" comment="" />
+            <param name="disabled" type="bool" />
+            <param name="invoice_rule_items" type="list" item_type="dict" length="-1">
+              <item type="dict" comment="rule item info dict">
+                <param name="rule_item_id" type="int" />
+                <param name="description" type="str" />
+                <param name="formula" type="str" />
+                <param name="is_bonus" type="bool" />
+                <param name="none_effective" type="bool" />
+              </item>
+            </param>
+          </item>
+        </param>
+      </output>
+    </method>
+    <method name="getInvoiceRuleByID" auth_type="ADMIN" requires_perm="SEE INVOICE PROFILE" comment="">
+      <input type="dict">
+        <param name="rule_id" type="int" />
+      </input>
+      <output type="dict" comment="">
+        <param name="rule_id" type="int" />
+        <param name="description" type="str" />
+        <param name="invoice_template_name" type="str" />
+        <param name="pi_template_name" type="str" />
+        <param name="date_type" type="choice">
+          <choice value="jalali" />
+          <choice value="gregorian" />
+        </param>
+        <param name="language" type="choice">
+          <choice value="fa" />
+          <choice value="en" />
+        </param>
+        <param name="pi_exp_days" type="int" />
+        <param name="roundup_scale" type="int" />
+        <param name="auto_invoice_event" type="choice">
+          <choice value="null" />
+          <choice value="credit_finished" />
+          <choice value="exp_date" />
+          <choice value="always" />
+        </param>
+        <param name="auto_invoice_threshold" type="int" />
+        <param name="allow_user_issue_invoice" type="bool" />
+        <param name="action" type="choice">
+          <choice value="change_service" />
+          <choice value="renew" />
+          <choice value="renew_with_next_group" />
+          <choice value="recharge" />
+          <choice value="increase_deposit" />
+          <choice value="increase_deposit_by_group_credit" />
+          <choice value="increase_recharge_deposit" />
+          <choice value="increase_credit" />
+          <choice value="increase_deposit_constant" />
+          <choice value="increase_recharge_deposit_constant" />
+          <choice value="increase_credit_constant" />
+          <choice value="set_deposit_constant" />
+          <choice value="set_credit_constant" />
+        </param>
+        <param name="action_args" type="str" comment="" />
+        <param name="disabled" type="bool" />
+        <param name="invoice_rule_items" type="list" item_type="dict" length="-1">
+          <item type="dict" comment="rule item info dict">
+            <param name="rule_item_id" type="int" />
+            <param name="description" type="str" />
+            <param name="formula" type="str" />
+            <param name="is_bonus" type="bool" />
+            <param name="none_effective" type="bool" />
+          </item>
+        </param>
+      </output>
+    </method>
+    <method name="addInvoiceProfile" auth_type="ADMIN" requires_perm="CHANGE INVOICE PROFILE" comment="">
+      <input type="dict">
+        <param name="profile_name" type="str" />
+        <param name="isp_name" type="str" optional="true" />
+        <param name="comment" type="str" />
+      </input>
+      <output type="int" comment="Invoice Profile ID" />
+    </method>
+    <method name="updateInvoiceProfile" auth_type="ADMIN" requires_perm="CHANGE INVOICE PROFILE" comment="">
+      <input type="dict">
+        <param name="profile_id" type="int" />
+        <param name="profile_name" type="str" />
+        <param name="isp_name" type="str" />
+        <param name="comment" type="str" />
+        <param name="rules" type="list" item_type="dict" length="-1">
+          <item type="dict" comment="rule info dict">
+            <param name="rule_id" type="int" />
+            <param name="description" type="str" />
+            <param name="invoice_template_name" type="str" />
+            <param name="pi_template_name" type="str" />
+            <param name="date_type" type="choice">
+              <choice value="jalali" />
+              <choice value="gregorian" />
+            </param>
+            <param name="language" type="choice">
+              <choice value="fa" />
+              <choice value="en" />
+            </param>
+            <param name="pi_exp_days" type="int" />
+            <param name="roundup_scale" type="int" />
+            <param name="auto_invoice_event" type="choice">
+              <choice value="null" />
+              <choice value="credit_finished" />
+              <choice value="exp_date" />
+              <choice value="always" />
+            </param>
+            <param name="auto_invoice_threshold" type="int" />
+            <param name="allow_user_issue_invoice" type="bool" />
+            <param name="action" type="choice">
+              <choice value="change_service" />
+              <choice value="renew" />
+              <choice value="renew_with_next_group" />
+              <choice value="recharge" />
+              <choice value="increase_deposit" />
+              <choice value="increase_deposit_by_group_credit" />
+              <choice value="increase_recharge_deposit" />
+              <choice value="increase_credit" />
+              <choice value="increase_deposit_constant" />
+              <choice value="increase_recharge_deposit_constant" />
+              <choice value="increase_credit_constant" />
+              <choice value="set_deposit_constant" />
+              <choice value="set_credit_constant" />
+            </param>
+            <param name="action_args" type="str" comment="" />
+            <param name="disabled" type="bool" />
+            <param name="invoice_rule_items" type="list" item_type="dict" length="-1">
+              <item type="dict" comment="rule item info dict">
+                <param name="rule_item_id" type="int" />
+                <param name="description" type="str" />
+                <param name="formula" type="str" />
+                <param name="is_bonus" type="bool" />
+                <param name="none_effective" type="bool" />
+              </item>
+            </param>
+          </item>
+        </param>
+      </input>
+      <output type="null" comment="" />
+    </method>
+    <method name="deleteInvoiceProfile" auth_type="ADMIN" requires_perm="CHANGE INVOICE PROFILE" comment="">
+      <input type="dict">
+        <param name="profile_id" type="int" />
+      </input>
+      <output type="null" comment="" />
+    </method>
+    <method name="getInvoiceRulesDescByProfileName" auth_type="ADMIN" requires_perm="SEE INVOICE PROFILE" comment="">
+      <input type="dict">
+        <param name="profile_name" type="str" />
+      </input>
+      <output type="dict" dynamic_keys="true" comment="">
+        <key type="int" comment="rule_id" />
+        <value type="str" comment="rule_description" />
+      </output>
+    </method>
+    <method name="getAllTemplateNames" auth_type="ADMIN" requires_perm="SEE INVOICE PROFILE" comment="">
+      <input type="dict">
+      </input>
+      <output type="list" item_type="str" length="-1"
+          comment="list of all invoice template names" />
+    </method>
+    <method name="addInvoiceTemplate" auth_type="ADMIN" requires_perm="CHANGE INVOICE PROFILE" comment="">
+      <input type="dict">
+        <param name="template_name" type="str" />
+      </input>
+      <output type="null " comment="" />
+    </method>
+    <method name="deleteInvoiceTemplate" auth_type="ADMIN" requires_perm="CHANGE INVOICE PROFILE" comment="">
+      <input type="dict">
+        <param name="template_name" type="str" />
+      </input>
+      <output type="null " comment="" />
+    </method>
+    <method name="searchInvoices" auth_type="ADMIN, USER"
+        requires_perm="user can only see his own invoices,
+        admin must have permission 'SEE INVOICE'" comment="">
+      <input type="dict">
+        <param name="conds" type="dict">
+          <param name="isp_names" type="list, str" multi_str="false" optional="true"
+              comment="for admins, list of isp names, or string one isp name" />
+          <param name="user_ids" type="str" multi_str="true" optional="true" />
+          <param name="invoice_ids" type="str" multi_str="true" optional="true" />
+          <param name="is_active" type="bool" optional="true" />
+          <param name="is_paid" type="bool" optional="true" />
+          <param name="total_amount_from" type="float" optional="true" />
+          <param name="total_amount_to" type="float" optional="true" />
+          <param name="issue_date_from" type="str_datetime" optional="true" requires_param="issue_date_from_unit" />
+          <param name="issue_date_from_unit" type="choice" optional="true">
+            <choice value="jalali" />
+            <choice value="gregorian" />
+            <choice value="years" />
+            <choice value="months" />
+            <choice value="days" />
+            <choice value="hours" />
+            <choice value="minutes" />
+          </param>
+          <param name="issue_date_to" type="str_datetime" optional="true" requires_param="issue_date_to_unit" />
+          <param name="issue_date_to_unit" type="" optional="true">
+            <choice value="jalali" />
+            <choice value="gregorian" />
+            <choice value="years" />
+            <choice value="months" />
+            <choice value="days" />
+            <choice value="hours" />
+            <choice value="minutes" />
+          </param>
+        </param>
+        <param name="_from" type="int" comment="pagination start" />
+        <param name="to" type="int" comment="pagination end" />
+        <param name="sort_by" type="choice">
+          <choice value="issue_date" />
+          <choice value="user_id" />
+          <choice value="total_amount" />
+        </param>
+        <param name="desc" type="bool" comment="descending" />
+      </input>
+      <output type="dict" comment="">
+        <param name="total_rows" type="int" comment="total number of results" />
+        <param name="report" type="list" item_type="dict" length="-1">
+          <item type="dict" comment="">
+            <param name="invoice_id" type="int" />
+            <param name="invoice_issue_date" type="str_datetime" />
+            <param name="is_active" type="bool" />
+            <param name="is_paid" type="bool" />
+            <param name="pi_issue_date" type="str_datetime" />
+            <param name="rule_id" type="int" />
+            <param name="rule_description" type="str" />
+            <param name="period_end" type="str_datetime, null" comment="str or null" />
+            <param name="period_start" type="str_datetime, null" comment="str or null" />
+            <param name="comment" type="str" />
+            <param name="sum_up_amount" type="float" />
+            <param name="previous_due" type="float" />
+            <param name="roundup_amount" type="float" />
+            <param name="effective_amount" type="float" />
+            <param name="paid_amount" type="float" />
+            <param name="user_id" type="int" />
+            <param name="owner_name" type="str" />
+            <param name="user_address" type="str" />
+            <param name="user_email" type="str" />
+            <param name="user_name" type="str" />
+            <param name="user_phone" type="str" />
+            <param name="user_postal_code" type="str" />
+          </item>
+        </param>
+      </output>
+    </method>
+    <method name="searchProformaInvoices" auth_type="ADMIN"
+        requires_perm="user can only see his own proforma invoices,
+        admin must have permission 'SEE INVOICE'" comment="">
+      <input type="dict">
+        <param name="conds" type="dict">
+          <param name="isp_names" type="list, str" multi_str="false" optional="true"
+              comment="for admins, list of isp names, or string one isp name" />
+          <param name="user_ids" type="str" multi_str="true" optional="true" />
+          <param name="pi_ids" type="str" multi_str="true" optional="true" />
+          <param name="is_expired" type="bool" optional="true" />
+          <param name="total_amount_from" type="float" optional="true" />
+          <param name="total_amount_to" type="float" optional="true" />
+          <param name="issue_date_from" type="str_datetime" optional="true" requires_param="issue_date_from_unit" />
+          <param name="issue_date_from_unit" type="choice" optional="true">
+            <choice value="jalali" />
+            <choice value="gregorian" />
+            <choice value="years" />
+            <choice value="months" />
+            <choice value="days" />
+            <choice value="hours" />
+            <choice value="minutes" />
+          </param>
+          <param name="issue_date_to" type="str_datetime" optional="true" requires_param="issue_date_to_unit" />
+          <param name="issue_date_to_unit" type="" optional="true">
+            <choice value="jalali" />
+            <choice value="gregorian" />
+            <choice value="years" />
+            <choice value="months" />
+            <choice value="days" />
+            <choice value="hours" />
+            <choice value="minutes" />
+          </param>
+        </param>
+        <param name="_from" type="int" comment="pagination start" />
+        <param name="to" type="int" comment="pagination end" />
+        <param name="sort_by" type="choice">
+          <choice value="issue_date" />
+          <choice value="user_id" />
+          <choice value="total_amount" />
+        </param>
+        <param name="desc" type="bool" comment="descending" />
+      </input>
+      <output type="dict" comment="">
+        <param name="total_rows" type="int" comment="total number of results" />
+        <param name="report" type="list" item_type="dict" length="-1">
+          <item type="dict" comment="">
+            <param name="pi_id" type="int" />
+            <param name="rule_id" type="int" />
+            <param name="rule_description" type="str" />
+            <param name="add_user" type="bool" />
+            <param name="issue_date" type="str_datetime" />
+            <param name="expired" type="bool" />
+            <param name="sum_up_amount" type="float" />
+            <param name="previous_due" type="float" />
+            <param name="roundup_amount" type="float" />
+            <param name="effective_amount" type="float" />
+            <param name="comment" type="str" />
+            <param name="owner_name" type="str" />
+            <param name="user_id" type="int" />
+            <param name="user_name" type="str" />
+            <param name="user_address" type="str" />
+            <param name="user_email" type="str" />
+            <param name="user_phone" type="str" />
+            <param name="user_postal_code" type="str" />
+          </item>
+        </param>
+      </output>
+    </method>
     <!--
-    <method name="searchInvoices" auth_type="ADMIN" requires_perm="SEE INVOICE" comment="">
-      <input type="dict">
-      </input>
-      <output type="" comment="">
-      </output>
-    </method>
-    <method name="searchInvoices" auth_type="USER" comment="">
-      <input type="dict">
-      </input>
-      <output type="" comment="">
-      </output>
-    </method>
-    <method name="searchProformaInvoices" auth_type="" requires_perm="" comment="">
-      <input type="dict">
-      </input>
-      <output type="" comment="">
-      </output>
-    </method>
-    <method name="deleteProformaInvoices" auth_type="" requires_perm="" comment="">
-      <input type="dict">
-      </input>
-      <output type="" comment="">
-      </output>
-    </method>
-    <method name="payInvoiceByVoucher" auth_type="" requires_perm="" comment="">
-      <input type="dict">
-      </input>
-      <output type="" comment="">
-      </output>
-    </method>
-    <method name="payProformaInvoiceByVoucher" auth_type="" requires_perm="" comment="">
-      <input type="dict">
-      </input>
-      <output type="" comment="">
-      </output>
-    </method>
-    <method name="issuePIAutomaicallyForUser" auth_type="" requires_perm="" comment="">
-      <input type="dict">
-      </input>
-      <output type="" comment="">
-      </output>
-    </method>
-    <method name="issuePIAutomaicallyForFailedUser" auth_type="" requires_perm="" comment="">
-      <input type="dict">
-      </input>
-      <output type="" comment="">
-      </output>
-    </method>
-    <method name="issuePIByRuleDesc" auth_type="" requires_perm="" comment="">
-      <input type="dict">
-      </input>
-      <output type="" comment="">
-      </output>
-    </method>
-    <method name="issuePIForRenew" auth_type="" requires_perm="" comment="">
-      <input type="dict">
-      </input>
-      <output type="" comment="">
-      </output>
-    </method>
-    <method name="issuePIForChangeService" auth_type="" requires_perm="" comment="">
-      <input type="dict">
-      </input>
-      <output type="" comment="">
-      </output>
-    </method>
-    <method name="getInvoiceRulesDescByProfileName" auth_type="" requires_perm="" comment="">
-      <input type="dict">
-      </input>
-      <output type="" comment="">
-      </output>
-    </method>
+      Undocumented methods:
+          "deleteProformaInvoices"
+          "payInvoiceByVoucher"
+          "payProformaInvoiceByVoucher"
+          "issuePIAutomaicallyForUser"
+          "issuePIAutomaicallyForFailedUser"
+          "issuePIByRuleDesc"
+          "issuePIForRenew"
+          "issuePIForChangeService"
     !-->
+    <method name="issueProformaInvoice" auth_type="ADMIN" requires_perm="" comment="">
+      <input type="dict">
+        <param name="attrs_list" type="list" item_type="dict" length="-1">
+          <item type="dict" comment="">
+            <param name="comment" type="str" />
+            <param name="user_id" type="int" />
+            <param name="rule_id" type="int" />
+            <param name="add_user" type="bool" />
+            <param name="add_user_details" type="dict" />
+          </item>
+        </param>
+        <param name="arbitrary_amount" type="float" />
+      </input>
+      <output type="dict" comment="">
+        <param name="issued_pis" type="list" item_type="dict" length="-1">
+          <item type="dict" comment="">
+            <param name="pi_id" type="int" comment="Proforma Invoice ID" />
+            <param name="rule_id" type="int" />
+            <param name="rule_description" type="str" />
+            <param name="issue_date" type="str_datetime" />
+            <param name="expired" type="bool" />
+            <param name="sum_up_amount" type="float" />
+            <param name="roundup_amount" type="float" />
+            <param name="previous_due" type="float" />
+            <param name="effective_amount" type="float" />
+            <param name="user_id" type="int" />
+            <param name="user_name" type="str" />
+            <param name="owner_name" type="str" />
+            <param name="email" type="str" />
+            <param name="address" type="str" />
+            <param name="phone" type="str" />
+            <param name="postal_code" type="str" />
+            <param name="add_user" type="bool" />
+            <param name="add_user_details_dict" type="dict" />
+            <param name="comment" type="str" />
+            <param name="pi_items" type="list" item_type="dict" length="-1">
+              <item type="dict">
+                <param name="amount" type="float" />
+                <param name="description" type="str" />
+              </item>
+            </param>
+          </item>
+        </param>
+        <param name="failed_users" type="list" item_type="dict" length="">
+          <item type="dict">
+            <param name="user_id" type="int" />
+            <param name="failure_msg" type="error message" />
+          </item>
+        </param>
+      </output>
+    </method>
+    <method name="invoicePutUserOnDept" auth_type="ADMIN" requires_perm="PAY INVOICE" comment="">
+      <input type="dict">
+        <param name="pi_id_list" type="list" item_type="int"
+            comment="list of Proforma Invoice IDs" />
+      </input>
+      <output type="dict" comment="">
+        <param name="failed_user_ids" type="list" item_type="str_int" length="-1"
+            comment="list of User IDs" />
+        <param name="successful_user_ids" type="list" item_type="str_int" length="-1"
+            comment="list of User IDs" />
+      </output>
+    </method>
+    <method name="proformaInvoicePaid" auth_type="ADMIN" requires_perm="PAY INVOICE" comment="">
+      <input type="dict">
+        <param name="pi_id_list" type="list" item_type="int"
+          comment="list of Proforma Invoice IDs" />
+        <param name="paid_amount_list" type="list" item_type="float"
+          comment="list of paid amounts, length of list must be the same as `pi_id_list`" />
+        <param name="payment_comment_list" type="list" item_type="str"
+          comment="list of comment strings, length of list must be the same as `pi_id_list`" />
+      </input>
+      <output type="dict">
+        <param name="user_ids" type="list" length="-1" item_type="str_int" comment="list of User IDs" />
+      </output>
+    </method>
+    <method name="invoicePaid" auth_type="ADMIN" requires_perm="PAY INVOICE" comment="">
+      <input type="dict">
+        <param name="invoice_id_list" type="list" item_type="int"
+            comment="list of Invoice IDs" />
+        <param name="paid_amount_list" type="list" item_type="float"
+            comment="list of paid amounts, length of list must be the same as `invoice_id_list`" />
+        <param name="payment_comment_list" type="list" item_type="str"
+            comment="list of comment strings, length of list must be the same as `invoice_id_list`" />
+      </input>
+      <output type="dict" comment="">
+        <param name="user_ids" type="list" length="-1" item_type="str_int" comment="list of User IDs" />
+      </output>
+    </method>
+    <method name="getPIByID" auth_type="ADMIN, USER" requires_perm=""
+        comment="user must own the proforma invoice,
+                 admin must have access to owner user and have permission 'SEE INVOICE'">
+      <input type="dict">
+        <param name="pi_id" type="int" />
+      </input>
+      <output type="dict" comment="">
+        <param name="pi_id" type="int" comment="Proforma Invoice ID" />
+        <param name="rule_id" type="int" />
+        <param name="rule_description" type="str" />
+        <param name="issue_date" type="str_datetime" />
+        <param name="expired" type="bool" />
+        <param name="sum_up_amount" type="float" />
+        <param name="roundup_amount" type="float" />
+        <param name="previous_due" type="float" />
+        <param name="effective_amount" type="float" />
+        <param name="user_id" type="int" />
+        <param name="user_name" type="str" />
+        <param name="owner_name" type="str" />
+        <param name="email" type="str" />
+        <param name="address" type="str" />
+        <param name="phone" type="str" />
+        <param name="postal_code" type="str" />
+        <param name="add_user" type="bool" />
+        <param name="add_user_details_dict" type="dict" />
+        <param name="comment" type="str" />
+        <param name="pi_items" type="list" item_type="dict" length="-1">
+          <item type="dict">
+            <param name="amount" type="float" />
+            <param name="description" type="str" />
+          </item>
+        </param>
+      </output>
+    </method>
+    <method name="getInvoiceByID" auth_type="ADMIN, USER" requires_perm=""
+        comment="user must own the invoice,
+                 admin must have access to owner user and have permission 'SEE INVOICE'">
+      <input type="dict">
+        <param name="invoice_id" type="int" />
+      </input>
+      <output type="dict" comment="">
+        <param name="invoice_id" type="int" />
+        <param name="rule_id" type="int" />
+        <param name="rule_description" type="str" />
+        <param name="is_active" type="bool" />
+        <param name="is_paid" type="bool" />
+        <param name="pi_issue_date" type="str_datetime" />
+        <param name="invoice_issue_date" type="str_datetime" />
+        <param name="period_end" type="str_datetime" />
+        <param name="period_start" type="str_datetime" />
+        <param name="previous_due" type="float" />
+        <param name="sum_up_amount" type="float" />
+        <param name="roundup_amount" type="float" />
+        <param name="effective_amount" type="float" />
+        <param name="paid_amount" type="float" />
+        <param name="user_id" type="int" />
+        <param name="user_name" type="str" />
+        <param name="owner_name" type="str" />
+        <param name="address" type="str" />
+        <param name="comment" type="str" />
+        <param name="email" type="str" />
+        <param name="phone" type="str" />
+        <param name="postal_code" type="str" />
+        <param name="invoice_items" type="list" item_type="dict" length="-1">
+          <item type="dict" comment="invoice item">
+            <param name="invoice_item_id" type="int" />
+            <param name="description" type="str" />
+            <param name="amount" type="float" />
+          </item>
+        </param>
+      </output>
+    </method>
+    <method name="getPIWithRuleByPIID" auth_type="ADMIN" requires_perm=""
+        comment="user must own the proforma invoice,
+                 admin must have access to owner user and have permission 'SEE INVOICE'">
+      <input type="dict">
+        <param name="pi_id" type="int" />
+      </input>
+      <output type="dict" comment="">
+        <param name="pi" type="dict">
+          <param name="pi_id" type="int" comment="Proforma Invoice ID" />
+          <param name="rule_id" type="int" />
+          <param name="rule_description" type="str" />
+          <param name="issue_date" type="str_datetime" />
+          <param name="expired" type="bool" />
+          <param name="sum_up_amount" type="float" />
+          <param name="roundup_amount" type="float" />
+          <param name="previous_due" type="float" />
+          <param name="effective_amount" type="float" />
+          <param name="user_id" type="int" />
+          <param name="user_name" type="str" />
+          <param name="owner_name" type="str" />
+          <param name="email" type="str" />
+          <param name="address" type="str" />
+          <param name="phone" type="str" />
+          <param name="postal_code" type="str" />
+          <param name="add_user" type="bool" />
+          <param name="add_user_details_dict" type="dict" />
+          <param name="comment" type="str" />
+          <param name="pi_items" type="list" item_type="dict" length="-1">
+            <item type="dict">
+              <param name="amount" type="float" />
+              <param name="description" type="str" />
+            </item>
+          </param>
+        </param>
+        <param name="rule" type="dict">
+          <param name="rule_id" type="int" />
+          <param name="description" type="str" />
+          <param name="invoice_template_name" type="str" />
+          <param name="pi_template_name" type="str" />
+          <param name="date_type" type="choice">
+            <choice value="jalali" />
+            <choice value="gregorian" />
+          </param>
+          <param name="language" type="choice">
+            <choice value="fa" />
+            <choice value="en" />
+          </param>
+          <param name="pi_exp_days" type="int" />
+          <param name="roundup_scale" type="int" />
+          <param name="auto_invoice_event" type="choice">
+            <choice value="null" />
+            <choice value="credit_finished" />
+            <choice value="exp_date" />
+            <choice value="always" />
+          </param>
+          <param name="auto_invoice_threshold" type="int" />
+          <param name="allow_user_issue_invoice" type="bool" />
+          <param name="action" type="choice">
+            <choice value="change_service" />
+            <choice value="renew" />
+            <choice value="renew_with_next_group" />
+            <choice value="recharge" />
+            <choice value="increase_deposit" />
+            <choice value="increase_deposit_by_group_credit" />
+            <choice value="increase_recharge_deposit" />
+            <choice value="increase_credit" />
+            <choice value="increase_deposit_constant" />
+            <choice value="increase_recharge_deposit_constant" />
+            <choice value="increase_credit_constant" />
+            <choice value="set_deposit_constant" />
+            <choice value="set_credit_constant" />
+          </param>
+          <param name="action_args" type="str" comment="" />
+          <param name="disabled" type="bool" />
+          <param name="invoice_rule_items" type="list" item_type="dict" length="-1">
+            <item type="dict" comment="rule item info dict">
+              <param name="rule_item_id" type="int" />
+              <param name="description" type="str" />
+              <param name="formula" type="str" />
+              <param name="is_bonus" type="bool" />
+              <param name="none_effective" type="bool" />
+            </item>
+          </param>
+        </param>
+      </output>
+    </method>
+    <method name="getInvoiceWithRuleByInvoiceID" auth_type="ADMIN" requires_perm=""
+        comment="user must own the invoice,
+                 admin must have access to owner user and have permission 'SEE INVOICE'">
+      <input type="dict">
+        <param name="invoice_id" type="int" />
+      </input>
+      <output type="dict" comment="">
+        <param name="invoice" type="dict">
+          <param name="invoice_id" type="int" />
+          <param name="rule_id" type="int" />
+          <param name="rule_description" type="str" />
+          <param name="is_active" type="bool" />
+          <param name="is_paid" type="bool" />
+          <param name="pi_issue_date" type="str_datetime" />
+          <param name="invoice_issue_date" type="str_datetime" />
+          <param name="period_end" type="str_datetime" />
+          <param name="period_start" type="str_datetime" />
+          <param name="previous_due" type="float" />
+          <param name="sum_up_amount" type="float" />
+          <param name="roundup_amount" type="float" />
+          <param name="effective_amount" type="float" />
+          <param name="paid_amount" type="float" />
+          <param name="user_id" type="int" />
+          <param name="user_name" type="str" />
+          <param name="owner_name" type="str" />
+          <param name="address" type="str" />
+          <param name="comment" type="str" />
+          <param name="email" type="str" />
+          <param name="phone" type="str" />
+          <param name="postal_code" type="str" />
+          <param name="invoice_items" type="list" item_type="dict" length="-1">
+            <item type="dict" comment="invoice item">
+              <param name="invoice_item_id" type="int" />
+              <param name="description" type="str" />
+              <param name="amount" type="float" />
+            </item>
+          </param>
+        </param>
+        <param name="rule" type="dict">
+          <param name="rule_id" type="int" />
+          <param name="description" type="str" />
+          <param name="invoice_template_name" type="str" />
+          <param name="pi_template_name" type="str" />
+          <param name="date_type" type="choice">
+            <choice value="jalali" />
+            <choice value="gregorian" />
+          </param>
+          <param name="language" type="choice">
+            <choice value="fa" />
+            <choice value="en" />
+          </param>
+          <param name="pi_exp_days" type="int" />
+          <param name="roundup_scale" type="int" />
+          <param name="auto_invoice_event" type="choice">
+            <choice value="null" />
+            <choice value="credit_finished" />
+            <choice value="exp_date" />
+            <choice value="always" />
+          </param>
+          <param name="auto_invoice_threshold" type="int" />
+          <param name="allow_user_issue_invoice" type="bool" />
+          <param name="action" type="choice">
+            <choice value="change_service" />
+            <choice value="renew" />
+            <choice value="renew_with_next_group" />
+            <choice value="recharge" />
+            <choice value="increase_deposit" />
+            <choice value="increase_deposit_by_group_credit" />
+            <choice value="increase_recharge_deposit" />
+            <choice value="increase_credit" />
+            <choice value="increase_deposit_constant" />
+            <choice value="increase_recharge_deposit_constant" />
+            <choice value="increase_credit_constant" />
+            <choice value="set_deposit_constant" />
+            <choice value="set_credit_constant" />
+          </param>
+          <param name="action_args" type="str" comment="" />
+          <param name="disabled" type="bool" />
+          <param name="invoice_rule_items" type="list" item_type="dict" length="-1">
+            <item type="dict" comment="rule item info dict">
+              <param name="rule_item_id" type="int" />
+              <param name="description" type="str" />
+              <param name="formula" type="str" />
+              <param name="is_bonus" type="bool" />
+              <param name="none_effective" type="bool" />
+            </item>
+          </param>
+        </param>
+      </output>
+    </method>
   </handler>
 </web_service>
