@@ -5053,12 +5053,43 @@
       </output>
     </method>
     <method name="getBWSnapShot" auth_type="" requires_perm="" comment="">
-       <input type="dict">
+      <input type="dict">
         <param name="conds" type="dict" comment="mandatory">
-          <key type="str" comment="group_name_key" />
-          <value type="list" comment="group_name_value">
-            <item name="group-name" type="str"></item>
-          </value>
+          <param name="user_id", type="str", comment="user id"/>
+          <param name="date_from" type="str", comment="start report from (date)"/>
+          <param name="date_to", type="str", comment="end report until (date)"/>
+          <param name="date_from_unit", type="choice", comment="date unit">
+            <choice value="jalali" />
+            <choice value="gregorian" />
+            <choice value="years" />
+            <choice value="months" />
+            <choice value="days" />
+            <choice value="hours" />
+            <choice value="minutes" />
+          </param>
+          <param name="date_to_unit", type="choice", comment="date unit">
+            <choice value="jalali" />
+            <choice value="gregorian" />
+            <choice value="years" />
+            <choice value="months" />
+            <choice value="days" />
+            <choice value="hours" />
+            <choice value="minutes" />
+          </param>
+          <param name="date_from_op", type="choice", comment="date mathematical operation">
+            <choice value="<" />
+            <choice value=">" />
+            <choice value="=<" />
+            <choice value=">=" />
+            <choice value="==" />
+          </param>
+          <param name="date_to_op", type="choice", comment="date mathematical operation">
+            <choice value="<" />
+            <choice value=">" />
+            <choice value="=<" />
+            <choice value=">=" />
+            <choice value="==" />
+          </param>
         </param>
         <param name="date_from" type="choice" comment="start date and time, format '%Y-%m-%d %H:%M'">
           <choice value="gregorian" />
@@ -5074,40 +5105,68 @@
         </param>
       </input>
       <output type="" comment="">
-        <param name="" type="" comment="" />
+        <value type="list" value="">
+          <item index="0" type="list" comment="">
+            <item index="0" type="list" length="3">
+              <item index="0" type="float" comment="epoch date"></item>
+              <item index="1" type="float" comment="in_rate"></item>
+              <item index="2" type="float" comment="out_rate"></item>
+            </item>
+          </item>
+          <item index="1" name="timezone" type="str" value="Asia/Tehran" comment=""/>
+        </value>
       </output>
     </method>
     <method name="getGroupBWSnapShot" auth_type="ADMIN" requires_perm="conds" comment="">
       <input type="dict">
         <param name="conds" type="dict" comment="mandatory">
-          <key type="str" comment="group_name_key" />
-          <value type="list" comment="group_name_value">
-            <item name="group-name" type="str"></item>
+          <key type="str" comment="group_name_key"/>
+          <value type="str" value="None" comment="group_name_value">
+            <item name="group_names", type="list" comment="list of group name"/>
           </value>
-        </param>
-        <param name="date_from" type="choice" comment="start date and time, format '%Y-%m-%d %H:%M'">
-          <choice value="gregorian" />
-          <choice value="jalali" />
-        </param>
-        <param name="date_to" type="choice" comment="start date and time, format '%Y-%m-%d %H:%M'">
-          <choice value="gregorian" />
-          <choice value="jalali" />
-        </param>
-        <param name="date_to_unit" type="choice" comment="start date and time, format '%Y-%m-%d %H:%M'">
-          <choice value="gregorian" />
-          <choice value="jalali" />
+          <param name="date_from" type="str", comment="start report from (date)"/>
+          <param name="date_to", type="str", comment="end report until (date)"/>
+          <param name="date_from_unit", type="choice", comment="date unit">
+            <choice value="jalali" />
+            <choice value="gregorian" />
+            <choice value="years" />
+            <choice value="months" />
+            <choice value="days" />
+            <choice value="hours" />
+            <choice value="minutes" />
+          </param>
+          <param name="date_to_unit", type="choice", comment="date unit">
+            <choice value="jalali" />
+            <choice value="gregorian" />
+            <choice value="years" />
+            <choice value="months" />
+            <choice value="days" />
+            <choice value="hours" />
+            <choice value="minutes" />
+          </param>
+          <param name="date_from_op", type="choice", comment="date mathematical operation">
+            <choice value="<" />
+            <choice value=">" />
+            <choice value="=<" />
+            <choice value=">=" />
+            <choice value="==" />
+          </param>
+          <param name="date_to_op", type="choice", comment="date mathematical operation">
+            <choice value="<" />
+            <choice value=">" />
+            <choice value="=<" />
+            <choice value=">=" />
+            <choice value="==" />
+          </param>
         </param>
       </input>
-      <output type="dict" comment="">
-        <key type="str" comment=""/>
-        <value type="str" value="None" comment=""/>
-        <key type="str" value="result" comment=""/>
+      <output type="" comment="">
         <value type="list" value="">
           <item index="0" type="list" comment="">
             <item index="0" type="list" length="3">
-              <item index="0" type="float" comment=""></item>
-              <item index="1" type="float" comment=""></item>
-              <item index="2" type="float" comment=""></item>
+              <item index="0" type="float" comment="epoch date"></item>
+              <item index="1" type="float" comment="in_rate"></item>
+              <item index="2" type="float" comment="out_rate"></item>
             </item>
           </item>
           <item index="1" name="timezone" type="str" value="Asia/Tehran" comment=""/>
@@ -5117,34 +5176,53 @@
     <method name="getISPBWSnapShot" auth_type="ADMIN" requires_perm="conds" comment="">
       <input type="dict">
         <param name="conds" type="dict" comment="mandatory">
-          <key type="str" comment="isp_name_key" />
-          <value type="list" comment="isp_name_value">
-            <item name="isp_name" type="str"></item>
+          <key type="str" comment="isp_name_key"/>
+          <value type="str" value="None" comment="isp_name_value">
+            <item name="isp_names", type="list" comment="list of isp name"/>
           </value>
-        </param>
-        <param name="date_from" type="choice" comment="start date and time, format '%Y-%m-%d %H:%M'">
-          <choice value="gregorian" />
-          <choice value="jalali" />
-        </param>
-        <param name="date_to" type="choice" comment="start date and time, format '%Y-%m-%d %H:%M'">
-          <choice value="gregorian" />
-          <choice value="jalali" />
-        </param>
-        <param name="date_to_unit" type="choice" comment="start date and time, format '%Y-%m-%d %H:%M'">
-          <choice value="gregorian" />
-          <choice value="jalali" />
+          <param name="date_from" type="str", comment="start report from (date)"/>
+          <param name="date_to", type="str", comment="end report until (date)"/>
+          <param name="date_from_unit", type="choice", comment="date unit">
+            <choice value="jalali" />
+            <choice value="gregorian" />
+            <choice value="years" />
+            <choice value="months" />
+            <choice value="days" />
+            <choice value="hours" />
+            <choice value="minutes" />
+          </param>
+          <param name="date_to_unit", type="choice", comment="date unit">
+            <choice value="jalali" />
+            <choice value="gregorian" />
+            <choice value="years" />
+            <choice value="months" />
+            <choice value="days" />
+            <choice value="hours" />
+            <choice value="minutes" />
+          </param>
+          <param name="date_from_op", type="choice", comment="date mathematical operation">
+            <choice value="<" />
+            <choice value=">" />
+            <choice value="=<" />
+            <choice value=">=" />
+            <choice value="==" />
+          </param>
+          <param name="date_to_op", type="choice", comment="date mathematical operation">
+            <choice value="<" />
+            <choice value=">" />
+            <choice value="=<" />
+            <choice value=">=" />
+            <choice value="==" />
+          </param>
         </param>
       </input>
-      <output type="dict" comment="">
-        <key type="str" comment=""/>
-        <value type="str" value="None" comment=""/>
-        <key type="str" value="result" comment=""/>
+      <output type="" comment="">
         <value type="list" value="">
           <item index="0" type="list" comment="">
             <item index="0" type="list" length="3">
-              <item index="0" type="float" comment=""></item>
-              <item index="1" type="float" comment=""></item>
-              <item index="2" type="float" comment=""></item>
+              <item index="0" type="float" comment="epoch date"></item>
+              <item index="1" type="float" comment="in_rate"></item>
+              <item index="2" type="float" comment="out_rate"></item>
             </item>
           </item>
           <item index="1" name="timezone" type="str" value="Asia/Tehran" comment=""/>
@@ -5154,34 +5232,53 @@
     <method name="getRasBWSnapShot" auth_type="ADMIN" requires_perm="conds" comment="">
       <input type="dict">
         <param name="conds" type="dict" comment="mandatory">
-          <key type="str" comment="ras_ip_key" />
-          <value type="list" comment="ras_ip_value">
-            <item name="ras-ip" type="str"></item>
+          <key type="str" comment="ras_ips_key"/>
+          <value type="str" value="None" comment="rap_ips_value">
+            <item name="ras_ips", type="list" comment="list of group name"/>
           </value>
-        </param>
-        <param name="date_from" type="choice" comment="start date and time, format '%Y-%m-%d %H:%M'">
-          <choice value="gregorian" />
-          <choice value="jalali" />
-        </param>
-        <param name="date_to" type="choice" comment="start date and time, format '%Y-%m-%d %H:%M'">
-          <choice value="gregorian" />
-          <choice value="jalali" />
-        </param>
-        <param name="date_to_unit" type="choice" comment="start date and time, format '%Y-%m-%d %H:%M'">
-          <choice value="gregorian" />
-          <choice value="jalali" />
+          <param name="date_from" type="str", comment="start report from (date)"/>
+          <param name="date_to", type="str", comment="end report until (date)"/>
+          <param name="date_from_unit", type="choice", comment="date unit">
+            <choice value="jalali" />
+            <choice value="gregorian" />
+            <choice value="years" />
+            <choice value="months" />
+            <choice value="days" />
+            <choice value="hours" />
+            <choice value="minutes" />
+          </param>
+          <param name="date_to_unit", type="choice", comment="date unit">
+            <choice value="jalali" />
+            <choice value="gregorian" />
+            <choice value="years" />
+            <choice value="months" />
+            <choice value="days" />
+            <choice value="hours" />
+            <choice value="minutes" />
+          </param>
+          <param name="date_from_op", type="choice", comment="date mathematical operation">
+            <choice value="<" />
+            <choice value=">" />
+            <choice value="=<" />
+            <choice value=">=" />
+            <choice value="==" />
+          </param>
+          <param name="date_to_op", type="choice", comment="date mathematical operation">
+            <choice value="<" />
+            <choice value=">" />
+            <choice value="=<" />
+            <choice value=">=" />
+            <choice value="==" />
+          </param>
         </param>
       </input>
-      <output type="dict" comment="">
-        <key type="str" comment=""/>
-        <value type="str" value="None" comment=""/>
-        <key type="str" value="result" comment=""/>
+      <output type="" comment="">
         <value type="list" value="">
           <item index="0" type="list" comment="">
             <item index="0" type="list" length="3">
-              <item index="0" type="float" comment=""></item>
-              <item index="1" type="float" comment=""></item>
-              <item index="2" type="float" comment=""></item>
+              <item index="0" type="float" comment="epoch date"></item>
+              <item index="1" type="float" comment="in_rate"></item>
+              <item index="2" type="float" comment="out_rate"></item>
             </item>
           </item>
           <item index="1" name="timezone" type="str" value="Asia/Tehran" comment=""/>
