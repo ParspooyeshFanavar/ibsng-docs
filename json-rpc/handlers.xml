@@ -5053,27 +5053,54 @@
       </output>
     </method>
     <method name="getBWSnapShot" auth_type="" requires_perm="" comment="">
-       <input type="dict">
+      <input type="dict">
         <param name="conds" type="dict" comment="mandatory">
-          <key type="str" comment="group_name_key" />
-          <value type="list" comment="group_name_value">
-            <item name="group-name" type="str"></item>
-          </value>
-        </param>
-        <param name="date_from" type="choice" comment="start date and time, format '%Y-%m-%d %H:%M'">
-          <choice value="gregorian" />
-          <choice value="jalali" />
-        </param>
-        <param name="date_to" type="choice" comment="start date and time, format '%Y-%m-%d %H:%M'">
-          <choice value="gregorian" />
-          <choice value="jalali" />
-        </param>
-        <param name="date_to_unit" type="choice" comment="start date and time, format '%Y-%m-%d %H:%M'">
-          <choice value="gregorian" />
-          <choice value="jalali" />
+          <param name="user_id" type="str" comment="unique user id" />
+          <param name="date_from" type="str" comment="start date and time, format '%Y-%m-%d %H:%M'" />
+          <param name="date_to" type="str" comment="start date and time, format '%Y-%m-%d %H:%M'" />
+          <param name="date_from_unit" type="choice" comment="start date and time, format '%Y-%m-%d %H:%M'">
+            <choice value="gregorian" />
+            <choice value="jalali" />
+            <choice value="years" />
+            <choice value="months" />
+            <choice value="days" />
+            <choice value="hours" />
+            <choice value="minutes" />
+          </param>
+          <param name="date_to_unit" type="choice" comment="start date and time, format '%Y-%m-%d %H:%M'">
+            <choice value="gregorian" />
+            <choice value="jalali" />
+            <choice value="years" />
+            <choice value="months" />
+            <choice value="days" />
+            <choice value="hours" />
+            <choice value="minutes" />
+          </param>
+          <param name="date_from_op" type="choice" comment="date operator">
+            <choice value="<" />
+            <choice value=">" />
+            <choice value="<=" />
+            <choice value="=>" />
+            <choice value="==" />
+          </param>
+          <param name="date_to_op" type="choice" comment="date operator">
+            <choice value="<" />
+            <choice value=">" />
+            <choice value="<=" />
+            <choice value="=>" />
+            <choice value="==" />
+          </param>
         </param>
       </input>
       <output type="" comment="">
+        <key type="str" comment="id" />
+        <value type="str" comment="defualt is null">
+        <key type="str" comment="result" />
+        <value type="list" comment="list of epoch date, in byte and out byte">
+          <item name="snp-date" type="float"></item>
+          <item name="in-byte" type="float"></item>
+          <item name="out-byte" type="float"></item>
+        </value>
         <param name="" type="" comment="" />
       </output>
     </method>
@@ -5084,34 +5111,52 @@
           <value type="list" comment="group_name_value">
             <item name="group-name" type="str"></item>
           </value>
-        </param>
-        <param name="date_from" type="choice" comment="start date and time, format '%Y-%m-%d %H:%M'">
-          <choice value="gregorian" />
-          <choice value="jalali" />
-        </param>
-        <param name="date_to" type="choice" comment="start date and time, format '%Y-%m-%d %H:%M'">
-          <choice value="gregorian" />
-          <choice value="jalali" />
-        </param>
-        <param name="date_to_unit" type="choice" comment="start date and time, format '%Y-%m-%d %H:%M'">
-          <choice value="gregorian" />
-          <choice value="jalali" />
+          <param name="date_from" type="str" comment="start date and time, format '%Y-%m-%d %H:%M'" />
+          <param name="date_to" type="str" comment="start date and time, format '%Y-%m-%d %H:%M'" />
+          <param name="date_from_unit" type="choice" comment="start date and time, format '%Y-%m-%d %H:%M'">
+            <choice value="gregorian" />
+            <choice value="jalali" />
+            <choice value="years" />
+            <choice value="months" />
+            <choice value="days" />
+            <choice value="hours" />
+            <choice value="minutes" />
+          </param>
+          <param name="date_to_unit" type="choice" comment="start date and time, format '%Y-%m-%d %H:%M'">
+            <choice value="gregorian" />
+            <choice value="jalali" />
+            <choice value="years" />
+            <choice value="months" />
+            <choice value="days" />
+            <choice value="hours" />
+            <choice value="minutes" />
+          </param>
+          <param name="date_from_op" type="choice" comment="date operator">
+            <choice value="<" />
+            <choice value=">" />
+            <choice value="<=" />
+            <choice value="=>" />
+            <choice value="==" />
+          </param>
+          <param name="date_to_op" type="choice" comment="date operator">
+            <choice value="<" />
+            <choice value=">" />
+            <choice value="<=" />
+            <choice value="=>" />
+            <choice value="==" />
+          </param>
         </param>
       </input>
-      <output type="dict" comment="">
-        <key type="str" comment=""/>
-        <value type="str" value="None" comment=""/>
-        <key type="str" value="result" comment=""/>
-        <value type="list" value="">
-          <item index="0" type="list" comment="">
-            <item index="0" type="list" length="3">
-              <item index="0" type="float" comment=""></item>
-              <item index="1" type="float" comment=""></item>
-              <item index="2" type="float" comment=""></item>
-            </item>
-          </item>
-          <item index="1" name="timezone" type="str" value="Asia/Tehran" comment=""/>
+      <output type="" comment="">
+        <key type="str" comment="id" />
+        <value type="str" comment="defualt is null">
+        <key type="str" comment="result" />
+        <value type="list" comment="list of epoch date, in byte and out byte">
+          <item name="snp-date" type="float"></item>
+          <item name="in-byte" type="float"></item>
+          <item name="out-byte" type="float"></item>
         </value>
+        <param name="" type="" comment="" />
       </output>
     </method>
     <method name="getISPBWSnapShot" auth_type="ADMIN" requires_perm="conds" comment="">
