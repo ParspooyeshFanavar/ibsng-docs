@@ -5581,18 +5581,93 @@
         <item index="4" type="str" comment="time zone, 'Asia/Tehran' for example" />
       </output>
     </method>
-    <!--
     <method name="getBWSnapShot" auth_type="" requires_perm="" comment="">
       <input type="dict">
-        <param name="" type="" comment="" />
+        <key type="str" comment="reporting condition" />
+        <value type="dict" comment="">
+          <param name="user_id" type="str" comment="unique user id for limit reporting for that user"/>
+          <param name="date_from" type="str" comment="start date and time, format '%Y-%m-%d %H:%M'"/>
+          <param name="date_to" type="str" comment="start date and time, format '%Y-%m-%d %H:%M'"/>
+          <param name="date_from_unit" type="choice" comment="date unit">
+            <choice value="gregorian" comment="" />
+            <choice value="jalali" comment="" />
+            <choice value="years" comment="" />
+            <choice value="months" comment="" />
+            <choice value="days" comment="" />
+            <choice value="hours" comment="" />
+            <choice value="minutes" comment="" />
+            <choice value="seconds" comment="" />
+          </param>
+          <param name="date_to_unit" type="choice" comment="date unit">
+            <choice value="gregorian" comment="" />
+            <choice value="jalali" comment="" />
+            <choice value="years" comment="" />
+            <choice value="months" comment="" />
+            <choice value="days" comment="" />
+            <choice value="hours" comment="" />
+            <choice value="minutes" comment="" />
+            <choice value="seconds" comment="" />
+          </param>
+          <param name="date_from_op" type="choice" comment="operation for start date">
+            <choice value="<" comment="less than" />
+            <choice value=">" comment="more than" />
+            <choice value="<=" comment="less equal" />
+            <choice value=">=" comment="more equal" />
+          </param>
+          <param name="date_to_op" type="choice" comment="operation for end date">
+            <choice value="<" comment="less than" />
+            <choice value=">" comment="more than" />
+            <choice value="<=" comment="less equal" />
+            <choice value=">=" comment="more equal" />
+          </param>
+        </value>
       </input>
-      <output type="" comment="">
-        <param name="" type="" comment="" />
+      <output type="list" length="3" comment="">
+        <item index="0" type="int" comment="epoch time" />
+        <item index="1" type="int" comment="download rate" />
+        <item index="2" type="int" comment="upload rate" />
       </output>
     </method>
     <method name="getGroupBWSnapShot" auth_type="" requires_perm="" comment="">
       <input type="dict">
-        <param name="" type="" comment="" />
+        <key type="str" comment="reporting condition" />
+        <value type="dict" comment="">
+          <param name="group_names" type="str" comment="list of group names"/>
+          <param name="date_from" type="str" comment="start date and time, format '%Y-%m-%d %H:%M'"/>
+          <param name="date_to" type="str" comment="start date and time, format '%Y-%m-%d %H:%M'"/>
+          <param name="date_from_unit" type="choice" comment="date unit">
+            <choice value="gregorian" comment="" />
+            <choice value="jalali" comment="" />
+            <choice value="years" comment="" />
+            <choice value="months" comment="" />
+            <choice value="days" comment="" />
+            <choice value="hours" comment="" />
+            <choice value="minutes" comment="" />
+            <choice value="seconds" comment="" />
+          </param>
+          <param name="date_to_unit" type="choice" comment="date unit">
+            <choice value="gregorian" comment="" />
+            <choice value="jalali" comment="" />
+            <choice value="years" comment="" />
+            <choice value="months" comment="" />
+            <choice value="days" comment="" />
+            <choice value="hours" comment="" />
+            <choice value="minutes" comment="" />
+            <choice value="seconds" comment="" />
+          </param>
+          <param name="date_from_op" type="choice" comment="operation for start date">
+            <choice value="<" comment="less than" />
+            <choice value=">" comment="more than" />
+            <choice value="<=" comment="less equal" />
+            <choice value=">=" comment="more equal" />
+          </param>
+          <param name="date_to_op" type="choice" comment="operation for end date">
+            <choice value="<" comment="less than" />
+            <choice value=">" comment="more than" />
+            <choice value="<=" comment="less equal" />
+            <choice value=">=" comment="more equal" />
+          </param>
+        </value>
       </input>
       <output type="" comment="">
         <param name="" type="" comment="" />
@@ -5600,21 +5675,97 @@
     </method>
     <method name="getISPBWSnapShot" auth_type="" requires_perm="" comment="">
       <input type="dict">
-        <param name="" type="" comment="" />
+        <key type="str" comment="reporting condition" />
+        <value type="dict" comment="">
+          <param name="isp_names" type="str" comment="list of isp names"/>
+          <param name="date_from" type="str" comment="start date and time, format '%Y-%m-%d %H:%M'"/>
+          <param name="date_to" type="str" comment="start date and time, format '%Y-%m-%d %H:%M'"/>
+          <param name="date_from_unit" type="choice" comment="date unit">
+            <choice value="gregorian" comment="" />
+            <choice value="jalali" comment="" />
+            <choice value="years" comment="" />
+            <choice value="months" comment="" />
+            <choice value="days" comment="" />
+            <choice value="hours" comment="" />
+            <choice value="minutes" comment="" />
+            <choice value="seconds" comment="" />
+          </param>
+          <param name="date_to_unit" type="choice" comment="date unit">
+            <choice value="gregorian" comment="" />
+            <choice value="jalali" comment="" />
+            <choice value="years" comment="" />
+            <choice value="months" comment="" />
+            <choice value="days" comment="" />
+            <choice value="hours" comment="" />
+            <choice value="minutes" comment="" />
+            <choice value="seconds" comment="" />
+          </param>
+          <param name="date_from_op" type="choice" comment="operation for start date">
+            <choice value="<" comment="less than" />
+            <choice value=">" comment="more than" />
+            <choice value="<=" comment="less equal" />
+            <choice value=">=" comment="more equal" />
+          </param>
+          <param name="date_to_op" type="choice" comment="operation for end date">
+            <choice value="<" comment="less than" />
+            <choice value=">" comment="more than" />
+            <choice value="<=" comment="less equal" />
+            <choice value=">=" comment="more equal" />
+          </param>
+        </value>
       </input>
-      <output type="" comment="">
-        <param name="" type="" comment="" />
+      <output type="list" length="3" comment="">
+        <item index="0" type="int" comment="epoch time" />
+        <item index="1" type="int" comment="download rate" />
+        <item index="2" type="int" comment="upload rate" />
       </output>
     </method>
     <method name="getRasBWSnapShot" auth_type="" requires_perm="" comment="">
       <input type="dict">
-        <param name="" type="" comment="" />
+        <key type="str" comment="reporting condition" />
+        <value type="dict" comment="">
+          <param name="ras_ips" type="str" comment="list of ras ips"/>
+          <param name="date_from" type="str" comment="start date and time, format '%Y-%m-%d %H:%M'"/>
+          <param name="date_to" type="str" comment="start date and time, format '%Y-%m-%d %H:%M'"/>
+          <param name="date_from_unit" type="choice" comment="date unit">
+            <choice value="gregorian" comment="" />
+            <choice value="jalali" comment="" />
+            <choice value="years" comment="" />
+            <choice value="months" comment="" />
+            <choice value="days" comment="" />
+            <choice value="hours" comment="" />
+            <choice value="minutes" comment="" />
+            <choice value="seconds" comment="" />
+          </param>
+          <param name="date_to_unit" type="choice" comment="date unit">
+            <choice value="gregorian" comment="" />
+            <choice value="jalali" comment="" />
+            <choice value="years" comment="" />
+            <choice value="months" comment="" />
+            <choice value="days" comment="" />
+            <choice value="hours" comment="" />
+            <choice value="minutes" comment="" />
+            <choice value="seconds" comment="" />
+          </param>
+          <param name="date_from_op" type="choice" comment="operation for start date">
+            <choice value="<" comment="less than" />
+            <choice value=">" comment="more than" />
+            <choice value="<=" comment="less equal" />
+            <choice value=">=" comment="more equal" />
+          </param>
+          <param name="date_to_op" type="choice" comment="operation for end date">
+            <choice value="<" comment="less than" />
+            <choice value=">" comment="more than" />
+            <choice value="<=" comment="less equal" />
+            <choice value=">=" comment="more equal" />
+          </param>
+        </value>
       </input>
-      <output type="" comment="">
-        <param name="" type="" comment="" />
+      <output type="list" length="3" comment="">
+        <item index="0" type="int" comment="epoch time" />
+        <item index="1" type="int" comment="download rate" />
+        <item index="2" type="int" comment="upload rate" />
       </output>
-    </method>
-    !-->
   </handler>
   <handler name="stat" comment="">
     <method name="getStatistics" auth_type="ADMIN" requires_perm="GOD" comment="">
