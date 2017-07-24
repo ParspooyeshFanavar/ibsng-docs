@@ -835,8 +835,14 @@
   <handler name="charge" comment="">
     <method name="listCharges" auth_type="ADMIN" requires_perm="" comment="return list of accessible charge names">
       <input type="dict">
+        <param name="isp_id" type="str" multi_str="true" comment="comma-seprated. list of isp ids" />
       </input>
       <output type="list" length="-1" item_type="str" comment="list of charge names">
+        <key type="str" comment="charge_name_key"/>
+        <value type="str" value="None" comment="charge_name_value">
+          <item type="list" comment="charge name"/>
+        </value>
+
       </output>
     </method>
     <method name="getChargeInfo" auth_type="ADMIN" requires_perm="" comment="">
