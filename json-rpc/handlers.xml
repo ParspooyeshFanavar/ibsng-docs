@@ -1274,6 +1274,7 @@
               comment="return a list of group names, that requester admin has access to">
       <input type="dict">
         <param name="active_only" type="bool" optional="true" comment="pass true if you only want active groups"/>
+        <param name="isp_id" type="str" multi_str="true" comment="comma-seprated. list of isp ids" />
       </input>
       <output type="list" length="-1" item_type="str" comment="list of group names" />
     </method>
@@ -1295,6 +1296,7 @@
         Added in tag 320">
       <input type="dict">
         <param name="active_only" type="bool" optional="true" comment="pass true if you only want active groups"/>
+        <param name="isp_id" type="str" multi_str="true" comment="comma-seprated. list of isp ids" />
       </input>
       <output type="list" length="-1" item_type="dict" comment="list of group informations">
         <item type="dict" comment="group info dict">
