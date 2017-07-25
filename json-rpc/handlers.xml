@@ -5672,8 +5672,10 @@
           </param>
         </value>
       </input>
-      <output type="" comment="">
-        <param name="" type="" comment="" />
+      <output type="list" length="3" comment="">
+        <item index="0" type="int" comment="epoch time" />
+        <item index="1" type="int" comment="download rate" />
+        <item index="2" type="int" comment="upload rate" />
       </output>
     </method>
     <method name="getISPBWSnapShot" auth_type="" requires_perm="" comment="">
