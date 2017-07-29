@@ -8253,10 +8253,12 @@
       <output value="true" comment="" />
     </method>
     <method name="version" auth_type="ADMIN" requires_perm="" comment="">
-      <output type="dict" comment=""/>
+      <input type="dict">
+      </input>
+      <output type="dict" comment="return version,tag,branch">
         <param name="current_tag" type="str" comment="current tag"/>
-	<param name="version" type="str" comment="version"/>
-	<param name="branch" type="str" comment="branch"/>
+        <param name="version" type="str" comment="version"/>
+        <param name="branch" type="str" comment="branch"/>
       </output>
     </method>
   </handler>
