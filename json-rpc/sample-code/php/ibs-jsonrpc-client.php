@@ -26,7 +26,7 @@ class IBSjsonrpcClient {
         $this->timeout = $timeout;
     }
 
-    function sendRequest($server_method, $params_arr, $timeout=1800){
+    function sendRequest($server_method, $params_arr){
         /*
             Send request to $server_method, with parameters $params_arr
             $server_method: method to call ex admin.addNewAdmin
@@ -35,7 +35,7 @@ class IBSjsonrpcClient {
         $params_arr["auth_name"] = $this->auth_name;
         $params_arr["auth_pass"] = $this->auth_pass;
         $params_arr["auth_type"] = $this->auth_type;
-        $response = $this->client->send($server_method, $params_arr, $timeout);
+        $response = $this->client->send($server_method, $params_arr, $this->timeout);
         $result = $this->__returnResponse($response);
         unset($response);
         return $result;
