@@ -3337,6 +3337,8 @@
           <param name="voip_username" type="str" multi_str="false" optional="true" comment="" />
           <param name="serial" type="str" multi_str="false" optional="true" comment="" />
           <param name="isp_names" type="str" multi_str="true" optional="true" comment="" />
+	  <param name="sub_service_name" type="str" optional="true" comment="subservice name that user picked" />
+	  <param name="sub_service_charging" type="str" optional="true" comment="charging type for subservice" />
           <param name="credit_used" type="float" optional="true" requires_param="credit_used_op" comment="" />
           <param name="credit_used_op" type="choice" optional="true" comment="">
             <choice value="=" />
