@@ -30,6 +30,7 @@
         <param name="email" type="str" comment="" />
         <param name="comment" type="str" comment="" />
         <param name="admin_has_otp" type="bool" comment="" />
+        <param name="admin_request_limit" type="int" comment="" />
       </input>
       <output type="int" comment="Admin ID">
       </output>
