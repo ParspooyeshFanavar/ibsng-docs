@@ -7535,7 +7535,10 @@
         <param name="user_id" type="str" multi_str="true" comment="" />
         <param name="comment" type="str" comment="" />
       </input>
-      <output type="list" item_type="int" comment="list of log ids">
+      <output type="dict" item_type="int" comment="renewUsers output">
+        <param name="id" type="int" comment="return null if enter correct parameters">
+        <param name="result" type="bool" comment="return true if enter correct parameters">
+        <param name="error" type="stt" comment="return null if enter correct parameters">
       </output>
     </method>
     <method name="rechargeUsers" auth_type="ADMIN" requires_perm="RECHARGE USER" comment="">
