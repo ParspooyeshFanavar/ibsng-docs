@@ -6368,6 +6368,7 @@
         <param name="voip_username" type="str" multi_str="true" optional="true" comment="" />
         <param name="serial" type="str" multi_str="true" optional="true" comment="" />
         <param name="phone" type="str" multi_str="true" optional="true" comment="" />
+        <param name="rempte_ip" type="str" multi_str="true" optional="true" comment="" />
       </input>
       <output type="dict" comment="">
         <key type="str_int" comment="User ID"></key>
