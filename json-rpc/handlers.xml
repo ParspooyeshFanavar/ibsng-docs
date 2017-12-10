@@ -7870,7 +7870,7 @@
             comment="combines methods 'user.searchUser' and 'user.updateUserAttrs'">
       <input type="dict">
         <param name="conds" type="dict" comment="the same as method 'user.searchUser', parameter 'conds'" />
-        <param name="attrs_to_update" type="list" item_type="str" comment="the same as method 'user.updateUserAttrs', parameter 'attrs'" />
+        <param name="attrs_to_update" type="dict" item_type="str" comment="the same as method 'user.updateUserAttrs', parameter 'attrs'" />
         <param name="attrs_to_del" type="list" item_type="str" comment="the same as method 'user.updateUserAttrs', parameter 'to_del_attrs'" />
       </input>
       <output type="str" comment="action_id (string)" />
@@ -8042,6 +8042,70 @@
           <param name="mandatory" type="bool" comment="" />
         </value>
       </output>
+    </method>
+  </handler>
+  <handler name="ldap" comment="All LDAP methods">
+    <method name="getUsernames" auth_type="ADMIN" requires_perm="SEARCH USER" comment="">
+      <input type="dict">
+        <param name="starts_with" type="str" comment="" />
+      </input>
+      <output type="list" item_type="str" comment="list of usernames"></output>
+    </method>
+    <method name="getUserInfos" auth_type="ADMIN" requires_perm="GET USER INFORMATION" comment="">
+      <input type="dict">
+        <param name="starts_with" type="str" comment="" />
+      </input>
+      <output type="list" item_type="dict" comment="list of usernames"></output>
+    </method>
+    <method name="getUserInfo" auth_type="ADMIN" requires_perm="GET USER INFORMATION" comment="">
+      <input type="dict">
+        <param name="username" type="str" comment="" />
+      </input>
+      <output type="dict" item_type="" comment="user info"></output>
+    </method>
+    <method name="getUserInfoKeys" auth_type="ADMIN" requires_perm="SEE LDAP DOMAIN" comment="">
+      <input type="dict">
+        <param name="domain" type="str" comment="name of ldap domain" />
+      </input>
+      <output type="list" item_type="" comment="domain info keys"></output>
+    </method>
+    <method name="setLDAPIBSMapping" auth_type="ADMIN" requires_perm="CHANGE LDAP DOMAIN" comment="">
+      <input type="dict">
+        <param name="domain" type="str" comment="name of ldap domain in which mapping takes place" />
+        <param name="ldap_attribute" type="str" comment="ldap side of attribute mapping" />
+        <param name="IBS_field" type="str" comment="ibs side of attribute mapping" />
+        <param name="sync" type="bool" comment="specifies if the mapping be synchronized or not" />
+      </input>
+      <output type="null" />
+    </method>
+    <method name="getLDAPIBSMapping" auth_type="ADMIN" requires_perm="SEE LDAP DOMAIN" comment="">
+      <input type="dict">
+        <param name="domain" type="str" comment="" />
+      </input>
+      <output type="list" item_type="dict" comment="ldap keys mapping"></output>
+    </method>
+    <method name="deleteLDAPIBSMapping" auth_type="ADMIN" requires_perm="CHANGE LDAP DOMAIN" comment="">
+      <input type="dict">
+        <param name="domain" type="str" comment="name of ldap domain in which mapping takes place" />
+        <param name="ldap_attribute" type="str" comment="ldap side of attribute mapping" />
+        <param name="IBS_field" type="str" comment="ibs side of attribute mapping" />
+        <param name="sync" type="bool" comment="specifies if the mapping be synchronized or not" />
+      </input>
+      <output type="null" />
+    </method>
+    <method name="setLDAPSearchOptionsByDomain" auth_type="ADMIN" requires_perm="CHANGE LDAP DOMAIN" comment="">
+      <input type="dict">
+        <param name="domain" type="str" comment="name of ldap domain to be queried" />
+        <param name="search_filter" type="str" comment="ldap query search filter by which ldap users will be fetched" />
+        <param name="search_base" type="str" comment="ldap query search base by which ldap users will be fetched" />
+      </input>
+      <output type="null" />
+    </method>
+    <method name="getLDAPSearchOptionsByDomain" auth_type="ADMIN" requires_perm="SEE LDAP DOMAIN" comment="">
+      <input type="dict">
+        <param name="domain" type="str" comment="name of ldap domain" />
+      </input>
+      <output type="dict" item_type="" comment="dictionary of two key-values representing search filter and search base"></output>
     </method>
   </handler>
   <handler name="util" comment="">
