@@ -8158,7 +8158,7 @@
       <output type="null" comment="" />
     </method>
     <method name="getUserIDForIP" auth_type="ADMIN" requires_perm="SEE ONLINE USERS"
-        comment="returns internet id for an online user with given remote ip">
+        comment="returns user id for an online user with given remote ip">
       <input type="dict">
         <param name="ip" type="str" comment="" />
       </input>
