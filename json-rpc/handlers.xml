@@ -3396,6 +3396,8 @@
             <choice value="hours" />
             <choice value="minutes" />
           </param>
+          <param name="show_total_credit_used" type="str" optional="true" comment="if initialize with 'on' in result returns total credit used" />
+          <param name="show_total_inouts" type="str" optional="true" comment="if initialize with 'on' in result returns total download and upload" />
           <param name="successful" type="choice" optional="true" comment="">
             <choice value="yes" />
             <choice value="no" />
