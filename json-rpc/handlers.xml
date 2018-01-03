@@ -5774,6 +5774,7 @@
         <item index="1" type="int" comment="download rate" />
         <item index="2" type="int" comment="upload rate" />
       </output>
+    </method>
   </handler>
   <handler name="stat" comment="">
     <method name="getStatistics" auth_type="ADMIN" requires_perm="GOD" comment="">
@@ -7536,9 +7537,9 @@
         <param name="comment" type="str" comment="" />
       </input>
       <output type="dict" item_type="int" comment="renewUsers output">
-        <param name="id" type="int" comment="return null if enter correct parameters">
-        <param name="result" type="bool" comment="return true if enter correct parameters">
-        <param name="error" type="stt" comment="return null if enter correct parameters">
+        <param name="id" type="int" comment="return null if enter correct parameters" />
+        <param name="result" type="bool" comment="return true if enter correct parameters" />
+        <param name="error" type="stt" comment="return null if enter correct parameters" />
       </output>
     </method>
     <method name="rechargeUsers" auth_type="ADMIN" requires_perm="RECHARGE USER" comment="">
