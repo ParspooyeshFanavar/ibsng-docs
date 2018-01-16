@@ -3396,6 +3396,8 @@
             <choice value="hours" />
             <choice value="minutes" />
           </param>
+          <param name="show_total_credit_used" type="str" optional="true" comment="if initialize with 'on' in result returns total credit used" />
+          <param name="show_total_inouts" type="str" optional="true" comment="if initialize with 'on' in result returns total download and upload" />
           <param name="successful" type="choice" optional="true" comment="">
             <choice value="yes" />
             <choice value="no" />
@@ -6370,6 +6372,7 @@
         <param name="voip_username" type="str" multi_str="true" optional="true" comment="" />
         <param name="serial" type="str" multi_str="true" optional="true" comment="" />
         <param name="phone" type="str" multi_str="true" optional="true" comment="" />
+        <param name="rempte_ip" type="str" multi_str="true" optional="true" comment="" />
       </input>
       <output type="dict" comment="">
         <key type="str_int" comment="User ID"></key>
@@ -7162,6 +7165,7 @@
             <choice value="equals" comment="" />
           </param>
           <param name="ippool" type="list, str" optional="true" requires_param="" comment="list of ippool names, or string of one ippool name" />
+          <param name="is_online" type="bool" optional="true" comment="show online user if set to true, show offline user if set to false">
           <param name="is_deposit_transferee" type="true_if_exists" optional="true" requires_param="" comment="" />
           <param name="is_deposit_transferer" type="true_if_exists" optional="true" requires_param="" comment="" />
           <param name="isp_names" type="list, str" optional="true" requires_param="" comment="list of isp names, or string of one isp name" />
@@ -8156,6 +8160,13 @@
         <param name="comment" type="comment" comment="" />
       </input>
       <output type="null" comment="" />
+    </method>
+    <method name="getUserIDForIP" auth_type="ADMIN" requires_perm="SEE ONLINE USERS"
+        comment="returns user id for an online user with given remote ip">
+      <input type="dict">
+        <param name="ip" type="str" comment="" />
+      </input>
+      <output type="str" comment="a user id, or 'No User Found'" />
     </method>
     <method name="getUsernameForIP" auth_type="ADMIN" requires_perm="SEE ONLINE USERS"
         comment="returns internet username for an online user with given remote ip">
