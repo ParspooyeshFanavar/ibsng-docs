@@ -54,6 +54,14 @@
         <param name="admin_has_otp" type="bool" comment="" />
       </output>
     </method>
+    <method name="getAdminISPID" auth_type="ADMIN" requires_perm="" comment="">
+      <input type="dict">
+        <param name="admin_username" type="str" comment="" />
+      </input>
+      <output type="dict" comment="">
+        <param name="isp_id" type="str" comment="" />
+      </output>
+    </method>
     <method name="changePassword" auth_type="ADMIN" requires_perm="CHANGE ADMIN PASSWORD" comment="No need to permission if admin_username is the same as requester admin">
       <input type="dict">
         <param name="admin_username" type="str" comment="" />
@@ -107,7 +115,8 @@
         <param name="name" type="name" comment="" />
         <param name="email" type="name" comment="" />
         <param name="comment" type="name" comment="" />
-        <param name="admin_has_otp" type="bool" comment="" />
+	<param name="admin_has_otp" type="bool" comment="" />
+	<param name="admin_request_limit" type="int" comment="" />
       </input>
       <output type="null" comment="">
       </output>
@@ -495,6 +504,8 @@
     </method>
     <method name="getActiveLeaves" auth_type="ADMIN" requires_perm="CHANGE BANDWIDTH MANAGER" comment="">
       <input type="dict">
+	<param name="order_by" type="str" comment=""></param>
+	<param name="desc" type="bool" comment="descending"></param>
       </input>
       <output type="list" length="-1" item_type="list" comment="">
         <item type="list" length="3" comment="">
