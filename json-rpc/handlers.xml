@@ -7177,6 +7177,7 @@
           </param>
           <param name="ippool" type="list, str" optional="true" requires_param="" comment="list of ippool names, or string of one ippool name" />
           <param name="is_online" type="bool" optional="true" comment="show online user if set to true, show offline user if set to false">
+          <param name="online_sratus" type="str" optional="true" comment="show idle, failed and active users if you set to idle, failed or online">
           <param name="is_deposit_transferee" type="true_if_exists" optional="true" requires_param="" comment="" />
           <param name="is_deposit_transferer" type="true_if_exists" optional="true" requires_param="" comment="" />
           <param name="isp_names" type="list, str" optional="true" requires_param="" comment="list of isp names, or string of one isp name" />
