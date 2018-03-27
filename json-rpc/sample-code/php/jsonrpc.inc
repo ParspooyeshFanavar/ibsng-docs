@@ -153,7 +153,7 @@ class jsonrpc_client {
         fclose($fp);
 
         list($error, $result) = $this->parseResponse($response);
-        $r = new jsonrpcresp($result, (bool)$error, (string)$error);
+        $r = new jsonrpcresp($result, (int)$error, (string)$error);
         return $r;
     }
 
@@ -181,7 +181,7 @@ class jsonrpcresp
     * @param integer $fcode set it to anything but 0 to create an error response
     * @param string $fstr the error string, in case of an error response
     */
-    function jsonrpcresp($val, $fcode = 0, $fstr = '')
+    function __construct($val, $fcode = 0, $fstr = '')
     {
         if($fcode != 0)
         {
