@@ -504,12 +504,14 @@ class IBSjsonrpcClient {
         ));
     }
 
-    function setStaticIp($user_id, $ip){
-        return $self->setUserAttributes("assign_ip", $ip);
+    function setStaticIp($user_id, $ip)
+    {
+        return $this->setUserAttributes($user_id, ["assign_ip" => $ip]);
     }
 
-    function unsetStaticIp($user_id){
-        return $self->deleteUserAttribute("assign_ip", $ip);
+    function unsetStaticIp($user_id)
+    {
+        return $this->deleteUserAttribute($user_id, "assign_ip");
     }
 
     function searchUserByCreationDate($creation_date_from, $creation_date_to, $date_unit="gregorian"){
