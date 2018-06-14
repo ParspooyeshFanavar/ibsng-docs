@@ -6559,7 +6559,7 @@
           <param name="limit_port" type="str" optional="true" comment="value is port" />
           <param name="limit_port_bind_on_login" type="true_if_exists" optional="true" comment="" />
           <param name="limit_ras" type="str" optional="true" comment="" />
-          <param name="limit_ras" type="list" item_type="str" optional="true" comment="value is list of allowed RAS Descriptions" />
+          <param name="limit_ras" type="list" item_type="str" optional="true" comment="value is list of allowed RAS IPs, NOT Descriptions" />
           <param name="limit_ras_bind_on_login" type="true_if_exists" optional="true" comment="" />
           <param name="limit_station_ip" type="str" optional="true" comment="value is Station IP" />
           <param name="limit_station_ip_bind_on_login" type="true_if_exists" optional="true" comment="" />
