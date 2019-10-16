@@ -6657,7 +6657,14 @@
           <param name="serial" type="str" optional="true" comment="User Info: Username: Serial ID" />
           <param name="session_timeout" type="str_int" optional="true" comment="User Info: Limitations: Session Timeout" />
           <param name="voip_preferred_language" type="str" optional="true" comment="preferred language code for VoIP telephony support" />
-
+          <param name="bill_period" type="str" optional="true" comment="which is define period number it could be number of days or months" />
+          <param name="notification_last_formula_threshold" type="str" optional="true" comment="which is the last thereshold of formula notification that IBSng sent it" />
+          <param name="notification_last_bill_cycle_threshold" type="str" optional="true" comment="which is the last threshold of bill cycle end which IBSng sent it" />
+          <param name="notification_last_exp_threshold" type="str" optional="true" comment="which is the last threshold of expiration date  which IBSng sent it" />
+          <param name="notification_last_credit1_threshold" type="str" optional="true" comment="which is the last threshold of credit which IBSng sent it" />
+          <param name="unpaid_bill_cycle_end" type="date_str" optional="true" comment="Which is unpaid bill cycle" />
+          <param name="bill_cycle_start" type="date_str" optional="true" comment="which is the bill cycle start" />
+          <param name="bill_cycle_end" type="date_str" optional="true" comment="Which is the bill cycle start" />
 
         </param>
         <param name="to_del_attrs" type="list" comment="list of attributes to be deleted" />
