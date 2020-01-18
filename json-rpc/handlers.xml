@@ -9298,4 +9298,18 @@
       </output>
     </method>
   </handler>
+  <handler name="wifi" comment="">
+    <method name="get_radius_info" auth_type="ADMIN" requires_perm="" comment="">
+      <input type="dict">
+        <param name="assigned_ip" type="string" comment=""/>
+      </input>
+      <output type="dict" comment="">
+        <param name="NAS-Identifier" type="" comment=""/>
+        <param name="NAS-IP-Address" type="" comment=""/>
+        <param name="SSID" type="" comment=""/>
+        <param name="Location" type="" comment=""/>
+        <param name="Framed-IP-Address" type="" comment=""/>
+      </output>
+    </method>
+  </handler>
 </web_service>
