@@ -6341,25 +6341,33 @@
         <param name="online_status" type="bool" comment="true if online, false if offline" />
         <param name="internet_onlines" type="list" length="-1" comment="list length is number of instances, usually 1">
           <item type="list" length="15" comment="user instance">
-            <item index="0" type="str" comment="ras_ip"></item>
-            <item index="1" type="str" comment="ras_desc"></item>
-            <item index="2" type="str" comment="unique_id_val"></item>
-            <item index="3" type="str" comment="login_time_formatted"></item>
-            <item index="4" type="str" comment="remote_ip"></item>
+            <item index="0" type="str" comment="ras_ip"/>
+            <item index="1" type="str" comment="ras_desc"/>
+            <item index="2" type="str" comment="unique_id_val"/>
+            <item index="3" type="str" comment="login_time_formatted"/>
+            <item index="4" type="str" comment="remote_ip"/>
             <item index="5" type="choice" comment="failed_status">
-              <choice value="0" type="int" comment="not failed user" />
-              <choice value="1" type="int" comment="failed user" />
-              <choice value="2" type="int" comment="idle user" />
+              <choice value="0" type="int" comment="not failed user"/>
+              <choice value="1" type="int" comment="failed user"/>
+              <choice value="2" type="int" comment="idle user"/>
             </item>
-            <item index="6" type="str" comment="next_event"></item>
-            <item index="7" type="str" comment="mac"></item>
-            <item index="8" type="str" comment="port"></item>
-            <item index="9" type="str" comment="in_bytes"></item>
-            <item index="10" type="str" comment="out_bytes"></item>
-            <item index="11" type="str" comment="in_rate"></item>
-            <item index="12" type="str" comment="out_rate"></item>
-            <item index="13" type="str" comment="failed_reason_key"></item>
-            <item index="14" type="str" comment="failed_reason_msg"></item>
+            <item index="6" type="str" comment="rule_name"/>
+            <item index="7" type="str" comment="mac"/>
+            <item index="8" type="str" comment="port"/>
+            <item index="9" type="str" comment="in_bytes"/>
+            <item index="10" type="str" comment="out_bytes"/>
+            <item index="11" type="str" comment="in_rate"/>
+            <item index="12" type="str" comment="out_rate"/>
+            <item index="13" type="str" comment="sub_service"/>
+            <item index="14" type="str" comment="sub_service_charging"/>
+            <item index="15" type="str" comment="sub_service_qos"/>
+            <item index="16" type="str" comment="failed_reason_key"/>
+            <item index="17" type="str" comment="failed_reason_msg"/>
+            <item index="18" type="bool" comment="accountingStarted"/>
+            <item index="19" type="str" comment="parent_session_id"/>
+            <item index="20" type="str" comment="apn"/>
+            <item index="21" type="str" comment="ssid"/>
+            <item index="22" type="str" comment="service_type"/>
           </item>
         </param>
         <param name="voip_onlines" type="list" length="-1" comment="list length is number of instances, usually 1">
