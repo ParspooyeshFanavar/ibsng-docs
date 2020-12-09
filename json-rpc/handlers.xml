@@ -6368,6 +6368,9 @@
             <item index="20" type="str" comment="apn"/>
             <item index="21" type="str" comment="ssid"/>
             <item index="22" type="str" comment="service_type"/>
+            <item index="23" type="str" comment="imeisv"/>
+            <item index="24" type="str" comment="enode_b_location"/>
+            <item index="25" type="str" comment="cell_id_location"/>
           </item>
         </param>
         <param name="voip_onlines" type="list" length="-1" comment="list length is number of instances, usually 1">
