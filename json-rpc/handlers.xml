@@ -3338,6 +3338,13 @@
         <param name="isp_name" type="dict" comment="a dict of isp_name => count" />
       </output>
     </method>
+    <method name="getOnlineUsersCountPerISP" auth_type="ADMIN" requires_perm="SEE ONLINE USERS" comment="without conditions">
+      <input type="dict">
+      </input>
+      <output type="dict" comment="">
+        <param name="onlines_per_isp" type="dict" comment="a dict of isp_id => count" />
+      </output>
+    </method>
     <method name="getConnections" auth_type="ADMIN" requires_perm="SEE CONNECTION LOGS" comment="Get Connection Logs By Admin">
       <input type="dict">
         <param name="conds" type="dict" comment="">
@@ -6368,6 +6375,9 @@
             <item index="20" type="str" comment="apn"/>
             <item index="21" type="str" comment="ssid"/>
             <item index="22" type="str" comment="service_type"/>
+            <item index="23" type="str" comment="imeisv"/>
+            <item index="24" type="str" comment="enode_b_location"/>
+            <item index="25" type="str" comment="cell_id_location"/>
           </item>
         </param>
         <param name="voip_onlines" type="list" length="-1" comment="list length is number of instances, usually 1">
