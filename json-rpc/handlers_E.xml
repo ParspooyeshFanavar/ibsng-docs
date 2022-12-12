@@ -11,9 +11,9 @@
     <param name="auth_name" type="str" optional="false" comment="username (or admin name)" />
     <param name="auth_pass" type="str" optional="false" comment="password" />
     <param name="auth_session" type="str" optional="true"
-           comment="Session ID, if this is given and valid (previously returned by login.login), you can omit auth_type, auth_name and auth_pass" />
+      comment="Session ID, if this is given and valid (previously returned by login.login), you can omit auth_type, auth_name and auth_pass" />
     <param name="auth_remoteaddr" type="str" optional="true"
-           comment="Remote IP of user or admin, important for Audit Logs, CRM should pass this" />
+      comment="Remote IP of user or admin, important for Audit Logs, CRM should pass this" />
     <param name="date_type" type="choice" optional="true" comment="Date type for output date or datetime params, default is 'gregorian'">
       <choice value="gregorian" comment="" />
       <choice value="jalali" comment="" />
@@ -32,8 +32,7 @@
         <param name="admin_has_otp" type="bool" comment="" />
         <param name="admin_request_limit" type="int" comment="" />
       </input>
-      <output type="int" comment="Admin ID">
-      </output>
+      <output type="int" comment="Admin ID"></output>
     </method>
     <method name="getAdminInfo" auth_type="ADMIN" requires_perm="" comment="">
       <input type="dict">
@@ -67,27 +66,23 @@
         <param name="admin_username" type="str" comment="" />
         <param name="new_password" type="str" comment="" />
       </input>
-      <output type="null" comment="">
-      </output>
+      <output type="null" comment=""></output>
     </method>
     <method name="getAllAdminUsernames" auth_type="ADMIN" requires_perm="SEE ADMIN INFO" comment="All ISPs">
-      <input type="dict">
-      </input>
-      <output type="list" length="-1" item_type="str" comment="List of admin usernames">
-      </output>
+      <input type="dict"></input>
+      <output type="list" length="-1" item_type="str" comment="List of admin usernames"></output>
     </method>
     <method name="getAllAdminUsernames" auth_type="ADMIN" requires_perm="SEE ADMIN INFO" comment="Specific ISP">
       <input type="dict">
         <param name="isp_name" type="str" comment="" />
       </input>
-      <output type="list" length="-1" item_type="str" comment="List of admin usernames">
-      </output>
+      <output type="list" length="-1" item_type="str" comment="List of admin usernames"></output>
     </method>
     <method name="getAllAdminInfos" auth_type="ADMIN" requires_perm="SEE ADMIN INFO"
-        comment="only returns admins that requester admin has access to.
+      comment="only returns admins that requester admin has access to.
         Added in tag 320">
       <input type="dict">
-        <param name="isp_name" type="str" comment="admins of specific ISP" oprtional="true"/>
+        <param name="isp_name" type="str" comment="admins of specific ISP" oprtional="true" />
       </input>
       <output type="list" length="-1" item_type="dict" comment="List of admin informations">
         <item type="dict" comment="admin info dict">
@@ -115,18 +110,16 @@
         <param name="name" type="name" comment="" />
         <param name="email" type="name" comment="" />
         <param name="comment" type="name" comment="" />
-	      <param name="admin_has_otp" type="bool" comment="" />
-	      <param name="admin_request_limit" type="int" comment="" />
+        <param name="admin_has_otp" type="bool" comment="" />
+        <param name="admin_request_limit" type="int" comment="" />
       </input>
-      <output type="null" comment="">
-      </output>
+      <output type="null" comment=""></output>
     </method>
     <method name="deleteAdmin" auth_type="ADMIN" requires_perm="DELETE ADMIN" comment="">
       <input type="dict">
         <param name="admin_username" type="str" comment="" />
       </input>
-      <output type="null" comment="">
-      </output>
+      <output type="null" comment=""></output>
     </method>
     <method name="generateOTP" auth_type="ADMIN" requires_perm="CHANGE ADMIN PASSWORD" comment="">
       <input type="dict">
@@ -134,8 +127,7 @@
         <param name="pass_count" type="int" comment="" />
         <param name="admin_username" type="str" comment="" />
       </input>
-      <output type="list" length="-1" item_type="str" comment="List of passwords">
-      </output>
+      <output type="list" length="-1" item_type="str" comment="List of passwords"></output>
     </method>
     <method name="searchOTPs" auth_type="ADMIN" requires_perm="SEARCH OTP ADMINS" comment="">
       <input type="dict">
@@ -217,10 +209,8 @@
       </output>
     </method>
     <method name="expireAllAdminOTPs" auth_type="ADMIN" requires_perm="EXPIRE OTP ADMINS" comment="">
-      <input type="dict">
-      </input>
-      <output type="null" comment="">
-      </output>
+      <input type="dict"></input>
+      <output type="null" comment=""></output>
     </method>
   </handler>
   <handler name="bw" comment="bandwidth limit, based on tag C_lan_acc_staging_327">
@@ -234,8 +224,7 @@
           <choice type="str" value="Mikrotik" />
         </param>
       </input>
-      <output type="null">
-      </output>
+      <output type="null"></output>
     </method>
     <method name="addNode" auth_type="ADMIN" requires_perm="CHANGE BANDWIDTH MANAGER" comment="">
       <input type="dict">
@@ -246,8 +235,7 @@
         <param name="ceil_kbits" type="int" comment="kilo bits"></param>
         <param name="priority" type="int" comment=""></param>
       </input>
-      <output type="null">
-      </output>
+      <output type="null"></output>
     </method>
     <method name="addLeaf" auth_type="ADMIN" requires_perm="CHANGE BANDWIDTH MANAGER" comment="">
       <input type="dict">
@@ -260,8 +248,7 @@
         <param name="default_priority" type="int" comment=""></param>
         <param name="total_priority" type="int" comment=""></param>
       </input>
-      <output type="null">
-      </output>
+      <output type="null"></output>
     </method>
     <method name="addLeafService" auth_type="ADMIN" requires_perm="CHANGE BANDWIDTH MANAGER" comment="">
       <input type="dict">
@@ -278,12 +265,10 @@
         <param name="ceil_kbits" type="int" comment="kilo bit"></param>
         <param name="priority" type="int" comment=""></param>
       </input>
-      <output type="null">
-      </output>
+      <output type="null"></output>
     </method>
     <method name="getInterfaces" auth_type="ADMIN" requires_perm="CHANGE BANDWIDTH MANAGER" comment="">
-      <input type="dict">
-      </input>
+      <input type="dict"></input>
       <output type="dict" dynamic_keys="true">
         <key type="str" comment="'hostname/interface_name'" />
         <value type="dict" comment="">
@@ -369,36 +354,30 @@
         <param name="leaf_service_id" type="int" comment=""></param>
         <param name="leaf_name" type="str" comment=""></param>
       </input>
-      <output type="null">
-      </output>
+      <output type="null"></output>
     </method>
     <method name="delNode" auth_type="ADMIN" requires_perm="CHANGE BANDWIDTH MANAGER" comment="">
       <input type="dict">
         <param name="node_id" type="int" comment=""></param>
       </input>
-      <output type="null">
-      </output>
+      <output type="null"></output>
     </method>
     <method name="getAllLeafNames" auth_type="ADMIN" requires_perm="CHANGE CHARGE" comment="">
-      <input type="dict">
-      </input>
-      <output type="list" length="-1" item_type="str" comment="list of leaf names">
-      </output>
+      <input type="dict"></input>
+      <output type="list" length="-1" item_type="str" comment="list of leaf names"></output>
     </method>
     <method name="delLeaf" auth_type="ADMIN" requires_perm="CHANGE BANDWIDTH MANAGER" comment="">
       <input type="dict">
         <param name="leaf_name" type="str" comment=""></param>
       </input>
-      <output type="null">
-      </output>
+      <output type="null"></output>
     </method>
     <method name="delInterface" auth_type="ADMIN" requires_perm="CHANGE BANDWIDTH MANAGER" comment="">
       <input type="dict">
         <param name="hostname" type="str" comment=""></param>
         <param name="interface_name" type="str" comment=""></param>
       </input>
-      <output type="null">
-      </output>
+      <output type="null"></output>
     </method>
     <method name="updateInterface" auth_type="ADMIN" requires_perm="CHANGE BANDWIDTH MANAGER" comment="">
       <input type="dict">
@@ -411,8 +390,7 @@
           <choice type="str" value="Mikrotik" />
         </param>
       </input>
-      <output type="null">
-      </output>
+      <output type="null"></output>
     </method>
     <method name="updateNode" auth_type="ADMIN" requires_perm="CHANGE BANDWIDTH MANAGER" comment="">
       <input type="dict">
@@ -421,8 +399,7 @@
         <param name="ceil_kbits" type="int" comment=""></param>
         <param name="priority" type="int" comment=""></param>
       </input>
-      <output type="null">
-      </output>
+      <output type="null"></output>
     </method>
     <method name="updateLeaf" auth_type="ADMIN" requires_perm="CHANGE BANDWIDTH MANAGER" comment="">
       <input type="dict">
@@ -435,8 +412,7 @@
         <param name="default_priority" type="int" comment=""></param>
         <param name="total_priority" type="int" comment=""></param>
       </input>
-      <output type="dict">
-      </output>
+      <output type="dict"></output>
     </method>
     <method name="updateLeafService" auth_type="ADMIN" requires_perm="CHANGE BANDWIDTH MANAGER" comment="">
       <input type="dict">
@@ -454,8 +430,7 @@
         <param name="ceil_kbits" type="int" comment=""></param>
         <param name="priority" type="int" comment=""></param>
       </input>
-      <output type="null">
-      </output>
+      <output type="null"></output>
     </method>
     <method name="addBwStaticIP" auth_type="ADMIN" requires_perm="CHANGE BANDWIDTH MANAGER" comment="">
       <input type="dict">
@@ -463,8 +438,7 @@
         <param name="tx_leaf_name" type="str" comment=""></param>
         <param name="rx_leaf_name" type="str" comment=""></param>
       </input>
-      <output type="null">
-      </output>
+      <output type="null"></output>
     </method>
     <method name="updateBwStaticIP" auth_type="ADMIN" requires_perm="CHANGE BANDWIDTH MANAGER" comment="">
       <input type="dict">
@@ -473,21 +447,17 @@
         <param name="tx_leaf_name" type="str" comment=""></param>
         <param name="rx_leaf_name" type="str" comment=""></param>
       </input>
-      <output type="null">
-      </output>
+      <output type="null"></output>
     </method>
     <method name="delBwStaticIP" auth_type="ADMIN" requires_perm="CHANGE BANDWIDTH MANAGER" comment="">
       <input type="dict">
         <param name="ip_addr" type="str" comment=""></param>
       </input>
-      <output type="null">
-      </output>
+      <output type="null"></output>
     </method>
     <method name="getAllBwStaticIPs" auth_type="ADMIN" requires_perm="CHANGE BANDWIDTH MANAGER" comment="">
-      <input type="dict">
-      </input>
-      <output type="list" length="-1" item_type="str" comment="list of IPs">
-      </output>
+      <input type="dict"></input>
+      <output type="list" length="-1" item_type="str" comment="list of IPs"></output>
     </method>
     <method name="getBwStaticIPInfo" auth_type="ADMIN" requires_perm="CHANGE BANDWIDTH MANAGER" comment="">
       <input type="dict">
@@ -504,8 +474,8 @@
     </method>
     <method name="getActiveLeaves" auth_type="ADMIN" requires_perm="CHANGE BANDWIDTH MANAGER" comment="">
       <input type="dict">
-	      <param name="order_by" type="str" comment=""></param>
-	      <param name="desc" type="bool" comment="descending"></param>
+        <param name="order_by" type="str" comment=""></param>
+        <param name="desc" type="bool" comment="descending"></param>
       </input>
       <output type="list" length="-1" item_type="list" comment="">
         <item type="list" length="3" comment="">
@@ -534,8 +504,7 @@
           <choice type="str" value="Mikrotik" />
         </param>
       </input>
-      <output type="list" length="-1" item_type="str" comment="list of interfaces">
-      </output>
+      <output type="list" length="-1" item_type="str" comment="list of interfaces"></output>
     </method>
   </handler>
   <handler name="isp" comment="">
@@ -573,16 +542,14 @@
       <output type="null" comment="" />
     </method>
     <method name="getAllISPNames" auth_type="ADMIN" requires_perm=""
-        comment="returns list of ISP names that the admin has access to">
-      <input type="dict">
-      </input>
+      comment="returns list of ISP names that the admin has access to">
+      <input type="dict"></input>
       <output type="list" length="-1" item_type="str" comment="list of ISP names" />
     </method>
     <method name="listISPsWithIDs" auth_type="ADMIN" requires_perm=""
-        comment="return a list of ISP IDs and names that the admin has access to.
+      comment="return a list of ISP IDs and names that the admin has access to.
         Added in tag 320">
-      <input type="dict">
-      </input>
+      <input type="dict"></input>
       <output type="list" length="-1" item_type="list">
         <item type="list" length="2" comment="isp_id and isp_name">
           <item index="0" type="int" comment="isp_id" />
@@ -591,10 +558,9 @@
       </output>
     </method>
     <method name="getAllISPInfos" auth_type="ADMIN" requires_perm=""
-        comment="returns list of ISP informations that the admin has access to.
+      comment="returns list of ISP informations that the admin has access to.
         Added in tag 320">
-      <input type="dict">
-      </input>
+      <input type="dict"></input>
       <output type="list" length="-1" item_type="dict" comment="">
         <item type="dict" comment="isp info dict">
           <param name="isp_id" type="int" comment="" />
@@ -664,8 +630,7 @@
     </method>
     <method name="getAllISPMappedUserIDs" auth_type="ADMIN" requires_perm="GOD"
       comment="returns list of all Mapped User IDs used in each one of ISPs">
-      <input type="dict">
-      </input>
+      <input type="dict"></input>
       <output type="list" length="-1" item_type="int" comment="list of Mapped User IDs" />
     </method>
     <method name="getISPPageStyle" auth_type="ADMIN" requires_perm="SEE ISP INFO" comment="">
@@ -707,8 +672,7 @@
       <output type="null" comment="" />
     </method>
     <method name="getISPUsersCredit" auth_type="ADMIN" requires_perm="" comment="">
-      <input type="dict">
-      </input>
+      <input type="dict"></input>
       <output type="dict" comment="">
         <param name="result" type="dict" dynamic_keys="true" comment="">
           <key type="str_int" comment="ISP ID (string for compatibility)" />
@@ -768,8 +732,7 @@
       </output>
     </method>
     <method name="getAllPerms" auth_type="ADMIN" requires_perm="" comment="">
-      <input type="dict" comment="">
-      </input>
+      <input type="dict" comment=""></input>
       <output type="list" length="-1" comment="">
         <item type="dict" comment="">
           <param name="affected_pages" type="list" item_type="str" comment="list of affected pages" />
@@ -812,8 +775,7 @@
         <param name="perm_name" type="str" comment="" />
         <param name="perm_value" type="str" comment="" />
       </input>
-      <output type="null" comment="">
-      </output>
+      <output type="null" comment=""></output>
     </method>
     <method name="delPermission" auth_type="ADMIN" requires_perm="" comment="">
       <input type="dict" comment="">
@@ -838,8 +800,7 @@
       <output type="null" comment="" />
     </method>
     <method name="getListOfPermTemplates" auth_type="ADMIN" requires_perm="CHANGE ADMIN PERMISSIONS" comment="">
-      <input type="dict" comment="">
-      </input>
+      <input type="dict" comment=""></input>
       <output type="list" length="-1" item_type="str" comment="list of template names" />
     </method>
     <method name="getPermsOfTemplate" auth_type="ADMIN" requires_perm="CHANGE ADMIN PERMISSIONS" comment="">
@@ -900,8 +861,7 @@
       <input type="dict">
         <param name="isp_id" type="str" multi_str="true" comment="comma-seprated. list of isp ids" />
       </input>
-      <output type="list" length="-1" item_type="str" comment="list of charge names">
-      </output>
+      <output type="list" length="-1" item_type="str" comment="list of charge names"></output>
     </method>
     <method name="getChargeInfo" auth_type="ADMIN" requires_perm="" comment="">
       <input type="dict">
@@ -929,16 +889,14 @@
         <param name="comment" type="str" comment="" />
         <param name="isp_name" type="str" comment="" />
       </input>
-      <output type="int" comment="Charge ID">
-      </output>
+      <output type="int" comment="Charge ID"></output>
     </method>
     <method name="copyCharge" auth_type="ADMIN" requires_perm="CHANGE CHARGE" comment="just one copy">
       <input type="dict">
         <param name="charge_name" type="str" comment="" />
         <param name="comment" type="str" comment="" />
       </input>
-      <output type="list" length="-1" item_type="int" comment="New Charge IDs">
-      </output>
+      <output type="list" length="-1" item_type="int" comment="New Charge IDs"></output>
     </method>
     <method name="copyCharge" auth_type="ADMIN" requires_perm="CHANGE CHARGE" comment="one or more copies">
       <input type="dict">
@@ -946,8 +904,7 @@
         <param name="comment" type="str" comment="" />
         <param name="copy_count" type="int" comment="" />
       </input>
-      <output type="list" length="-1" item_type="int" comment="New Charge IDs">
-      </output>
+      <output type="list" length="-1" item_type="int" comment="New Charge IDs"></output>
     </method>
     <method name="updateCharge" auth_type="ADMIN" requires_perm="CHANGE CHARGE" comment="">
       <input type="dict">
@@ -957,15 +914,13 @@
         <param name="isp_name" type="str" comment="" />
 
       </input>
-      <output type="null" comment="">
-      </output>
+      <output type="null" comment=""></output>
     </method>
     <method name="deleteCharge" auth_type="ADMIN" requires_perm="CHANGE CHARGE" comment="">
       <input type="dict">
         <param name="charge_name" type="str" comment="" />
       </input>
-      <output type="null" comment="">
-      </output>
+      <output type="null" comment=""></output>
     </method>
     <method name="addNewChargeRule" auth_type="ADMIN" requires_perm="CHANGE CHARGE" comment="">
       <input type="dict">
@@ -973,8 +928,7 @@
         <param name="charge_rule_priority" type="int" comment="" />
         <param name="charge_name" type="str" comment="" />
       </input>
-      <output type="int" comment="Charge Rule ID">
-      </output>
+      <output type="int" comment="Charge Rule ID"></output>
     </method>
     <method name="updateChargeRule" auth_type="ADMIN" requires_perm="CHANGE CHARGE" comment="">
       <input type="dict">
@@ -983,16 +937,14 @@
         <param name="charge_rule_priority" type="int" comment="" />
         <param name="charge_name" type="str" comment="str" />
       </input>
-      <output type="null" comment="">
-      </output>
+      <output type="null" comment=""></output>
     </method>
     <method name="deleteChargeRule" auth_type="ADMIN" requires_perm="CHANGE CHARGE" comment="">
       <input type="dict">
         <param name="charge_rule_id" type="int" comment="" />
         <param name="charge_name" type="str" comment="" />
       </input>
-      <output type="null" comment="">
-      </output>
+      <output type="null" comment=""></output>
     </method>
     <method name="updateChargeRuleAttrs" auth_type="ADMIN" requires_perm="" comment="">
       <input type="dict">
@@ -1001,16 +953,13 @@
         <param name="update_attrs" type="dict" dynamic_keys="true" comment="" />
         <param name="delete_attrs" type="list" length="-1" item_type="str" comment="" />
       </input>
-      <output type="null" comment="">
-      </output>
+      <output type="null" comment=""></output>
     </method>
   </handler>
   <handler name="extra_charge" comment="">
     <method name="getExtraChargeProfileNames" auth_type="ADMIN" requires_perm="SEE EXTRA CHARGE" comment="">
-      <input type="dict">
-      </input>
-      <output type="list" length="-1" item_type="str" comment="list of profile names">
-      </output>
+      <input type="dict"></input>
+      <output type="list" length="-1" item_type="str" comment="list of profile names"></output>
     </method>
     <method name="addExtraChargeProfile" auth_type="ADMIN" requires_perm="CHANGE EXTRA CHARGE" comment="">
       <input type="dict">
@@ -1113,8 +1062,7 @@
       <output type="null"></output>
     </method>
     <method name="getExtraChargeProfiles" auth_type="ADMIN" requires_perm="SEE EXTRA CHARGE" comment="">
-      <input type="dict">
-      </input>
+      <input type="dict"></input>
       <output type="list" item_type="dict">
         <item type="dict" item_type="profile info dict">
           <param name="profile_id" type="int" />
@@ -1283,18 +1231,18 @@
       <output type="list" length="-1" item_type="int" comment="list of Group IDs" />
     </method>
     <method name="listGroups" auth_type="ADMIN" requires_perm=""
-              comment="return a list of group names, that requester admin has access to">
+      comment="return a list of group names, that requester admin has access to">
       <input type="dict">
-        <param name="active_only" type="bool" optional="true" comment="pass true if you only want active groups"/>
+        <param name="active_only" type="bool" optional="true" comment="pass true if you only want active groups" />
         <param name="isp_id" type="str" multi_str="true" comment="comma-seprated. list of isp ids" />
       </input>
       <output type="list" length="-1" item_type="str" comment="list of group names" />
     </method>
     <method name="listGroupsWithIDs" auth_type="ADMIN" requires_perm=""
-              comment="return a list of group IDs and names, that requester admin can change service to.
+      comment="return a list of group IDs and names, that requester admin can change service to.
               Added in tag 320">
       <input type="dict">
-        <param name="active_only" type="bool" optional="true" comment="pass true if you only want active groups"/>
+        <param name="active_only" type="bool" optional="true" comment="pass true if you only want active groups" />
       </input>
       <output type="list" length="-1" item_type="list" comment="">
         <item type="list" length="2" comment="one group (id and name)">
@@ -1304,10 +1252,10 @@
       </output>
     </method>
     <method name="listGroupInfos" auth_type="ADMIN" requires_perm=""
-        comment="return list of group informations, that requester admin has access to.
+      comment="return list of group informations, that requester admin has access to.
         Added in tag 320">
       <input type="dict">
-        <param name="active_only" type="bool" optional="true" comment="pass true if you only want active groups"/>
+        <param name="active_only" type="bool" optional="true" comment="pass true if you only want active groups" />
         <param name="isp_id" type="str" multi_str="true" comment="comma-seprated. list of isp ids" />
       </input>
       <output type="list" length="-1" item_type="dict" comment="list of group informations">
@@ -1323,21 +1271,17 @@
       </output>
     </method>
     <method name="getGroupCredits" auth_type="ADMIN" requires_perm="" comment="">
-      <input type="dict">
-      </input>
-      <output type="dict" dynamic_keys="true" comment="keys are group names, values are group credits">
-      </output>
+      <input type="dict"></input>
+      <output type="dict" dynamic_keys="true" comment="keys are group names, values are group credits"></output>
     </method>
     <method name="getGroupUsersCount" auth_type="ADMIN" requires_perm="" comment="">
-      <input type="dict">
-      </input>
-      <output type="dict" dynamic_keys="true" comment="keys are group names, values are user count in each group">
-      </output>
+      <input type="dict"></input>
+      <output type="dict" dynamic_keys="true" comment="keys are group names, values are user count in each group"></output>
     </method>
     <method name="getGroupInfo" auth_type="ADMIN" requires_perm="" comment="">
       <input type="dict" comment="you must pass group_name or group_id">
-        <param name="group_name" type="str" comment="" optional="true"/>
-        <param name="group_id" type="int" comment="" optional="true"/>
+        <param name="group_name" type="str" comment="" optional="true" />
+        <param name="group_id" type="int" comment="" optional="true" />
       </input>
       <output type="dict" comment="">
         <param name="group_id" type="int" comment="" />
@@ -1405,8 +1349,7 @@
       <output type="null" />
     </method>
     <method name="getIPpoolNames" auth_type="ADMIN" requires_perm="LIST IPPOOL" comment="">
-      <input type="dict">
-      </input>
+      <input type="dict"></input>
       <output type="list" item_type="str" length="-1" comment="list of ippool names"></output>
     </method>
     <method name="getIPpoolNames" auth_type="ADMIN" requires_perm="LIST IPPOOL" comment="">
@@ -1467,7 +1410,7 @@
           <choice value="fill_first" />
         </param>
         <param name="children_ippool_percentages" type="dict"
-                   comment="keys are IPPool Names, values are percentage numbers" />
+          comment="keys are IPPool Names, values are percentage numbers" />
       </input>
       <output type="null" />
     </method>
@@ -1481,7 +1424,7 @@
           <choice value="fill_first" />
         </param>
         <param name="children_ippool_percentages" type="dict"
-                   comment="keys are IPPool Names, values are percentage numbers" />
+          comment="keys are IPPool Names, values are percentage numbers" />
       </input>
       <output type="null" />
     </method>
@@ -1494,10 +1437,9 @@
   </handler>
   <handler name="log_console" comment="">
     <method name="getConsoleBuffer" auth_type="ADMIN" requires_perm="SEE CONNECTION LOGS" comment="">
-      <input type="dict">
-      </input>
+      <input type="dict"></input>
       <output type="list" length="-1" item_type="list" comment="">
-        <item type="list" length="7" >
+        <item type="list" length="7">
           <item index="0" type="int" comment="Epoch Time" />
           <item index="1" type="str" comment="Formatted Time" />
           <item index="2" type="str" comment="Username" />
@@ -1620,10 +1562,8 @@
   </handler>
   <handler name="mc" comment="Message Center">
     <method name="getAllMSGTypes" comment="">
-      <input type="dict">
-      </input>
-      <output type="list" item_type="str" comment="">
-      </output>
+      <input type="dict"></input>
+      <output type="list" item_type="str" comment=""></output>
     </method>
     <method name="getActiveMSGTypes" comment="">
       <input type="dict">
@@ -1632,12 +1572,10 @@
           <choice value="REPORT" />
         </param>
       </input>
-      <output type="list" item_type="str" comment="">
-      </output>
+      <output type="list" item_type="str" comment=""></output>
     </method>
     <method name="getProviderTypes" auth_type="ADMIN" requires_perm="" comment="">
-      <input type="dict">
-      </input>
+      <input type="dict"></input>
       <output type="list" length="-1" item_type="str" comment="list of provider types" />
     </method>
     <method name="getProviderInfoByName" auth_type="ADMIN" requires_perm="" comment="">
@@ -1731,8 +1669,7 @@
       <output type="null" />
     </method>
     <method name="getAllActiveProviders" auth_type="ADMIN" requires_perm="" comment="">
-      <input type="dict">
-      </input>
+      <input type="dict"></input>
       <output type="list" length="-1" comment="list of Provide Info dictionaries">
         <item type="dict" comment="Provider Info">
           <param name="provider_name" type="str" comment="" />
@@ -1775,7 +1712,7 @@
     <method name="addNewEPGroupToProvider" auth_type="ADMIN" requires_perm="CHANGE PROVIDERS" comment="">
       <input type="dict">
         <param name="end_point_range" type="str" multi_str="true"
-                   comment="comma-seperated end-point groups" />
+          comment="comma-seperated end-point groups" />
         <param name="provider_name" type="str" comment="" />
       </input>
       <output type="null" />
@@ -1925,8 +1862,7 @@
       <output type="bool" comment="returns true, or raises an error" />
     </method>
     <method name="resetUserActivationCode" auth_type="USER" comment="">
-      <input type="dict">
-      </input>
+      <input type="dict"></input>
       <output type="null" />
     </method>
     <method name="checkActivationCode" auth_type="USER" comment="">
@@ -1936,8 +1872,7 @@
       <output type="bool" comment="returns true, or raises an error" />
     </method>
     <method name="getUserActivationNumber" auth_type="USER" comment="">
-      <input type="dict">
-      </input>
+      <input type="dict"></input>
       <output type="dict" comment="">
         <param name="activation_number" type="str" comment="cell_phone of user" />
       </output>
@@ -1991,7 +1926,7 @@
         </param>
         <param name="from" type="int" comment="page start index" />
         <param name="to" type="int" comment="page end index" />
-        <param name="order_by" type="choice" comment="" >
+        <param name="order_by" type="choice" comment="">
           <choice value="message_id" />
           <choice value="msg_type" />
           <choice value="transfer_date" />
@@ -2073,7 +2008,7 @@
         </param>
         <param name="from" type="int" comment="page start index" />
         <param name="to" type="int" comment="page end index" />
-        <param name="order_by" type="choice" comment="" >
+        <param name="order_by" type="choice" comment="">
           <choice value="message_id" />
           <choice value="msg_type" />
           <choice value="transfer_date" />
@@ -2154,7 +2089,7 @@
         </param>
         <param name="from" type="int" comment="page start index" />
         <param name="to" type="int" comment="page end index" />
-        <param name="order_by" type="choice" comment="" >
+        <param name="order_by" type="choice" comment="">
           <choice value="message_id" />
           <choice value="msg_type" />
           <choice value="transfer_date" />
@@ -2233,7 +2168,7 @@
         </param>
         <param name="from" type="int" comment="" />
         <param name="to" type="int" comment="" />
-        <param name="order_by" type="choice" comment="" >
+        <param name="order_by" type="choice" comment="">
           <choice value="message_id" />
           <choice value="msg_type" />
           <choice value="transfer_date" />
@@ -2312,7 +2247,7 @@
         </param>
         <param name="from" type="int" comment="" />
         <param name="to" type="int" comment="" />
-        <param name="order_by" type="choice" comment="" >
+        <param name="order_by" type="choice" comment="">
           <choice value="message_id" />
           <choice value="msg_type" />
           <choice value="transfer_date" />
@@ -2390,7 +2325,7 @@
         </param>
         <param name="from" type="int" comment="" />
         <param name="to" type="int" comment="" />
-        <param name="order_by" type="choice" comment="" >
+        <param name="order_by" type="choice" comment="">
           <choice value="message_id" />
           <choice value="msg_type" />
           <choice value="transfer_date" />
@@ -2480,7 +2415,7 @@
         </param>
         <param name="from" type="int" comment="" />
         <param name="to" type="int" comment="" />
-        <param name="order_by" type="choice" comment="" >
+        <param name="order_by" type="choice" comment="">
           <choice value="message_id" />
           <choice value="msg_type" />
           <choice value="transfer_date" />
@@ -2568,7 +2503,7 @@
         </param>
         <param name="from" type="int" comment="" />
         <param name="to" type="int" comment="" />
-        <param name="order_by" type="choice" comment="" >
+        <param name="order_by" type="choice" comment="">
           <choice value="message_id" />
           <choice value="msg_type" />
           <choice value="transfer_date" />
@@ -2603,7 +2538,7 @@
       <input type="dict">
         <param name="from" type="int" comment="" />
         <param name="to" type="int" comment="" />
-        <param name="order_by" type="choice" comment="" >
+        <param name="order_by" type="choice" comment="">
           <choice value="message_id" />
           <choice value="msg_type" />
           <choice value="transfer_date" />
@@ -2623,8 +2558,7 @@
       </output>
     </method>
     <method name="getUserLastMessageID" auth_type="USER" comment="">
-      <input type="dict">
-      </input>
+      <input type="dict"></input>
       <output type="int" comment="Message ID of Last Message" />
     </method>
     <method name="dialerDeleteMessage" auth_type="USER" comment="">
@@ -2694,21 +2628,18 @@
           <choice value="USER" />
         </param>
       </input>
-      <output type="dict" comment="">
-      </output>
+      <output type="dict" comment=""></output>
     </method>
   </handler>
   <handler name="notification" comment="">
     <method name="getNotificationProfileNames" auth_type="ADMIN" requires_perm=""
       comment="list of notification profile names that admin has access to.">
-      <input type="dict">
-      </input>
+      <input type="dict"></input>
       <output type="list" length="-1" item_type="str" comment="list of profile names" />
     </method>
     <method name="getNotificationProfiles" auth_type="ADMIN" requires_perm="CHANGE NOTIFICATION"
-    comment="list of notification profile informations that admin has access to.">
-      <input type="dict">
-      </input>
+      comment="list of notification profile informations that admin has access to.">
+      <input type="dict"></input>
       <output type="list" length="-1" item_type="dict" comment="list of profile infos">
         <item type="dict" comment="profile info">
           <param name="notification_profile_id" type="int" comment="" />
@@ -2725,17 +2656,17 @@
                 <choice value="email_to_isp" />
                 <choice value="ibsng_message" />
                 <choice value="url" comment="call a URL specified in `message_template`, added in tag 312" />
-                <choice value="user_event" comment="added in tag (NO TAG YET)"/>
+                <choice value="user_event" comment="added in tag (NO TAG YET)" />
               </param>
               <param name="notification_type" type="choice" comment="">
-                 <choice value="expiration_date" />
-                 <choice value="credit" />
-                 <choice value="renew" />
-                 <choice value="birth_day" />
-                 <choice value="online_payment" />
-                 <choice value="first_login" />
-                 <choice value="credit_change" />
-                 <choice value="deposit_change" />
+                <choice value="expiration_date" />
+                <choice value="credit" />
+                <choice value="renew" />
+                <choice value="birth_day" />
+                <choice value="online_payment" />
+                <choice value="first_login" />
+                <choice value="credit_change" />
+                <choice value="deposit_change" />
               </param>
               <param name="message_template" type="str" comment="" />
             </item>
@@ -2779,17 +2710,17 @@
               <choice value="email_to_isp" />
               <choice value="ibsng_message" />
               <choice value="url" comment="call a URL specified in `message_template`, added in tag 312" />
-              <choice value="user_event" comment="added in tag (NO TAG YET)"/>
+              <choice value="user_event" comment="added in tag (NO TAG YET)" />
             </param>
             <param name="notification_type" type="choice" comment="">
-               <choice value="expiration_date" />
-               <choice value="credit" />
-               <choice value="renew" />
-               <choice value="birth_day" />
-               <choice value="online_payment" />
-               <choice value="first_login" />
-               <choice value="credit_change" />
-               <choice value="deposit_change" />
+              <choice value="expiration_date" />
+              <choice value="credit" />
+              <choice value="renew" />
+              <choice value="birth_day" />
+              <choice value="online_payment" />
+              <choice value="first_login" />
+              <choice value="credit_change" />
+              <choice value="deposit_change" />
             </param>
             <param name="message_template" type="str" comment="" />
           </item>
@@ -2824,7 +2755,7 @@
           <choice value="email_to_isp" />
           <choice value="ibsng_message" />
           <choice value="url" comment="call a URL specified in `message_template`, added in tag 312" />
-          <choice value="user_event" comment="added in tag (NO TAG YET)"/>
+          <choice value="user_event" comment="added in tag (NO TAG YET)" />
         </param>
         <param name="message_template" type="str" comment="" />
       </input>
@@ -2858,7 +2789,7 @@
           <choice value="email_to_isp" />
           <choice value="ibsng_message" />
           <choice value="url" comment="call a URL specified in `message_template`, added in tag 312" />
-          <choice value="user_event" comment="added in tag (NO TAG YET)"/>
+          <choice value="user_event" comment="added in tag (NO TAG YET)" />
         </param>
         <param name="message_template" type="str" />
       </input>
@@ -2867,9 +2798,8 @@
   </handler>
   <handler name="online_payment" comment="">
     <method name="getAvailableGatewayTypes" auth_type="USER, ADMIN"
-          comment="list of gateway names that are available and usable for user">
-      <input type="dict">
-      </input>
+      comment="list of gateway names that are available and usable for user">
+      <input type="dict"></input>
       <output type="list" length="-1" item_type="choice" comment="list of gateway types">
         <item type="choice" comment="gateway type">
           <choice value="Eghtesad_Novin" />
@@ -2884,15 +2814,14 @@
       </output>
     </method>
     <method name="getPaymentAmountSuggestions" auth_type="USER, ADMIN" comment="">
-      <input type="dict">
-      </input>
+      <input type="dict"></input>
       <output type="list" length="-1" item_type="list" comment="">
         <item type="list" length="4">
           <item index="0" type="choice" comment="suggestion_id">
             <choice type="str" value="renew_credit" />
             <choice type="str" value="recharge_credit" />
             <choice type="str" value="arbitrary" />
-            <choice type="str" value="recharge_from_renew_deposit" comment="only in C_invoice branch"/>
+            <choice type="str" value="recharge_from_renew_deposit" comment="only in C_invoice branch" />
           </item>
           <item index="1" type="float" comment="amount"></item>
           <item index="2" type="str" comment="description"></item>
@@ -2960,8 +2889,7 @@
         <param name="comment" type="str" comment=""></param>
         <param name="attributes" type="dict" comment=""></param>
       </input>
-      <output type="null">
-      </output>
+      <output type="null"></output>
     </method>
     <method name="updateGateway" auth_type="ADMIN" requires_perm="CHANGE ONLINE PAYMENT"
       comment="Added in tag C_dev_326">
@@ -2973,36 +2901,30 @@
         <param name="comment" type="str" comment=""></param>
         <param name="attributes" type="dict" comment=""></param>
       </input>
-      <output type="null">
-      </output>
+      <output type="null"></output>
     </method>
     <method name="deleteGateway" auth_type="ADMIN" requires_perm="CHANGE ONLINE PAYMENT"
       comment="Added in tag C_dev_326">
       <input type="dict">
         <param name="gateway_name" type="str" comment=""></param>
       </input>
-      <output type="null">
-      </output>
+      <output type="null"></output>
     </method>
     <method name="getAllGatewayTypes" auth_type="ADMIN" requires_perm="SEE ONLINE PAYMENT"
       comment="Added in tag C_dev_326">
-      <input type="dict">
-      </input>
-      <output type="list" length="-1" item_type="str" comment="list of gateway types">
-      </output>
+      <input type="dict"></input>
+      <output type="list" length="-1" item_type="str" comment="list of gateway types"></output>
     </method>
     <method name="getAllGatewayNames" auth_type="ADMIN" requires_perm="SEE ONLINE PAYMENT"
       comment="Added in tag C_dev_326">
-      <input type="dict">
-      </input>
+      <input type="dict"></input>
       <output type="dict">
         <param name="gateway_names" type="list" length="-1" item_type="str" comment="list of gateway names" />
       </output>
     </method>
     <method name="getAllGatewayInfos" auth_type="ADMIN" requires_perm="CHANGE ONLINE PAYMENT"
       comment="Added in tag C_dev_326">
-      <input type="dict">
-      </input>
+      <input type="dict"></input>
       <output type="list" item_type="dict">
         <item type="dict" comment="gateway attributes">
           <param name="gateway_id" type="int" comment=""></param>
@@ -3029,11 +2951,9 @@
     <method name="purgePayment" auth_type="ADMIN" requires_perm="PURGE ONLINE PAYMENT"
       comment="Added in tag C_dev_326">
       <input type="dict">
-        <param name="payment_id" type="int" comment="">
-        </param>
+        <param name="payment_id" type="int" comment=""></param>
       </input>
-      <output type="dict">
-      </output>
+      <output type="dict"></output>
     </method>
   </handler>
   <handler name="ras" comment="">
@@ -3080,8 +3000,7 @@
       </output>
     </method>
     <method name="getActiveRasIPs" auth_type="ADMIN" requires_perm="" comment="All active RASs, without type filter">
-      <input type="dict">
-      </input>
+      <input type="dict"></input>
       <output type="list" length="-1" item_type="str" comment="list of Ras IPs" />
     </method>
     <method name="getActiveRasIPs" auth_type="ADMIN" requires_perm="" comment="Active RASs with specific type">
@@ -3091,8 +3010,7 @@
       <output type="list" length="-1" item_type="str" comment="list of Ras IPs" />
     </method>
     <method name="getRasDescriptions" auth_type="ADMIN" requires_perm="" comment="">
-      <input type="dict">
-      </input>
+      <input type="dict"></input>
       <output type="list" length="-1" comment="">
         <item type="list" length="2" comment="">
           <item index="0" type="str" comment="Ras Description" />
@@ -3101,13 +3019,11 @@
       </output>
     </method>
     <method name="getInActiveRases" auth_type="ADMIN" requires_perm="LIST RAS" comment="List of inactive RAS IPs">
-      <input type="dict">
-      </input>
+      <input type="dict"></input>
       <output type="list" length="-1" item_type="str" comment="list of RAS IPs" />
     </method>
     <method name="getRasTypes" auth_type="ADMIN" requires_perm="GET RAS INFORMATION" comment="">
-      <input type="dict">
-      </input>
+      <input type="dict"></input>
       <output type="list" length="-1" item_type="str" comment="list of RAS types" />
     </method>
     <method name="getRasAttributes" auth_type="ADMIN" requires_perm="GET RAS INFORMATION" comment="">
@@ -3168,7 +3084,7 @@
       <output type="null" comment="" />
     </method>
     <method name="getRasIPpools" auth_type="ADMIN" requires_perm="GET RAS INFORMATION"
-              comment="Returns a sorted list of IPPool names for a RAS">
+      comment="Returns a sorted list of IPPool names for a RAS">
       <input type="dict">
         <param name="ras_ip" type="str" comment="" />
       </input>
@@ -3235,11 +3151,11 @@
         <param name="conds" type="dict" comment="">
           <param name="dnis" type="str" multi_str="true" optional="true" comment="" />
           <param name="isp_ids" type="list" length="-1" item_type="int" optional="true" comment="" />
-          <param name="isp_names" type="list" length="-1" item_type="str"  optional="true" comment="" />
+          <param name="isp_names" type="list" length="-1" item_type="str" optional="true" comment="" />
           <param name="ras_ips" type="list" length="-1" item_type="str" optional="true" comment="" />
           <param name="remote_ip" type="str" multi_str="true" optional="true" comment="" />
           <param name="username_starts_with" type="list or string" optional="true"
-                     comment="Array('A', 'B', 'C'), is like 'ABC'" />
+            comment="Array('A', 'B', 'C'), is like 'ABC'" />
         </param>
       </input>
       <output type="list" length="2" comment="">
@@ -3300,7 +3216,7 @@
         <param name="ras_description" type="dict" dynamic_keys="true" comment="dict of ras_desc => count" />
         <param name="ras_counters" type="dict" dynamic_keys="true" comment="dict of ras_desc => count_dict">
           <key type="str" comment="Ras ID" />
-          <value type="dict" comment="a dict containing per-state user count" >
+          <value type="dict" comment="a dict containing per-state user count">
             <param name="ras_total" type="int" comment="total number of onlines in this ras" />
             <param name="ras_reonlined" type="int" comment="number of re-onlined users in this ras" />
             <param name="ras_failed" type="int" comment="number of failed users in this ras" />
@@ -3313,8 +3229,7 @@
       </output>
     </method>
     <method name="getOnlineUsersCount" auth_type="ADMIN" requires_perm="SEE ONLINE USERS" comment="without conditions">
-      <input type="dict">
-      </input>
+      <input type="dict"></input>
       <output type="dict" comment="">
         <param name="internet_onlines" type="int" comment="" />
         <param name="voip_onlines" type="int" comment="" />
@@ -3326,7 +3241,7 @@
         <param name="ras_description" type="dict" dynamic_keys="true" comment="dict of ras_desc => count" />
         <param name="ras_counters" type="dict" dynamic_keys="true" comment="dict of ras_desc => count_dict">
           <key type="str" comment="Ras ID" />
-          <value type="dict" comment="a dict containing per-state user count" >
+          <value type="dict" comment="a dict containing per-state user count">
             <param name="ras_total" type="int" comment="total number of onlines in this ras" />
             <param name="ras_reonlined" type="int" comment="number of re-onlined users in this ras" />
             <param name="ras_failed" type="int" comment="number of failed users in this ras" />
@@ -3339,8 +3254,7 @@
       </output>
     </method>
     <method name="getOnlineUsersCountPerISP" auth_type="ADMIN" requires_perm="SEE ONLINE USERS" comment="without conditions">
-      <input type="dict">
-      </input>
+      <input type="dict"></input>
       <output type="dict" comment="">
         <param name="onlines_per_isp" type="dict" comment="a dict of isp_id => count" />
       </output>
@@ -3708,7 +3622,7 @@
     </method>
     <method name="getINConnections" auth_type="ADMIN" requires_perm="SEE CONNECTION LOGS" comment="">
       <input type="dict">
-        <param name="conds" type="dict" comment="the same as 'report.getConnections' method, plus caller_id" >
+        <param name="conds" type="dict" comment="the same as 'report.getConnections' method, plus caller_id">
           <param name="caller_id" type="str" optional="false" />
         </param>
         <param name="from" type="int" comment="start index, for pagination" />
@@ -3724,8 +3638,7 @@
         </param>
         <param name="desc" type="bool" comment="descending" />
       </input>
-      <output type="dict" comment="the same as 'report.getConnections' method">
-      </output>
+      <output type="dict" comment="the same as 'report.getConnections' method"></output>
     </method>
     <method name="getDurations" auth_type="ADMIN, USER" requires_perm="SEE CONNECTION LOGS" comment="">
       <input type="dict">
@@ -3735,32 +3648,32 @@
         <item index="0" type="list" length="2" comment="">
           <item index="0" type="int" value="0" comment="seconds" />
           <item index="1" type="int"
-                    comment="number of connections with duration &lt; 60s" />
+            comment="number of connections with duration &lt; 60s" />
         </item>
         <item index="1" type="list" length="2" comment="">
           <item index="0" type="int" value="60" comment="seconds" />
           <item index="1" type="int"
-                    comment="number of connections with 60s &lt;= duration &lt; 300s" />
+            comment="number of connections with 60s &lt;= duration &lt; 300s" />
         </item>
         <item index="2" type="list" length="2" comment="">
           <item index="0" type="int" value="300" comment="seconds" />
           <item index="1" type="int"
-                    comment="number of connections with 300s &lt;= duration &lt; 3600s" />
+            comment="number of connections with 300s &lt;= duration &lt; 3600s" />
         </item>
         <item index="3" type="list" length="2" comment="">
           <item index="0" type="int" value="3600" comment="seconds" />
           <item index="1" type="int"
-                    comment="number of connections with 3600s &lt;= duration &lt; 7200s" />
+            comment="number of connections with 3600s &lt;= duration &lt; 7200s" />
         </item>
         <item index="4" type="list" length="2" comment="">
           <item index="0" type="int" value="7200" comment="seconds" />
           <item index="1" type="int"
-                    comment="number of connections with 7200s &lt;= duration &lt; 14400s" />
+            comment="number of connections with 7200s &lt;= duration &lt; 14400s" />
         </item>
         <item index="5" type="list" length="2" comment="">
           <item index="0" type="int" value="14400" comment="seconds" />
           <item index="1" type="int"
-                    comment="number of connections with duration &gt;= 14400s" />
+            comment="number of connections with duration &gt;= 14400s" />
         </item>
       </output>
     </method>
@@ -3913,36 +3826,36 @@
     </method>
     <method name="getConnectionUsages" auth_type="ADMIN" requires_perm="SEE CONNECTION LOGS" comment="">
       <input type="dict">
-      <param name="conds" type="dict" comment="the same as 'report.getConnections' method" />
-      <param name="from" type="int" comment="start index, for pagination" />
-      <param name="to" type="int" comment="end index, for pagination" />
-      <param name="order_by" type="choice" comment="">
-        <choice value="total_credit" />
-        <choice value="total_duration" />
-        <choice value="total_in_bytes" />
-        <choice value="total_out_bytes" />
-      </param>
+        <param name="conds" type="dict" comment="the same as 'report.getConnections' method" />
+        <param name="from" type="int" comment="start index, for pagination" />
+        <param name="to" type="int" comment="end index, for pagination" />
+        <param name="order_by" type="choice" comment="">
+          <choice value="total_credit" />
+          <choice value="total_duration" />
+          <choice value="total_in_bytes" />
+          <choice value="total_out_bytes" />
+        </param>
       </input>
       <output type="dict" comment="">
-      <param name="total_rows" type="int" comment="Number of total rows" />
-      <param name="report" type="list" length="-1" comment="">
-        <item type="dict">
-        <param name="user_id" type="int" comment="User ID" />
-        <param name="username" type="str" comment="User username" />
-        <param name="serial" type="str" comment="User serial" />
-        <param name="group_name" type="str" comment="User group name" />
-        <param name="isp_name" type="str" comment="User ISP name" />
-        <param name="creation_date" type="str" comment="User creation date" />
-        <param name="name" type="str" comment="Name of user" />
-        <param name="sub_service_name" type="Sub service name" comment="" />
-        <param name="sub_service_charging" type="str" comment="Sub service charging name" />
-        <param name="seb_service_qos" type="str" comment="Sub service QOS name" />
-        <param name="total_credit" type="int" comment="Total credit" />
-        <param name="total_duration" type="int" comment="Total duration" />
-        <param name="total_in_bytes" type="" comment="Total in bytes" />
-        <param name="total_out_bytes" type="" comment="Total out bytes" />
-        </item>
-      </param>
+        <param name="total_rows" type="int" comment="Number of total rows" />
+        <param name="report" type="list" length="-1" comment="">
+          <item type="dict">
+            <param name="user_id" type="int" comment="User ID" />
+            <param name="username" type="str" comment="User username" />
+            <param name="serial" type="str" comment="User serial" />
+            <param name="group_name" type="str" comment="User group name" />
+            <param name="isp_name" type="str" comment="User ISP name" />
+            <param name="creation_date" type="str" comment="User creation date" />
+            <param name="name" type="str" comment="Name of user" />
+            <param name="sub_service_name" type="Sub service name" comment="" />
+            <param name="sub_service_charging" type="str" comment="Sub service charging name" />
+            <param name="seb_service_qos" type="str" comment="Sub service QOS name" />
+            <param name="total_credit" type="int" comment="Total credit" />
+            <param name="total_duration" type="int" comment="Total duration" />
+            <param name="total_in_bytes" type="" comment="Total in bytes" />
+            <param name="total_out_bytes" type="" comment="Total out bytes" />
+          </item>
+        </param>
       </output>
     </method>
     <method name="getExpiredUsers" auth_type="ADMIN" requires_perm="SEE CONNECTION LOGS" comment="">
@@ -4409,7 +4322,7 @@
       </output>
     </method>
     <method name="saveCreditChanges" auth_type="ADMIN" requires_perm="SEE CREDIT CHANGES"
-            comment="use SystemNotification.getNotifications() method to see if the report is finished
+      comment="use SystemNotification.getNotifications() method to see if the report is finished
         and get the URL to download it">
       <input type="dict">
         <param name="conds" type="dict" comment="the same as getCreditChanges" />
@@ -4715,11 +4628,10 @@
       </output>
     </method>
     <method name="getRequestCount" auth_type="ADMIN" requires_perm="GOD" comment="number of admin requests for each minute in the last hour">
-      <input type="dict">
-      </input>
+      <input type="dict"></input>
       <output type="dict" dynamic_keys="true" length="60" comment="a dict of timestamp (for each minute) to request_dict">
         <key type="str"
-                 comment="epoch time as string, for example '1457515800.0', one record for each minute" />
+          comment="epoch time as string, for example '1457515800.0', one record for each minute" />
         <value type="dict" comment="a dict from admin usernames to request counts">
           <key type="str" comment="admin username" />
           <value type="int" comment="number of requests by this admin" />
@@ -4874,14 +4786,14 @@
           <choice value="months" />
           <choice value="days" />
           <choice value="hours" />
-          <choice value="minutes" />          
+          <choice value="minutes" />
         </param>
       </input>
       <output type="null" />
     </method>
     <method name="autoCleanReports" auth_type="ADMIN" requires_perm="DELETE REPORTS" comment="">
       <input type="dict"
-              comment="input params include pairs of (period, period_unit) for each table as below,
+        comment="input params include pairs of (period, period_unit) for each table as below,
         records older than this date will be deleted">
         <param name="connection_log_clean" type="int" comment="period" />
         <param name="connection_log_unit" type="choice" comment="">
@@ -4941,8 +4853,7 @@
       <output type="null" />
     </method>
     <method name="getAutoCleanDates" auth_type="ADMIN" requires_perm="DELETE REPORTS" comment="">
-      <input type="dict">
-      </input>
+      <input type="dict"></input>
       <output type="dict" comment="">
         <param name="bw_snapshots" type="list" length="2" comment="">
           <item index="0" type="int" comment="relative time" />
@@ -5256,7 +5167,7 @@
       <input type="dict">
         <param name="conds" type="dict" comment="">
           <param name="requester_ids" type="str" multi_str="true" optional="true"
-                     comment="Comma-seperated string of User IDs (or Admin IDs)" />
+            comment="Comma-seperated string of User IDs (or Admin IDs)" />
           <param name="requester_type" type="choice" comment="">
             <choice value="USER" />
             <choice value="ADMIN" />
@@ -5355,7 +5266,7 @@
       </output>
     </method>
     <method name="saveConnections" auth_type="ADMIN" requires_perm="SEE CONNECTION LOGS"
-            comment="use SystemNotification.getNotifications() method to see if the report is finished
+      comment="use SystemNotification.getNotifications() method to see if the report is finished
         and get the URL to download it">
       <input type="dict">
         <param name="conds" type="dict" comment="the same as 'report.getConnections' method" />
@@ -5376,7 +5287,7 @@
       <output type="null" comment="" />
     </method>
     <method name="saveConnectionUsages" auth_type="ADMIN" requires_perm="SEE CONNECTION LOGS"
-            comment="use SystemNotification.getNotifications() method to see if the report is finished
+      comment="use SystemNotification.getNotifications() method to see if the report is finished
         and get the URL to download it">
       <input type="dict">
         <param name="report_type" type="choice" comment="">
@@ -5409,7 +5320,7 @@
       <output type="null" comment="" />
     </method>
     <method name="savePrefixNameUsage" auth_type="ADMIN" requires_perm="SEE CONNECTION LOGS"
-            comment="use SystemNotification.getNotifications() method to see if the report is finished and get the URL to download it">
+      comment="use SystemNotification.getNotifications() method to see if the report is finished and get the URL to download it">
       <input type="dict">
         <param name="conds" type="dict" comment="the same as 'report.getConnections' method" />
         <param name="order_by" type="choice" comment="">
@@ -5428,7 +5339,7 @@
       <output type="null" comment="" />
     </method>
     <method name="saveOnlinePaymentReport" auth_type="ADMIN" requires_perm="SEE CONNECTION LOGS"
-            comment="use SystemNotification.getNotifications() method to see if the report is finished and get the URL to download it">
+      comment="use SystemNotification.getNotifications() method to see if the report is finished and get the URL to download it">
       <input type="dict">
         <param name="conds" type="dict" comment="the same as 'report.getOnlinePaymentReport' method" />
         <param name="sort_by" type="choice" comment="">
@@ -5450,12 +5361,12 @@
       <output type="null" comment="" />
     </method>
     <method name="getDayNightUsage"
-        auth_type="ADMIN" requires_perm="GOD">
+      auth_type="ADMIN" requires_perm="GOD">
       <input type="dict">
         <param name="start_date" type="str" comment="gregorian date, format '%Y-%m-%d'" />
         <param name="end_date" type="str" comment="gregorian date, format '%Y-%m-%d'" />
         <param name="nightly_charge_rule_ids" type="list" item_type="int"
-                   comment="list of Charge Rule IDs that are Nightly (Free)" />
+          comment="list of Charge Rule IDs that are Nightly (Free)" />
       </input>
       <output type="dict">
         <param name="night_download" type="int" comment="in bytes" />
@@ -5611,9 +5522,9 @@
       <input type="dict">
         <key type="str" comment="reporting condition" />
         <value type="dict" comment="">
-          <param name="user_id" type="str" comment="unique user id for limit reporting for that user"/>
-          <param name="date_from" type="str" comment="start date and time, format '%Y-%m-%d %H:%M'"/>
-          <param name="date_to" type="str" comment="start date and time, format '%Y-%m-%d %H:%M'"/>
+          <param name="user_id" type="str" comment="unique user id for limit reporting for that user" />
+          <param name="date_from" type="str" comment="start date and time, format '%Y-%m-%d %H:%M'" />
+          <param name="date_to" type="str" comment="start date and time, format '%Y-%m-%d %H:%M'" />
           <param name="date_from_unit" type="choice" comment="date unit">
             <choice value="gregorian" comment="" />
             <choice value="jalali" comment="" />
@@ -5658,9 +5569,9 @@
       <input type="dict">
         <key type="str" comment="reporting condition" />
         <value type="dict" comment="">
-          <param name="group_names" type="str" comment="list of group names"/>
-          <param name="date_from" type="str" comment="start date and time, format '%Y-%m-%d %H:%M'"/>
-          <param name="date_to" type="str" comment="start date and time, format '%Y-%m-%d %H:%M'"/>
+          <param name="group_names" type="str" comment="list of group names" />
+          <param name="date_from" type="str" comment="start date and time, format '%Y-%m-%d %H:%M'" />
+          <param name="date_to" type="str" comment="start date and time, format '%Y-%m-%d %H:%M'" />
           <param name="date_from_unit" type="choice" comment="date unit">
             <choice value="gregorian" comment="" />
             <choice value="jalali" comment="" />
@@ -5705,9 +5616,9 @@
       <input type="dict">
         <key type="str" comment="reporting condition" />
         <value type="dict" comment="">
-          <param name="isp_names" type="str" comment="list of isp names"/>
-          <param name="date_from" type="str" comment="start date and time, format '%Y-%m-%d %H:%M'"/>
-          <param name="date_to" type="str" comment="start date and time, format '%Y-%m-%d %H:%M'"/>
+          <param name="isp_names" type="str" comment="list of isp names" />
+          <param name="date_from" type="str" comment="start date and time, format '%Y-%m-%d %H:%M'" />
+          <param name="date_to" type="str" comment="start date and time, format '%Y-%m-%d %H:%M'" />
           <param name="date_from_unit" type="choice" comment="date unit">
             <choice value="gregorian" comment="" />
             <choice value="jalali" comment="" />
@@ -5752,9 +5663,9 @@
       <input type="dict">
         <key type="str" comment="reporting condition" />
         <value type="dict" comment="">
-          <param name="ras_ips" type="str" comment="list of ras ips"/>
-          <param name="date_from" type="str" comment="start date and time, format '%Y-%m-%d %H:%M'"/>
-          <param name="date_to" type="str" comment="start date and time, format '%Y-%m-%d %H:%M'"/>
+          <param name="ras_ips" type="str" comment="list of ras ips" />
+          <param name="date_from" type="str" comment="start date and time, format '%Y-%m-%d %H:%M'" />
+          <param name="date_to" type="str" comment="start date and time, format '%Y-%m-%d %H:%M'" />
           <param name="date_from_unit" type="choice" comment="date unit">
             <choice value="gregorian" comment="" />
             <choice value="jalali" comment="" />
@@ -5798,8 +5709,7 @@
   </handler>
   <handler name="stat" comment="">
     <method name="getStatistics" auth_type="ADMIN" requires_perm="GOD" comment="">
-      <input type="dict">
-      </input>
+      <input type="dict"></input>
       <output type="list" length="23" comment="">
         <item type="list" length="2" comment="">
           <item index="0" type="str" comment="stat key"></item>
@@ -5814,8 +5724,7 @@
       </output>
     </method>
     <method name="getAllStatsByStatCategory" auth_type="ADMIN" requires_perm="GOD" comment="">
-      <input type="dict">
-      </input>
+      <input type="dict"></input>
       <output type="dict" comment="">
         <key type="str" comment="category name" />
         <value type="dict" comment="">
@@ -5859,8 +5768,7 @@
       </output>
     </method>
     <method name="getUserQueueStats" auth_type="ADMIN" requires_perm="GOD" comment="">
-      <input type="dict">
-      </input>
+      <input type="dict"></input>
       <output type="list" length="-1" comment="">
         <item type="list" length="2" comment="">
           <item index="0" type="str" comment="ras_description, or 'TOTAL'" />
@@ -5953,8 +5861,7 @@
           <value type="list" length="3, 4" comment="">
             <item index="0" type="str" comment="duration" />
             <item index="1" type="str" comment="bytes" />
-            <item index="2" type="int" comment="state">
-            </item>
+            <item index="2" type="int" comment="state"></item>
             <item index="3" optional="true" type="dict" comment="">
               <item name="max_rule_time_usage" type="list" length="2" comment="">
                 <item index="0" type="str" comment="" />
@@ -6046,26 +5953,22 @@
     <method name="addNewUsers" auth_type="ADMIN" requires_perm="ADD NEW USER" comment="">
       <input type="dict">
         <param name="count" type="int" comment="" />
-        <param name="credit" type="float" comment="" />
         <param name="isp_name" type="str" comment="" />
         <param name="group_name" type="str" comment="" />
-        <param name="credit_comment" type="str" comment="" />
         <param name="custom_fields" type="dict" optional="true" comment="" />
         <param name="customer_id" type="int" comment="The client ID to which we want to assign the user" />
         <param name="user_role" type="str" comment="The role intended for the user, which can contain the values account or service" />
         <param name="parent_user_id" type="int" comment="User's parent ID"
       </input>
-      <output type="list" length="-1" item_type="int" comment="user_ids">
-      </output>
+      <output type="list" length="-1" item_type="int" comment="user_ids"></output>
     </method>
     <method name="getUserInfo" auth_type="USER" comment="By User">
-      <input type="dict" comment="">
-      </input>
+      <input type="dict" comment=""></input>
       <output type="dict" comment="User Info dict">
         <param name="basic_info" type="dict" commnet="">
           <param name="user_id" type="int" comment="" />
           <param name="creation_date" type="str" comment="" />
-          <param name="credit" type="float"  comment="" />
+          <param name="credit" type="float" comment="" />
           <param name="deposit" type="float" comment="" />
           <param name="group_id" type="int" comment="" />
           <param name="group_name" type="str" comment="" />
@@ -6249,7 +6152,7 @@
           <param name="time_periodic_accounting_monthly_reset" type="str_datetime" optional="true" comment="Monthly Time Next Reset" />
           <param name="traffic_periodic_accounting_monthly" type="str" optional="true" comment="Monthly Traffic Monthly Reset Type">
             <choice value="gregorian" />
-            <choice value="jalali" />            
+            <choice value="jalali" />
           </param>
           <param name="traffic_periodic_accounting_monthly_limit" type="str_int" optional="true" comment="Monthly Traffic Monthly Traffic Limit" />
           <param name="traffic_periodic_accounting_monthly_usage" type="str_int" optional="true" comment="Monthly Traffic This Period Usage" />
@@ -6284,7 +6187,7 @@
           <param name="monthly_periodic_credit_change_negate_credit" type="bool" optional="true" comment="Monthly Credit Change Negate Credit" />
           <param name="monthly_periodic_credit_change_do_on_first_login" type="bool" optional="true" comment="Monthly Credit Change Do On First Login" />
           <param name="monthly_periodic_credit_change_reset" type="str_datetime" optional="true" comment="Monthly Credit Change Next Reset" />
-          <param name="daily_periodic_credit_change" type="str_int" optional="true" comment="Monthly Credit Change Number of days in period"> </param>
+          <param name="daily_periodic_credit_change" type="str_int" optional="true" comment="Monthly Credit Change Number of days in period"></param>
           <param name="daily_periodic_credit_change_type" type="choice" optional="true" comment="Daily Credit Change Credit Change Type">
             <choice value="absolute" comment="" />
             <choice value="relative" comment="" />
@@ -6297,7 +6200,7 @@
           <param name="persistent_lan_ip" type="list" item_type="str" optional="true" comment="" />
           <param name="persistent_lan_mac" type="list" item_type="str" optional="true" comment="" />
           <param name="persistent_lan_ras_ip" type="list" item_type="str" optional="true" comment="" />
-          <param name="plan" type="str" optional="true" comment="" /><!--FIXME!-->
+          <param name="plan" type="str" optional="true" comment="" /> <!--FIXME!-->
           <param name="radius_attrs" type="str" optional="true" comment="User Info Misc Radius Attributes" />
           <param name="rel_exp_date" type="int" optional="true" requires_param="rel_exp_date_unit" comment="User Info Exp Dates Relative Expiration Date" />
           <param name="rel_exp_date_unit" type="choice" optional="true" comment="">
@@ -6305,7 +6208,7 @@
             <choice value="Hours" comment="" />
             <choice value="Days" comment="" />
             <choice value="Months" comment="1 month means 30 days" />
-            <choice value="Years" comment="1 month means 365 days" /> 
+            <choice value="Years" comment="1 month means 365 days" />
           </param>
           <param name="rel_exp_date_negative_credit" type="int" optional="true" requires_param="rel_exp_date_negative_credit_unit" comment="User Info Exp Dates Negative Credit Expiration Date Negative Credit Relative Expiration Date" />
           <param name="rel_exp_date_negative_credit_unit" type="choice" optional="true" comment="User Info Exp Dates Negative Credit Expiration Date Negative Credit Relative Expiration Date">
@@ -6355,36 +6258,36 @@
         <param name="online_status" type="bool" comment="true if online, false if offline" />
         <param name="internet_onlines" type="list" length="-1" comment="list length is number of instances, usually 1">
           <item type="list" length="15" comment="user instance">
-            <item index="0" type="str" comment="ras_ip"/>
-            <item index="1" type="str" comment="ras_desc"/>
-            <item index="2" type="str" comment="unique_id_val"/>
-            <item index="3" type="str" comment="login_time_formatted"/>
-            <item index="4" type="str" comment="remote_ip"/>
+            <item index="0" type="str" comment="ras_ip" />
+            <item index="1" type="str" comment="ras_desc" />
+            <item index="2" type="str" comment="unique_id_val" />
+            <item index="3" type="str" comment="login_time_formatted" />
+            <item index="4" type="str" comment="remote_ip" />
             <item index="5" type="choice" comment="failed_status">
-              <choice value="0" type="int" comment="not failed user"/>
-              <choice value="1" type="int" comment="failed user"/>
-              <choice value="2" type="int" comment="idle user"/>
+              <choice value="0" type="int" comment="not failed user" />
+              <choice value="1" type="int" comment="failed user" />
+              <choice value="2" type="int" comment="idle user" />
             </item>
-            <item index="6" type="str" comment="rule_name"/>
-            <item index="7" type="str" comment="mac"/>
-            <item index="8" type="str" comment="port"/>
-            <item index="9" type="str" comment="in_bytes"/>
-            <item index="10" type="str" comment="out_bytes"/>
-            <item index="11" type="str" comment="in_rate"/>
-            <item index="12" type="str" comment="out_rate"/>
-            <item index="13" type="str" comment="sub_service"/>
-            <item index="14" type="str" comment="sub_service_charging"/>
-            <item index="15" type="str" comment="sub_service_qos"/>
-            <item index="16" type="str" comment="failed_reason_key"/>
-            <item index="17" type="str" comment="failed_reason_msg"/>
-            <item index="18" type="bool" comment="accountingStarted"/>
-            <item index="19" type="str" comment="parent_session_id"/>
-            <item index="20" type="str" comment="apn"/>
-            <item index="21" type="str" comment="ssid"/>
-            <item index="22" type="str" comment="service_type"/>
-            <item index="23" type="str" comment="imeisv"/>
-            <item index="24" type="str" comment="enode_b_location"/>
-            <item index="25" type="str" comment="cell_id_location"/>
+            <item index="6" type="str" comment="rule_name" />
+            <item index="7" type="str" comment="mac" />
+            <item index="8" type="str" comment="port" />
+            <item index="9" type="str" comment="in_bytes" />
+            <item index="10" type="str" comment="out_bytes" />
+            <item index="11" type="str" comment="in_rate" />
+            <item index="12" type="str" comment="out_rate" />
+            <item index="13" type="str" comment="sub_service" />
+            <item index="14" type="str" comment="sub_service_charging" />
+            <item index="15" type="str" comment="sub_service_qos" />
+            <item index="16" type="str" comment="failed_reason_key" />
+            <item index="17" type="str" comment="failed_reason_msg" />
+            <item index="18" type="bool" comment="accountingStarted" />
+            <item index="19" type="str" comment="parent_session_id" />
+            <item index="20" type="str" comment="apn" />
+            <item index="21" type="str" comment="ssid" />
+            <item index="22" type="str" comment="service_type" />
+            <item index="23" type="str" comment="imeisv" />
+            <item index="24" type="str" comment="enode_b_location" />
+            <item index="25" type="str" comment="cell_id_location" />
           </item>
         </param>
         <param name="voip_onlines" type="list" length="-1" comment="list length is number of instances, usually 1">
@@ -6415,8 +6318,7 @@
       </input>
       <output type="dict" comment="">
         <key type="str_int" comment="User ID"></key>
-        <value type="dict" comment="User Info dict, the same as output of getUserInfo by USER">
-        </value>
+        <value type="dict" comment="User Info dict, the same as output of getUserInfo by USER"></value>
       </output>
     </method>
     <method name="doesUserExists" auth_type="ADMIN" requires_perm="" comment="">
@@ -6627,7 +6529,7 @@
           <param name="time_periodic_accounting_monthly_reset" type="str_datetime" optional="true" comment="Monthly Time Next Reset" />
           <param name="traffic_periodic_accounting_monthly" type="str" optional="true" comment="Monthly Traffic Monthly Reset Type">
             <choice value="gregorian" />
-            <choice value="jalali" />            
+            <choice value="jalali" />
           </param>
           <param name="traffic_periodic_accounting_monthly_limit" type="str_int" optional="true" comment="Monthly Traffic Monthly Traffic Limit" />
           <param name="traffic_periodic_accounting_monthly_usage" type="str_int" optional="true" comment="Monthly Traffic This Period Usage" />
@@ -6662,7 +6564,7 @@
           <param name="monthly_periodic_credit_change_negate_credit" type="bool" optional="true" comment="Monthly Credit Change Negate Credit" />
           <param name="monthly_periodic_credit_change_do_on_first_login" type="bool" optional="true" comment="Monthly Credit Change Do On First Login" />
           <param name="monthly_periodic_credit_change_reset" type="str_datetime" optional="true" comment="Monthly Credit Change Next Reset" />
-          <param name="daily_periodic_credit_change" type="str_int" optional="true" comment="Monthly Credit Change Number of days in period"> </param>
+          <param name="daily_periodic_credit_change" type="str_int" optional="true" comment="Monthly Credit Change Number of days in period"></param>
           <param name="daily_periodic_credit_change_type" type="choice" optional="true" comment="Daily Credit Change Credit Change Type">
             <choice value="absolute" comment="" />
             <choice value="relative" comment="" />
@@ -6675,24 +6577,24 @@
           <param name="persistent_lan_ip" type="list" item_type="str" optional="true" comment="" />
           <param name="persistent_lan_mac" type="list" item_type="str" optional="true" comment="" />
           <param name="persistent_lan_ras_ip" type="list" item_type="str" optional="true" comment="" />
-          <param name="plan" type="str" optional="true" comment="" /><!--FIXME!-->
+          <param name="plan" type="str" optional="true" comment="" /> <!--FIXME!-->
           <param name="prevent_web_login" type="true_if_exists" optional="true" comment="User Info Flags Prevent Web Login" />
           <param name="radius_attrs" type="str" optional="true" comment="User Info Misc Radius Attributes" />
           <param name="rel_exp_date" type="int" optional="true" requires_param="rel_exp_date_unit" comment="" />
           <param name="rel_exp_date_unit" type="choice" optional="true" comment="">
-            <choice value="Minutes" comment=""/>
-            <choice value="Hours" comment=""/>
-            <choice value="Days" comment=""/>
-            <choice value="Months" comment="1 month means 30 days"/>
-            <choice value="Years" comment="1 month means 365 days"/>
+            <choice value="Minutes" comment="" />
+            <choice value="Hours" comment="" />
+            <choice value="Days" comment="" />
+            <choice value="Months" comment="1 month means 30 days" />
+            <choice value="Years" comment="1 month means 365 days" />
           </param>
           <param name="rel_exp_date_negative_credit" type="int" optional="true" requires_param="rel_exp_date_negative_credit_unit" comment="User Info Exp Dates Negative Credit Expiration Date Negative Credit Relative Expiration Date" />
           <param name="rel_exp_date_negative_credit_unit" type="choice" optional="true" comment="User Info Exp Dates Negative Credit Expiration Date Negative Credit Relative Expiration Date">
-            <choice value="Minutes" comment=""/>
-            <choice value="Hours" comment=""/>
-            <choice value="Days" comment=""/>
-            <choice value="Months" comment="1 month means 30 days"/>
-            <choice value="Years" comment="1 month means 365 days"/>
+            <choice value="Minutes" comment="" />
+            <choice value="Hours" comment="" />
+            <choice value="Days" comment="" />
+            <choice value="Months" comment="1 month means 30 days" />
+            <choice value="Years" comment="1 month means 365 days" />
           </param>
           <param name="negative_credit_start" type="str_datetime" optional="true" comment="User Info Exp Dates Negative Credit Expiration Date Negative Credit Start" />
           <param name="renew_do_not_reset_credit" type="true_if_exists" optional="true_if_exists" comment="User Info Flags Renew Do Not Reset Credit" />
@@ -6713,70 +6615,70 @@
           <param name="bill_cycle_end" type="date_str" optional="true" comment="Which is the bill cycle start" />
 
           <param name="announce_credit_threshold" type="string" optional="true"
-                 comment="The threshold to which an announcement will be player for subscriber"/>
-          <param name="chakavak_area_code" type="string" optional="true" comment="Area code of user"/>
+            comment="The threshold to which an announcement will be player for subscriber" />
+          <param name="chakavak_area_code" type="string" optional="true" comment="Area code of user" />
           <param name="chakavak_call_blocking_status" type="choice" optional="true" comment="Call blocking">
-            <choice value="ONEWAY" comment=""/>
-            <choice value="TWOWAY" comment=""/>
-            <choice value="BARRED" comment=""/>
+            <choice value="ONEWAY" comment="" />
+            <choice value="TWOWAY" comment="" />
+            <choice value="BARRED" comment="" />
           </param>
           <param name="chakavak_callerid_name" type="string" optional="true"
-                 comment="Name of caller id which will be sent for user"/>
+            comment="Name of caller id which will be sent for user" />
           <param name="chakavak_capabilities" type="list" length="-1" item_type="choice" optional="true"
-                 comment="Available capabilities for user">
+            comment="Available capabilities for user">
             <item type="choice" comment="">
-              <choice value="CONFERENCE" comment=""/>
-              <choice value="DIVERT" comment=""/>
+              <choice value="CONFERENCE" comment="" />
+              <choice value="DIVERT" comment="" />
             </item>
           </param>
-          <param name="chakavak_cc_code" type="string" optional="true" comment=""/>
+          <param name="chakavak_cc_code" type="string" optional="true" comment="" />
           <param name="chakavak_codec" type="choice" optional="true" comment="Set of codecs user can use">
-            <choice value="iLBC@30i" comment=""/>
-            <choice value="speex@8000h@20i" comment=""/>
-            <choice value="speex@16000h@20i" comment=""/>
-            <choice value="speex@32000h@20i" comment=""/>
-            <choice value="G7221@16000h" comment=""/>
-            <choice value="G7221@32000h" comment=""/>
-            <choice value="GSM@40i" comment=""/>
-            <choice value="G722" comment=""/>
-            <choice value="PCMU" comment=""/>
-            <choice value="PCMA" comment=""/>
-            <choice value="G726-16" comment=""/>
-            <choice value="G726-24" comment=""/>
-            <choice value="G726-32" comment=""/>
-            <choice value="G726-40" comment=""/>
-            <choice value="LPC" comment=""/>
-            <choice value="G729" comment=""/>
-            <choice value="G723" comment=""/>
-            <choice value="AMR" comment=""/>
-            <choice value="H261" comment=""/>
-            <choice value="H263" comment=""/>
-            <choice value="H263-1998" comment=""/>
-            <choice value="H263-2000" comment=""/>
-            <choice value="H264" comment=""/>
+            <choice value="iLBC@30i" comment="" />
+            <choice value="speex@8000h@20i" comment="" />
+            <choice value="speex@16000h@20i" comment="" />
+            <choice value="speex@32000h@20i" comment="" />
+            <choice value="G7221@16000h" comment="" />
+            <choice value="G7221@32000h" comment="" />
+            <choice value="GSM@40i" comment="" />
+            <choice value="G722" comment="" />
+            <choice value="PCMU" comment="" />
+            <choice value="PCMA" comment="" />
+            <choice value="G726-16" comment="" />
+            <choice value="G726-24" comment="" />
+            <choice value="G726-32" comment="" />
+            <choice value="G726-40" comment="" />
+            <choice value="LPC" comment="" />
+            <choice value="G729" comment="" />
+            <choice value="G723" comment="" />
+            <choice value="AMR" comment="" />
+            <choice value="H261" comment="" />
+            <choice value="H263" comment="" />
+            <choice value="H263-1998" comment="" />
+            <choice value="H263-2000" comment="" />
+            <choice value="H264" comment="" />
           </param>
           <param name="chakavak_codec_negotiation" type="string" optional="true"
-                 comment="Perform Early or Late negotiation. Overrides switch defaults">
-            <choice value="late" comment=""/>
-            <choice value="early" comment=""/>
+            comment="Perform Early or Late negotiation. Overrides switch defaults">
+            <choice value="late" comment="" />
+            <choice value="early" comment="" />
           </param>
           <param name="chakavak_codec_transcoding" type="string" optional="true"
-                 comment="Allow/Disallow transcoding for user">
-            <choice value="Enable" comment=""/>
-            <choice value="Disable" comment=""/>
+            comment="Allow/Disallow transcoding for user">
+            <choice value="Enable" comment="" />
+            <choice value="Disable" comment="" />
           </param>
           <param name="divert_number_unconditional" type="string" optional="true"
-                 comment="Unconditional divert number"/>
-          <param name="divert_number_busy" type="string" optional="true" comment="Busy divert number"/>
-          <param name="divert_number_noanswer" type="string" optional="true" comment="No answer divert number"/>
+            comment="Unconditional divert number" />
+          <param name="divert_number_busy" type="string" optional="true" comment="Busy divert number" />
+          <param name="divert_number_noanswer" type="string" optional="true" comment="No answer divert number" />
           <param name="chakavak_limit_client_ip" type="string" optional="true"
-                 comment="List of IP's user allowed to register from (comma separated list of IP's)"/>
-          <param name="chakavak_location" type="string" optional="true" comment="Location of user. Currently unused"/>
+            comment="List of IP's user allowed to register from (comma separated list of IP's)" />
+          <param name="chakavak_location" type="string" optional="true" comment="Location of user. Currently unused" />
           <param name="chakavak_ringback" type="string" optional="true"
-                 comment="Name of ringback file. Ringbacks should be defined in a separate system and just the selected ringback will be kept in user profile"/>
+            comment="Name of ringback file. Ringbacks should be defined in a separate system and just the selected ringback will be kept in user profile" />
           <param name="chakavak_sip_password" type="string" optional="true"
-                 comment="SIP password. This is different from voip_password and is just used for sip registration"/>
-          <param name="chakavak_voicemail" type="string" optional="true" comment="Voice mail password (Digits only)"/>
+            comment="SIP password. This is different from voip_password and is just used for sip registration" />
+          <param name="chakavak_voicemail" type="string" optional="true" comment="Voice mail password (Digits only)" />
         </param>
         <param name="to_del_attrs" type="list" comment="list of attributes to be deleted" />
       </input>
@@ -6850,7 +6752,7 @@
       </output>
     </method>
     <method name="searchExpiredUsersExtended" auth_type="ADMIN" requires_perm="GET USER INFORMATION"
-            comment="larger output than searchExpiredUsers, returns expiration dates too">
+      comment="larger output than searchExpiredUsers, returns expiration dates too">
       <input type="dict" comment="the same as searchExpiredUsers" />
       <output type="list" length="3" comment="">
         <item index="0" type="int" comment="user's count"></item>
@@ -6862,7 +6764,7 @@
       </output>
     </method>
     <method name="saveSearchExpiredUsers" auth_type="ADMIN" requires_perm="GET USER INFORMATION"
-            comment="use SystemNotification.getNotifications() method to see if the report is finished and get the URL to download it">
+      comment="use SystemNotification.getNotifications() method to see if the report is finished and get the URL to download it">
       <input type="dict">
         <param name="output_type" type="choice" comment="">
           <choice value="csv" comment="" />
@@ -6886,7 +6788,7 @@
     <method name="searchUser" auth_type="ADMIN" requires_perm="SEARCH USER" comment="">
       <input type="dict">
         <param name="conds" type="dict" comment="">
-          <param name="user_role" type="choise" type="str" optional="true" >
+          <param name="user_role" type="choise" type="str" optional="true">
             <choise name="account" />
             <choise name="role" />
           </param>
@@ -6928,7 +6830,7 @@
           <param name="has_assign_ip" type="true_if_exists" optional="true" requires_param="" comment="" />
           <param name="assign_ip" type="str" optional="true" requires_param="assign_ip_op" comment="" />
           <param name="assign_ip_op" type="choice" optional="true" requires_param="" comment="">
-          <choice value="like" comment="" />
+            <choice value="like" comment="" />
             <choice value="ilike" comment="" />
             <choice value="starts_with" comment="" />
             <choice value="ends_with" comment="" />
@@ -7242,282 +7144,282 @@
           </param>
           <param name="ippool" type="list, str" optional="true" requires_param="" comment="list of ippool names, or string of one ippool name" />
           <param name="is_online" type="bool" optional="true" comment="show online user if set to true, show offline user if set to false">
-          <param name="online_status" type="str" optional="true" comment="show idle, failed and active users if you set to idle, failed or online">
-          <param name="is_deposit_transferee" type="true_if_exists" optional="true" requires_param="" comment="" />
-          <param name="is_deposit_transferer" type="true_if_exists" optional="true" requires_param="" comment="" />
-          <param name="isp_names" type="list, str" optional="true" requires_param="" comment="list of isp names, or string of one isp name" />
-          <param name="isp_id" type="list, int" optional="true" requires_param="" comment="list of ISP IDs, or integer of one ISP ID" />
-          <param name="limit_caller_id" type="str" optional="true" requires_param="limit_caller_id_op" comment="" />
-          <param name="limit_caller_id_op" type="choice" optional="true" requires_param="" comment="">
-            <choice value="like" comment="" />
-            <choice value="ilike" comment="" />
-            <choice value="starts_with" comment="" />
-            <choice value="ends_with" comment="" />
-            <choice value="equals" comment="" />
-          </param>
-          <param name="limit_mac" type="str" optional="true" requires_param="limit_mac_op" comment="" />
-          <param name="limit_mac_op" type="choice" optional="true" requires_param="" comment="">
-            <choice value="like" comment="" />
-            <choice value="ilike" comment="" />
-            <choice value="starts_with" comment="" />
-            <choice value="ends_with" comment="" />
-            <choice value="equals" comment="" />
-          </param>
-          <param name="limit_port" type="str" optional="true" requires_param="limit_port_op" comment="" />
-          <param name="limit_port_op" type="choice" optional="true" requires_param="" comment="">
-            <choice value="like" comment="" />
-            <choice value="ilike" comment="" />
-            <choice value="starts_with" comment="" />
-            <choice value="ends_with" comment="" />
-            <choice value="equals" comment="" />
-          </param>
-          <param name="has_limit_ras" type="true_if_exists" optional="true" requires_param="" comment="" />
-          <param name="limit_ras" type="str" multi_str="true" optional="true" requires_param="limit_ras_op" comment="" />
-          <param name="limit_ras_op" type="choice" optional="true" requires_param="" comment="">
-            <choice value="and" comment="" />
-            <choice value="or" comment="" />
-          </param>
-          <param name="limit_station_ip" type="str" multi_str="true" optional="true" requires_param="limit_station_ip_op" comment="" />
-          <param name="limit_station_ip_op" type="choice" optional="true" requires_param="" comment="">
-            <choice value="like" comment="" />
-            <choice value="ilike" comment="" />
-            <choice value="starts_with" comment="" />
-            <choice value="ends_with" comment="" />
-            <choice value="equals" comment="" />
-          </param>
-          <param name="limit_usage_days" type="int, list" optional="true" requires_param="" comment="integer (number of days), or list of integers (number of days)" />
-          <param name="lock" type="true_if_exists" optional="true" requires_param="" comment="user is locked" />
-          <param name="no_lock" type="true_if_exists" optional="true" requires_param="" comment="user is not locked" />
-          <param name="lock_reason" type="str" optional="true" requires_param="lock_reason_op" comment="" />
-          <param name="lock_reason_op" type="choice" optional="true" requires_param="" comment="">
-            <choice value="like" comment="" />
-            <choice value="ilike" comment="" />
-            <choice value="starts_with" comment="" />
-            <choice value="ends_with" comment="" />
-            <choice value="equals" comment="" />
-          </param>
-          <param name="mail_quota" type="int" optional="true" requires_param="mail_quota_op" comment="" />
-          <param name="mail_quota_op" type="choice" optional="true" requires_param="" comment="">
-            <choice value="=" />
-            <choice value="&gt;" />
-            <choice value="&lt;" />
-            <choice value="&gt;=" />
-            <choice value="&lt;=" />
-          </param>
-          <param name="activation_required" type="true_if_exists" optional="true" requires_param="" comment="User Info Message Center MC Activation Required" />
-          <param name="mikrotik_address_list" type="list, str" optional="true" requires_param="" comment="list of many string (to match according to given operator), or just a string" />
-          <param name="mikrotik_address_list_op" type="choice" optional="true" requires_param="" comment="">
-            <choice value="like" comment="" />
-            <choice value="ilike" comment="" />
-            <choice value="starts_with" comment="" />
-            <choice value="ends_with" comment="" />
-            <choice value="equals" comment="" />
-          </param>
-          <param name="multi_login" type="int" optional="true" requires_param="multi_login_op" comment="" />
-          <param name="multi_login_op" type="choice" optional="true" requires_param="" comment="">
-            <choice value="=" />
-            <choice value="&gt;" />
-            <choice value="&lt;" />
-            <choice value="&gt;=" />
-            <choice value="&lt;=" />
-          </param>
-          <param name="never_expire_users" type="true_if_exists" optional="true" requires_param="" comment="users without any kind of expiration date (will never expire)" />
-          <param name="never_logged_in_users" type="true_if_exists" optional="true" requires_param="" comment="users that have never logged in" />
-          <param name="not_logged_in_from" type="str_datetime, float" optional="true" requires_param="not_logged_in_from_unit" comment="" />
-          <param name="not_logged_in_from_unit" type="choice" optional="true" requires_param="" comment="">
-            <choice value="jalali" />
-            <choice value="gregorian" />
-            <choice value="years" />
-            <choice value="months" />
-            <choice value="days" />
-            <choice value="hours" />
-            <choice value="minutes" />
-          </param>
-          <param name="not_logged_in_to" type="str_datetime, float" optional="true" requires_param="not_logged_in_to_unit" comment="" />
-          <param name="not_logged_in_to_unit" type="choice" optional="true" requires_param="" comment="">
-            <choice value="jalali" />
-            <choice value="gregorian" />
-            <choice value="years" />
-            <choice value="months" />
-            <choice value="days" />
-            <choice value="hours" />
-            <choice value="minutes" />
-          </param>
-          <param name="normal_username" type="str" optional="true" requires_param="normal_username_op" comment="" />
-          <param name="normal_username_op" type="choice" optional="true" requires_param="" comment="">
-            <choice value="like" comment="" />
-            <choice value="ilike" comment="" />
-            <choice value="starts_with" comment="" />
-            <choice value="ends_with" comment="" />
-            <choice value="equals" comment="" />
-          </param>
-          <param name="no_normal_username" type="true_if_exists" optional="true" requires_param="" comment="user has no internet username" />
-          <param name="has_notification_profile" type="true_if_exists" optional="true" requires_param="" comment="" />
-          <param name="notification_profile" type="str, list" optional="true" requires_param="" comment="list of notification profile names. or string of one profile name" />
-          <param name="online_payment" type="true_if_exists" optional="true" requires_param="" comment="user has online payment (enabled in User Info Online Payment Online Payment)" />
-          <param name="daily_periodic_credit_change_reset" type="str" optional="true" requires_param="" comment="datetime string or epoch time" />
-          <param name="daily_periodic_credit_change_reset_unit" type="choice" optional="true" requires_param="" comment="">
-            <choice value="epoch" />
-            <choice value="jalali" />
-            <choice value="gregorian" />
-            <choice value="years" />
-            <choice value="months" />
-            <choice value="days" />
-            <choice value="hours" />
-            <choice value="minutes" />
-          </param>
-          <param name="daily_periodic_credit_change_reset_op" type="choice" optional="true" requires_param="" comment="">
-            <choice value="=" />
-            <choice value="&gt;" />
-            <choice value="&lt;" />
-            <choice value="&gt;=" />
-            <choice value="&lt;=" />
-          </param>
-          <param name="monthly_periodic_credit_change_reset" type="str" optional="true" requires_param="" comment="datetime string or epoch time" />
-          <param name="monthly_periodic_credit_change_reset_unit" type="choice" optional="true" requires_param="" comment="">
-            <choice value="epoch" />
-            <choice value="jalali" />
-            <choice value="gregorian" />
-            <choice value="years" />
-            <choice value="months" />
-            <choice value="days" />
-            <choice value="hours" />
-            <choice value="minutes" />
-          </param>
-          <param name="monthly_periodic_credit_change_reset_op" type="choice" optional="true" requires_param="" comment="">
-            <choice value="=" />
-            <choice value="&gt;" />
-            <choice value="&lt;" />
-            <choice value="&gt;=" />
-            <choice value="&lt;=" />
-          </param>
-          <param name="periodic_reset_rule_usage" type="str" optional="true" requires_param="periodic_reset_rule_usage_op" comment="day of week" />
-          <param name="periodic_reset_rule_usage_op" type="choice" optional="true" requires_param="" comment="">
-            <choice value="like" comment="" />
-            <choice value="ilike" comment="" />
-            <choice value="starts_with" comment="" />
-            <choice value="ends_with" comment="" />
-            <choice value="equals" comment="" />
-          </param>
-          <param name="persistent_lan_mac" type="str" multi_str="true" optional="true" requires_param="" comment="" />
-          <param name="persistent_lan_ip" type="str" multi_str="true" optional="true" requires_param="" comment="" />
-          <param name="persistent_lan_ras_ip" type="str" multi_str="true" optional="true" requires_param="" comment="" />
-          <param name="postpaid" type="true_if_exists" optional="true" requires_param="" comment="" />
-          <param name="prevent_web_login" type="true_if_exists" optional="true" requires_param="" comment="" />
-          <param name="rel_exp_date_from" type="str_datetime, float" optional="true" requires_param="" comment="" />
-          <param name="rel_exp_date_from_unit" type="choice" optional="true" requires_param="" comment="">
-            <choice value="jalali" />
-            <choice value="gregorian" />
-            <choice value="years" />
-            <choice value="months" />
-            <choice value="days" />
-            <choice value="hours" />
-            <choice value="minutes" />
-          </param>
-          <param name="rel_exp_date_to" type="str_datetime, float" optional="true" requires_param="" comment="" />
-          <param name="rel_exp_date_to_unit" type="choice" optional="true" requires_param="" comment="">
-            <choice value="jalali" />
-            <choice value="gregorian" />
-            <choice value="years" />
-            <choice value="months" />
-            <choice value="days" />
-            <choice value="hours" />
-            <choice value="minutes" />
-          </param>
-          <param name="rel_exp_date_negative_credit" type="str_datetime, float" optional="true" requires_param="rel_exp_date_negative_credit_unit, rel_exp_date_negative_credit_op" comment="" />
-          <param name="rel_exp_date_negative_credit_unit" type="choice" optional="true" requires_param="" comment="">
-            <choice value="jalali" />
-            <choice value="gregorian" />
-            <choice value="years" />
-            <choice value="months" />
-            <choice value="days" />
-            <choice value="hours" />
-            <choice value="minutes" />
-          </param>
-          <param name="rel_exp_date_negative_credit_op" type="choice" optional="true" requires_param="" comment="">
-            <choice value="=" />
-            <choice value="&gt;" />
-            <choice value="&lt;" />
-            <choice value="&gt;=" />
-            <choice value="&lt;=" />
-          </param>
-          <param name="renew_do_not_reset_credit" type="true_if_exists" optional="true" requires_param="" comment="" />
-          <param name="reset_negative_credit_on_renew" type="true_if_exists" optional="true" requires_param="" comment="" />
-          <param name="renew_do_not_reset_credit_on_state_package" type="true_if_exists" optional="true" requires_param="" comment="" />
-          <param name="renew_do_not_reset_credit_on_state_recharged" type="true_if_exists" optional="true" requires_param="" comment="" />
-          <param name="renew_next_group" type="list, str" optional="true" requires_param="" comment="list of group names, or string of group name" />
-          <param name="save_bw_usage" type="true_if_exists" optional="true" requires_param="" comment="" />
-          <param name="second_normal_username" type="str" multi_str="true" optional="true" requires_param="second_normal_username_op" comment="" />
-          <param name="second_normal_username_op" type="choice" optional="true" requires_param="" comment="">
-            <choice value="like" comment="" />
-            <choice value="ilike" comment="" />
-            <choice value="starts_with" comment="" />
-            <choice value="ends_with" comment="" />
-            <choice value="equals" comment="" />
-          </param>
-          <param name="serial" type="str" multi_str="true" optional="true" requires_param="serial_op" comment="" />
-          <param name="serial_op" type="choice" optional="true" requires_param="" comment="">
-            <choice value="like" comment="" />
-            <choice value="ilike" comment="" />
-            <choice value="starts_with" comment="" />
-            <choice value="ends_with" comment="" />
-            <choice value="equals" comment="" />
-          </param>
-          <param name="sms_charge" type="float" optional="true" requires_param="sms_charge_op" comment="" />
-          <param name="sms_charge_op" type="choice" optional="true" requires_param="" comment="">
-            <choice value="=" />
-            <choice value="&gt;" />
-            <choice value="&lt;" />
-            <choice value="&gt;=" />
-            <choice value="&lt;=" />
-          </param>
-          <param name="user_id" type="str" multi_str="true" optional="true" requires_param="user_id_op" comment="" />
-          <param name="user_id_op" type="choice" optional="true" requires_param="" comment="">
-            <choice value="=" />
-            <choice value="&gt;" />
-            <choice value="&lt;" />
-            <choice value="&gt;=" />
-            <choice value="&lt;=" />
-          </param>
-          <param name="user_status" type="str_int" multi_str="true" optional="true" requires_param=""
-                 comment="pass '0' for Package, '0,1' for Package and Recharged, '0,2' for Package and Temporary Extended">
-            <choice value="0" type="str" comment="Package" />
-            <choice value="1" type="str" comment="Recharged" />
-            <choice value="2" type="str" comment="Temporary Extended" />
-          </param>
-          <param name="voip_preferred_language" type="str" optional="true" requires_param="voip_preferred_language_op" comment="" />
-          <param name="voip_preferred_language_op" type="choice" optional="true" requires_param="" comment="">
-            <choice value="like" comment="" />
-            <choice value="ilike" comment="" />
-            <choice value="starts_with" comment="" />
-            <choice value="ends_with" comment="" />
-            <choice value="equals" comment="" />
-          </param>
-          <param name="voip_username" type="str" optional="true" requires_param="voip_username_op" comment="" />
-          <param name="voip_username_op" type="choice" optional="true" requires_param="" comment="">
-            <choice value="like" comment="" />
-            <choice value="ilike" comment="" />
-            <choice value="starts_with" comment="" />
-            <choice value="ends_with" comment="" />
-            <choice value="equals" comment="" />
-          </param>
-        </param>
-        <param name="from" type="int" comment="start index, for pagination" />
-        <param name="to" type="int" comment="end index, for pagination" />
-        <param name="order_by" type="choice" comment="">
-          <choice value="normal_username" comment="" />
-          <choice value="voip_username" comment="" />
-          <choice value="user_id" comment="" />
-          <choice value="group_id" comment="" />
-          <choice value="creation_date" comment="" />
-          <choice value="owner_id" comment="" />
-          <choice value="credit" comment="" />
-          <choice value="deposit" comment="" />
-          <choice value="first_login" comment="" />
-          <choice value="serial" comment="" />
-          <choice value="serial_numeric" comment="" />
-        </param>
-        <param name="desc" type="bool" comment="" />
+            <param name="online_status" type="str" optional="true" comment="show idle, failed and active users if you set to idle, failed or online">
+              <param name="is_deposit_transferee" type="true_if_exists" optional="true" requires_param="" comment="" />
+              <param name="is_deposit_transferer" type="true_if_exists" optional="true" requires_param="" comment="" />
+              <param name="isp_names" type="list, str" optional="true" requires_param="" comment="list of isp names, or string of one isp name" />
+              <param name="isp_id" type="list, int" optional="true" requires_param="" comment="list of ISP IDs, or integer of one ISP ID" />
+              <param name="limit_caller_id" type="str" optional="true" requires_param="limit_caller_id_op" comment="" />
+              <param name="limit_caller_id_op" type="choice" optional="true" requires_param="" comment="">
+                <choice value="like" comment="" />
+                <choice value="ilike" comment="" />
+                <choice value="starts_with" comment="" />
+                <choice value="ends_with" comment="" />
+                <choice value="equals" comment="" />
+              </param>
+              <param name="limit_mac" type="str" optional="true" requires_param="limit_mac_op" comment="" />
+              <param name="limit_mac_op" type="choice" optional="true" requires_param="" comment="">
+                <choice value="like" comment="" />
+                <choice value="ilike" comment="" />
+                <choice value="starts_with" comment="" />
+                <choice value="ends_with" comment="" />
+                <choice value="equals" comment="" />
+              </param>
+              <param name="limit_port" type="str" optional="true" requires_param="limit_port_op" comment="" />
+              <param name="limit_port_op" type="choice" optional="true" requires_param="" comment="">
+                <choice value="like" comment="" />
+                <choice value="ilike" comment="" />
+                <choice value="starts_with" comment="" />
+                <choice value="ends_with" comment="" />
+                <choice value="equals" comment="" />
+              </param>
+              <param name="has_limit_ras" type="true_if_exists" optional="true" requires_param="" comment="" />
+              <param name="limit_ras" type="str" multi_str="true" optional="true" requires_param="limit_ras_op" comment="" />
+              <param name="limit_ras_op" type="choice" optional="true" requires_param="" comment="">
+                <choice value="and" comment="" />
+                <choice value="or" comment="" />
+              </param>
+              <param name="limit_station_ip" type="str" multi_str="true" optional="true" requires_param="limit_station_ip_op" comment="" />
+              <param name="limit_station_ip_op" type="choice" optional="true" requires_param="" comment="">
+                <choice value="like" comment="" />
+                <choice value="ilike" comment="" />
+                <choice value="starts_with" comment="" />
+                <choice value="ends_with" comment="" />
+                <choice value="equals" comment="" />
+              </param>
+              <param name="limit_usage_days" type="int, list" optional="true" requires_param="" comment="integer (number of days), or list of integers (number of days)" />
+              <param name="lock" type="true_if_exists" optional="true" requires_param="" comment="user is locked" />
+              <param name="no_lock" type="true_if_exists" optional="true" requires_param="" comment="user is not locked" />
+              <param name="lock_reason" type="str" optional="true" requires_param="lock_reason_op" comment="" />
+              <param name="lock_reason_op" type="choice" optional="true" requires_param="" comment="">
+                <choice value="like" comment="" />
+                <choice value="ilike" comment="" />
+                <choice value="starts_with" comment="" />
+                <choice value="ends_with" comment="" />
+                <choice value="equals" comment="" />
+              </param>
+              <param name="mail_quota" type="int" optional="true" requires_param="mail_quota_op" comment="" />
+              <param name="mail_quota_op" type="choice" optional="true" requires_param="" comment="">
+                <choice value="=" />
+                <choice value="&gt;" />
+                <choice value="&lt;" />
+                <choice value="&gt;=" />
+                <choice value="&lt;=" />
+              </param>
+              <param name="activation_required" type="true_if_exists" optional="true" requires_param="" comment="User Info Message Center MC Activation Required" />
+              <param name="mikrotik_address_list" type="list, str" optional="true" requires_param="" comment="list of many string (to match according to given operator), or just a string" />
+              <param name="mikrotik_address_list_op" type="choice" optional="true" requires_param="" comment="">
+                <choice value="like" comment="" />
+                <choice value="ilike" comment="" />
+                <choice value="starts_with" comment="" />
+                <choice value="ends_with" comment="" />
+                <choice value="equals" comment="" />
+              </param>
+              <param name="multi_login" type="int" optional="true" requires_param="multi_login_op" comment="" />
+              <param name="multi_login_op" type="choice" optional="true" requires_param="" comment="">
+                <choice value="=" />
+                <choice value="&gt;" />
+                <choice value="&lt;" />
+                <choice value="&gt;=" />
+                <choice value="&lt;=" />
+              </param>
+              <param name="never_expire_users" type="true_if_exists" optional="true" requires_param="" comment="users without any kind of expiration date (will never expire)" />
+              <param name="never_logged_in_users" type="true_if_exists" optional="true" requires_param="" comment="users that have never logged in" />
+              <param name="not_logged_in_from" type="str_datetime, float" optional="true" requires_param="not_logged_in_from_unit" comment="" />
+              <param name="not_logged_in_from_unit" type="choice" optional="true" requires_param="" comment="">
+                <choice value="jalali" />
+                <choice value="gregorian" />
+                <choice value="years" />
+                <choice value="months" />
+                <choice value="days" />
+                <choice value="hours" />
+                <choice value="minutes" />
+              </param>
+              <param name="not_logged_in_to" type="str_datetime, float" optional="true" requires_param="not_logged_in_to_unit" comment="" />
+              <param name="not_logged_in_to_unit" type="choice" optional="true" requires_param="" comment="">
+                <choice value="jalali" />
+                <choice value="gregorian" />
+                <choice value="years" />
+                <choice value="months" />
+                <choice value="days" />
+                <choice value="hours" />
+                <choice value="minutes" />
+              </param>
+              <param name="normal_username" type="str" optional="true" requires_param="normal_username_op" comment="" />
+              <param name="normal_username_op" type="choice" optional="true" requires_param="" comment="">
+                <choice value="like" comment="" />
+                <choice value="ilike" comment="" />
+                <choice value="starts_with" comment="" />
+                <choice value="ends_with" comment="" />
+                <choice value="equals" comment="" />
+              </param>
+              <param name="no_normal_username" type="true_if_exists" optional="true" requires_param="" comment="user has no internet username" />
+              <param name="has_notification_profile" type="true_if_exists" optional="true" requires_param="" comment="" />
+              <param name="notification_profile" type="str, list" optional="true" requires_param="" comment="list of notification profile names. or string of one profile name" />
+              <param name="online_payment" type="true_if_exists" optional="true" requires_param="" comment="user has online payment (enabled in User Info Online Payment Online Payment)" />
+              <param name="daily_periodic_credit_change_reset" type="str" optional="true" requires_param="" comment="datetime string or epoch time" />
+              <param name="daily_periodic_credit_change_reset_unit" type="choice" optional="true" requires_param="" comment="">
+                <choice value="epoch" />
+                <choice value="jalali" />
+                <choice value="gregorian" />
+                <choice value="years" />
+                <choice value="months" />
+                <choice value="days" />
+                <choice value="hours" />
+                <choice value="minutes" />
+              </param>
+              <param name="daily_periodic_credit_change_reset_op" type="choice" optional="true" requires_param="" comment="">
+                <choice value="=" />
+                <choice value="&gt;" />
+                <choice value="&lt;" />
+                <choice value="&gt;=" />
+                <choice value="&lt;=" />
+              </param>
+              <param name="monthly_periodic_credit_change_reset" type="str" optional="true" requires_param="" comment="datetime string or epoch time" />
+              <param name="monthly_periodic_credit_change_reset_unit" type="choice" optional="true" requires_param="" comment="">
+                <choice value="epoch" />
+                <choice value="jalali" />
+                <choice value="gregorian" />
+                <choice value="years" />
+                <choice value="months" />
+                <choice value="days" />
+                <choice value="hours" />
+                <choice value="minutes" />
+              </param>
+              <param name="monthly_periodic_credit_change_reset_op" type="choice" optional="true" requires_param="" comment="">
+                <choice value="=" />
+                <choice value="&gt;" />
+                <choice value="&lt;" />
+                <choice value="&gt;=" />
+                <choice value="&lt;=" />
+              </param>
+              <param name="periodic_reset_rule_usage" type="str" optional="true" requires_param="periodic_reset_rule_usage_op" comment="day of week" />
+              <param name="periodic_reset_rule_usage_op" type="choice" optional="true" requires_param="" comment="">
+                <choice value="like" comment="" />
+                <choice value="ilike" comment="" />
+                <choice value="starts_with" comment="" />
+                <choice value="ends_with" comment="" />
+                <choice value="equals" comment="" />
+              </param>
+              <param name="persistent_lan_mac" type="str" multi_str="true" optional="true" requires_param="" comment="" />
+              <param name="persistent_lan_ip" type="str" multi_str="true" optional="true" requires_param="" comment="" />
+              <param name="persistent_lan_ras_ip" type="str" multi_str="true" optional="true" requires_param="" comment="" />
+              <param name="postpaid" type="true_if_exists" optional="true" requires_param="" comment="" />
+              <param name="prevent_web_login" type="true_if_exists" optional="true" requires_param="" comment="" />
+              <param name="rel_exp_date_from" type="str_datetime, float" optional="true" requires_param="" comment="" />
+              <param name="rel_exp_date_from_unit" type="choice" optional="true" requires_param="" comment="">
+                <choice value="jalali" />
+                <choice value="gregorian" />
+                <choice value="years" />
+                <choice value="months" />
+                <choice value="days" />
+                <choice value="hours" />
+                <choice value="minutes" />
+              </param>
+              <param name="rel_exp_date_to" type="str_datetime, float" optional="true" requires_param="" comment="" />
+              <param name="rel_exp_date_to_unit" type="choice" optional="true" requires_param="" comment="">
+                <choice value="jalali" />
+                <choice value="gregorian" />
+                <choice value="years" />
+                <choice value="months" />
+                <choice value="days" />
+                <choice value="hours" />
+                <choice value="minutes" />
+              </param>
+              <param name="rel_exp_date_negative_credit" type="str_datetime, float" optional="true" requires_param="rel_exp_date_negative_credit_unit, rel_exp_date_negative_credit_op" comment="" />
+              <param name="rel_exp_date_negative_credit_unit" type="choice" optional="true" requires_param="" comment="">
+                <choice value="jalali" />
+                <choice value="gregorian" />
+                <choice value="years" />
+                <choice value="months" />
+                <choice value="days" />
+                <choice value="hours" />
+                <choice value="minutes" />
+              </param>
+              <param name="rel_exp_date_negative_credit_op" type="choice" optional="true" requires_param="" comment="">
+                <choice value="=" />
+                <choice value="&gt;" />
+                <choice value="&lt;" />
+                <choice value="&gt;=" />
+                <choice value="&lt;=" />
+              </param>
+              <param name="renew_do_not_reset_credit" type="true_if_exists" optional="true" requires_param="" comment="" />
+              <param name="reset_negative_credit_on_renew" type="true_if_exists" optional="true" requires_param="" comment="" />
+              <param name="renew_do_not_reset_credit_on_state_package" type="true_if_exists" optional="true" requires_param="" comment="" />
+              <param name="renew_do_not_reset_credit_on_state_recharged" type="true_if_exists" optional="true" requires_param="" comment="" />
+              <param name="renew_next_group" type="list, str" optional="true" requires_param="" comment="list of group names, or string of group name" />
+              <param name="save_bw_usage" type="true_if_exists" optional="true" requires_param="" comment="" />
+              <param name="second_normal_username" type="str" multi_str="true" optional="true" requires_param="second_normal_username_op" comment="" />
+              <param name="second_normal_username_op" type="choice" optional="true" requires_param="" comment="">
+                <choice value="like" comment="" />
+                <choice value="ilike" comment="" />
+                <choice value="starts_with" comment="" />
+                <choice value="ends_with" comment="" />
+                <choice value="equals" comment="" />
+              </param>
+              <param name="serial" type="str" multi_str="true" optional="true" requires_param="serial_op" comment="" />
+              <param name="serial_op" type="choice" optional="true" requires_param="" comment="">
+                <choice value="like" comment="" />
+                <choice value="ilike" comment="" />
+                <choice value="starts_with" comment="" />
+                <choice value="ends_with" comment="" />
+                <choice value="equals" comment="" />
+              </param>
+              <param name="sms_charge" type="float" optional="true" requires_param="sms_charge_op" comment="" />
+              <param name="sms_charge_op" type="choice" optional="true" requires_param="" comment="">
+                <choice value="=" />
+                <choice value="&gt;" />
+                <choice value="&lt;" />
+                <choice value="&gt;=" />
+                <choice value="&lt;=" />
+              </param>
+              <param name="user_id" type="str" multi_str="true" optional="true" requires_param="user_id_op" comment="" />
+              <param name="user_id_op" type="choice" optional="true" requires_param="" comment="">
+                <choice value="=" />
+                <choice value="&gt;" />
+                <choice value="&lt;" />
+                <choice value="&gt;=" />
+                <choice value="&lt;=" />
+              </param>
+              <param name="user_status" type="str_int" multi_str="true" optional="true" requires_param=""
+                comment="pass '0' for Package, '0,1' for Package and Recharged, '0,2' for Package and Temporary Extended">
+                <choice value="0" type="str" comment="Package" />
+                <choice value="1" type="str" comment="Recharged" />
+                <choice value="2" type="str" comment="Temporary Extended" />
+              </param>
+              <param name="voip_preferred_language" type="str" optional="true" requires_param="voip_preferred_language_op" comment="" />
+              <param name="voip_preferred_language_op" type="choice" optional="true" requires_param="" comment="">
+                <choice value="like" comment="" />
+                <choice value="ilike" comment="" />
+                <choice value="starts_with" comment="" />
+                <choice value="ends_with" comment="" />
+                <choice value="equals" comment="" />
+              </param>
+              <param name="voip_username" type="str" optional="true" requires_param="voip_username_op" comment="" />
+              <param name="voip_username_op" type="choice" optional="true" requires_param="" comment="">
+                <choice value="like" comment="" />
+                <choice value="ilike" comment="" />
+                <choice value="starts_with" comment="" />
+                <choice value="ends_with" comment="" />
+                <choice value="equals" comment="" />
+              </param>
+            </param>
+            <param name="from" type="int" comment="start index, for pagination" />
+            <param name="to" type="int" comment="end index, for pagination" />
+            <param name="order_by" type="choice" comment="">
+              <choice value="normal_username" comment="" />
+              <choice value="voip_username" comment="" />
+              <choice value="user_id" comment="" />
+              <choice value="group_id" comment="" />
+              <choice value="creation_date" comment="" />
+              <choice value="owner_id" comment="" />
+              <choice value="credit" comment="" />
+              <choice value="deposit" comment="" />
+              <choice value="first_login" comment="" />
+              <choice value="serial" comment="" />
+              <choice value="serial_numeric" comment="" />
+            </param>
+            <param name="desc" type="bool" comment="" />
       </input>
       <output type="list" length="3" comment="">
         <item index="0" type="int" comment="number of all matched users"></item>
@@ -7535,15 +7437,14 @@
       <output type="null" comment="" />
     </method>
     <method name="killUser" auth_type="ADMIN" requires_perm=""
-        comment="requires KILL USER permission if kill=true, and CLEAR USER permission is kill=false">
+      comment="requires KILL USER permission if kill=true, and CLEAR USER permission is kill=false">
       <input type="dict">
         <param name="user_id" type="str" multi_str="true" comment="comma-seperated User IDs" />
         <param name="ras_ip" type="str" multi_str="true" comment="comma-seperated RAS IPs" />
         <param name="unique_id_val" type="str" comment="Unique ID Value (for exmaple Port, Caller ID, etc)" />
         <param name="kill" type="bool" optional="true" default="true" comment="true means Kill User, false means Clear User" />
       </input>
-      <output type="null" comment="">
-      </output>
+      <output type="null" comment=""></output>
     </method>
     <method name="killUserByID" auth_type="ADMIN" requires_perm="KILL USER" comment="by admin, disconnects all instances of given users">
       <input type="dict">
@@ -7553,12 +7454,11 @@
       <output type="null" comment="" />
     </method>
     <method name="killUserByID" auth_type="USER" comment="by user, disconnects all instances of user himself">
-      <input type="dict">
-      </input>
+      <input type="dict"></input>
       <output type="null" comment="" />
     </method>
     <method name="killMe" auth_type="NORMAL_USERNAME" comment="by user, disconnects selected instance">
-      <param name="unique_id_val" type="str" comment="Unique ID Value (for exmaple Port, Caller ID, etc)"/>
+      <param name="unique_id_val" type="str" comment="Unique ID Value (for exmaple Port, Caller ID, etc)" />
       <param name="ras_ip" type="str" comment="RAS IPs" />
     </method>
     <method name="getRemainingDurationAndBytes" auth_type="ADMIN" requires_perm="" comment="by admin">
@@ -7570,8 +7470,7 @@
         <value type="list" length="3, 4" comment="">
           <item index="0" type="str" comment="duration" />
           <item index="1" type="str" comment="bytes" />
-          <item index="2" type="int" comment="state">
-          </item>
+          <item index="2" type="int" comment="state"></item>
           <item index="3" optional="true" type="dict" comment="">
             <item name="max_rule_time_usage" type="list" length="2" comment="">
               <item index="0" type="str" comment="" />
@@ -7590,15 +7489,13 @@
       </output>
     </method>
     <method name="getRemainingDurationAndBytes" auth_type="USER" comment="by user">
-      <input type="dict">
-      </input>
+      <input type="dict"></input>
       <output type="dict" comment="">
         <key type="str" comment="charge_rule_desc" />
         <value type="list" length="3, 4" comment="">
           <item index="0" type="str" comment="duration" />
           <item index="1" type="str" comment="bytes" />
-          <item index="2" type="int" comment="state">
-          </item>
+          <item index="2" type="int" comment="state"></item>
           <item index="3" optional="true" type="dict" comment="">
             <item name="max_rule_time_usage" type="list" length="2" comment="">
               <item index="0" type="str" comment="" />
@@ -7662,7 +7559,7 @@
       <output type="null" comment="" />
     </method>
     <method name="saveSearchUser" auth_type="ADMIN" requires_perm="SEARCH USER"
-            comment="use SystemNotification.getNotifications() method to see if the report is finished and get the URL to download it">
+      comment="use SystemNotification.getNotifications() method to see if the report is finished and get the URL to download it">
       <input type="dict">
         <param name="conds" type="dict" comment="the same as user.searchUser method" />
         <param name="order_by" type="choice" comment="">
@@ -7708,8 +7605,8 @@
             <choice value="last_renew" comment="epoch time (float)" />
             <choice value="abs_exp_date" comment="gregorian datetime string" />
             <choice value="assign_dns" comment="User Info Internet Assign DNS To User (First and Second DNSs, comma-seperated)" />
-            <choice value="assign_dns_1" comment="User Info Internet Assign DNS To User (First DNS)"/>
-            <choice value="assign_dns_2" comment="User Info Internet Assign DNS To User (Second DNS)"/>
+            <choice value="assign_dns_1" comment="User Info Internet Assign DNS To User (First DNS)" />
+            <choice value="assign_dns_2" comment="User Info Internet Assign DNS To User (Second DNS)" />
             <choice value="assign_ip" comment="User Info Internet Assign IP Address To User (comma-seperated values)" />
             <choice value="assign_netmask" />
             <choice value="assign_route_ip" comment="comma-seperated values" />
@@ -7838,28 +7735,28 @@
             <choice value="voip_preferred_language" comment="preferred language code for VoIP telephony support" />
             <choice value="voip_username" comment="VoIP Username" />
             <choice value="negative_credit_start" comment="User Info Exp Dates Negative Credit Expiration Date Negative Credit Start" />
-            <choice value="save_bw_usage" comment="User Info Flags Save Bandwidth Usage" /><!--true_if_exists!-->
-            <choice value="allow_user_disconnect" comment="User Info Flags Allow User Disconnect" /><!--true_if_exists!-->
-            <choice value="deny_change_password" comment="User Info Flags Deny Change Password" /><!--true_if_exists!-->
-            <choice value="auto_renew" comment="User Info Flags Auto Renew" /><!--true_if_exists!-->
-            <choice value="reset_negative_credit_on_renew" comment="User Info Flags Reset Negative Credit On Renew" /><!--true_if_exists!-->
-            <choice value="renew_do_not_reset_credit" comment="User Info Flags Renew Do Not Reset Credit" /><!--true_if_exists!-->
-            <choice value="renew_do_not_reset_credit_on_state_package" comment="User Info Flags Renew Do Not Reset Credit On Package State" /><!--true_if_exists!-->
-            <choice value="renew_do_not_reset_credit_on_state_recharged" comment="User Info Flags Renew Do Not Reset Credit On Recharged State" /><!--true_if_exists!-->
-            <choice value="auto_renew_on_credit_finish" comment="User Info Flags Auto Renew On Credit Finish"/><!--true_if_exists!-->
-            <choice value="auto_renew_do_not_reset_credit" comment="User Info Flags Auto Renew No Not Reset Credit" /><!--true_if_exists!-->
-            <choice value="auto_recharge" comment="User Info Flags Auto Recharge" /><!--true_if_exists!-->
-            <choice value="allow_recharge_by_voucher" comment="User Info Flags Allow Recharge By Voucher" /><!--true_if_exists!-->
-            <choice value="prevent_web_login" comment="User Info Flags Prevent Web Login" /><!--true_if_exists!-->
-            <choice value="enable_failed_login" comment="User Info Flags Enable Failed Login" /><!--true_if_exists!-->
-            <choice value="ignore_idle_threshold_static_ip" comment="User Info Flags Ignore Idle Threshold on static IP" /><!--true_if_exists!-->
-            <choice value="ignore_idle_threshold" comment="User Info Flags Ignore Idle Threshold" /><!--true_if_exists!-->
-            <choice value="caller_id_bind_on_login" comment="User Info VoIP VoIP Caller ID Bind On Next Login" /><!--true_if_exists!-->
-            <choice value="limit_mac_bind_on_login" /><!--true_if_exists!-->
-            <choice value="limit_port_ibind_on_login" /><!--true_if_exists!-->
-            <choice value="limit_ras_bind_on_login" /><!--true_if_exists!-->
-            <choice value="limit_station_ip_bind_on_login" /><!--true_if_exists!-->
-            <choice value="limit_caller_id_allow_not_defined" comment="Allow users with no Caller ID, 0=No, 1=Yes" /><!--true_if_exists!-->
+            <choice value="save_bw_usage" comment="User Info Flags Save Bandwidth Usage" /> <!--true_if_exists!-->
+            <choice value="allow_user_disconnect" comment="User Info Flags Allow User Disconnect" /> <!--true_if_exists!-->
+            <choice value="deny_change_password" comment="User Info Flags Deny Change Password" /> <!--true_if_exists!-->
+            <choice value="auto_renew" comment="User Info Flags Auto Renew" /> <!--true_if_exists!-->
+            <choice value="reset_negative_credit_on_renew" comment="User Info Flags Reset Negative Credit On Renew" /> <!--true_if_exists!-->
+            <choice value="renew_do_not_reset_credit" comment="User Info Flags Renew Do Not Reset Credit" /> <!--true_if_exists!-->
+            <choice value="renew_do_not_reset_credit_on_state_package" comment="User Info Flags Renew Do Not Reset Credit On Package State" /> <!--true_if_exists!-->
+            <choice value="renew_do_not_reset_credit_on_state_recharged" comment="User Info Flags Renew Do Not Reset Credit On Recharged State" /> <!--true_if_exists!-->
+            <choice value="auto_renew_on_credit_finish" comment="User Info Flags Auto Renew On Credit Finish" /> <!--true_if_exists!-->
+            <choice value="auto_renew_do_not_reset_credit" comment="User Info Flags Auto Renew No Not Reset Credit" /> <!--true_if_exists!-->
+            <choice value="auto_recharge" comment="User Info Flags Auto Recharge" /> <!--true_if_exists!-->
+            <choice value="allow_recharge_by_voucher" comment="User Info Flags Allow Recharge By Voucher" /> <!--true_if_exists!-->
+            <choice value="prevent_web_login" comment="User Info Flags Prevent Web Login" /> <!--true_if_exists!-->
+            <choice value="enable_failed_login" comment="User Info Flags Enable Failed Login" /> <!--true_if_exists!-->
+            <choice value="ignore_idle_threshold_static_ip" comment="User Info Flags Ignore Idle Threshold on static IP" /> <!--true_if_exists!-->
+            <choice value="ignore_idle_threshold" comment="User Info Flags Ignore Idle Threshold" /> <!--true_if_exists!-->
+            <choice value="caller_id_bind_on_login" comment="User Info VoIP VoIP Caller ID Bind On Next Login" /> <!--true_if_exists!-->
+            <choice value="limit_mac_bind_on_login" /> <!--true_if_exists!-->
+            <choice value="limit_port_ibind_on_login" /> <!--true_if_exists!-->
+            <choice value="limit_ras_bind_on_login" /> <!--true_if_exists!-->
+            <choice value="limit_station_ip_bind_on_login" /> <!--true_if_exists!-->
+            <choice value="limit_caller_id_allow_not_defined" comment="Allow users with no Caller ID, 0=No, 1=Yes" /> <!--true_if_exists!-->
             <!-- "is_deposit_transferee" and "is_deposit_transferer" are disabled in C
             <choice value="is_deposit_transferee" />
             <choice value="is_deposit_transferer" />
@@ -7871,8 +7768,7 @@
           <choice value="pdf" comment="" />
         </param>
       </input>
-      <output type="null" comment="">
-      </output>
+      <output type="null" comment=""></output>
     </method>
     <method name="changeStatus" auth_type="ADMIN" requires_perm="CHANGE USER ATTRIBUTES" comment="">
       <input type="dict">
@@ -7886,9 +7782,8 @@
       <output type="null" comment="" />
     </method>
     <method name="getBulkActionsForAdmin" auth_type="ADMIN" requires_perm="PERFORM BULK ACTION"
-            comment="get list of performed or running Bulk Actions, which admin has access to see them">
-      <input type="dict">
-      </input>
+      comment="get list of performed or running Bulk Actions, which admin has access to see them">
+      <input type="dict"></input>
       <output type="list" length="-1" comment="">
         <item type="dict" comment="">
           <param name="action_id" type="int" comment="" />
@@ -7913,7 +7808,7 @@
       </output>
     </method>
     <method name="viewBulkActionStatus" auth_type="ADMIN" requires_perm="PERFORM BULK ACTION"
-            comment="get status of a Bulk Action (that has been started by the admin himself)">
+      comment="get status of a Bulk Action (that has been started by the admin himself)">
       <input type="dict">
         <param name="action_id" type="str" comment="" />
       </input>
@@ -7939,21 +7834,21 @@
       </output>
     </method>
     <method name="cancelBulkAction" auth_type="ADMIN" requires_perm="PERFORM BULK ACTION"
-            comment="cancel a Bulk Action (that has been started by the admin himself)">
+      comment="cancel a Bulk Action (that has been started by the admin himself)">
       <input type="dict">
         <param name="action_id" type="str" comment="" />
       </input>
       <output type="null" comment="" />
     </method>
     <method name="clearBulkAction" auth_type="ADMIN" requires_perm="PERFORM BULK ACTION"
-            comment="clear (remove from list) a Bulk Action (that has been started by the admin himself), and is finished">
+      comment="clear (remove from list) a Bulk Action (that has been started by the admin himself), and is finished">
       <input type="dict">
         <param name="action_id" type="str" comment="" />
       </input>
       <output type="null" comment="" />
     </method>
     <method name="bulkUpdateUserAttrs" auth_type="ADMIN" requires_perm="PERFORM BULK ACTION, SEARCH USER"
-            comment="combines methods 'user.searchUser' and 'user.updateUserAttrs'">
+      comment="combines methods 'user.searchUser' and 'user.updateUserAttrs'">
       <input type="dict">
         <param name="conds" type="dict" comment="the same as method 'user.searchUser', parameter 'conds'" />
         <param name="attrs_to_update" type="dict" item_type="str" comment="the same as method 'user.updateUserAttrs', parameter 'attrs'" />
@@ -7962,7 +7857,7 @@
       <output type="str" comment="action_id (string)" />
     </method>
     <method name="bulkChangeUserCredit" auth_type="ADMIN" requires_perm="PERFORM BULK ACTION, BULK CHANGE USER CREDIT"
-            comment="combines methods 'user.searchUser' and 'user.changeCreditExtended'">
+      comment="combines methods 'user.searchUser' and 'user.changeCreditExtended'">
       <input type="dict">
         <param name="conds" type="dict" comment="the same as method 'user.searchUser', parameter 'conds'" />
         <param name="credit" type="float" comment="the same as method 'user.changeCreditExtended'" />
@@ -7976,7 +7871,7 @@
       <output type="str" comment="action_id (string)" />
     </method>
     <method name="bulkChangeUserDeposit" auth_type="ADMIN" requires_perm="PERFORM BULK ACTION, BULK CHANGE USER DEPOSIT"
-            comment="combines methods 'user.searchUser' and 'user.changeDepositExtended'">
+      comment="combines methods 'user.searchUser' and 'user.changeDepositExtended'">
       <input type="dict">
         <param name="conds" type="dict" comment="the same as method 'user.searchUser', parameter 'conds'" />
         <param name="deposit" type="float" comment="the same as method 'user.changeDepositExtended'" />
@@ -7990,7 +7885,7 @@
       <output type="str" comment="action_id (string)" />
     </method>
     <method name="bulkDeleteUser" auth_type="ADMIN" requires_perm="PERFORM BULK ACTION, BULK DELETE USER"
-            comment="combines methods 'user.searchUser' and 'user.delUser'">
+      comment="combines methods 'user.searchUser' and 'user.delUser'">
       <input type="dict">
         <param name="conds" type="dict" comment="the same as method 'user.searchUser', parameter 'conds'" />
         <param name="delete_comment" type="str" comment="the same as method 'user.delUser'" />
@@ -8000,7 +7895,7 @@
       <output type="str" comment="action_id (string)" />
     </method>
     <method name="bulkRenewUsers" auth_type="ADMIN" requires_perm="PERFORM BULK ACTION, RENEW USER"
-            comment="combines methods 'user.searchUser' and 'user.renewUsers'">
+      comment="combines methods 'user.searchUser' and 'user.renewUsers'">
       <input type="dict">
         <param name="conds" type="dict" comment="the same as method 'user.searchUser', parameter 'conds'" />
         <param name="renew_comment" type="str" comment="the same as method 'user.renewUsers', parameter 'comment'" />
@@ -8008,7 +7903,7 @@
       <output type="str" comment="action_id (string)" />
     </method>
     <method name="bulkKillUsers" auth_type="ADMIN" requires_perm="PERFORM BULK ACTION, RENEW USER"
-            comment="combines methods 'user.searchUser' and 'user.renewUsers'">
+      comment="combines methods 'user.searchUser' and 'user.renewUsers'">
       <input type="dict">
         <param name="conds" type="dict" comment="the same as method 'user.searchUser', parameter 'conds'" />
         <param name="kill" type="bool" optional="true" default="true" comment="true means Kill User, false means Clear User" />
@@ -8019,8 +7914,7 @@
       comment="returns username, expiration date and first login for ALL USERS
                returns a large amount of data
                for use by CRM only">
-      <input type="dict">
-      </input>
+      <input type="dict"></input>
       <output type="dict" dynamic_keys="true"
         comment="">
         <key type="str_int" comment="user_id (string, because of XML-RPC compatibility)" />
@@ -8032,7 +7926,7 @@
       </output>
     </method>
     <method name="setOneChargeRuleUsage" auth_type="ADMIN" requires_perm="CHANGE USER ATTRIBUTES"
-        comment="set or clear charge rule usage of one rule for one user">
+      comment="set or clear charge rule usage of one rule for one user">
       <input type="dict">
         <param name="user_id" type="int" comment=""></param>
         <param name="charge_rule_id" type="int" comment=""></param>
@@ -8043,7 +7937,7 @@
       <output type="null" comment="" />
     </method>
     <method name="setFeshfesheParams" auth_type="ADMIN" requires_perm="CHANGE USER ATTRIBUTES"
-        comment="Added in tag 320, See http://wiki.parspooyesh.com/index.php/Feshfeshe">
+      comment="Added in tag 320, See http://wiki.parspooyesh.com/index.php/Feshfeshe">
       <input type="dict">
         <param name="user_id" type="int" comment=""></param>
         <param name="traffic" type="int" comment="Traffic, in Mega Bytes"></param>
@@ -8104,8 +7998,7 @@
       <output type="null" comment="" />
     </method>
     <method name="getAllCustomFields" auth_type="ADMIN" requires_perm="" comment="">
-      <input type="dict">
-      </input>
+      <input type="dict"></input>
       <output type="dict" comment="">
         <key type="str" comment="custom field name" />
         <value type="dict" comment="">
@@ -8209,14 +8102,12 @@
       <output type="bool" value="true" comment="" />
     </method>
     <method name="getStartOfMonth" auth_type="ADMIN, USER" requires_perm=""
-      comment="returns date string of the begining of current month (jalali / gregorian month, depending of input date_type)" >
-      <input type="dict">
-      </input>
+      comment="returns date string of the begining of current month (jalali / gregorian month, depending of input date_type)">
+      <input type="dict"></input>
       <output type="str" comment="date string with format '%Y-%m-%d'" />
     </method>
     <method name="getNow" auth_type="USER, ADMIN" requires_perm="" comment="">
-      <input type="dict">
-      </input>
+      <input type="dict"></input>
       <output type="str_datetime" comment="formatted datetime of current time" />
     </method>
     <method name="afeGetUserInfo" auth_type="ADMIN" requires_perm="AFE REMOTE ADMIN" comment="">
@@ -8230,8 +8121,7 @@
       </output>
     </method>
     <method name="afeGetAllGroups" auth_type="ADMIN" requires_perm="AFE REMOTE ADMIN" comment="">
-      <input type="dict">
-      </input>
+      <input type="dict"></input>
       <output type="list" item_type="str" comment="list of group names" />
     </method>
     <method name="afeChangeUserCredit" auth_type="ADMIN" requires_perm="AFE REMOTE ADMIN" comment="">
@@ -8243,43 +8133,39 @@
       <output type="null" comment="" />
     </method>
     <method name="getUserIDForIP" auth_type="ADMIN" requires_perm="SEE ONLINE USERS"
-        comment="returns user id for an online user with given remote ip">
+      comment="returns user id for an online user with given remote ip">
       <input type="dict">
         <param name="ip" type="str" comment="" />
       </input>
       <output type="str" comment="a user id, or 'No User Found'" />
     </method>
     <method name="getUsernameForIP" auth_type="ADMIN" requires_perm="SEE ONLINE USERS"
-        comment="returns internet username for an online user with given remote ip">
+      comment="returns internet username for an online user with given remote ip">
       <input type="dict">
         <param name="ip" type="str" comment="" />
       </input>
       <output type="str" comment="a username, or 'No User Found'" />
     </method>
     <method name="createSessionForFailedUserByIP" auth_type="" requires_perm="" comment="">
-      <input type="dict">
-      </input>
+      <input type="dict"></input>
       <output type="str" comment="Session ID" />
     </method>
     <method name="createSessionForUserByIP" auth_type="" requires_perm="" comment="">
-      <input type="dict">
-      </input>
+      <input type="dict"></input>
       <output type="str" comment="Session ID" />
     </method>
     <method name="getErrorForFailedUser" auth_type="" requires_perm=""
       comment="returns error_key and error_description for failed user that is calling this handler
                raises an error if session for user is not found">
-      <input type="dict">
-      </input>
+      <input type="dict"></input>
       <output type="list" length="2" comment="">
         <item index="0" type="str" comment="error key" />
         <item index="1" type="str" comment="error description" />
       </output>
     </method>
     <method name="kickFailedUserByIP" auth_type="" requires_perm=""
-        comment="Force disconnect a failed user by using his IP address (method called by user himself)">
-      <input type="dict">
-      </input>
+      comment="Force disconnect a failed user by using his IP address (method called by user himself)">
+      <input type="dict"></input>
       <output type="bool" comment="returns true if online user was found and disconnected, returns false otherwise" />
     </method>
     <method name="kickIDLEUsersByIP" auth_type="" requires_perm="" comment="">
@@ -8295,8 +8181,7 @@
       <output type="str" comment="the same value of 'echo' param" />
     </method>
     <method name="getSessionISPID" auth_type="USER, ADMIN" requires_perm="" comment="use after login into user/admin panel">
-      <input type="dict">
-      </input>
+      <input type="dict"></input>
       <output type="int" comment="ISP ID for Page Style to show to this user/admin" />
     </method>
     <method name="getSessionISPID" auth_type="ANONYMOUS" requires_perm="" comment="use in login page of user/admin panel">
@@ -8307,13 +8192,11 @@
     </method>
     <method name="getISPsPageStyleRevision" auth_type="" requires_perm=""
       comment="returns latest Revision Number of ISP Page Style">
-      <input type="dict">
-      </input>
+      <input type="dict"></input>
       <output type="int" comment="Revision Number of ISP Page Style" />
     </method>
     <method name="getSessionPageStyle" auth_type="" requires_perm="" comment="">
-      <input type="dict">
-      </input>
+      <input type="dict"></input>
       <output type="dict" comment="">
         <param name="header_logo_ext" type="str" comment="header logo file extension, for example 'gif'" />
         <param name="header_logo_contents" type="str" comment="base64-encoded data of header logo image" />
@@ -8327,8 +8210,7 @@
       </output>
     </method>
     <method name="getDRBDStatus" auth_type="ADMIN" requires_perm="GOD" comment="return status of DRBD">
-      <input type="dict">
-      </input>
+      <input type="dict"></input>
       <output type="list" comment="see http://www.drbd.org/en/doc/users-guide-83/ch-admin#s-drbd-overview">
         <item index="0" type="str" comment="hostname" />
         <item index="1" type="choice" comment="Connection Status">
@@ -8390,8 +8272,7 @@
       </output>
     </method>
     <method name="getSavedReportList" auth_type="ADMIN" requires_perm="" comment="">
-      <input type="dict">
-      </input>
+      <input type="dict"></input>
       <output type="list" length="-1" comment="">
         <item type="dict" comment="">
           <param name="filename" type="str" comment="file path" />
@@ -8416,24 +8297,21 @@
       <output value="true" comment="" />
     </method>
     <method name="version" auth_type="ADMIN" requires_perm="" comment="">
-      <input type="dict">
-      </input>
+      <input type="dict"></input>
       <output type="dict" comment="return version,tag,branch">
-        <param name="current_tag" type="str" comment="current tag"/>
-        <param name="version" type="str" comment="version"/>
-        <param name="branch" type="str" comment="branch"/>
+        <param name="current_tag" type="str" comment="current tag" />
+        <param name="version" type="str" comment="version" />
+        <param name="branch" type="str" comment="branch" />
       </output>
     </method>
   </handler>
   <handler name="voip_provider" comment="">
     <method name="listRoutingProfiles" auth_type="ADMIN" requires_perm="SEE VOIP PROVIDER" comment="">
-      <input type="dict">
-      </input>
+      <input type="dict"></input>
       <output type="list" item_type="str" comment="list of profile names" />
     </method>
     <method name="listVoIPProviders" auth_type="ADMIN" requires_perm="SEE VOIP PROVIDER" comment="">
-      <input type="dict">
-      </input>
+      <input type="dict"></input>
       <output type="list" item_type="str" comment="list of provider names" />
     </method>
   </handler>
@@ -8557,7 +8435,7 @@
       </output>
     </method>
     <method name="voucherAddBatch" auth_type="ADMIN" requires_perm="CHANGE VOUCHER"
-        comment="">
+      comment="">
       <input type="dict">
         <param name="batch_dict" type="dict" comment="">
           <param name="batch_name" type="str" comment="" />
@@ -8582,7 +8460,7 @@
       <output type="int" comment="batch_id" />
     </method>
     <method name="voucherChangeBatchLockStatus" auth_type="ADMIN" requires_perm="CHANGE VOUCHER"
-        comment="">
+      comment="">
       <input type="dict">
         <param name="batch_id" type="int" />
         <param name="lock" type="bool" />
@@ -8590,7 +8468,7 @@
       <output type="null" />
     </method>
     <method name="voucherGetBatchByID" auth_type="ADMIN" requires_perm="SEE VOUCHER"
-        comment="">
+      comment="">
       <input type="dict">
         <param name="batch_id" type="int" />
       </input>
@@ -8613,7 +8491,7 @@
       </output>
     </method>
     <method name="getVoucherByID" auth_type="ADMIN" requires_perm="SEE VOUCHER"
-        comment="">
+      comment="">
       <input type="dict">
         <param name="voucher_id" type="int" />
       </input>
@@ -8628,7 +8506,7 @@
       </output>
     </method>
     <method name="voucherSearchBatch" auth_type="ADMIN" requires_perm="SEE VOUCHER"
-        comment="">
+      comment="">
       <input type="dict">
         <param name="conds" type="dict">
           <param name="isp_names" type="list, str" optional="true"
@@ -8683,8 +8561,7 @@
   <handler name="invoice" comment="based on branch C_invoice">
     <method name="getInvoiceProfileNames" auth_type="ADMIN" requires_perm="SEE INVOICE PROFILE" comment="">
       <input type="dict">
-        <param name="conds" type="dict" comment="">
-        </param>
+        <param name="conds" type="dict" comment=""></param>
         <param name="_from" type="int" comment="start index" />
         <param name="to" type="int" comment="end index" />
         <param name="sort_by" type="choice" comment="">
@@ -8694,12 +8571,10 @@
         </param>
         <param name="desc" type="bool" comment="descending" />
       </input>
-      <output type="list" length="-1" item_type="str" comment="list of profile names">
-      </output>
+      <output type="list" length="-1" item_type="str" comment="list of profile names"></output>
     </method>
     <method name="getInvoiceProfiles" auth_type="ADMIN" requires_perm="SEE INVOICE PROFILE" comment="">
-      <input type="dict">
-      </input>
+      <input type="dict"></input>
       <output type="list" length="-1" item_type="dict" comment="">
         <item type="dict" comment="profile info dict">
           <param name="profile_id" type="int" />
@@ -9153,10 +9028,9 @@
       </output>
     </method>
     <method name="getAllTemplateNames" auth_type="ADMIN" requires_perm="SEE INVOICE PROFILE" comment="">
-      <input type="dict">
-      </input>
+      <input type="dict"></input>
       <output type="list" item_type="str" length="-1"
-          comment="list of all invoice template names" />
+        comment="list of all invoice template names" />
     </method>
     <method name="addInvoiceTemplate" auth_type="ADMIN" requires_perm="CHANGE INVOICE PROFILE" comment="">
       <input type="dict">
@@ -9171,12 +9045,12 @@
       <output type="null " comment="" />
     </method>
     <method name="searchInvoices" auth_type="ADMIN, USER"
-        requires_perm="user can only see his own invoices,
+      requires_perm="user can only see his own invoices,
         admin must have permission 'SEE INVOICE'" comment="">
       <input type="dict">
         <param name="conds" type="dict">
           <param name="isp_names" type="list, str" multi_str="false" optional="true"
-              comment="for admins, list of isp names, or string one isp name" />
+            comment="for admins, list of isp names, or string one isp name" />
           <param name="user_ids" type="str" multi_str="true" optional="true" />
           <param name="invoice_ids" type="str" multi_str="true" optional="true" />
           <param name="is_active" type="bool" optional="true" />
@@ -9244,12 +9118,12 @@
       </output>
     </method>
     <method name="searchProformaInvoices" auth_type="ADMIN"
-        requires_perm="user can only see his own proforma invoices,
+      requires_perm="user can only see his own proforma invoices,
         admin must have permission 'SEE INVOICE'" comment="">
       <input type="dict">
         <param name="conds" type="dict">
           <param name="isp_names" type="list, str" multi_str="false" optional="true"
-              comment="for admins, list of isp names, or string one isp name" />
+            comment="for admins, list of isp names, or string one isp name" />
           <param name="user_ids" type="str" multi_str="true" optional="true" />
           <param name="pi_ids" type="str" multi_str="true" optional="true" />
           <param name="is_expired" type="bool" optional="true" />
@@ -9376,13 +9250,13 @@
     <method name="invoicePutUserOnDept" auth_type="ADMIN" requires_perm="PAY INVOICE" comment="">
       <input type="dict">
         <param name="pi_id_list" type="list" item_type="int"
-            comment="list of Proforma Invoice IDs" />
+          comment="list of Proforma Invoice IDs" />
       </input>
       <output type="dict" comment="">
         <param name="failed_user_ids" type="list" item_type="str_int" length="-1"
-            comment="list of User IDs" />
+          comment="list of User IDs" />
         <param name="successful_user_ids" type="list" item_type="str_int" length="-1"
-            comment="list of User IDs" />
+          comment="list of User IDs" />
       </output>
     </method>
     <method name="proformaInvoicePaid" auth_type="ADMIN" requires_perm="PAY INVOICE" comment="">
@@ -9401,18 +9275,18 @@
     <method name="invoicePaid" auth_type="ADMIN" requires_perm="PAY INVOICE" comment="">
       <input type="dict">
         <param name="invoice_id_list" type="list" item_type="int"
-            comment="list of Invoice IDs" />
+          comment="list of Invoice IDs" />
         <param name="paid_amount_list" type="list" item_type="float"
-            comment="list of paid amounts, length of list must be the same as `invoice_id_list`" />
+          comment="list of paid amounts, length of list must be the same as `invoice_id_list`" />
         <param name="payment_comment_list" type="list" item_type="str"
-            comment="list of comment strings, length of list must be the same as `invoice_id_list`" />
+          comment="list of comment strings, length of list must be the same as `invoice_id_list`" />
       </input>
       <output type="dict" comment="">
         <param name="user_ids" type="list" length="-1" item_type="str_int" comment="list of User IDs" />
       </output>
     </method>
     <method name="getPIByID" auth_type="ADMIN, USER" requires_perm=""
-        comment="user must own the proforma invoice,
+      comment="user must own the proforma invoice,
                  admin must have access to owner user and have permission 'SEE INVOICE'">
       <input type="dict">
         <param name="pi_id" type="int" />
@@ -9446,7 +9320,7 @@
       </output>
     </method>
     <method name="getInvoiceByID" auth_type="ADMIN, USER" requires_perm=""
-        comment="user must own the invoice,
+      comment="user must own the invoice,
                  admin must have access to owner user and have permission 'SEE INVOICE'">
       <input type="dict">
         <param name="invoice_id" type="int" />
@@ -9484,7 +9358,7 @@
       </output>
     </method>
     <method name="getPIWithRuleByPIID" auth_type="ADMIN" requires_perm=""
-        comment="user must own the proforma invoice,
+      comment="user must own the proforma invoice,
                  admin must have access to owner user and have permission 'SEE INVOICE'">
       <input type="dict">
         <param name="pi_id" type="int" />
@@ -9570,7 +9444,7 @@
       </output>
     </method>
     <method name="getInvoiceWithRuleByInvoiceID" auth_type="ADMIN" requires_perm=""
-        comment="user must own the invoice,
+      comment="user must own the invoice,
                  admin must have access to owner user and have permission 'SEE INVOICE'">
       <input type="dict">
         <param name="invoice_id" type="int" />
@@ -9662,62 +9536,62 @@
   </handler>
   <!--============================================== START ==============================================-->
   <handler name="customer" comment="">
-      <method name="addNewCustomer" auth_type="ADMIN" requires_perm="ADD CUSTOMER" comment="add a new customer">
-        <input type="dict">
-          <param name="uid" type="str" comment="this feild is optional, generate in server"/>
-          <param name="customer_name" type="str" />
-          <param name="isp_name" type="str" />
-          <param name="address" type="str" />
-          <param name="mobile_number" type="str" />
-          <param name="phone_number" type="str" />
-          <param name="email" type="str" />
-          <param name="comment" type="str" />
-        </input>
-        <output type="dict" comment="">
-          <param name="customer_id" type="int" comment="return customer id that add" />
-        </output>
-      </method> 
-      <method name="getCustomer" auth_typ="ADMIN" requires_prem="SEE CUSTOMER" comment="get information customer with uid or customer_id">
-        <input type="dict"> 
-          <param name="uid" type="srt" optional="true" comment="If you don't need uid, send an empty string"/>
-          <param name="customer_id" type="srt" optional="true" comment="If you don't need customer_id, send an empty string" />
-        </input>
-        <output type="dict" >
-          <param name="customer_id" type="int" />
-          <param name="uid" type="str" />
-          <param name="customer_name" typ="str" />
-          <param name="customer_name_op" type="choise" optional="true" >
-            <choice value="like" comment="" />
-            <choice value="ilike" comment="" />
-            <choice value="starts_with" comment="" />
-            <choice value="ends_with" comment="" />
-            <choice value="equals" comment="" />
-          </param>
-          <param name="isp_name" type="str" />
-          <param name="address" type="str" />
-          <param name="mobile_number" type="str" />
-          <param name="phone_number" type="str" />
-          <param name="email" type="str" />
-          <param name="comment" type="str" />
-        </output>
+    <method name="addNewCustomer" auth_type="ADMIN" requires_perm="ADD CUSTOMER" comment="add a new customer">
+      <input type="dict">
+        <param name="uid" type="str" comment="this feild is optional, generate in server" />
+        <param name="customer_name" type="str" />
+        <param name="isp_name" type="str" />
+        <param name="address" type="str" />
+        <param name="mobile_number" type="str" />
+        <param name="phone_number" type="str" />
+        <param name="email" type="str" />
+        <param name="comment" type="str" />
+      </input>
+      <output type="dict" comment="">
+        <param name="customer_id" type="int" comment="return customer id that add" />
+      </output>
+    </method>
+    <method name="getCustomer" auth_typ="ADMIN" requires_prem="SEE CUSTOMER" comment="get information customer with uid or customer_id">
+      <input type="dict">
+        <param name="uid" type="srt" optional="true" comment="If you don't need uid, send an empty string" />
+        <param name="customer_id" type="srt" optional="true" comment="If you don't need customer_id, send an empty string" />
+      </input>
+      <output type="dict">
+        <param name="customer_id" type="int" />
+        <param name="uid" type="str" />
+        <param name="customer_name" typ="str" />
+        <param name="customer_name_op" type="choise" optional="true">
+          <choice value="like" comment="" />
+          <choice value="ilike" comment="" />
+          <choice value="starts_with" comment="" />
+          <choice value="ends_with" comment="" />
+          <choice value="equals" comment="" />
+        </param>
+        <param name="isp_name" type="str" />
+        <param name="address" type="str" />
+        <param name="mobile_number" type="str" />
+        <param name="phone_number" type="str" />
+        <param name="email" type="str" />
+        <param name="comment" type="str" />
+      </output>
       </mehtod>
       <method name="updateCustomer" auth_type="ADMIN" requires_perm="UPDATE CUSTOMER" comment="update info customer with uid or customer_id">
         <input type="dict">
-          <param name="customer_id" typ="int" optional="true" comment="If you don't need customer_id , send an empty string">
-          <param name="uid" type="str" optional="true" comment="If you don't need uid, send an empty string">
-          <param name="customer_name" typ="str" comment="">
-          <param name="isp_name" type="str" comment="">
-          <param name="address" type="str" comment="">
-          <param name="mobile_number" type="str" comment="">
-          <param name="phone_number" type="str" comment="">
-          <param name="email" type="str" comment="">
-          <param name="comment" type="str" comment="">
+          <param name="customer_id" typ="int" optional="true" comment="If you don't need customer_id , send an empty string" />
+          <param name="uid" type="str" optional="true" comment="If you don't need uid, send an empty string" />
+          <param name="customer_name" typ="str" comment="" />
+          <param name="isp_name" type="str" comment="" />
+          <param name="address" type="str" comment="" />
+          <param name="mobile_number" type="str" comment="" />
+          <param name="phone_number" type="str" comment="" />
+          <param name="email" type="str" comment="" />
+          <param name="comment" type="str" comment="" />
         </input>
         <output type="null" comment="" />
       </method>
       <method name="deleteCustomer" auth_type="ADMIN" requires_perm="DELETE CUSTOMER" comment="delete info customer with uid or customer_id">
         <input type="dict">
-          <param name="uid" typ="str" optional="true" comment="If you don't need uid, send an empty string"/>
+          <param name="uid" typ="str" optional="true" comment="If you don't need uid, send an empty string" />
           <param name="customer_id" typ="int" optional="true" comment="If you don't need customer_id, sned an empty string">
         </input>
         <output type="null " comment="" />
@@ -9728,7 +9602,7 @@
             <param name="customer_id" typ="srt" optional="true" multi_str="true" />
             <param name="uid" typ="srt" optional="true" multi_str="true" />
             <param name="customer_name" type="str" optional="true" />
-          </param> 
+          </param>
           <param name="sort_by" type="choice">
             <choice value="customer_name" />
             <choice value="customer_id" />
@@ -9740,25 +9614,25 @@
         <output type="dict" comment="">
           <param name="total_rows" type="int" comment="Number of total rows" />
           <param name="report" type="list" length="-1" item_type="dict" comment="">
-          <item type="dict">
-            <param name="customer_id" type="int" />
-            <param name="cusmert_name" type="str" />
-            <param name="mobile_number" type="str" />
-            <param name="phone_number" type="str" />
-            <param name="comment" type="str" />
-            <param name="uid" type="str" />
-            <param name="isp_name" type="str" />
-            <param name="address" type="str" />
-            <param name="email" type="str" />
-          </item>
-        </param>
-      </output>
+            <item type="dict">
+              <param name="customer_id" type="int" />
+              <param name="cusmert_name" type="str" />
+              <param name="mobile_number" type="str" />
+              <param name="phone_number" type="str" />
+              <param name="comment" type="str" />
+              <param name="uid" type="str" />
+              <param name="isp_name" type="str" />
+              <param name="address" type="str" />
+              <param name="email" type="str" />
+            </item>
+          </param>
+        </output>
       </method>
   </handler>
   <handler name="balance" comment="">
     <method name="addNewBalance" auth_type="ADMIN" requires_perm="CHANGE BALANCE" comment="add new balance">
       <input type="dict">
-        <param name="name" type="str"/>
+        <param name="name" type="str" />
         <param name="isp_name" type="str" />
         <param name="class" type="str" />
         <param name="value_type" type="str" />
@@ -9784,7 +9658,7 @@
     <method name="getBalanceClasses" auth_type="ADMIN" comment="get the list of balance classes">
       <input type="null" />
       <output type="dict">
-        <param name="CURRENCY" type="list" comment="list of Currency" >
+        <param name="CURRENCY" type="list" comment="list of Currency">
           <param name="IRR" type="str" />
           <param name="USD" type="str" />
           <param name="EUR" type="str" />
@@ -9793,15 +9667,15 @@
           <param name="MB" type="str" />
           <param name="GB" type="str" />
           <param name="KB" type="str" />
-        <param/>
-        <param name="DURATION" type="list" comment="list of DURATION">
-          <param name="Minute" type="str" />
-          <param name="Second" type="str" />
-        </param>
-        <param name="VAS" type="list" comment="list of vas" />
-        <param name="SMS" type="list" comment="list of sms" />
-        <param name="COUNTER" type="list" comment="list of cunter" />
-        </output>
+          <param />
+          <param name="DURATION" type="list" comment="list of DURATION">
+            <param name="Minute" type="str" />
+            <param name="Second" type="str" />
+          </param>
+          <param name="VAS" type="list" comment="list of vas" />
+          <param name="SMS" type="list" comment="list of sms" />
+          <param name="COUNTER" type="list" comment="list of cunter" />
+      </output>
       </output>
     </method>
     <method name="getBalanceValueTypes" auth_type="ADMIN" comment="get the list of balance value type">
@@ -9820,14 +9694,14 @@
       </output>
     </method>
     <method name="getBalanceInfo" auth_type="ADMIN" comment="get balance info by balance name or balance id">
-      <input type="dict" >
-        <param name="balance_name" type="str" optional="true" comment=""/>
-        <param name="balance_id" type="int" optional="true" comment=""/>
+      <input type="dict">
+        <param name="balance_name" type="str" optional="true" comment="" />
+        <param name="balance_id" type="int" optional="true" comment="" />
       </input>
     </method>
     <method name="updateBalance" auth_type="ADMIN" comment="update the balance information">
       <input type="dict">
-        <param name="name" type="str"/>
+        <param name="name" type="str" />
         <param name="isp_name" type="str" />
         <param name="class" type="str" />
         <param name="value_type" type="str" />
@@ -9849,13 +9723,13 @@
       <output type="null" comment="">
     </method>
     <method name="getListValidBalanceName" auth_type="ADMIN" requires_perm="LIST BALANCES" comment="The meaning of validity is that the date range considered for 
-                                                                                                    the balance is within the day and that the balance status is active."> 
+                                                                                                    the balance is within the day and that the balance status is active.">
 
-    <input type="null" comment="" />
-    <output type="dict" comment="">
-      <param name="balance_id" type="int" />
-      <param name="balance_name" type="str" />
-    </output>
+      <input type="null" comment="" />
+      <output type="dict" comment="">
+        <param name="balance_id" type="int" />
+        <param name="balance_name" type="str" />
+      </output>
     </method>
     <method name="deleteBalance" auth_type="ADMIN" requires_perm="CHANGE BALANCE" comment="Delete the balance">
       <input type="dict">
@@ -9867,26 +9741,26 @@
       <input type="dict">
         <param name="include_retired" optional="true" comment="if set, return balances that status is RETIRED">
       </input>
-      <output type="list" comment="list of name balances"/>
+      <output type="list" comment="list of name balances" />
     </method>
     <method name="getAllBalanceIdsAndNames" auth_type="ADMIN" requires_perm="LIST BALANCES" comment="get all list balances without filter">
       <input type="dict" />
-      <output type="list" comment="list of balance name and balance id"/>
+      <output type="list" comment="list of balance name and balance id" />
     </method>
     <method name="getBalanceNameById" auth_type="ADMIN" comment="get balance id and return name of balance">
-      <input type="dict" >
+      <input type="dict">
         <param name="balance_id" />
       </input>
-      <output type="dict" >
+      <output type="dict">
         <param name="balance_name" />
       </output>
-    </mehtod>
-    <method name="searchBalance" auth_type="ADMIN" comment="search in balances">
-      <input type="dict">
+      </mehtod>
+      <method name="searchBalance" auth_type="ADMIN" comment="search in balances">
+        <input type="dict">
           <param name="conds" type="dict">
             <param name="balance_id" typ="srt" optional="true" multi_str="true" />
             <param name="balance_name" typ="srt" optional="true" multi_str="true" />
-            <param name="balance_name_op" type="choise" optional="true" >
+            <param name="balance_name_op" type="choise" optional="true">
               <choice value="like" comment="" />
               <choice value="ilike" comment="" />
               <choice value="starts_with" comment="" />
@@ -9907,7 +9781,7 @@
             <param name="balance_classes" type="choise" optional="true" comment="lis of balance classes" />
             <param name="life_cycle_status" type="choise" optional="true" comment="lis of balance life cycle status" />
             <param name="value_type" type="choise" optional="true" comment="lis of balance value type" />
-          </param> 
+          </param>
           <param name="sort_by" type="choice">
             <choice value="balance_name" />
             <choice value="balance_id" />
@@ -9919,25 +9793,25 @@
         <output type="dict" comment="">
           <param name="total_rows" type="int" comment="Number of total rows" />
           <param name="report" type="list" length="-1" item_type="dict" comment="">
-          <item type="dict">
-            <param name="balance_id" type="int" />
-            <param name="balance_name" type="str" />
-            <param name="isp_name" type="str" />
-            <param name="balance_class" type="str" />
-            <param name="comment" type="str" />
-            <param name="uid" type="str" />
-            <param name="isp_name" type="str" />
-            <param name="balance_class" type="str" />
-            <param name="life_cycle_status" type="str" />
-            <param name="value_type" type="str" />
-            <param name="valid_for_start" type="str" />
-            <param name="valid_for_end" type="str" />
-            <param name="default_value" type="str" />
-            <param name="unit" type="str" />
-          </item>
-        </param>
-      </output>
-    </method>
+            <item type="dict">
+              <param name="balance_id" type="int" />
+              <param name="balance_name" type="str" />
+              <param name="isp_name" type="str" />
+              <param name="balance_class" type="str" />
+              <param name="comment" type="str" />
+              <param name="uid" type="str" />
+              <param name="isp_name" type="str" />
+              <param name="balance_class" type="str" />
+              <param name="life_cycle_status" type="str" />
+              <param name="value_type" type="str" />
+              <param name="valid_for_start" type="str" />
+              <param name="valid_for_end" type="str" />
+              <param name="default_value" type="str" />
+              <param name="unit" type="str" />
+            </item>
+          </param>
+        </output>
+      </method>
   </handler>
   <handler name="user_balance" comment="">
     <method name="addNewUserBalance" auth_type="ADMIN" requires_perm="ADD NEW USER BALANCE" comment="assign balance to user (add new user_balance)">
@@ -9960,28 +9834,28 @@
         <param name="linked_user_id" type="srt" optioanl="true" comment="If type balance id is required" />
         <param name="linked_balance_id" type="str" optional="true" comment="If type balance id is required" />
       </input>
-      <output type="dict" >
+      <output type="dict">
         <param name="balance_id" />
-      </ouput>
+        </ouput>
     </method>
     <method name="getUserBalanceInfoByUserID" auth_name="ADMIN" requires_param="SEE USER BALANCE CHANGES" comment="return all balnce that assigned to user">
-      <input type="dict" >
+      <input type="dict">
         <param name="user_id" />
       </input>
       <output type="dict">
-        <param name="comment"  type="srt" />
-        <param name="linked_user_id" type="int|null" comment="if not set return null"/>
+        <param name="comment" type="srt" />
+        <param name="linked_user_id" type="int|null" comment="if not set return null" />
         <param name="start_time" type="str" />
         <param name="balance_name" type="str" />
         <param name="balance_id" type="int" />
-        <param name="linked_balance_id" type="int|null" comment="if not set return null"/>
+        <param name="linked_balance_id" type="int|null" comment="if not set return null" />
         <param name="user_id" type="int" />
         <param name="initial_value" type="float" />
         <param name="user_balance_urd_tag" type="str" />
         <param name="value" type="float" />
         <param name="user_balance_id" type="float" />
         <param name="priority" type="float" />
-        <param name="expire_time" type="str"/>
+        <param name="expire_time" type="str" />
       </output>
     </method>
     <method name="updateUserBalance" auth_name="ADMIN" requires_param="CHANGE USER BALANCE" comment="update the user_balance">
@@ -10005,23 +9879,23 @@
       <output type="null" comment="" />
     </method>
     <method name="getUserBalanceInfo" auth_name="ADMIN" requires_param="SEE USER BALANCE CHANGES" comment="get user_balance_id and return the info">
-      <input type="dict" >
+      <input type="dict">
         <param name="user_balance_id" type="str" />
       </input>
       <output type="dict">
-        <param name="comment"  type="srt" />
-        <param name="linked_user_id" type="int|null" comment="if not set return null"/>
+        <param name="comment" type="srt" />
+        <param name="linked_user_id" type="int|null" comment="if not set return null" />
         <param name="start_time" type="str" />
         <param name="balance_name" type="str" />
         <param name="balance_id" type="int" />
-        <param name="linked_balance_id" type="int|null" comment="if not set return null"/>
+        <param name="linked_balance_id" type="int|null" comment="if not set return null" />
         <param name="user_id" type="int" />
         <param name="initial_value" type="float" />
         <param name="user_balance_urd_tag" type="str" />
         <param name="value" type="float" />
         <param name="user_balance_id" type="float" />
         <param name="priority" type="float" />
-        <param name="expire_time" type="str"/>
+        <param name="expire_time" type="str" />
       </output>
     </method>
     <method name="deleteUserBalance" auth_name="ADMIN" requires_param="CHANGE USER BALANCE" comment="delete the user_balance">
@@ -10035,7 +9909,7 @@
       <input type="dict">
         <param name="user_balance_id" type="str" />
         <param name="balance_change_value" type="str" />
-        <param name="balance_action" type="choise" >
+        <param name="balance_action" type="choise">
           <choise name="add" />
           <choise name="multiply" />
           <choise name="set" />
@@ -10048,7 +9922,7 @@
         <param name="conds" type="dict" comment="">
           <param name="balance_name" type="choise" optional="true" comment="list of balances that added in system" />
           <param name="remote_ip" type="str" comment="" />
-          <param name="remote_ip_op" type="choise" >
+          <param name="remote_ip_op" type="choise">
             <choice value="like" comment="" />
             <choice value="ilike" comment="" />
             <choice value="starts_with" comment="" />
@@ -10065,9 +9939,9 @@
             <choice value="gregorian" comment="" />
             <choice value="jalali" comment="" />
           </param>
-          <param name="admin_name" type="choise" comment="list of admin in system"/>
-          <param name="action" type="choise" comment="action list in system"/>
-          <param name="isp_name" type="choise" comment="isp list in system"/>
+          <param name="admin_name" type="choise" comment="list of admin in system" />
+          <param name="action" type="choise" comment="action list in system" />
+          <param name="isp_name" type="choise" comment="isp list in system" />
           <param name="user_balance_ids" type="str" multi_str="true" optional="true" comment="" />
         </param>
         <param name="from" type="int" comment="" />
@@ -10099,5 +9973,77 @@
         </param>
       </output>
     </method>
-  </handler> 
-</web_service>
+  </handler>
+  <handler name="import_file" comment="">
+    <method name="getLastSequenceValue" auth_type="ADMIN" requires_perm="ADD CUSTOMER" comment="see the last sequence of customer ID">
+      <input type="dict">
+        <param name="sequence_type" type="str" comment="can get [CUSTOMER, USER, USER_BALANCE]" />
+      </input>
+       
+      <output type="dict" comment="">
+        <param name="customer" type="int" comment="last sequence of customer id if sequence_type equal CUSTOMER" />
+        <param name="user" type="int" comment="last sequence of user id if sequence_type equal USER" />
+        <param name="user_balance" type="int" comment="last sequence of user_balance id if sequence_type equal USER_BALANCE" />
+      </output>
+    </method>
+    <method name="uploadImportFile" auth_typ="ADMIN" requires_prem="ADD CUSTOMER" comment="upload the excel or csv file">
+      <input type="dict">
+        <param name="file_base64" type="srt" comment="convert to Base64 file, excel or csv" />
+        <param name="mime_type" type="srt" comment="set mime type of file,  [csv, xlsx]" />
+        <param name="section" type="srt" comment="set the section for upload file [CUSTOMER, USER, USER_BALANCE]" />
+      </input>
+      <output type="dict">
+        <param name="record_file_id" type="int" comment="return the id of generate of import_files table" />
+      </output>
+    </method>
+    <method name="getUploadedFileByAdmin" auth_type="ADMIN" comment="get the list of file that uploaded by admin">
+      <input type="dict">
+        <param name="section" type="srt" comment="set the section for upload file [CUSTOMER, USER, USER_BALANCE]" />
+      </input>
+      <output type="dict" comment="">
+        <param name="admin_user_name" type="str" comment="username of admin" />
+        <param name="description" type="str" comment="description when create record" />
+        <param name="admin_id" type="int" comment="id of admin" />
+        <param name="success_count" type="int" comment="number of data success full transfer" />
+        <param name="error_count" type="int" comment="number of data error transfer" />
+        <param name="import_file_id" type="int" comment="id of import_files table that inserted record" />
+        <param name="deleted_at" type="datetime" comment="date time of delete data uploaded" />
+        <param name="section" type="str" comment="set the section for upload file [CUSTOMER, USER, USER_BALANCE]" />
+        <param name="modified_at" type="datetime" comment="date time of change in recorde in import_files row" />
+        <param name="status_import" type="str" comment="status of import files [PENDING, RUNNING, DONE, STOPPED, ERROR]" />
+        <param name="total_row" type="int" comment="total of rows that in file uploaded" />
+        <param name="created_at" type="datetime" comment="date time of create recorde" /> 
+        <param name="remote_ip" type="str" comment="ip of admin that upload file" />
+      </output>
+    </method>
+    <method name="startImport" auth_type="ADMIN" comment="for start import data that uploaded in last api">
+      <input type="dict">
+        <param name="file_import_id" typ="int" comment="send id of recorde of import_files table that s" />
+        <param name="section" type="str" comment="set the section for upload file [CUSTOMER, USER, USER_BALANCE]" />
+      </input>
+      <output type="null " comment="" />
+    </method>
+    <method name="getReportOfImportFile" auth_type="ADMIN" comment="get the report of import files for every section [CUSTOMER, USER, USER_BALANCE] ">
+      <input type="dict">
+        <param name="file_import_id" typ="int" comment="send id of recorde of import_files table that s" />
+        <param name="section" type="str" comment="set the section for upload file [CUSTOMER, USER, USER_BALANCE]" />
+      </input>
+      <output type="dict" comment="">
+        <param name="phone_number" type="str" comment="phone number" />
+        <param name="comment" type="str" comment="comment" />
+        <param name="uid" type="str" comment="uid" />
+        <param name="success" type="str" comment="if f means have error else get t" />
+        <param name="created_at" type="datetime" comment="date time of created recorde" />
+        <param name="mobile_number" type="str" comment="mobile number" />
+        <param name="import_file_id" type="int" comment="id of recorde in import_files" />
+        <param name="address" type="str" comment="address" />
+        <param name="message_error" type="str" comment="if have message fill this" />
+        <param name="isp_name" type="str" comment="ISP name" />
+        <param name="customer_id" type="int" comment="customer id" />
+        <param name="email" type="str" comment="email" />
+        <param name="customer_name" type="str" comment="name of customer" />
+        <param name="row_number" type="int" comment="id of recorde " />
+      </output>
+    </method>
+  </handler>
+</web_service>add new API for ImportFIE 
