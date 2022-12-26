@@ -5950,6 +5950,23 @@
   </handler>
   <!--============================================== CHANGE ==============================================-->
   <handler name="user" comment="">
+    <mthod name="addCustomerAndUser" auth_typ="ADMIN" requires_perm="ADD NEW USER, ADD CUSTOMER" comment="add new customer and user">
+      <input type="dict">
+        <param name="count" type="int" comment="count of user" />
+        <param name="isp_name" type="str" comment="ISP name of user" />
+        <param name="group_name" type="str" comment="GROUP name of user" />
+        <param name="custom_fields" type="dict" optional="true" comment="" />
+        <param name="user_role" type="str" comment="The role intended for the user, which can contain the values account or service" />
+        <param name="parent_user_id" type="int" comment="User's parent ID"/>
+        <param name="customer_name" type="str" comment="name of customer"/>
+        <param name="customer_uid" type="str" comment="uid of customer"/>
+        <param name="customer_id" type="str" comment="The client ID to which we want to assign the user"/>
+      </input>
+      <output type="dict" comment="result">
+        <param name="customer_id" type="int" comment="id of customer" />
+        <param name="user_id" type="list" comment="user_ids" />
+      </output>
+    </mthod>
     <method name="addNewUsers" auth_type="ADMIN" requires_perm="ADD NEW USER" comment="">
       <input type="dict">
         <param name="count" type="int" comment="" />
