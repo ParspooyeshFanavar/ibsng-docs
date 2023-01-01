@@ -5975,34 +5975,51 @@
         <param name="custom_fields" type="dict" optional="true" comment="" />
         <param name="customer_id" type="int" comment="The client ID to which we want to assign the user" />
         <param name="user_role" type="str" comment="The role intended for the user, which can contain the values account or service" />
-        <param name="parent_user_id" type="int" comment="User's parent ID"
+        <param name="parent_user_id" type="int" comment="User's parent ID" />
       </input>
       <output type="list" length="-1" item_type="int" comment="user_ids"></output>
     </method>
     <method name="getUserInfo" auth_type="USER" comment="By User">
-      <input type="dict" comment=""></input>
-      <output type="dict" comment="User Info dict">
-        <param name="basic_info" type="dict" commnet="">
-          <param name="user_id" type="int" comment="" />
-          <param name="creation_date" type="str" comment="" />
-          <param name="credit" type="float" comment="" />
-          <param name="deposit" type="float" comment="" />
-          <param name="group_id" type="int" comment="" />
-          <param name="group_name" type="str" comment="" />
-          <param name="isp_id" type="int" comment="" />
-          <param name="isp_name" type="str" comment="" />
-          <param name="nearest_exp_date" type="str" comment="%Y-%m-%d %H:%M" />
-          <param name="recharge_deposit" type="float" comment="" />
-          <param name="status" type="choice" comment="">
-            <choice value="0" type="int" comment="Package" />
-            <choice value="1" type="int" comment="Recharged" />
-            <choice value="2" type="int" comment="Temporary Extended" />
+      <input type="dict" comment="one of these params is needed">
+        <param name="user_id" type="str_int" multi_str="true" optional="true" comment="" />
+        <param name="normal_username" type="str" multi_str="true" optional="true" comment="" />
+        <param name="voip_username" type="str" multi_str="true" optional="true" comment="" />
+        <param name="serial" type="str" multi_str="true" optional="true" comment="" />
+      </input>
+      <output type="dict" comment="">
+        <key type="str_int" comment="User ID"></key>
+        <value type="dict" comment="User Info dict, the same as output of getUserInfo by Admin"></value>
+      </output>
+    </method>
+    <method name="getUserInfo" auth_type="ADMIN" requires_perm="GET USER INFORMATION" comment="By Admin">
+      <input type="dict" comment="one of these params is needed">
+        <param name="user_id" type="str_int" multi_str="true" optional="true" comment="" />
+        <param name="normal_username" type="str" multi_str="true" optional="true" comment="" />
+        <param name="voip_username" type="str" multi_str="true" optional="true" comment="" />
+        <param name="serial" type="str" multi_str="true" optional="true" comment="" />
+      </input>
+       <output type="dict" comment="User Info dict">
+         <param name="user_id" type="dict" comment="show user_id, content of this field is:">
+          <param name="online_status" type="boolean" />
+          <param name="basic_info" type="dict" >
+            <param name="user_role" type="str" comment="service or account"/>
+            <param name="group_name" type="str" />
+            <param name="isp_name" type="str" />
+            <param name="creation_date" type="srt" />
+            <param name="customer_name" type="str" />
+            <param name="group_id" type="str" />
+            <param name="nearest_exp_date" type="str"/>
+            <param name="last_login" type="srt"/>
+            <param name="isp_id" type="srt"/>
+            <param name="isp_id" type="srt"/>
+            <param name="parent_user_id" type="srt"/>
+            <param name="customer_id" type="srt"/>
           </param>
-          <param name="customer_id" type="int" comment="" />
-          <param name="user_role" type="str" comment="" />
-          <param name="parent_user_id" type="int" comment="" />
-        </param>
-        <param name="attrs" type="dict" comment="also includes custom fields, as custom_field_NAME keys">
+          <param  name="user_repr" type="str" />
+          <param name="attrs" type="dict"/>
+          <param name="voip_onlines" type="list"/>
+          <param name="internet_onlines" type="list" />
+            <param name="attrs" type="dict" comment="also includes custom fields, as custom_field_NAME keys">
           <param name="user_id" type="int" optional="false" comment="" />
           <param name="normal_username" type="str" optional="true" comment="" />
           <param name="normal_password" type="str" optional="true" comment="" />
@@ -6319,23 +6336,7 @@
             </item>
           </item>
         </param>
-      </output>
-    </method>
-    <method name="getUserInfo" auth_type="ADMIN" requires_perm="GET USER INFORMATION" comment="By Admin">
-      <input type="dict" comment="one of these params is needed">
-        <param name="user_id" type="str_int" multi_str="true" optional="true" comment="" />
-        <param name="normal_username" type="str" multi_str="true" optional="true" comment="" />
-        <param name="voip_username" type="str" multi_str="true" optional="true" comment="" />
-        <param name="serial" type="str" multi_str="true" optional="true" comment="" />
-        <param name="phone" type="str" multi_str="true" optional="true" comment="" />
-        <param name="rempte_ip" type="str" multi_str="true" optional="true" comment="" />
-        <param name="customer_id" type="int" comment="" />
-        <param name="user_role" type="str" comment="" />
-        <param name="parent_user_id" type="int" comment="" />
-      </input>
-      <output type="dict" comment="">
-        <key type="str_int" comment="User ID"></key>
-        <value type="dict" comment="User Info dict, the same as output of getUserInfo by USER"></value>
+        </param>
       </output>
     </method>
     <method name="doesUserExists" auth_type="ADMIN" requires_perm="" comment="">
@@ -9577,13 +9578,6 @@
         <param name="customer_id" type="int" />
         <param name="uid" type="str" />
         <param name="customer_name" typ="str" />
-        <param name="customer_name_op" type="choise" optional="true">
-          <choice value="like" comment="" />
-          <choice value="ilike" comment="" />
-          <choice value="starts_with" comment="" />
-          <choice value="ends_with" comment="" />
-          <choice value="equals" comment="" />
-        </param>
         <param name="isp_name" type="str" />
         <param name="address" type="str" />
         <param name="mobile_number" type="str" />
@@ -9847,9 +9841,15 @@
           <choice value="gregorian" comment="" />
           <choice value="jalali" comment="" />
         </param>
+        <param name="udr_tag" type="str" />
         <param name="comment" type="str" />
-        <param name="linked_user_id" type="srt" optioanl="true" comment="If type balance id is required" />
-        <param name="linked_balance_id" type="str" optional="true" comment="If type balance id is required" />
+        <param name="linked_user_id" type="srt" optioanl="true" comment="If type balance is linked required this field" />
+        <param name="linked_balance_id" type="str" optional="true" comment="If type balance is linked required this field" />
+        <param name="expire_from_first_use" type="int" comment="if not has value set null "/>
+        <param name="expire_from_first_use_unit" type="int" type="choice" optional="true" comment="if not has value set null ">
+          <choice value="gregorian" comment="" />
+          <choice value="jalali" comment="" />
+        </param>
       </input>
       <output type="dict">
         <param name="balance_id" />
@@ -9861,18 +9861,26 @@
       </input>
       <output type="dict">
         <param name="comment" type="srt" />
+        <param name="expire_from_first_use_unit" type="str" comment="Days, Jalali, Gregorian" />
+        <param name="expire_from_first_use" type="int" comment="" />
+        <param name="linked_balance_name" type="str" comment="if type of balance that linked this feild get value" />
+        <param name="user_id" type="int" comment="id of user"/>
+        <param name="initial_value" type="float" />
+        <param name="start_time" type="str" comment="sample format-> 2022-12-01 11:54:00"/>
         <param name="linked_user_id" type="int|null" comment="if not set return null" />
-        <param name="start_time" type="str" />
         <param name="balance_name" type="str" />
         <param name="balance_id" type="int" />
         <param name="linked_balance_id" type="int|null" comment="if not set return null" />
-        <param name="user_id" type="int" />
-        <param name="initial_value" type="float" />
-        <param name="user_balance_urd_tag" type="str" />
         <param name="value" type="float" />
         <param name="user_balance_id" type="float" />
+        <param name="user_balance_urd_tag" type="str" />
         <param name="priority" type="float" />
-        <param name="expire_time" type="str" />
+        <param name="balance_name" type="str" comment="name of balance that asssign to user"/>
+        <param name="user_balance_udr_tag" type="UDR tag to self user balance assign" />
+        <param name="balance_id" type="int" comment="id of balacne assign to user" />
+        <param name="first_use_expiration_time" type="" />
+        <param name="first_use_time" type=""/>
+        <param name="expire_time" type="str" comment="sample format -> 2022-12-31 11:54:00"/>
       </output>
     </method>
     <method name="updateUserBalance" auth_name="ADMIN" requires_param="CHANGE USER BALANCE" comment="update the user_balance">
@@ -10063,4 +10071,4 @@
       </output>
     </method>
   </handler>
-</web_service>add new API for ImportFIE 
+</web_service>
