@@ -5966,24 +5966,18 @@
       <input type="dict" comment=""></input>
       <output type="dict" comment="User Info dict">
         <param name="basic_info" type="dict" commnet="">
-          <param name="user_id" type="int" comment="" />
-          <param name="creation_date" type="str" comment="" />
-          <param name="credit" type="float" comment="" />
-          <param name="deposit" type="float" comment="" />
-          <param name="group_id" type="int" comment="" />
-          <param name="group_name" type="str" comment="" />
-          <param name="isp_id" type="int" comment="" />
-          <param name="isp_name" type="str" comment="" />
-          <param name="nearest_exp_date" type="str" comment="%Y-%m-%d %H:%M" />
-          <param name="recharge_deposit" type="float" comment="" />
-          <param name="status" type="choice" comment="">
-            <choice value="0" type="int" comment="Package" />
-            <choice value="1" type="int" comment="Recharged" />
-            <choice value="2" type="int" comment="Temporary Extended" />
-          </param>
-          <param name="customer_id" type="int" comment="" />
           <param name="user_role" type="str" comment="" />
+          <param name="group_name" type="str" comment="" />
+          <param name="isp_name" type="str" comment="" />
+          <param name="creation_date" type="str" comment="" />
+          <param name="customer_name" type="str" comment="" />
+          <param name="group_id" type="int" comment="" />
+          <param name="user_id" type="int" comment="" />
+          <param name="nearest_exp_date" type="str" comment="%Y-%m-%d %H:%M" />
+          <param name="last_login" type="str" comment="%Y-%m-%d %H:%M" />
+          <param name="isp_id" type="int" comment="" />
           <param name="parent_user_id" type="int" comment="" />
+          <param name="customer_id" type="int" comment="" />
         </param>
         <param name="attrs" type="dict" comment="also includes custom fields, as custom_field_NAME keys">
           <param name="user_id" type="int" optional="false" comment="" />
@@ -5998,7 +5992,7 @@
             <item type="list" length="5" comment="">
               <item index="0" type="int" comment="charge_rule_id" />
               <item index="1" type="str" comment="charge_rule_description" />
-              <item index="2" type="str" comment="credit_usage" />
+              <item index="2" type="str" comment="balance_usage" />
               <item index="3" type="str" comment="time_usage, in seconds" />
               <item index="4" type="str" comment="traffic_usage, in bytes" />
             </item>
