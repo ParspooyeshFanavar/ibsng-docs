@@ -112,9 +112,9 @@
         <param name="admin_username" type="str" comment="" />
         <param name="admin_isp_name" type="str" comment="" />
         <param name="admin_locked" type="bool" comment="" />
-        <param name="name" type="name" comment="" />
-        <param name="email" type="name" comment="" />
-        <param name="comment" type="name" comment="" />
+        <param name="name" type="str" comment="" />
+        <param name="email" type="str" comment="" />
+        <param name="comment" type="str" comment="" />
 	<param name="admin_has_otp" type="bool" comment="" />
 	<param name="admin_request_limit" type="int" comment="" />
       </input>
@@ -1316,7 +1316,7 @@
           <param name="group_name" type="str" comment="" />
           <param name="comment" type="str" comment="" />
           <param name="isp_id" type="int" comment="" />
-          <param name="isp_name" type="name" comment="" />
+          <param name="isp_name" type="str" comment="" />
           <param name="raw_attrs" type="dict" comment="dates are gregorian" />
           <param name="attrs" type="dict" comment="dates are based on request date_type" />
         </item>
@@ -1344,7 +1344,7 @@
         <param name="group_name" type="str" comment="" />
         <param name="comment" type="str" comment="" />
         <param name="isp_id" type="int" comment="" />
-        <param name="isp_name" type="name" comment="" />
+        <param name="isp_name" type="str" comment="" />
         <param name="raw_attrs" type="dict" comment="dates are gregorian" />
         <param name="attrs" type="dict" comment="dates are based on request date_type" />
       </output>
@@ -1359,7 +1359,7 @@
         <param name="group_name" type="str" comment="" />
         <param name="comment" type="str" comment="" />
         <param name="isp_id" type="int" comment="" />
-        <param name="isp_name" type="name" comment="" />
+        <param name="isp_name" type="str" comment="" />
         <param name="raw_attrs" type="dict" comment="dates are gregorian" />
         <param name="attrs" type="dict" comment="dates are based on request date_type" />
       </output>
@@ -2800,7 +2800,7 @@
     </method>
     <method name="deleteNotificationProfile" auth_type="ADMIN" requires_perm="CHANGE NOTIFICATION" comment="">
       <input type="dict" comment="">
-        <param name="notification_profile_name" type="" comment="" />
+        <param name="notification_profile_name" type="str" comment="" />
       </input>
       <output type="null" />
     </method>
@@ -2917,7 +2917,7 @@
         <param name="unique_id" type="str" comment="" />
         <param name="callback_url" type="str" comment="" />
         <param name="attributes" type="dict" comment="you can put all the parameters you want here">
-          <param name="no_action" optional="true" type=""
+          <param name="no_action" optional="true" type="true_if_exists"
             comment="if you put this in attributes, we won't perform any action (credit / deposit / invoice) after verifying payment" />
         </param>
       </input>
@@ -3939,8 +3939,8 @@
 			<param name="seb_service_qos" type="str" comment="Sub service QOS name" />
 			<param name="total_credit" type="int" comment="Total credit" />
 			<param name="total_duration" type="int" comment="Total duration" />
-			<param name="total_in_bytes" type="" comment="Total in bytes" />
-			<param name="total_out_bytes" type="" comment="Total out bytes" />
+			<param name="total_in_bytes" type="int" comment="Total in bytes" />
+			<param name="total_out_bytes" type="int" comment="Total out bytes" />
 		  </item>
 		</param>
 	  </output>
@@ -4503,8 +4503,8 @@
           <param name="user_isp_names" type="list, str" multi_str="false" optional="true" comment="list of isp names, or string one isp name" />
           <param name="isp_names" type="list, str" multi_str="false" optional="true" comment="list of isp names, or string one isp name" />
         </param>
-        <param name="from" type="0" comment="start index, for pagination" />
-        <param name="to" type="1" comment="end index, for pagination" />
+        <param name="from" type="int" comment="start index, for pagination" />
+        <param name="to" type="int" comment="end index, for pagination" />
         <param name="sort_by" type="choice" comment="">
           <choice value="change_time" />
           <choice value="user_id" />
@@ -4603,8 +4603,8 @@
           <param name="group_name" type="list, str" multi_str="false" optional="true" comment="list of group names, or string of one group name" />
           <param name="isp_names" type="list, str" multi_str="false" optional="true" comment="list of isp names, or string one isp name" />
         </param>
-        <param name="from" type="0" comment="start index, for pagination" />
-        <param name="to" type="1" comment="end index, for pagination" />
+        <param name="from" type="int" comment="start index, for pagination" />
+        <param name="to" type="int" comment="end index, for pagination" />
         <param name="sort_by" type="choice" comment="">
           <choice value="change_time" />
           <choice value="user_id" />
@@ -4874,7 +4874,7 @@
           <choice value="months" />
           <choice value="days" />
           <choice value="hours" />
-          <choice value="minutes" />          
+          <choice value="minutes" />
         </param>
       </input>
       <output type="null" />
@@ -5635,16 +5635,16 @@
             <choice value="seconds" comment="" />
           </param>
           <param name="date_from_op" type="choice" comment="operation for start date">
-            <choice value="<" comment="less than" />
-            <choice value=">" comment="more than" />
-            <choice value="<=" comment="less equal" />
-            <choice value=">=" comment="more equal" />
+            <choice value="&lt;" comment="less than" />
+            <choice value="&gt;" comment="more than" />
+            <choice value="&lt;=" comment="less equal" />
+            <choice value="&gt;=" comment="more equal" />
           </param>
           <param name="date_to_op" type="choice" comment="operation for end date">
-            <choice value="<" comment="less than" />
-            <choice value=">" comment="more than" />
-            <choice value="<=" comment="less equal" />
-            <choice value=">=" comment="more equal" />
+            <choice value="&lt;" comment="less than" />
+            <choice value="&gt;" comment="more than" />
+            <choice value="&lt;=" comment="less equal" />
+            <choice value="&gt;=" comment="more equal" />
           </param>
         </value>
       </input>
@@ -5682,16 +5682,16 @@
             <choice value="seconds" comment="" />
           </param>
           <param name="date_from_op" type="choice" comment="operation for start date">
-            <choice value="<" comment="less than" />
-            <choice value=">" comment="more than" />
-            <choice value="<=" comment="less equal" />
-            <choice value=">=" comment="more equal" />
+            <choice value="&lt;" comment="less than" />
+            <choice value="&gt;" comment="more than" />
+            <choice value="&lt;=" comment="less equal" />
+            <choice value="&gt;=" comment="more equal" />
           </param>
           <param name="date_to_op" type="choice" comment="operation for end date">
-            <choice value="<" comment="less than" />
-            <choice value=">" comment="more than" />
-            <choice value="<=" comment="less equal" />
-            <choice value=">=" comment="more equal" />
+            <choice value="&lt;" comment="less than" />
+            <choice value="&gt;" comment="more than" />
+            <choice value="&lt;=" comment="less equal" />
+            <choice value="&gt;=" comment="more equal" />
           </param>
         </value>
       </input>
@@ -5729,16 +5729,16 @@
             <choice value="seconds" comment="" />
           </param>
           <param name="date_from_op" type="choice" comment="operation for start date">
-            <choice value="<" comment="less than" />
-            <choice value=">" comment="more than" />
-            <choice value="<=" comment="less equal" />
-            <choice value=">=" comment="more equal" />
+            <choice value="&lt;" comment="less than" />
+            <choice value="&gt;" comment="more than" />
+            <choice value="&lt;=" comment="less equal" />
+            <choice value="&gt;=" comment="more equal" />
           </param>
           <param name="date_to_op" type="choice" comment="operation for end date">
-            <choice value="<" comment="less than" />
-            <choice value=">" comment="more than" />
-            <choice value="<=" comment="less equal" />
-            <choice value=">=" comment="more equal" />
+            <choice value="&lt;" comment="less than" />
+            <choice value="&gt;" comment="more than" />
+            <choice value="&lt;=" comment="less equal" />
+            <choice value="&gt;=" comment="more equal" />
           </param>
         </value>
       </input>
@@ -5776,16 +5776,16 @@
             <choice value="seconds" comment="" />
           </param>
           <param name="date_from_op" type="choice" comment="operation for start date">
-            <choice value="<" comment="less than" />
-            <choice value=">" comment="more than" />
-            <choice value="<=" comment="less equal" />
-            <choice value=">=" comment="more equal" />
+            <choice value="&lt;" comment="less than" />
+            <choice value="&gt;" comment="more than" />
+            <choice value="&lt;=" comment="less equal" />
+            <choice value="&gt;=" comment="more equal" />
           </param>
           <param name="date_to_op" type="choice" comment="operation for end date">
-            <choice value="<" comment="less than" />
-            <choice value=">" comment="more than" />
-            <choice value="<=" comment="less equal" />
-            <choice value=">=" comment="more equal" />
+            <choice value="&lt;" comment="less than" />
+            <choice value="&gt;" comment="more than" />
+            <choice value="&lt;=" comment="less equal" />
+            <choice value="&gt;=" comment="more equal" />
           </param>
         </value>
       </input>
@@ -6242,7 +6242,7 @@
           <param name="time_periodic_accounting_monthly_reset" type="str_datetime" optional="true" comment="Monthly Time: Next Reset" />
           <param name="traffic_periodic_accounting_monthly" type="str" optional="true" comment="Monthly Traffic: Monthly Reset Type">
             <choice value="gregorian" />
-            <choice value="jalali" />            
+            <choice value="jalali" />
           </param>
           <param name="traffic_periodic_accounting_monthly_limit" type="str_int" optional="true" comment="Monthly Traffic: Monthly Traffic Limit" />
           <param name="traffic_periodic_accounting_monthly_usage" type="str_int" optional="true" comment="Monthly Traffic: This Period Usage" />
@@ -6298,7 +6298,7 @@
             <choice value="Hours" comment="" />
             <choice value="Days" comment="" />
             <choice value="Months" comment="1 month means 30 days" />
-            <choice value="Years" comment="1 month means 365 days" /> 
+            <choice value="Years" comment="1 month means 365 days" />
           </param>
           <param name="rel_exp_date_negative_credit" type="int" optional="true" requires_param="rel_exp_date_negative_credit_unit" comment="User Info: Exp Dates: Negative Credit Expiration Date: Negative Credit Relative Expiration Date" />
           <param name="rel_exp_date_negative_credit_unit" type="choice" optional="true" comment="User Info: Exp Dates: Negative Credit Expiration Date: Negative Credit Relative Expiration Date">
@@ -6617,7 +6617,7 @@
           <param name="time_periodic_accounting_monthly_reset" type="str_datetime" optional="true" comment="Monthly Time: Next Reset" />
           <param name="traffic_periodic_accounting_monthly" type="str" optional="true" comment="Monthly Traffic: Monthly Reset Type">
             <choice value="gregorian" />
-            <choice value="jalali" />            
+            <choice value="jalali" />
           </param>
           <param name="traffic_periodic_accounting_monthly_limit" type="str_int" optional="true" comment="Monthly Traffic: Monthly Traffic Limit" />
           <param name="traffic_periodic_accounting_monthly_usage" type="str_int" optional="true" comment="Monthly Traffic: This Period Usage" />
@@ -6919,7 +6919,7 @@
     </method>
     <method name="searchUser" auth_type="ADMIN" requires_perm="SEARCH USER" comment="">
       <input type="dict">
-        <param name="conds" type="dict" comment="">
+        <param name="conds" type="dict" comment="" />
           <param name="abs_exp_date_from" type="str_datetime, float" optional="true" requires_param="abs_exp_date_from_unit" comment="" />
           <param name="abs_exp_date_from_unit" type="choice" optional="true" requires_param="" comment="">
             <choice value="jalali" />
@@ -7266,7 +7266,7 @@
             <choice value="equals" comment="" />
           </param>
           <param name="ippool" type="list, str" optional="true" requires_param="" comment="list of ippool names, or string of one ippool name" />
-          <param name="is_online" type="bool" optional="true" comment="show online user if set to true, show offline user if set to false">
+          <param name="is_online" type="bool" optional="true" comment="show online user if set to true, show offline user if set to false" />
           <param name="online_status" type="str" optional="true" comment="show idle, failed and active users if you set to idle, failed or online">
           <param name="is_deposit_transferee" type="true_if_exists" optional="true" requires_param="" comment="" />
           <param name="is_deposit_transferer" type="true_if_exists" optional="true" requires_param="" comment="" />
@@ -7583,8 +7583,11 @@
       <output type="null" comment="" />
     </method>
     <method name="killMe" auth_type="NORMAL_USERNAME" comment="by user, disconnects selected instance">
-      <param name="unique_id_val" type="str" comment="Unique ID Value (for exmaple Port, Caller ID, etc)"/>
-      <param name="ras_ip" type="str" comment="RAS IPs" />
+      <input type="dict">
+        <param name="unique_id_val" type="str" comment="Unique ID Value (for exmaple Port, Caller ID, etc)"/>
+        <param name="ras_ip" type="str" comment="RAS IPs" />
+      </input>
+      <output type="null" />
     </method>
     <method name="getRemainingDurationAndBytes" auth_type="ADMIN" requires_perm="" comment="by admin">
       <input type="dict">
@@ -8263,7 +8266,7 @@
       <input type="dict">
         <param name="username" type="str" comment="" />
         <param name="amount" type="float" comment="" />
-        <param name="comment" type="comment" comment="" />
+        <param name="comment" type="str" comment="" />
       </input>
       <output type="null" comment="" />
     </method>
@@ -9219,7 +9222,7 @@
             <choice value="minutes" />
           </param>
           <param name="issue_date_to" type="str_datetime" optional="true" requires_param="issue_date_to_unit" />
-          <param name="issue_date_to_unit" type="" optional="true">
+          <param name="issue_date_to_unit" type="choice" optional="true">
             <choice value="jalali" />
             <choice value="gregorian" />
             <choice value="years" />
@@ -9291,7 +9294,7 @@
             <choice value="minutes" />
           </param>
           <param name="issue_date_to" type="str_datetime" optional="true" requires_param="issue_date_to_unit" />
-          <param name="issue_date_to_unit" type="" optional="true">
+          <param name="issue_date_to_unit" type="choice" optional="true">
             <choice value="jalali" />
             <choice value="gregorian" />
             <choice value="years" />
