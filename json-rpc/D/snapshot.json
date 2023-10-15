@@ -1,0 +1,164 @@
+{
+  "openrpc": "1.2.1",
+  "info": {
+    "version": "1.0.0",
+    "title": "IBSng: branch D: snapshot"
+  },
+  "methods": [
+    {
+      "name": "snapshot.getBWSnapShotForUserAjax",
+      "description": "by admin",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE REALTIME SNAPSHOTS",
+      "params": [
+        {
+          "name": "user_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          },
+          "optional": true
+        },
+        {
+          "name": "from",
+          "description": "",
+          "schema": {
+            "type": "string"
+          },
+          "optional": true
+        },
+        {
+          "name": "from_unit",
+          "description": "",
+          "schema": {
+            "type": "string"
+          },
+          "optional": true
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "snapshot.getBWSnapShotForUserAjax",
+      "description": "",
+      "auth_type": ["NORMAL_USER", "VOIP_USER"],
+      "params": [
+        {
+          "name": "from",
+          "description": "by user",
+          "schema": {
+            "type": "string"
+          },
+          "optional": true
+        },
+        {
+          "name": "from_unit",
+          "description": "",
+          "schema": {
+            "type": "string"
+          },
+          "optional": true
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "snapshot.getOnlinesSnapShot",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE ONLINE SNAPSHOTS",
+      "params": [
+        {
+          "name": "conds",
+          "description": "",
+          "schema": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "type",
+          "description": "",
+          "value": ["internet", "voip"]
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "snapshot.getBWSnapShot",
+      "description": "",
+      "auth_type": ["ADMIN", "NORMAL_USER", "VOIP_USER"],
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "snapshot.getGroupBWSnapShot",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "snapshot.getISPBWSnapShot",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "snapshot.getRasBWSnapShot",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    }
+  ]
+}

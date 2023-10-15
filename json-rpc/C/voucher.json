@@ -1,0 +1,714 @@
+{
+  "openrpc": "1.2.1",
+  "info": {
+    "version": "1.0.0",
+    "title": "IBSng: branch C: voucher"
+  },
+  "methods": [
+    {
+      "name": "voucher.searchVoucher",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE VOUCHER",
+      "params": [
+        {
+          "name": "conds",
+          "description": "",
+          "schema": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "from",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "to",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "sort_by",
+          "description": "",
+          "value": ["pin", "voucher_id"]
+        },
+        {
+          "name": "desc",
+          "description": "descending",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "total_rows",
+              "description": "number of total rows",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "report",
+              "description": "",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "title": "",
+                  "type": "dict"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "voucher.searchBatch",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE VOUCHER",
+      "params": [
+        {
+          "name": "conds",
+          "description": "",
+          "schema": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "from",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "to",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "sort_by",
+          "description": "",
+          "value": ["batch_id", "batch_name", "batch_credit"]
+        },
+        {
+          "name": "desc",
+          "description": "descending",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "total_rows",
+              "description": "number of total rows",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "report",
+              "description": "",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "title": "",
+                  "type": "dict"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "voucher.voucherRechargeUser",
+      "description": "by admin",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "USE VOUCHER ON USERS",
+      "params": [
+        {
+          "name": "voucher_pin",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "user_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "voucher credit",
+        "schema": {
+          "title": "",
+          "type": "number"
+        }
+      }
+    },
+    {
+      "name": "voucher.voucherRechargeUser",
+      "description": "user needs 'allow_recharge_by_voucher' flag",
+      "auth_type": ["NORMAL_USER", "VOIP_USER"],
+      "params": [
+        {
+          "name": "voucher_pin",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "voucher credit",
+        "schema": {
+          "title": "",
+          "type": "number"
+        }
+      }
+    },
+    {
+      "name": "voucher.voucherAddNewUser",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "USE VOUCHER ON USERS, ADD NEW USER",
+      "params": [
+        {
+          "name": "voucher_pin",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "isp_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "group_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "User ID of newly created user",
+        "schema": {
+          "title": "",
+          "type": "number"
+        }
+      }
+    },
+    {
+      "name": "voucher.getBatchVoucherAttrs",
+      "description": "admin needs 'SEE VOUCHER' permission, user needs 'allow_recharge_by_voucher' flag",
+      "auth_type": ["ADMIN", "NORMAL_USER", "VOIP_USER"],
+      "params": [
+        {
+          "name": "voucher_pin",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "voucher_id",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "voucher_pin",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "voucher_serial",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "voucher_is_used",
+              "description": "",
+              "schema": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "voucher_used_date",
+              "description": "datetime, ",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "voucher_user_id",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "batch_id",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "batch_name",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "batch_is_locked",
+              "description": "",
+              "schema": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "batch_credit",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "batch_can_create_user",
+              "description": "",
+              "schema": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "batch_can_recharge_user",
+              "description": "",
+              "schema": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "batch_change_target",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "batch_comment",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "batch_creation_date",
+              "description": "datetime, ",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "batch_isp_id",
+              "description": "int",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "batch_allow_use_by_children_isp",
+              "description": "",
+              "schema": {
+                "type": "boolean"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "voucher.voucherAddBatch",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE VOUCHER",
+      "params": [
+        {
+          "name": "batch_dict",
+          "description": "",
+          "schema": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "pin_prefix",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "pin_len",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "serial_prefix",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "serial_start",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "count",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "batch_id",
+        "schema": {
+          "title": "",
+          "type": "number"
+        }
+      }
+    },
+    {
+      "name": "voucher.voucherChangeBatchLockStatus",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE VOUCHER",
+      "params": [
+        {
+          "name": "batch_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "lock",
+          "description": "",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "voucher.voucherGetBatchByID",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE VOUCHER",
+      "params": [
+        {
+          "name": "batch_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "batch info dict",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "batch_id",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "batch_name",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "is_locked",
+              "description": "",
+              "schema": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "credit",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "can_recharge_user",
+              "description": "",
+              "schema": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "can_create_user",
+              "description": "",
+              "schema": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "change_target",
+              "description": "",
+              "value": ["credit", "deposit", "deposit_recharge"],
+              "value_comment": {
+                "credit": "Credit",
+                "deposit": "Renew Deposit",
+                "deposit_recharge": "Recharge Deposit"
+              }
+            },
+            {
+              "name": "isp_name",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "creation_date",
+              "description": "datetime, ",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "allow_use_by_children_isp",
+              "description": "",
+              "schema": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "comment",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "voucher.getVoucherByID",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE VOUCHER",
+      "params": [
+        {
+          "name": "voucher_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "voucher_id",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "batch_id",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "pin",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "serial",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "is_used",
+              "description": "",
+              "schema": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "user_id",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "used_date",
+              "description": "datetime, ",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "voucher.voucherSearchBatch",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE VOUCHER",
+      "params": [
+        {
+          "name": "conds",
+          "description": "",
+          "schema": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "from",
+          "description": "for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "to",
+          "description": "for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "sort_by",
+          "value": ["batch_id", "batch_name", "credit"]
+        },
+        {
+          "name": "desc",
+          "description": "",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "total_rows",
+              "description": "total number of results",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "report",
+              "description": "",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "title": "",
+                  "type": "dict"
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

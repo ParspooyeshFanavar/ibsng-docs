@@ -1,0 +1,175 @@
+{
+  "openrpc": "1.2.1",
+  "info": {
+    "version": "1.0.0",
+    "title": "IBSng: branch D: user_custom_field"
+  },
+  "methods": [
+    {
+      "name": "user_custom_field.addNewCustomField",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE USER CUSTOM FIELDS",
+      "params": [
+        {
+          "name": "name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "description",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "comment",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "value_type",
+          "description": "",
+          "value": ["string", "int", "float"]
+        },
+        {
+          "name": "interface_type",
+          "description": "",
+          "value": ["text_field", "single_select", "radio_button", "checkbox"]
+        },
+        {
+          "name": "allowable_values",
+          "description": "type of items depends on value_type param",
+          "schema": {
+            "type": "array"
+          }
+        },
+        {
+          "name": "mandatory",
+          "description": "",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "user_custom_field.updateCustomField",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE USER CUSTOM FIELDS",
+      "params": [
+        {
+          "name": "custom_field_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "description",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "comment",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "value_type",
+          "description": "",
+          "value": ["string", "int", "float"]
+        },
+        {
+          "name": "interface_type",
+          "description": "",
+          "value": ["text_field", "single_select", "radio_button", "checkbox"]
+        },
+        {
+          "name": "allowable_values",
+          "description": "type of items depends on value_type param",
+          "schema": {
+            "type": "array"
+          }
+        },
+        {
+          "name": "mandatory",
+          "description": "",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "user_custom_field.deleteCustomField",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE USER CUSTOM FIELDS",
+      "params": [
+        {
+          "name": "name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "user_custom_field.getAllCustomFields",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object"
+        }
+      }
+    }
+  ]
+}

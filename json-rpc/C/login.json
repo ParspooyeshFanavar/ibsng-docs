@@ -1,0 +1,221 @@
+{
+  "openrpc": "1.2.1",
+  "info": {
+    "version": "1.0.0",
+    "title": "IBSng: branch C: login"
+  },
+  "methods": [
+    {
+      "name": "login.webLogin",
+      "description": "added in C_dev_326",
+      "auth_type": ["ANONYMOUS"],
+      "params": [
+        {
+          "name": "login_auth_type",
+          "description": "",
+          "value": ["ADMIN", "NORMAL_USER", "VOIP_USER"]
+        },
+        {
+          "name": "login_auth_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "login_auth_pass",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "auth_remoteaddr",
+          "description": "Remote IP of requester(admin/user)",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "session_id",
+              "description": "Session ID",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "auth_id",
+              "description": "username of admin/user",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "auth_type",
+              "description": "",
+              "value": ["ADMIN", "NORMAL_USER", "VOIP_USER"]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "login.login",
+      "description": "login and return Session ID",
+      "auth_type": ["ANONYMOUS"],
+      "params": [
+        {
+          "name": "login_auth_type",
+          "description": "",
+          "value": ["ADMIN", "NORMAL_USER", "VOIP_USER"]
+        },
+        {
+          "name": "login_auth_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "login_auth_pass",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "create_session",
+          "description": "give true",
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "auth_remoteaddr",
+          "description": "Remote IP of requester(admin/user)",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "Session ID",
+        "schema": {
+          "title": "",
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "login.login",
+      "description": "login without generating session",
+      "auth_type": ["ANONYMOUS"],
+      "params": [
+        {
+          "name": "login_auth_type",
+          "description": "",
+          "value": ["ADMIN", "NORMAL_USER", "VOIP_USER"]
+        },
+        {
+          "name": "login_auth_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "login_auth_pass",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "returns true",
+        "schema": {
+          "title": "",
+          "type": "boolean"
+        }
+      }
+    },
+    {
+      "name": "login.searchAdminLoginHistory",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "params": [
+        {
+          "name": "conds",
+          "description": "",
+          "schema": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "_from",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "to",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "sort_by",
+          "description": "",
+          "value": ["admin_login_history_id", "login_date"]
+        },
+        {
+          "name": "desc",
+          "description": "descending",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "total_rows",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "report",
+              "description": "",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "title": "",
+                  "type": "dict"
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

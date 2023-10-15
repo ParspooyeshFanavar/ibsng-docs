@@ -1518,7 +1518,7 @@
     </method>
   </handler>
   <handler name="login" comment="">
-    <method name="webLogin" auth_type="ADMIN, NORMAL_USER, VOIP_USER" comment="added in C_dev_326">
+    <method name="webLogin" auth_type="ANONYMOUS" comment="added in C_dev_326">
       <input type="dict">
         <param name="login_auth_type" type="choice" comment="">
           <choice value="ADMIN" />
@@ -1539,7 +1539,7 @@
         </param>
       </output>
     </method>
-    <method name="login" auth_type="ADMIN, NORMAL_USER, VOIP_USER" comment="login and return Session ID">
+    <method name="login" auth_type="ANONYMOUS" comment="login and return Session ID">
       <input type="dict">
         <param name="login_auth_type" type="choice" comment="">
           <choice value="ADMIN" />
@@ -1553,7 +1553,7 @@
       </input>
       <output type="str" comment="Session ID" />
     </method>
-    <method name="login" auth_type="ADMIN, NORMAL_USER, VOIP_USER" comment="login without generating session">
+    <method name="login" auth_type="ANONYMOUS" comment="login without generating session">
       <input type="dict">
         <param name="login_auth_type" type="choice" comment="">
           <choice value="ADMIN" />

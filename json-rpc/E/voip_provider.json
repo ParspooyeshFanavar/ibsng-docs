@@ -1,0 +1,39 @@
+{
+  "openrpc": "1.2.1",
+  "info": {
+    "version": "1.0.0",
+    "title": "IBSng: branch E: voip_provider"
+  },
+  "methods": [
+    {
+      "name": "voip_provider.listRoutingProfiles",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE VOIP PROVIDER",
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "list of profile names",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "voip_provider.listVoIPProviders",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE VOIP PROVIDER",
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "list of provider names",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    }
+  ]
+}

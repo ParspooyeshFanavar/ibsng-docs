@@ -1,0 +1,53 @@
+{
+  "openrpc": "1.2.1",
+  "info": {
+    "version": "1.0.0",
+    "title": "IBSng: branch E: session"
+  },
+  "methods": [
+    {
+      "name": "session.expireSession",
+      "description": "",
+      "auth_type": ["ADMIN", "NORMAL_USER", "VOIP_USER"],
+      "params": [
+        {
+          "name": "session_id",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "session.getAuthData",
+      "description": "",
+      "auth_type": ["ADMIN", "NORMAL_USER", "VOIP_USER"],
+      "params": [
+        {
+          "name": "auth_session",
+          "description": "session_id",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    }
+  ]
+}

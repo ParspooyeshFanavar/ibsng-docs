@@ -1,0 +1,293 @@
+{
+  "openrpc": "1.2.1",
+  "info": {
+    "version": "1.0.0",
+    "title": "IBSng: branch D: extra_charge"
+  },
+  "methods": [
+    {
+      "name": "extra_charge.getExtraChargeProfileNames",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE EXTRA CHARGE",
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "list of profile names",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "extra_charge.addExtraChargeProfile",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE EXTRA CHARGE",
+      "params": [
+        {
+          "name": "profile_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "comment",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "effective_hour",
+          "description": "format: HH:MM",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "rules",
+          "description": "",
+          "schema": {
+            "type": "array",
+            "items": {
+              "title": "",
+              "type": "dict"
+            }
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "extra_charge_profile_id",
+        "schema": {
+          "title": "",
+          "type": "number"
+        }
+      }
+    },
+    {
+      "name": "extra_charge.updateExtraChargeProfile",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE EXTRA CHARGE",
+      "params": [
+        {
+          "name": "profile_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "profile_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "comment",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "effective_hour",
+          "description": "format: HH:MM",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "rules",
+          "description": "",
+          "schema": {
+            "type": "array",
+            "items": {
+              "title": "",
+              "type": "dict"
+            }
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "extra_charge.deleteExtraChargeProfile",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE EXTRA CHARGE",
+      "params": [
+        {
+          "name": "profile_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "extra_charge.getExtraChargeProfiles",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE EXTRA CHARGE",
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "extra_charge.getExtraChargeProfileByName",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE EXTRA CHARGE",
+      "params": [
+        {
+          "name": "profile_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "profile_id",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "profile_name",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "comment",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "effective_hour",
+              "description": "format: HH:MM",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "rules",
+              "description": "",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "title": "",
+                  "type": "dict"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "extra_charge.getExtraChargeProfileByID",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE EXTRA CHARGE",
+      "params": [
+        {
+          "name": "profile_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "profile_id",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "profile_name",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "comment",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "effective_hour",
+              "description": "format: HH:MM",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "rules",
+              "description": "",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "title": "",
+                  "type": "dict"
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

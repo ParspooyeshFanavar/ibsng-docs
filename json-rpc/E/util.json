@@ -1,0 +1,573 @@
+{
+  "openrpc": "1.2.1",
+  "info": {
+    "version": "1.0.0",
+    "title": "IBSng: branch E: util"
+  },
+  "methods": [
+    {
+      "name": "util.multiStrGetAll",
+      "description": "",
+      "auth_type": ["ADMIN", "NORMAL_USER", "VOIP_USER"],
+      "params": [
+        {
+          "name": "str",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "left_pad",
+          "description": "",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "util.runDebugCode",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "GOD",
+      "params": [
+        {
+          "name": "command",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "boolean"
+        },
+        "value": ["true"]
+      }
+    },
+    {
+      "name": "util.getStartOfMonth",
+      "description": "returns date string of the begining of current month (jalali / gregorian month, depending of input date_type)",
+      "auth_type": ["ADMIN", "NORMAL_USER", "VOIP_USER"],
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "date string with format '%Y-%m-%d'",
+        "schema": {
+          "title": "",
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "util.getNow",
+      "description": "",
+      "auth_type": ["ADMIN", "NORMAL_USER", "VOIP_USER"],
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "formatted datetime of current time",
+        "schema": {
+          "title": "",
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "util.afeGetUserInfo",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "AFE REMOTE ADMIN",
+      "params": [
+        {
+          "name": "username",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "password",
+              "description": "internet password",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "group",
+              "description": "group name",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "credit",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "util.afeGetAllGroups",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "AFE REMOTE ADMIN",
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "list of group names",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "util.afeChangeUserCredit",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "AFE REMOTE ADMIN",
+      "params": [
+        {
+          "name": "username",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "amount",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "comment",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "util.getUserIDForIP",
+      "description": "returns user id for an online user with given remote ip",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE ONLINE USERS",
+      "params": [
+        {
+          "name": "ip",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "a user id, or 'No User Found'",
+        "schema": {
+          "title": "",
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "util.getUsernameForIP",
+      "description": "returns internet username for an online user with given remote ip",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE ONLINE USERS",
+      "params": [
+        {
+          "name": "ip",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "a username, or 'No User Found'",
+        "schema": {
+          "title": "",
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "util.createSessionForFailedUserByIP",
+      "description": "",
+      "auth_type": ["ANONYMOUS"],
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "Session ID",
+        "schema": {
+          "title": "",
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "util.createSessionForUserByIP",
+      "description": "",
+      "auth_type": ["ANONYMOUS"],
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "Session ID",
+        "schema": {
+          "title": "",
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "util.getErrorForFailedUser",
+      "description": "returns error_key and error_description for failed user that is calling this handler                raises an error if session for user is not found",
+      "auth_type": ["ANONYMOUS"],
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "util.kickFailedUserByIP",
+      "description": "Force disconnect a failed user by using his IP address (method called by user himself)",
+      "auth_type": ["ANONYMOUS"],
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "returns true if online user was found and disconnected, returns false otherwise",
+        "schema": {
+          "title": "",
+          "type": "boolean"
+        }
+      }
+    },
+    {
+      "name": "util.kickIDLEUsersByIP",
+      "description": "",
+      "auth_type": ["ANONYMOUS"],
+      "params": [
+        {
+          "name": "idle_ip_list",
+          "description": "list of IP string",
+          "schema": {
+            "type": "array"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "util.echo",
+      "description": "returns same the input string",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "GOD",
+      "params": [
+        {
+          "name": "echo",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "the same value of 'echo' param",
+        "schema": {
+          "title": "",
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "util.getSessionISPID",
+      "description": "use after login into user/admin panel",
+      "auth_type": ["ADMIN", "NORMAL_USER", "VOIP_USER"],
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "ISP ID for Page Style to show to this user/admin",
+        "schema": {
+          "title": "",
+          "type": "number"
+        }
+      }
+    },
+    {
+      "name": "util.getSessionISPID",
+      "description": "use in login page of user/admin panel",
+      "auth_type": ["ANONYMOUS"],
+      "params": [
+        {
+          "name": "web_domain",
+          "description": "domain of user/admin panel page that user has opened",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "ISP ID for Page Style to show to this user/admin",
+        "schema": {
+          "title": "",
+          "type": "number"
+        }
+      }
+    },
+    {
+      "name": "util.getISPsPageStyleRevision",
+      "description": "returns latest Revision Number of ISP Page Style",
+      "auth_type": ["ANONYMOUS"],
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "Revision Number of ISP Page Style",
+        "schema": {
+          "title": "",
+          "type": "number"
+        }
+      }
+    },
+    {
+      "name": "util.getSessionPageStyle",
+      "description": "",
+      "auth_type": ["ADMIN", "NORMAL_USER", "VOIP_USER", "ANONYMOUS"],
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "header_logo_ext",
+              "description": "header logo file extension, for example 'gif'",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "header_logo_contents",
+              "description": "base64-encoded data of header logo image",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "header_bg_color",
+              "description": "header background color, in html color format, for example 'E0DEDE'",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "header_text_color",
+              "description": "header text color, html color format, for example 'E0DEDE'",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "footer_logo_ext",
+              "description": "footer logo file extension, for example 'gif'",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "footer_logo_contents",
+              "description": "base64-encoded data of footer logo image",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "footer_bg_color",
+              "description": "footer background color, in html color format, for example 'E0DEDE'",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "footer_text_color",
+              "description": "footer text color, in html color format, for example 'E0DEDE'",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "footer_msg",
+              "description": "base64-encoded string of footer message",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "util.getDRBDStatus",
+      "description": "return status of DRBD",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "GOD",
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "see http://www.drbd.org/en/doc/users-guide-83/ch-admin#s-drbd-overview",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "util.getSavedReportList",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "util.deleteSavedReport",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "params": [
+        {
+          "name": "report_auth",
+          "description": "admin username",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "report_type",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "report_date",
+          "description": "format YYYYMMDD",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "report_status",
+          "description": "",
+          "value": ["started", "finished"]
+        },
+        {
+          "name": "report_format",
+          "description": "",
+          "value": ["csv", "pdf"]
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "value": ["true"]
+      }
+    },
+    {
+      "name": "util.version",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "return version,tag,branch",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "current_tag",
+              "description": "current tag",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "version",
+              "description": "version",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "branch",
+              "description": "branch",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

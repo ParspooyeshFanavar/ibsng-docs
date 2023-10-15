@@ -1,0 +1,373 @@
+{
+  "openrpc": "1.2.1",
+  "info": {
+    "version": "1.0.0",
+    "title": "IBSng: branch E: import_file"
+  },
+  "methods": [
+    {
+      "name": "import_file.getLastSequenceValue",
+      "description": "see the last sequence of customer ID",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "ADD CUSTOMER",
+      "params": [
+        {
+          "name": "sequence_type",
+          "description": "can get [CUSTOMER, USER, USER_BALANCE]",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "customer",
+              "description": "last sequence of customer id if sequence_type equal CUSTOMER",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "user",
+              "description": "last sequence of user id if sequence_type equal USER",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "user_balance",
+              "description": "last sequence of user_balance id if sequence_type equal USER_BALANCE",
+              "schema": {
+                "type": "number"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "import_file.uploadImportFile",
+      "description": "upload the excel or csv file",
+      "auth_type": ["ADMIN"],
+      "params": [
+        {
+          "name": "file_base64",
+          "description": "convert to Base64 file, excel or csv",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "mime_type",
+          "description": "set mime type of file,  [csv, xlsx]",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "section",
+          "description": "set the section for upload file [CUSTOMER, USER, USER_BALANCE]",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "record_file_id",
+              "description": "return the id of generate of import_files table",
+              "schema": {
+                "type": "number"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "import_file.getUploadedFileByAdmin",
+      "description": "get the list of file that uploaded by admin",
+      "auth_type": ["ADMIN"],
+      "params": [
+        {
+          "name": "section",
+          "description": "set the section for upload file [CUSTOMER, USER, USER_BALANCE]",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "admin_user_name",
+              "description": "username of admin",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "description",
+              "description": "description when create record",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "admin_id",
+              "description": "id of admin",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "success_count",
+              "description": "number of data success full transfer",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "error_count",
+              "description": "number of data error transfer",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "import_file_id",
+              "description": "id of import_files table that inserted record",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "deleted_at",
+              "description": "datetime, date time of delete data uploaded",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "section",
+              "description": "set the section for upload file [CUSTOMER, USER, USER_BALANCE]",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "modified_at",
+              "description": "datetime, date time of change in recorde in import_files row",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "status_import",
+              "description": "status of import files [PENDING, RUNNING, DONE, STOPPED, ERROR]",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "total_row",
+              "description": "total of rows that in file uploaded",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "created_at",
+              "description": "datetime, date time of create recorde",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "remote_ip",
+              "description": "ip of admin that upload file",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "import_file.startImport",
+      "description": "for start import data that uploaded in last api",
+      "auth_type": ["ADMIN"],
+      "params": [
+        {
+          "name": "file_import_id",
+          "description": "send id of recorde of import_files table that s",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "section",
+          "description": "set the section for upload file [CUSTOMER, USER, USER_BALANCE]",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "import_file.getReportOfImportFile",
+      "description": "get the report of import files for every section [CUSTOMER, USER, USER_BALANCE] ",
+      "auth_type": ["ADMIN"],
+      "params": [
+        {
+          "name": "file_import_id",
+          "description": "send id of recorde of import_files table that s",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "section",
+          "description": "set the section for upload file [CUSTOMER, USER, USER_BALANCE]",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "phone_number",
+              "description": "phone number",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "comment",
+              "description": "comment",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "uid",
+              "description": "uid",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "success",
+              "description": "if f means have error else get t",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "created_at",
+              "description": "datetime, date time of created recorde",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "mobile_number",
+              "description": "mobile number",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "import_file_id",
+              "description": "id of recorde in import_files",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "address",
+              "description": "address",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "message_error",
+              "description": "if have message fill this",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "isp_name",
+              "description": "ISP name",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "customer_id",
+              "description": "customer id",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "email",
+              "description": "email",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "customer_name",
+              "description": "name of customer",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "row_number",
+              "description": "id of recorde ",
+              "schema": {
+                "type": "number"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

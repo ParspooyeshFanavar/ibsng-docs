@@ -1,0 +1,292 @@
+{
+  "openrpc": "1.2.1",
+  "info": {
+    "version": "1.0.0",
+    "title": "IBSng: branch C: telephony_support"
+  },
+  "methods": [
+    {
+      "name": "telephony_support.callerIDAuthenticate",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "TELEPHONY SUPPORT",
+      "params": [
+        {
+          "name": "caller_id",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "telephony_support.authenticate",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "TELEPHONY SUPPORT",
+      "params": [
+        {
+          "name": "auth_by",
+          "description": "",
+          "value": [
+            "user_id",
+            "serial",
+            "voip_username",
+            "internet_username",
+            "phone"
+          ]
+        },
+        {
+          "name": "auth_id",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "telephony_support.getCurrentCredit",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "TELEPHONY SUPPORT",
+      "params": [
+        {
+          "name": "user_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "credit",
+        "schema": {
+          "title": "",
+          "type": "number"
+        }
+      }
+    },
+    {
+      "name": "telephony_support.getRemainingByteDuration",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "TELEPHONY SUPPORT",
+      "params": [
+        {
+          "name": "user_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "telephony_support.getNearestExpDate",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "TELEPHONY SUPPORT",
+      "params": [
+        {
+          "name": "user_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "expiration date",
+        "schema": {
+          "title": "",
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "telephony_support.getFailureReason",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "TELEPHONY SUPPORT",
+      "params": [
+        {
+          "name": "user_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "value": [
+          "0",
+          "900",
+          "901",
+          "902",
+          "903",
+          "904",
+          "905",
+          "906",
+          "907",
+          "908",
+          "909",
+          "910",
+          "911",
+          "912",
+          "913",
+          "914",
+          "915",
+          "916",
+          "917",
+          "918",
+          "919",
+          "920"
+        ]
+      }
+    },
+    {
+      "name": "telephony_support.getLastConnection",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "TELEPHONY SUPPORT",
+      "params": [
+        {
+          "name": "user_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "length=0 if there is no connection",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "telephony_support.recharge",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "TELEPHONY SUPPORT",
+      "params": [
+        {
+          "name": "user_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "pin",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "increased credit",
+        "schema": {
+          "title": "",
+          "type": "number"
+        }
+      }
+    },
+    {
+      "name": "telephony_support.checkInternetPassword",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "TELEPHONY SUPPORT",
+      "params": [
+        {
+          "name": "user_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "internet_password",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "true if password is correct, false otherwise",
+        "schema": {
+          "title": "",
+          "type": "boolean"
+        }
+      }
+    },
+    {
+      "name": "telephony_support.changeInternetPassword",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "TELEPHONY SUPPORT",
+      "params": [
+        {
+          "name": "user_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "new_internet_password",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "boolean"
+        },
+        "value": ["true"]
+      }
+    }
+  ]
+}

@@ -1,0 +1,1130 @@
+{
+  "openrpc": "1.2.1",
+  "info": {
+    "version": "1.0.0",
+    "title": "IBSng: branch C: bw"
+  },
+  "methods": [
+    {
+      "name": "bw.addInterface",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE BANDWIDTH MANAGER",
+      "params": [
+        {
+          "name": "hostname",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "interface_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "comment",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "host_type",
+          "description": "",
+          "value": ["Linux", "Mikrotik"]
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "bw.addNode",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE BANDWIDTH MANAGER",
+      "params": [
+        {
+          "name": "hostname",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "interface_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "parent_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "rate_kbits",
+          "description": "kilo bits",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "ceil_kbits",
+          "description": "kilo bits",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "priority",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "bw.addLeaf",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE BANDWIDTH MANAGER",
+      "params": [
+        {
+          "name": "leaf_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "parent_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "default_rate_kbits",
+          "description": "kilo bits",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "default_ceil_kbits",
+          "description": "kilo bits",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "total_rate_kbits",
+          "description": "kilo bits",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "total_ceil_kbits",
+          "description": "kilo bits",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "default_priority",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "total_priority",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "bw.addLeafService",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE BANDWIDTH MANAGER",
+      "params": [
+        {
+          "name": "leaf_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "dst_ip",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "protocol",
+          "description": "",
+          "value": ["tcp", "udp", "icmp", "ip"]
+        },
+        {
+          "name": "filter",
+          "description": "format: 'sport COMMA_SEPARATED_PORTS' or 'dport COMMA_SEPARATED_PORTS'",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "rate_kbits",
+          "description": "kilo bit",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "ceil_kbits",
+          "description": "kilo bit",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "priority",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "bw.getInterfaces",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE BANDWIDTH MANAGER",
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "bw.getNodeInfo",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE BANDWIDTH MANAGER",
+      "params": [
+        {
+          "name": "node_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "interface_id",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "interface_name",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "hostname",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "node_id",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "rate_kbits",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "ceil_kbits",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "priority",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "description",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "pkts",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "bytes",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "rate",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "bw.getLeafInfo",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE BANDWIDTH MANAGER",
+      "params": [
+        {
+          "name": "leaf_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "leaf_id",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "leaf_name",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "parent_id",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "interface_id",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "interface_name",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "hostname",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "total_rate_kbits",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "total_ceil_kbits",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "default_rate_kbits",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "default_ceil_kbits",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "default_priority",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "total_priority",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "services",
+              "description": "",
+              "schema": {
+                "type": "array"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "bw.getTree",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE BANDWIDTH MANAGER",
+      "params": [
+        {
+          "name": "hostname",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "interface_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "tree",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "bw.delLeafService",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE BANDWIDTH MANAGER",
+      "params": [
+        {
+          "name": "leaf_service_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "leaf_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "bw.delNode",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE BANDWIDTH MANAGER",
+      "params": [
+        {
+          "name": "node_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "bw.getAllLeafNames",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE CHARGE",
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "list of leaf names",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "bw.delLeaf",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE BANDWIDTH MANAGER",
+      "params": [
+        {
+          "name": "leaf_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "bw.delInterface",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE BANDWIDTH MANAGER",
+      "params": [
+        {
+          "name": "hostname",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "interface_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "bw.updateInterface",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE BANDWIDTH MANAGER",
+      "params": [
+        {
+          "name": "interface_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "hostname",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "interface_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "comment",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "host_type",
+          "description": "",
+          "value": ["Linux", "Mikrotik"]
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "bw.updateNode",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE BANDWIDTH MANAGER",
+      "params": [
+        {
+          "name": "node_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "rate_kbits",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "ceil_kbits",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "priority",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "bw.updateLeaf",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE BANDWIDTH MANAGER",
+      "params": [
+        {
+          "name": "leaf_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "leaf_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "default_rate_kbits",
+          "description": "kilo bits",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "default_ceil_kbits",
+          "description": "kilo bits",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "total_rate_kbits",
+          "description": "kilo bits",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "total_ceil_kbits",
+          "description": "kilo bits",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "default_priority",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "total_priority",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "bw.updateLeafService",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE BANDWIDTH MANAGER",
+      "params": [
+        {
+          "name": "leaf_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "leaf_service_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "dst_ip",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "protocol",
+          "description": "",
+          "value": ["tcp", "udp", "icmp", "ip"]
+        },
+        {
+          "name": "filter",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "rate_kbits",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "ceil_kbits",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "priority",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "bw.addBwStaticIP",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE BANDWIDTH MANAGER",
+      "params": [
+        {
+          "name": "ip_addr",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "tx_leaf_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "rx_leaf_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "bw.updateBwStaticIP",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE BANDWIDTH MANAGER",
+      "params": [
+        {
+          "name": "static_ip_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "ip_addr",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "tx_leaf_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "rx_leaf_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "bw.delBwStaticIP",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE BANDWIDTH MANAGER",
+      "params": [
+        {
+          "name": "ip_addr",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "bw.getAllBwStaticIPs",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE BANDWIDTH MANAGER",
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "list of IPs",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "bw.getBwStaticIPInfo",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE BANDWIDTH MANAGER",
+      "params": [
+        {
+          "name": "ip_addr",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "static_ip_id",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "ip",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "tx_leaf_id",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "tx_leaf_name",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "rx_leaf_id",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "rx_leaf_name",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "bw.getActiveLeaves",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE BANDWIDTH MANAGER",
+      "params": [
+        {
+          "name": "order_by",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "desc",
+          "description": "descending",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "bw.getLeafCharges",
+      "description": "return a list of charge names that given leaf is used in",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE BANDWIDTH MANAGER",
+      "params": [
+        {
+          "name": "leaf_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "list of charge names",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "bw.getRealHostInterfaces",
+      "description": "Returns a list of interfaces install on given hostname",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE BANDWIDTH MANAGER",
+      "params": [
+        {
+          "name": "hostname",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "host_type",
+          "description": "",
+          "value": ["Linux", "Mikrotik"]
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "list of interfaces",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    }
+  ]
+}

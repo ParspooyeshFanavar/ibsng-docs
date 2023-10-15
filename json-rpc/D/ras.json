@@ -1,0 +1,518 @@
+{
+  "openrpc": "1.2.1",
+  "info": {
+    "version": "1.0.0",
+    "title": "IBSng: branch D: ras"
+  },
+  "methods": [
+    {
+      "name": "ras.addNewRas",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE RAS",
+      "params": [
+        {
+          "name": "ras_ip",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "ras_type",
+          "description": "",
+          "value": [
+            "ACS2",
+            "Cisco-IN",
+            "CiscoVPDN",
+            "Generic",
+            "Huawei",
+            "Mikrotik",
+            "Ruckus",
+            "ZTE"
+          ]
+        },
+        {
+          "name": "radius_secret",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "ras_description",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "comment",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "Ras ID",
+        "schema": {
+          "title": "",
+          "type": "number"
+        }
+      }
+    },
+    {
+      "name": "ras.getRasInfo",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "GET RAS INFORMATION",
+      "params": [
+        {
+          "name": "ras_ip",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "ras_ip",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "ras_id",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "ras_description",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "radius_secret",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "comment",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "ras_type",
+              "description": "",
+              "value": [
+                "ACS2",
+                "Cisco-IN",
+                "CiscoVPDN",
+                "Generic",
+                "Huawei",
+                "Mikrotik",
+                "Ruckus",
+                "ZTE"
+              ]
+            },
+            {
+              "name": "attrs",
+              "description": "",
+              "schema": {
+                "type": "object"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "ras.getActiveRasIPs",
+      "description": "All active RASs, without type filter",
+      "auth_type": ["ADMIN"],
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "list of Ras IPs",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "ras.getActiveRasIPs",
+      "description": "Active RASs with specific type",
+      "auth_type": ["ADMIN"],
+      "params": [
+        {
+          "name": "type_filter",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "list of Ras IPs",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "ras.getRasDescriptions",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "ras.getInActiveRases",
+      "description": "List of inactive RAS IPs",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "LIST RAS",
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "list of RAS IPs",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "ras.getRasTypes",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "GET RAS INFORMATION",
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "list of RAS types",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "ras.getRasAttributes",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "GET RAS INFORMATION",
+      "params": [
+        {
+          "name": "ras_ip",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "RAS Attributes",
+        "schema": {
+          "title": "",
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "ras.updateRasInfo",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "params": [
+        {
+          "name": "ras_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "ras_ip",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "ras_type",
+          "description": "",
+          "value": [
+            "ACS2",
+            "Cisco-IN",
+            "CiscoVPDN",
+            "Generic",
+            "Huawei",
+            "Mikrotik",
+            "Ruckus",
+            "ZTE"
+          ]
+        },
+        {
+          "name": "radius_secret",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "ras_description",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "comment",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "ras.updateAttributes",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE RAS",
+      "params": [
+        {
+          "name": "ras_ip",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "attrs",
+          "description": "",
+          "schema": {
+            "type": "object"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "ras.resetAttributes",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE RAS",
+      "params": [
+        {
+          "name": "ras_ip",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "ras.deActiveRas",
+      "description": "Deactivate RAS",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE RAS",
+      "params": [
+        {
+          "name": "ras_ip",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "ras.deleteRas",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE RAS",
+      "params": [
+        {
+          "name": "ras_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "ras.reActiveRas",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE RAS",
+      "params": [
+        {
+          "name": "ras_ip",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "ras.getRasIPpools",
+      "description": "Returns a sorted list of IPPool names for a RAS",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "GET RAS INFORMATION",
+      "params": [
+        {
+          "name": "ras_ip",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "list of IPPool names",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "ras.addIPpoolToRas",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "params": [
+        {
+          "name": "ras_ip",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "ippool_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "ras.delIPpoolFromRas",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "params": [
+        {
+          "name": "ras_ip",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "ippool_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    }
+  ]
+}

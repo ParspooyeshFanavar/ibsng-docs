@@ -1,0 +1,534 @@
+{
+  "openrpc": "1.2.1",
+  "info": {
+    "version": "1.0.0",
+    "title": "IBSng: branch C: admin"
+  },
+  "methods": [
+    {
+      "name": "admin.addNewAdmin",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "ADD NEW ADMIN",
+      "params": [
+        {
+          "name": "admin_username",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "admin_password",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "admin_isp_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "email",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "comment",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "admin_has_otp",
+          "description": "",
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "admin_request_limit",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "Admin ID",
+        "schema": {
+          "title": "",
+          "type": "number"
+        }
+      }
+    },
+    {
+      "name": "admin.getAdminInfo",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "params": [
+        {
+          "name": "admin_username",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "admin_id",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "username",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "name",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "email",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "comment",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "isp_name",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "creator_admin_username",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "locked",
+              "description": "",
+              "schema": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "last_request_ip",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "last_activity",
+              "description": "Epoch Time of admin's last activity",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "online_status",
+              "description": "true if online, false if offline",
+              "schema": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "admin_has_otp",
+              "description": "",
+              "schema": {
+                "type": "boolean"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "admin.getAdminISPID",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "params": [
+        {
+          "name": "admin_username",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "isp_id",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "admin.changePassword",
+      "description": "No need to permission if admin_username is the same as requester admin",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE ADMIN PASSWORD",
+      "params": [
+        {
+          "name": "admin_username",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "new_password",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "admin.getAllAdminUsernames",
+      "description": "All ISPs",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE ADMIN INFO",
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "List of admin usernames",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "admin.getAllAdminUsernames",
+      "description": "Specific ISP",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE ADMIN INFO",
+      "params": [
+        {
+          "name": "isp_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "List of admin usernames",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "admin.getAllAdminInfos",
+      "description": "only returns admins that requester admin has access to.         Added in tag 320",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE ADMIN INFO",
+      "params": [
+        {
+          "name": "isp_name",
+          "description": "admins of specific ISP",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "List of admin informations",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "admin.updateAdminInfo",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE ADMIN INFO",
+      "params": [
+        {
+          "name": "admin_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "admin_username",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "admin_isp_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "admin_locked",
+          "description": "",
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "email",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "comment",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "admin_has_otp",
+          "description": "",
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "admin_request_limit",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "admin.deleteAdmin",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "DELETE ADMIN",
+      "params": [
+        {
+          "name": "admin_username",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "admin.generateOTP",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE ADMIN PASSWORD",
+      "params": [
+        {
+          "name": "pass_len",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "pass_count",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "admin_username",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "List of passwords",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "admin.searchOTPs",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEARCH OTP ADMINS",
+      "params": [
+        {
+          "name": "conds",
+          "description": "",
+          "schema": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "_from",
+          "description": "page start index",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "to",
+          "description": "page end index",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "sort_by",
+          "description": "",
+          "value": ["otp_id", "creation_date", "used_date"]
+        },
+        {
+          "name": "desc",
+          "description": "",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "total_rows",
+              "description": "Number of total rows",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "report",
+              "description": "",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "title": "",
+                  "type": "dict"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "admin.expireAllAdminOTPs",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "EXPIRE OTP ADMINS",
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    }
+  ]
+}

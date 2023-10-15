@@ -1,0 +1,2560 @@
+{
+  "openrpc": "1.2.1",
+  "info": {
+    "version": "1.0.0",
+    "title": "IBSng: branch C: report"
+  },
+  "methods": [
+    {
+      "name": "report.getOnlineUsers",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE ONLINE USERS",
+      "params": [
+        {
+          "name": "normal_sort_by",
+          "description": "",
+          "value": [
+            "user_id",
+            "normal_username",
+            "login_time_epoch",
+            "duration_secs",
+            "ras_description",
+            "ras_ip",
+            "isp_name",
+            "unique_id_val",
+            "current_credit",
+            "group_name",
+            "attrs_remote_ip",
+            "in_bytes",
+            "out_bytes",
+            "in_rate",
+            "out_rate",
+            "attrs_mac",
+            "attrs_station_ip",
+            "attrs_caller_id"
+          ]
+        },
+        {
+          "name": "normal_desc",
+          "description": "descending",
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "voip_sort_by",
+          "description": "",
+          "value": [
+            "user_id",
+            "voip_username",
+            "login_time_epoch",
+            "duration_secs",
+            "ras_ip",
+            "ras_description",
+            "isp_name",
+            "unique_id_val",
+            "current_credit",
+            "called_number",
+            "prefix_name",
+            "group_name",
+            "attrs_caller_id",
+            "attrs_caller_ip",
+            "attrs_called_ip",
+            "voip_provider"
+          ]
+        },
+        {
+          "name": "voip_desc",
+          "description": "descending",
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "conds",
+          "description": "",
+          "schema": {
+            "type": "object"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "report.getOnlineUsersCountLoop",
+      "description": "with conditions (filters)",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE ONLINE USERS",
+      "params": [
+        {
+          "name": "conds",
+          "description": "the same as getOnlineUsers",
+          "schema": {
+            "type": "object"
+          },
+          "optional": true
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "internet_onlines",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "voip_onlines",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "re_onlined",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "accounting_not_started",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "failed_users",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "idle_users",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "ras_acct_not_started",
+              "description": "dict of ras_desc => count",
+              "schema": {
+                "type": "object"
+              }
+            },
+            {
+              "name": "ras_description",
+              "description": "dict of ras_desc => count",
+              "schema": {
+                "type": "object"
+              }
+            },
+            {
+              "name": "ras_counters",
+              "description": "dict of ras_desc => count_dict",
+              "schema": {
+                "type": "object"
+              }
+            },
+            {
+              "name": "group_name",
+              "description": "a dict of group_name => count",
+              "schema": {
+                "type": "object"
+              }
+            },
+            {
+              "name": "isp_name",
+              "description": "a dict of isp_name => count",
+              "schema": {
+                "type": "object"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "report.getOnlineUsersCount",
+      "description": "without conditions",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE ONLINE USERS",
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "internet_onlines",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "voip_onlines",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "re_onlined",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "accounting_not_started",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "failed_users",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "idle_users",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "ras_acct_not_started",
+              "description": "dict of ras_desc => count",
+              "schema": {
+                "type": "object"
+              }
+            },
+            {
+              "name": "ras_description",
+              "description": "dict of ras_desc => count",
+              "schema": {
+                "type": "object"
+              }
+            },
+            {
+              "name": "ras_counters",
+              "description": "dict of ras_desc => count_dict",
+              "schema": {
+                "type": "object"
+              }
+            },
+            {
+              "name": "group_name",
+              "description": "a dict of group_name => count",
+              "schema": {
+                "type": "object"
+              }
+            },
+            {
+              "name": "isp_name",
+              "description": "a dict of isp_name => count",
+              "schema": {
+                "type": "object"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "report.getOnlineUsersCountPerISP",
+      "description": "without conditions",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE ONLINE USERS",
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "onlines_per_isp",
+              "description": "a dict of isp_id => count",
+              "schema": {
+                "type": "object"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "report.getConnections",
+      "description": "Get Connection Logs By Admin",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE CONNECTION LOGS",
+      "params": [
+        {
+          "name": "conds",
+          "description": "",
+          "schema": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "from",
+          "description": "start index, for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "to",
+          "description": "end index, for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "sort_by",
+          "description": "",
+          "value": [
+            "user_id",
+            "credit_used",
+            "login_time",
+            "logout_time",
+            "successful",
+            "service",
+            "ras_id",
+            "connection_log_id"
+          ]
+        },
+        {
+          "name": "desc",
+          "description": "descending",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "total_rows",
+              "description": "number of total rows",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "total_credit",
+              "description": "sum of total rows credit",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "total_duration",
+              "description": "sum of total rows duration, in seconds",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "total_in_bytes",
+              "description": "sum of total download, in bytes",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "total_out_bytes",
+              "description": "sum of total upload, in bytes",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "report",
+              "description": "report data of specified page (from - to)",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "title": "",
+                  "type": "dict"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "report.getConnections",
+      "description": "Get Connection Logs By Admin",
+      "auth_type": ["NORMAL_USER", "VOIP_USER"],
+      "params": [
+        {
+          "name": "conds",
+          "description": "",
+          "schema": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "from",
+          "description": "start index, for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "to",
+          "description": "end index, for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "sort_by",
+          "description": "",
+          "value": [
+            "credit_used",
+            "login_time",
+            "logout_time",
+            "successful",
+            "service",
+            "ras_id",
+            "connection_log_id"
+          ]
+        },
+        {
+          "name": "desc",
+          "description": "descending",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "total_rows",
+              "description": "number of total rows",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "total_credit",
+              "description": "sum of total rows credit",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "total_duration",
+              "description": "sum of total rows duration, in seconds",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "total_in_bytes",
+              "description": "sum of total download, in bytes",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "total_out_bytes",
+              "description": "sum of total upload, in bytes",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "report",
+              "description": "report data of specified page (from - to)",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "title": "",
+                  "type": "dict"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "report.getINConnections",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE CONNECTION LOGS",
+      "params": [
+        {
+          "name": "conds",
+          "description": "the same as 'report.getConnections' method, plus caller_id",
+          "schema": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "from",
+          "description": "start index, for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "to",
+          "description": "end index, for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "sort_by",
+          "description": "",
+          "value": [
+            "credit_used",
+            "login_time",
+            "logout_time",
+            "successful",
+            "service",
+            "ras_id",
+            "connection_log_id"
+          ]
+        },
+        {
+          "name": "desc",
+          "description": "descending",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "the same as 'report.getConnections' method",
+        "schema": {
+          "title": "",
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "report.getDurations",
+      "description": "",
+      "auth_type": ["ADMIN", "NORMAL_USER", "VOIP_USER"],
+      "requires_perm": "SEE CONNECTION LOGS",
+      "params": [
+        {
+          "name": "conds",
+          "description": "the same as 'report.getConnections' method",
+          "schema": {
+            "type": "object"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "report.getGroupUsages",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE CONNECTION LOGS",
+      "params": [
+        {
+          "name": "conds",
+          "description": "the same as 'report.getConnections' method",
+          "schema": {
+            "type": "object"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "report.getRasUsages",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE CONNECTION LOGS",
+      "params": [
+        {
+          "name": "conds",
+          "description": "the same as 'report.getConnections' method",
+          "schema": {
+            "type": "object"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "report.getVoIPDisconnectCauses",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE CONNECTION LOGS",
+      "params": [
+        {
+          "name": "conds",
+          "description": "the same as 'report.getConnections' method",
+          "schema": {
+            "type": "object"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "report.getSuccessfulCounts",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE CONNECTION LOGS",
+      "params": [
+        {
+          "name": "conds",
+          "description": "the same as 'report.getConnections' method",
+          "schema": {
+            "type": "object"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "report.getISPUsages",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE CONNECTION LOGS",
+      "params": [
+        {
+          "name": "conds",
+          "description": "the same as 'report.getConnections' method",
+          "schema": {
+            "type": "object"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "report.getInOutUsages",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE CONNECTION LOGS",
+      "params": [
+        {
+          "name": "conds",
+          "description": "the same as 'report.getConnections' method",
+          "schema": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "from",
+          "description": "start index, for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "to",
+          "description": "end index, for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "order_by",
+          "description": "",
+          "value": ["creation_date", "normal_username", "sum"]
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "total_rows",
+              "description": "Number of total rows",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "report",
+              "description": "",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "title": "",
+                  "type": "list"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "report.getCreditUsages",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE CONNECTION LOGS",
+      "params": [
+        {
+          "name": "conds",
+          "description": "the same as 'report.getConnections' method",
+          "schema": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "from",
+          "description": "start index, for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "to",
+          "description": "end index, for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "order_by",
+          "description": "",
+          "value": ["creation_date", "normal_username", "sum"]
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "total_rows",
+              "description": "Number of total rows",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "report",
+              "description": "",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "title": "",
+                  "type": "list"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "report.getDurationUsages",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE CONNECTION LOGS",
+      "params": [
+        {
+          "name": "conds",
+          "description": "the same as 'report.getConnections' method",
+          "schema": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "from",
+          "description": "start index, for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "to",
+          "description": "end index, for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "order_by",
+          "description": "",
+          "value": ["creation_date", "normal_username", "sum"]
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "total_rows",
+              "description": "Number of total rows",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "report",
+              "description": "",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "title": "",
+                  "type": "list"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "report.getConnectionUsages",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE CONNECTION LOGS",
+      "params": [
+        {
+          "name": "conds",
+          "description": "the same as 'report.getConnections' method",
+          "schema": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "from",
+          "description": "start index, for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "to",
+          "description": "end index, for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "order_by",
+          "description": "",
+          "value": [
+            "total_credit",
+            "total_duration",
+            "total_in_bytes",
+            "total_out_bytes"
+          ]
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "total_rows",
+              "description": "Number of total rows",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "report",
+              "description": "",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "title": "",
+                  "type": "dict"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "report.getExpiredUsers",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE CONNECTION LOGS",
+      "params": [
+        {
+          "name": "conds",
+          "description": "the same as user.searchUser",
+          "schema": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "from",
+          "description": "start index",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "to",
+          "description": "end index",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "sort_by",
+          "description": "",
+          "value": [
+            "user_id",
+            "normal_username",
+            "voip_username",
+            "group_id",
+            "owner_id",
+            "creation_date",
+            "credit",
+            "deposit",
+            "first_login",
+            "serial",
+            "serial_numeric"
+          ],
+          "value_comment": {
+            "owner_id": "owner isp id"
+          }
+        },
+        {
+          "name": "desc",
+          "description": "descending",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "report.getPrefixNameUsage",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE CONNECTION LOGS",
+      "params": [
+        {
+          "name": "conds",
+          "description": "the same as 'report.getConnections' method",
+          "schema": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "from",
+          "description": "start index, for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "to",
+          "description": "end index, for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "order_by",
+          "description": "",
+          "value": [
+            "prefix_name",
+            "prefix_code",
+            "duration_sum",
+            "count",
+            "credit"
+          ]
+        },
+        {
+          "name": "desc",
+          "description": "descending",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "total_rows",
+              "description": "total number of rows",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "report",
+              "description": "",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "title": "",
+                  "type": "list"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "report.getCallerIDUsages",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE CONNECTION LOGS",
+      "params": [
+        {
+          "name": "conds",
+          "description": "the same as 'report.getConnections' method",
+          "schema": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "from",
+          "description": "start index, for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "to",
+          "description": "end index, for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "order_by",
+          "description": "",
+          "value": ["creation_date", "normal_username", "sum"]
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "total_rows",
+              "description": "Number of total rows",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "report",
+              "description": "",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "title": "",
+                  "type": "list"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "report.getCreditChanges",
+      "description": "Admin-View Credit Changes",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE CREDIT CHANGES",
+      "params": [
+        {
+          "name": "conds",
+          "description": "",
+          "schema": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "from",
+          "description": "start index, for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "to",
+          "description": "end index, for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "sort_by",
+          "description": "",
+          "value": ["change_time", "per_user_credit", "isp_credit"]
+        },
+        {
+          "name": "desc",
+          "description": "descending",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "total_rows",
+              "description": "Number of total rows",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "report",
+              "description": "",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "title": "",
+                  "type": "list"
+                }
+              }
+            },
+            {
+              "name": "total_per_user_credit",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "total_admin_credit",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "report.getCreditChanges",
+      "description": "User-View Credit Changes",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE CREDIT CHANGES",
+      "params": [
+        {
+          "name": "conds",
+          "description": "",
+          "schema": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "from",
+          "description": "start index, for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "to",
+          "description": "end index, for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "sort_by",
+          "description": "",
+          "value": ["change_time", "per_user_credit", "isp_credit"]
+        },
+        {
+          "name": "desc",
+          "description": "descending",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "total_rows",
+              "description": "Number of total rows",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "report",
+              "description": "",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "title": "",
+                  "type": "list"
+                }
+              }
+            },
+            {
+              "name": "total_per_user_credit",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "total_admin_credit",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "report.getCreditChanges",
+      "description": "User-View Credit Changes by User",
+      "auth_type": ["NORMAL_USER", "VOIP_USER"],
+      "requires_perm": "SEE CREDIT CHANGES",
+      "params": [
+        {
+          "name": "conds",
+          "description": "",
+          "schema": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "from",
+          "description": "start index, for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "to",
+          "description": "end index, for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "sort_by",
+          "description": "",
+          "value": ["change_time", "per_user_credit"]
+        },
+        {
+          "name": "desc",
+          "description": "descending",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "total_rows",
+              "description": "Number of total rows",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "report",
+              "description": "",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "title": "",
+                  "type": "list"
+                }
+              }
+            },
+            {
+              "name": "total_per_user_credit",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "total_isp_credit",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "report.saveCreditChanges",
+      "description": "use SystemNotification.getNotifications() method to see if the report is finished         and get the URL to download it",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE CREDIT CHANGES",
+      "params": [
+        {
+          "name": "conds",
+          "description": "the same as getCreditChanges",
+          "schema": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "cols",
+          "description": "",
+          "schema": {
+            "type": "array",
+            "items": {
+              "title": "",
+              "type": "choice"
+            }
+          }
+        },
+        {
+          "name": "sort_by",
+          "description": "",
+          "value": ["change_time", "per_user_credit", "isp_credit"]
+        },
+        {
+          "name": "desc",
+          "description": "descending",
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "output_type",
+          "description": "",
+          "value": ["csv", "pdf"]
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "report.getUserDepositChanges",
+      "description": "by admin",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE USER DEPOSIT CHANGES",
+      "params": [
+        {
+          "name": "conds",
+          "description": "",
+          "schema": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "from",
+          "description": "start index, for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "to",
+          "description": "end index, for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "sort_by",
+          "description": "",
+          "value": ["change_time", "user_id", "deposit_change"]
+        },
+        {
+          "name": "desc",
+          "description": "descending",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "total_rows",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "total_deposit",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "report",
+              "description": "",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "title": "",
+                  "type": "dict"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "report.getUserDepositChanges",
+      "description": "by user",
+      "auth_type": ["NORMAL_USER", "VOIP_USER"],
+      "params": [
+        {
+          "name": "conds",
+          "description": "",
+          "schema": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "from",
+          "description": "start index, for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "to",
+          "description": "end index, for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "sort_by",
+          "description": "",
+          "value": ["change_time", "user_id", "deposit_change"]
+        },
+        {
+          "name": "desc",
+          "description": "descending",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "total_rows",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "total_deposit",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "report",
+              "description": "",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "title": "",
+                  "type": "dict"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "report.getUserAuditLogs",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "params": [
+        {
+          "name": "conds",
+          "description": "",
+          "schema": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "from",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "to",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "sort_by",
+          "description": "",
+          "value": ["change_time", "object_id", "admin_id"]
+        },
+        {
+          "name": "desc",
+          "description": "descending",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "total_rows",
+              "description": "number of total rows",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "report",
+              "description": "",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "title": "",
+                  "type": "dict"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "report.getRequestCount",
+      "description": "number of admin requests for each minute in the last hour",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "GOD",
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "a dict of timestamp (for each minute) to request_dict",
+        "schema": {
+          "title": "",
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "report.getRequestTopStats",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "GOD",
+      "params": [
+        {
+          "name": "order_by",
+          "description": "",
+          "value": ["count", "average_duration", "total_duration"]
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "report.getISPDepositChangeLogs",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE DEPOSIT CHANGES",
+      "params": [
+        {
+          "name": "conds",
+          "description": "",
+          "schema": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "from",
+          "description": "start index, for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "to",
+          "description": "end index, for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "sort_by",
+          "description": "",
+          "value": [
+            "isp_deposit_change_admin_id",
+            "isp_deposit_change_isp_id",
+            "isp_deposit_change_time",
+            "isp_deposit_change_amount"
+          ]
+        },
+        {
+          "name": "desc",
+          "description": "descending",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "total_rows",
+              "description": "number of total rows",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "total_deposit_change",
+              "description": "total/sum of deposit change amounts",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "report",
+              "description": "",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "title": "",
+                  "type": "dict"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "report.getTemporaryExtendLogs",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "TEMPORARY EXTEND",
+      "params": [
+        {
+          "name": "conds",
+          "description": "",
+          "schema": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "from",
+          "description": "start index, for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "to",
+          "description": "end index, for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "sort_by",
+          "description": "",
+          "value": [
+            "temporary_extend_date",
+            "user_id",
+            "temporary_extend_hours",
+            "credit_usage"
+          ]
+        },
+        {
+          "name": "desc",
+          "description": "descending",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "total_rows",
+              "description": "number of total rows",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "report",
+              "description": "",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "title": "",
+                  "type": "dict"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "report.delReports",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "DELETE REPORTS",
+      "params": [
+        {
+          "name": "table",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "date",
+          "description": "datetime or number, ",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "date_unit",
+          "description": "",
+          "value": [
+            "jalali",
+            "gregorian",
+            "years",
+            "months",
+            "days",
+            "hours",
+            "minutes"
+          ]
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "report.autoCleanReports",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "DELETE REPORTS",
+      "params": [
+        {
+          "name": "connection_log_clean",
+          "description": "period",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "connection_log_unit",
+          "description": "",
+          "value": ["Seconds", "Minutes", "Hours", "Days", "Months", "Years"]
+        },
+        {
+          "name": "credit_change_clean",
+          "description": "relative time",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "credit_change_unit",
+          "description": "relative time unit",
+          "value": ["Seconds", "Minutes", "Hours", "Days", "Months", "Years"]
+        },
+        {
+          "name": "user_audit_log_clean",
+          "description": "relative time",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "user_audit_log_unit",
+          "description": "relative time unit",
+          "value": ["Seconds", "Minutes", "Hours", "Days", "Months", "Years"]
+        },
+        {
+          "name": "snapshots_clean",
+          "description": "relative time",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "snapshots_unit",
+          "description": "relative time unit",
+          "value": ["Seconds", "Minutes", "Hours", "Days", "Months", "Years"]
+        },
+        {
+          "name": "bw_snapshots_clean",
+          "description": "relative time",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "bw_snapshots_unit",
+          "description": "relative time unit",
+          "value": ["Seconds", "Minutes", "Hours", "Days", "Months", "Years"]
+        },
+        {
+          "name": "web_analyzer_clean",
+          "description": "relative time",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "web_analyzer_unit",
+          "description": "relative time unit",
+          "value": ["Seconds", "Minutes", "Hours", "Days", "Months", "Years"]
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "report.getAutoCleanDates",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "DELETE REPORTS",
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "bw_snapshots",
+              "description": "",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "title": "",
+                  "type": "int"
+                },
+                "length": "2"
+              }
+            },
+            {
+              "name": "connection_log",
+              "description": "",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "title": "",
+                  "type": "int"
+                },
+                "length": "2"
+              }
+            },
+            {
+              "name": "credit_change",
+              "description": "",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "title": "",
+                  "type": "int"
+                },
+                "length": "2"
+              }
+            },
+            {
+              "name": "snapshots",
+              "description": "",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "title": "",
+                  "type": "int"
+                },
+                "length": "2"
+              }
+            },
+            {
+              "name": "user_audit_log",
+              "description": "",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "title": "",
+                  "type": "int"
+                },
+                "length": "2"
+              }
+            },
+            {
+              "name": "web_analyzer_log",
+              "description": "",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "title": "",
+                  "type": "int"
+                },
+                "length": "2"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "report.getManagementSummaryReport",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE CONNECTION LOGS",
+      "params": [
+        {
+          "name": "conds",
+          "description": "",
+          "schema": {
+            "type": "object"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "report",
+              "description": "",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "title": "",
+                  "type": "list"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "report.getSystemAuditLogs",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE SYSTEM AUDIT LOGS",
+      "params": [
+        {
+          "name": "conds",
+          "description": "",
+          "schema": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "from",
+          "description": "start index, for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "to",
+          "description": "end index, for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "sort_by",
+          "description": "",
+          "value": [
+            "change_time",
+            "object_id",
+            "admin_id",
+            "event",
+            "category",
+            "isp_id"
+          ]
+        },
+        {
+          "name": "desc",
+          "description": "descending",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "total_rows",
+              "description": "total number of rows",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "report",
+              "description": "",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "title": "",
+                  "type": "dict"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "report.getOnlinePaymentReport",
+      "description": "",
+      "auth_type": ["ADMIN", "NORMAL_USER", "VOIP_USER"],
+      "params": [
+        {
+          "name": "conds",
+          "description": "",
+          "schema": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "from",
+          "description": "start index, for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "to",
+          "description": "end index, for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "sort_by",
+          "description": "",
+          "value": [
+            "payment_id",
+            "gateway_id",
+            "unique_id",
+            "amount",
+            "payment_date",
+            "requester_id",
+            "requester_type",
+            "succeed"
+          ]
+        },
+        {
+          "name": "desc",
+          "description": "descending",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "total_rows",
+              "description": "total number of rows",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "report",
+              "description": "",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "title": "",
+                  "type": "dict"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "report.saveConnections",
+      "description": "use SystemNotification.getNotifications() method to see if the report is finished         and get the URL to download it",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE CONNECTION LOGS",
+      "params": [
+        {
+          "name": "conds",
+          "description": "the same as 'report.getConnections' method",
+          "schema": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "from",
+          "description": "start index, for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "to",
+          "description": "end index, for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "sort_by",
+          "description": "",
+          "value": [
+            "user_id",
+            "credit_used",
+            "login_time",
+            "logout_time",
+            "successful",
+            "service",
+            "ras_id",
+            "connection_log_id"
+          ]
+        },
+        {
+          "name": "desc",
+          "description": "descending",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "report.saveConnectionUsages",
+      "description": "use SystemNotification.getNotifications() method to see if the report is finished         and get the URL to download it",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE CONNECTION LOGS",
+      "params": [
+        {
+          "name": "report_type",
+          "description": "",
+          "value": ["inout_usages", "credit_usages", "time_usages"]
+        },
+        {
+          "name": "conds",
+          "description": "the same as 'report.getConnections' method",
+          "schema": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "cols",
+          "description": "",
+          "schema": {
+            "type": "array",
+            "items": {
+              "title": "",
+              "type": "choice"
+            }
+          }
+        },
+        {
+          "name": "sort_by",
+          "description": "",
+          "value": ["creation_date", "normal_username", "sum"]
+        },
+        {
+          "name": "output_type",
+          "description": "",
+          "value": ["csv", "pdf"]
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "report.savePrefixNameUsage",
+      "description": "use SystemNotification.getNotifications() method to see if the report is finished and get the URL to download it",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE CONNECTION LOGS",
+      "params": [
+        {
+          "name": "conds",
+          "description": "the same as 'report.getConnections' method",
+          "schema": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "order_by",
+          "description": "",
+          "value": [
+            "prefix_name",
+            "prefix_code",
+            "duration_sum",
+            "count",
+            "credit"
+          ]
+        },
+        {
+          "name": "desc",
+          "description": "descending",
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "output_type",
+          "description": "",
+          "value": ["csv", "pdf"]
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "report.saveOnlinePaymentReport",
+      "description": "use SystemNotification.getNotifications() method to see if the report is finished and get the URL to download it",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE CONNECTION LOGS",
+      "params": [
+        {
+          "name": "conds",
+          "description": "the same as 'report.getOnlinePaymentReport' method",
+          "schema": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "sort_by",
+          "description": "",
+          "value": [
+            "payment_id",
+            "gateway_id",
+            "unique_id",
+            "amount",
+            "payment_date",
+            "requester_id",
+            "requester_type",
+            "succeed"
+          ]
+        },
+        {
+          "name": "desc",
+          "description": "descending",
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "output_type",
+          "description": "",
+          "value": ["csv", "pdf"]
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "report.getDayNightUsage",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "GOD",
+      "params": [
+        {
+          "name": "start_date",
+          "description": "gregorian date, format '%Y-%m-%d'",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "end_date",
+          "description": "gregorian date, format '%Y-%m-%d'",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "nightly_charge_rule_ids",
+          "description": "list of Charge Rule IDs that are Nightly (Free)",
+          "schema": {
+            "type": "array"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "night_download",
+              "description": "in bytes",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "night_upload",
+              "description": "in bytes",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "day_download",
+              "description": "in bytes",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "day_upload",
+              "description": "in bytes",
+              "schema": {
+                "type": "number"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

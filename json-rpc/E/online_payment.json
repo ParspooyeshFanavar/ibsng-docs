@@ -1,0 +1,383 @@
+{
+  "openrpc": "1.2.1",
+  "info": {
+    "version": "1.0.0",
+    "title": "IBSng: branch E: online_payment"
+  },
+  "methods": [
+    {
+      "name": "online_payment.getAvailableGatewayTypes",
+      "description": "list of gateway names that are available and usable for user",
+      "auth_type": ["ADMIN", "NORMAL_USER", "VOIP_USER"],
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "list of gateway types",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "online_payment.getPaymentAmountSuggestions",
+      "description": "",
+      "auth_type": ["ADMIN", "NORMAL_USER", "VOIP_USER"],
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "online_payment.preparePayment",
+      "description": "Added in tag C_dev_326",
+      "auth_type": ["ADMIN", "NORMAL_USER", "VOIP_USER"],
+      "params": [
+        {
+          "name": "gateway_type",
+          "description": "",
+          "value": [
+            "Melli-shahparak",
+            "Eghtesad_Novin",
+            "Mellat-Shaparak",
+            "Parsian",
+            "Pasargad",
+            "Saman",
+            "Tejarat",
+            "ZarinPal"
+          ]
+        },
+        {
+          "name": "amount",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "unique_id",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "callback_url",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "attributes",
+          "description": "you can put all the parameters you want here",
+          "schema": {
+            "type": "object"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "web_attributes",
+              "description": "",
+              "schema": {
+                "type": "object"
+              }
+            },
+            {
+              "name": "redirect_method",
+              "description": "",
+              "value": ["POST", "GET"]
+            },
+            {
+              "name": "url",
+              "description": "Redirect URL",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "online_payment.verifyPayment",
+      "description": "Added in tag C_dev_326",
+      "auth_type": ["ADMIN", "NORMAL_USER", "VOIP_USER"],
+      "params": [
+        {
+          "name": "unique_id",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "web_attributes",
+          "description": "",
+          "schema": {
+            "type": "object"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "amount",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "ref_id",
+              "description": "Bank Reference ID",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "online_payment.addGateway",
+      "description": "Added in tag C_dev_326",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE ONLINE PAYMENT",
+      "params": [
+        {
+          "name": "gateway_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "gateway_type",
+          "description": "",
+          "value": [
+            "Eghtesad_Novin",
+            "Mellat-Shaparak",
+            "Melli-shahparak",
+            "Parsian",
+            "Pasargad",
+            "Saman",
+            "Tejarat",
+            "ZarinPal"
+          ]
+        },
+        {
+          "name": "owner_isp_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "priority",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "comment",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "attributes",
+          "description": "",
+          "schema": {
+            "type": "object"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "online_payment.updateGateway",
+      "description": "Added in tag C_dev_326",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE ONLINE PAYMENT",
+      "params": [
+        {
+          "name": "gateway_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "gateway_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "owner_isp_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "priority",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "comment",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "attributes",
+          "description": "",
+          "schema": {
+            "type": "object"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "online_payment.deleteGateway",
+      "description": "Added in tag C_dev_326",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE ONLINE PAYMENT",
+      "params": [
+        {
+          "name": "gateway_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "online_payment.getAllGatewayTypes",
+      "description": "Added in tag C_dev_326",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE ONLINE PAYMENT",
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "list of gateway types",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "online_payment.getAllGatewayNames",
+      "description": "Added in tag C_dev_326",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE ONLINE PAYMENT",
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "gateway_names",
+              "description": "list of gateway names",
+              "schema": {
+                "type": "array"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "online_payment.getAllGatewayInfos",
+      "description": "Added in tag C_dev_326",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE ONLINE PAYMENT",
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "online_payment.purgePayment",
+      "description": "Added in tag C_dev_326",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "PURGE ONLINE PAYMENT",
+      "params": [
+        {
+          "name": "payment_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object"
+        }
+      }
+    }
+  ]
+}

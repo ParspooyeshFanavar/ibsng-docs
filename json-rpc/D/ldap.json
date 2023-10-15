@@ -1,0 +1,272 @@
+{
+  "openrpc": "1.2.1",
+  "info": {
+    "version": "1.0.0",
+    "title": "IBSng: branch D: ldap"
+  },
+  "methods": [
+    {
+      "name": "ldap.getUsernames",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEARCH USER",
+      "params": [
+        {
+          "name": "starts_with",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "list of usernames",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "ldap.getUserInfos",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "GET USER INFORMATION",
+      "params": [
+        {
+          "name": "starts_with",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "list of usernames",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "ldap.getUserInfo",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "GET USER INFORMATION",
+      "params": [
+        {
+          "name": "username",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "user info",
+        "schema": {
+          "title": "",
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "ldap.getUserInfoKeys",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE LDAP DOMAIN",
+      "params": [
+        {
+          "name": "domain",
+          "description": "name of ldap domain",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "domain info keys",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "ldap.setLDAPIBSMapping",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE LDAP DOMAIN",
+      "params": [
+        {
+          "name": "domain",
+          "description": "name of ldap domain in which mapping takes place",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "ldap_attribute",
+          "description": "ldap side of attribute mapping",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "IBS_field",
+          "description": "ibs side of attribute mapping",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "sync",
+          "description": "specifies if the mapping be synchronized or not",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "ldap.getLDAPIBSMapping",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE LDAP DOMAIN",
+      "params": [
+        {
+          "name": "domain",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "ldap keys mapping",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "ldap.deleteLDAPIBSMapping",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE LDAP DOMAIN",
+      "params": [
+        {
+          "name": "domain",
+          "description": "name of ldap domain in which mapping takes place",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "ldap_attribute",
+          "description": "ldap side of attribute mapping",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "IBS_field",
+          "description": "ibs side of attribute mapping",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "sync",
+          "description": "specifies if the mapping be synchronized or not",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "ldap.setLDAPSearchOptionsByDomain",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE LDAP DOMAIN",
+      "params": [
+        {
+          "name": "domain",
+          "description": "name of ldap domain to be queried",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "search_filter",
+          "description": "ldap query search filter by which ldap users will be fetched",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "search_base",
+          "description": "ldap query search base by which ldap users will be fetched",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "ldap.getLDAPSearchOptionsByDomain",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEE LDAP DOMAIN",
+      "params": [
+        {
+          "name": "domain",
+          "description": "name of ldap domain",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "dictionary of two key-values representing search filter and search base",
+        "schema": {
+          "title": "",
+          "type": "object"
+        }
+      }
+    }
+  ]
+}

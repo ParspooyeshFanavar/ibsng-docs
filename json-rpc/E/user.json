@@ -1,0 +1,1467 @@
+{
+  "openrpc": "1.2.1",
+  "info": {
+    "version": "1.0.0",
+    "title": "IBSng: branch E: user"
+  },
+  "methods": [
+    {
+      "name": "user.addNewUsers",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "ADD NEW USER",
+      "params": [
+        {
+          "name": "count",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "isp_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "group_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "custom_fields",
+          "description": "",
+          "schema": {
+            "type": "object"
+          },
+          "optional": true
+        },
+        {
+          "name": "customer_id",
+          "description": "The client ID to which we want to assign the user",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "user_role",
+          "description": "The role intended for the user, which can contain the values account or service",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "parent_user_id",
+          "description": "User's parent ID",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "user_ids",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "user.getUserInfo",
+      "description": "By User",
+      "auth_type": ["NORMAL_USER", "VOIP_USER"],
+      "params": [
+        {
+          "name": "user_id",
+          "description": "",
+          "schema": {
+            "type": "string"
+          },
+          "optional": true
+        },
+        {
+          "name": "normal_username",
+          "description": "",
+          "schema": {
+            "type": "string"
+          },
+          "optional": true
+        },
+        {
+          "name": "voip_username",
+          "description": "",
+          "schema": {
+            "type": "string"
+          },
+          "optional": true
+        },
+        {
+          "name": "serial",
+          "description": "",
+          "schema": {
+            "type": "string"
+          },
+          "optional": true
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "user.getUserInfo",
+      "description": "By Admin",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "GET USER INFORMATION",
+      "params": [
+        {
+          "name": "user_id",
+          "description": "",
+          "schema": {
+            "type": "string"
+          },
+          "optional": true
+        },
+        {
+          "name": "normal_username",
+          "description": "",
+          "schema": {
+            "type": "string"
+          },
+          "optional": true
+        },
+        {
+          "name": "voip_username",
+          "description": "",
+          "schema": {
+            "type": "string"
+          },
+          "optional": true
+        },
+        {
+          "name": "serial",
+          "description": "",
+          "schema": {
+            "type": "string"
+          },
+          "optional": true
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "User Info dict",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "user_id",
+              "description": "show user_id, content of this field is:",
+              "schema": {
+                "type": "object"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "user.doesUserExists",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "params": [
+        {
+          "name": "normal_username",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "true if username exists, false otherwise",
+        "schema": {
+          "title": "",
+          "type": "boolean"
+        }
+      }
+    },
+    {
+      "name": "user.updateUserAttrs",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE USER ATTRIBUTES",
+      "params": [
+        {
+          "name": "user_id",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "attrs",
+          "description": "",
+          "schema": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "to_del_attrs",
+          "description": "list of attributes to be deleted",
+          "schema": {
+            "type": "array"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "user.getUsersWithPhone",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "params": [
+        {
+          "name": "phone",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "user.getUsersWithCellPhone",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "params": [
+        {
+          "name": "cell_phone",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "user.searchExpiredUsers",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "GET USER INFORMATION",
+      "params": [
+        {
+          "name": "conds",
+          "description": "",
+          "schema": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "from",
+          "description": "start index, for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "to",
+          "description": "start index, for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "order_by",
+          "description": "",
+          "value": [
+            "user_id",
+            "isp_id",
+            "group_id",
+            "creation_date",
+            "credit",
+            "Deposit"
+          ]
+        },
+        {
+          "name": "desc",
+          "description": "descending",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "user.searchExpiredUsersExtended",
+      "description": "larger output than searchExpiredUsers, returns expiration dates too",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "GET USER INFORMATION",
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "user.saveSearchExpiredUsers",
+      "description": "use SystemNotification.getNotifications() method to see if the report is finished and get the URL to download it",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "GET USER INFORMATION",
+      "params": [
+        {
+          "name": "output_type",
+          "description": "",
+          "value": ["csv", "pdf"]
+        },
+        {
+          "name": "conds",
+          "description": "the same as searchExpiredUsers, at least one condition is necessary",
+          "schema": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "order_by",
+          "description": "",
+          "value": [
+            "user_id",
+            "isp_id",
+            "group_id",
+            "creation_date",
+            "credit",
+            "Deposit"
+          ]
+        },
+        {
+          "name": "desc",
+          "description": "descending",
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "basic",
+          "description": "the same as user.saveSearchUser",
+          "schema": {
+            "type": "array"
+          }
+        },
+        {
+          "name": "attrs",
+          "description": "the same as user.saveSearchUser",
+          "schema": {
+            "type": "array"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "user.searchUser",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEARCH USER",
+      "params": [
+        {
+          "name": "conds",
+          "description": "",
+          "schema": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "from",
+          "description": "start index, for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "to",
+          "description": "end index, for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "order_by",
+          "description": "",
+          "value": [
+            "normal_username",
+            "voip_username",
+            "user_id",
+            "group_id",
+            "creation_date",
+            "owner_id",
+            "credit",
+            "deposit",
+            "first_login",
+            "serial",
+            "serial_numeric"
+          ]
+        },
+        {
+          "name": "desc",
+          "description": "",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "user.delUser",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "DELETE USER",
+      "params": [
+        {
+          "name": "user_id",
+          "description": "comma-seperated User IDs",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "delete_comment",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "del_connection_logs",
+          "description": "pass true if you want users' connection logs to be deleted too",
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "del_audit_logs",
+          "description": "pass true if you want users' audit logs to be deleted too",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "user.killUser",
+      "description": "requires KILL USER permission if kill=true, and CLEAR USER permission is kill=false",
+      "auth_type": ["ADMIN"],
+      "params": [
+        {
+          "name": "user_id",
+          "description": "comma-seperated User IDs",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "ras_ip",
+          "description": "comma-seperated RAS IPs",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "unique_id_val",
+          "description": "Unique ID Value (for exmaple Port, Caller ID, etc)",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "kill",
+          "description": "true means Kill User, false means Clear User",
+          "schema": {
+            "type": "boolean"
+          },
+          "optional": true
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "user.killUserByID",
+      "description": "by admin, disconnects all instances of given users",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "KILL USER",
+      "params": [
+        {
+          "name": "user_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "kill",
+          "description": "true means Kill User, false means Clear User",
+          "schema": {
+            "type": "boolean"
+          },
+          "optional": true
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "user.killUserByID",
+      "description": "by user, disconnects all instances of user himself",
+      "auth_type": ["NORMAL_USER", "VOIP_USER"],
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "user.killMe",
+      "description": "by user, disconnects selected instance",
+      "auth_type": ["NORMAL_USER", "VOIP_USER"],
+      "params": [
+        {
+          "name": "unique_id_val",
+          "description": "Unique ID Value (for exmaple Port, Caller ID, etc)",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "ras_ip",
+          "description": "RAS IPs",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "user.getRemainingDurationAndBytes",
+      "description": "by admin",
+      "auth_type": ["ADMIN"],
+      "params": [
+        {
+          "name": "user_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "user.getRemainingDurationAndBytes",
+      "description": "by user",
+      "auth_type": ["NORMAL_USER", "VOIP_USER"],
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "user.renewUsers",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "RENEW USER",
+      "params": [
+        {
+          "name": "user_id",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "comment",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "renewUsers output",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "id",
+              "description": "return null if enter correct parameters",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "result",
+              "description": "return true if enter correct parameters",
+              "schema": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "error",
+              "description": "return null if enter correct parameters",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "user.rechargeUsers",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "RECHARGE USER",
+      "params": [
+        {
+          "name": "user_id",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "comment",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "user.temporaryExtendUsers",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "TEMPORARY EXTEND",
+      "params": [
+        {
+          "name": "user_id",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "temporary_extend_hours",
+          "description": "hours",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "temporary_extend_credit",
+          "description": "credit",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "user.updateUserComments",
+      "description": "",
+      "auth_type": ["NORMAL_USER", "VOIP_USER"],
+      "params": [
+        {
+          "name": "update_dic",
+          "description": "",
+          "schema": {
+            "type": "object"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "user.reloadUsers",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "params": [
+        {
+          "name": "user_id",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "user.saveSearchUser",
+      "description": "use SystemNotification.getNotifications() method to see if the report is finished and get the URL to download it",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "SEARCH USER",
+      "params": [
+        {
+          "name": "conds",
+          "description": "the same as user.searchUser method",
+          "schema": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "order_by",
+          "description": "",
+          "value": [
+            "normal_username",
+            "voip_username",
+            "user_id",
+            "group_id",
+            "creation_date",
+            "owner_id",
+            "credit",
+            "deposit",
+            "first_login",
+            "serial",
+            "serial_numeric"
+          ]
+        },
+        {
+          "name": "desc",
+          "description": "",
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "basic",
+          "description": "",
+          "schema": {
+            "type": "array",
+            "items": {
+              "title": "",
+              "type": "choice"
+            }
+          }
+        },
+        {
+          "name": "attrs",
+          "description": "",
+          "schema": {
+            "type": "array"
+          }
+        },
+        {
+          "name": "output_type",
+          "description": "",
+          "value": ["csv", "pdf"]
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "user.changeStatus",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE USER ATTRIBUTES",
+      "params": [
+        {
+          "name": "user_id",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "status",
+          "description": "",
+          "value": ["Package", "Recharged", "Temporary Extended"]
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "user.getBulkActionsForAdmin",
+      "description": "get list of performed or running Bulk Actions, which admin has access to see them",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "PERFORM BULK ACTION",
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "user.viewBulkActionStatus",
+      "description": "get status of a Bulk Action (that has been started by the admin himself)",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "PERFORM BULK ACTION",
+      "params": [
+        {
+          "name": "action_id",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "action_id",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "action_name",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "conds",
+              "description": "",
+              "schema": {
+                "type": "object"
+              }
+            },
+            {
+              "name": "requester_id",
+              "description": "Admin ID",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "requester_username",
+              "description": "Admin Username",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "remote_ip",
+              "description": "Admin's Remote IP",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "action_timing",
+              "description": "",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "title": "",
+                  "type": "int"
+                },
+                "length": "2"
+              }
+            },
+            {
+              "name": "formated_start_date",
+              "description": "start datetime string, depending on input date_type",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "formated_end_date",
+              "description": "end datetime string, depending on input date_type",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "matched_users_count",
+              "description": "number of all matched users",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "checked_users_count",
+              "description": "number of done users",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "action_progress",
+              "description": "percentage of progress (0 to 100)",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "canceled",
+              "description": "true if the action is canceled",
+              "schema": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "failed",
+              "description": "true if the action is failed",
+              "schema": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "messages",
+              "description": "list of messages (strings)",
+              "schema": {
+                "type": "array"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "user.cancelBulkAction",
+      "description": "cancel a Bulk Action (that has been started by the admin himself)",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "PERFORM BULK ACTION",
+      "params": [
+        {
+          "name": "action_id",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "user.clearBulkAction",
+      "description": "clear (remove from list) a Bulk Action (that has been started by the admin himself), and is finished",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "PERFORM BULK ACTION",
+      "params": [
+        {
+          "name": "action_id",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "user.bulkUpdateUserAttrs",
+      "description": "combines methods 'user.searchUser' and 'user.updateUserAttrs'",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "PERFORM BULK ACTION, SEARCH USER",
+      "params": [
+        {
+          "name": "conds",
+          "description": "the same as method 'user.searchUser', parameter 'conds'",
+          "schema": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "attrs_to_update",
+          "description": "the same as method 'user.updateUserAttrs', parameter 'attrs'",
+          "schema": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "attrs_to_del",
+          "description": "the same as method 'user.updateUserAttrs', parameter 'to_del_attrs'",
+          "schema": {
+            "type": "array"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "action_id (string)",
+        "schema": {
+          "title": "",
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "user.bulkChangeUserCredit",
+      "description": "combines methods 'user.searchUser' and 'user.changeCreditExtended'",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "PERFORM BULK ACTION, BULK CHANGE USER CREDIT",
+      "params": [
+        {
+          "name": "conds",
+          "description": "the same as method 'user.searchUser', parameter 'conds'",
+          "schema": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "credit",
+          "description": "the same as method 'user.changeCreditExtended'",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "change_type",
+          "description": "the same as method 'user.changeCreditExtended'",
+          "value": ["ADD", "SET", "MULTIPLY"]
+        },
+        {
+          "name": "credit_comment",
+          "description": "the same as method 'user.changeCreditExtended'",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "action_id (string)",
+        "schema": {
+          "title": "",
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "user.bulkChangeUserDeposit",
+      "description": "combines methods 'user.searchUser' and 'user.changeDepositExtended'",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "PERFORM BULK ACTION, BULK CHANGE USER DEPOSIT",
+      "params": [
+        {
+          "name": "conds",
+          "description": "the same as method 'user.searchUser', parameter 'conds'",
+          "schema": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "deposit",
+          "description": "the same as method 'user.changeDepositExtended'",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "change_type",
+          "description": "the same as method 'user.changeDepositExtended'",
+          "value": ["ADD", "SET", "MULTIPLY"]
+        },
+        {
+          "name": "deposit_comment",
+          "description": "the same as method 'user.changeDepositExtended'",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "action_id (string)",
+        "schema": {
+          "title": "",
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "user.bulkDeleteUser",
+      "description": "combines methods 'user.searchUser' and 'user.delUser'",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "PERFORM BULK ACTION, BULK DELETE USER",
+      "params": [
+        {
+          "name": "conds",
+          "description": "the same as method 'user.searchUser', parameter 'conds'",
+          "schema": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "delete_comment",
+          "description": "the same as method 'user.delUser'",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "del_connection_logs",
+          "description": "the same as method 'user.delUser'",
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "del_audit_logs",
+          "description": "the same as method 'user.delUser'",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "action_id (string)",
+        "schema": {
+          "title": "",
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "user.bulkRenewUsers",
+      "description": "combines methods 'user.searchUser' and 'user.renewUsers'",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "PERFORM BULK ACTION, RENEW USER",
+      "params": [
+        {
+          "name": "conds",
+          "description": "the same as method 'user.searchUser', parameter 'conds'",
+          "schema": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "renew_comment",
+          "description": "the same as method 'user.renewUsers', parameter 'comment'",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "action_id (string)",
+        "schema": {
+          "title": "",
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "user.bulkKillUsers",
+      "description": "combines methods 'user.searchUser' and 'user.renewUsers'",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "PERFORM BULK ACTION, RENEW USER",
+      "params": [
+        {
+          "name": "conds",
+          "description": "the same as method 'user.searchUser', parameter 'conds'",
+          "schema": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "kill",
+          "description": "true means Kill User, false means Clear User",
+          "schema": {
+            "type": "boolean"
+          },
+          "optional": true
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "action_id (string)",
+        "schema": {
+          "title": "",
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "user.getUsersExpDateFirstLogin",
+      "description": "returns username, expiration date and first login for ALL USERS                returns a large amount of data                for use by CRM only",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "GOD",
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "user.setOneChargeRuleUsage",
+      "description": "set or clear charge rule usage of one rule for one user",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE USER ATTRIBUTES",
+      "params": [
+        {
+          "name": "user_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "charge_rule_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "credit_usage",
+          "description": "pass 0 if you want to reset",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "time_usage",
+          "description": "in seconds, pass 0 if you want to reset",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "traffic_usage",
+          "description": "in bytes, pass 0 if you want to reset",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "user.setFeshfesheParams",
+      "description": "Added in tag 320, See http://wiki.parspooyesh.com/index.php/Feshfeshe",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE USER ATTRIBUTES",
+      "params": [
+        {
+          "name": "user_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "traffic",
+          "description": "Traffic, in Mega Bytes",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "date_from",
+          "description": "datetime, start date and time, format '%Y-%m-%d %H:%M'",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "date_to",
+          "description": "datetime, end date and time, format '%Y-%m-%d %H:%M'",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    }
+  ]
+}

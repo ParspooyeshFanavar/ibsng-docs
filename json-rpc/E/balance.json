@@ -1,0 +1,528 @@
+{
+  "openrpc": "1.2.1",
+  "info": {
+    "version": "1.0.0",
+    "title": "IBSng: branch E: balance"
+  },
+  "methods": [
+    {
+      "name": "balance.addNewBalance",
+      "description": "add new balance",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE BALANCE",
+      "params": [
+        {
+          "name": "name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "isp_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "class",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "value_type",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "valid_for_start",
+          "description": "datetime, ",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "valid_for_start_unit",
+          "description": "Date type for output date or datetime params, default is 'gregorian'",
+          "value": ["gregorian", "jalali"]
+        },
+        {
+          "name": "valid_for_end",
+          "description": "datetime, ",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "valid_for_end_unit",
+          "description": "Date type for output date or datetime params, default is 'gregorian'",
+          "value": ["gregorian", "jalali"]
+        },
+        {
+          "name": "default_value",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "unit",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "udr_tag",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "comment",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "balance_id",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "balance.getBalanceClasses",
+      "description": "get the list of balance classes",
+      "auth_type": ["ADMIN"],
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "CURRENCY",
+              "description": "list of Currency",
+              "schema": {
+                "type": "array"
+              }
+            },
+            {
+              "name": "DATA",
+              "description": "list of DATA",
+              "schema": {
+                "type": "array"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "balance.getBalanceValueTypes",
+      "description": "get the list of balance value type",
+      "auth_type": ["ADMIN"],
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "array",
+          "items": [
+            {
+              "name": "IRR",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "USD",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "balance.getBalanceLifeCycleStatuses",
+      "description": "get the list of balance life cycle statuses",
+      "auth_type": ["ADMIN"],
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "array",
+          "items": [
+            {
+              "name": "LAUNCHED",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "ACTIVE",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "RETIRED",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "balance.getBalanceInfo",
+      "description": "get balance info by balance name or balance id",
+      "auth_type": ["ADMIN"],
+      "params": [
+        {
+          "name": "balance_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          },
+          "optional": true
+        },
+        {
+          "name": "balance_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          },
+          "optional": true
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "balance.updateBalance",
+      "description": "update the balance information",
+      "auth_type": ["ADMIN"],
+      "params": [
+        {
+          "name": "name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "isp_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "class",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "value_type",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "valid_for_start",
+          "description": "datetime, ",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "valid_for_start_unit",
+          "description": "Date type for output date or datetime params, default is 'gregorian'",
+          "value": ["gregorian", "jalali"]
+        },
+        {
+          "name": "valid_for_end",
+          "description": "datetime, ",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "valid_for_end_unit",
+          "description": "Date type for output date or datetime params, default is 'gregorian'",
+          "value": ["gregorian", "jalali"]
+        },
+        {
+          "name": "default_value",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "unit",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "udr_tag",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "comment",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "balance.getListValidBalanceName",
+      "description": "The meaning of validity is that the date range considered for                                                                                                     the balance is within the day and that the balance status is active.",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "LIST BALANCES",
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "balance_id",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "balance_name",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "balance.deleteBalance",
+      "description": "Delete the balance",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "CHANGE BALANCE",
+      "params": [
+        {
+          "name": "balance_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "balance.getAllBalancesNames",
+      "description": "get list balances can filter with status",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "LIST BALANCES",
+      "params": [
+        {
+          "name": "include_retired",
+          "description": "if set, return balances that status is RETIRED",
+          "schema": {
+            "type": "boolean"
+          },
+          "optional": true
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "list of name balances",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "balance.getAllBalanceIdsAndNames",
+      "description": "get all list balances without filter",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "LIST BALANCES",
+      "params": [],
+      "result": {
+        "name": "",
+        "comment": "list of balance name and balance id",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "balance.getBalanceNameById",
+      "description": "get balance id and return name of balance",
+      "auth_type": ["ADMIN"],
+      "params": [
+        {
+          "name": "balance_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "balance_name",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "balance.searchBalance",
+      "description": "search in balances",
+      "auth_type": ["ADMIN"],
+      "params": [
+        {
+          "name": "conds",
+          "description": "",
+          "schema": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "sort_by",
+          "value": ["balance_name", "balance_id"]
+        },
+        {
+          "name": "desc",
+          "description": "descending",
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "_from",
+          "description": "pagination start",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "to",
+          "description": "pagination end",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "total_rows",
+              "description": "Number of total rows",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "report",
+              "description": "",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "title": "",
+                  "type": "dict"
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

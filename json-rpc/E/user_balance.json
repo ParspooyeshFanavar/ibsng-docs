@@ -1,0 +1,556 @@
+{
+  "openrpc": "1.2.1",
+  "info": {
+    "version": "1.0.0",
+    "title": "IBSng: branch E: user_balance"
+  },
+  "methods": [
+    {
+      "name": "user_balance.addNewUserBalance",
+      "description": "assign balance to user (add new user_balance)",
+      "auth_type": ["ADMIN"],
+      "requires_perm": "ADD NEW USER BALANCE",
+      "params": [
+        {
+          "name": "user_id",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "balance_id",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "initial_value",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "priority",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "start_time",
+          "description": "datetime, ",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "start_time_unit",
+          "description": "Date type for output date or datetime params, default is 'gregorian'",
+          "value": ["gregorian", "jalali"]
+        },
+        {
+          "name": "expire_time",
+          "description": "datetime, ",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "expire_time_unit",
+          "description": "Date type for output date or datetime params, default is 'gregorian'",
+          "value": ["gregorian", "jalali"]
+        },
+        {
+          "name": "udr_tag",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "comment",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "linked_user_id",
+          "description": "If type balance id is required",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "linked_balance_id",
+          "description": "If type balance id is required",
+          "schema": {
+            "type": "string"
+          },
+          "optional": true
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "balance_id",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "user_balance.getUserBalanceInfoByUserID",
+      "description": "return all balnce that assigned to user",
+      "auth_type": ["ADMIN"],
+      "params": [
+        {
+          "name": "user_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "linked_user_id",
+              "description": "int or null, if not set return null",
+              "schema": {
+                "type": "int"
+              }
+            },
+            {
+              "name": "balance_name",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "balance_id",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "linked_balance_id",
+              "description": "int or null, if not set return null",
+              "schema": {
+                "type": "int"
+              }
+            },
+            {
+              "name": "value",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "user_balance_id",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "user_balance_urd_tag",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "priority",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "balance_name",
+              "description": "name of balance that asssign to user",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "user_balance_udr_tag",
+              "description": "UDR tag to self user balance assign",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "balance_id",
+              "description": "id of balacne assign to user",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "first_use_expiration_time",
+              "description": "datetime, ",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "first_use_time",
+              "description": "datetime, ",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "expire_time",
+              "description": "sample format -> 2022-12-31 11:54:00",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "user_balance.updateUserBalance",
+      "description": "update the user_balance",
+      "auth_type": ["ADMIN"],
+      "params": [
+        {
+          "name": "user_balance_id",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "priority",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "comment",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "user_id",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "balance_id",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "start_time",
+          "description": "datetime, ",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "start_time_unit",
+          "description": "Date type for output date or datetime params, default is 'gregorian'",
+          "value": ["gregorian", "jalali"]
+        },
+        {
+          "name": "expire_time",
+          "description": "datetime, ",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "expire_time_unit",
+          "description": "Date type for output date or datetime params, default is 'gregorian'",
+          "value": ["gregorian", "jalali"]
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "user_balance.getUserBalanceInfo",
+      "description": "get user_balance_id and return the info",
+      "auth_type": ["ADMIN"],
+      "params": [
+        {
+          "name": "user_balance_id",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "comment",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "linked_user_id",
+              "description": "int or null, if not set return null",
+              "schema": {
+                "type": "int"
+              }
+            },
+            {
+              "name": "start_time",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "balance_name",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "balance_id",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "linked_balance_id",
+              "description": "int or null, if not set return null",
+              "schema": {
+                "type": "int"
+              }
+            },
+            {
+              "name": "user_id",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "initial_value",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "user_balance_urd_tag",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "value",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "user_balance_id",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "priority",
+              "description": "",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "expire_time",
+              "description": "",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "user_balance.deleteUserBalance",
+      "description": "delete the user_balance",
+      "auth_type": ["ADMIN"],
+      "params": [
+        {
+          "name": "id",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "comment",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "user_balance.changeUserBalanceValue",
+      "description": "update the value of user balance",
+      "auth_type": ["ADMIN"],
+      "params": [
+        {
+          "name": "user_balance_id",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "balance_change_value",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "balance_action",
+          "value": ["add", "multiply", "set"]
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "user_balance.searchUserBalanceChangeLog",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "params": [
+        {
+          "name": "conds",
+          "description": "",
+          "schema": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "from",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "to",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "sort_by",
+          "description": "",
+          "value": ["change_time", "object_id", "admin_id"]
+        },
+        {
+          "name": "desc",
+          "description": "descending",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "",
+        "comment": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "items": [
+            {
+              "name": "total_rows",
+              "description": "number of total rows",
+              "schema": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "report",
+              "description": "",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "title": "",
+                  "type": "dict"
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
