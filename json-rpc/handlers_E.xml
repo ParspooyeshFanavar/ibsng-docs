@@ -107,9 +107,9 @@
         <param name="admin_username" type="str" comment="" />
         <param name="admin_isp_name" type="str" comment="" />
         <param name="admin_locked" type="bool" comment="" />
-        <param name="name" type="name" comment="" />
-        <param name="email" type="name" comment="" />
-        <param name="comment" type="name" comment="" />
+        <param name="name" type="str" comment="" />
+        <param name="email" type="str" comment="" />
+        <param name="comment" type="str" comment="" />
         <param name="admin_has_otp" type="bool" comment="" />
         <param name="admin_request_limit" type="int" comment="" />
       </input>
@@ -1264,7 +1264,7 @@
           <param name="group_name" type="str" comment="" />
           <param name="comment" type="str" comment="" />
           <param name="isp_id" type="int" comment="" />
-          <param name="isp_name" type="name" comment="" />
+          <param name="isp_name" type="str" comment="" />
           <param name="raw_attrs" type="dict" comment="dates are gregorian" />
           <param name="attrs" type="dict" comment="dates are based on request date_type" />
         </item>
@@ -1288,7 +1288,7 @@
         <param name="group_name" type="str" comment="" />
         <param name="comment" type="str" comment="" />
         <param name="isp_id" type="int" comment="" />
-        <param name="isp_name" type="name" comment="" />
+        <param name="isp_name" type="str" comment="" />
         <param name="raw_attrs" type="dict" comment="dates are gregorian" />
         <param name="attrs" type="dict" comment="dates are based on request date_type" />
       </output>
@@ -1303,7 +1303,7 @@
         <param name="group_name" type="str" comment="" />
         <param name="comment" type="str" comment="" />
         <param name="isp_id" type="int" comment="" />
-        <param name="isp_name" type="name" comment="" />
+        <param name="isp_name" type="str" comment="" />
         <param name="raw_attrs" type="dict" comment="dates are gregorian" />
         <param name="attrs" type="dict" comment="dates are based on request date_type" />
       </output>
@@ -1806,7 +1806,7 @@
           <choice value="Message To Admin" />
           <choice value="Message To User" />
         </param>
-        <param name="schedule_date" type="str_datetime, float" requires_param="schedule_date_unit" comment="" />
+        <param name="schedule_date" type="datetime, float" requires_param="schedule_date_unit" comment="" />
         <param name="schedule_date_unit" type="choice" optional="true">
           <choice value="jalali" />
           <choice value="gregorian" />
@@ -1842,7 +1842,7 @@
           <choice value="Message To Admin" />
           <choice value="Message To User" />
         </param>
-        <param name="schedule_date" type="str_datetime, float" requires_param="schedule_date_unit" comment="" />
+        <param name="schedule_date" type="datetime, float" requires_param="schedule_date_unit" comment="" />
         <param name="schedule_date_unit" type="choice" optional="true">
           <choice value="jalali" />
           <choice value="gregorian" />
@@ -1881,7 +1881,7 @@
       <input type="dict">
         <param name="conds" type="dict" comment="">
           <param name="message_ids" type="int" multi_str="true" optional="true" comment="" />
-          <param name="receive_date_from" type="str_datetime, float" optional="true" requires_param="receive_date_from_unit" comment="" />
+          <param name="receive_date_from" type="datetime, float" optional="true" requires_param="receive_date_from_unit" comment="" />
           <param name="receive_date_from_unit" type="choice" optional="true" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -1891,7 +1891,7 @@
             <choice value="hours" />
             <choice value="minutes" />
           </param>
-          <param name="receive_date_to" type="str_datetime, float" optional="true" requires_param="receive_date_to_unit" comment="" />
+          <param name="receive_date_to" type="datetime, float" optional="true" requires_param="receive_date_to_unit" comment="" />
           <param name="receive_date_to_unit" type="choice" optional="true" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -1963,7 +1963,7 @@
           <param name="user_ids" type="int" multi_str="true" optional="true" comment="" />
           <param name="user_deleted" type="bool" optional="true" comment="" />
           <param name="message_ids" type="int" multi_str="true" optional="true" comment="" />
-          <param name="receive_date_from" type="str_datetime, float" optional="true" requires_param="receive_date_from_unit" comment="" />
+          <param name="receive_date_from" type="datetime, float" optional="true" requires_param="receive_date_from_unit" comment="" />
           <param name="receive_date_from_unit" type="choice" optional="true" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -1973,7 +1973,7 @@
             <choice value="hours" />
             <choice value="minutes" />
           </param>
-          <param name="receive_date_to" type="str_datetime, float" optional="true" requires_param="receive_date_to_unit" comment="" />
+          <param name="receive_date_to" type="datetime, float" optional="true" requires_param="receive_date_to_unit" comment="" />
           <param name="receive_date_to_unit" type="choice" optional="true" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -2044,7 +2044,7 @@
           <param name="owner_type" value="ISP" comment="" />
           <param name="isp_ids" type="int" multi_str="true" optional="true" comment="" />
           <param name="message_ids" type="int" multi_str="true" optional="true" comment="" />
-          <param name="receive_date_from" type="str_datetime, float" optional="true" requires_param="receive_date_from_unit" comment="" />
+          <param name="receive_date_from" type="datetime, float" optional="true" requires_param="receive_date_from_unit" comment="" />
           <param name="receive_date_from_unit" type="choice" optional="true" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -2054,7 +2054,7 @@
             <choice value="hours" />
             <choice value="minutes" />
           </param>
-          <param name="receive_date_to" type="str_datetime, float" optional="true" requires_param="receive_date_to_unit" comment="" />
+          <param name="receive_date_to" type="datetime, float" optional="true" requires_param="receive_date_to_unit" comment="" />
           <param name="receive_date_to_unit" type="choice" optional="true" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -2123,7 +2123,7 @@
       <input type="dict">
         <param name="conds" type="dict" comment="">
           <param name="message_ids" type="int" multi_str="true" optional="true" comment="" />
-          <param name="transfer_date_from" type="str_datetime, float" optional="true" requires_param="transfer_date_from_unit" comment="" />
+          <param name="transfer_date_from" type="datetime, float" optional="true" requires_param="transfer_date_from_unit" comment="" />
           <param name="transfer_date_from_unit" type="choice" optional="true" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -2133,7 +2133,7 @@
             <choice value="hours" />
             <choice value="minutes" />
           </param>
-          <param name="transfer_date_to" type="str_datetime, float" optional="true" requires_param="transfer_date_to_unit" comment="" />
+          <param name="transfer_date_to" type="datetime, float" optional="true" requires_param="transfer_date_to_unit" comment="" />
           <param name="transfer_date_to_unit" type="choice" optional="true" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -2202,7 +2202,7 @@
           <param name="user_ids" type="int" multi_str="true" optional="true" comment="" />
           <param name="user_deleted" type="bool" optional="true" comment="" />
           <param name="message_ids" type="int" multi_str="true" optional="true" comment="" />
-          <param name="transfer_date_from" type="str_datetime, float" optional="true" requires_param="transfer_date_from_unit" comment="" />
+          <param name="transfer_date_from" type="datetime, float" optional="true" requires_param="transfer_date_from_unit" comment="" />
           <param name="transfer_date_from_unit" type="choice" optional="true" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -2212,7 +2212,7 @@
             <choice value="hours" />
             <choice value="minutes" />
           </param>
-          <param name="transfer_date_to" type="str_datetime, float" optional="true" requires_param="transfer_date_to_unit" comment="" />
+          <param name="transfer_date_to" type="datetime, float" optional="true" requires_param="transfer_date_to_unit" comment="" />
           <param name="transfer_date_to_unit" type="choice" optional="true" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -2280,7 +2280,7 @@
           <param name="owner_type" value="ISP" comment="" />
           <param name="isp_ids" type="int" multi_str="true" optional="true" comment="" />
           <param name="message_ids" type="int" multi_str="true" optional="true" comment="" />
-          <param name="transfer_date_from" type="str_datetime, float" optional="true" requires_param="transfer_date_from_unit" comment="" />
+          <param name="transfer_date_from" type="datetime, float" optional="true" requires_param="transfer_date_from_unit" comment="" />
           <param name="transfer_date_from_unit" type="choice" optional="true" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -2290,7 +2290,7 @@
             <choice value="hours" />
             <choice value="minutes" />
           </param>
-          <param name="transfer_date_to" type="str_datetime, float" optional="true" requires_param="transfer_date_to_unit" comment="" />
+          <param name="transfer_date_to" type="datetime, float" optional="true" requires_param="transfer_date_to_unit" comment="" />
           <param name="transfer_date_to_unit" type="choice" optional="true" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -2362,7 +2362,7 @@
           <param name="owner_ids" type="int" multi_str="true" optional="true" comment="" />
           <param name="message_ids" type="int" multi_str="true" optional="true" comment="" />
           <param name="isp_names" type="str" multi_str="true" optional="true" comment="" />
-          <param name="schedule_date_from" type="str_datetime, float" optional="true" requires_param="schedule_date_from_unit" comment="" />
+          <param name="schedule_date_from" type="datetime, float" optional="true" requires_param="schedule_date_from_unit" comment="" />
           <param name="schedule_date_from_unit" type="choice" optional="true" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -2372,7 +2372,7 @@
             <choice value="hours" />
             <choice value="minutes" />
           </param>
-          <param name="schedule_date_to" type="str_datetime, float" optional="true" requires_param="schedule_date_to_unit" comment="" />
+          <param name="schedule_date_to" type="datetime, float" optional="true" requires_param="schedule_date_to_unit" comment="" />
           <param name="schedule_date_to_unit" type="choice" optional="true" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -2450,7 +2450,7 @@
       <input type="dict">
         <param name="conds" type="dict" comment="">
           <param name="message_ids" type="int" multi_str="true" optional="true" comment="" />
-          <param name="schedule_date_from" type="str_datetime, float" optional="true" requires_param="schedule_date_from_unit" comment="" />
+          <param name="schedule_date_from" type="datetime, float" optional="true" requires_param="schedule_date_from_unit" comment="" />
           <param name="schedule_date_from_unit" type="choice" optional="true" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -2460,7 +2460,7 @@
             <choice value="hours" />
             <choice value="minutes" />
           </param>
-          <param name="schedule_date_to" type="str_datetime, float" optional="true" requires_param="schedule_date_to_unit" comment="" />
+          <param name="schedule_date_to" type="datetime, float" optional="true" requires_param="schedule_date_to_unit" comment="" />
           <param name="schedule_date_to_unit" type="choice" optional="true" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -2551,7 +2551,7 @@
             <item index="0" type="int" comment="message_id" />
             <item index="1" type="int" comment="user_id" />
             <item index="2" type="str" comment="body" />
-            <item index="3" type="str_datetime" comment="transfer_date" />
+            <item index="3" type="datetime" comment="transfer_date" />
             <item index="4" type="str" comment="source" />
           </item>
         </param>
@@ -2731,7 +2731,7 @@
     </method>
     <method name="deleteNotificationProfile" auth_type="ADMIN" requires_perm="CHANGE NOTIFICATION" comment="">
       <input type="dict" comment="">
-        <param name="notification_profile_name" type="" comment="" />
+        <param name="notification_profile_name" type="str" comment="" />
       </input>
       <output type="null" />
     </method>
@@ -3288,7 +3288,7 @@
             <choice value="&gt;=" />
             <choice value="&lt;=" />
           </param>
-          <param name="login_time_from" type="str_datetime, float" optional="true" requires_param="login_time_from_unit" comment="" />
+          <param name="login_time_from" type="datetime, float" optional="true" requires_param="login_time_from_unit" comment="" />
           <param name="login_time_from_unit" type="choice" optional="true" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -3298,7 +3298,7 @@
             <choice value="hours" />
             <choice value="minutes" />
           </param>
-          <param name="login_time_to" type="str_datetime, float" optional="true" requires_param="login_time_to_unit" comment="" />
+          <param name="login_time_to" type="datetime, float" optional="true" requires_param="login_time_to_unit" comment="" />
           <param name="login_time_to_unit" type="choice" optional="true" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -3308,7 +3308,7 @@
             <choice value="hours" />
             <choice value="minutes" />
           </param>
-          <param name="logout_time_from" type="str_datetime, float" optional="true" requires_param="logout_time_from_unit" comment="" />
+          <param name="logout_time_from" type="datetime, float" optional="true" requires_param="logout_time_from_unit" comment="" />
           <param name="logout_time_from_unit" type="choice" optional="true" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -3318,7 +3318,7 @@
             <choice value="hours" />
             <choice value="minutes" />
           </param>
-          <param name="logout_time_to" type="str_datetime, float" optional="true" requires_param="logout_time_to_unit" comment="" />
+          <param name="logout_time_to" type="datetime, float" optional="true" requires_param="logout_time_to_unit" comment="" />
           <param name="logout_time_to_unit" type="choice" optional="true" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -3412,8 +3412,8 @@
               <choice value="Internet" />
               <choice value="VoIP" />
             </param>
-            <param name="login_time_formatted" type="str_datetime" comment="" />
-            <param name="logout_time_formatted" type="str_datetime" comment="" />
+            <param name="login_time_formatted" type="datetime" comment="" />
+            <param name="logout_time_formatted" type="datetime" comment="" />
             <param name="duration_seconds" type="int" comment="" />
             <param name="credit_used" type="float" comment="" />
             <param name="before_credit" type="float" comment="" />
@@ -3475,7 +3475,7 @@
             <choice value="&gt;=" />
             <choice value="&lt;=" />
           </param>
-          <param name="login_time_from" type="str_datetime, float" optional="true" requires_param="login_time_from_unit" comment="" />
+          <param name="login_time_from" type="datetime, float" optional="true" requires_param="login_time_from_unit" comment="" />
           <param name="login_time_from_unit" type="choice" optional="true" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -3485,7 +3485,7 @@
             <choice value="hours" />
             <choice value="minutes" />
           </param>
-          <param name="login_time_to" type="str_datetime, float" optional="true" requires_param="login_time_to_unit" comment="" />
+          <param name="login_time_to" type="datetime, float" optional="true" requires_param="login_time_to_unit" comment="" />
           <param name="login_time_to_unit" type="choice" optional="true" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -3495,7 +3495,7 @@
             <choice value="hours" />
             <choice value="minutes" />
           </param>
-          <param name="logout_time_from" type="str_datetime, float" optional="true" requires_param="logout_time_from_unit" comment="" />
+          <param name="logout_time_from" type="datetime, float" optional="true" requires_param="logout_time_from_unit" comment="" />
           <param name="logout_time_from_unit" type="choice" optional="true" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -3505,7 +3505,7 @@
             <choice value="hours" />
             <choice value="minutes" />
           </param>
-          <param name="logout_time_to" type="str_datetime, float" optional="true" requires_param="logout_time_to_unit" comment="" />
+          <param name="logout_time_to" type="datetime, float" optional="true" requires_param="logout_time_to_unit" comment="" />
           <param name="logout_time_to_unit" type="choice" optional="true" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -3594,8 +3594,8 @@
               <choice value="Internet" />
               <choice value="VoIP" />
             </param>
-            <param name="login_time_formatted" type="str_datetime" comment="" />
-            <param name="logout_time_formatted" type="str_datetime" comment="" />
+            <param name="login_time_formatted" type="datetime" comment="" />
+            <param name="logout_time_formatted" type="datetime" comment="" />
             <param name="duration_seconds" type="int" comment="" />
             <param name="credit_used" type="float" comment="" />
             <param name="before_credit" type="float" comment="" />
@@ -3750,7 +3750,7 @@
               <item index="1" type="dict" comment="user dict">
                 <param name="group_name" type="str" comment="" />
                 <param name="isp_name" type="str" comment="" />
-                <param name="creation_date" type="str_datetime" comment="" />
+                <param name="creation_date" type="datetime" comment="" />
                 <param name="user_name" type="str" comment="" />
                 <param name="serial" type="str" comment="" />
                 <param name="name" type="str" comment="user's real name" />
@@ -3782,7 +3782,7 @@
               <item index="1" type="dict" comment="user dict">
                 <param name="group_name" type="str" comment="" />
                 <param name="isp_name" type="str" comment="" />
-                <param name="creation_date" type="str_datetime" comment="" />
+                <param name="creation_date" type="datetime" comment="" />
                 <param name="user_name" type="str" comment="" />
                 <param name="serial" type="str" comment="" />
                 <param name="name" type="str" comment="user's real name" />
@@ -3813,7 +3813,7 @@
               <item index="1" type="dict" comment="user dict">
                 <param name="group_name" type="str" comment="" />
                 <param name="isp_name" type="str" comment="" />
-                <param name="creation_date" type="str_datetime" comment="" />
+                <param name="creation_date" type="datetime" comment="" />
                 <param name="user_name" type="str" comment="" />
                 <param name="serial" type="str" comment="" />
                 <param name="name" type="str" comment="user's real name" />
@@ -3998,7 +3998,7 @@
             <choice value="&gt;=" />
             <choice value="&lt;=" />
           </param>
-          <param name="change_time_from" type="str_datetime, float" optional="true" requires_param="change_time_from_unit" comment="" />
+          <param name="change_time_from" type="datetime, float" optional="true" requires_param="change_time_from_unit" comment="" />
           <param name="change_time_from_unit" type="choice" optional="true" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -4008,7 +4008,7 @@
             <choice value="hours" />
             <choice value="minutes" />
           </param>
-          <param name="change_time_to" type="str_datetime, float" optional="true" requires_param="change_time_to_unit" comment="" />
+          <param name="change_time_to" type="datetime, float" optional="true" requires_param="change_time_to_unit" comment="" />
           <param name="change_time_to_unit" type="choice" optional="true" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -4127,7 +4127,7 @@
             <choice value="&gt;=" />
             <choice value="&lt;=" />
           </param>
-          <param name="change_time_from" type="str_datetime, float" optional="true" requires_param="change_time_from_unit" comment="" />
+          <param name="change_time_from" type="datetime, float" optional="true" requires_param="change_time_from_unit" comment="" />
           <param name="change_time_from_unit" type="choice" optional="true" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -4137,7 +4137,7 @@
             <choice value="hours" />
             <choice value="minutes" />
           </param>
-          <param name="change_time_to" type="str_datetime, float" optional="true" requires_param="change_time_to_unit" comment="" />
+          <param name="change_time_to" type="datetime, float" optional="true" requires_param="change_time_to_unit" comment="" />
           <param name="change_time_to_unit" type="choice" optional="true" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -4245,7 +4245,7 @@
             <choice value="&gt;=" />
             <choice value="&lt;=" />
           </param>
-          <param name="change_time_from" type="str_datetime, float" optional="true" requires_param="change_time_from_unit" comment="" />
+          <param name="change_time_from" type="datetime, float" optional="true" requires_param="change_time_from_unit" comment="" />
           <param name="change_time_from_unit" type="choice" optional="true" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -4255,7 +4255,7 @@
             <choice value="hours" />
             <choice value="minutes" />
           </param>
-          <param name="change_time_to" type="str_datetime, float" optional="true" requires_param="change_time_to_unit" comment="" />
+          <param name="change_time_to" type="datetime, float" optional="true" requires_param="change_time_to_unit" comment="" />
           <param name="change_time_to_unit" type="choice" optional="true" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -4391,7 +4391,7 @@
             <choice value="&gt;=" />
             <choice value="&lt;=" />
           </param>
-          <param name="change_time_from" type="str_datetime, float" optional="true" requires_param="change_time_from_unit" comment="" />
+          <param name="change_time_from" type="datetime, float" optional="true" requires_param="change_time_from_unit" comment="" />
           <param name="change_time_from_unit" type="choice" optional="true" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -4401,7 +4401,7 @@
             <choice value="hours" />
             <choice value="minutes" />
           </param>
-          <param name="change_time_to" type="str_datetime, float" optional="true" requires_param="change_time_to_unit" comment="" />
+          <param name="change_time_to" type="datetime, float" optional="true" requires_param="change_time_to_unit" comment="" />
           <param name="change_time_to_unit" type="choice" optional="true" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -4416,8 +4416,8 @@
           <param name="user_isp_names" type="list, str" multi_str="false" optional="true" comment="list of isp names, or string one isp name" />
           <param name="isp_names" type="list, str" multi_str="false" optional="true" comment="list of isp names, or string one isp name" />
         </param>
-        <param name="from" type="0" comment="start index, for pagination" />
-        <param name="to" type="1" comment="end index, for pagination" />
+        <param name="from" type="int" comment="start index, for pagination" />
+        <param name="to" type="int" comment="end index, for pagination" />
         <param name="sort_by" type="choice" comment="">
           <choice value="change_time" />
           <choice value="user_id" />
@@ -4492,7 +4492,7 @@
             <choice value="&gt;=" />
             <choice value="&lt;=" />
           </param>
-          <param name="change_time_from" type="str_datetime, float" optional="true" requires_param="change_time_from_unit" comment="" />
+          <param name="change_time_from" type="datetime, float" optional="true" requires_param="change_time_from_unit" comment="" />
           <param name="change_time_from_unit" type="choice" optional="true" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -4502,7 +4502,7 @@
             <choice value="hours" />
             <choice value="minutes" />
           </param>
-          <param name="change_time_to" type="str_datetime, float" optional="true" requires_param="change_time_to_unit" comment="" />
+          <param name="change_time_to" type="datetime, float" optional="true" requires_param="change_time_to_unit" comment="" />
           <param name="change_time_to_unit" type="choice" optional="true" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -4516,8 +4516,8 @@
           <param name="group_name" type="list, str" multi_str="false" optional="true" comment="list of group names, or string of one group name" />
           <param name="isp_names" type="list, str" multi_str="false" optional="true" comment="list of isp names, or string one isp name" />
         </param>
-        <param name="from" type="0" comment="start index, for pagination" />
-        <param name="to" type="1" comment="end index, for pagination" />
+        <param name="from" type="int" comment="start index, for pagination" />
+        <param name="to" type="int" comment="end index, for pagination" />
         <param name="sort_by" type="choice" comment="">
           <choice value="change_time" />
           <choice value="user_id" />
@@ -4578,7 +4578,7 @@
             <choice value="hours" />
             <choice value="minutes" />
           </param>
-          <param name="change_time_to" type="str_datetime, float" optional="true" requires_param="change_time_to_unit" comment="" />
+          <param name="change_time_to" type="datetime, float" optional="true" requires_param="change_time_to_unit" comment="" />
           <param name="change_time_to_unit" type="choice" optional="true" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -4661,7 +4661,7 @@
           <param name="admin" type="list, str" optional="true" comment="list of admin usernames, or string of one admin username" />
           <param name="admin_isp_name" type="list, str" optional="true" comment="isp name of admin, list or string (of one)" />
           <param name="isp_names" type="list, str" multi_str="false" optional="true" comment="list of isp names, or string of one isp name" />
-          <param name="change_time_from" type="str_datetime, float" optional="true" requires_param="change_time_from_unit" comment="" />
+          <param name="change_time_from" type="datetime, float" optional="true" requires_param="change_time_from_unit" comment="" />
           <param name="change_time_from_unit" type="choice" optional="true" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -4671,7 +4671,7 @@
             <choice value="hours" />
             <choice value="minutes" />
           </param>
-          <param name="change_time_to" type="str_datetime, float" optional="true" requires_param="change_time_to_unit" comment="" />
+          <param name="change_time_to" type="datetime, float" optional="true" requires_param="change_time_to_unit" comment="" />
           <param name="change_time_to_unit" type="choice" optional="true" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -4715,7 +4715,7 @@
             <param name="isp_deposit_change_isp_name" type="str" comment="ISP Name" />
             <param name="isp_deposit_change_remote_addr" type="str" comment="Admin's Remote IP" />
             <param name="isp_deposit_change_time" type="str" comment="Change time, gregorian" />
-            <param name="isp_deposit_change_time_formatted" type="str_datetime" comment="Change time, depending on input date_type" />
+            <param name="isp_deposit_change_time_formatted" type="datetime" comment="Change time, depending on input date_type" />
           </item>
         </param>
       </output>
@@ -4725,7 +4725,7 @@
         <param name="conds" type="dict" comment="">
           <param name="isp_names" type="list, str" multi_str="false" optional="true" comment="list of isp names, or string of one isp name" />
           <param name="user_ids" type="str" multi_str="true" optional="true" comment="" />
-          <param name="temporary_extend_date_from" type="str_datetime, float" optional="true" requires_param="temporary_extend_date_from_unit" comment="" />
+          <param name="temporary_extend_date_from" type="datetime, float" optional="true" requires_param="temporary_extend_date_from_unit" comment="" />
           <param name="temporary_extend_date_from_unit" type="choice" optional="true" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -4735,7 +4735,7 @@
             <choice value="hours" />
             <choice value="minutes" />
           </param>
-          <param name="temporary_extend_date_to" type="str_datetime, float" optional="true" requires_param="temporary_extend_date_to_unit" comment="" />
+          <param name="temporary_extend_date_to" type="datetime, float" optional="true" requires_param="temporary_extend_date_to_unit" comment="" />
           <param name="temporary_extend_date_to_unit" type="choice" optional="true" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -4778,7 +4778,7 @@
     <method name="delReports" auth_type="ADMIN" requires_perm="DELETE REPORTS" comment="">
       <input type="dict">
         <param name="table" type="str" comment="" />
-        <param name="date" type="str_datetime, float" requires_param="date_unit" comment="" />
+        <param name="date" type="datetime, float" requires_param="date_unit" comment="" />
         <param name="date_unit" type="choice" comment="">
           <choice value="jalali" />
           <choice value="gregorian" />
@@ -4926,7 +4926,7 @@
     <method name="getManagementSummaryReport" auth_type="ADMIN" requires_perm="SEE CONNECTION LOGS" comment="">
       <input type="dict">
         <param name="conds" type="dict" comment="">
-          <param name="login_time_from" type="str_datetime, float" optional="false" requires_param="login_time_from_unit" comment="" />
+          <param name="login_time_from" type="datetime, float" optional="false" requires_param="login_time_from_unit" comment="" />
           <param name="login_time_from_unit" type="choice" optional="false" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -4936,7 +4936,7 @@
             <choice value="hours" />
             <choice value="minutes" />
           </param>
-          <param name="login_time_to" type="str_datetime, float" optional="true" requires_param="login_time_to_unit" comment="" />
+          <param name="login_time_to" type="datetime, float" optional="true" requires_param="login_time_to_unit" comment="" />
           <param name="login_time_to_unit" type="choice" optional="true" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -5068,7 +5068,7 @@
           </param>
           <param name="isp_names" type="list, str" multi_str="false" optional="true" comment="list of isp names, or string of one isp name" />
           <param name="admin" type="str" optional="true" comment="admin username" />
-          <param name="change_time_from" type="str_datetime, float" optional="true" requires_param="change_time_from_unit" comment="" />
+          <param name="change_time_from" type="datetime, float" optional="true" requires_param="change_time_from_unit" comment="" />
           <param name="change_time_from_unit" type="choice" optional="true" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -5078,7 +5078,7 @@
             <choice value="hours" />
             <choice value="minutes" />
           </param>
-          <param name="change_time_to" type="str_datetime, float" optional="true" requires_param="change_time_to_unit" comment="" />
+          <param name="change_time_to" type="datetime, float" optional="true" requires_param="change_time_to_unit" comment="" />
           <param name="change_time_to_unit" type="choice" optional="true" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -5181,7 +5181,7 @@
             <choice value="&gt;=" />
             <choice value="&lt;=" />
           </param>
-          <param name="payment_date_from" type="str_datetime, float" optional="true" requires_param="payment_date_from_unit" comment="" />
+          <param name="payment_date_from" type="datetime, float" optional="true" requires_param="payment_date_from_unit" comment="" />
           <param name="payment_date_from_unit" type="choice" optional="true" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -5191,7 +5191,7 @@
             <choice value="hours" />
             <choice value="minutes" />
           </param>
-          <param name="payment_date_to" type="str_datetime, float" optional="true" requires_param="payment_date_to_unit" comment="" />
+          <param name="payment_date_to" type="datetime, float" optional="true" requires_param="payment_date_to_unit" comment="" />
           <param name="payment_date_to_unit" type="choice" optional="true" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -5415,7 +5415,7 @@
         <param name="conds" type="dict" comment="">
           <param name="user_ids" type="str" multi_str="true" optional="true" comment="" />
           <param name="phones" type="str" multi_str="true" optional="true" comment="" />
-          <param name="post_date_from" type="str_datetime, float" optional="true" requires_param="post_date_from_unit" comment="" />
+          <param name="post_date_from" type="datetime, float" optional="true" requires_param="post_date_from_unit" comment="" />
           <param name="post_date_from_unit" type="choice" optional="true" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -5425,7 +5425,7 @@
             <choice value="hours" />
             <choice value="minutes" />
           </param>
-          <param name="post_date_to" type="str_datetime, float" optional="true" requires_param="post_date_to_unit" comment="" />
+          <param name="post_date_to" type="datetime, float" optional="true" requires_param="post_date_to_unit" comment="" />
           <param name="post_date_to_unit" type="choice" optional="true" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -5546,16 +5546,16 @@
             <choice value="seconds" comment="" />
           </param>
           <param name="date_from_op" type="choice" comment="operation for start date">
-            <choice value="<" comment="less than" />
-            <choice value=">" comment="more than" />
-            <choice value="<=" comment="less equal" />
-            <choice value=">=" comment="more equal" />
+            <choice value="&lt;" comment="less than" />
+            <choice value="&gt;" comment="more than" />
+            <choice value="&lt;=" comment="less equal" />
+            <choice value="&gt;=" comment="more equal" />
           </param>
           <param name="date_to_op" type="choice" comment="operation for end date">
-            <choice value="<" comment="less than" />
-            <choice value=">" comment="more than" />
-            <choice value="<=" comment="less equal" />
-            <choice value=">=" comment="more equal" />
+            <choice value="&lt;" comment="less than" />
+            <choice value="&gt;" comment="more than" />
+            <choice value="&lt;=" comment="less equal" />
+            <choice value="&gt;=" comment="more equal" />
           </param>
         </value>
       </input>
@@ -5593,16 +5593,16 @@
             <choice value="seconds" comment="" />
           </param>
           <param name="date_from_op" type="choice" comment="operation for start date">
-            <choice value="<" comment="less than" />
-            <choice value=">" comment="more than" />
-            <choice value="<=" comment="less equal" />
-            <choice value=">=" comment="more equal" />
+            <choice value="&lt;" comment="less than" />
+            <choice value="&gt;" comment="more than" />
+            <choice value="&lt;=" comment="less equal" />
+            <choice value="&gt;=" comment="more equal" />
           </param>
           <param name="date_to_op" type="choice" comment="operation for end date">
-            <choice value="<" comment="less than" />
-            <choice value=">" comment="more than" />
-            <choice value="<=" comment="less equal" />
-            <choice value=">=" comment="more equal" />
+            <choice value="&lt;" comment="less than" />
+            <choice value="&gt;" comment="more than" />
+            <choice value="&lt;=" comment="less equal" />
+            <choice value="&gt;=" comment="more equal" />
           </param>
         </value>
       </input>
@@ -5640,16 +5640,16 @@
             <choice value="seconds" comment="" />
           </param>
           <param name="date_from_op" type="choice" comment="operation for start date">
-            <choice value="<" comment="less than" />
-            <choice value=">" comment="more than" />
-            <choice value="<=" comment="less equal" />
-            <choice value=">=" comment="more equal" />
+            <choice value="&lt;" comment="less than" />
+            <choice value="&gt;" comment="more than" />
+            <choice value="&lt;=" comment="less equal" />
+            <choice value="&gt;=" comment="more equal" />
           </param>
           <param name="date_to_op" type="choice" comment="operation for end date">
-            <choice value="<" comment="less than" />
-            <choice value=">" comment="more than" />
-            <choice value="<=" comment="less equal" />
-            <choice value=">=" comment="more equal" />
+            <choice value="&lt;" comment="less than" />
+            <choice value="&gt;" comment="more than" />
+            <choice value="&lt;=" comment="less equal" />
+            <choice value="&gt;=" comment="more equal" />
           </param>
         </value>
       </input>
@@ -5687,16 +5687,16 @@
             <choice value="seconds" comment="" />
           </param>
           <param name="date_from_op" type="choice" comment="operation for start date">
-            <choice value="<" comment="less than" />
-            <choice value=">" comment="more than" />
-            <choice value="<=" comment="less equal" />
-            <choice value=">=" comment="more equal" />
+            <choice value="&lt;" comment="less than" />
+            <choice value="&gt;" comment="more than" />
+            <choice value="&lt;=" comment="less equal" />
+            <choice value="&gt;=" comment="more equal" />
           </param>
           <param name="date_to_op" type="choice" comment="operation for end date">
-            <choice value="<" comment="less than" />
-            <choice value=">" comment="more than" />
-            <choice value="<=" comment="less equal" />
-            <choice value=">=" comment="more equal" />
+            <choice value="&lt;" comment="less than" />
+            <choice value="&gt;" comment="more than" />
+            <choice value="&lt;=" comment="less equal" />
+            <choice value="&gt;=" comment="more equal" />
           </param>
         </value>
       </input>
@@ -6039,7 +6039,7 @@
           </param>
           <param name="charge" type="str" optional="true" comment="charge name" />
           <param name="last_renew" type="str_float" optional="true" comment="epoch time (float)" />
-          <param name="abs_exp_date" type="str_datetime" optional="true" requires_param="abs_exp_date_unit" comment="gregorian datetime string" />
+          <param name="abs_exp_date" type="datetime" optional="true" requires_param="abs_exp_date_unit" comment="gregorian datetime string" />
           <param name="abs_exp_date_unit" type="str" value="gregorian" optional="true" comment="" />
           <param name="ippool" type="str" optional="true" comment="User Info Internet IPpool (ippool name)" />
           <param name="assign_ip" type="str" optional="true" comment="User Info Internet Assign IP Address To User (comma-seperated values)" />
@@ -6183,30 +6183,30 @@
           </param>
           <param name="time_periodic_accounting_monthly_limit" type="str_int" optional="true" comment="Monthly Time Monthly Time Limit" />
           <param name="time_periodic_accounting_monthly_usage" type="str_int" optional="true" comment="Monthly Time This Period Usage" />
-          <param name="time_periodic_accounting_monthly_reset" type="str_datetime" optional="true" comment="Monthly Time Next Reset" />
+          <param name="time_periodic_accounting_monthly_reset" type="datetime" optional="true" comment="Monthly Time Next Reset" />
           <param name="traffic_periodic_accounting_monthly" type="str" optional="true" comment="Monthly Traffic Monthly Reset Type">
             <choice value="gregorian" />
             <choice value="jalali" />
           </param>
           <param name="traffic_periodic_accounting_monthly_limit" type="str_int" optional="true" comment="Monthly Traffic Monthly Traffic Limit" />
           <param name="traffic_periodic_accounting_monthly_usage" type="str_int" optional="true" comment="Monthly Traffic This Period Usage" />
-          <param name="traffic_periodic_accounting_monthly_reset" type="str_datetime" optional="true" comment="Monthly Traffic Next Reset" />
+          <param name="traffic_periodic_accounting_monthly_reset" type="datetime" optional="true" comment="Monthly Traffic Next Reset" />
           <param name="time_periodic_accounting_daily" type="str" optional="true" comment="Daily Time Number of days in period" />
           <param name="time_periodic_accounting_daily_limit" type="str_int" optional="true" comment="Daily Time Time Limit" />
           <param name="time_periodic_accounting_daily_usage" type="str_int" optional="true" comment="Daily Time This Period Usage" />
-          <param name="time_periodic_accounting_daily_reset" type="str_datetime" optional="true" comment="Daily Time Next Reset" />
+          <param name="time_periodic_accounting_daily_reset" type="datetime" optional="true" comment="Daily Time Next Reset" />
           <param name="traffic_periodic_accounting_daily" type="str" optional="true" comment="Daily Traffic Number of days in period" />
           <param name="traffic_periodic_accounting_daily_limit" type="str_int" optional="true" comment="Daily Traffic Time Limit" />
           <param name="traffic_periodic_accounting_daily_usage" type="str_int" optional="true" comment="Daily Traffic This Period Usage" />
-          <param name="traffic_periodic_accounting_daily_reset" type="str_datetime" optional="true" comment="Daily Traffic Next Reset" />
+          <param name="traffic_periodic_accounting_daily_reset" type="datetime" optional="true" comment="Daily Traffic Next Reset" />
           <param name="time_periodic_accounting_weekly" type="str" optional="true" comment="Daily Time Number of days in period" />
           <param name="time_periodic_accounting_weekly_limit" type="str_int" optional="true" comment="Daily Time Time Limit" />
           <param name="time_periodic_accounting_weekly_usage" type="str_int" optional="true" comment="Daily Time This Period Usage" />
-          <param name="time_periodic_accounting_weekly_reset" type="str_datetime" optional="true" comment="Daily Time Next Reset" />
+          <param name="time_periodic_accounting_weekly_reset" type="datetime" optional="true" comment="Daily Time Next Reset" />
           <param name="traffic_periodic_accounting_weekly" type="str" optional="true" comment="Weeklyy Traffic Number of days in period" />
           <param name="traffic_periodic_accounting_weekly_limit" type="str_int" optional="true" comment="Weekly Traffic Time Limit" />
           <param name="traffic_periodic_accounting_weekly_usage" type="str_int" optional="true" comment="Weekly Traffic This Period Usage" />
-          <param name="traffic_periodic_accounting_weekly_reset" type="str_datetime" optional="true" comment="Weekly Traffic Next Reset" />
+          <param name="traffic_periodic_accounting_weekly_reset" type="datetime" optional="true" comment="Weekly Traffic Next Reset" />
           <param name="monthly_periodic_credit_change" type="choice" optional="true" comment="Monthly Credit Change Monthly Reset Type">
             <choice value="gregorian" />
             <choice value="jalali" />
@@ -6220,7 +6220,7 @@
           <param name="monthly_periodic_credit_change_after_first_login" type="bool" optional="true" comment="Monthly Credit Change Effective After First Login" />
           <param name="monthly_periodic_credit_change_negate_credit" type="bool" optional="true" comment="Monthly Credit Change Negate Credit" />
           <param name="monthly_periodic_credit_change_do_on_first_login" type="bool" optional="true" comment="Monthly Credit Change Do On First Login" />
-          <param name="monthly_periodic_credit_change_reset" type="str_datetime" optional="true" comment="Monthly Credit Change Next Reset" />
+          <param name="monthly_periodic_credit_change_reset" type="datetime" optional="true" comment="Monthly Credit Change Next Reset" />
           <param name="daily_periodic_credit_change" type="str_int" optional="true" comment="Monthly Credit Change Number of days in period"></param>
           <param name="daily_periodic_credit_change_type" type="choice" optional="true" comment="Daily Credit Change Credit Change Type">
             <choice value="absolute" comment="" />
@@ -6230,7 +6230,7 @@
           <param name="daily_periodic_credit_change_after_first_login" type="bool" optional="true" comment="Daily Credit Change Effective After First Login" />
           <param name="daily_periodic_credit_change_negate_credit" type="bool" optional="true" comment="Daily Credit Change Negate Credit" />
           <param name="daily_periodic_credit_change_do_on_first_login" type="bool" optional="true" comment="Daily Credit Change Do On First Login" />
-          <param name="daily_periodic_credit_change_reset" type="str_datetime" optional="true" comment="Daily Credit Change Next Reset" />
+          <param name="daily_periodic_credit_change_reset" type="datetime" optional="true" comment="Daily Credit Change Next Reset" />
           <param name="persistent_lan_ip" type="list" item_type="str" optional="true" comment="" />
           <param name="persistent_lan_mac" type="list" item_type="str" optional="true" comment="" />
           <param name="persistent_lan_ras_ip" type="list" item_type="str" optional="true" comment="" />
@@ -6252,7 +6252,7 @@
             <choice value="Months" comment="1 month means 30 days" />
             <choice value="Years" comment="1 month means 365 days" />
           </param>
-          <param name="negative_credit_start" type="str_datetime" optional="true" comment="User Info Exp Dates Negative Credit Expiration Date Negative Credit Start" />
+          <param name="negative_credit_start" type="datetime" optional="true" comment="User Info Exp Dates Negative Credit Expiration Date Negative Credit Start" />
           <param name="renew_next_group" type="str" optional="true" comment="group_name" />
           <param name="second_normal_username" type="str" optional="true" comment="Second Internet Username" />
           <param name="serial" type="str" optional="true" comment="User Info Username Serial ID" />
@@ -6544,30 +6544,30 @@
           </param>
           <param name="time_periodic_accounting_monthly_limit" type="str_int" optional="true" comment="Monthly Time Monthly Time Limit" />
           <param name="time_periodic_accounting_monthly_usage" type="str_int" optional="true" comment="Monthly Time This Period Usage" />
-          <param name="time_periodic_accounting_monthly_reset" type="str_datetime" optional="true" comment="Monthly Time Next Reset" />
+          <param name="time_periodic_accounting_monthly_reset" type="datetime" optional="true" comment="Monthly Time Next Reset" />
           <param name="traffic_periodic_accounting_monthly" type="str" optional="true" comment="Monthly Traffic Monthly Reset Type">
             <choice value="gregorian" />
             <choice value="jalali" />
           </param>
           <param name="traffic_periodic_accounting_monthly_limit" type="str_int" optional="true" comment="Monthly Traffic Monthly Traffic Limit" />
           <param name="traffic_periodic_accounting_monthly_usage" type="str_int" optional="true" comment="Monthly Traffic This Period Usage" />
-          <param name="traffic_periodic_accounting_monthly_reset" type="str_datetime" optional="true" comment="Monthly Traffic Next Reset" />
+          <param name="traffic_periodic_accounting_monthly_reset" type="datetime" optional="true" comment="Monthly Traffic Next Reset" />
           <param name="time_periodic_accounting_daily" type="str" optional="true" comment="Daily Time Number of days in period" />
           <param name="time_periodic_accounting_daily_limit" type="str_int" optional="true" comment="Daily Time Time Limit" />
           <param name="time_periodic_accounting_daily_usage" type="str_int" optional="true" comment="Daily Time This Period Usage" />
-          <param name="time_periodic_accounting_daily_reset" type="str_datetime" optional="true" comment="Daily Time Next Reset" />
+          <param name="time_periodic_accounting_daily_reset" type="datetime" optional="true" comment="Daily Time Next Reset" />
           <param name="traffic_periodic_accounting_daily" type="str" optional="true" comment="Daily Traffic Number of days in period" />
           <param name="traffic_periodic_accounting_daily_limit" type="str_int" optional="true" comment="Daily Traffic Time Limit" />
           <param name="traffic_periodic_accounting_daily_usage" type="str_int" optional="true" comment="Daily Traffic This Period Usage" />
-          <param name="traffic_periodic_accounting_daily_reset" type="str_datetime" optional="true" comment="Daily Traffic Next Reset" />
+          <param name="traffic_periodic_accounting_daily_reset" type="datetime" optional="true" comment="Daily Traffic Next Reset" />
           <param name="time_periodic_accounting_weekly" type="str" optional="true" comment="Daily Time Number of days in period" />
           <param name="time_periodic_accounting_weekly_limit" type="str_int" optional="true" comment="Daily Time Time Limit" />
           <param name="time_periodic_accounting_weekly_usage" type="str_int" optional="true" comment="Daily Time This Period Usage" />
-          <param name="time_periodic_accounting_weekly_reset" type="str_datetime" optional="true" comment="Daily Time Next Reset" />
+          <param name="time_periodic_accounting_weekly_reset" type="datetime" optional="true" comment="Daily Time Next Reset" />
           <param name="traffic_periodic_accounting_weekly" type="str" optional="true" comment="Weeklyy Traffic Number of days in period" />
           <param name="traffic_periodic_accounting_weekly_limit" type="str_int" optional="true" comment="Weekly Traffic Time Limit" />
           <param name="traffic_periodic_accounting_weekly_usage" type="str_int" optional="true" comment="Weekly Traffic This Period Usage" />
-          <param name="traffic_periodic_accounting_weekly_reset" type="str_datetime" optional="true" comment="Weekly Traffic Next Reset" />
+          <param name="traffic_periodic_accounting_weekly_reset" type="datetime" optional="true" comment="Weekly Traffic Next Reset" />
           <param name="monthly_periodic_credit_change" type="choice" optional="true" comment="Monthly Credit Change Monthly Reset Type">
             <choice value="gregorian" />
             <choice value="jalali" />
@@ -6581,7 +6581,7 @@
           <param name="monthly_periodic_credit_change_after_first_login" type="bool" optional="true" comment="Monthly Credit Change Effective After First Login" />
           <param name="monthly_periodic_credit_change_negate_credit" type="bool" optional="true" comment="Monthly Credit Change Negate Credit" />
           <param name="monthly_periodic_credit_change_do_on_first_login" type="bool" optional="true" comment="Monthly Credit Change Do On First Login" />
-          <param name="monthly_periodic_credit_change_reset" type="str_datetime" optional="true" comment="Monthly Credit Change Next Reset" />
+          <param name="monthly_periodic_credit_change_reset" type="datetime" optional="true" comment="Monthly Credit Change Next Reset" />
           <param name="daily_periodic_credit_change" type="str_int" optional="true" comment="Monthly Credit Change Number of days in period"></param>
           <param name="daily_periodic_credit_change_type" type="choice" optional="true" comment="Daily Credit Change Credit Change Type">
             <choice value="absolute" comment="" />
@@ -6591,7 +6591,7 @@
           <param name="daily_periodic_credit_change_after_first_login" type="bool" optional="true" comment="Daily Credit Change Effective After First Login" />
           <param name="daily_periodic_credit_change_negate_credit" type="bool" optional="true" comment="Daily Credit Change Negate Credit" />
           <param name="daily_periodic_credit_change_do_on_first_login" type="bool" optional="true" comment="Daily Credit Change Do On First Login" />
-          <param name="daily_periodic_credit_change_reset" type="str_datetime" optional="true" comment="Daily Credit Change Next Reset" />
+          <param name="daily_periodic_credit_change_reset" type="datetime" optional="true" comment="Daily Credit Change Next Reset" />
           <param name="persistent_lan_ip" type="list" item_type="str" optional="true" comment="" />
           <param name="persistent_lan_mac" type="list" item_type="str" optional="true" comment="" />
           <param name="persistent_lan_ras_ip" type="list" item_type="str" optional="true" comment="" />
@@ -6614,7 +6614,7 @@
             <choice value="Months" comment="1 month means 30 days" />
             <choice value="Years" comment="1 month means 365 days" />
           </param>
-          <param name="negative_credit_start" type="str_datetime" optional="true" comment="User Info Exp Dates Negative Credit Expiration Date Negative Credit Start" />
+          <param name="negative_credit_start" type="datetime" optional="true" comment="User Info Exp Dates Negative Credit Expiration Date Negative Credit Start" />
           <param name="renew_do_not_reset_credit" type="true_if_exists" optional="true_if_exists" comment="User Info Flags Renew Do Not Reset Credit" />
           <param name="reset_negative_credit_on_renew" type="true_if_exists" optional="true_if_exists" comment="User Info Flags Reset Negative Credit On Renew" />
           <param name="renew_next_group" type="str" optional="true" comment="group_name" />
@@ -6727,7 +6727,7 @@
     <method name="searchExpiredUsers" auth_type="ADMIN" requires_perm="GET USER INFORMATION" comment="">
       <input type="dict">
         <param name="conds" type="dict" comment="">
-          <param name="exp_date_from" type="str_datetime, float" optional="true" requires_param="exp_date_from_unit" comment="" />
+          <param name="exp_date_from" type="datetime, float" optional="true" requires_param="exp_date_from_unit" comment="" />
           <param name="exp_date_from_unit" type="choice" optional="true" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -6737,7 +6737,7 @@
             <choice value="hours" />
             <choice value="minutes" />
           </param>
-          <param name="exp_date_to" type="str_datetime, float" optional="true" requires_param="exp_date_to_unit" comment="" />
+          <param name="exp_date_to" type="datetime, float" optional="true" requires_param="exp_date_to_unit" comment="" />
           <param name="exp_date_to_unit" type="choice" optional="true" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -6806,16 +6806,16 @@
     <method name="searchUser" auth_type="ADMIN" requires_perm="SEARCH USER" comment="">
       <input type="dict">
         <param name="conds" type="dict" comment="">
-          <param name="user_role" type="choise" type="str" optional="true">
-            <choise name="account" />
-            <choise name="role" />
+          <param name="user_role" type="choice" item_type="str" optional="true">
+            <choice value="account" />
+            <choice value="role" />
           </param>
           <param name="parent_user_id" type="int" optional="true" />
           <param name="customer_id" type="int" optional="true" />
           <param name="customer_name" type="str" optional="true" />
           <param name="customer_id" type="int" optional="true" />
           <param name="customer_uid" type="str" optional="true" />
-          <param name="abs_exp_date_from" type="str_datetime, float" optional="true" requires_param="abs_exp_date_from_unit" comment="" />
+          <param name="abs_exp_date_from" type="datetime, float" optional="true" requires_param="abs_exp_date_from_unit" comment="" />
           <param name="abs_exp_date_from_unit" type="choice" optional="true" requires_param="" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -6825,7 +6825,7 @@
             <choice value="hours" />
             <choice value="minutes" />
           </param>
-          <param name="abs_exp_date_to" type="str_datetime, float" optional="true" requires_param="abs_exp_date_to_unit" comment="" />
+          <param name="abs_exp_date_to" type="datetime, float" optional="true" requires_param="abs_exp_date_to_unit" comment="" />
           <param name="abs_exp_date_to_unit" type="choice" optional="true" requires_param="" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -6961,7 +6961,7 @@
             <choice value="equals" comment="" />
           </param>
           <param name="has_connection_log_archive" type="true_if_exists" optional="true" requires_param="" comment="" />
-          <param name="creation_date_from" type="str_datetime, float" optional="true" requires_param="creation_date_from_unit" comment="" />
+          <param name="creation_date_from" type="datetime, float" optional="true" requires_param="creation_date_from_unit" comment="" />
           <param name="creation_date_from_unit" type="choice" optional="true" requires_param="" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -6971,7 +6971,7 @@
             <choice value="hours" />
             <choice value="minutes" />
           </param>
-          <param name="creation_date_to" type="str_datetime, float" optional="true" requires_param="creation_date_to_unit" comment="" />
+          <param name="creation_date_to" type="datetime, float" optional="true" requires_param="creation_date_to_unit" comment="" />
           <param name="creation_date_to_unit" type="choice" optional="true" requires_param="" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -7031,7 +7031,7 @@
             <choice value="ends_with" comment="" />
             <choice value="equals" comment="" />
           </param>
-          <param name="user_value_exp_from_creation_date_from" type="str_datetime, float" optional="true" requires_param="user_value_exp_from_creation_date_from_unit" comment="" />
+          <param name="user_value_exp_from_creation_date_from" type="datetime, float" optional="true" requires_param="user_value_exp_from_creation_date_from_unit" comment="" />
           <param name="user_value_exp_from_creation_date_from_unit" type="choice" optional="true" requires_param="" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -7041,7 +7041,7 @@
             <choice value="hours" />
             <choice value="minutes" />
           </param>
-          <param name="user_value_exp_from_creation_date_to" type="str_datetime, float" optional="true" requires_param="user_value_exp_from_creation_date_to_unit" comment="" />
+          <param name="user_value_exp_from_creation_date_to" type="datetime, float" optional="true" requires_param="user_value_exp_from_creation_date_to_unit" comment="" />
           <param name="user_value_exp_from_creation_date_to_unit" type="choice" optional="true" requires_param="" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -7051,7 +7051,7 @@
             <choice value="hours" />
             <choice value="minutes" />
           </param>
-          <param name="user_value_exp_from_first_login_from" type="str_datetime, float" optional="true" requires_param="user_value_exp_from_first_login_from_unit" comment="" />
+          <param name="user_value_exp_from_first_login_from" type="datetime, float" optional="true" requires_param="user_value_exp_from_first_login_from_unit" comment="" />
           <param name="user_value_exp_from_first_login_from_unit" type="choice" optional="true" requires_param="" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -7061,7 +7061,7 @@
             <choice value="hours" />
             <choice value="minutes" />
           </param>
-          <param name="user_value_exp_from_first_login_to" type="str_datetime, float" optional="true" requires_param="user_value_exp_from_first_login_to_unit" comment="" />
+          <param name="user_value_exp_from_first_login_to" type="datetime, float" optional="true" requires_param="user_value_exp_from_first_login_to_unit" comment="" />
           <param name="user_value_exp_from_first_login_to_unit" type="choice" optional="true" requires_param="" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -7071,7 +7071,7 @@
             <choice value="hours" />
             <choice value="minutes" />
           </param>
-          <param name="exp_from_renew_user_value_from" type="str_datetime, float" optional="true" requires_param="exp_from_renew_user_value_from_unit" comment="" />
+          <param name="exp_from_renew_user_value_from" type="datetime, float" optional="true" requires_param="exp_from_renew_user_value_from_unit" comment="" />
           <param name="exp_from_renew_user_value_from_unit" type="choice" optional="true" requires_param="" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -7081,7 +7081,7 @@
             <choice value="hours" />
             <choice value="minutes" />
           </param>
-          <param name="exp_from_renew_user_value_to" type="str_datetime, float" optional="true" requires_param="exp_from_renew_user_value_to_unit" comment="" />
+          <param name="exp_from_renew_user_value_to" type="datetime, float" optional="true" requires_param="exp_from_renew_user_value_to_unit" comment="" />
           <param name="exp_from_renew_user_value_to_unit" type="choice" optional="true" requires_param="" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -7091,7 +7091,7 @@
             <choice value="hours" />
             <choice value="minutes" />
           </param>
-          <param name="exp_monthly_user_value_from" type="str_datetime, float" optional="true" requires_param="exp_monthly_user_value_from_unit" comment="" />
+          <param name="exp_monthly_user_value_from" type="datetime, float" optional="true" requires_param="exp_monthly_user_value_from_unit" comment="" />
           <param name="exp_monthly_user_value_from_unit" type="choice" optional="true" requires_param="" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -7101,7 +7101,7 @@
             <choice value="hours" />
             <choice value="minutes" />
           </param>
-          <param name="exp_monthly_user_value_to" type="str_datetime, float" optional="true" requires_param="exp_monthly_user_value_to_unit" comment="" />
+          <param name="exp_monthly_user_value_to" type="datetime, float" optional="true" requires_param="exp_monthly_user_value_to_unit" comment="" />
           <param name="exp_monthly_user_value_to_unit" type="choice" optional="true" requires_param="" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -7111,7 +7111,7 @@
             <choice value="hours" />
             <choice value="minutes" />
           </param>
-          <param name="first_login_from" type="str_datetime, float" optional="true" requires_param="first_login_from_unit" comment="" />
+          <param name="first_login_from" type="datetime, float" optional="true" requires_param="first_login_from_unit" comment="" />
           <param name="first_login_from_unit" type="choice" optional="true" requires_param="" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -7121,7 +7121,7 @@
             <choice value="hours" />
             <choice value="minutes" />
           </param>
-          <param name="first_login_to" type="str_datetime, float" optional="true" requires_param="first_login_to_unit" comment="" />
+          <param name="first_login_to" type="datetime, float" optional="true" requires_param="first_login_to_unit" comment="" />
           <param name="first_login_to_unit" type="choice" optional="true" requires_param="" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -7131,7 +7131,7 @@
             <choice value="hours" />
             <choice value="minutes" />
           </param>
-          <param name="real_first_login_from" type="str_datetime, float" optional="true" requires_param="real_first_login_from_unit" comment="" />
+          <param name="real_first_login_from" type="datetime, float" optional="true" requires_param="real_first_login_from_unit" comment="" />
           <param name="real_first_login_from_unit" type="choice" optional="true" requires_param="" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -7141,7 +7141,7 @@
             <choice value="hours" />
             <choice value="minutes" />
           </param>
-          <param name="real_first_login_to" type="str_datetime, float" optional="true" requires_param="real_first_login_to_unit" comment="" />
+          <param name="real_first_login_to" type="datetime, float" optional="true" requires_param="real_first_login_to_unit" comment="" />
           <param name="real_first_login_to_unit" type="choice" optional="true" requires_param="" comment="">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -7161,8 +7161,8 @@
             <choice value="equals" comment="" />
           </param>
           <param name="ippool" type="list, str" optional="true" requires_param="" comment="list of ippool names, or string of one ippool name" />
-          <param name="is_online" type="bool" optional="true" comment="show online user if set to true, show offline user if set to false">
-            <param name="online_status" type="str" optional="true" comment="show idle, failed and active users if you set to idle, failed or online">
+          <param name="is_online" type="bool" optional="true" comment="show online user if set to true, show offline user if set to false"/>
+            <param name="online_status" type="str" optional="true" comment="show idle, failed and active users if you set to idle, failed or online"/>
               <param name="is_deposit_transferee" type="true_if_exists" optional="true" requires_param="" comment="" />
               <param name="is_deposit_transferer" type="true_if_exists" optional="true" requires_param="" comment="" />
               <param name="isp_names" type="list, str" optional="true" requires_param="" comment="list of isp names, or string of one isp name" />
@@ -7243,7 +7243,7 @@
               </param>
               <param name="never_expire_users" type="true_if_exists" optional="true" requires_param="" comment="users without any kind of expiration date (will never expire)" />
               <param name="never_logged_in_users" type="true_if_exists" optional="true" requires_param="" comment="users that have never logged in" />
-              <param name="not_logged_in_from" type="str_datetime, float" optional="true" requires_param="not_logged_in_from_unit" comment="" />
+              <param name="not_logged_in_from" type="datetime, float" optional="true" requires_param="not_logged_in_from_unit" comment="" />
               <param name="not_logged_in_from_unit" type="choice" optional="true" requires_param="" comment="">
                 <choice value="jalali" />
                 <choice value="gregorian" />
@@ -7253,7 +7253,7 @@
                 <choice value="hours" />
                 <choice value="minutes" />
               </param>
-              <param name="not_logged_in_to" type="str_datetime, float" optional="true" requires_param="not_logged_in_to_unit" comment="" />
+              <param name="not_logged_in_to" type="datetime, float" optional="true" requires_param="not_logged_in_to_unit" comment="" />
               <param name="not_logged_in_to_unit" type="choice" optional="true" requires_param="" comment="">
                 <choice value="jalali" />
                 <choice value="gregorian" />
@@ -7324,7 +7324,7 @@
               <param name="persistent_lan_ras_ip" type="str" multi_str="true" optional="true" requires_param="" comment="" />
               <param name="postpaid" type="true_if_exists" optional="true" requires_param="" comment="" />
               <param name="prevent_web_login" type="true_if_exists" optional="true" requires_param="" comment="" />
-              <param name="rel_exp_date_from" type="str_datetime, float" optional="true" requires_param="" comment="" />
+              <param name="rel_exp_date_from" type="datetime, float" optional="true" requires_param="" comment="" />
               <param name="rel_exp_date_from_unit" type="choice" optional="true" requires_param="" comment="">
                 <choice value="jalali" />
                 <choice value="gregorian" />
@@ -7334,7 +7334,7 @@
                 <choice value="hours" />
                 <choice value="minutes" />
               </param>
-              <param name="rel_exp_date_to" type="str_datetime, float" optional="true" requires_param="" comment="" />
+              <param name="rel_exp_date_to" type="datetime, float" optional="true" requires_param="" comment="" />
               <param name="rel_exp_date_to_unit" type="choice" optional="true" requires_param="" comment="">
                 <choice value="jalali" />
                 <choice value="gregorian" />
@@ -7344,7 +7344,7 @@
                 <choice value="hours" />
                 <choice value="minutes" />
               </param>
-              <param name="rel_exp_date_negative_credit" type="str_datetime, float" optional="true" requires_param="rel_exp_date_negative_credit_unit, rel_exp_date_negative_credit_op" comment="" />
+              <param name="rel_exp_date_negative_credit" type="datetime, float" optional="true" requires_param="rel_exp_date_negative_credit_unit, rel_exp_date_negative_credit_op" comment="" />
               <param name="rel_exp_date_negative_credit_unit" type="choice" optional="true" requires_param="" comment="">
                 <choice value="jalali" />
                 <choice value="gregorian" />
@@ -7476,8 +7476,11 @@
       <output type="null" comment="" />
     </method>
     <method name="killMe" auth_type="NORMAL_USERNAME" comment="by user, disconnects selected instance">
-      <param name="unique_id_val" type="str" comment="Unique ID Value (for exmaple Port, Caller ID, etc)" />
-      <param name="ras_ip" type="str" comment="RAS IPs" />
+      <input>
+        <param name="unique_id_val" type="str" comment="Unique ID Value (for exmaple Port, Caller ID, etc)" />
+        <param name="ras_ip" type="str" comment="RAS IPs" />
+      </input>
+      <output type="null" />
     </method>
     <method name="getRemainingDurationAndBytes" auth_type="ADMIN" requires_perm="" comment="by admin">
       <input type="dict">
@@ -7959,8 +7962,8 @@
       <input type="dict">
         <param name="user_id" type="int" comment=""></param>
         <param name="traffic" type="int" comment="Traffic, in Mega Bytes"></param>
-        <param name="date_from" type="str_datetime" comment="start date and time, format '%Y-%m-%d %H:%M'"></param>
-        <param name="date_to" type="str_datetime" comment="end date and time, format '%Y-%m-%d %H:%M'"></param>
+        <param name="date_from" type="datetime" comment="start date and time, format '%Y-%m-%d %H:%M'"></param>
+        <param name="date_to" type="datetime" comment="end date and time, format '%Y-%m-%d %H:%M'"></param>
       </input>
       <output type="null" comment="" />
     </method>
@@ -8126,7 +8129,7 @@
     </method>
     <method name="getNow" auth_type="USER, ADMIN" requires_perm="" comment="">
       <input type="dict"></input>
-      <output type="str_datetime" comment="formatted datetime of current time" />
+      <output type="datetime" comment="formatted datetime of current time" />
     </method>
     <method name="afeGetUserInfo" auth_type="ADMIN" requires_perm="AFE REMOTE ADMIN" comment="">
       <input type="dict">
@@ -8146,7 +8149,7 @@
       <input type="dict">
         <param name="username" type="str" comment="" />
         <param name="amount" type="float" comment="" />
-        <param name="comment" type="comment" comment="" />
+        <param name="comment" type="str" comment="" />
       </input>
       <output type="null" comment="" />
     </method>
@@ -8359,7 +8362,7 @@
             <param name="voucher_pin" type="str" comment="" />
             <param name="voucher_serial" type="str" comment="" />
             <param name="voucher_is_used" type="bool" comment="" />
-            <param name="voucher_used_date" type="str_datetime" comment="" />
+            <param name="voucher_used_date" type="datetime" comment="" />
             <param name="voucher_user_id" type="int" comment="" />
             <param name="batch_id" type="int" comment="" />
           </item>
@@ -8399,7 +8402,7 @@
             <param name="batch_can_recharge_user" type="bool" comment="" />
             <param name="batch_change_target" type="text" comment="" />
             <param name="batch_comment" type="text" comment="" />
-            <param name="batch_creation_date" type="str_datetime" comment="" />
+            <param name="batch_creation_date" type="datetime" comment="" />
             <param name="batch_isp_id" type="int" comment="int" />
             <param name="batch_allow_use_by_children_isp" type="bool" comment="" />
           </item>
@@ -8437,7 +8440,7 @@
         <param name="voucher_pin" type="str" comment="" />
         <param name="voucher_serial" type="str" comment="" />
         <param name="voucher_is_used" type="bool" comment="" />
-        <param name="voucher_used_date" type="str_datetime" comment="" />
+        <param name="voucher_used_date" type="datetime" comment="" />
         <param name="voucher_user_id" type="int" comment="" />
         <param name="batch_id" type="int" comment="" />
         <param name="batch_name" type="str" comment="" />
@@ -8447,7 +8450,7 @@
         <param name="batch_can_recharge_user" type="bool" comment="" />
         <param name="batch_change_target" type="text" comment="" />
         <param name="batch_comment" type="text" comment="" />
-        <param name="batch_creation_date" type="str_datetime" comment="" />
+        <param name="batch_creation_date" type="datetime" comment="" />
         <param name="batch_isp_id" type="int" comment="int" />
         <param name="batch_allow_use_by_children_isp" type="bool" comment="" />
       </output>
@@ -8503,7 +8506,7 @@
           <choice value="deposit_recharge" comment="Recharge Deposit" />
         </param>
         <param name="isp_name" type="str" />
-        <param name="creation_date" type="str_datetime" />
+        <param name="creation_date" type="datetime" />
         <param name="allow_use_by_children_isp" type="bool" comment="" />
         <param name="comment" type="str" comment="" />
       </output>
@@ -8520,7 +8523,7 @@
         <param name="serial" type="str" />
         <param name="is_used" type="bool" />
         <param name="user_id" type="int" />
-        <param name="used_date" type="str_datetime" />
+        <param name="used_date" type="datetime" />
       </output>
     </method>
     <method name="voucherSearchBatch" auth_type="ADMIN" requires_perm="SEE VOUCHER"
@@ -8566,7 +8569,7 @@
               <choice value="deposit_recharge" comment="Recharge Deposit" />
             </param>
             <param name="comment" type="str" />
-            <param name="creation_date" type="str_datetime" />
+            <param name="creation_date" type="datetime" />
             <param name="isp_id" type="int" />
             <param name="allow_use_by_children_isp" type="bool" />
             <param name="is_locked" type="bool" />
@@ -9075,7 +9078,7 @@
           <param name="is_paid" type="bool" optional="true" />
           <param name="total_amount_from" type="float" optional="true" />
           <param name="total_amount_to" type="float" optional="true" />
-          <param name="issue_date_from" type="str_datetime" optional="true" requires_param="issue_date_from_unit" />
+          <param name="issue_date_from" type="datetime" optional="true" requires_param="issue_date_from_unit" />
           <param name="issue_date_from_unit" type="choice" optional="true">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -9085,7 +9088,7 @@
             <choice value="hours" />
             <choice value="minutes" />
           </param>
-          <param name="issue_date_to" type="str_datetime" optional="true" requires_param="issue_date_to_unit" />
+          <param name="issue_date_to" type="datetime" optional="true" requires_param="issue_date_to_unit" />
           <param name="issue_date_to_unit" type="" optional="true">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -9110,14 +9113,14 @@
         <param name="report" type="list" item_type="dict" length="-1">
           <item type="dict" comment="">
             <param name="invoice_id" type="int" />
-            <param name="invoice_issue_date" type="str_datetime" />
+            <param name="invoice_issue_date" type="datetime" />
             <param name="is_active" type="bool" />
             <param name="is_paid" type="bool" />
-            <param name="pi_issue_date" type="str_datetime" />
+            <param name="pi_issue_date" type="datetime" />
             <param name="rule_id" type="int" />
             <param name="rule_description" type="str" />
-            <param name="period_end" type="str_datetime, null" comment="str or null" />
-            <param name="period_start" type="str_datetime, null" comment="str or null" />
+            <param name="period_end" type="datetime, null" comment="str or null" />
+            <param name="period_start" type="datetime, null" comment="str or null" />
             <param name="comment" type="str" />
             <param name="sum_up_amount" type="float" />
             <param name="previous_due" type="float" />
@@ -9147,7 +9150,7 @@
           <param name="is_expired" type="bool" optional="true" />
           <param name="total_amount_from" type="float" optional="true" />
           <param name="total_amount_to" type="float" optional="true" />
-          <param name="issue_date_from" type="str_datetime" optional="true" requires_param="issue_date_from_unit" />
+          <param name="issue_date_from" type="datetime" optional="true" requires_param="issue_date_from_unit" />
           <param name="issue_date_from_unit" type="choice" optional="true">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -9157,7 +9160,7 @@
             <choice value="hours" />
             <choice value="minutes" />
           </param>
-          <param name="issue_date_to" type="str_datetime" optional="true" requires_param="issue_date_to_unit" />
+          <param name="issue_date_to" type="datetime" optional="true" requires_param="issue_date_to_unit" />
           <param name="issue_date_to_unit" type="" optional="true">
             <choice value="jalali" />
             <choice value="gregorian" />
@@ -9185,7 +9188,7 @@
             <param name="rule_id" type="int" />
             <param name="rule_description" type="str" />
             <param name="add_user" type="bool" />
-            <param name="issue_date" type="str_datetime" />
+            <param name="issue_date" type="datetime" />
             <param name="expired" type="bool" />
             <param name="sum_up_amount" type="float" />
             <param name="previous_due" type="float" />
@@ -9233,7 +9236,7 @@
             <param name="pi_id" type="int" comment="Proforma Invoice ID" />
             <param name="rule_id" type="int" />
             <param name="rule_description" type="str" />
-            <param name="issue_date" type="str_datetime" />
+            <param name="issue_date" type="datetime" />
             <param name="expired" type="bool" />
             <param name="sum_up_amount" type="float" />
             <param name="roundup_amount" type="float" />
@@ -9313,7 +9316,7 @@
         <param name="pi_id" type="int" comment="Proforma Invoice ID" />
         <param name="rule_id" type="int" />
         <param name="rule_description" type="str" />
-        <param name="issue_date" type="str_datetime" />
+        <param name="issue_date" type="datetime" />
         <param name="expired" type="bool" />
         <param name="sum_up_amount" type="float" />
         <param name="roundup_amount" type="float" />
@@ -9349,10 +9352,10 @@
         <param name="rule_description" type="str" />
         <param name="is_active" type="bool" />
         <param name="is_paid" type="bool" />
-        <param name="pi_issue_date" type="str_datetime" />
-        <param name="invoice_issue_date" type="str_datetime" />
-        <param name="period_end" type="str_datetime" />
-        <param name="period_start" type="str_datetime" />
+        <param name="pi_issue_date" type="datetime" />
+        <param name="invoice_issue_date" type="datetime" />
+        <param name="period_end" type="datetime" />
+        <param name="period_start" type="datetime" />
         <param name="previous_due" type="float" />
         <param name="sum_up_amount" type="float" />
         <param name="roundup_amount" type="float" />
@@ -9386,7 +9389,7 @@
           <param name="pi_id" type="int" comment="Proforma Invoice ID" />
           <param name="rule_id" type="int" />
           <param name="rule_description" type="str" />
-          <param name="issue_date" type="str_datetime" />
+          <param name="issue_date" type="datetime" />
           <param name="expired" type="bool" />
           <param name="sum_up_amount" type="float" />
           <param name="roundup_amount" type="float" />
@@ -9474,10 +9477,10 @@
           <param name="rule_description" type="str" />
           <param name="is_active" type="bool" />
           <param name="is_paid" type="bool" />
-          <param name="pi_issue_date" type="str_datetime" />
-          <param name="invoice_issue_date" type="str_datetime" />
-          <param name="period_end" type="str_datetime" />
-          <param name="period_start" type="str_datetime" />
+          <param name="pi_issue_date" type="datetime" />
+          <param name="invoice_issue_date" type="datetime" />
+          <param name="period_end" type="datetime" />
+          <param name="period_start" type="datetime" />
           <param name="previous_due" type="float" />
           <param name="sum_up_amount" type="float" />
           <param name="roundup_amount" type="float" />
@@ -9569,15 +9572,22 @@
         <param name="customer_id" type="int" comment="return customer id that add" />
       </output>
     </method>
-    <method name="getCustomer" auth_typ="ADMIN" requires_prem="SEE CUSTOMER" comment="get information customer with uid or customer_id">
+    <method name="getCustomer" auth_type="ADMIN" requires_prem="SEE CUSTOMER" comment="get information customer with uid or customer_id">
       <input type="dict">
-        <param name="uid" type="srt" optional="true" comment="If you don't need uid, send an empty string" />
-        <param name="customer_id" type="srt" optional="true" comment="If you don't need customer_id, send an empty string" />
+        <param name="uid" type="str" optional="true" comment="If you don't need uid, send an empty string" />
+        <param name="customer_id" type="str" optional="true" comment="If you don't need customer_id, send an empty string" />
       </input>
       <output type="dict">
         <param name="customer_id" type="int" />
         <param name="uid" type="str" />
-        <param name="customer_name" typ="str" />
+        <param name="customer_name" type="str" />
+        <param name="customer_name_op" type="choice" optional="true">
+          <choice value="like" comment="" />
+          <choice value="ilike" comment="" />
+          <choice value="starts_with" comment="" />
+          <choice value="ends_with" comment="" />
+          <choice value="equals" comment="" />
+        </param>
         <param name="isp_name" type="str" />
         <param name="address" type="str" />
         <param name="mobile_number" type="str" />
@@ -9585,12 +9595,12 @@
         <param name="email" type="str" />
         <param name="comment" type="str" />
       </output>
-      </mehtod>
+      </method>
       <method name="updateCustomer" auth_type="ADMIN" requires_perm="UPDATE CUSTOMER" comment="update info customer with uid or customer_id">
         <input type="dict">
-          <param name="customer_id" typ="int" optional="true" comment="If you don't need customer_id , send an empty string" />
+          <param name="customer_id" type="int" optional="true" comment="If you don't need customer_id , send an empty string" />
           <param name="uid" type="str" optional="true" comment="If you don't need uid, send an empty string" />
-          <param name="customer_name" typ="str" comment="" />
+          <param name="customer_name" type="str" comment="" />
           <param name="isp_name" type="str" comment="" />
           <param name="address" type="str" comment="" />
           <param name="mobile_number" type="str" comment="" />
@@ -9602,16 +9612,16 @@
       </method>
       <method name="deleteCustomer" auth_type="ADMIN" requires_perm="DELETE CUSTOMER" comment="delete info customer with uid or customer_id">
         <input type="dict">
-          <param name="uid" typ="str" optional="true" comment="If you don't need uid, send an empty string" />
-          <param name="customer_id" typ="int" optional="true" comment="If you don't need customer_id, sned an empty string">
+          <param name="uid" type="str" optional="true" comment="If you don't need uid, send an empty string" />
+          <param name="customer_id" type="int" optional="true" comment="If you don't need customer_id, sned an empty string"/>
         </input>
         <output type="null " comment="" />
       </method>
       <method name="searchCustomer" auth_type="ADMIN" requires_perm="SEARCH CUSTOMER" comment="Search in customer information">
         <input type="dict">
           <param name="conds" type="dict">
-            <param name="customer_id" typ="srt" optional="true" multi_str="true" />
-            <param name="uid" typ="srt" optional="true" multi_str="true" />
+            <param name="customer_id" type="str" optional="true" multi_str="true" />
+            <param name="uid" type="str" optional="true" multi_str="true" />
             <param name="customer_name" type="str" optional="true" />
           </param>
           <param name="sort_by" type="choice">
@@ -9652,7 +9662,7 @@
           <choice value="gregorian" comment="" />
           <choice value="jalali" comment="" />
         </param>
-        <param name="valid_for_end" type="dateime" />
+        <param name="valid_for_end" type="datetime" />
         <param name="valid_for_end_unit" type="choice" optional="true" comment="Date type for output date or datetime params, default is 'gregorian'">
           <choice value="gregorian" comment="" />
           <choice value="jalali" comment="" />
@@ -9686,7 +9696,7 @@
           <param name="VAS" type="list" comment="list of vas" />
           <param name="SMS" type="list" comment="list of sms" />
           <param name="COUNTER" type="list" comment="list of cunter" />
-      </output>
+        </param>
       </output>
     </method>
     <method name="getBalanceValueTypes" auth_type="ADMIN" comment="get the list of balance value type">
@@ -9721,7 +9731,7 @@
           <choice value="gregorian" comment="" />
           <choice value="jalali" comment="" />
         </param>
-        <param name="valid_for_end" type="dateime" />
+        <param name="valid_for_end" type="datetime" />
         <param name="valid_for_end_unit" type="choice" optional="true" comment="Date type for output date or datetime params, default is 'gregorian'">
           <choice value="gregorian" comment="" />
           <choice value="jalali" comment="" />
@@ -9731,9 +9741,9 @@
         <param name="udr_tag" type="str" />
         <param name="comment" type="str" />
       </input>
-      <output type="null" comment="">
+      <output type="null" comment=""/>
     </method>
-    <method name="getListValidBalanceName" auth_type="ADMIN" requires_perm="LIST BALANCES" comment="The meaning of validity is that the date range considered for 
+    <method name="getListValidBalanceName" auth_type="ADMIN" requires_perm="LIST BALANCES" comment="The meaning of validity is that the date range considered for
                                                                                                     the balance is within the day and that the balance status is active.">
 
       <input type="null" comment="" />
@@ -9750,7 +9760,7 @@
     </method>
     <method name="getAllBalancesNames" auth_type="ADMIN" requires_perm="LIST BALANCES" comment="get list balances can filter with status">
       <input type="dict">
-        <param name="include_retired" optional="true" comment="if set, return balances that status is RETIRED">
+        <param name="include_retired" type="bool" optional="true" comment="if set, return balances that status is RETIRED"/>
       </input>
       <output type="list" comment="list of name balances" />
     </method>
@@ -9760,38 +9770,38 @@
     </method>
     <method name="getBalanceNameById" auth_type="ADMIN" comment="get balance id and return name of balance">
       <input type="dict">
-        <param name="balance_id" />
+        <param name="balance_id" type="int" />
       </input>
       <output type="dict">
         <param name="balance_name" />
       </output>
-      </mehtod>
+      </method>
       <method name="searchBalance" auth_type="ADMIN" comment="search in balances">
         <input type="dict">
           <param name="conds" type="dict">
-            <param name="balance_id" typ="srt" optional="true" multi_str="true" />
-            <param name="balance_name" typ="srt" optional="true" multi_str="true" />
-            <param name="balance_name_op" type="choise" optional="true">
+            <param name="balance_id" type="str" optional="true" multi_str="true" />
+            <param name="balance_name" type="str" optional="true" multi_str="true" />
+            <param name="balance_name_op" type="choice" optional="true">
               <choice value="like" comment="" />
               <choice value="ilike" comment="" />
               <choice value="starts_with" comment="" />
               <choice value="ends_with" comment="" />
               <choice value="equals" comment="" />
             </param>
-            <param name="isp_name" type="choise" optional="true" comment="lis of ISP(s)" />
+            <param name="isp_name" type="choice" optional="true" comment="lis of ISP(s)" />
             <param name="valid_for_start" type="datetime" />
             <param name="valid_for_start_unit" type="choice" optional="true" comment="Date type for output date or datetime params, default is 'gregorian'">
               <choice value="gregorian" comment="" />
               <choice value="jalali" comment="" />
             </param>
-            <param name="valid_for_end" type="dateime" />
+            <param name="valid_for_end" type="datetime" />
             <param name="valid_for_end_unit" type="choice" optional="true" comment="Date type for output date or datetime params, default is 'gregorian'">
               <choice value="gregorian" comment="" />
               <choice value="jalali" comment="" />
             </param>
-            <param name="balance_classes" type="choise" optional="true" comment="lis of balance classes" />
-            <param name="life_cycle_status" type="choise" optional="true" comment="lis of balance life cycle status" />
-            <param name="value_type" type="choise" optional="true" comment="lis of balance value type" />
+            <param name="balance_classes" type="choice" optional="true" comment="lis of balance classes" />
+            <param name="life_cycle_status" type="choice" optional="true" comment="lis of balance life cycle status" />
+            <param name="value_type" type="choice" optional="true" comment="lis of balance value type" />
           </param>
           <param name="sort_by" type="choice">
             <choice value="balance_name" />
@@ -9836,37 +9846,25 @@
           <choice value="gregorian" comment="" />
           <choice value="jalali" comment="" />
         </param>
-        <param name="expire_time" type="dateime" />
+        <param name="expire_time" type="datetime" />
         <param name="expire_time_unit" type="choice" optional="true" comment="Date type for output date or datetime params, default is 'gregorian'">
           <choice value="gregorian" comment="" />
           <choice value="jalali" comment="" />
         </param>
         <param name="udr_tag" type="str" />
         <param name="comment" type="str" />
-        <param name="linked_user_id" type="srt" optioanl="true" comment="If type balance is linked required this field" />
-        <param name="linked_balance_id" type="str" optional="true" comment="If type balance is linked required this field" />
-        <param name="expire_from_first_use" type="int" comment="if not has value set null "/>
-        <param name="expire_from_first_use_unit" type="int" type="choice" optional="true" comment="if not has value set null ">
-          <choice value="gregorian" comment="" />
-          <choice value="jalali" comment="" />
-        </param>
+        <param name="linked_user_id" type="str" optioanl="true" comment="If type balance id is required" />
+        <param name="linked_balance_id" type="str" optional="true" comment="If type balance id is required" />
       </input>
       <output type="dict">
         <param name="balance_id" />
-        </ouput>
+      </output>
     </method>
     <method name="getUserBalanceInfoByUserID" auth_name="ADMIN" requires_param="SEE USER BALANCE CHANGES" comment="return all balnce that assigned to user">
       <input type="dict">
-        <param name="user_id" />
+        <param name="user_id" type="int" />
       </input>
       <output type="dict">
-        <param name="comment" type="srt" />
-        <param name="expire_from_first_use_unit" type="str" comment="Days, Jalali, Gregorian" />
-        <param name="expire_from_first_use" type="int" comment="" />
-        <param name="linked_balance_name" type="str" comment="if type of balance that linked this feild get value" />
-        <param name="user_id" type="int" comment="id of user"/>
-        <param name="initial_value" type="float" />
-        <param name="start_time" type="str" comment="sample format-> 2022-12-01 11:54:00"/>
         <param name="linked_user_id" type="int|null" comment="if not set return null" />
         <param name="balance_name" type="str" />
         <param name="balance_id" type="int" />
@@ -9895,7 +9893,7 @@
           <choice value="gregorian" comment="" />
           <choice value="jalali" comment="" />
         </param>
-        <param name="expire_time" type="dateime" />
+        <param name="expire_time" type="datetime" />
         <param name="expire_time_unit" type="choice" optional="true" comment="Date type for output date or datetime params, default is 'gregorian'">
           <choice value="gregorian" comment="" />
           <choice value="jalali" comment="" />
@@ -9908,7 +9906,7 @@
         <param name="user_balance_id" type="str" />
       </input>
       <output type="dict">
-        <param name="comment" type="srt" />
+        <param name="comment" type="str" />
         <param name="linked_user_id" type="int|null" comment="if not set return null" />
         <param name="start_time" type="str" />
         <param name="balance_name" type="str" />
@@ -9934,10 +9932,10 @@
       <input type="dict">
         <param name="user_balance_id" type="str" />
         <param name="balance_change_value" type="str" />
-        <param name="balance_action" type="choise">
-          <choise name="add" />
-          <choise name="multiply" />
-          <choise name="set" />
+        <param name="balance_action" type="choice">
+          <choice value="add" />
+          <choice value="multiply" />
+          <choice value="set" />
         </param>
       </input>
       <output type="null" comment="" />
@@ -9945,9 +9943,9 @@
     <method name="searchUserBalanceChangeLog" auth_name="ADMIN" request_param="SEE USER BALANCE CHANGES">
       <input type="dict">
         <param name="conds" type="dict" comment="">
-          <param name="balance_name" type="choise" optional="true" comment="list of balances that added in system" />
+          <param name="balance_name" type="choice" optional="true" comment="list of balances that added in system" />
           <param name="remote_ip" type="str" comment="" />
-          <param name="remote_ip_op" type="choise">
+          <param name="remote_ip_op" type="choice">
             <choice value="like" comment="" />
             <choice value="ilike" comment="" />
             <choice value="starts_with" comment="" />
@@ -9959,14 +9957,14 @@
             <choice value="gregorian" comment="" />
             <choice value="jalali" comment="" />
           </param>
-          <param name="chnage_date_to" type="dateime" />
+          <param name="chnage_date_to" type="datetime" />
           <param name="chnage_date_to_unit" type="choice" optional="true" comment="Date type for output date or datetime params, default is 'gregorian'">
             <choice value="gregorian" comment="" />
             <choice value="jalali" comment="" />
           </param>
-          <param name="admin_name" type="choise" comment="list of admin in system" />
-          <param name="action" type="choise" comment="action list in system" />
-          <param name="isp_name" type="choise" comment="isp list in system" />
+          <param name="admin_name" type="choice" comment="list of admin in system" />
+          <param name="action" type="choice" comment="action list in system" />
+          <param name="isp_name" type="choice" comment="isp list in system" />
           <param name="user_balance_ids" type="str" multi_str="true" optional="true" comment="" />
         </param>
         <param name="from" type="int" comment="" />
@@ -10004,18 +10002,18 @@
       <input type="dict">
         <param name="sequence_type" type="str" comment="can get [CUSTOMER, USER, USER_BALANCE]" />
       </input>
-       
+
       <output type="dict" comment="">
         <param name="customer" type="int" comment="last sequence of customer id if sequence_type equal CUSTOMER" />
         <param name="user" type="int" comment="last sequence of user id if sequence_type equal USER" />
         <param name="user_balance" type="int" comment="last sequence of user_balance id if sequence_type equal USER_BALANCE" />
       </output>
     </method>
-    <method name="uploadImportFile" auth_typ="ADMIN" requires_prem="ADD CUSTOMER" comment="upload the excel or csv file">
+    <method name="uploadImportFile" auth_type="ADMIN" requires_prem="ADD CUSTOMER" comment="upload the excel or csv file">
       <input type="dict">
-        <param name="file_base64" type="srt" comment="convert to Base64 file, excel or csv" />
-        <param name="mime_type" type="srt" comment="set mime type of file,  [csv, xlsx]" />
-        <param name="section" type="srt" comment="set the section for upload file [CUSTOMER, USER, USER_BALANCE]" />
+        <param name="file_base64" type="str" comment="convert to Base64 file, excel or csv" />
+        <param name="mime_type" type="str" comment="set mime type of file,  [csv, xlsx]" />
+        <param name="section" type="str" comment="set the section for upload file [CUSTOMER, USER, USER_BALANCE]" />
       </input>
       <output type="dict">
         <param name="record_file_id" type="int" comment="return the id of generate of import_files table" />
@@ -10023,7 +10021,7 @@
     </method>
     <method name="getUploadedFileByAdmin" auth_type="ADMIN" comment="get the list of file that uploaded by admin">
       <input type="dict">
-        <param name="section" type="srt" comment="set the section for upload file [CUSTOMER, USER, USER_BALANCE]" />
+        <param name="section" type="str" comment="set the section for upload file [CUSTOMER, USER, USER_BALANCE]" />
       </input>
       <output type="dict" comment="">
         <param name="admin_user_name" type="str" comment="username of admin" />
@@ -10037,20 +10035,20 @@
         <param name="modified_at" type="datetime" comment="date time of change in recorde in import_files row" />
         <param name="status_import" type="str" comment="status of import files [PENDING, RUNNING, DONE, STOPPED, ERROR]" />
         <param name="total_row" type="int" comment="total of rows that in file uploaded" />
-        <param name="created_at" type="datetime" comment="date time of create recorde" /> 
+        <param name="created_at" type="datetime" comment="date time of create recorde" />
         <param name="remote_ip" type="str" comment="ip of admin that upload file" />
       </output>
     </method>
     <method name="startImport" auth_type="ADMIN" comment="for start import data that uploaded in last api">
       <input type="dict">
-        <param name="file_import_id" typ="int" comment="send id of recorde of import_files table that s" />
+        <param name="file_import_id" type="int" comment="send id of recorde of import_files table that s" />
         <param name="section" type="str" comment="set the section for upload file [CUSTOMER, USER, USER_BALANCE]" />
       </input>
       <output type="null " comment="" />
     </method>
     <method name="getReportOfImportFile" auth_type="ADMIN" comment="get the report of import files for every section [CUSTOMER, USER, USER_BALANCE] ">
       <input type="dict">
-        <param name="file_import_id" typ="int" comment="send id of recorde of import_files table that s" />
+        <param name="file_import_id" type="int" comment="send id of recorde of import_files table that s" />
         <param name="section" type="str" comment="set the section for upload file [CUSTOMER, USER, USER_BALANCE]" />
       </input>
       <output type="dict" comment="">
