@@ -1371,7 +1371,7 @@
         <param name="comment" type="str" comment="" />
         <param name="ip_list" type="list" length="-1" item_type="str" comment="list of all IPs" />
         <param name="free" type="list" length="-1" item_type="str" comment="list of free IPs" />
-        <param name="used" type="lisr" length="-1" item_type="str" comment="list of used IPs" />
+        <param name="used" type="list" length="-1" item_type="str" comment="list of used IPs" />
       </output>
     </method>
     <method name="deleteIPpool" auth_type="ADMIN" requires_perm="CHANGE IPPOOL" comment="">
@@ -1460,7 +1460,7 @@
     </method>
   </handler>
   <handler name="login" comment="">
-    <method name="webLogin" comment="added in C_dev_326">
+    <method name="webLogin" auth_type="ADMIN, NORMAL_USER, VOIP_USER" comment="added in C_dev_326">
       <input type="dict">
         <param name="login_auth_type" type="choice" comment="">
           <choice value="ADMIN" />
@@ -1481,7 +1481,7 @@
         </param>
       </output>
     </method>
-    <method name="login" comment="login and return Session ID">
+    <method name="login" auth_type="ADMIN, NORMAL_USER, VOIP_USER" comment="login and return Session ID">
       <input type="dict">
         <param name="login_auth_type" type="choice" comment="">
           <choice value="ADMIN" />
@@ -1495,7 +1495,7 @@
       </input>
       <output type="str" comment="Session ID" />
     </method>
-    <method name="login" comment="login without generating session">
+    <method name="login" auth_type="ADMIN, NORMAL_USER, VOIP_USER" comment="login without generating session">
       <input type="dict">
         <param name="login_auth_type" type="choice" comment="">
           <choice value="ADMIN" />
@@ -1561,11 +1561,11 @@
     </method>
   </handler>
   <handler name="mc" comment="Message Center">
-    <method name="getAllMSGTypes" comment="">
+    <method name="getAllMSGTypes" auth_type="ADMIN, NORMAL_USER, VOIP_USER" comment="">
       <input type="dict"></input>
       <output type="list" item_type="str" comment=""></output>
     </method>
-    <method name="getActiveMSGTypes" comment="">
+    <method name="getActiveMSGTypes" auth_type="ADMIN, NORMAL_USER, VOIP_USER" comment="ADMIN, USER">
       <input type="dict">
         <param name="view_type" type="choice" default="SEND" comment="">
           <choice value="SEND" />
@@ -1767,7 +1767,7 @@
         <param name="assigned_user_id" type="int" comment="" />
       </output>
     </method>
-    <method name="receive" auth_type="ADMIN, USER" requires_perm="" comment="">
+    <method name="receive" auth_type="ADMIN, NORMAL_USER, VOIP_USER" requires_perm="" comment="">
       <input type="dict">
         <param name="msg_info" type="dict" comment="">
           <param name="dst" type="list" length="-1" item_type="str" comment="list of destinations" />
@@ -1783,7 +1783,7 @@
       </input>
       <output type="null" />
     </method>
-    <method name="enqueueSend" auth_type="USER" comment="without schedule_date">
+    <method name="enqueueSend" auth_type="NORMAL_USER, VOIP_USER" comment="without schedule_date">
       <input type="dict">
         <param name="body" type="str" comment="" />
         <param name="destinations" type="str" multi_str="true" comment="comma-seperated list of destinations" />
@@ -1796,7 +1796,7 @@
       </input>
       <output type="null" />
     </method>
-    <method name="enqueueSend" auth_type="USER" comment="with schedule_date">
+    <method name="enqueueSend" auth_type="NORMAL_USER, VOIP_USER" comment="with schedule_date">
       <input type="dict">
         <param name="body" type="str" comment="" />
         <param name="destinations" type="str" multi_str="true" comment="comma-seperated list of destinations" />
@@ -1855,29 +1855,29 @@
       </input>
       <output type="null" />
     </method>
-    <method name="activateService" auth_type="USER" comment="">
+    <method name="activateService" auth_type="NORMAL_USER, VOIP_USER" comment="">
       <input type="dict">
         <param name="cell_number" type="str" comment="" />
       </input>
       <output type="bool" comment="returns true, or raises an error" />
     </method>
-    <method name="resetUserActivationCode" auth_type="USER" comment="">
+    <method name="resetUserActivationCode" auth_type="NORMAL_USER, VOIP_USER" comment="">
       <input type="dict"></input>
       <output type="null" />
     </method>
-    <method name="checkActivationCode" auth_type="USER" comment="">
+    <method name="checkActivationCode" auth_type="NORMAL_USER, VOIP_USER" comment="">
       <input type="dict">
         <param name="activation_code" type="str" comment="" />
       </input>
       <output type="bool" comment="returns true, or raises an error" />
     </method>
-    <method name="getUserActivationNumber" auth_type="USER" comment="">
+    <method name="getUserActivationNumber" auth_type="NORMAL_USER, VOIP_USER" comment="">
       <input type="dict"></input>
       <output type="dict" comment="">
         <param name="activation_number" type="str" comment="cell_phone of user" />
       </output>
     </method>
-    <method name="userSearchReceivedMessage" auth_type="USER" comment="">
+    <method name="userSearchReceivedMessage" auth_type="NORMAL_USER, VOIP_USER" comment="">
       <input type="dict">
         <param name="conds" type="dict" comment="">
           <param name="message_ids" type="int" multi_str="true" optional="true" comment="" />
@@ -1941,7 +1941,7 @@
             <param name="message_id" type="int" comment="" />
             <param name="user_id" type="int" comment="" />
             <param name="transfer_date" type="str" comment="date type (gregorian/jalali) depends on input date_type" />
-            <param name="source" type="text" comment="source (sender) address" />
+            <param name="source" type="str" comment="source (sender) address" />
             <param name="msg_type" type="choice" comment="">
               <choice value="SMS" />
               <choice value="E-Mail" />
@@ -2023,7 +2023,7 @@
             <param name="message_id" type="int" comment="" />
             <param name="user_id" type="int" comment="" />
             <param name="transfer_date" type="str" comment="date type (gregorian/jalali) depends on input date_type" />
-            <param name="source" type="text" comment="source (sender) address (phone number / email)" />
+            <param name="source" type="str" comment="source (sender) address (phone number / email)" />
             <param name="msg_type" type="choice" comment="">
               <choice value="SMS" />
               <choice value="E-Mail" />
@@ -2104,7 +2104,7 @@
             <param name="message_id" type="int" comment="" />
             <param name="user_id" type="int" comment="" />
             <param name="transfer_date" type="str" comment="date type (gregorian/jalali) depends on input date_type" />
-            <param name="source" type="text" comment="source (sender) address (phone number / email)" />
+            <param name="source" type="str" comment="source (sender) address (phone number / email)" />
             <param name="msg_type" type="choice" comment="">
               <choice value="SMS" />
               <choice value="E-Mail" />
@@ -2119,7 +2119,7 @@
         </item>
       </output>
     </method>
-    <method name="userSearchSentMessage" auth_type="USER" comment="">
+    <method name="userSearchSentMessage" auth_type="NORMAL_USER, VOIP_USER" comment="">
       <input type="dict">
         <param name="conds" type="dict" comment="">
           <param name="message_ids" type="int" multi_str="true" optional="true" comment="" />
@@ -2442,11 +2442,11 @@
         <param name="destination" type="str" comment="" />
         <param name="body" type="str" comment="" />
         <param name="consumed_credit" type="float" comment="" />
-        <param name="isp_send_to_all" type="integer" comment="" />
+        <param name="isp_send_to_all" type="int" comment="" />
         <param name="in_process" type="bool" comment="" />
       </output>
     </method>
-    <method name="userSearchQueuedMessage" auth_type="USER" comment="">
+    <method name="userSearchQueuedMessage" auth_type="NORMAL_USER, VOIP_USER" comment="">
       <input type="dict">
         <param name="conds" type="dict" comment="">
           <param name="message_ids" type="int" multi_str="true" optional="true" comment="" />
@@ -2530,11 +2530,11 @@
         <param name="destination" type="str" comment="" />
         <param name="body" type="str" comment="" />
         <param name="consumed_credit" type="float" comment="" />
-        <param name="isp_send_to_all" type="integer" comment="" />
+        <param name="isp_send_to_all" type="int" comment="" />
         <param name="in_process" type="bool" comment="" />
       </output>
     </method>
-    <method name="userSearchMessagesForDialer" auth_type="USER" comment="">
+    <method name="userSearchMessagesForDialer" auth_type="NORMAL_USER, VOIP_USER" comment="">
       <input type="dict">
         <param name="from" type="int" comment="" />
         <param name="to" type="int" comment="" />
@@ -2557,17 +2557,17 @@
         </param>
       </output>
     </method>
-    <method name="getUserLastMessageID" auth_type="USER" comment="">
+    <method name="getUserLastMessageID" auth_type="NORMAL_USER, VOIP_USER" comment="">
       <input type="dict"></input>
       <output type="int" comment="Message ID of Last Message" />
     </method>
-    <method name="dialerDeleteMessage" auth_type="USER" comment="">
+    <method name="dialerDeleteMessage" auth_type="NORMAL_USER, VOIP_USER" comment="">
       <input type="dict">
         <param name="message_id" type="int" comment="" />
       </input>
       <output type="null" comment="" />
     </method>
-    <method name="userDeleteMessage" auth_type="USER" comment="">
+    <method name="userDeleteMessage" auth_type="NORMAL_USER, VOIP_USER" comment="">
       <input type="dict">
         <param name="message_ids" type="int" multi_str="true" comment="" />
         <param name="target_box" type="choice" comment="">
@@ -2591,7 +2591,7 @@
       </input>
       <output type="null" comment="" />
     </method>
-    <method name="userCancelScheduledMessages" auth_type="USER" comment="">
+    <method name="userCancelScheduledMessages" auth_type="NORMAL_USER, VOIP_USER" comment="">
       <input type="dict">
         <param name="message_ids" type="int" multi_str="true" comment="" />
       </input>
@@ -2797,7 +2797,7 @@
     </method>
   </handler>
   <handler name="online_payment" comment="">
-    <method name="getAvailableGatewayTypes" auth_type="USER, ADMIN"
+    <method name="getAvailableGatewayTypes" auth_type="ADMIN, NORMAL_USER, VOIP_USER"
       comment="list of gateway names that are available and usable for user">
       <input type="dict"></input>
       <output type="list" length="-1" item_type="choice" comment="list of gateway types">
@@ -2813,7 +2813,7 @@
         </item>
       </output>
     </method>
-    <method name="getPaymentAmountSuggestions" auth_type="USER, ADMIN" comment="">
+    <method name="getPaymentAmountSuggestions" auth_type="ADMIN, NORMAL_USER, VOIP_USER" comment="">
       <input type="dict"></input>
       <output type="list" length="-1" item_type="list" comment="">
         <item type="list" length="4">
@@ -2829,7 +2829,7 @@
         </item>
       </output>
     </method>
-    <method name="preparePayment" auth_type="USER, ADMIN"
+    <method name="preparePayment" auth_type="ADMIN, NORMAL_USER, VOIP_USER"
       comment="Added in tag C_dev_326">
       <input type="dict">
         <param name="gateway_type" type="choice" comment="">
@@ -2859,7 +2859,7 @@
         <param name="url" type="str" comment="Redirect URL" />
       </output>
     </method>
-    <method name="verifyPayment" auth_type="USER, ADMIN"
+    <method name="verifyPayment" auth_type="ADMIN, NORMAL_USER, VOIP_USER"
       comment="Added in tag C_dev_326">
       <input type="dict">
         <param name="unique_id" type="str" comment="" />
@@ -3456,7 +3456,7 @@
         </param>
       </output>
     </method>
-    <method name="getConnections" auth_type="USER" comment="Get Connection Logs By Admin">
+    <method name="getConnections" auth_type="NORMAL_USER, VOIP_USER" comment="Get Connection Logs By Admin">
       <input type="dict">
         <param name="conds" type="dict" comment="">
           <param name="credit_used" type="float" optional="true" requires_param="credit_used_op" comment="" />
@@ -3640,7 +3640,7 @@
       </input>
       <output type="dict" comment="the same as 'report.getConnections' method"></output>
     </method>
-    <method name="getDurations" auth_type="ADMIN, USER" requires_perm="SEE CONNECTION LOGS" comment="">
+    <method name="getDurations" auth_type="ADMIN, NORMAL_USER, VOIP_USER" requires_perm="SEE CONNECTION LOGS" comment="">
       <input type="dict">
         <param name="conds" type="dict" comment="the same as 'report.getConnections' method" />
       </input>
@@ -4212,7 +4212,7 @@
         <param name="total_admin_credit" type="float" comment="" />
       </output>
     </method>
-    <method name="getCreditChanges" auth_type="USER" requires_perm="SEE CREDIT CHANGES" comment="User-View Credit Changes by User">
+    <method name="getCreditChanges" auth_type="NORMAL_USER, VOIP_USER" requires_perm="SEE CREDIT CHANGES" comment="User-View Credit Changes by User">
       <input type="dict">
         <param name="conds" type="dict" comment="">
           <param name="user_view" value="" optional="false" comment="" />
@@ -4466,7 +4466,7 @@
         </param>
       </output>
     </method>
-    <method name="getUserDepositChanges" auth_type="USER" comment="by user">
+    <method name="getUserDepositChanges" auth_type="NORMAL_USER, VOIP_USER" comment="by user">
       <input type="dict">
         <param name="conds" type="dict" comment="">
           <param name="admin" type="list, str" multi_str="false" optional="true" comment="list of admin usernames, or string of one admin username" />
@@ -5163,7 +5163,7 @@
         </param>
       </output>
     </method>
-    <method name="getOnlinePaymentReport" auth_type="ADMIN, USER" requires_perm="" comment="">
+    <method name="getOnlinePaymentReport" auth_type="ADMIN, NORMAL_USER, VOIP_USER" requires_perm="" comment="">
       <input type="dict">
         <param name="conds" type="dict" comment="">
           <param name="requester_ids" type="str" multi_str="true" optional="true"
@@ -5377,13 +5377,13 @@
     </method>
   </handler>
   <handler name="session" comment="">
-    <method name="expireSession" auth_type="USER, ADMIN" requires_perm="" comment="">
+    <method name="expireSession" auth_type="ADMIN, NORMAL_USER, VOIP_USER" requires_perm="" comment="">
       <input type="dict">
         <param name="session_id" type="str" comment="" />
       </input>
       <output type="null" comment="" />
     </method>
-    <method name="getAuthData" auth_type="USER, ADMIN" requires_perm="" comment="">
+    <method name="getAuthData" auth_type="ADMIN, NORMAL_USER, VOIP_USER" requires_perm="" comment="">
       <input type="dict">
         <param name="auth_session" type="str" comment="session_id" />
       </input>
@@ -5396,21 +5396,21 @@
   </handler>
   <!--
   <handler name="sms" comment="">
-    <method name="sendSMS" auth_type="USER" comment="">
+    <method name="sendSMS" auth_type="NORMAL_USER, VOIP_USER" comment="">
       <input type="dict">
         <param name="sms_body" type="str" comment="" />
         <param name="phones" type="str" multi_str="true" comment="" />
       </input>
       <output type="null" comment="" />
     </method>
-    <method name="getSMSDefs" auth_type="USER" comment="">
+    <method name="getSMSDefs" auth_type="NORMAL_USER, VOIP_USER" comment="">
       <input type="dict">
       </input>
       <output type="dict" comment="">
         <param name="sms_defs" type="dict" dynamic_keys="true" comment="" />
       </output>
     </method>
-    <method name="getSentSMS" auth_type="USER" comment="">
+    <method name="getSentSMS" auth_type="NORMAL_USER, VOIP_USER" comment="">
       <input type="dict">
         <param name="conds" type="dict" comment="">
           <param name="user_ids" type="str" multi_str="true" optional="true" comment="" />
@@ -5482,7 +5482,7 @@
         <item index="2" type="int" comment="upload rate" />
       </output>
     </method>
-    <method name="getBWSnapShotForUserAjax" auth_type="USER" comment="">
+    <method name="getBWSnapShotForUserAjax" auth_type="NORMAL_USER, VOIP_USER" comment="">
       <input type="dict">
         <param name="from" type="str" optional="true" requires_param="from_unit" comment="by user" />
         <param name="from_unit" type="str" optional="true" comment="" />
@@ -5518,7 +5518,7 @@
         <item index="4" type="str" comment="time zone, 'Asia/Tehran' for example" />
       </output>
     </method>
-    <method name="getBWSnapShot" auth_type="" requires_perm="" comment="">
+    <method name="getBWSnapShot" auth_type="ADMIN, NORMAL_USER, VOIP_USER" requires_perm="" comment="">
       <input type="dict">
         <key type="str" comment="reporting condition" />
         <value type="dict" comment="">
@@ -5565,7 +5565,7 @@
         <item index="2" type="int" comment="upload rate" />
       </output>
     </method>
-    <method name="getGroupBWSnapShot" auth_type="" requires_perm="" comment="">
+    <method name="getGroupBWSnapShot" auth_type="ADMIN" requires_perm="" comment="">
       <input type="dict">
         <key type="str" comment="reporting condition" />
         <value type="dict" comment="">
@@ -5612,7 +5612,7 @@
         <item index="2" type="int" comment="upload rate" />
       </output>
     </method>
-    <method name="getISPBWSnapShot" auth_type="" requires_perm="" comment="">
+    <method name="getISPBWSnapShot" auth_type="ADMIN" requires_perm="" comment="">
       <input type="dict">
         <key type="str" comment="reporting condition" />
         <value type="dict" comment="">
@@ -5659,7 +5659,7 @@
         <item index="2" type="int" comment="upload rate" />
       </output>
     </method>
-    <method name="getRasBWSnapShot" auth_type="" requires_perm="" comment="">
+    <method name="getRasBWSnapShot" auth_type="ADMIN" requires_perm="" comment="">
       <input type="dict">
         <key type="str" comment="reporting condition" />
         <value type="dict" comment="">
@@ -5793,7 +5793,7 @@
       <output type="list" length="-1" comment="">
         <item type="dict" comment="">
           <param name="notification_id" type="int" comment="" />
-          <param name="message" type="text" comment="" />
+          <param name="message" type="str" comment="" />
           <param name="date" type="str" comment="" />
           <param name="read" type="choice" comment="">
             <choice value="t" comment="true" />
@@ -5979,7 +5979,7 @@
       </input>
       <output type="list" length="-1" item_type="int" comment="user_ids"></output>
     </method>
-    <method name="getUserInfo" auth_type="USER" comment="By User">
+    <method name="getUserInfo" auth_type="NORMAL_USER, VOIP_USER" comment="By User">
       <input type="dict" comment="one of these params is needed">
         <param name="user_id" type="str_int" multi_str="true" optional="true" comment="" />
         <param name="normal_username" type="str" multi_str="true" optional="true" comment="" />
@@ -7471,11 +7471,11 @@
       </input>
       <output type="null" comment="" />
     </method>
-    <method name="killUserByID" auth_type="USER" comment="by user, disconnects all instances of user himself">
+    <method name="killUserByID" auth_type="NORMAL_USER, VOIP_USER" comment="by user, disconnects all instances of user himself">
       <input type="dict"></input>
       <output type="null" comment="" />
     </method>
-    <method name="killMe" auth_type="NORMAL_USERNAME" comment="by user, disconnects selected instance">
+    <method name="killMe" auth_type="NORMAL_USER, VOIP_USER" comment="by user, disconnects selected instance">
       <input>
         <param name="unique_id_val" type="str" comment="Unique ID Value (for exmaple Port, Caller ID, etc)" />
         <param name="ras_ip" type="str" comment="RAS IPs" />
@@ -7509,7 +7509,7 @@
         </value>
       </output>
     </method>
-    <method name="getRemainingDurationAndBytes" auth_type="USER" comment="by user">
+    <method name="getRemainingDurationAndBytes" auth_type="NORMAL_USER, VOIP_USER" comment="by user">
       <input type="dict"></input>
       <output type="dict" comment="">
         <key type="str" comment="charge_rule_desc" />
@@ -7542,7 +7542,7 @@
       <output type="dict" item_type="int" comment="renewUsers output">
         <param name="id" type="int" comment="return null if enter correct parameters" />
         <param name="result" type="bool" comment="return true if enter correct parameters" />
-        <param name="error" type="stt" comment="return null if enter correct parameters" />
+        <param name="error" type="str" comment="return null if enter correct parameters" />
       </output>
     </method>
     <method name="rechargeUsers" auth_type="ADMIN" requires_perm="RECHARGE USER" comment="">
@@ -7560,7 +7560,7 @@
       </input>
       <output type="null" comment="" />
     </method>
-    <method name="updateUserComments" auth_type="USER" comment="">
+    <method name="updateUserComments" auth_type="NORMAL_USER, VOIP_USER" comment="">
       <input type="dict">
         <param name="update_dic" type="dict" comment="">
           <param name="name" type="str" optional="true" comment="Comment Name (user's real name)" />
@@ -7598,7 +7598,7 @@
         </param>
         <param name="desc" type="bool" comment="" />
         <param name="basic" type="list" length="-1" comment="">
-          <item value="choice" comment="">
+          <item type="choice" comment="">
             <choice value="user_id" type="str" comment="" />
             <choice value="creation_date" type="str" comment="" />
             <choice value="credit" type="str" comment="" />
@@ -7756,28 +7756,28 @@
             <choice value="voip_preferred_language" comment="preferred language code for VoIP telephony support" />
             <choice value="voip_username" comment="VoIP Username" />
             <choice value="negative_credit_start" comment="User Info Exp Dates Negative Credit Expiration Date Negative Credit Start" />
-            <choice value="save_bw_usage" comment="User Info Flags Save Bandwidth Usage" /> <!--true_if_exists!-->
-            <choice value="allow_user_disconnect" comment="User Info Flags Allow User Disconnect" /> <!--true_if_exists!-->
-            <choice value="deny_change_password" comment="User Info Flags Deny Change Password" /> <!--true_if_exists!-->
-            <choice value="auto_renew" comment="User Info Flags Auto Renew" /> <!--true_if_exists!-->
-            <choice value="reset_negative_credit_on_renew" comment="User Info Flags Reset Negative Credit On Renew" /> <!--true_if_exists!-->
-            <choice value="renew_do_not_reset_credit" comment="User Info Flags Renew Do Not Reset Credit" /> <!--true_if_exists!-->
-            <choice value="renew_do_not_reset_credit_on_state_package" comment="User Info Flags Renew Do Not Reset Credit On Package State" /> <!--true_if_exists!-->
-            <choice value="renew_do_not_reset_credit_on_state_recharged" comment="User Info Flags Renew Do Not Reset Credit On Recharged State" /> <!--true_if_exists!-->
-            <choice value="auto_renew_on_credit_finish" comment="User Info Flags Auto Renew On Credit Finish" /> <!--true_if_exists!-->
-            <choice value="auto_renew_do_not_reset_credit" comment="User Info Flags Auto Renew No Not Reset Credit" /> <!--true_if_exists!-->
-            <choice value="auto_recharge" comment="User Info Flags Auto Recharge" /> <!--true_if_exists!-->
-            <choice value="allow_recharge_by_voucher" comment="User Info Flags Allow Recharge By Voucher" /> <!--true_if_exists!-->
-            <choice value="prevent_web_login" comment="User Info Flags Prevent Web Login" /> <!--true_if_exists!-->
-            <choice value="enable_failed_login" comment="User Info Flags Enable Failed Login" /> <!--true_if_exists!-->
-            <choice value="ignore_idle_threshold_static_ip" comment="User Info Flags Ignore Idle Threshold on static IP" /> <!--true_if_exists!-->
-            <choice value="ignore_idle_threshold" comment="User Info Flags Ignore Idle Threshold" /> <!--true_if_exists!-->
-            <choice value="caller_id_bind_on_login" comment="User Info VoIP VoIP Caller ID Bind On Next Login" /> <!--true_if_exists!-->
-            <choice value="limit_mac_bind_on_login" /> <!--true_if_exists!-->
-            <choice value="limit_port_ibind_on_login" /> <!--true_if_exists!-->
-            <choice value="limit_ras_bind_on_login" /> <!--true_if_exists!-->
-            <choice value="limit_station_ip_bind_on_login" /> <!--true_if_exists!-->
-            <choice value="limit_caller_id_allow_not_defined" comment="Allow users with no Caller ID, 0=No, 1=Yes" /> <!--true_if_exists!-->
+            <choice value="save_bw_usage" comment="User Info Flags Save Bandwidth Usage" />
+            <choice value="allow_user_disconnect" comment="User Info Flags Allow User Disconnect" />
+            <choice value="deny_change_password" comment="User Info Flags Deny Change Password" />
+            <choice value="auto_renew" comment="User Info Flags Auto Renew" />
+            <choice value="reset_negative_credit_on_renew" comment="User Info Flags Reset Negative Credit On Renew" />
+            <choice value="renew_do_not_reset_credit" comment="User Info Flags Renew Do Not Reset Credit" />
+            <choice value="renew_do_not_reset_credit_on_state_package" comment="User Info Flags Renew Do Not Reset Credit On Package State" />
+            <choice value="renew_do_not_reset_credit_on_state_recharged" comment="User Info Flags Renew Do Not Reset Credit On Recharged State" />
+            <choice value="auto_renew_on_credit_finish" comment="User Info Flags Auto Renew On Credit Finish" />
+            <choice value="auto_renew_do_not_reset_credit" comment="User Info Flags Auto Renew No Not Reset Credit" />
+            <choice value="auto_recharge" comment="User Info Flags Auto Recharge" />
+            <choice value="allow_recharge_by_voucher" comment="User Info Flags Allow Recharge By Voucher" />
+            <choice value="prevent_web_login" comment="User Info Flags Prevent Web Login" />
+            <choice value="enable_failed_login" comment="User Info Flags Enable Failed Login" />
+            <choice value="ignore_idle_threshold_static_ip" comment="User Info Flags Ignore Idle Threshold on static IP" />
+            <choice value="ignore_idle_threshold" comment="User Info Flags Ignore Idle Threshold" />
+            <choice value="caller_id_bind_on_login" comment="User Info VoIP VoIP Caller ID Bind On Next Login" />
+            <choice value="limit_mac_bind_on_login" />
+            <choice value="limit_port_ibind_on_login" />
+            <choice value="limit_ras_bind_on_login" />
+            <choice value="limit_station_ip_bind_on_login" />
+            <choice value="limit_caller_id_allow_not_defined" comment="Allow users with no Caller ID, 0=No, 1=Yes" />
             <!-- "is_deposit_transferee" and "is_deposit_transferer" are disabled in C
             <choice value="is_deposit_transferee" />
             <choice value="is_deposit_transferer" />
@@ -7810,8 +7810,8 @@
           <param name="action_id" type="int" comment="" />
           <param name="action_name" type="str" comment="" />
           <param name="conds" type="dict" comment="" />
-          <param name="requester_id" type="Admin ID" comment="" />
-          <param name="requester_username" type="Admin Username" comment="" />
+          <param name="requester_id" type="int" comment="Admin ID" />
+          <param name="requester_username" type="str" comment="Admin Username" />
           <param name="remote_ip" type="str" comment="Admin's Remote IP" />
           <param name="action_timing" type="list" length="2" comment="">
             <item index="0" type="int" comment="epoch time of start" />
@@ -7837,8 +7837,8 @@
         <param name="action_id" type="str" comment="" />
         <param name="action_name" type="str" comment="" />
         <param name="conds" type="dict" comment="" />
-        <param name="requester_id" type="Admin ID" comment="" />
-        <param name="requester_username" type="Admin Username" comment="" />
+        <param name="requester_id" type="int" comment="Admin ID" />
+        <param name="requester_username" type="str" comment="Admin Username" />
         <param name="remote_ip" type="str" comment="Admin's Remote IP" />
         <param name="action_timing" type="list" length="2" comment="">
           <item index="0" type="int" comment="epoch time of start" />
@@ -7976,7 +7976,7 @@
         <param name="comment" type="str" comment="" />
         <param name="value_type" type="choice" comment="">
           <choice value="string" comment="" />
-          <choice value="integer" comment="" />
+          <choice value="int" comment="" />
           <choice value="float" comment="" />
         </param>
         <param name="interface_type" type="choice" comment="">
@@ -7998,7 +7998,7 @@
         <param name="comment" type="str" comment="" />
         <param name="value_type" type="choice" comment="">
           <choice value="string" comment="" />
-          <choice value="integer" comment="" />
+          <choice value="int" comment="" />
           <choice value="float" comment="" />
         </param>
         <param name="interface_type" type="choice" comment="">
@@ -8029,7 +8029,7 @@
           <param name="comment" type="str" comment="" />
           <param name="value_type" type="choice" comment="">
             <choice value="string" comment="" />
-            <choice value="integer" comment="" />
+            <choice value="int" comment="" />
             <choice value="float" comment="" />
           </param>
           <param name="interface_type" type="choice" comment="">
@@ -8109,7 +8109,7 @@
     </method>
   </handler>
   <handler name="util" comment="">
-    <method name="multiStrGetAll" auth_type="ADMIN, USER" requires_perm="" comment="">
+    <method name="multiStrGetAll" auth_type="ADMIN, NORMAL_USER, VOIP_USER" requires_perm="" comment="">
       <input type="dict">
         <param name="str" type="str" mult_str="true" comment="" />
         <param name="left_pad" type="bool" comment="" />
@@ -8122,12 +8122,12 @@
       </input>
       <output type="bool" value="true" comment="" />
     </method>
-    <method name="getStartOfMonth" auth_type="ADMIN, USER" requires_perm=""
+    <method name="getStartOfMonth" auth_type="ADMIN, NORMAL_USER, VOIP_USER" requires_perm=""
       comment="returns date string of the begining of current month (jalali / gregorian month, depending of input date_type)">
       <input type="dict"></input>
       <output type="str" comment="date string with format '%Y-%m-%d'" />
     </method>
-    <method name="getNow" auth_type="USER, ADMIN" requires_perm="" comment="">
+    <method name="getNow" auth_type="ADMIN, NORMAL_USER, VOIP_USER" requires_perm="" comment="">
       <input type="dict"></input>
       <output type="datetime" comment="formatted datetime of current time" />
     </method>
@@ -8167,15 +8167,15 @@
       </input>
       <output type="str" comment="a username, or 'No User Found'" />
     </method>
-    <method name="createSessionForFailedUserByIP" auth_type="" requires_perm="" comment="">
+    <method name="createSessionForFailedUserByIP" auth_type="ANONYMOUS" requires_perm="" comment="">
       <input type="dict"></input>
       <output type="str" comment="Session ID" />
     </method>
-    <method name="createSessionForUserByIP" auth_type="" requires_perm="" comment="">
+    <method name="createSessionForUserByIP" auth_type="ANONYMOUS" requires_perm="" comment="">
       <input type="dict"></input>
       <output type="str" comment="Session ID" />
     </method>
-    <method name="getErrorForFailedUser" auth_type="" requires_perm=""
+    <method name="getErrorForFailedUser" auth_type="ANONYMOUS" requires_perm=""
       comment="returns error_key and error_description for failed user that is calling this handler
                raises an error if session for user is not found">
       <input type="dict"></input>
@@ -8184,12 +8184,12 @@
         <item index="1" type="str" comment="error description" />
       </output>
     </method>
-    <method name="kickFailedUserByIP" auth_type="" requires_perm=""
+    <method name="kickFailedUserByIP" auth_type="ANONYMOUS" requires_perm=""
       comment="Force disconnect a failed user by using his IP address (method called by user himself)">
       <input type="dict"></input>
       <output type="bool" comment="returns true if online user was found and disconnected, returns false otherwise" />
     </method>
-    <method name="kickIDLEUsersByIP" auth_type="" requires_perm="" comment="">
+    <method name="kickIDLEUsersByIP" auth_type="ANONYMOUS" requires_perm="" comment="">
       <input type="dict">
         <param name="idle_ip_list" type="list" item_type="str" comment="list of IP string" />
       </input>
@@ -8201,7 +8201,7 @@
       </input>
       <output type="str" comment="the same value of 'echo' param" />
     </method>
-    <method name="getSessionISPID" auth_type="USER, ADMIN" requires_perm="" comment="use after login into user/admin panel">
+    <method name="getSessionISPID" auth_type="ADMIN, NORMAL_USER, VOIP_USER" requires_perm="" comment="use after login into user/admin panel">
       <input type="dict"></input>
       <output type="int" comment="ISP ID for Page Style to show to this user/admin" />
     </method>
@@ -8211,12 +8211,12 @@
       </input>
       <output type="int" comment="ISP ID for Page Style to show to this user/admin" />
     </method>
-    <method name="getISPsPageStyleRevision" auth_type="" requires_perm=""
+    <method name="getISPsPageStyleRevision" auth_type="ANONYMOUS" requires_perm=""
       comment="returns latest Revision Number of ISP Page Style">
       <input type="dict"></input>
       <output type="int" comment="Revision Number of ISP Page Style" />
     </method>
-    <method name="getSessionPageStyle" auth_type="" requires_perm="" comment="">
+    <method name="getSessionPageStyle" auth_type="ADMIN, NORMAL_USER, VOIP_USER, ANONYMOUS" requires_perm="" comment="">
       <input type="dict"></input>
       <output type="dict" comment="">
         <param name="header_logo_ext" type="str" comment="header logo file extension, for example 'gif'" />
@@ -8400,8 +8400,8 @@
             <param name="batch_credit" type="float" comment="" />
             <param name="batch_can_create_user" type="bool" comment="" />
             <param name="batch_can_recharge_user" type="bool" comment="" />
-            <param name="batch_change_target" type="text" comment="" />
-            <param name="batch_comment" type="text" comment="" />
+            <param name="batch_change_target" type="str" comment="" />
+            <param name="batch_comment" type="str" comment="" />
             <param name="batch_creation_date" type="datetime" comment="" />
             <param name="batch_isp_id" type="int" comment="int" />
             <param name="batch_allow_use_by_children_isp" type="bool" comment="" />
@@ -8416,7 +8416,7 @@
       </input>
       <output type="float" comment="voucher credit" />
     </method>
-    <method name="voucherRechargeUser" auth_type="USER" comment="user needs 'allow_recharge_by_voucher' flag">
+    <method name="voucherRechargeUser" auth_type="NORMAL_USER, VOIP_USER" comment="user needs 'allow_recharge_by_voucher' flag">
       <input type="dict">
         <param name="voucher_pin" type="str" comment="" />
       </input>
@@ -8430,7 +8430,7 @@
       </input>
       <output type="int" comment="User ID of newly created user" />
     </method>
-    <method name="getBatchVoucherAttrs" auth_type="ADMIN, USER" requires_perm=""
+    <method name="getBatchVoucherAttrs" auth_type="ADMIN, NORMAL_USER, VOIP_USER" requires_perm=""
       comment="admin needs 'SEE VOUCHER' permission, user needs 'allow_recharge_by_voucher' flag">
       <input type="dict">
         <param name="voucher_pin" type="str" comment="" />
@@ -8448,8 +8448,8 @@
         <param name="batch_credit" type="float" comment="" />
         <param name="batch_can_create_user" type="bool" comment="" />
         <param name="batch_can_recharge_user" type="bool" comment="" />
-        <param name="batch_change_target" type="text" comment="" />
-        <param name="batch_comment" type="text" comment="" />
+        <param name="batch_change_target" type="str" comment="" />
+        <param name="batch_comment" type="str" comment="" />
         <param name="batch_creation_date" type="datetime" comment="" />
         <param name="batch_isp_id" type="int" comment="int" />
         <param name="batch_allow_use_by_children_isp" type="bool" comment="" />
@@ -9057,15 +9057,15 @@
       <input type="dict">
         <param name="template_name" type="str" />
       </input>
-      <output type="null " comment="" />
+      <output type="null" comment="" />
     </method>
     <method name="deleteInvoiceTemplate" auth_type="ADMIN" requires_perm="CHANGE INVOICE PROFILE" comment="">
       <input type="dict">
         <param name="template_name" type="str" />
       </input>
-      <output type="null " comment="" />
+      <output type="null" comment="" />
     </method>
-    <method name="searchInvoices" auth_type="ADMIN, USER"
+    <method name="searchInvoices" auth_type="ADMIN, NORMAL_USER, VOIP_USER"
       requires_perm="user can only see his own invoices,
         admin must have permission 'SEE INVOICE'" comment="">
       <input type="dict">
@@ -9306,7 +9306,7 @@
         <param name="user_ids" type="list" length="-1" item_type="str_int" comment="list of User IDs" />
       </output>
     </method>
-    <method name="getPIByID" auth_type="ADMIN, USER" requires_perm=""
+    <method name="getPIByID" auth_type="ADMIN, NORMAL_USER, VOIP_USER" requires_perm=""
       comment="user must own the proforma invoice,
                  admin must have access to owner user and have permission 'SEE INVOICE'">
       <input type="dict">
@@ -9340,7 +9340,7 @@
         </param>
       </output>
     </method>
-    <method name="getInvoiceByID" auth_type="ADMIN, USER" requires_perm=""
+    <method name="getInvoiceByID" auth_type="ADMIN, NORMAL_USER, VOIP_USER" requires_perm=""
       comment="user must own the invoice,
                  admin must have access to owner user and have permission 'SEE INVOICE'">
       <input type="dict">
@@ -9615,7 +9615,7 @@
           <param name="uid" type="str" optional="true" comment="If you don't need uid, send an empty string" />
           <param name="customer_id" type="int" optional="true" comment="If you don't need customer_id, sned an empty string"/>
         </input>
-        <output type="null " comment="" />
+        <output type="null" comment="" />
       </method>
       <method name="searchCustomer" auth_type="ADMIN" requires_perm="SEARCH CUSTOMER" comment="Search in customer information">
         <input type="dict">
@@ -9719,6 +9719,8 @@
         <param name="balance_name" type="str" optional="true" comment="" />
         <param name="balance_id" type="int" optional="true" comment="" />
       </input>
+      <output type="dict">
+      </output>
     </method>
     <method name="updateBalance" auth_type="ADMIN" comment="update the balance information">
       <input type="dict">
@@ -9773,7 +9775,7 @@
         <param name="balance_id" type="int" />
       </input>
       <output type="dict">
-        <param name="balance_name" />
+        <param name="balance_name" type="str"/>
       </output>
       </method>
       <method name="searchBalance" auth_type="ADMIN" comment="search in balances">
@@ -9857,10 +9859,10 @@
         <param name="linked_balance_id" type="str" optional="true" comment="If type balance id is required" />
       </input>
       <output type="dict">
-        <param name="balance_id" />
+        <param name="balance_id" type="int"/>
       </output>
     </method>
-    <method name="getUserBalanceInfoByUserID" auth_name="ADMIN" requires_param="SEE USER BALANCE CHANGES" comment="return all balnce that assigned to user">
+    <method name="getUserBalanceInfoByUserID" auth_type="ADMIN" requires_param="SEE USER BALANCE CHANGES" comment="return all balnce that assigned to user">
       <input type="dict">
         <param name="user_id" type="int" />
       </input>
@@ -9874,14 +9876,14 @@
         <param name="user_balance_urd_tag" type="str" />
         <param name="priority" type="float" />
         <param name="balance_name" type="str" comment="name of balance that asssign to user"/>
-        <param name="user_balance_udr_tag" type="UDR tag to self user balance assign" />
+        <param name="user_balance_udr_tag" type="str" comment="UDR tag to self user balance assign"/>
         <param name="balance_id" type="int" comment="id of balacne assign to user" />
-        <param name="first_use_expiration_time" type="" />
-        <param name="first_use_time" type=""/>
+        <param name="first_use_expiration_time" type="datetime" />
+        <param name="first_use_time" type="datetime"/>
         <param name="expire_time" type="str" comment="sample format -> 2022-12-31 11:54:00"/>
       </output>
     </method>
-    <method name="updateUserBalance" auth_name="ADMIN" requires_param="CHANGE USER BALANCE" comment="update the user_balance">
+    <method name="updateUserBalance" auth_type="ADMIN" requires_param="CHANGE USER BALANCE" comment="update the user_balance">
       <input type="dict">
         <param name="user_balance_id" type="str" />
         <param name="priority" type="str" />
@@ -9901,7 +9903,7 @@
       </input>
       <output type="null" comment="" />
     </method>
-    <method name="getUserBalanceInfo" auth_name="ADMIN" requires_param="SEE USER BALANCE CHANGES" comment="get user_balance_id and return the info">
+    <method name="getUserBalanceInfo" auth_type="ADMIN" requires_param="SEE USER BALANCE CHANGES" comment="get user_balance_id and return the info">
       <input type="dict">
         <param name="user_balance_id" type="str" />
       </input>
@@ -9921,14 +9923,14 @@
         <param name="expire_time" type="str" />
       </output>
     </method>
-    <method name="deleteUserBalance" auth_name="ADMIN" requires_param="CHANGE USER BALANCE" comment="delete the user_balance">
+    <method name="deleteUserBalance" auth_type="ADMIN" requires_param="CHANGE USER BALANCE" comment="delete the user_balance">
       <input type="dict">
         <param name="id" type="str" />
         <param name="comment" type="str" />
       </input>
       <output type="null" comment="" />
     </method>
-    <method name="changeUserBalanceValue" auth_name="ADMIN" requires_param="CHANGE USER BALANCE" comment="update the value of user balance">
+    <method name="changeUserBalanceValue" auth_type="ADMIN" requires_param="CHANGE USER BALANCE" comment="update the value of user balance">
       <input type="dict">
         <param name="user_balance_id" type="str" />
         <param name="balance_change_value" type="str" />
@@ -9940,7 +9942,7 @@
       </input>
       <output type="null" comment="" />
     </method>
-    <method name="searchUserBalanceChangeLog" auth_name="ADMIN" request_param="SEE USER BALANCE CHANGES">
+    <method name="searchUserBalanceChangeLog" auth_type="ADMIN" request_param="SEE USER BALANCE CHANGES">
       <input type="dict">
         <param name="conds" type="dict" comment="">
           <param name="balance_name" type="choice" optional="true" comment="list of balances that added in system" />
@@ -10044,7 +10046,7 @@
         <param name="file_import_id" type="int" comment="send id of recorde of import_files table that s" />
         <param name="section" type="str" comment="set the section for upload file [CUSTOMER, USER, USER_BALANCE]" />
       </input>
-      <output type="null " comment="" />
+      <output type="null" comment="" />
     </method>
     <method name="getReportOfImportFile" auth_type="ADMIN" comment="get the report of import files for every section [CUSTOMER, USER, USER_BALANCE] ">
       <input type="dict">
