@@ -99,7 +99,7 @@ def getListItemSchema(item: "Element") -> "dict | list":
 			return
 		itemJson["title"] = ""
 	return {
-		"title": "",
+		"title": item.attrib.get("comment", ""),
 		"type": _type,
 	}
 

@@ -148,7 +148,7 @@
               "schema": {
                 "type": "array",
                 "items": {
-                  "title": "",
+                  "title": "rule dict",
                   "type": "dict"
                 }
               }

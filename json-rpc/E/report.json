@@ -2029,11 +2029,11 @@
                 "type": "array",
                 "items": [
                   {
-                    "title": "",
+                    "title": "relative time",
                     "type": "int"
                   },
                   {
-                    "title": "",
+                    "title": "relative time unit",
                     "type": "choice"
                   }
                 ],
@@ -2047,11 +2047,11 @@
                 "type": "array",
                 "items": [
                   {
-                    "title": "",
+                    "title": "relative time",
                     "type": "int"
                   },
                   {
-                    "title": "",
+                    "title": "relative time unit",
                     "type": "choice"
                   }
                 ],
@@ -2065,11 +2065,11 @@
                 "type": "array",
                 "items": [
                   {
-                    "title": "",
+                    "title": "relative time",
                     "type": "int"
                   },
                   {
-                    "title": "",
+                    "title": "relative time unit",
                     "type": "choice"
                   }
                 ],
@@ -2083,11 +2083,11 @@
                 "type": "array",
                 "items": [
                   {
-                    "title": "",
+                    "title": "relative time",
                     "type": "int"
                   },
                   {
-                    "title": "",
+                    "title": "relative time unit",
                     "type": "choice"
                   }
                 ],
@@ -2101,11 +2101,11 @@
                 "type": "array",
                 "items": [
                   {
-                    "title": "",
+                    "title": "relative time",
                     "type": "int"
                   },
                   {
-                    "title": "",
+                    "title": "relative time unit",
                     "type": "choice"
                   }
                 ],
@@ -2119,11 +2119,11 @@
                 "type": "array",
                 "items": [
                   {
-                    "title": "",
+                    "title": "relative time",
                     "type": "int"
                   },
                   {
-                    "title": "",
+                    "title": "relative time unit",
                     "type": "choice"
                   }
                 ],

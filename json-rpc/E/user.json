@@ -1016,11 +1016,11 @@
                 "type": "array",
                 "items": [
                   {
-                    "title": "",
+                    "title": "epoch time of start",
                     "type": "int"
                   },
                   {
-                    "title": "",
+                    "title": "epoch time of end",
                     "type": "int"
                   }
                 ],

@@ -124,7 +124,7 @@
               "schema": {
                 "type": "array",
                 "items": {
-                  "title": "",
+                  "title": "rule info dict",
                   "type": "dict"
                 }
               }
@@ -188,7 +188,7 @@
               "schema": {
                 "type": "array",
                 "items": {
-                  "title": "",
+                  "title": "rule info dict",
                   "type": "dict"
                 }
               }
@@ -252,7 +252,7 @@
               "schema": {
                 "type": "array",
                 "items": {
-                  "title": "",
+                  "title": "rule info dict",
                   "type": "dict"
                 }
               }
@@ -316,7 +316,7 @@
               "schema": {
                 "type": "array",
                 "items": {
-                  "title": "",
+                  "title": "rule info dict",
                   "type": "dict"
                 }
               }
@@ -452,7 +452,7 @@
               "schema": {
                 "type": "array",
                 "items": {
-                  "title": "",
+                  "title": "rule item info dict",
                   "type": "dict"
                 }
               }
@@ -539,7 +539,7 @@
           "schema": {
             "type": "array",
             "items": {
-              "title": "",
+              "title": "rule info dict",
               "type": "dict"
             }
           }
@@ -1333,7 +1333,7 @@
               "schema": {
                 "type": "array",
                 "items": {
-                  "title": "",
+                  "title": "invoice item",
                   "type": "dict"
                 }
               }

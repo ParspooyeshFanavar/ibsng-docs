@@ -118,7 +118,7 @@
               "schema": {
                 "type": "array",
                 "items": {
-                  "title": "",
+                  "title": "user instance",
                   "type": "list"
                 }
               }
@@ -129,7 +129,7 @@
               "schema": {
                 "type": "array",
                 "items": {
-                  "title": "",
+                  "title": "user instance",
                   "type": "list"
                 }
               }
@@ -1976,11 +1976,11 @@
                 "type": "array",
                 "items": [
                   {
-                    "title": "",
+                    "title": "epoch time of start",
                     "type": "int"
                   },
                   {
-                    "title": "",
+                    "title": "epoch time of end",
                     "type": "int"
                   }
                 ],
