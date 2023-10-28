@@ -1014,10 +1014,16 @@
               "description": "",
               "schema": {
                 "type": "array",
-                "items": {
-                  "title": "",
-                  "type": "int"
-                },
+                "items": [
+                  {
+                    "title": "",
+                    "type": "int"
+                  },
+                  {
+                    "title": "",
+                    "type": "int"
+                  }
+                ],
                 "length": "2"
               }
             },

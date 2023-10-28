@@ -2027,10 +2027,16 @@
               "description": "",
               "schema": {
                 "type": "array",
-                "items": {
-                  "title": "",
-                  "type": "int"
-                },
+                "items": [
+                  {
+                    "title": "",
+                    "type": "int"
+                  },
+                  {
+                    "title": "",
+                    "type": "choice"
+                  }
+                ],
                 "length": "2"
               }
             },
@@ -2039,10 +2045,16 @@
               "description": "",
               "schema": {
                 "type": "array",
-                "items": {
-                  "title": "",
-                  "type": "int"
-                },
+                "items": [
+                  {
+                    "title": "",
+                    "type": "int"
+                  },
+                  {
+                    "title": "",
+                    "type": "choice"
+                  }
+                ],
                 "length": "2"
               }
             },
@@ -2051,10 +2063,16 @@
               "description": "",
               "schema": {
                 "type": "array",
-                "items": {
-                  "title": "",
-                  "type": "int"
-                },
+                "items": [
+                  {
+                    "title": "",
+                    "type": "int"
+                  },
+                  {
+                    "title": "",
+                    "type": "choice"
+                  }
+                ],
                 "length": "2"
               }
             },
@@ -2063,10 +2081,16 @@
               "description": "",
               "schema": {
                 "type": "array",
-                "items": {
-                  "title": "",
-                  "type": "int"
-                },
+                "items": [
+                  {
+                    "title": "",
+                    "type": "int"
+                  },
+                  {
+                    "title": "",
+                    "type": "choice"
+                  }
+                ],
                 "length": "2"
               }
             },
@@ -2075,10 +2099,16 @@
               "description": "",
               "schema": {
                 "type": "array",
-                "items": {
-                  "title": "",
-                  "type": "int"
-                },
+                "items": [
+                  {
+                    "title": "",
+                    "type": "int"
+                  },
+                  {
+                    "title": "",
+                    "type": "choice"
+                  }
+                ],
                 "length": "2"
               }
             },
@@ -2087,10 +2117,16 @@
               "description": "",
               "schema": {
                 "type": "array",
-                "items": {
-                  "title": "",
-                  "type": "int"
-                },
+                "items": [
+                  {
+                    "title": "",
+                    "type": "int"
+                  },
+                  {
+                    "title": "",
+                    "type": "choice"
+                  }
+                ],
                 "length": "2"
               }
             }

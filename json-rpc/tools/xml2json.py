@@ -103,6 +103,14 @@ def getListItemSchema(item: "Element") -> "dict | list":
 		"type": _type,
 	}
 
+
+def getMultiTypeListItemSchema(items: "list[Element]") -> "dict | list":
+	return [
+		getListItemSchema(item)
+		for item in items
+	]
+
+
 def getListSchema(elem: "Element") -> "dict | list":
 	schema = {
 		"type": "array",
@@ -110,8 +118,10 @@ def getListSchema(elem: "Element") -> "dict | list":
 	items = elem.findall("item")
 	if items:
 		if len(items) > 1:
-			print(items)
-		itemSchema = getListItemSchema(items[0])
+			# print(f"multi-type array: {toStr(elem)}")
+			itemSchema = getMultiTypeListItemSchema(items)
+		else:
+			itemSchema = getListItemSchema(items[0])
 		if itemSchema:
 			schema["items"] = itemSchema
 
