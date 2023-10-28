@@ -359,7 +359,72 @@
                 "type": "array",
                 "items": {
                   "title": "",
-                  "type": "dict"
+                  "type": "object",
+                  "params": [
+                    {
+                      "name": "customer_id",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "cusmert_name",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "mobile_number",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "phone_number",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "comment",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "uid",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "isp_name",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "address",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "email",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ]
                 }
               }
             }

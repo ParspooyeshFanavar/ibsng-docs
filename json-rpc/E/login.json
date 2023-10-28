@@ -209,7 +209,67 @@
                 "type": "array",
                 "items": {
                   "title": "",
-                  "type": "dict"
+                  "type": "object",
+                  "params": [
+                    {
+                      "name": "additional_info",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "admin_id",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "admin_name",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "log_id",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "login_date",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "login_date_formatted",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "remote_ip",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "successful",
+                      "description": "",
+                      "value": ["t", "f"],
+                      "value_comment": {
+                        "t": "true",
+                        "f": "false"
+                      }
+                    }
+                  ]
                 }
               }
             }

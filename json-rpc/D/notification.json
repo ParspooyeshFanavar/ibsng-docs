@@ -149,7 +149,67 @@
                 "type": "array",
                 "items": {
                   "title": "rule dict",
-                  "type": "dict"
+                  "type": "object",
+                  "params": [
+                    {
+                      "name": "notification_rule_id",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "notification_profile_id",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "notification_threshold",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "message_type",
+                      "description": "",
+                      "value": [
+                        "sms",
+                        "email",
+                        "email_to_isp",
+                        "ibsng_message",
+                        "url",
+                        "user_event"
+                      ],
+                      "value_comment": {
+                        "url": "call a URL specified in `message_template`, added in tag 312",
+                        "user_event": "added in tag (NO TAG YET)"
+                      }
+                    },
+                    {
+                      "name": "notification_type",
+                      "description": "",
+                      "value": [
+                        "expiration_date",
+                        "credit",
+                        "renew",
+                        "birth_day",
+                        "online_payment",
+                        "first_login",
+                        "credit_change",
+                        "deposit_change"
+                      ]
+                    },
+                    {
+                      "name": "message_template",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ]
                 }
               }
             },

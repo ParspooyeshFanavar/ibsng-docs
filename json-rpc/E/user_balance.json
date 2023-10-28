@@ -544,7 +544,93 @@
                 "type": "array",
                 "items": {
                   "title": "",
-                  "type": "dict"
+                  "type": "object",
+                  "params": [
+                    {
+                      "name": "user_balance_id",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "user_id",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "remote_ip",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "chnage_log",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "isp_name",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "group_name",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "balance_name",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "intial_value",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "old_value",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "new_value",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "action",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "comment",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ]
                 }
               }
             }

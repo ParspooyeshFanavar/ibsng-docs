@@ -125,7 +125,162 @@
                 "type": "array",
                 "items": {
                   "title": "rule info dict",
-                  "type": "dict"
+                  "type": "object",
+                  "params": [
+                    {
+                      "name": "rule_id",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "description",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "invoice_template_name",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "pi_template_name",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "date_type",
+                      "value": ["jalali", "gregorian"]
+                    },
+                    {
+                      "name": "language",
+                      "value": ["fa", "en"]
+                    },
+                    {
+                      "name": "pi_exp_days",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "roundup_scale",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "auto_invoice_event",
+                      "value": [
+                        "null",
+                        "credit_finished",
+                        "exp_date",
+                        "always"
+                      ]
+                    },
+                    {
+                      "name": "auto_invoice_threshold",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "allow_user_issue_invoice",
+                      "description": "",
+                      "schema": {
+                        "type": "boolean"
+                      }
+                    },
+                    {
+                      "name": "action",
+                      "value": [
+                        "change_service",
+                        "renew",
+                        "renew_with_next_group",
+                        "recharge",
+                        "increase_deposit",
+                        "increase_deposit_by_group_credit",
+                        "increase_recharge_deposit",
+                        "increase_credit",
+                        "increase_deposit_constant",
+                        "increase_recharge_deposit_constant",
+                        "increase_credit_constant",
+                        "set_deposit_constant",
+                        "set_credit_constant"
+                      ]
+                    },
+                    {
+                      "name": "action_args",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "disabled",
+                      "description": "",
+                      "schema": {
+                        "type": "boolean"
+                      }
+                    },
+                    {
+                      "name": "invoice_rule_items",
+                      "description": "",
+                      "schema": {
+                        "type": "array",
+                        "items": {
+                          "title": "rule item info dict",
+                          "type": "object",
+                          "params": [
+                            {
+                              "name": "rule_item_id",
+                              "description": "",
+                              "schema": {
+                                "type": "number"
+                              }
+                            },
+                            {
+                              "name": "description",
+                              "description": "",
+                              "schema": {
+                                "type": "string"
+                              }
+                            },
+                            {
+                              "name": "formula",
+                              "description": "",
+                              "schema": {
+                                "type": "string"
+                              }
+                            },
+                            {
+                              "name": "is_bonus",
+                              "description": "",
+                              "schema": {
+                                "type": "boolean"
+                              }
+                            },
+                            {
+                              "name": "none_effective",
+                              "description": "",
+                              "schema": {
+                                "type": "boolean"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  ]
                 }
               }
             }
@@ -189,7 +344,162 @@
                 "type": "array",
                 "items": {
                   "title": "rule info dict",
-                  "type": "dict"
+                  "type": "object",
+                  "params": [
+                    {
+                      "name": "rule_id",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "description",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "invoice_template_name",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "pi_template_name",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "date_type",
+                      "value": ["jalali", "gregorian"]
+                    },
+                    {
+                      "name": "language",
+                      "value": ["fa", "en"]
+                    },
+                    {
+                      "name": "pi_exp_days",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "roundup_scale",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "auto_invoice_event",
+                      "value": [
+                        "null",
+                        "credit_finished",
+                        "exp_date",
+                        "always"
+                      ]
+                    },
+                    {
+                      "name": "auto_invoice_threshold",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "allow_user_issue_invoice",
+                      "description": "",
+                      "schema": {
+                        "type": "boolean"
+                      }
+                    },
+                    {
+                      "name": "action",
+                      "value": [
+                        "change_service",
+                        "renew",
+                        "renew_with_next_group",
+                        "recharge",
+                        "increase_deposit",
+                        "increase_deposit_by_group_credit",
+                        "increase_recharge_deposit",
+                        "increase_credit",
+                        "increase_deposit_constant",
+                        "increase_recharge_deposit_constant",
+                        "increase_credit_constant",
+                        "set_deposit_constant",
+                        "set_credit_constant"
+                      ]
+                    },
+                    {
+                      "name": "action_args",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "disabled",
+                      "description": "",
+                      "schema": {
+                        "type": "boolean"
+                      }
+                    },
+                    {
+                      "name": "invoice_rule_items",
+                      "description": "",
+                      "schema": {
+                        "type": "array",
+                        "items": {
+                          "title": "rule item info dict",
+                          "type": "object",
+                          "params": [
+                            {
+                              "name": "rule_item_id",
+                              "description": "",
+                              "schema": {
+                                "type": "number"
+                              }
+                            },
+                            {
+                              "name": "description",
+                              "description": "",
+                              "schema": {
+                                "type": "string"
+                              }
+                            },
+                            {
+                              "name": "formula",
+                              "description": "",
+                              "schema": {
+                                "type": "string"
+                              }
+                            },
+                            {
+                              "name": "is_bonus",
+                              "description": "",
+                              "schema": {
+                                "type": "boolean"
+                              }
+                            },
+                            {
+                              "name": "none_effective",
+                              "description": "",
+                              "schema": {
+                                "type": "boolean"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  ]
                 }
               }
             }
@@ -253,7 +563,162 @@
                 "type": "array",
                 "items": {
                   "title": "rule info dict",
-                  "type": "dict"
+                  "type": "object",
+                  "params": [
+                    {
+                      "name": "rule_id",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "description",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "invoice_template_name",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "pi_template_name",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "date_type",
+                      "value": ["jalali", "gregorian"]
+                    },
+                    {
+                      "name": "language",
+                      "value": ["fa", "en"]
+                    },
+                    {
+                      "name": "pi_exp_days",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "roundup_scale",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "auto_invoice_event",
+                      "value": [
+                        "null",
+                        "credit_finished",
+                        "exp_date",
+                        "always"
+                      ]
+                    },
+                    {
+                      "name": "auto_invoice_threshold",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "allow_user_issue_invoice",
+                      "description": "",
+                      "schema": {
+                        "type": "boolean"
+                      }
+                    },
+                    {
+                      "name": "action",
+                      "value": [
+                        "change_service",
+                        "renew",
+                        "renew_with_next_group",
+                        "recharge",
+                        "increase_deposit",
+                        "increase_deposit_by_group_credit",
+                        "increase_recharge_deposit",
+                        "increase_credit",
+                        "increase_deposit_constant",
+                        "increase_recharge_deposit_constant",
+                        "increase_credit_constant",
+                        "set_deposit_constant",
+                        "set_credit_constant"
+                      ]
+                    },
+                    {
+                      "name": "action_args",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "disabled",
+                      "description": "",
+                      "schema": {
+                        "type": "boolean"
+                      }
+                    },
+                    {
+                      "name": "invoice_rule_items",
+                      "description": "",
+                      "schema": {
+                        "type": "array",
+                        "items": {
+                          "title": "rule item info dict",
+                          "type": "object",
+                          "params": [
+                            {
+                              "name": "rule_item_id",
+                              "description": "",
+                              "schema": {
+                                "type": "number"
+                              }
+                            },
+                            {
+                              "name": "description",
+                              "description": "",
+                              "schema": {
+                                "type": "string"
+                              }
+                            },
+                            {
+                              "name": "formula",
+                              "description": "",
+                              "schema": {
+                                "type": "string"
+                              }
+                            },
+                            {
+                              "name": "is_bonus",
+                              "description": "",
+                              "schema": {
+                                "type": "boolean"
+                              }
+                            },
+                            {
+                              "name": "none_effective",
+                              "description": "",
+                              "schema": {
+                                "type": "boolean"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  ]
                 }
               }
             }
@@ -317,7 +782,162 @@
                 "type": "array",
                 "items": {
                   "title": "rule info dict",
-                  "type": "dict"
+                  "type": "object",
+                  "params": [
+                    {
+                      "name": "rule_id",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "description",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "invoice_template_name",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "pi_template_name",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "date_type",
+                      "value": ["jalali", "gregorian"]
+                    },
+                    {
+                      "name": "language",
+                      "value": ["fa", "en"]
+                    },
+                    {
+                      "name": "pi_exp_days",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "roundup_scale",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "auto_invoice_event",
+                      "value": [
+                        "null",
+                        "credit_finished",
+                        "exp_date",
+                        "always"
+                      ]
+                    },
+                    {
+                      "name": "auto_invoice_threshold",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "allow_user_issue_invoice",
+                      "description": "",
+                      "schema": {
+                        "type": "boolean"
+                      }
+                    },
+                    {
+                      "name": "action",
+                      "value": [
+                        "change_service",
+                        "renew",
+                        "renew_with_next_group",
+                        "recharge",
+                        "increase_deposit",
+                        "increase_deposit_by_group_credit",
+                        "increase_recharge_deposit",
+                        "increase_credit",
+                        "increase_deposit_constant",
+                        "increase_recharge_deposit_constant",
+                        "increase_credit_constant",
+                        "set_deposit_constant",
+                        "set_credit_constant"
+                      ]
+                    },
+                    {
+                      "name": "action_args",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "disabled",
+                      "description": "",
+                      "schema": {
+                        "type": "boolean"
+                      }
+                    },
+                    {
+                      "name": "invoice_rule_items",
+                      "description": "",
+                      "schema": {
+                        "type": "array",
+                        "items": {
+                          "title": "rule item info dict",
+                          "type": "object",
+                          "params": [
+                            {
+                              "name": "rule_item_id",
+                              "description": "",
+                              "schema": {
+                                "type": "number"
+                              }
+                            },
+                            {
+                              "name": "description",
+                              "description": "",
+                              "schema": {
+                                "type": "string"
+                              }
+                            },
+                            {
+                              "name": "formula",
+                              "description": "",
+                              "schema": {
+                                "type": "string"
+                              }
+                            },
+                            {
+                              "name": "is_bonus",
+                              "description": "",
+                              "schema": {
+                                "type": "boolean"
+                              }
+                            },
+                            {
+                              "name": "none_effective",
+                              "description": "",
+                              "schema": {
+                                "type": "boolean"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  ]
                 }
               }
             }
@@ -453,7 +1073,44 @@
                 "type": "array",
                 "items": {
                   "title": "rule item info dict",
-                  "type": "dict"
+                  "type": "object",
+                  "params": [
+                    {
+                      "name": "rule_item_id",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "description",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "formula",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "is_bonus",
+                      "description": "",
+                      "schema": {
+                        "type": "boolean"
+                      }
+                    },
+                    {
+                      "name": "none_effective",
+                      "description": "",
+                      "schema": {
+                        "type": "boolean"
+                      }
+                    }
+                  ]
                 }
               }
             }
@@ -540,7 +1197,157 @@
             "type": "array",
             "items": {
               "title": "rule info dict",
-              "type": "dict"
+              "type": "object",
+              "params": [
+                {
+                  "name": "rule_id",
+                  "description": "",
+                  "schema": {
+                    "type": "number"
+                  }
+                },
+                {
+                  "name": "description",
+                  "description": "",
+                  "schema": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "name": "invoice_template_name",
+                  "description": "",
+                  "schema": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "name": "pi_template_name",
+                  "description": "",
+                  "schema": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "name": "date_type",
+                  "value": ["jalali", "gregorian"]
+                },
+                {
+                  "name": "language",
+                  "value": ["fa", "en"]
+                },
+                {
+                  "name": "pi_exp_days",
+                  "description": "",
+                  "schema": {
+                    "type": "number"
+                  }
+                },
+                {
+                  "name": "roundup_scale",
+                  "description": "",
+                  "schema": {
+                    "type": "number"
+                  }
+                },
+                {
+                  "name": "auto_invoice_event",
+                  "value": ["null", "credit_finished", "exp_date", "always"]
+                },
+                {
+                  "name": "auto_invoice_threshold",
+                  "description": "",
+                  "schema": {
+                    "type": "number"
+                  }
+                },
+                {
+                  "name": "allow_user_issue_invoice",
+                  "description": "",
+                  "schema": {
+                    "type": "boolean"
+                  }
+                },
+                {
+                  "name": "action",
+                  "value": [
+                    "change_service",
+                    "renew",
+                    "renew_with_next_group",
+                    "recharge",
+                    "increase_deposit",
+                    "increase_deposit_by_group_credit",
+                    "increase_recharge_deposit",
+                    "increase_credit",
+                    "increase_deposit_constant",
+                    "increase_recharge_deposit_constant",
+                    "increase_credit_constant",
+                    "set_deposit_constant",
+                    "set_credit_constant"
+                  ]
+                },
+                {
+                  "name": "action_args",
+                  "description": "",
+                  "schema": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "name": "disabled",
+                  "description": "",
+                  "schema": {
+                    "type": "boolean"
+                  }
+                },
+                {
+                  "name": "invoice_rule_items",
+                  "description": "",
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "title": "rule item info dict",
+                      "type": "object",
+                      "params": [
+                        {
+                          "name": "rule_item_id",
+                          "description": "",
+                          "schema": {
+                            "type": "number"
+                          }
+                        },
+                        {
+                          "name": "description",
+                          "description": "",
+                          "schema": {
+                            "type": "string"
+                          }
+                        },
+                        {
+                          "name": "formula",
+                          "description": "",
+                          "schema": {
+                            "type": "string"
+                          }
+                        },
+                        {
+                          "name": "is_bonus",
+                          "description": "",
+                          "schema": {
+                            "type": "boolean"
+                          }
+                        },
+                        {
+                          "name": "none_effective",
+                          "description": "",
+                          "schema": {
+                            "type": "boolean"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
             }
           }
         }
@@ -721,7 +1528,163 @@
                 "type": "array",
                 "items": {
                   "title": "",
-                  "type": "dict"
+                  "type": "object",
+                  "params": [
+                    {
+                      "name": "invoice_id",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "invoice_issue_date",
+                      "description": "datetime, ",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "is_active",
+                      "description": "",
+                      "schema": {
+                        "type": "boolean"
+                      }
+                    },
+                    {
+                      "name": "is_paid",
+                      "description": "",
+                      "schema": {
+                        "type": "boolean"
+                      }
+                    },
+                    {
+                      "name": "pi_issue_date",
+                      "description": "datetime, ",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "rule_id",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "rule_description",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "period_end",
+                      "description": "datetime or null, str or null",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "period_start",
+                      "description": "datetime or null, str or null",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "comment",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "sum_up_amount",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "previous_due",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "roundup_amount",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "effective_amount",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "paid_amount",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "user_id",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "owner_name",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "user_address",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "user_email",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "user_name",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "user_phone",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "user_postal_code",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ]
                 }
               }
             }
@@ -789,7 +1752,135 @@
                 "type": "array",
                 "items": {
                   "title": "",
-                  "type": "dict"
+                  "type": "object",
+                  "params": [
+                    {
+                      "name": "pi_id",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "rule_id",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "rule_description",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "add_user",
+                      "description": "",
+                      "schema": {
+                        "type": "boolean"
+                      }
+                    },
+                    {
+                      "name": "issue_date",
+                      "description": "datetime, ",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "expired",
+                      "description": "",
+                      "schema": {
+                        "type": "boolean"
+                      }
+                    },
+                    {
+                      "name": "sum_up_amount",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "previous_due",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "roundup_amount",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "effective_amount",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "comment",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "owner_name",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "user_id",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "user_name",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "user_address",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "user_email",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "user_phone",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "user_postal_code",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ]
                 }
               }
             }
@@ -809,7 +1900,44 @@
             "type": "array",
             "items": {
               "title": "",
-              "type": "dict"
+              "type": "object",
+              "params": [
+                {
+                  "name": "comment",
+                  "description": "",
+                  "schema": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "name": "user_id",
+                  "description": "",
+                  "schema": {
+                    "type": "number"
+                  }
+                },
+                {
+                  "name": "rule_id",
+                  "description": "",
+                  "schema": {
+                    "type": "number"
+                  }
+                },
+                {
+                  "name": "add_user",
+                  "description": "",
+                  "schema": {
+                    "type": "boolean"
+                  }
+                },
+                {
+                  "name": "add_user_details",
+                  "description": "",
+                  "schema": {
+                    "type": "object"
+                  }
+                }
+              ]
             }
           }
         },
@@ -835,7 +1963,169 @@
                 "type": "array",
                 "items": {
                   "title": "",
-                  "type": "dict"
+                  "type": "object",
+                  "params": [
+                    {
+                      "name": "pi_id",
+                      "description": "Proforma Invoice ID",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "rule_id",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "rule_description",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "issue_date",
+                      "description": "datetime, ",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "expired",
+                      "description": "",
+                      "schema": {
+                        "type": "boolean"
+                      }
+                    },
+                    {
+                      "name": "sum_up_amount",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "roundup_amount",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "previous_due",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "effective_amount",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "user_id",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "user_name",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "owner_name",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "email",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "address",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "phone",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "postal_code",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "add_user",
+                      "description": "",
+                      "schema": {
+                        "type": "boolean"
+                      }
+                    },
+                    {
+                      "name": "add_user_details_dict",
+                      "description": "",
+                      "schema": {
+                        "type": "object"
+                      }
+                    },
+                    {
+                      "name": "comment",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "pi_items",
+                      "description": "",
+                      "schema": {
+                        "type": "array",
+                        "items": {
+                          "title": "",
+                          "type": "object",
+                          "params": [
+                            {
+                              "name": "amount",
+                              "description": "",
+                              "schema": {
+                                "type": "number"
+                              }
+                            },
+                            {
+                              "name": "description",
+                              "description": "",
+                              "schema": {
+                                "type": "string"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  ]
                 }
               }
             },
@@ -846,7 +2136,23 @@
                 "type": "array",
                 "items": {
                   "title": "",
-                  "type": "dict"
+                  "type": "object",
+                  "params": [
+                    {
+                      "name": "user_id",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "failure_msg",
+                      "description": "error message",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ]
                 }
               }
             }
@@ -1145,7 +2451,23 @@
                 "type": "array",
                 "items": {
                   "title": "",
-                  "type": "dict"
+                  "type": "object",
+                  "params": [
+                    {
+                      "name": "amount",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "description",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ]
                 }
               }
             }
@@ -1334,7 +2656,30 @@
                 "type": "array",
                 "items": {
                   "title": "invoice item",
-                  "type": "dict"
+                  "type": "object",
+                  "params": [
+                    {
+                      "name": "invoice_item_id",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "description",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "amount",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    }
+                  ]
                 }
               }
             }

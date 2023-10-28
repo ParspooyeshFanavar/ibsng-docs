@@ -507,7 +507,79 @@
                 "type": "array",
                 "items": {
                   "title": "",
-                  "type": "dict"
+                  "type": "object",
+                  "params": [
+                    {
+                      "name": "otp_id",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "admin_id",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "admin_name",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "password",
+                      "description": "str",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "expired",
+                      "description": "yes or no",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "used_date",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "used_date_formatted",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "creation_date",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "creation_date_formatted",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "remote_addr",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ]
                 }
               }
             }

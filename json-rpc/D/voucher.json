@@ -66,7 +66,58 @@
                 "type": "array",
                 "items": {
                   "title": "",
-                  "type": "dict"
+                  "type": "object",
+                  "params": [
+                    {
+                      "name": "voucher_id",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "voucher_pin",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "voucher_serial",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "voucher_is_used",
+                      "description": "",
+                      "schema": {
+                        "type": "boolean"
+                      }
+                    },
+                    {
+                      "name": "voucher_used_date",
+                      "description": "datetime, ",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "voucher_user_id",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "batch_id",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    }
+                  ]
                 }
               }
             }
@@ -135,7 +186,86 @@
                 "type": "array",
                 "items": {
                   "title": "",
-                  "type": "dict"
+                  "type": "object",
+                  "params": [
+                    {
+                      "name": "batch_id",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "batch_name",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "batch_is_locked",
+                      "description": "",
+                      "schema": {
+                        "type": "boolean"
+                      }
+                    },
+                    {
+                      "name": "batch_credit",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "batch_can_create_user",
+                      "description": "",
+                      "schema": {
+                        "type": "boolean"
+                      }
+                    },
+                    {
+                      "name": "batch_can_recharge_user",
+                      "description": "",
+                      "schema": {
+                        "type": "boolean"
+                      }
+                    },
+                    {
+                      "name": "batch_change_target",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "batch_comment",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "batch_creation_date",
+                      "description": "datetime, ",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "batch_isp_id",
+                      "description": "int",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "batch_allow_use_by_children_isp",
+                      "description": "",
+                      "schema": {
+                        "type": "boolean"
+                      }
+                    }
+                  ]
                 }
               }
             }
@@ -702,7 +832,102 @@
                 "type": "array",
                 "items": {
                   "title": "batch info dict",
-                  "type": "dict"
+                  "type": "object",
+                  "params": [
+                    {
+                      "name": "batch_id",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "batch_name",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "is_locked",
+                      "description": "",
+                      "schema": {
+                        "type": "boolean"
+                      }
+                    },
+                    {
+                      "name": "credit",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "can_create_user",
+                      "description": "",
+                      "schema": {
+                        "type": "boolean"
+                      }
+                    },
+                    {
+                      "name": "can_recharge_user",
+                      "description": "",
+                      "schema": {
+                        "type": "boolean"
+                      }
+                    },
+                    {
+                      "name": "change_target",
+                      "value": ["credit", "deposit", "deposit_recharge"],
+                      "value_comment": {
+                        "credit": "Credit",
+                        "deposit": "Renew Deposit",
+                        "deposit_recharge": "Recharge Deposit"
+                      }
+                    },
+                    {
+                      "name": "comment",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "creation_date",
+                      "description": "datetime, ",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "isp_id",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "allow_use_by_children_isp",
+                      "description": "",
+                      "schema": {
+                        "type": "boolean"
+                      }
+                    },
+                    {
+                      "name": "is_locked",
+                      "description": "",
+                      "schema": {
+                        "type": "boolean"
+                      }
+                    },
+                    {
+                      "name": "isp_name",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ]
                 }
               }
             }

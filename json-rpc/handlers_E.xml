@@ -3847,13 +3847,13 @@
             <param name="isp_name" type="str" comment="User ISP name" />
             <param name="creation_date" type="str" comment="User creation date" />
             <param name="name" type="str" comment="Name of user" />
-            <param name="sub_service_name" type="Sub service name" comment="" />
+            <param name="sub_service_name" type="str" comment="Sub service name" />
             <param name="sub_service_charging" type="str" comment="Sub service charging name" />
             <param name="seb_service_qos" type="str" comment="Sub service QOS name" />
             <param name="total_credit" type="int" comment="Total credit" />
             <param name="total_duration" type="int" comment="Total duration" />
-            <param name="total_in_bytes" type="" comment="Total in bytes" />
-            <param name="total_out_bytes" type="" comment="Total out bytes" />
+            <param name="total_in_bytes" type="int" comment="Total in bytes" />
+            <param name="total_out_bytes" type="int" comment="Total out bytes" />
           </item>
         </param>
       </output>
@@ -9263,7 +9263,7 @@
         <param name="failed_users" type="list" item_type="dict" length="">
           <item type="dict">
             <param name="user_id" type="int" />
-            <param name="failure_msg" type="error message" />
+            <param name="failure_msg" type="str" comment="error message" />
           </item>
         </param>
       </output>

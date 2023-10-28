@@ -89,7 +89,37 @@
                 "type": "array",
                 "items": {
                   "title": "",
-                  "type": "dict"
+                  "type": "object",
+                  "params": [
+                    {
+                      "name": "charge_rule_id",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "charge_rule_description",
+                      "description": "",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "charge_rule_priority",
+                      "description": "",
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "attrs",
+                      "description": "Charge Rule Attributes",
+                      "schema": {
+                        "type": "object"
+                      }
+                    }
+                  ]
                 }
               }
             }

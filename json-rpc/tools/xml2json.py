@@ -24,6 +24,8 @@ paramTypeMapping = {
 	"datetime, float": ("string", "datetime or number"),
 	"str_datetime": ("string", "datetime"),
 	"str_datetime, float": ("string", "datetime or number"),
+	"str_datetime, null": ("string", "datetime or null"),
+	"datetime, null": ("string", "datetime or null"),
 
 	"bool": ("boolean", ""),
 	"true_if_exists": ("boolean", "true if exists"),
@@ -106,6 +108,14 @@ def getListItemSchema(item: "Element") -> "dict | list":
 		if "description" in itemJson:
 			del itemJson["description"]
 		return itemJson
+	if _type == "dict":
+		params = getParams(item)
+		return {
+			"title": item.attrib.get("comment", ""),
+			"type": "object",
+			"params": params,
+		}
+
 	return {
 		"title": item.attrib.get("comment", ""),
 		"type": _type,
@@ -177,6 +187,21 @@ def getJsonParam(param: "Element") -> dict:
 	return paramJson
 
 
+def getParams(elem) -> "list":
+	params = []
+	for param in elem.getchildren():
+		if param.tag != "param":
+			continue
+		if not param.attrib.get("name"):
+			print(f"{branch=}: param name is empty: {toStr(param)}")
+			continue
+		jsonParam = getJsonParam(param)
+		if jsonParam is None:
+			continue
+		params.append(jsonParam)
+	return params
+
+
 def getJsonMethod(handlerName: str, method: "Element", authTypes: list[str]):
 	if method.tag != "method":
 		# print(f"expected method element, got {method.tag}: {method}")
@@ -193,17 +218,9 @@ def getJsonMethod(handlerName: str, method: "Element", authTypes: list[str]):
 	if outputElem is None:
 		print(f"{branch=}, no <output> for: {toStr(method)}")
 		return
-	params = []
-	for param in inputElem.getchildren():
-		if param.tag != "param":
-			continue
-		if not param.attrib.get("name"):
-			print(f"{branch=}: param name is empty: {toStr(param)}")
-			continue
-		jsonParam = getJsonParam(param)
-		if jsonParam is None:
-			continue
-		params.append(jsonParam)
+
+	params = getParams(inputElem)
+
 	jsonMethod = {
 		"name": handlerName + "." + methodName,
 		"description": method.attrib.get("comment", ""),
