@@ -123,10 +123,15 @@ def getListItemSchema(item: "Element") -> "dict | list":
 
 
 def getMultiTypeListItemSchema(items: "list[Element]") -> "dict | list":
-	return [
-		getListItemSchema(item)
-		for item in items
-	]
+	result = []
+	for index, item in enumerate(items):
+		schema = {"index": index}
+		schema2 = getListItemSchema(item)
+		if schema2 is None:
+			continue
+		schema.update(schema2)
+		result.append(schema)
+	return result
 
 
 def getListSchema(elem: "Element") -> "dict | list":

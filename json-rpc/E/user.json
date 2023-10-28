@@ -1028,10 +1028,12 @@
                 "type": "array",
                 "items": [
                   {
+                    "index": 0,
                     "title": "epoch time of start",
                     "type": "int"
                   },
                   {
+                    "index": 1,
                     "title": "epoch time of end",
                     "type": "int"
                   }
