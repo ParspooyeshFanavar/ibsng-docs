@@ -93,7 +93,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "",
         "schema": {
           "title": "",
@@ -116,7 +116,7 @@
       "auth_type": ["ADMIN"],
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "",
         "schema": {
           "title": "",
@@ -146,7 +146,7 @@
       "auth_type": ["ADMIN"],
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "",
         "schema": {
           "title": "",
@@ -176,7 +176,7 @@
       "auth_type": ["ADMIN"],
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "",
         "schema": {
           "title": "",
@@ -230,7 +230,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "",
         "schema": {
           "title": "",
@@ -325,7 +325,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -340,7 +340,7 @@
       "requires_perm": "LIST BALANCES",
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "",
         "schema": {
           "title": "",
@@ -379,7 +379,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -403,7 +403,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "list of name balances",
         "schema": {
           "title": "",
@@ -418,7 +418,7 @@
       "requires_perm": "LIST BALANCES",
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "list of balance name and balance id",
         "schema": {
           "title": "",
@@ -440,7 +440,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "",
         "schema": {
           "title": "",
@@ -496,7 +496,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "",
         "schema": {
           "title": "",

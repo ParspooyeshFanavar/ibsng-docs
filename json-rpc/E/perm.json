@@ -27,7 +27,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (boolean)",
         "comment": "true if admin has this permission, false otherwise",
         "schema": {
           "title": "",
@@ -64,7 +64,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (boolean)",
         "comment": "true if admin can do it, false otherwise",
         "schema": {
           "title": "",
@@ -87,7 +87,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "",
         "schema": {
           "title": "",
@@ -101,7 +101,7 @@
       "auth_type": ["ADMIN"],
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "",
         "schema": {
           "title": "",
@@ -131,7 +131,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response ()",
         "comment": "type depends on {perm_name}",
         "schema": {
           "title": "",
@@ -168,7 +168,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -197,7 +197,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -234,7 +234,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -264,7 +264,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -279,7 +279,7 @@
       "requires_perm": "CHANGE ADMIN PERMISSIONS",
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "list of template names",
         "schema": {
           "title": "",
@@ -302,7 +302,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "",
         "schema": {
           "title": "",
@@ -332,7 +332,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -355,7 +355,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -385,7 +385,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",

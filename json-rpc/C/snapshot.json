@@ -37,7 +37,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "",
         "schema": {
           "title": "",
@@ -68,7 +68,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "",
         "schema": {
           "title": "",
@@ -96,7 +96,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "",
         "schema": {
           "title": "",
@@ -110,7 +110,7 @@
       "auth_type": ["ADMIN", "NORMAL_USER", "VOIP_USER"],
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "",
         "schema": {
           "title": "",
@@ -124,7 +124,7 @@
       "auth_type": ["ADMIN"],
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "",
         "schema": {
           "title": "",
@@ -138,7 +138,7 @@
       "auth_type": ["ADMIN"],
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "",
         "schema": {
           "title": "",
@@ -152,7 +152,7 @@
       "auth_type": ["ADMIN"],
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "",
         "schema": {
           "title": "",

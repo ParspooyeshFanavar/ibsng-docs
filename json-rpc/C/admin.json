@@ -69,7 +69,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (number)",
         "comment": "Admin ID",
         "schema": {
           "title": "",
@@ -91,7 +91,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "",
         "schema": {
           "title": "",
@@ -199,7 +199,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "",
         "schema": {
           "title": "",
@@ -238,7 +238,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -253,7 +253,7 @@
       "requires_perm": "SEE ADMIN INFO",
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "List of admin usernames",
         "schema": {
           "title": "",
@@ -276,7 +276,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "List of admin usernames",
         "schema": {
           "title": "",
@@ -299,7 +299,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "List of admin informations",
         "schema": {
           "title": "",
@@ -378,7 +378,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -401,7 +401,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -438,7 +438,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "List of passwords",
         "schema": {
           "title": "",
@@ -487,7 +487,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "",
         "schema": {
           "title": "",
@@ -594,7 +594,7 @@
       "requires_perm": "EXPIRE OTP ADMINS",
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",

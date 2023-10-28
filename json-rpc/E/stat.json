@@ -12,7 +12,7 @@
       "requires_perm": "GOD",
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "",
         "schema": {
           "title": "",
@@ -27,7 +27,7 @@
       "requires_perm": "GOD",
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "",
         "schema": {
           "title": "",
@@ -42,7 +42,7 @@
       "requires_perm": "GOD",
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "",
         "schema": {
           "title": "",

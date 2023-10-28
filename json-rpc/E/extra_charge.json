@@ -12,7 +12,7 @@
       "requires_perm": "SEE EXTRA CHARGE",
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "list of profile names",
         "schema": {
           "title": "",
@@ -125,7 +125,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (number)",
         "comment": "extra_charge_profile_id",
         "schema": {
           "title": "",
@@ -252,7 +252,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -275,7 +275,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -290,7 +290,7 @@
       "requires_perm": "SEE EXTRA CHARGE",
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "",
         "schema": {
           "title": "",
@@ -313,7 +313,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "",
         "schema": {
           "title": "",
@@ -449,7 +449,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "",
         "schema": {
           "title": "",

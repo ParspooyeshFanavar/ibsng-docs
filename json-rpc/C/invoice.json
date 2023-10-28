@@ -46,7 +46,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "list of profile names",
         "schema": {
           "title": "",
@@ -61,7 +61,7 @@
       "requires_perm": "SEE INVOICE PROFILE",
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "",
         "schema": {
           "title": "",
@@ -84,7 +84,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "",
         "schema": {
           "title": "",
@@ -303,7 +303,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "",
         "schema": {
           "title": "",
@@ -522,7 +522,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "",
         "schema": {
           "title": "",
@@ -741,7 +741,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "",
         "schema": {
           "title": "",
@@ -960,7 +960,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "",
         "schema": {
           "title": "",
@@ -1148,7 +1148,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (number)",
         "comment": "Invoice Profile ID",
         "schema": {
           "title": "",
@@ -1353,7 +1353,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -1376,7 +1376,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -1399,7 +1399,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "",
         "schema": {
           "title": "",
@@ -1414,7 +1414,7 @@
       "requires_perm": "SEE INVOICE PROFILE",
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "list of all invoice template names",
         "schema": {
           "title": "",
@@ -1437,7 +1437,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -1460,7 +1460,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -1508,7 +1508,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "",
         "schema": {
           "title": "",
@@ -1732,7 +1732,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "",
         "schema": {
           "title": "",
@@ -1950,7 +1950,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "",
         "schema": {
           "title": "",
@@ -2175,7 +2175,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "",
         "schema": {
           "title": "",
@@ -2228,7 +2228,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "",
         "schema": {
           "title": "",
@@ -2274,7 +2274,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "",
         "schema": {
           "title": "",
@@ -2305,7 +2305,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "",
         "schema": {
           "title": "",
@@ -2489,7 +2489,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "",
         "schema": {
           "title": "",
@@ -2701,7 +2701,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "",
         "schema": {
           "title": "",
@@ -2739,7 +2739,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "",
         "schema": {
           "title": "",

@@ -38,7 +38,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "",
         "schema": {
           "title": "",
@@ -107,7 +107,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (string)",
         "comment": "Session ID",
         "schema": {
           "title": "",
@@ -141,7 +141,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (boolean)",
         "comment": "returns true",
         "schema": {
           "title": "",
@@ -189,7 +189,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "",
         "schema": {
           "title": "",

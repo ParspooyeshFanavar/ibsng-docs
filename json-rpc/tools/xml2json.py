@@ -269,8 +269,13 @@ def getJsonMethod(handlerName: str, method: "Element", authTypes: list[str]):
 		if jsonParam is None:
 			continue
 		resultItems.append(jsonParam)
+	resultName = ""
+	if resultValues is not None:
+		resultName = "Response (one of following values)"
+	elif resultType is not None:
+		resultName = f"Response ({resultType})"
 	result = {
-		"name": "",
+		"name": resultName,
 		"comment": outputComment,
 	}
 	if resultType is not None:

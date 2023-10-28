@@ -90,7 +90,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -190,7 +190,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -204,7 +204,7 @@
       "auth_type": ["ADMIN"],
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "list of ISP names",
         "schema": {
           "title": "",
@@ -218,7 +218,7 @@
       "auth_type": ["ADMIN"],
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "",
         "schema": {
           "title": "",
@@ -232,7 +232,7 @@
       "auth_type": ["ADMIN"],
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "",
         "schema": {
           "title": "",
@@ -264,7 +264,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "",
         "schema": {
           "title": "",
@@ -422,7 +422,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -445,7 +445,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -468,7 +468,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "a nested dict {isp_name => sub_tree} which represents ISP tree",
         "schema": {
           "title": "",
@@ -483,7 +483,7 @@
       "requires_perm": "GOD",
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "list of Mapped User IDs",
         "schema": {
           "title": "",
@@ -506,7 +506,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "",
         "schema": {
           "title": "",
@@ -664,7 +664,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -687,7 +687,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -701,7 +701,7 @@
       "auth_type": ["ADMIN"],
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "",
         "schema": {
           "title": "",

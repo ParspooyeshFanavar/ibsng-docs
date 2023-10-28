@@ -34,7 +34,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (number)",
         "comment": "Group ID",
         "schema": {
           "title": "",
@@ -78,7 +78,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "list of Group IDs",
         "schema": {
           "title": "",
@@ -108,7 +108,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "list of group names",
         "schema": {
           "title": "",
@@ -131,7 +131,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "",
         "schema": {
           "title": "",
@@ -161,7 +161,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "list of group informations",
         "schema": {
           "title": "",
@@ -175,7 +175,7 @@
       "auth_type": ["ADMIN"],
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "keys are group names, values are group credits",
         "schema": {
           "title": "",
@@ -189,7 +189,7 @@
       "auth_type": ["ADMIN"],
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "keys are group names, values are user count in each group",
         "schema": {
           "title": "",
@@ -220,7 +220,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "",
         "schema": {
           "title": "",
@@ -308,7 +308,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -345,7 +345,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -368,7 +368,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",

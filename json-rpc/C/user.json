@@ -56,7 +56,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "user_ids",
         "schema": {
           "title": "",
@@ -70,7 +70,7 @@
       "auth_type": ["NORMAL_USER", "VOIP_USER"],
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "User Info dict",
         "schema": {
           "title": "",
@@ -194,7 +194,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "",
         "schema": {
           "title": "",
@@ -216,7 +216,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (boolean)",
         "comment": "true if username exists, false otherwise",
         "schema": {
           "title": "",
@@ -253,7 +253,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -297,7 +297,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "change_log_ids",
         "schema": {
           "title": "",
@@ -339,7 +339,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "change_log_ids",
         "schema": {
           "title": "",
@@ -383,7 +383,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "change_log_ids",
         "schema": {
           "title": "",
@@ -425,7 +425,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "change_log_ids",
         "schema": {
           "title": "",
@@ -447,7 +447,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "",
         "schema": {
           "title": "",
@@ -469,7 +469,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "",
         "schema": {
           "title": "",
@@ -525,7 +525,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "",
         "schema": {
           "title": "",
@@ -540,7 +540,7 @@
       "requires_perm": "GET USER INFORMATION",
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "",
         "schema": {
           "title": "",
@@ -601,7 +601,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -1423,7 +1423,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "",
         "schema": {
           "title": "",
@@ -1467,7 +1467,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -1511,7 +1511,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -1542,7 +1542,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -1556,7 +1556,7 @@
       "auth_type": ["NORMAL_USER", "VOIP_USER"],
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -1585,7 +1585,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -1607,7 +1607,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "",
         "schema": {
           "title": "",
@@ -1621,7 +1621,7 @@
       "auth_type": ["NORMAL_USER", "VOIP_USER"],
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "",
         "schema": {
           "title": "",
@@ -1651,7 +1651,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "renewUsers output",
         "schema": {
           "title": "",
@@ -1704,7 +1704,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -1741,7 +1741,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -1763,7 +1763,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -1785,7 +1785,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -1867,7 +1867,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -1895,7 +1895,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -1910,7 +1910,7 @@
       "requires_perm": "PERFORM BULK ACTION",
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "",
         "schema": {
           "title": "",
@@ -1933,7 +1933,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "",
         "schema": {
           "title": "",
@@ -2076,7 +2076,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -2099,7 +2099,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -2136,7 +2136,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (string)",
         "comment": "action_id (string)",
         "schema": {
           "title": "",
@@ -2178,7 +2178,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (string)",
         "comment": "action_id (string)",
         "schema": {
           "title": "",
@@ -2220,7 +2220,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (string)",
         "comment": "action_id (string)",
         "schema": {
           "title": "",
@@ -2264,7 +2264,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (string)",
         "comment": "action_id (string)",
         "schema": {
           "title": "",
@@ -2294,7 +2294,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (string)",
         "comment": "action_id (string)",
         "schema": {
           "title": "",
@@ -2325,7 +2325,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (string)",
         "comment": "action_id (string)",
         "schema": {
           "title": "",
@@ -2340,7 +2340,7 @@
       "requires_perm": "GOD",
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "",
         "schema": {
           "title": "",
@@ -2391,7 +2391,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -2435,7 +2435,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",

@@ -55,7 +55,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (number)",
         "comment": "Ras ID",
         "schema": {
           "title": "",
@@ -78,7 +78,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "",
         "schema": {
           "title": "",
@@ -150,7 +150,7 @@
       "auth_type": ["ADMIN"],
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "list of Ras IPs",
         "schema": {
           "title": "",
@@ -172,7 +172,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "list of Ras IPs",
         "schema": {
           "title": "",
@@ -186,7 +186,7 @@
       "auth_type": ["ADMIN"],
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "",
         "schema": {
           "title": "",
@@ -201,7 +201,7 @@
       "requires_perm": "LIST RAS",
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "list of RAS IPs",
         "schema": {
           "title": "",
@@ -216,7 +216,7 @@
       "requires_perm": "GET RAS INFORMATION",
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "list of RAS types",
         "schema": {
           "title": "",
@@ -239,7 +239,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "RAS Attributes",
         "schema": {
           "title": "",
@@ -303,7 +303,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -333,7 +333,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -356,7 +356,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -379,7 +379,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -402,7 +402,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -425,7 +425,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -448,7 +448,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "list of IPPool names",
         "schema": {
           "title": "",
@@ -477,7 +477,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -506,7 +506,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",

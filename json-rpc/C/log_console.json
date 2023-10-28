@@ -12,7 +12,7 @@
       "requires_perm": "SEE CONNECTION LOGS",
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "",
         "schema": {
           "title": "",

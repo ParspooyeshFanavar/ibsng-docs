@@ -11,7 +11,7 @@
       "auth_type": ["ADMIN", "NORMAL_USER", "VOIP_USER"],
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "list of gateway types",
         "schema": {
           "title": "",
@@ -25,7 +25,7 @@
       "auth_type": ["ADMIN", "NORMAL_USER", "VOIP_USER"],
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "",
         "schema": {
           "title": "",
@@ -82,7 +82,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "",
         "schema": {
           "title": "",
@@ -132,7 +132,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "",
         "schema": {
           "title": "",
@@ -213,7 +213,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -271,7 +271,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -294,7 +294,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -309,7 +309,7 @@
       "requires_perm": "SEE ONLINE PAYMENT",
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "list of gateway types",
         "schema": {
           "title": "",
@@ -324,7 +324,7 @@
       "requires_perm": "SEE ONLINE PAYMENT",
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "",
         "schema": {
           "title": "",
@@ -348,7 +348,7 @@
       "requires_perm": "CHANGE ONLINE PAYMENT",
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "",
         "schema": {
           "title": "",
@@ -371,7 +371,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "",
         "schema": {
           "title": "",

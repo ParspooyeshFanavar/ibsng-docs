@@ -12,7 +12,7 @@
       "requires_perm": "SEE VOIP PROVIDER",
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "list of profile names",
         "schema": {
           "title": "",
@@ -27,7 +27,7 @@
       "requires_perm": "SEE VOIP PROVIDER",
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "list of provider names",
         "schema": {
           "title": "",

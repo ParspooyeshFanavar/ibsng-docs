@@ -26,7 +26,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "",
         "schema": {
           "title": "",
@@ -49,7 +49,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (one of following values)",
         "comment": "",
         "schema": {
           "title": "",
@@ -64,7 +64,7 @@
       "auth_type": ["ADMIN", "NORMAL_USER", "VOIP_USER"],
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (string)",
         "comment": "date string with format '%Y-%m-%d'",
         "schema": {
           "title": "",
@@ -78,7 +78,7 @@
       "auth_type": ["ADMIN", "NORMAL_USER", "VOIP_USER"],
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (string)",
         "comment": "formatted datetime of current time",
         "schema": {
           "title": "",
@@ -101,7 +101,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "",
         "schema": {
           "title": "",
@@ -139,7 +139,7 @@
       "requires_perm": "AFE REMOTE ADMIN",
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "list of group names",
         "schema": {
           "title": "",
@@ -176,7 +176,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -199,7 +199,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (string)",
         "comment": "a user id, or 'No User Found'",
         "schema": {
           "title": "",
@@ -222,7 +222,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (string)",
         "comment": "a username, or 'No User Found'",
         "schema": {
           "title": "",
@@ -236,7 +236,7 @@
       "auth_type": ["ANONYMOUS"],
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (string)",
         "comment": "Session ID",
         "schema": {
           "title": "",
@@ -250,7 +250,7 @@
       "auth_type": ["ANONYMOUS"],
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (string)",
         "comment": "Session ID",
         "schema": {
           "title": "",
@@ -264,7 +264,7 @@
       "auth_type": ["ANONYMOUS"],
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "",
         "schema": {
           "title": "",
@@ -278,7 +278,7 @@
       "auth_type": ["ANONYMOUS"],
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (boolean)",
         "comment": "returns true if online user was found and disconnected, returns false otherwise",
         "schema": {
           "title": "",
@@ -300,7 +300,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (null)",
         "comment": "",
         "schema": {
           "title": "",
@@ -323,7 +323,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (string)",
         "comment": "the same value of 'echo' param",
         "schema": {
           "title": "",
@@ -337,7 +337,7 @@
       "auth_type": ["ADMIN", "NORMAL_USER", "VOIP_USER"],
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (number)",
         "comment": "ISP ID for Page Style to show to this user/admin",
         "schema": {
           "title": "",
@@ -359,7 +359,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (number)",
         "comment": "ISP ID for Page Style to show to this user/admin",
         "schema": {
           "title": "",
@@ -373,7 +373,7 @@
       "auth_type": ["ANONYMOUS"],
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (number)",
         "comment": "Revision Number of ISP Page Style",
         "schema": {
           "title": "",
@@ -387,7 +387,7 @@
       "auth_type": ["ADMIN", "NORMAL_USER", "VOIP_USER", "ANONYMOUS"],
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "",
         "schema": {
           "title": "",
@@ -467,7 +467,7 @@
       "requires_perm": "GOD",
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "see http://www.drbd.org/en/doc/users-guide-83/ch-admin#s-drbd-overview",
         "schema": {
           "title": "",
@@ -481,7 +481,7 @@
       "auth_type": ["ADMIN"],
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (array)",
         "comment": "",
         "schema": {
           "title": "",
@@ -527,7 +527,7 @@
         }
       ],
       "result": {
-        "name": "",
+        "name": "Response (one of following values)",
         "comment": "",
         "value": ["true"]
       }
@@ -538,7 +538,7 @@
       "auth_type": ["ADMIN"],
       "params": [],
       "result": {
-        "name": "",
+        "name": "Response (object)",
         "comment": "return version,tag,branch",
         "schema": {
           "title": "",
