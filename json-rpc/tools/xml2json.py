@@ -66,7 +66,7 @@ def getChoiceJsonParam(param: "Element") -> dict:
 	comments = {}
 	for choiceElem in param.getchildren():
 		if choiceElem.tag != "choice":
-			print(f"expected choice tag, got {toStr(choiceElem)}")
+			# print(f"getChoiceJsonParam: expected choice tag, got {toStr(choiceElem)}")
 			return
 		value = choiceElem.attrib.get("value")
 		if value is None:
@@ -76,6 +76,8 @@ def getChoiceJsonParam(param: "Element") -> dict:
 		comment = choiceElem.attrib.get("comment")
 		if comment:
 			comments[value] = comment
+	if not values:
+		print(f"choice with no values: {toStr(param)}")
 	paramJson = {}
 	if paramName:
 		paramJson["name"] = paramName
@@ -94,10 +96,16 @@ def getListItemSchema(item: "Element") -> "dict | list":
 		print(f"item has no type: {toStr(item)}")
 		return
 	if _type == "choice":
-		itemJson = getChoiceJsonParam(item)
-		if itemJson is None:
+		itemJson = {
+			"title": item.attrib.get("comment", ""),
+		}
+		_tmpItem = getChoiceJsonParam(item)
+		if _tmpItem is None:
 			return
-		itemJson["title"] = ""
+		itemJson.update(_tmpItem)
+		if "description" in itemJson:
+			del itemJson["description"]
+		return itemJson
 	return {
 		"title": item.attrib.get("comment", ""),
 		"type": _type,
@@ -219,7 +227,7 @@ def getJsonMethod(handlerName: str, method: "Element", authTypes: list[str]):
 		resultValues = []
 		for param in outputElem.getchildren():
 			if param.tag != "choice":
-				print(f"expected choice tag, got: {toStr(param)}")
+				print(f"getJsonMethod: expected choice tag, got: {toStr(param)}")
 				continue
 			value = param.attrib.get("value")
 			if not value:

@@ -1437,7 +1437,39 @@
             "type": "array",
             "items": {
               "title": "",
-              "type": "choice"
+              "value": [
+                "action",
+                "action_text",
+                "admin_id",
+                "admin_name",
+                "change_time",
+                "change_time_formatted",
+                "comment",
+                "credit_change_id",
+                "isp_credit",
+                "isp_id",
+                "isp_name",
+                "per_user_credit",
+                "remote_addr",
+                "user_id",
+                "username",
+                "name",
+                "serial",
+                "group",
+                "group_id",
+                "before_credit",
+                "user_ids"
+              ],
+              "value_comment": {
+                "user_id": "in user_view mode only",
+                "username": "in user_view mode only",
+                "name": "in user_view mode only",
+                "serial": "in user_view mode only",
+                "group": "in user_view mode only",
+                "group_id": "in user_view mode only",
+                "before_credit": "in user_view mode only",
+                "user_ids": "in admin-view only (no user_view in conds) "
+              }
             }
           }
         },
@@ -2034,7 +2066,14 @@
                   },
                   {
                     "title": "relative time unit",
-                    "type": "choice"
+                    "value": [
+                      "Seconds",
+                      "Minutes",
+                      "Hours",
+                      "Days",
+                      "Months",
+                      "Years"
+                    ]
                   }
                 ],
                 "length": "2"
@@ -2052,7 +2091,14 @@
                   },
                   {
                     "title": "relative time unit",
-                    "type": "choice"
+                    "value": [
+                      "Seconds",
+                      "Minutes",
+                      "Hours",
+                      "Days",
+                      "Months",
+                      "Years"
+                    ]
                   }
                 ],
                 "length": "2"
@@ -2070,7 +2116,14 @@
                   },
                   {
                     "title": "relative time unit",
-                    "type": "choice"
+                    "value": [
+                      "Seconds",
+                      "Minutes",
+                      "Hours",
+                      "Days",
+                      "Months",
+                      "Years"
+                    ]
                   }
                 ],
                 "length": "2"
@@ -2088,7 +2141,14 @@
                   },
                   {
                     "title": "relative time unit",
-                    "type": "choice"
+                    "value": [
+                      "Seconds",
+                      "Minutes",
+                      "Hours",
+                      "Days",
+                      "Months",
+                      "Years"
+                    ]
                   }
                 ],
                 "length": "2"
@@ -2106,7 +2166,14 @@
                   },
                   {
                     "title": "relative time unit",
-                    "type": "choice"
+                    "value": [
+                      "Seconds",
+                      "Minutes",
+                      "Hours",
+                      "Days",
+                      "Months",
+                      "Years"
+                    ]
                   }
                 ],
                 "length": "2"
@@ -2124,7 +2191,14 @@
                   },
                   {
                     "title": "relative time unit",
-                    "type": "choice"
+                    "value": [
+                      "Seconds",
+                      "Minutes",
+                      "Hours",
+                      "Days",
+                      "Months",
+                      "Years"
+                    ]
                   }
                 ],
                 "length": "2"
@@ -2406,7 +2480,15 @@
             "type": "array",
             "items": {
               "title": "",
-              "type": "choice"
+              "value": [
+                "user_id",
+                "user_name",
+                "serial",
+                "group_name",
+                "isp_name",
+                "creation_date",
+                "name"
+              ]
             }
           }
         },

@@ -877,7 +877,19 @@
             "type": "array",
             "items": {
               "title": "",
-              "type": "choice"
+              "value": [
+                "user_id",
+                "creation_date",
+                "credit",
+                "deposit",
+                "group_id",
+                "group_name",
+                "isp_id",
+                "isp_name",
+                "nearest_exp_date",
+                "recharge_deposit",
+                "status"
+              ]
             }
           }
         },
