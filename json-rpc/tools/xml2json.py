@@ -48,29 +48,6 @@ def toStr(elem):
 	).decode("utf-8")
 
 
-# options = jsbeautifier.default_options()
-# options.indent_size = 2
-# ['collapse', 'expand', 'end-expand', 'none', 'preserve-inline']
-
-# options.brace_style = "none"
-# options.keep_array_indentation = False
-
-# class CustomJSONEncoder(json.JSONEncoder):
-# 	def iterencode(self, obj, _one_shot=False):
-# 		print(type(obj))
-# 		if isinstance(obj, list):
-# 			print(obj)
-# 			if not obj:
-# 				return "[]"
-# 			if isinstance(obj[0], str) and len(obj) < 4:
-# 				return json.dumps(obj)
-# 		return super().iterencode(obj, _one_shot=_one_shot)
-
-# encoder = CustomJSONEncoder()
-# encoder.indent = 2
-# encoder.item_separator = ','
-# encoder.key_separator = ': '
-
 def dataToPrettyJson(data):
 	# return encoder.encode(data)
 	# return jsbeautifier.beautify(json.dumps(data), options)
@@ -110,7 +87,6 @@ def getChoiceJsonParam(param: "Element") -> dict:
 	return paramJson
 
 
-
 def getListItemSchema(item: "Element") -> "dict | list":
 	# possible keys for itemSchema: title, type, required: list[str], properties: dict
 	_type = item.attrib.get("type")
@@ -143,8 +119,6 @@ def getListSchema(elem: "Element") -> "dict | list":
 	if length and length != "-1":
 		schema["length"] = length
 	return schema
-
-
 
 
 def getJsonParam(param: "Element") -> dict:
@@ -282,13 +256,6 @@ def convertSubsystem(handler, branch, outDir):
 	branchDir = join(outDir, branch)
 	os.makedirs(branchDir, exist_ok=True)
 
-	# userDir = join(branch, "user")
-	# adminDir = join(branch, "admin")
-	# os.makedirs(userDir, exist_ok=True)
-	# os.makedirs(adminDir, exist_ok=True)
-
-	# userMethods = []
-	# adminMethods = []
 	methods = []
 	for method in handler.getchildren():
 		if method.tag != "method":
@@ -309,10 +276,6 @@ def convertSubsystem(handler, branch, outDir):
 			continue
 
 		methods.append(jsonMethod)
-		# if "USER" in authTypes:
-		# 	userMethods.append(jsonMethod)
-		# if "ADMIN" in authTypes:
-		# 	adminMethods.append(jsonMethod)
 
 	with open(join(branchDir, handlerName + ".json"), "w") as _file:
 		_file.write(dataToPrettyJson({
@@ -323,27 +286,6 @@ def convertSubsystem(handler, branch, outDir):
 			},
 			"methods": methods,
 		}))
-	# if userMethods:
-	# 	with open(join(userDir, handlerName + ".json"), "w") as _file:
-	# 		_file.write(dataToPrettyJson({
-	# 			"openrpc": "1.2.1",
-	# 			"info": {
-	# 				"version": "1.0.0",
-	# 				"title": f"IBSng: branch {branch}: USER: {handlerName}"
-	# 			},
-	# 			"methods": userMethods,
-	# 		}))
-	# if adminMethods:
-	# 	with open(join(adminDir, handlerName + ".json"), "w") as _file:
-	# 		_file.write(dataToPrettyJson({
-	# 			"openrpc": "1.2.1",
-	# 			"info": {
-	# 				"version": "1.0.0",
-	# 				"title": f"IBSng: branch {branch}: ADMIN: {handlerName}"
-	# 			},
-	# 			"methods": adminMethods,
-	# 		}))
-
 
 
 def convert(xmlFileName, branch, outDir):
@@ -361,12 +303,4 @@ if __name__ == '__main__':
     branch = sys.argv[2]
     outDir = sys.argv[3]
     convert(fpath, branch, outDir)
-
-"""
-Splitting up the json into user/admin and subsystems/handlers, only adds %7 to the total size
-	cat E/*/*.json | wc -l
-		10090
-	wc -l handlers_E.json 
-		9365
-"""
 
