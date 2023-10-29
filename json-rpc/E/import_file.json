@@ -25,29 +25,26 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "customer",
-              "description": "last sequence of customer id if sequence_type equal CUSTOMER",
+          "properties": {
+            "customer": {
+              "title": "last sequence of customer id if sequence_type equal CUSTOMER",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "user",
-              "description": "last sequence of user id if sequence_type equal USER",
+            "user": {
+              "title": "last sequence of user id if sequence_type equal USER",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "user_balance",
-              "description": "last sequence of user_balance id if sequence_type equal USER_BALANCE",
+            "user_balance": {
+              "title": "last sequence of user_balance id if sequence_type equal USER_BALANCE",
               "schema": {
                 "type": "number"
               }
             }
-          ]
+          }
         }
       }
     },
@@ -84,15 +81,14 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "record_file_id",
-              "description": "return the id of generate of import_files table",
+          "properties": {
+            "record_file_id": {
+              "title": "return the id of generate of import_files table",
               "schema": {
                 "type": "number"
               }
             }
-          ]
+          }
         }
       }
     },
@@ -115,102 +111,89 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "admin_user_name",
-              "description": "username of admin",
+          "properties": {
+            "admin_user_name": {
+              "title": "username of admin",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "description",
-              "description": "description when create record",
+            "description": {
+              "title": "description when create record",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "admin_id",
-              "description": "id of admin",
+            "admin_id": {
+              "title": "id of admin",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "success_count",
-              "description": "number of data success full transfer",
+            "success_count": {
+              "title": "number of data success full transfer",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "error_count",
-              "description": "number of data error transfer",
+            "error_count": {
+              "title": "number of data error transfer",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "import_file_id",
-              "description": "id of import_files table that inserted record",
+            "import_file_id": {
+              "title": "id of import_files table that inserted record",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "deleted_at",
-              "description": "datetime, date time of delete data uploaded",
+            "deleted_at": {
+              "title": "datetime, date time of delete data uploaded",
               "schema": {
                 "type": "string",
                 "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
               }
             },
-            {
-              "name": "section",
-              "description": "set the section for upload file [CUSTOMER, USER, USER_BALANCE]",
+            "section": {
+              "title": "set the section for upload file [CUSTOMER, USER, USER_BALANCE]",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "modified_at",
-              "description": "datetime, date time of change in recorde in import_files row",
+            "modified_at": {
+              "title": "datetime, date time of change in recorde in import_files row",
               "schema": {
                 "type": "string",
                 "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
               }
             },
-            {
-              "name": "status_import",
-              "description": "status of import files [PENDING, RUNNING, DONE, STOPPED, ERROR]",
+            "status_import": {
+              "title": "status of import files [PENDING, RUNNING, DONE, STOPPED, ERROR]",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "total_row",
-              "description": "total of rows that in file uploaded",
+            "total_row": {
+              "title": "total of rows that in file uploaded",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "created_at",
-              "description": "datetime, date time of create recorde",
+            "created_at": {
+              "title": "datetime, date time of create recorde",
               "schema": {
                 "type": "string",
                 "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
               }
             },
-            {
-              "name": "remote_ip",
-              "description": "ip of admin that upload file",
+            "remote_ip": {
+              "title": "ip of admin that upload file",
               "schema": {
                 "type": "string"
               }
             }
-          ]
+          }
         }
       }
     },
@@ -269,107 +252,93 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "phone_number",
-              "description": "phone number",
+          "properties": {
+            "phone_number": {
+              "title": "phone number",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "comment",
-              "description": "comment",
+            "comment": {
+              "title": "comment",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "uid",
-              "description": "uid",
+            "uid": {
+              "title": "uid",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "success",
-              "description": "if f means have error else get t",
+            "success": {
+              "title": "if f means have error else get t",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "created_at",
-              "description": "datetime, date time of created recorde",
+            "created_at": {
+              "title": "datetime, date time of created recorde",
               "schema": {
                 "type": "string",
                 "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
               }
             },
-            {
-              "name": "mobile_number",
-              "description": "mobile number",
+            "mobile_number": {
+              "title": "mobile number",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "import_file_id",
-              "description": "id of recorde in import_files",
+            "import_file_id": {
+              "title": "id of recorde in import_files",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "address",
-              "description": "address",
+            "address": {
+              "title": "address",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "message_error",
-              "description": "if have message fill this",
+            "message_error": {
+              "title": "if have message fill this",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "isp_name",
-              "description": "ISP name",
+            "isp_name": {
+              "title": "ISP name",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "customer_id",
-              "description": "customer id",
+            "customer_id": {
+              "title": "customer id",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "email",
-              "description": "email",
+            "email": {
+              "title": "email",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "customer_name",
-              "description": "name of customer",
+            "customer_name": {
+              "title": "name of customer",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "row_number",
-              "description": "id of recorde ",
+            "row_number": {
+              "title": "id of recorde ",
               "schema": {
                 "type": "number"
               }
             }
-          ]
+          }
         }
       }
     }

@@ -46,45 +46,39 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "charge_id",
-              "description": "",
+          "properties": {
+            "charge_id": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "charge_name",
-              "description": "",
+            "charge_name": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "comment",
-              "description": "",
+            "comment": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "isp_id",
-              "description": "",
+            "isp_id": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "isp_name",
-              "description": "",
+            "isp_name": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "charge_rules",
-              "description": "",
+            "charge_rules": {
+              "title": "",
               "schema": {
                 "type": "array",
                 "items": {
@@ -123,7 +117,7 @@
                 }
               }
             }
-          ]
+          }
         }
       }
     },

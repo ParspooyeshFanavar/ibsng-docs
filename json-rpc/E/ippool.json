@@ -132,50 +132,44 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "ippool_id",
-              "description": "",
+          "properties": {
+            "ippool_id": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "ippool_name",
-              "description": "",
+            "ippool_name": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "comment",
-              "description": "",
+            "comment": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "ip_list",
-              "description": "list of all IPs",
+            "ip_list": {
+              "title": "list of all IPs",
               "schema": {
                 "type": "array"
               }
             },
-            {
-              "name": "free",
-              "description": "list of free IPs",
+            "free": {
+              "title": "list of free IPs",
               "schema": {
                 "type": "array"
               }
             },
-            {
-              "name": "used",
-              "description": "list of used IPs",
+            "used": {
+              "title": "list of used IPs",
               "schema": {
                 "type": "array"
               }
             }
-          ]
+          }
         }
       }
     },

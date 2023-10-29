@@ -120,31 +120,27 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "notification_profile_id",
-              "description": "",
+          "properties": {
+            "notification_profile_id": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "notification_profile_name",
-              "description": "",
+            "notification_profile_name": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "notification_profile_comment",
-              "description": "",
+            "notification_profile_comment": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "notification_rules",
-              "description": "",
+            "notification_rules": {
+              "title": "",
               "schema": {
                 "type": "array",
                 "items": {
@@ -213,21 +209,19 @@
                 }
               }
             },
-            {
-              "name": "isp_id",
-              "description": "",
+            "isp_id": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "owner_isp_name",
-              "description": "",
+            "owner_isp_name": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             }
-          ]
+          }
         }
       }
     },

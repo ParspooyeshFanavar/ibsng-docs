@@ -100,15 +100,14 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "balance_id",
-              "description": "",
+          "properties": {
+            "balance_id": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             }
-          ]
+          }
         }
       }
     },
@@ -123,22 +122,20 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "CURRENCY",
-              "description": "list of Currency",
+          "properties": {
+            "CURRENCY": {
+              "title": "list of Currency",
               "schema": {
                 "type": "array"
               }
             },
-            {
-              "name": "DATA",
-              "description": "list of DATA",
+            "DATA": {
+              "title": "list of DATA",
               "schema": {
                 "type": "array"
               }
             }
-          ]
+          }
         }
       }
     },
@@ -153,22 +150,20 @@
         "schema": {
           "title": "",
           "type": "array",
-          "items": [
-            {
-              "name": "IRR",
-              "description": "",
+          "properties": {
+            "IRR": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "USD",
-              "description": "",
+            "USD": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             }
-          ]
+          }
         }
       }
     },
@@ -183,29 +178,26 @@
         "schema": {
           "title": "",
           "type": "array",
-          "items": [
-            {
-              "name": "LAUNCHED",
-              "description": "",
+          "properties": {
+            "LAUNCHED": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "ACTIVE",
-              "description": "",
+            "ACTIVE": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "RETIRED",
-              "description": "",
+            "RETIRED": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             }
-          ]
+          }
         }
       }
     },
@@ -349,22 +341,20 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "balance_id",
-              "description": "",
+          "properties": {
+            "balance_id": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "balance_name",
-              "description": "",
+            "balance_name": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             }
-          ]
+          }
         }
       }
     },
@@ -449,15 +439,14 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "balance_name",
-              "description": "",
+          "properties": {
+            "balance_name": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             }
-          ]
+          }
         }
       }
     },
@@ -505,17 +494,15 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "total_rows",
-              "description": "Number of total rows",
+          "properties": {
+            "total_rows": {
+              "title": "Number of total rows",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "report",
-              "description": "",
+            "report": {
+              "title": "",
               "schema": {
                 "type": "array",
                 "items": {
@@ -624,7 +611,7 @@
                 }
               }
             }
-          ]
+          }
         }
       }
     }

@@ -89,38 +89,33 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "profile_id",
-              "description": "",
+          "properties": {
+            "profile_id": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "profile_name",
-              "description": "",
+            "profile_name": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "isp_name",
-              "description": "",
+            "isp_name": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "comment",
-              "description": "",
+            "comment": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "rules",
-              "description": "",
+            "rules": {
+              "title": "",
               "schema": {
                 "type": "array",
                 "items": {
@@ -284,7 +279,7 @@
                 }
               }
             }
-          ]
+          }
         }
       }
     },
@@ -308,38 +303,33 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "profile_id",
-              "description": "",
+          "properties": {
+            "profile_id": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "profile_name",
-              "description": "",
+            "profile_name": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "isp_name",
-              "description": "",
+            "isp_name": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "comment",
-              "description": "",
+            "comment": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "rules",
-              "description": "",
+            "rules": {
+              "title": "",
               "schema": {
                 "type": "array",
                 "items": {
@@ -503,7 +493,7 @@
                 }
               }
             }
-          ]
+          }
         }
       }
     },
@@ -527,38 +517,33 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "profile_id",
-              "description": "",
+          "properties": {
+            "profile_id": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "profile_name",
-              "description": "",
+            "profile_name": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "isp_name",
-              "description": "",
+            "isp_name": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "comment",
-              "description": "",
+            "comment": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "rules",
-              "description": "",
+            "rules": {
+              "title": "",
               "schema": {
                 "type": "array",
                 "items": {
@@ -722,7 +707,7 @@
                 }
               }
             }
-          ]
+          }
         }
       }
     },
@@ -746,38 +731,33 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "profile_id",
-              "description": "",
+          "properties": {
+            "profile_id": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "profile_name",
-              "description": "",
+            "profile_name": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "isp_name",
-              "description": "",
+            "isp_name": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "comment",
-              "description": "",
+            "comment": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "rules",
-              "description": "",
+            "rules": {
+              "title": "",
               "schema": {
                 "type": "array",
                 "items": {
@@ -941,7 +921,7 @@
                 }
               }
             }
-          ]
+          }
         }
       }
     },
@@ -965,77 +945,69 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "rule_id",
-              "description": "",
+          "properties": {
+            "rule_id": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "description",
-              "description": "",
+            "description": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "invoice_template_name",
-              "description": "",
+            "invoice_template_name": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "pi_template_name",
-              "description": "",
+            "pi_template_name": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "date_type",
+            "date_type": {
+              "title": "",
               "value": ["jalali", "gregorian"]
             },
-            {
-              "name": "language",
+            "language": {
+              "title": "",
               "value": ["fa", "en"]
             },
-            {
-              "name": "pi_exp_days",
-              "description": "",
+            "pi_exp_days": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "roundup_scale",
-              "description": "",
+            "roundup_scale": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "auto_invoice_event",
+            "auto_invoice_event": {
+              "title": "",
               "value": ["null", "credit_finished", "exp_date", "always"]
             },
-            {
-              "name": "auto_invoice_threshold",
-              "description": "",
+            "auto_invoice_threshold": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "allow_user_issue_invoice",
-              "description": "",
+            "allow_user_issue_invoice": {
+              "title": "",
               "schema": {
                 "type": "boolean"
               }
             },
-            {
-              "name": "action",
+            "action": {
+              "title": "",
               "value": [
                 "change_service",
                 "renew",
@@ -1052,23 +1024,20 @@
                 "set_credit_constant"
               ]
             },
-            {
-              "name": "action_args",
-              "description": "",
+            "action_args": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "disabled",
-              "description": "",
+            "disabled": {
+              "title": "",
               "schema": {
                 "type": "boolean"
               }
             },
-            {
-              "name": "invoice_rule_items",
-              "description": "",
+            "invoice_rule_items": {
+              "title": "",
               "schema": {
                 "type": "array",
                 "items": {
@@ -1114,7 +1083,7 @@
                 }
               }
             }
-          ]
+          }
         }
       }
     },
@@ -1513,17 +1482,15 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "total_rows",
-              "description": "total number of results",
+          "properties": {
+            "total_rows": {
+              "title": "total number of results",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "report",
-              "description": "",
+            "report": {
+              "title": "",
               "schema": {
                 "type": "array",
                 "items": {
@@ -1690,7 +1657,7 @@
                 }
               }
             }
-          ]
+          }
         }
       }
     },
@@ -1739,17 +1706,15 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "total_rows",
-              "description": "total number of results",
+          "properties": {
+            "total_rows": {
+              "title": "total number of results",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "report",
-              "description": "",
+            "report": {
+              "title": "",
               "schema": {
                 "type": "array",
                 "items": {
@@ -1887,7 +1852,7 @@
                 }
               }
             }
-          ]
+          }
         }
       }
     },
@@ -1958,10 +1923,9 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "issued_pis",
-              "description": "",
+          "properties": {
+            "issued_pis": {
+              "title": "",
               "schema": {
                 "type": "array",
                 "items": {
@@ -2133,9 +2097,8 @@
                 }
               }
             },
-            {
-              "name": "failed_users",
-              "description": "",
+            "failed_users": {
+              "title": "",
               "schema": {
                 "type": "array",
                 "items": {
@@ -2160,7 +2123,7 @@
                 }
               }
             }
-          ]
+          }
         }
       }
     },
@@ -2184,22 +2147,20 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "failed_user_ids",
-              "description": "list of User IDs",
+          "properties": {
+            "failed_user_ids": {
+              "title": "list of User IDs",
               "schema": {
                 "type": "array"
               }
             },
-            {
-              "name": "successful_user_ids",
-              "description": "list of User IDs",
+            "successful_user_ids": {
+              "title": "list of User IDs",
               "schema": {
                 "type": "array"
               }
             }
-          ]
+          }
         }
       }
     },
@@ -2237,15 +2198,14 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "user_ids",
-              "description": "list of User IDs",
+          "properties": {
+            "user_ids": {
+              "title": "list of User IDs",
               "schema": {
                 "type": "array"
               }
             }
-          ]
+          }
         }
       }
     },
@@ -2283,15 +2243,14 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "user_ids",
-              "description": "list of User IDs",
+          "properties": {
+            "user_ids": {
+              "title": "list of User IDs",
               "schema": {
                 "type": "array"
               }
             }
-          ]
+          }
         }
       }
     },
@@ -2314,144 +2273,124 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "pi_id",
-              "description": "Proforma Invoice ID",
+          "properties": {
+            "pi_id": {
+              "title": "Proforma Invoice ID",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "rule_id",
-              "description": "",
+            "rule_id": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "rule_description",
-              "description": "",
+            "rule_description": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "issue_date",
-              "description": "datetime, ",
+            "issue_date": {
+              "title": "datetime, ",
               "schema": {
                 "type": "string",
                 "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
               }
             },
-            {
-              "name": "expired",
-              "description": "",
+            "expired": {
+              "title": "",
               "schema": {
                 "type": "boolean"
               }
             },
-            {
-              "name": "sum_up_amount",
-              "description": "",
+            "sum_up_amount": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "roundup_amount",
-              "description": "",
+            "roundup_amount": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "previous_due",
-              "description": "",
+            "previous_due": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "effective_amount",
-              "description": "",
+            "effective_amount": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "user_id",
-              "description": "",
+            "user_id": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "user_name",
-              "description": "",
+            "user_name": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "owner_name",
-              "description": "",
+            "owner_name": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "email",
-              "description": "",
+            "email": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "address",
-              "description": "",
+            "address": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "phone",
-              "description": "",
+            "phone": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "postal_code",
-              "description": "",
+            "postal_code": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "add_user",
-              "description": "",
+            "add_user": {
+              "title": "",
               "schema": {
                 "type": "boolean"
               }
             },
-            {
-              "name": "add_user_details_dict",
-              "description": "",
+            "add_user_details_dict": {
+              "title": "",
               "schema": {
                 "type": "object"
               }
             },
-            {
-              "name": "comment",
-              "description": "",
+            "comment": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "pi_items",
-              "description": "",
+            "pi_items": {
+              "title": "",
               "schema": {
                 "type": "array",
                 "items": {
@@ -2476,7 +2415,7 @@
                 }
               }
             }
-          ]
+          }
         }
       }
     },
@@ -2499,168 +2438,145 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "invoice_id",
-              "description": "",
+          "properties": {
+            "invoice_id": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "rule_id",
-              "description": "",
+            "rule_id": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "rule_description",
-              "description": "",
+            "rule_description": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "is_active",
-              "description": "",
+            "is_active": {
+              "title": "",
               "schema": {
                 "type": "boolean"
               }
             },
-            {
-              "name": "is_paid",
-              "description": "",
+            "is_paid": {
+              "title": "",
               "schema": {
                 "type": "boolean"
               }
             },
-            {
-              "name": "pi_issue_date",
-              "description": "datetime, ",
+            "pi_issue_date": {
+              "title": "datetime, ",
               "schema": {
                 "type": "string",
                 "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
               }
             },
-            {
-              "name": "invoice_issue_date",
-              "description": "datetime, ",
+            "invoice_issue_date": {
+              "title": "datetime, ",
               "schema": {
                 "type": "string",
                 "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
               }
             },
-            {
-              "name": "period_end",
-              "description": "datetime, ",
+            "period_end": {
+              "title": "datetime, ",
               "schema": {
                 "type": "string",
                 "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
               }
             },
-            {
-              "name": "period_start",
-              "description": "datetime, ",
+            "period_start": {
+              "title": "datetime, ",
               "schema": {
                 "type": "string",
                 "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
               }
             },
-            {
-              "name": "previous_due",
-              "description": "",
+            "previous_due": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "sum_up_amount",
-              "description": "",
+            "sum_up_amount": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "roundup_amount",
-              "description": "",
+            "roundup_amount": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "effective_amount",
-              "description": "",
+            "effective_amount": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "paid_amount",
-              "description": "",
+            "paid_amount": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "user_id",
-              "description": "",
+            "user_id": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "user_name",
-              "description": "",
+            "user_name": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "owner_name",
-              "description": "",
+            "owner_name": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "address",
-              "description": "",
+            "address": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "comment",
-              "description": "",
+            "comment": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "email",
-              "description": "",
+            "email": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "phone",
-              "description": "",
+            "phone": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "postal_code",
-              "description": "",
+            "postal_code": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "invoice_items",
-              "description": "",
+            "invoice_items": {
+              "title": "",
               "schema": {
                 "type": "array",
                 "items": {
@@ -2692,7 +2608,7 @@
                 }
               }
             }
-          ]
+          }
         }
       }
     },
@@ -2715,22 +2631,20 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "pi",
-              "description": "",
+          "properties": {
+            "pi": {
+              "title": "",
               "schema": {
                 "type": "object"
               }
             },
-            {
-              "name": "rule",
-              "description": "",
+            "rule": {
+              "title": "",
               "schema": {
                 "type": "object"
               }
             }
-          ]
+          }
         }
       }
     },
@@ -2753,22 +2667,20 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "invoice",
-              "description": "",
+          "properties": {
+            "invoice": {
+              "title": "",
               "schema": {
                 "type": "object"
               }
             },
-            {
-              "name": "rule",
-              "description": "",
+            "rule": {
+              "title": "",
               "schema": {
                 "type": "object"
               }
             }
-          ]
+          }
         }
       }
     }

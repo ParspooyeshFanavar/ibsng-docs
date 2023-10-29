@@ -106,29 +106,26 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "password",
-              "description": "internet password",
+          "properties": {
+            "password": {
+              "title": "internet password",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "group",
-              "description": "group name",
+            "group": {
+              "title": "group name",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "credit",
-              "description": "",
+            "credit": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             }
-          ]
+          }
         }
       }
     },
@@ -392,71 +389,62 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "header_logo_ext",
-              "description": "header logo file extension, for example 'gif'",
+          "properties": {
+            "header_logo_ext": {
+              "title": "header logo file extension, for example 'gif'",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "header_logo_contents",
-              "description": "base64-encoded data of header logo image",
+            "header_logo_contents": {
+              "title": "base64-encoded data of header logo image",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "header_bg_color",
-              "description": "header background color, in html color format, for example 'E0DEDE'",
+            "header_bg_color": {
+              "title": "header background color, in html color format, for example 'E0DEDE'",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "header_text_color",
-              "description": "header text color, html color format, for example 'E0DEDE'",
+            "header_text_color": {
+              "title": "header text color, html color format, for example 'E0DEDE'",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "footer_logo_ext",
-              "description": "footer logo file extension, for example 'gif'",
+            "footer_logo_ext": {
+              "title": "footer logo file extension, for example 'gif'",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "footer_logo_contents",
-              "description": "base64-encoded data of footer logo image",
+            "footer_logo_contents": {
+              "title": "base64-encoded data of footer logo image",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "footer_bg_color",
-              "description": "footer background color, in html color format, for example 'E0DEDE'",
+            "footer_bg_color": {
+              "title": "footer background color, in html color format, for example 'E0DEDE'",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "footer_text_color",
-              "description": "footer text color, in html color format, for example 'E0DEDE'",
+            "footer_text_color": {
+              "title": "footer text color, in html color format, for example 'E0DEDE'",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "footer_msg",
-              "description": "base64-encoded string of footer message",
+            "footer_msg": {
+              "title": "base64-encoded string of footer message",
               "schema": {
                 "type": "string"
               }
             }
-          ]
+          }
         }
       }
     },
@@ -543,29 +531,26 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "current_tag",
-              "description": "current tag",
+          "properties": {
+            "current_tag": {
+              "title": "current tag",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "version",
-              "description": "version",
+            "version": {
+              "title": "version",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "branch",
-              "description": "branch",
+            "branch": {
+              "title": "branch",
               "schema": {
                 "type": "string"
               }
             }
-          ]
+          }
         }
       }
     }

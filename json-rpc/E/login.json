@@ -43,27 +43,24 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "session_id",
-              "description": "Session ID",
+          "properties": {
+            "session_id": {
+              "title": "Session ID",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "auth_id",
-              "description": "username of admin/user",
+            "auth_id": {
+              "title": "username of admin/user",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "auth_type",
-              "description": "",
+            "auth_type": {
+              "title": "",
               "value": ["ADMIN", "NORMAL_USER", "VOIP_USER"]
             }
-          ]
+          }
         }
       }
     },
@@ -194,17 +191,15 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "total_rows",
-              "description": "",
+          "properties": {
+            "total_rows": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "report",
-              "description": "",
+            "report": {
+              "title": "",
               "schema": {
                 "type": "array",
                 "items": {
@@ -273,7 +268,7 @@
                 }
               }
             }
-          ]
+          }
         }
       }
     }

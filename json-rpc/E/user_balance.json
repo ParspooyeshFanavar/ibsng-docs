@@ -101,15 +101,14 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "balance_id",
-              "description": "",
+          "properties": {
+            "balance_id": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             }
-          ]
+          }
         }
       }
     },
@@ -132,108 +131,82 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "linked_user_id",
-              "description": "int or null, if not set return null",
+          "properties": {
+            "linked_user_id": {
+              "title": "int or null, if not set return null",
               "schema": {
                 "type": "int"
               }
             },
-            {
-              "name": "balance_name",
-              "description": "",
+            "balance_name": {
+              "title": "name of balance that asssign to user",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "balance_id",
-              "description": "",
+            "balance_id": {
+              "title": "id of balacne assign to user",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "linked_balance_id",
-              "description": "int or null, if not set return null",
+            "linked_balance_id": {
+              "title": "int or null, if not set return null",
               "schema": {
                 "type": "int"
               }
             },
-            {
-              "name": "value",
-              "description": "",
+            "value": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "user_balance_id",
-              "description": "",
+            "user_balance_id": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "user_balance_urd_tag",
-              "description": "",
+            "user_balance_urd_tag": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "priority",
-              "description": "",
+            "priority": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "balance_name",
-              "description": "name of balance that asssign to user",
+            "user_balance_udr_tag": {
+              "title": "UDR tag to self user balance assign",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "user_balance_udr_tag",
-              "description": "UDR tag to self user balance assign",
-              "schema": {
-                "type": "string"
-              }
-            },
-            {
-              "name": "balance_id",
-              "description": "id of balacne assign to user",
-              "schema": {
-                "type": "number"
-              }
-            },
-            {
-              "name": "first_use_expiration_time",
-              "description": "datetime, ",
+            "first_use_expiration_time": {
+              "title": "datetime, ",
               "schema": {
                 "type": "string",
                 "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
               }
             },
-            {
-              "name": "first_use_time",
-              "description": "datetime, ",
+            "first_use_time": {
+              "title": "datetime, ",
               "schema": {
                 "type": "string",
                 "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
               }
             },
-            {
-              "name": "expire_time",
-              "description": "sample format -> 2022-12-31 11:54:00",
+            "expire_time": {
+              "title": "sample format -> 2022-12-31 11:54:00",
               "schema": {
                 "type": "string"
               }
             }
-          ]
+          }
         }
       }
     },
@@ -332,99 +305,86 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "comment",
-              "description": "",
+          "properties": {
+            "comment": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "linked_user_id",
-              "description": "int or null, if not set return null",
+            "linked_user_id": {
+              "title": "int or null, if not set return null",
               "schema": {
                 "type": "int"
               }
             },
-            {
-              "name": "start_time",
-              "description": "",
+            "start_time": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "balance_name",
-              "description": "",
+            "balance_name": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "balance_id",
-              "description": "",
+            "balance_id": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "linked_balance_id",
-              "description": "int or null, if not set return null",
+            "linked_balance_id": {
+              "title": "int or null, if not set return null",
               "schema": {
                 "type": "int"
               }
             },
-            {
-              "name": "user_id",
-              "description": "",
+            "user_id": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "initial_value",
-              "description": "",
+            "initial_value": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "user_balance_urd_tag",
-              "description": "",
+            "user_balance_urd_tag": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "value",
-              "description": "",
+            "value": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "user_balance_id",
-              "description": "",
+            "user_balance_id": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "priority",
-              "description": "",
+            "priority": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "expire_time",
-              "description": "",
+            "expire_time": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             }
-          ]
+          }
         }
       }
     },
@@ -535,17 +495,15 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "total_rows",
-              "description": "number of total rows",
+          "properties": {
+            "total_rows": {
+              "title": "number of total rows",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "report",
-              "description": "",
+            "report": {
+              "title": "",
               "schema": {
                 "type": "array",
                 "items": {
@@ -640,7 +598,7 @@
                 }
               }
             }
-          ]
+          }
         }
       }
     }

@@ -225,57 +225,50 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "group_id",
-              "description": "",
+          "properties": {
+            "group_id": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "group_name",
-              "description": "",
+            "group_name": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "comment",
-              "description": "",
+            "comment": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "isp_id",
-              "description": "",
+            "isp_id": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "isp_name",
-              "description": "",
+            "isp_name": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "raw_attrs",
-              "description": "dates are gregorian",
+            "raw_attrs": {
+              "title": "dates are gregorian",
               "schema": {
                 "type": "object"
               }
             },
-            {
-              "name": "attrs",
-              "description": "dates are based on request date_type",
+            "attrs": {
+              "title": "dates are based on request date_type",
               "schema": {
                 "type": "object"
               }
             }
-          ]
+          }
         }
       }
     },

@@ -83,45 +83,39 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "ras_ip",
-              "description": "",
+          "properties": {
+            "ras_ip": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "ras_id",
-              "description": "",
+            "ras_id": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "ras_description",
-              "description": "",
+            "ras_description": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "radius_secret",
-              "description": "",
+            "radius_secret": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "comment",
-              "description": "",
+            "comment": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "ras_type",
-              "description": "",
+            "ras_type": {
+              "title": "",
               "value": [
                 "ACS2",
                 "Cisco-IN",
@@ -133,14 +127,13 @@
                 "ZTE"
               ]
             },
-            {
-              "name": "attrs",
-              "description": "",
+            "attrs": {
+              "title": "",
               "schema": {
                 "type": "object"
               }
             }
-          ]
+          }
         }
       }
     },

@@ -257,17 +257,24 @@ def getJsonMethod(handlerName: str, method: "Element", authTypes: list[str]):
 			resultValues.append(value)
 	elif outputType:
 		resultType, typeComment = paramTypeMapping[outputType]
-	resultItems = []
+	resultParams = {}
 	for param in outputElem.getchildren():
 		if param.tag != "param":
 			continue
-		if not param.attrib.get("name"):
+		paramName = param.attrib.get("name")
+		if not paramName:
 			print(f"{branch=}: param name is empty: {toStr(param)}")
 			continue
-		jsonParam = getJsonParam(param)
-		if jsonParam is None:
+		jsonParamTmp = getJsonParam(param)
+		if jsonParamTmp is None:
 			continue
-		resultItems.append(jsonParam)
+		del jsonParamTmp["name"]
+		title = ""
+		if "description" in jsonParamTmp:
+			title = jsonParamTmp.pop("description")
+		jsonParam = {"title": title}
+		jsonParam.update(jsonParamTmp)
+		resultParams[paramName] = jsonParam
 	resultName = ""
 	if resultValues is not None:
 		resultName = "Response (one of following values)"
@@ -282,8 +289,8 @@ def getJsonMethod(handlerName: str, method: "Element", authTypes: list[str]):
 			"title": "",
 			"type": resultType,
 		}
-		if resultItems:
-			resultSchema["items"] = resultItems
+		if resultParams:
+			resultSchema["properties"] = resultParams
 		result["schema"] = resultSchema
 	if resultValues is not None:
 		result["value"] = resultValues

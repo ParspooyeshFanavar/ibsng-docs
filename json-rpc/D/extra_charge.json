@@ -318,38 +318,33 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "profile_id",
-              "description": "",
+          "properties": {
+            "profile_id": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "profile_name",
-              "description": "",
+            "profile_name": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "comment",
-              "description": "",
+            "comment": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "effective_hour",
-              "description": "format: HH:MM",
+            "effective_hour": {
+              "title": "format: HH:MM",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "rules",
-              "description": "",
+            "rules": {
+              "title": "",
               "schema": {
                 "type": "array",
                 "items": {
@@ -430,7 +425,7 @@
                 }
               }
             }
-          ]
+          }
         }
       }
     },
@@ -454,38 +449,33 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "profile_id",
-              "description": "",
+          "properties": {
+            "profile_id": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "profile_name",
-              "description": "",
+            "profile_name": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "comment",
-              "description": "",
+            "comment": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "effective_hour",
-              "description": "format: HH:MM",
+            "effective_hour": {
+              "title": "format: HH:MM",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "rules",
-              "description": "",
+            "rules": {
+              "title": "",
               "schema": {
                 "type": "array",
                 "items": {
@@ -566,7 +556,7 @@
                 }
               }
             }
-          ]
+          }
         }
       }
     }

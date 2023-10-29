@@ -109,85 +109,74 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "internet_onlines",
-              "description": "",
+          "properties": {
+            "internet_onlines": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "voip_onlines",
-              "description": "",
+            "voip_onlines": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "re_onlined",
-              "description": "",
+            "re_onlined": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "accounting_not_started",
-              "description": "",
+            "accounting_not_started": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "failed_users",
-              "description": "",
+            "failed_users": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "idle_users",
-              "description": "",
+            "idle_users": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "ras_acct_not_started",
-              "description": "dict of ras_desc => count",
+            "ras_acct_not_started": {
+              "title": "dict of ras_desc => count",
               "schema": {
                 "type": "object"
               }
             },
-            {
-              "name": "ras_description",
-              "description": "dict of ras_desc => count",
+            "ras_description": {
+              "title": "dict of ras_desc => count",
               "schema": {
                 "type": "object"
               }
             },
-            {
-              "name": "ras_counters",
-              "description": "dict of ras_desc => count_dict",
+            "ras_counters": {
+              "title": "dict of ras_desc => count_dict",
               "schema": {
                 "type": "object"
               }
             },
-            {
-              "name": "group_name",
-              "description": "a dict of group_name => count",
+            "group_name": {
+              "title": "a dict of group_name => count",
               "schema": {
                 "type": "object"
               }
             },
-            {
-              "name": "isp_name",
-              "description": "a dict of isp_name => count",
+            "isp_name": {
+              "title": "a dict of isp_name => count",
               "schema": {
                 "type": "object"
               }
             }
-          ]
+          }
         }
       }
     },
@@ -203,85 +192,74 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "internet_onlines",
-              "description": "",
+          "properties": {
+            "internet_onlines": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "voip_onlines",
-              "description": "",
+            "voip_onlines": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "re_onlined",
-              "description": "",
+            "re_onlined": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "accounting_not_started",
-              "description": "",
+            "accounting_not_started": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "failed_users",
-              "description": "",
+            "failed_users": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "idle_users",
-              "description": "",
+            "idle_users": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "ras_acct_not_started",
-              "description": "dict of ras_desc => count",
+            "ras_acct_not_started": {
+              "title": "dict of ras_desc => count",
               "schema": {
                 "type": "object"
               }
             },
-            {
-              "name": "ras_description",
-              "description": "dict of ras_desc => count",
+            "ras_description": {
+              "title": "dict of ras_desc => count",
               "schema": {
                 "type": "object"
               }
             },
-            {
-              "name": "ras_counters",
-              "description": "dict of ras_desc => count_dict",
+            "ras_counters": {
+              "title": "dict of ras_desc => count_dict",
               "schema": {
                 "type": "object"
               }
             },
-            {
-              "name": "group_name",
-              "description": "a dict of group_name => count",
+            "group_name": {
+              "title": "a dict of group_name => count",
               "schema": {
                 "type": "object"
               }
             },
-            {
-              "name": "isp_name",
-              "description": "a dict of isp_name => count",
+            "isp_name": {
+              "title": "a dict of isp_name => count",
               "schema": {
                 "type": "object"
               }
             }
-          ]
+          }
         }
       }
     },
@@ -297,15 +275,14 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "onlines_per_isp",
-              "description": "a dict of isp_id => count",
+          "properties": {
+            "onlines_per_isp": {
+              "title": "a dict of isp_id => count",
               "schema": {
                 "type": "object"
               }
             }
-          ]
+          }
         }
       }
     },
@@ -364,45 +341,39 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "total_rows",
-              "description": "number of total rows",
+          "properties": {
+            "total_rows": {
+              "title": "number of total rows",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "total_credit",
-              "description": "sum of total rows credit",
+            "total_credit": {
+              "title": "sum of total rows credit",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "total_duration",
-              "description": "sum of total rows duration, in seconds",
+            "total_duration": {
+              "title": "sum of total rows duration, in seconds",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "total_in_bytes",
-              "description": "sum of total download, in bytes",
+            "total_in_bytes": {
+              "title": "sum of total download, in bytes",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "total_out_bytes",
-              "description": "sum of total upload, in bytes",
+            "total_out_bytes": {
+              "title": "sum of total upload, in bytes",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "report",
-              "description": "report data of specified page (from - to)",
+            "report": {
+              "title": "report data of specified page (from - to)",
               "schema": {
                 "type": "array",
                 "items": {
@@ -710,7 +681,7 @@
                 }
               }
             }
-          ]
+          }
         }
       }
     },
@@ -767,45 +738,39 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "total_rows",
-              "description": "number of total rows",
+          "properties": {
+            "total_rows": {
+              "title": "number of total rows",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "total_credit",
-              "description": "sum of total rows credit",
+            "total_credit": {
+              "title": "sum of total rows credit",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "total_duration",
-              "description": "sum of total rows duration, in seconds",
+            "total_duration": {
+              "title": "sum of total rows duration, in seconds",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "total_in_bytes",
-              "description": "sum of total download, in bytes",
+            "total_in_bytes": {
+              "title": "sum of total download, in bytes",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "total_out_bytes",
-              "description": "sum of total upload, in bytes",
+            "total_out_bytes": {
+              "title": "sum of total upload, in bytes",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "report",
-              "description": "report data of specified page (from - to)",
+            "report": {
+              "title": "report data of specified page (from - to)",
               "schema": {
                 "type": "array",
                 "items": {
@@ -997,7 +962,7 @@
                 }
               }
             }
-          ]
+          }
         }
       }
     },
@@ -1235,17 +1200,15 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "total_rows",
-              "description": "Number of total rows",
+          "properties": {
+            "total_rows": {
+              "title": "Number of total rows",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "report",
-              "description": "",
+            "report": {
+              "title": "",
               "schema": {
                 "type": "array",
                 "items": {
@@ -1254,7 +1217,7 @@
                 }
               }
             }
-          ]
+          }
         }
       }
     },
@@ -1297,17 +1260,15 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "total_rows",
-              "description": "Number of total rows",
+          "properties": {
+            "total_rows": {
+              "title": "Number of total rows",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "report",
-              "description": "",
+            "report": {
+              "title": "",
               "schema": {
                 "type": "array",
                 "items": {
@@ -1316,7 +1277,7 @@
                 }
               }
             }
-          ]
+          }
         }
       }
     },
@@ -1359,17 +1320,15 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "total_rows",
-              "description": "Number of total rows",
+          "properties": {
+            "total_rows": {
+              "title": "Number of total rows",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "report",
-              "description": "",
+            "report": {
+              "title": "",
               "schema": {
                 "type": "array",
                 "items": {
@@ -1378,7 +1337,7 @@
                 }
               }
             }
-          ]
+          }
         }
       }
     },
@@ -1426,17 +1385,15 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "total_rows",
-              "description": "Number of total rows",
+          "properties": {
+            "total_rows": {
+              "title": "Number of total rows",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "report",
-              "description": "",
+            "report": {
+              "title": "",
               "schema": {
                 "type": "array",
                 "items": {
@@ -1545,7 +1502,7 @@
                 }
               }
             }
-          ]
+          }
         }
       }
     },
@@ -1665,17 +1622,15 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "total_rows",
-              "description": "total number of rows",
+          "properties": {
+            "total_rows": {
+              "title": "total number of rows",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "report",
-              "description": "",
+            "report": {
+              "title": "",
               "schema": {
                 "type": "array",
                 "items": {
@@ -1684,7 +1639,7 @@
                 }
               }
             }
-          ]
+          }
         }
       }
     },
@@ -1727,17 +1682,15 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "total_rows",
-              "description": "Number of total rows",
+          "properties": {
+            "total_rows": {
+              "title": "Number of total rows",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "report",
-              "description": "",
+            "report": {
+              "title": "",
               "schema": {
                 "type": "array",
                 "items": {
@@ -1746,7 +1699,7 @@
                 }
               }
             }
-          ]
+          }
         }
       }
     },
@@ -1796,17 +1749,15 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "total_rows",
-              "description": "Number of total rows",
+          "properties": {
+            "total_rows": {
+              "title": "Number of total rows",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "report",
-              "description": "",
+            "report": {
+              "title": "",
               "schema": {
                 "type": "array",
                 "items": {
@@ -1815,21 +1766,19 @@
                 }
               }
             },
-            {
-              "name": "total_per_user_credit",
-              "description": "",
+            "total_per_user_credit": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "total_admin_credit",
-              "description": "",
+            "total_admin_credit": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             }
-          ]
+          }
         }
       }
     },
@@ -1879,17 +1828,15 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "total_rows",
-              "description": "Number of total rows",
+          "properties": {
+            "total_rows": {
+              "title": "Number of total rows",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "report",
-              "description": "",
+            "report": {
+              "title": "",
               "schema": {
                 "type": "array",
                 "items": {
@@ -1898,21 +1845,19 @@
                 }
               }
             },
-            {
-              "name": "total_per_user_credit",
-              "description": "",
+            "total_per_user_credit": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "total_admin_credit",
-              "description": "",
+            "total_admin_credit": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             }
-          ]
+          }
         }
       }
     },
@@ -1962,17 +1907,15 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "total_rows",
-              "description": "Number of total rows",
+          "properties": {
+            "total_rows": {
+              "title": "Number of total rows",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "report",
-              "description": "",
+            "report": {
+              "title": "",
               "schema": {
                 "type": "array",
                 "items": {
@@ -1981,21 +1924,19 @@
                 }
               }
             },
-            {
-              "name": "total_per_user_credit",
-              "description": "",
+            "total_per_user_credit": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "total_isp_credit",
-              "description": "",
+            "total_isp_credit": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             }
-          ]
+          }
         }
       }
     },
@@ -2128,24 +2069,21 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "total_rows",
-              "description": "",
+          "properties": {
+            "total_rows": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "total_deposit",
-              "description": "",
+            "total_deposit": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "report",
-              "description": "",
+            "report": {
+              "title": "",
               "schema": {
                 "type": "array",
                 "items": {
@@ -2270,7 +2208,7 @@
                 }
               }
             }
-          ]
+          }
         }
       }
     },
@@ -2319,24 +2257,21 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "total_rows",
-              "description": "",
+          "properties": {
+            "total_rows": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "total_deposit",
-              "description": "",
+            "total_deposit": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "report",
-              "description": "",
+            "report": {
+              "title": "",
               "schema": {
                 "type": "array",
                 "items": {
@@ -2426,7 +2361,7 @@
                 }
               }
             }
-          ]
+          }
         }
       }
     },
@@ -2475,17 +2410,15 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "total_rows",
-              "description": "number of total rows",
+          "properties": {
+            "total_rows": {
+              "title": "number of total rows",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "report",
-              "description": "",
+            "report": {
+              "title": "",
               "schema": {
                 "type": "array",
                 "items": {
@@ -2583,7 +2516,7 @@
                 }
               }
             }
-          ]
+          }
         }
       }
     },
@@ -2674,24 +2607,21 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "total_rows",
-              "description": "number of total rows",
+          "properties": {
+            "total_rows": {
+              "title": "number of total rows",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "total_deposit_change",
-              "description": "total/sum of deposit change amounts",
+            "total_deposit_change": {
+              "title": "total/sum of deposit change amounts",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "report",
-              "description": "",
+            "report": {
+              "title": "",
               "schema": {
                 "type": "array",
                 "items": {
@@ -2804,7 +2734,7 @@
                 }
               }
             }
-          ]
+          }
         }
       }
     },
@@ -2859,17 +2789,15 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "total_rows",
-              "description": "number of total rows",
+          "properties": {
+            "total_rows": {
+              "title": "number of total rows",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "report",
-              "description": "",
+            "report": {
+              "title": "",
               "schema": {
                 "type": "array",
                 "items": {
@@ -2957,7 +2885,7 @@
                 }
               }
             }
-          ]
+          }
         }
       }
     },
@@ -3104,10 +3032,9 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "bw_snapshots",
-              "description": "",
+          "properties": {
+            "bw_snapshots": {
+              "title": "",
               "schema": {
                 "type": "array",
                 "items": [
@@ -3132,9 +3059,8 @@
                 "length": "2"
               }
             },
-            {
-              "name": "connection_log",
-              "description": "",
+            "connection_log": {
+              "title": "",
               "schema": {
                 "type": "array",
                 "items": [
@@ -3159,9 +3085,8 @@
                 "length": "2"
               }
             },
-            {
-              "name": "credit_change",
-              "description": "",
+            "credit_change": {
+              "title": "",
               "schema": {
                 "type": "array",
                 "items": [
@@ -3186,9 +3111,8 @@
                 "length": "2"
               }
             },
-            {
-              "name": "snapshots",
-              "description": "",
+            "snapshots": {
+              "title": "",
               "schema": {
                 "type": "array",
                 "items": [
@@ -3213,9 +3137,8 @@
                 "length": "2"
               }
             },
-            {
-              "name": "user_audit_log",
-              "description": "",
+            "user_audit_log": {
+              "title": "",
               "schema": {
                 "type": "array",
                 "items": [
@@ -3240,9 +3163,8 @@
                 "length": "2"
               }
             },
-            {
-              "name": "web_analyzer_log",
-              "description": "",
+            "web_analyzer_log": {
+              "title": "",
               "schema": {
                 "type": "array",
                 "items": [
@@ -3267,7 +3189,7 @@
                 "length": "2"
               }
             }
-          ]
+          }
         }
       }
     },
@@ -3291,10 +3213,9 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "report",
-              "description": "",
+          "properties": {
+            "report": {
+              "title": "",
               "schema": {
                 "type": "array",
                 "items": {
@@ -3303,7 +3224,7 @@
                 }
               }
             }
-          ]
+          }
         }
       }
     },
@@ -3360,17 +3281,15 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "total_rows",
-              "description": "total number of rows",
+          "properties": {
+            "total_rows": {
+              "title": "total number of rows",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "report",
-              "description": "",
+            "report": {
+              "title": "",
               "schema": {
                 "type": "array",
                 "items": {
@@ -3540,7 +3459,7 @@
                 }
               }
             }
-          ]
+          }
         }
       }
     },
@@ -3598,17 +3517,15 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "total_rows",
-              "description": "total number of rows",
+          "properties": {
+            "total_rows": {
+              "title": "total number of rows",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "report",
-              "description": "",
+            "report": {
+              "title": "",
               "schema": {
                 "type": "array",
                 "items": {
@@ -3786,7 +3703,7 @@
                 }
               }
             }
-          ]
+          }
         }
       }
     },
@@ -4034,36 +3951,32 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "night_download",
-              "description": "in bytes",
+          "properties": {
+            "night_download": {
+              "title": "in bytes",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "night_upload",
-              "description": "in bytes",
+            "night_upload": {
+              "title": "in bytes",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "day_download",
-              "description": "in bytes",
+            "day_download": {
+              "title": "in bytes",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "day_upload",
-              "description": "in bytes",
+            "day_upload": {
+              "title": "in bytes",
               "schema": {
                 "type": "number"
               }
             }
-          ]
+          }
         }
       }
     }

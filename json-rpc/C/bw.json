@@ -275,85 +275,74 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "interface_id",
-              "description": "",
+          "properties": {
+            "interface_id": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "interface_name",
-              "description": "",
+            "interface_name": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "hostname",
-              "description": "",
+            "hostname": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "node_id",
-              "description": "",
+            "node_id": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "rate_kbits",
-              "description": "",
+            "rate_kbits": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "ceil_kbits",
-              "description": "",
+            "ceil_kbits": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "priority",
-              "description": "",
+            "priority": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "description",
-              "description": "",
+            "description": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "pkts",
-              "description": "",
+            "pkts": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "bytes",
-              "description": "",
+            "bytes": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "rate",
-              "description": "",
+            "rate": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             }
-          ]
+          }
         }
       }
     },
@@ -377,99 +366,86 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "leaf_id",
-              "description": "",
+          "properties": {
+            "leaf_id": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "leaf_name",
-              "description": "",
+            "leaf_name": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "parent_id",
-              "description": "",
+            "parent_id": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "interface_id",
-              "description": "",
+            "interface_id": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "interface_name",
-              "description": "",
+            "interface_name": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "hostname",
-              "description": "",
+            "hostname": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "total_rate_kbits",
-              "description": "",
+            "total_rate_kbits": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "total_ceil_kbits",
-              "description": "",
+            "total_ceil_kbits": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "default_rate_kbits",
-              "description": "",
+            "default_rate_kbits": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "default_ceil_kbits",
-              "description": "",
+            "default_ceil_kbits": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "default_priority",
-              "description": "",
+            "default_priority": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "total_priority",
-              "description": "",
+            "total_priority": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "services",
-              "description": "",
+            "services": {
+              "title": "",
               "schema": {
                 "type": "array"
               }
             }
-          ]
+          }
         }
       }
     },
@@ -998,50 +974,44 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "static_ip_id",
-              "description": "",
+          "properties": {
+            "static_ip_id": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "ip",
-              "description": "",
+            "ip": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "tx_leaf_id",
-              "description": "",
+            "tx_leaf_id": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "tx_leaf_name",
-              "description": "",
+            "tx_leaf_name": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "rx_leaf_id",
-              "description": "",
+            "rx_leaf_id": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "rx_leaf_name",
-              "description": "",
+            "rx_leaf_name": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             }
-          ]
+          }
         }
       }
     },

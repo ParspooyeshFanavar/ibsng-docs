@@ -96,92 +96,80 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "admin_id",
-              "description": "",
+          "properties": {
+            "admin_id": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "username",
-              "description": "",
+            "username": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "name",
-              "description": "",
+            "name": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "email",
-              "description": "",
+            "email": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "comment",
-              "description": "",
+            "comment": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "isp_name",
-              "description": "",
+            "isp_name": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "creator_admin_username",
-              "description": "",
+            "creator_admin_username": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "locked",
-              "description": "",
+            "locked": {
+              "title": "",
               "schema": {
                 "type": "boolean"
               }
             },
-            {
-              "name": "last_request_ip",
-              "description": "",
+            "last_request_ip": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "last_activity",
-              "description": "Epoch Time of admin's last activity",
+            "last_activity": {
+              "title": "Epoch Time of admin's last activity",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "online_status",
-              "description": "true if online, false if offline",
+            "online_status": {
+              "title": "true if online, false if offline",
               "schema": {
                 "type": "boolean"
               }
             },
-            {
-              "name": "admin_has_otp",
-              "description": "",
+            "admin_has_otp": {
+              "title": "",
               "schema": {
                 "type": "boolean"
               }
             }
-          ]
+          }
         }
       }
     },
@@ -204,15 +192,14 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "isp_id",
-              "description": "",
+          "properties": {
+            "isp_id": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             }
-          ]
+          }
         }
       }
     },
@@ -492,17 +479,15 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "total_rows",
-              "description": "Number of total rows",
+          "properties": {
+            "total_rows": {
+              "title": "Number of total rows",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "report",
-              "description": "",
+            "report": {
+              "title": "",
               "schema": {
                 "type": "array",
                 "items": {
@@ -583,7 +568,7 @@
                 }
               }
             }
-          ]
+          }
         }
       }
     },

@@ -74,15 +74,14 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "customer_id",
-              "description": "return customer id that add",
+          "properties": {
+            "customer_id": {
+              "title": "return customer id that add",
               "schema": {
                 "type": "number"
               }
             }
-          ]
+          }
         }
       }
     },
@@ -114,75 +113,66 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "customer_id",
-              "description": "",
+          "properties": {
+            "customer_id": {
+              "title": "",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "uid",
-              "description": "",
+            "uid": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "customer_name",
-              "description": "",
+            "customer_name": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "customer_name_op",
+            "customer_name_op": {
+              "title": "",
               "value": ["like", "ilike", "starts_with", "ends_with", "equals"]
             },
-            {
-              "name": "isp_name",
-              "description": "",
+            "isp_name": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "address",
-              "description": "",
+            "address": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "mobile_number",
-              "description": "",
+            "mobile_number": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "phone_number",
-              "description": "",
+            "phone_number": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "email",
-              "description": "",
+            "email": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "comment",
-              "description": "",
+            "comment": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             }
-          ]
+          }
         }
       }
     },
@@ -344,17 +334,15 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "total_rows",
-              "description": "Number of total rows",
+          "properties": {
+            "total_rows": {
+              "title": "Number of total rows",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "report",
-              "description": "",
+            "report": {
+              "title": "",
               "schema": {
                 "type": "array",
                 "items": {
@@ -428,7 +416,7 @@
                 }
               }
             }
-          ]
+          }
         }
       }
     }

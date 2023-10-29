@@ -163,15 +163,14 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "user_id",
-              "description": "show user_id, content of this field is:",
+          "properties": {
+            "user_id": {
+              "title": "show user_id, content of this field is:",
               "schema": {
                 "type": "object"
               }
             }
-          ]
+          }
         }
       }
     },
@@ -696,29 +695,26 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "id",
-              "description": "return null if enter correct parameters",
+          "properties": {
+            "id": {
+              "title": "return null if enter correct parameters",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "result",
-              "description": "return true if enter correct parameters",
+            "result": {
+              "title": "return true if enter correct parameters",
               "schema": {
                 "type": "boolean"
               }
             },
-            {
-              "name": "error",
-              "description": "return null if enter correct parameters",
+            "error": {
+              "title": "return null if enter correct parameters",
               "schema": {
                 "type": "string"
               }
             }
-          ]
+          }
         }
       }
     },
@@ -978,52 +974,45 @@
         "schema": {
           "title": "",
           "type": "object",
-          "items": [
-            {
-              "name": "action_id",
-              "description": "",
+          "properties": {
+            "action_id": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "action_name",
-              "description": "",
+            "action_name": {
+              "title": "",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "conds",
-              "description": "",
+            "conds": {
+              "title": "",
               "schema": {
                 "type": "object"
               }
             },
-            {
-              "name": "requester_id",
-              "description": "Admin ID",
+            "requester_id": {
+              "title": "Admin ID",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "requester_username",
-              "description": "Admin Username",
+            "requester_username": {
+              "title": "Admin Username",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "remote_ip",
-              "description": "Admin's Remote IP",
+            "remote_ip": {
+              "title": "Admin's Remote IP",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "action_timing",
-              "description": "",
+            "action_timing": {
+              "title": "",
               "schema": {
                 "type": "array",
                 "items": [
@@ -1041,63 +1030,55 @@
                 "length": "2"
               }
             },
-            {
-              "name": "formated_start_date",
-              "description": "start datetime string, depending on input date_type",
+            "formated_start_date": {
+              "title": "start datetime string, depending on input date_type",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "formated_end_date",
-              "description": "end datetime string, depending on input date_type",
+            "formated_end_date": {
+              "title": "end datetime string, depending on input date_type",
               "schema": {
                 "type": "string"
               }
             },
-            {
-              "name": "matched_users_count",
-              "description": "number of all matched users",
+            "matched_users_count": {
+              "title": "number of all matched users",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "checked_users_count",
-              "description": "number of done users",
+            "checked_users_count": {
+              "title": "number of done users",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "action_progress",
-              "description": "percentage of progress (0 to 100)",
+            "action_progress": {
+              "title": "percentage of progress (0 to 100)",
               "schema": {
                 "type": "number"
               }
             },
-            {
-              "name": "canceled",
-              "description": "true if the action is canceled",
+            "canceled": {
+              "title": "true if the action is canceled",
               "schema": {
                 "type": "boolean"
               }
             },
-            {
-              "name": "failed",
-              "description": "true if the action is failed",
+            "failed": {
+              "title": "true if the action is failed",
               "schema": {
                 "type": "boolean"
               }
             },
-            {
-              "name": "messages",
-              "description": "list of messages (strings)",
+            "messages": {
+              "title": "list of messages (strings)",
               "schema": {
                 "type": "array"
               }
             }
-          ]
+          }
         }
       }
     },
