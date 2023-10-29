@@ -2106,7 +2106,9 @@
     <method name="adminSearchReceivedMessage" auth_type="ADMIN" requires_perm="SEE MESSAGE CENTER REPORTS" comment="Messages of ISP">
       <input type="dict">
         <param name="conds" type="dict" comment="">
-          <param name="owner_type" value="ISP" comment="" />
+          <param name="owner_type" type="choice" comment="">
+            <choice value="ISP" />
+          </param>
           <param name="isp_ids" type="int" multi_str="true" optional="true" comment="" />
           <param name="message_ids" type="int" multi_str="true" optional="true" comment="" />
           <param name="receive_date_from" type="datetime, float" optional="true" requires_param="receive_date_from_unit" comment="" />
@@ -2263,7 +2265,9 @@
     <method name="adminSearchSentMessage" auth_type="ADMIN" requires_perm="SEE MESSAGE CENTER REPORTS" comment="Messages of Users">
       <input type="dict">
         <param name="conds" type="dict" comment="">
-          <param name="owner_type" value="USER" comment="" />
+          <param name="owner_type" type="choice" comment="">
+            <choice value="USER" />
+          </param>
           <param name="user_ids" type="int" multi_str="true" optional="true" comment="" />
           <param name="user_deleted" type="bool" optional="true" comment="" />
           <param name="message_ids" type="int" multi_str="true" optional="true" comment="" />
@@ -2342,7 +2346,9 @@
     <method name="adminSearchSentMessage" auth_type="ADMIN" requires_perm="SEE MESSAGE CENTER REPORTS" comment="Messages of ISP">
       <input type="dict">
         <param name="conds" type="dict" comment="">
-          <param name="owner_type" value="ISP" comment="" />
+          <param name="owner_type" type="choice" comment="">
+            <choice value="ISP" />
+          </param>
           <param name="isp_ids" type="int" multi_str="true" optional="true" comment="" />
           <param name="message_ids" type="int" multi_str="true" optional="true" comment="" />
           <param name="transfer_date_from" type="datetime, float" optional="true" requires_param="transfer_date_from_unit" comment="" />
@@ -6702,19 +6708,19 @@
           <param name="notification_last_bill_cycle_threshold" type="str" optional="true" comment="which is the last threshold of bill cycle end which IBSng sent it" />
           <param name="notification_last_exp_threshold" type="str" optional="true" comment="which is the last threshold of expiration date  which IBSng sent it" />
           <param name="notification_last_credit1_threshold" type="str" optional="true" comment="which is the last threshold of credit which IBSng sent it" />
-          <param name="unpaid_bill_cycle_end" type="date_str" optional="true" comment="Which is unpaid bill cycle" />
-          <param name="bill_cycle_start" type="date_str" optional="true" comment="which is the bill cycle start" />
-          <param name="bill_cycle_end" type="date_str" optional="true" comment="Which is the bill cycle start" />
+          <param name="unpaid_bill_cycle_end" type="datetime" optional="true" comment="Which is unpaid bill cycle" />
+          <param name="bill_cycle_start" type="datetime" optional="true" comment="which is the bill cycle start" />
+          <param name="bill_cycle_end" type="datetime" optional="true" comment="Which is the bill cycle start" />
 
-          <param name="announce_credit_threshold" type="string" optional="true"
+          <param name="announce_credit_threshold" type="str" optional="true"
                  comment="The threshold to which an announcement will be player for subscriber"/>
-          <param name="chakavak_area_code" type="string" optional="true" comment="Area code of user"/>
+          <param name="chakavak_area_code" type="str" optional="true" comment="Area code of user"/>
           <param name="chakavak_call_blocking_status" type="choice" optional="true" comment="Call blocking">
             <choice value="ONEWAY" comment=""/>
             <choice value="TWOWAY" comment=""/>
             <choice value="BARRED" comment=""/>
           </param>
-          <param name="chakavak_callerid_name" type="string" optional="true"
+          <param name="chakavak_callerid_name" type="str" optional="true"
                  comment="Name of caller id which will be sent for user"/>
           <param name="chakavak_capabilities" type="list" length="-1" item_type="choice" optional="true"
                  comment="Available capabilities for user">
@@ -6723,7 +6729,7 @@
               <choice value="DIVERT" comment=""/>
             </item>
           </param>
-          <param name="chakavak_cc_code" type="string" optional="true" comment=""/>
+          <param name="chakavak_cc_code" type="str" optional="true" comment=""/>
           <param name="chakavak_codec" type="choice" optional="true" comment="Set of codecs user can use">
             <choice value="iLBC@30i" comment=""/>
             <choice value="speex@8000h@20i" comment=""/>
@@ -6749,28 +6755,28 @@
             <choice value="H263-2000" comment=""/>
             <choice value="H264" comment=""/>
           </param>
-          <param name="chakavak_codec_negotiation" type="string" optional="true"
+          <param name="chakavak_codec_negotiation" type="str" optional="true"
                  comment="Perform Early or Late negotiation. Overrides switch defaults">
             <choice value="late" comment=""/>
             <choice value="early" comment=""/>
           </param>
-          <param name="chakavak_codec_transcoding" type="string" optional="true"
+          <param name="chakavak_codec_transcoding" type="str" optional="true"
                  comment="Allow/Disallow transcoding for user">
             <choice value="Enable" comment=""/>
             <choice value="Disable" comment=""/>
           </param>
-          <param name="divert_number_unconditional" type="string" optional="true"
+          <param name="divert_number_unconditional" type="str" optional="true"
                  comment="Unconditional divert number"/>
-          <param name="divert_number_busy" type="string" optional="true" comment="Busy divert number"/>
-          <param name="divert_number_noanswer" type="string" optional="true" comment="No answer divert number"/>
-          <param name="chakavak_limit_client_ip" type="string" optional="true"
+          <param name="divert_number_busy" type="str" optional="true" comment="Busy divert number"/>
+          <param name="divert_number_noanswer" type="str" optional="true" comment="No answer divert number"/>
+          <param name="chakavak_limit_client_ip" type="str" optional="true"
                  comment="List of IP's user allowed to register from (comma separated list of IP's)"/>
-          <param name="chakavak_location" type="string" optional="true" comment="Location of user. Currently unused"/>
-          <param name="chakavak_ringback" type="string" optional="true"
+          <param name="chakavak_location" type="str" optional="true" comment="Location of user. Currently unused"/>
+          <param name="chakavak_ringback" type="str" optional="true"
                  comment="Name of ringback file. Ringbacks should be defined in a separate system and just the selected ringback will be kept in user profile"/>
-          <param name="chakavak_sip_password" type="string" optional="true"
+          <param name="chakavak_sip_password" type="str" optional="true"
                  comment="SIP password. This is different from voip_password and is just used for sip registration"/>
-          <param name="chakavak_voicemail" type="string" optional="true" comment="Voice mail password (Digits only)"/>
+          <param name="chakavak_voicemail" type="str" optional="true" comment="Voice mail password (Digits only)"/>
         </param>
         <param name="to_del_attrs" type="list" comment="list of attributes to be deleted" />
       </input>
