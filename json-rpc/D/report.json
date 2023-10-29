@@ -432,14 +432,16 @@
                       "name": "session_start_time",
                       "description": "datetime, ",
                       "schema": {
-                        "type": "string"
+                        "type": "string",
+                        "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
                       }
                     },
                     {
                       "name": "session_stop_time",
                       "description": "datetime, ",
                       "schema": {
-                        "type": "string"
+                        "type": "string",
+                        "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
                       }
                     },
                     {
@@ -846,14 +848,16 @@
                       "name": "session_start_time",
                       "description": "datetime, ",
                       "schema": {
-                        "type": "string"
+                        "type": "string",
+                        "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
                       }
                     },
                     {
                       "name": "session_stop_time",
                       "description": "datetime, ",
                       "schema": {
-                        "type": "string"
+                        "type": "string",
+                        "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
                       }
                     },
                     {
@@ -2812,7 +2816,8 @@
                       "name": "isp_deposit_change_time_formatted",
                       "description": "datetime, Change time, depending on input date_type",
                       "schema": {
-                        "type": "string"
+                        "type": "string",
+                        "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
                       }
                     }
                   ]

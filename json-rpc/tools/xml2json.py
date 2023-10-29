@@ -9,8 +9,6 @@ from lxml import etree
 from lxml.etree import _Element as Element
 from lxml.etree import tostring
 
-import jsbeautifier
-
 paramTypeMapping = {
 	"str": ("string", ""),
 	"srt": ("string", ""),
@@ -51,8 +49,6 @@ def toStr(elem):
 
 
 def dataToPrettyJson(data):
-	# return encoder.encode(data)
-	# return jsbeautifier.beautify(json.dumps(data), options)
 	return json.dumps(
 		data,
 		sort_keys=False,
@@ -180,6 +176,9 @@ def getJsonParam(param: "Element") -> dict:
 		schema = {
 			"type": newParamType,
 		}		
+	if paramType in ("datetime", "str_datetime"):
+		# %Y-%m-%d %H:%M:%S or %Y-%m-%d %H:%M
+		schema["pattern"] = "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
 	paramJson = {}
 	if paramName:
 		paramJson["name"] = paramName

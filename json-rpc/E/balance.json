@@ -43,7 +43,8 @@
           "name": "valid_for_start",
           "description": "datetime, ",
           "schema": {
-            "type": "string"
+            "type": "string",
+            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
           }
         },
         {
@@ -55,7 +56,8 @@
           "name": "valid_for_end",
           "description": "datetime, ",
           "schema": {
-            "type": "string"
+            "type": "string",
+            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
           }
         },
         {
@@ -275,7 +277,8 @@
           "name": "valid_for_start",
           "description": "datetime, ",
           "schema": {
-            "type": "string"
+            "type": "string",
+            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
           }
         },
         {
@@ -287,7 +290,8 @@
           "name": "valid_for_end",
           "description": "datetime, ",
           "schema": {
-            "type": "string"
+            "type": "string",
+            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
           }
         },
         {

@@ -162,7 +162,8 @@
               "name": "deleted_at",
               "description": "datetime, date time of delete data uploaded",
               "schema": {
-                "type": "string"
+                "type": "string",
+                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
               }
             },
             {
@@ -176,7 +177,8 @@
               "name": "modified_at",
               "description": "datetime, date time of change in recorde in import_files row",
               "schema": {
-                "type": "string"
+                "type": "string",
+                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
               }
             },
             {
@@ -197,7 +199,8 @@
               "name": "created_at",
               "description": "datetime, date time of create recorde",
               "schema": {
-                "type": "string"
+                "type": "string",
+                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
               }
             },
             {
@@ -299,7 +302,8 @@
               "name": "created_at",
               "description": "datetime, date time of created recorde",
               "schema": {
-                "type": "string"
+                "type": "string",
+                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
               }
             },
             {
