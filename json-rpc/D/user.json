@@ -52,7 +52,7 @@
           "schema": {
             "type": "object"
           },
-          "optional": true
+          "required": false
         }
       ],
       "result": {
@@ -96,7 +96,7 @@
               "schema": {
                 "type": "boolean"
               },
-              "optional": true
+              "required": false
             },
             {
               "name": "user_repr",
@@ -150,7 +150,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "normal_username",
@@ -158,7 +158,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "voip_username",
@@ -166,7 +166,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "serial",
@@ -174,7 +174,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "phone",
@@ -182,7 +182,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "rempte_ip",
@@ -190,7 +190,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         }
       ],
       "result": {
@@ -628,7 +628,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "abs_exp_date_from_unit",
@@ -649,7 +649,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "abs_exp_date_to_unit",
@@ -670,7 +670,7 @@
           "schema": {
             "type": "boolean"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "allow_user_disconnect",
@@ -678,7 +678,7 @@
           "schema": {
             "type": "boolean"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "assign_dns",
@@ -686,7 +686,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "assign_dns_op",
@@ -699,7 +699,7 @@
           "schema": {
             "type": "boolean"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "assign_ip",
@@ -707,7 +707,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "assign_ip_op",
@@ -720,7 +720,7 @@
           "schema": {
             "type": "boolean"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "assign_netmask",
@@ -728,7 +728,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "assign_netmask_op",
@@ -741,7 +741,7 @@
           "schema": {
             "type": "boolean"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "assign_route_ip",
@@ -749,7 +749,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "assign_route_ip_op",
@@ -762,7 +762,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "asterisk_did_destination",
@@ -770,7 +770,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "asterisk_did_peer_address",
@@ -778,7 +778,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "auto_recharge",
@@ -786,7 +786,7 @@
           "schema": {
             "type": "boolean"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "auto_renew",
@@ -794,7 +794,7 @@
           "schema": {
             "type": "boolean"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "auto_renew_do_not_reset_credit",
@@ -802,7 +802,7 @@
           "schema": {
             "type": "boolean"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "caller_id",
@@ -810,7 +810,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "caller_id_op",
@@ -823,7 +823,7 @@
           "schema": {
             "type": "array"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "comment",
@@ -831,7 +831,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "comment_op",
@@ -844,7 +844,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "name_op",
@@ -857,7 +857,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "postal_code_op",
@@ -870,7 +870,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "phone_op",
@@ -883,7 +883,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "cell_phone_op",
@@ -896,7 +896,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "email_op",
@@ -909,7 +909,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "birthdate_unit",
@@ -935,7 +935,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "address_op",
@@ -948,7 +948,7 @@
           "schema": {
             "type": "boolean"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "creation_date_from",
@@ -956,7 +956,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "creation_date_from_unit",
@@ -977,7 +977,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "creation_date_to_unit",
@@ -998,7 +998,7 @@
           "schema": {
             "type": "number"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "credit_op",
@@ -1011,7 +1011,7 @@
           "schema": {
             "type": "boolean"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "custom_field_test_integer",
@@ -1019,7 +1019,7 @@
           "schema": {
             "type": "number"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "custom_field_test_integer_op",
@@ -1032,7 +1032,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "custom_field_test_string_op",
@@ -1045,7 +1045,7 @@
           "schema": {
             "type": "boolean"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "deposit",
@@ -1053,7 +1053,7 @@
           "schema": {
             "type": "number"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "deposit_op",
@@ -1066,7 +1066,7 @@
           "schema": {
             "type": "number"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "deposit_recharge_op",
@@ -1079,7 +1079,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "email_address_op",
@@ -1092,7 +1092,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "user_value_exp_from_creation_date_from_unit",
@@ -1113,7 +1113,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "user_value_exp_from_creation_date_to_unit",
@@ -1134,7 +1134,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "user_value_exp_from_first_login_from_unit",
@@ -1155,7 +1155,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "user_value_exp_from_first_login_to_unit",
@@ -1176,7 +1176,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "exp_from_renew_user_value_from_unit",
@@ -1197,7 +1197,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "exp_from_renew_user_value_to_unit",
@@ -1218,7 +1218,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "exp_monthly_user_value_from_unit",
@@ -1239,7 +1239,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "exp_monthly_user_value_to_unit",
@@ -1260,7 +1260,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "first_login_from_unit",
@@ -1281,7 +1281,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "first_login_to_unit",
@@ -1302,7 +1302,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "real_first_login_from_unit",
@@ -1323,7 +1323,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "real_first_login_to_unit",
@@ -1344,7 +1344,7 @@
           "schema": {
             "type": "array"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "in_ras_ippool",
@@ -1352,7 +1352,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "in_ras_ippool_op",
@@ -1365,7 +1365,7 @@
           "schema": {
             "type": "array"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "is_online",
@@ -1373,7 +1373,7 @@
           "schema": {
             "type": "boolean"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "online_status",
@@ -1381,7 +1381,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "from",
@@ -1507,7 +1507,7 @@
           "schema": {
             "type": "boolean"
           },
-          "optional": true
+          "required": false
         }
       ],
       "result": {
@@ -1538,7 +1538,7 @@
           "schema": {
             "type": "boolean"
           },
-          "optional": true
+          "required": false
         }
       ],
       "result": {
@@ -2321,7 +2321,7 @@
           "schema": {
             "type": "boolean"
           },
-          "optional": true
+          "required": false
         }
       ],
       "result": {

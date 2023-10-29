@@ -17,7 +17,7 @@
           "schema": {
             "type": "number"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "from",
@@ -25,7 +25,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "from_unit",
@@ -33,7 +33,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         }
       ],
       "result": {
@@ -56,7 +56,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "from_unit",
@@ -64,7 +64,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         }
       ],
       "result": {

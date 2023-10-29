@@ -16,7 +16,7 @@
           "schema": {
             "type": "number"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "only_unread",
@@ -24,7 +24,7 @@
           "schema": {
             "type": "boolean"
           },
-          "optional": true
+          "required": false
         }
       ],
       "result": {

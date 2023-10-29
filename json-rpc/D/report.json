@@ -100,7 +100,7 @@
           "schema": {
             "type": "object"
           },
-          "optional": true
+          "required": false
         }
       ],
       "result": {
@@ -492,7 +492,7 @@
                       "schema": {
                         "type": "string"
                       },
-                      "optional": true
+                      "required": false
                     },
                     {
                       "name": "cpm",
@@ -500,7 +500,7 @@
                       "schema": {
                         "type": "number"
                       },
-                      "optional": true
+                      "required": false
                     },
                     {
                       "name": "kill_time",
@@ -522,7 +522,7 @@
                       "schema": {
                         "type": "string"
                       },
-                      "optional": true
+                      "required": false
                     },
                     {
                       "name": "remote_ip",
@@ -530,7 +530,7 @@
                       "schema": {
                         "type": "string"
                       },
-                      "optional": true
+                      "required": false
                     },
                     {
                       "name": "mac",
@@ -538,7 +538,7 @@
                       "schema": {
                         "type": "string"
                       },
-                      "optional": true
+                      "required": false
                     },
                     {
                       "name": "bytes_in",
@@ -546,7 +546,7 @@
                       "schema": {
                         "type": "number"
                       },
-                      "optional": true
+                      "required": false
                     },
                     {
                       "name": "bytes_out",
@@ -554,7 +554,7 @@
                       "schema": {
                         "type": "number"
                       },
-                      "optional": true
+                      "required": false
                     },
                     {
                       "name": "station_ip",
@@ -562,7 +562,7 @@
                       "schema": {
                         "type": "string"
                       },
-                      "optional": true
+                      "required": false
                     },
                     {
                       "name": "details",
@@ -577,7 +577,7 @@
                       "schema": {
                         "type": "string"
                       },
-                      "optional": true
+                      "required": false
                     },
                     {
                       "name": "prefix_name",
@@ -585,7 +585,7 @@
                       "schema": {
                         "type": "string"
                       },
-                      "optional": true
+                      "required": false
                     },
                     {
                       "name": "prefix_cpm",
@@ -593,7 +593,7 @@
                       "schema": {
                         "type": "number"
                       },
-                      "optional": true
+                      "required": false
                     },
                     {
                       "name": "called_number",
@@ -601,7 +601,7 @@
                       "schema": {
                         "type": "string"
                       },
-                      "optional": true
+                      "required": false
                     },
                     {
                       "name": "charge_rule_details",
@@ -637,7 +637,7 @@
                       "schema": {
                         "type": "string"
                       },
-                      "optional": true
+                      "required": false
                     },
                     {
                       "name": "called_ip",
@@ -645,7 +645,7 @@
                       "schema": {
                         "type": "string"
                       },
-                      "optional": true
+                      "required": false
                     },
                     {
                       "name": "prefix_code",
@@ -653,7 +653,7 @@
                       "schema": {
                         "type": "string"
                       },
-                      "optional": true
+                      "required": false
                     },
                     {
                       "name": "voip_provider_id",
@@ -661,7 +661,7 @@
                       "schema": {
                         "type": "number"
                       },
-                      "optional": true
+                      "required": false
                     },
                     {
                       "name": "voip_provider",
@@ -669,7 +669,7 @@
                       "schema": {
                         "type": "string"
                       },
-                      "optional": true
+                      "required": false
                     },
                     {
                       "name": "voip_provider_ip",
@@ -677,7 +677,7 @@
                       "schema": {
                         "type": "string"
                       },
-                      "optional": true
+                      "required": false
                     },
                     {
                       "name": "voip_provider_credit_used",
@@ -685,7 +685,7 @@
                       "schema": {
                         "type": "number"
                       },
-                      "optional": true
+                      "required": false
                     },
                     {
                       "name": "voip_provider_prefix_name",
@@ -693,7 +693,7 @@
                       "schema": {
                         "type": "string"
                       },
-                      "optional": true
+                      "required": false
                     },
                     {
                       "name": "voip_provider_prefix_code",
@@ -701,7 +701,7 @@
                       "schema": {
                         "type": "string"
                       },
-                      "optional": true
+                      "required": false
                     },
                     {
                       "name": "voip_provider_cpm",
@@ -709,7 +709,7 @@
                       "schema": {
                         "type": "number"
                       },
-                      "optional": true
+                      "required": false
                     },
                     {
                       "name": "disconnect_cause",
@@ -717,7 +717,7 @@
                       "schema": {
                         "type": "string"
                       },
-                      "optional": true
+                      "required": false
                     }
                   ]
                 }
@@ -901,7 +901,7 @@
                       "schema": {
                         "type": "string"
                       },
-                      "optional": true
+                      "required": false
                     },
                     {
                       "name": "cpm",
@@ -909,7 +909,7 @@
                       "schema": {
                         "type": "number"
                       },
-                      "optional": true
+                      "required": false
                     },
                     {
                       "name": "persistent_lan",
@@ -917,7 +917,7 @@
                       "schema": {
                         "type": "string"
                       },
-                      "optional": true
+                      "required": false
                     },
                     {
                       "name": "kill_reason",
@@ -932,7 +932,7 @@
                       "schema": {
                         "type": "string"
                       },
-                      "optional": true
+                      "required": false
                     },
                     {
                       "name": "remote_ip",
@@ -940,7 +940,7 @@
                       "schema": {
                         "type": "string"
                       },
-                      "optional": true
+                      "required": false
                     },
                     {
                       "name": "mac",
@@ -948,7 +948,7 @@
                       "schema": {
                         "type": "string"
                       },
-                      "optional": true
+                      "required": false
                     },
                     {
                       "name": "bytes_in",
@@ -956,7 +956,7 @@
                       "schema": {
                         "type": "number"
                       },
-                      "optional": true
+                      "required": false
                     },
                     {
                       "name": "bytes_out",
@@ -964,7 +964,7 @@
                       "schema": {
                         "type": "number"
                       },
-                      "optional": true
+                      "required": false
                     },
                     {
                       "name": "station_ip",
@@ -972,7 +972,7 @@
                       "schema": {
                         "type": "string"
                       },
-                      "optional": true
+                      "required": false
                     },
                     {
                       "name": "details",
@@ -987,7 +987,7 @@
                       "schema": {
                         "type": "string"
                       },
-                      "optional": true
+                      "required": false
                     },
                     {
                       "name": "prefix_name",
@@ -995,7 +995,7 @@
                       "schema": {
                         "type": "string"
                       },
-                      "optional": true
+                      "required": false
                     },
                     {
                       "name": "prefix_cpm",
@@ -1003,7 +1003,7 @@
                       "schema": {
                         "type": "number"
                       },
-                      "optional": true
+                      "required": false
                     },
                     {
                       "name": "called_number",
@@ -1011,7 +1011,7 @@
                       "schema": {
                         "type": "string"
                       },
-                      "optional": true
+                      "required": false
                     }
                   ]
                 }
@@ -2597,7 +2597,7 @@
                       "schema": {
                         "type": "string"
                       },
-                      "optional": true
+                      "required": false
                     }
                   ]
                 }

@@ -97,7 +97,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "customer_id",
@@ -105,7 +105,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         }
       ],
       "result": {
@@ -198,7 +198,7 @@
           "schema": {
             "type": "number"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "uid",
@@ -206,7 +206,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "customer_name",
@@ -279,7 +279,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "customer_id",
@@ -287,7 +287,7 @@
           "schema": {
             "type": "number"
           },
-          "optional": true
+          "required": false
         }
       ],
       "result": {

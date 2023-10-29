@@ -187,7 +187,7 @@ def getJsonParam(param: "Element") -> dict:
 		"schema": schema,
 	})
 	if param.attrib.get("optional"):
-		paramJson["optional"] = True
+		paramJson["required"] = False
 	return paramJson
 
 
@@ -288,6 +288,7 @@ def getJsonMethod(handlerName: str, method: "Element", authTypes: list[str]):
 	if resultValues is not None:
 		result["value"] = resultValues
 	jsonMethod["result"] = result
+	# jsonMethod["errors"] = []
 	return jsonMethod
 
 

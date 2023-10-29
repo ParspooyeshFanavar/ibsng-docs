@@ -92,7 +92,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         }
       ],
       "result": {

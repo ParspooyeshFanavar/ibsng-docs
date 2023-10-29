@@ -220,7 +220,7 @@
           "schema": {
             "type": "string"
           },
-          "optional": true
+          "required": false
         },
         {
           "name": "balance_id",
@@ -228,7 +228,7 @@
           "schema": {
             "type": "number"
           },
-          "optional": true
+          "required": false
         }
       ],
       "result": {
@@ -403,7 +403,7 @@
           "schema": {
             "type": "boolean"
           },
-          "optional": true
+          "required": false
         }
       ],
       "result": {
