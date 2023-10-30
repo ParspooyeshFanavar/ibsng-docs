@@ -5756,8 +5756,7 @@
     </method>
     <method name="getRasBWSnapShot" auth_type="ADMIN" requires_perm="" comment="">
       <input type="dict">
-        <key type="str" comment="reporting condition" />
-        <value type="dict" comment="">
+        <param name="conds" type="dict" comment="reporting condition">
           <param name="ras_ips" type="str" comment="list of ras ips"/>
           <param name="date_from" type="str" comment="start date and time, format '%Y-%m-%d %H:%M'"/>
           <param name="date_to" type="str" comment="start date and time, format '%Y-%m-%d %H:%M'"/>
@@ -5793,7 +5792,7 @@
             <choice value="&lt;=" comment="less equal" />
             <choice value="&gt;=" comment="more equal" />
           </param>
-        </value>
+        </param>
       </input>
       <output type="list" length="3" comment="">
         <item index="0" type="int" comment="epoch time" />
