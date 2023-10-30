@@ -497,7 +497,9 @@
               },
               "is_locked": {
                 "title": "",
-                "type": "boolean"
+                "type": "boolean",
+                "required": false,
+                "default": "false"
               },
               "credit": {
                 "title": "",

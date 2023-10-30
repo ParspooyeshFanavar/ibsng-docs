@@ -169,6 +169,8 @@
                 {
                   "name": "rule_id",
                   "description": "leave -1 for new rules",
+                  "required": false,
+                  "default": "-1",
                   "type": "number"
                 },
                 {

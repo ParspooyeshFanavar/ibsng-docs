@@ -87,6 +87,7 @@ def getChoiceJsonParam(param: "Element") -> dict:
 	description = param.attrib.get("comment")
 	values = []
 	comments = {}
+	default = None
 	for choiceElem in param.getchildren():
 		if choiceElem.tag != "choice":
 			# print(f"getChoiceJsonParam: expected choice tag, got {toStr(choiceElem)}")
@@ -99,6 +100,8 @@ def getChoiceJsonParam(param: "Element") -> dict:
 		comment = choiceElem.attrib.get("comment")
 		if comment:
 			comments[value] = comment
+		if choiceElem.attrib.get("default"):
+			default = value
 	if not values:
 		print(f"choice with no values: {toStr(param)}")
 	paramJson = {}
@@ -107,6 +110,10 @@ def getChoiceJsonParam(param: "Element") -> dict:
 	if description is not None:
 		paramJson["description"] = description
 	paramJson["enum"] = values
+	if default is not None:
+		#if default in ("true", "false"):
+		#	default = default == "true"
+		paramJson["default"] = default
 	if comments:
 		paramJson["value_comment"] = comments
 	return paramJson
@@ -224,6 +231,16 @@ def setDictParamsSchema(param: "Element", schema: dict):
 
 
 
+def addParamExtraAttrs(param: "Element", paramJson: dict):
+	default = param.attrib.get("default")
+	if default is not None:
+		paramJson["required"] = False
+		paramJson["default"] = default
+	elif param.attrib.get("optional"):
+		paramJson["required"] = False
+
+
+
 def getJsonParam(param: "Element") -> dict:
 	paramName = param.attrib.get("name")
 
@@ -254,8 +271,7 @@ def getJsonParam(param: "Element") -> dict:
 			#	"type": newType.type,
 			#},
 		}
-		if param.attrib.get("optional"):
-			paramJson["required"] = False
+		addParamExtraAttrs(param, paramJson)
 		return paramJson
 
 	if newType.comment:
@@ -279,8 +295,7 @@ def getJsonParam(param: "Element") -> dict:
 		"description": description,
 		"schema": schema,
 	})
-	if param.attrib.get("optional"):
-		paramJson["required"] = False
+	addParamExtraAttrs(param, paramJson)
 	return paramJson
 
 

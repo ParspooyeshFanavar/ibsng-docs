@@ -1322,6 +1322,7 @@
                   "normal_username_random_type": {
                     "title": "",
                     "enum": ["0", "1", "2"],
+                    "default": "2",
                     "value_comment": {
                       "0": "alphanumeric abcdefghijkmnpqrstuvwxyz23456789",
                       "1": "alphabet only abcdefghijklmnopqrstuvwxyz",
@@ -1341,6 +1342,7 @@
                   "normal_password_random_type": {
                     "title": "",
                     "enum": ["0", "1", "2"],
+                    "default": "2",
                     "value_comment": {
                       "0": "alphanumeric abcdefghijkmnpqrstuvwxyz23456789",
                       "1": "alphabet only abcdefghijklmnopqrstuvwxyz",
@@ -1377,6 +1379,7 @@
                   "voip_username_random_type": {
                     "title": "",
                     "enum": ["0", "1", "2"],
+                    "default": "2",
                     "value_comment": {
                       "0": "alphanumeric abcdefghijkmnpqrstuvwxyz23456789",
                       "1": "alphabet only abcdefghijklmnopqrstuvwxyz",
@@ -1396,6 +1399,7 @@
                   "voip_password_random_type": {
                     "title": "",
                     "enum": ["0", "1", "2"],
+                    "default": "2",
                     "value_comment": {
                       "0": "alphanumeric abcdefghijkmnpqrstuvwxyz23456789",
                       "1": "alphabet only abcdefghijklmnopqrstuvwxyz",
@@ -3868,7 +3872,8 @@
           "schema": {
             "type": "boolean"
           },
-          "required": false
+          "required": false,
+          "default": "true"
         }
       ],
       "result": {
@@ -3899,7 +3904,8 @@
           "schema": {
             "type": "boolean"
           },
-          "required": false
+          "required": false,
+          "default": "true"
         }
       ],
       "result": {
@@ -4669,7 +4675,8 @@
           "schema": {
             "type": "boolean"
           },
-          "required": false
+          "required": false,
+          "default": "true"
         }
       ],
       "result": {

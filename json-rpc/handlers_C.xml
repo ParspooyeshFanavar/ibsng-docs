@@ -8594,7 +8594,7 @@
       <input type="dict">
         <param name="batch_dict" type="dict" comment="">
           <param name="batch_name" type="str" comment="" />
-          <param name="is_locked" type="bool" default="False" comment="" />
+          <param name="is_locked" type="bool" default="false" comment="" />
           <param name="credit" type="float" comment="" />
           <param name="can_recharge_user" type="bool" comment="" />
           <param name="can_create_user" type="bool" comment="" />
