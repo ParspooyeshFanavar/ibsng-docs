@@ -454,8 +454,9 @@
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "isp_name": {
-                "title": "lis of ISP(s)",
-                "enum": []
+                "title": "list of ISP(s)",
+                "type": "string",
+                "required": false
               },
               "valid_for_start": {
                 "title": "datetime, ",
@@ -476,16 +477,19 @@
                 "enum": ["gregorian", "jalali"]
               },
               "balance_classes": {
-                "title": "lis of balance classes",
-                "enum": []
+                "title": "list of balance classes",
+                "type": "array",
+                "required": false
               },
               "life_cycle_status": {
-                "title": "lis of balance life cycle status",
-                "enum": []
+                "title": "list of balance life cycle status",
+                "type": "array",
+                "required": false
               },
               "value_type": {
-                "title": "lis of balance value type",
-                "enum": []
+                "title": "list of balance value type",
+                "type": "array",
+                "required": false
               }
             }
           }

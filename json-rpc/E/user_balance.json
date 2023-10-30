@@ -411,7 +411,8 @@
             "properties": {
               "balance_name": {
                 "title": "list of balances that added in system",
-                "enum": []
+                "type": "array",
+                "required": false
               },
               "remote_ip": {
                 "title": "",
@@ -441,15 +442,15 @@
               },
               "admin_name": {
                 "title": "list of admin in system",
-                "enum": []
+                "type": "array"
               },
               "action": {
                 "title": "action list in system",
-                "enum": []
+                "type": "array"
               },
               "isp_name": {
                 "title": "isp list in system",
-                "enum": []
+                "type": "array"
               },
               "user_balance_ids": {
                 "title": "",

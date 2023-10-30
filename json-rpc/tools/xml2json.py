@@ -187,6 +187,9 @@ def getJsonParam(param: "Element") -> dict:
 			"name": paramName,
 			"description": description,
 			"enum": [paramValue],
+			#"schema": {
+			#	"type": newParamType,
+			#},
 		}
 		if param.attrib.get("optional"):
 			paramJson["required"] = False

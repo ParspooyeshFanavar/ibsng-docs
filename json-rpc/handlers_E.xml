@@ -9097,7 +9097,7 @@
             <choice value="minutes" />
           </param>
           <param name="issue_date_to" type="datetime" optional="true" requires_param="issue_date_to_unit" />
-          <param name="issue_date_to_unit" type="" optional="true">
+          <param name="issue_date_to_unit" type="choice" optional="true">
             <choice value="jalali" />
             <choice value="gregorian" />
             <choice value="years" />
@@ -9169,7 +9169,7 @@
             <choice value="minutes" />
           </param>
           <param name="issue_date_to" type="datetime" optional="true" requires_param="issue_date_to_unit" />
-          <param name="issue_date_to_unit" type="" optional="true">
+          <param name="issue_date_to_unit" type="choice" optional="true">
             <choice value="jalali" />
             <choice value="gregorian" />
             <choice value="years" />
@@ -9798,7 +9798,7 @@
               <choice value="ends_with" comment="" />
               <choice value="equals" comment="" />
             </param>
-            <param name="isp_name" type="choice" optional="true" comment="lis of ISP(s)" />
+            <param name="isp_name" type="str" optional="true" comment="list of ISP(s)" />
             <param name="valid_for_start" type="datetime" />
             <param name="valid_for_start_unit" type="choice" optional="true" comment="Date type for output date or datetime params, default is 'gregorian'">
               <choice value="gregorian" comment="" />
@@ -9809,9 +9809,9 @@
               <choice value="gregorian" comment="" />
               <choice value="jalali" comment="" />
             </param>
-            <param name="balance_classes" type="choice" optional="true" comment="lis of balance classes" />
-            <param name="life_cycle_status" type="choice" optional="true" comment="lis of balance life cycle status" />
-            <param name="value_type" type="choice" optional="true" comment="lis of balance value type" />
+            <param name="balance_classes" type="list" optional="true" comment="list of balance classes" />
+            <param name="life_cycle_status" type="list" optional="true" comment="list of balance life cycle status" />
+            <param name="value_type" type="list" optional="true" comment="list of balance value type" />
           </param>
           <param name="sort_by" type="choice">
             <choice value="balance_name" />
@@ -9953,7 +9953,7 @@
     <method name="searchUserBalanceChangeLog" auth_type="ADMIN" request_param="SEE USER BALANCE CHANGES">
       <input type="dict">
         <param name="conds" type="dict" comment="">
-          <param name="balance_name" type="choice" optional="true" comment="list of balances that added in system" />
+          <param name="balance_name" type="list" optional="true" comment="list of balances that added in system" />
           <param name="remote_ip" type="str" comment="" />
           <param name="remote_ip_op" type="choice">
             <choice value="like" comment="" />
@@ -9972,9 +9972,9 @@
             <choice value="gregorian" comment="" />
             <choice value="jalali" comment="" />
           </param>
-          <param name="admin_name" type="choice" comment="list of admin in system" />
-          <param name="action" type="choice" comment="action list in system" />
-          <param name="isp_name" type="choice" comment="isp list in system" />
+          <param name="admin_name" type="list" comment="list of admin in system" />
+          <param name="action" type="list" comment="action list in system" />
+          <param name="isp_name" type="list" comment="isp list in system" />
           <param name="user_balance_ids" type="str" multi_str="true" optional="true" comment="" />
         </param>
         <param name="from" type="int" comment="" />

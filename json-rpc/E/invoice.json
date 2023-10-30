@@ -1259,8 +1259,15 @@
               },
               "issue_date_to_unit": {
                 "title": "",
-                "type": "",
-                "required": false
+                "enum": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
               }
             }
           }
@@ -1496,8 +1503,15 @@
               },
               "issue_date_to_unit": {
                 "title": "",
-                "type": "",
-                "required": false
+                "enum": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
               }
             }
           }

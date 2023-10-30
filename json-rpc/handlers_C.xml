@@ -4181,7 +4181,7 @@
     <method name="getCreditChanges" auth_type="ADMIN" requires_perm="SEE CREDIT CHANGES" comment="User-View Credit Changes">
       <input type="dict">
         <param name="conds" type="dict" comment="">
-          <param name="user_view" value="" optional="false" comment="" />
+          <param name="user_view" type="any" optional="false" comment="" />
           <param name="user_ids" type="str" multi_str="true" optional="true" comment="" />
           <param name="voip_username" type="str" optional="true" comment="" />
           <param name="admin" type="str" optional="true" comment="admin username" />
@@ -4310,7 +4310,7 @@
     <method name="getCreditChanges" auth_type="NORMAL_USER, VOIP_USER" requires_perm="SEE CREDIT CHANGES" comment="User-View Credit Changes by User">
       <input type="dict">
         <param name="conds" type="dict" comment="">
-          <param name="user_view" value="" optional="false" comment="" />
+          <param name="user_view" type="any" optional="false" comment="" />
           <param name="action" type="list" length="-1" optional="true" comment="">
             <item type="choice">
               <choice value="ADD_USER" comment="" />
@@ -6477,7 +6477,7 @@
           <param name="auto_renew_do_not_reset_credit" type="true_if_exists" optional="true" comment="User Info: Flags: Auto Renew No Not Reset Credit" />
           <param name="charge" type="str" optional="true" comment="charge name" />
           <param name="abs_exp_date" type="str" optional="true" requires_param="abs_exp_date_unit" comment="gregorian datetime string" />
-          <param name="abs_exp_date_unit" value="gregorian" optional="true" comment="" />
+          <param name="abs_exp_date_unit" type="str" value="gregorian" optional="true" comment="" />
           <param name="allow_recharge_by_voucher" type="true_if_exists" comment="User Info: Flags: Allow Recharge By Voucher" />
           <param name="allow_user_disconnect" type="true_if_exists" optional="true_if_exists" comment="User Info: Flags: Allow User Disconnect" />
           <param name="assign_dns_1" type="str" optional="true" requires_param="assign_dns_2" comment="" />
