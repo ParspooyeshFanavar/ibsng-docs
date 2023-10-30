@@ -131,12 +131,8 @@
         }
       ],
       "result": {
-        "name": "Response ()",
-        "comment": "type depends on {perm_name}",
-        "schema": {
-          "title": "",
-          "type": ""
-        }
+        "name": "",
+        "comment": "type depends on {perm_name}"
       }
     },
     {

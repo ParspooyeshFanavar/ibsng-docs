@@ -5,43 +5,59 @@ import json
 import os
 from os.path import join
 
+from collections import namedtuple
+
 from lxml import etree
 from lxml.etree import _Element as Element
 from lxml.etree import tostring
 
+ParamType = namedtuple(
+	"ParamType", [
+		"type",
+		"comment",
+		"pattern",
+	],
+	defaults=(
+		"",  # type
+		"",  # comment
+		"",  # pattern
+	),
+)
+
+
 paramTypeMapping = {
-	"any": ("", ""),
+	"any": ParamType(),
 
-	"str": ("string", ""),
-	"srt": ("string", ""),
+	"str": ParamType("string", ""),
+	"srt": ParamType("string", ""),
 
-	"str_int": ("string", ""),
+	"str_int": ParamType("string", ""),
 
-	"int": ("number", ""),
-	"float": ("number", ""),
-	"str_float": ("str", "float as string"),
+	"int": ParamType("number", ""),
+	"float": ParamType("number", ""),
+	"str_float": ParamType("str", "float as string"),
 
-	"datetime": ("string", "datetime"),
-	"datetime, float": (("string", "number"), "datetime or number"),
-	"datetime, null": (("string", "null"), "datetime or null"),
+	"datetime": ParamType("string", "datetime"),
+	"datetime, float": ParamType(("string", "number"), "datetime or number"),
+	"datetime, null": ParamType(("string", "null"), "datetime or null"),
 
-	"bool": ("boolean", ""),
-	"true_if_exists": ("boolean", "true if exists"),
+	"bool": ParamType("boolean", ""),
+	"true_if_exists": ParamType("boolean", "true if exists"),
 
-	"list": ("array", ""),
-	"list, str": (("array", "string"), ""),
+	"list": ParamType("array"),
+	"list, str": ParamType(("array", "string"), ""),
 
-	"dict": ("object", ""),
+	"dict": ParamType("object", ""),
 
-	"null": ("null", ""),
+	"null": ParamType("null", ""),
 	
-	"int, null": (("number", "null"), "int or null"),
-	"dynamic": ("", "dynamic type"),
+	"int, null": ParamType(("number", "null"), "int or null"),
+	"dynamic": ParamType("", "dynamic type"),
 
-	"list, str": (("array", "string"), ""),
-	"list, int": (("array", "number"), "array or int"),
-	"int, list": (("number", "array"), "array or int"),
-	"str, list": (("string", "array"), "array or string"),
+	"list, str": ParamType(("array", "string"), ""),
+	"list, int": ParamType(("array", "number"), "array or int"),
+	"int, list": ParamType(("number", "array"), "array or int"),
+	"str, list": ParamType(("string", "array"), "array or string"),
 }
 
 
@@ -138,9 +154,9 @@ def getMultiTypeListItemSchema(items: "list[Element]") -> "dict | list":
 	return result
 
 
-def getListSchema(elem: "Element", newParamType="array") -> "dict | list":
+def getListSchema(elem: "Element", newType="array") -> "dict | list":
 	schema = {
-		"type": newParamType,
+		"type": newType,
 	}
 	items = elem.findall("item")
 	if items:
@@ -174,9 +190,9 @@ def getJsonParam(param: "Element") -> dict:
 	paramValue = param.attrib.get("value")
 
 	if paramType:
-		newParamType, typeComment = paramTypeMapping[paramType]
+		newType = paramTypeMapping[paramType]
 	else:
-		newParamType, typeComment = "", ""
+		newType = ParamType()
 
 	if paramValue:
 		# like a choice with one value
@@ -185,21 +201,21 @@ def getJsonParam(param: "Element") -> dict:
 			"description": description,
 			"enum": [paramValue],
 			#"schema": {
-			#	"type": newParamType,
+			#	"type": newType.type,
 			#},
 		}
 		if param.attrib.get("optional"):
 			paramJson["required"] = False
 		return paramJson
 
-	if typeComment:
-		description = typeComment + ", " + description
+	if newType.comment:
+		description = newType.comment + ", " + description
 
-	if "array" in newParamType:
-		schema = getListSchema(param, newParamType)
+	if "array" in newType.type:
+		schema = getListSchema(param, newType.type)
 	else:
 		schema = {
-			"type": newParamType,
+			"type": newType.type,
 		}		
 	if paramType == "datetime":
 		# %Y-%m-%d %H:%M:%S or %Y-%m-%d %H:%M
@@ -277,7 +293,7 @@ def getJsonMethod(handlerName: str, method: "Element", authTypes: list[str]):
 	outputComment = outputElem.attrib.get("comment", "")
 	outputType = outputElem.attrib.get("type")
 	outputValue = outputElem.attrib.get("value")
-	resultType: "str | None" = None
+	resultType = ParamType()
 	resultValues: "list | None" = None
 	if outputValue:
 		resultValues = [outputValue]
@@ -296,7 +312,7 @@ def getJsonMethod(handlerName: str, method: "Element", authTypes: list[str]):
 				continue
 			resultValues.append(value)
 	elif outputType:
-		resultType, typeComment = paramTypeMapping[outputType]
+		resultType = paramTypeMapping[outputType]
 	resultParams = {}
 	for param in outputElem.getchildren():
 		if param.tag != "param":
@@ -320,16 +336,16 @@ def getJsonMethod(handlerName: str, method: "Element", authTypes: list[str]):
 	resultName = ""
 	if resultValues is not None:
 		resultName = "Response (one of following values)"
-	elif resultType is not None:
-		resultName = f"Response ({resultType})"
+	elif resultType.type:
+		resultName = f"Response ({resultType.type})"
 	result = {
 		"name": resultName,
 		"comment": outputComment,
 	}
-	if resultType is not None:
+	if resultType.type:
 		resultSchema = {
 			"title": "",
-			"type": resultType,
+			"type": resultType.type,
 		}
 		if resultParams:
 			resultSchema["properties"] = resultParams
