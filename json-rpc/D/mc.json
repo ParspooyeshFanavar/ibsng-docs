@@ -512,9 +512,7 @@
             "properties": {
               "dst": {
                 "title": "list of destinations",
-                "schema": {
-                  "type": "array"
-                }
+                "type": "array"
               },
               "msg_type": {
                 "title": "",
@@ -527,15 +525,11 @@
               },
               "from": {
                 "title": "source (sender) address (phone number / email)",
-                "schema": {
-                  "type": "string"
-                }
+                "type": "string"
               },
               "body": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                }
+                "type": "string"
               }
             }
           }
@@ -815,16 +809,12 @@
             "properties": {
               "message_ids": {
                 "title": "",
-                "schema": {
-                  "type": "number"
-                },
+                "type": "number",
                 "required": false
               },
               "receive_date_from": {
                 "title": "datetime or number, ",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "receive_date_from_unit": {
@@ -841,9 +831,7 @@
               },
               "receive_date_to": {
                 "title": "datetime or number, ",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "receive_date_to_unit": {
@@ -860,9 +848,7 @@
               },
               "body": {
                 "title": "message body",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "body_op": {
@@ -871,9 +857,7 @@
               },
               "from": {
                 "title": "source (sender) address (phone number / email)",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "from_op": {
@@ -946,30 +930,22 @@
               },
               "user_ids": {
                 "title": "",
-                "schema": {
-                  "type": "number"
-                },
+                "type": "number",
                 "required": false
               },
               "user_deleted": {
                 "title": "",
-                "schema": {
-                  "type": "boolean"
-                },
+                "type": "boolean",
                 "required": false
               },
               "message_ids": {
                 "title": "",
-                "schema": {
-                  "type": "number"
-                },
+                "type": "number",
                 "required": false
               },
               "receive_date_from": {
                 "title": "datetime or number, ",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "receive_date_from_unit": {
@@ -986,9 +962,7 @@
               },
               "receive_date_to": {
                 "title": "datetime or number, ",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "receive_date_to_unit": {
@@ -1005,9 +979,7 @@
               },
               "body": {
                 "title": "message body",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "body_op": {
@@ -1016,9 +988,7 @@
               },
               "from": {
                 "title": "source (sender) address (phone number / email)",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "from_op": {
@@ -1091,23 +1061,17 @@
               },
               "isp_ids": {
                 "title": "",
-                "schema": {
-                  "type": "number"
-                },
+                "type": "number",
                 "required": false
               },
               "message_ids": {
                 "title": "",
-                "schema": {
-                  "type": "number"
-                },
+                "type": "number",
                 "required": false
               },
               "receive_date_from": {
                 "title": "datetime or number, ",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "receive_date_from_unit": {
@@ -1124,9 +1088,7 @@
               },
               "receive_date_to": {
                 "title": "datetime or number, ",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "receive_date_to_unit": {
@@ -1143,9 +1105,7 @@
               },
               "body": {
                 "title": "message body",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "body_op": {
@@ -1154,9 +1114,7 @@
               },
               "from": {
                 "title": "source (sender) address (phone number / email)",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "from_op": {
@@ -1224,16 +1182,12 @@
             "properties": {
               "message_ids": {
                 "title": "",
-                "schema": {
-                  "type": "number"
-                },
+                "type": "number",
                 "required": false
               },
               "transfer_date_from": {
                 "title": "datetime or number, ",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "transfer_date_from_unit": {
@@ -1250,9 +1204,7 @@
               },
               "transfer_date_to": {
                 "title": "datetime or number, ",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "transfer_date_to_unit": {
@@ -1269,9 +1221,7 @@
               },
               "body": {
                 "title": "message body",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "body_op": {
@@ -1280,9 +1230,7 @@
               },
               "to": {
                 "title": "destination address (phone number/email)",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "to_op": {
@@ -1405,30 +1353,22 @@
               },
               "user_ids": {
                 "title": "",
-                "schema": {
-                  "type": "number"
-                },
+                "type": "number",
                 "required": false
               },
               "user_deleted": {
                 "title": "",
-                "schema": {
-                  "type": "boolean"
-                },
+                "type": "boolean",
                 "required": false
               },
               "message_ids": {
                 "title": "",
-                "schema": {
-                  "type": "number"
-                },
+                "type": "number",
                 "required": false
               },
               "transfer_date_from": {
                 "title": "datetime or number, ",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "transfer_date_from_unit": {
@@ -1445,9 +1385,7 @@
               },
               "transfer_date_to": {
                 "title": "datetime or number, ",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "transfer_date_to_unit": {
@@ -1464,9 +1402,7 @@
               },
               "body": {
                 "title": "message body",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "body_op": {
@@ -1475,9 +1411,7 @@
               },
               "to": {
                 "title": "destination address (phone number/email)",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "to_op": {
@@ -1600,23 +1534,17 @@
               },
               "isp_ids": {
                 "title": "",
-                "schema": {
-                  "type": "number"
-                },
+                "type": "number",
                 "required": false
               },
               "message_ids": {
                 "title": "",
-                "schema": {
-                  "type": "number"
-                },
+                "type": "number",
                 "required": false
               },
               "transfer_date_from": {
                 "title": "datetime or number, ",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "transfer_date_from_unit": {
@@ -1633,9 +1561,7 @@
               },
               "transfer_date_to": {
                 "title": "datetime or number, ",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "transfer_date_to_unit": {
@@ -1652,9 +1578,7 @@
               },
               "body": {
                 "title": "message body",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "body_op": {
@@ -1663,9 +1587,7 @@
               },
               "to": {
                 "title": "destination address (number/email)",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "to_op": {
@@ -1788,30 +1710,22 @@
               },
               "owner_ids": {
                 "title": "",
-                "schema": {
-                  "type": "number"
-                },
+                "type": "number",
                 "required": false
               },
               "message_ids": {
                 "title": "",
-                "schema": {
-                  "type": "number"
-                },
+                "type": "number",
                 "required": false
               },
               "isp_names": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "schedule_date_from": {
                 "title": "datetime or number, ",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "schedule_date_from_unit": {
@@ -1828,9 +1742,7 @@
               },
               "schedule_date_to": {
                 "title": "datetime or number, ",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "schedule_date_to_unit": {
@@ -1847,9 +1759,7 @@
               },
               "body": {
                 "title": "message body",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "body_op": {
@@ -1858,9 +1768,7 @@
               },
               "to": {
                 "title": "destination address (number/email)",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "to_op": {
@@ -1869,9 +1777,7 @@
               },
               "source": {
                 "title": "source address (number/email)",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "source_op": {
@@ -1993,16 +1899,12 @@
             "properties": {
               "message_ids": {
                 "title": "",
-                "schema": {
-                  "type": "number"
-                },
+                "type": "number",
                 "required": false
               },
               "schedule_date_from": {
                 "title": "datetime or number, ",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "schedule_date_from_unit": {
@@ -2019,9 +1921,7 @@
               },
               "schedule_date_to": {
                 "title": "datetime or number, ",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "schedule_date_to_unit": {
@@ -2038,9 +1938,7 @@
               },
               "body": {
                 "title": "message body",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "body_op": {
@@ -2049,9 +1947,7 @@
               },
               "to": {
                 "title": "destination address (number/email)",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "to_op": {
@@ -2060,9 +1956,7 @@
               },
               "source": {
                 "title": "source address (number/email)",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "source_op": {

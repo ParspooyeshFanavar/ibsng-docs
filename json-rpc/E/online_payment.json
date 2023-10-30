@@ -81,9 +81,7 @@
             "properties": {
               "no_action": {
                 "title": "if key is present, we won't perform any action (credit / deposit / invoice) after verifying payment",
-                "schema": {
-                  "type": ""
-                },
+                "type": "",
                 "required": false
               }
             }

@@ -215,7 +215,7 @@ def getJsonParam(param: "Element") -> dict:
 				"title": title,
 			}
 			if "schema" in subParam:
-				prop["schema"] = subParam.pop("schema")
+				prop.update(subParam.pop("schema"))
 			prop.update(subParam)
 			properties[name] = prop
 		schema["properties"] = properties

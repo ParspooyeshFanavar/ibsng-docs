@@ -155,16 +155,12 @@
             "properties": {
               "admin": {
                 "title": "admin username, must have access",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "login_date_from": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "login_date_from_unit": {
@@ -181,9 +177,7 @@
               },
               "login_date_to": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "login_date_to_unit": {

@@ -283,23 +283,17 @@
             "properties": {
               "customer_id": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "uid": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "customer_name": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               }
             }

@@ -90,15 +90,11 @@
             "properties": {
               "ras_ips": {
                 "title": "",
-                "schema": {
-                  "type": "array"
-                }
+                "type": "array"
               },
               "isp_names": {
                 "title": "",
-                "schema": {
-                  "type": "array"
-                }
+                "type": "array"
               }
             }
           }

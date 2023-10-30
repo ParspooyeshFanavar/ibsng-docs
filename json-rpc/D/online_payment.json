@@ -81,9 +81,7 @@
             "properties": {
               "no_action": {
                 "title": "true if exists, if you put this in attributes, we won't perform any action (credit / deposit / invoice) after verifying payment",
-                "schema": {
-                  "type": "boolean"
-                },
+                "type": "boolean",
                 "required": false
               }
             }

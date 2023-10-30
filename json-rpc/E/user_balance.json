@@ -415,9 +415,7 @@
               },
               "remote_ip": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                }
+                "type": "string"
               },
               "remote_ip_op": {
                 "title": "",
@@ -425,10 +423,8 @@
               },
               "chnage_date_from": {
                 "title": "datetime, ",
-                "schema": {
-                  "type": "string",
-                  "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
-                }
+                "type": "string",
+                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
               },
               "chnage_date_from_unit": {
                 "title": "Date type for output date or datetime params, default is 'gregorian'",
@@ -436,10 +432,8 @@
               },
               "chnage_date_to": {
                 "title": "datetime, ",
-                "schema": {
-                  "type": "string",
-                  "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
-                }
+                "type": "string",
+                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
               },
               "chnage_date_to_unit": {
                 "title": "Date type for output date or datetime params, default is 'gregorian'",
@@ -459,9 +453,7 @@
               },
               "user_balance_ids": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               }
             }

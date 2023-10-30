@@ -421,9 +421,7 @@
             "properties": {
               "creation_date_from": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "creation_date_from_unit": {
@@ -440,9 +438,7 @@
               },
               "creation_date_to": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "creation_date_to_unit": {
@@ -459,9 +455,7 @@
               },
               "used_date_from": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "used_date_from_unit": {
@@ -478,9 +472,7 @@
               },
               "used_date_to": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "used_date_to_unit": {

@@ -79,44 +79,32 @@
             "properties": {
               "dnis": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "isp_ids": {
                 "title": "",
-                "schema": {
-                  "type": "array"
-                },
+                "type": "array",
                 "required": false
               },
               "isp_names": {
                 "title": "",
-                "schema": {
-                  "type": "array"
-                },
+                "type": "array",
                 "required": false
               },
               "ras_ips": {
                 "title": "",
-                "schema": {
-                  "type": "array"
-                },
+                "type": "array",
                 "required": false
               },
               "remote_ip": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "username_starts_with": {
                 "title": "array or string, Array('A', 'B', 'C'), is like 'ABC'",
-                "schema": {
-                  "type": "array"
-                },
+                "type": "array",
                 "required": false
               }
             }
@@ -310,79 +298,57 @@
             "properties": {
               "user_ids": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "connection_username": {
                 "title": "internet username",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "connection_voip_username": {
                 "title": "voip username",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "not_username": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "username": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "voip_username": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "serial": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "sub_service_name": {
                 "title": "subservice name",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "sub_service_charging": {
                 "title": "subservice charging",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "isp_names": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "credit_used": {
                 "title": "",
-                "schema": {
-                  "type": "number"
-                },
+                "type": "number",
                 "required": false
               },
               "credit_used_op": {
@@ -391,9 +357,7 @@
               },
               "duration": {
                 "title": "in seconds",
-                "schema": {
-                  "type": "number"
-                },
+                "type": "number",
                 "required": false
               },
               "duration_op": {
@@ -402,9 +366,7 @@
               },
               "login_time_from": {
                 "title": "datetime or number, ",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "login_time_from_unit": {
@@ -421,9 +383,7 @@
               },
               "login_time_to": {
                 "title": "datetime or number, ",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "login_time_to_unit": {
@@ -440,9 +400,7 @@
               },
               "logout_time_from": {
                 "title": "datetime or number, ",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "logout_time_from_unit": {
@@ -459,9 +417,7 @@
               },
               "logout_time_to": {
                 "title": "datetime or number, ",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "logout_time_to_unit": {
@@ -478,16 +434,12 @@
               },
               "show_total_credit_used": {
                 "title": "if initialize with 'on' in result returns total credit used",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "show_total_inouts": {
                 "title": "if initialize with 'on' in result returns total download and upload",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "successful": {
@@ -500,37 +452,27 @@
               },
               "ras_ip": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "ras_desc": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "group_name": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "exclude_isp_mapped_users": {
                 "title": "true if exists, ",
-                "schema": {
-                  "type": "boolean"
-                },
+                "type": "boolean",
                 "required": false
               },
               "caller_id": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "caller_id_op": {
@@ -539,44 +481,32 @@
               },
               "mac": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "port": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "dnis": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "assigned_ip": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "station_ip": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "cpm": {
                 "title": "",
-                "schema": {
-                  "type": "number"
-                },
+                "type": "number",
                 "required": false
               },
               "cpm_op": {
@@ -585,9 +515,7 @@
               },
               "called_number": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "called_number_op": {
@@ -596,9 +524,7 @@
               },
               "prefix_name": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "prefix_name_op": {
@@ -607,23 +533,17 @@
               },
               "called_ip": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "voip_provider_names": {
                 "title": "list of provider names, or string of one provider name",
-                "schema": {
-                  "type": "array"
-                },
+                "type": "array",
                 "required": false
               },
               "remote_ip": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               }
             }
@@ -940,9 +860,7 @@
             "properties": {
               "credit_used": {
                 "title": "",
-                "schema": {
-                  "type": "number"
-                },
+                "type": "number",
                 "required": false
               },
               "credit_used_op": {
@@ -951,9 +869,7 @@
               },
               "duration": {
                 "title": "in seconds",
-                "schema": {
-                  "type": "number"
-                },
+                "type": "number",
                 "required": false
               },
               "duration_op": {
@@ -962,9 +878,7 @@
               },
               "login_time_from": {
                 "title": "datetime or number, ",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "login_time_from_unit": {
@@ -981,9 +895,7 @@
               },
               "login_time_to": {
                 "title": "datetime or number, ",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "login_time_to_unit": {
@@ -1000,9 +912,7 @@
               },
               "logout_time_from": {
                 "title": "datetime or number, ",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "logout_time_from_unit": {
@@ -1019,9 +929,7 @@
               },
               "logout_time_to": {
                 "title": "datetime or number, ",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "logout_time_to_unit": {
@@ -1046,23 +954,17 @@
               },
               "ras_ip": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "ras_desc": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "caller_id": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "caller_id_op": {
@@ -1071,44 +973,32 @@
               },
               "mac": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "port": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "dnis": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "assigned_ip": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "station_ip": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "cpm": {
                 "title": "",
-                "schema": {
-                  "type": "number"
-                },
+                "type": "number",
                 "required": false
               },
               "cpm_op": {
@@ -1117,9 +1007,7 @@
               },
               "called_number": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "called_number_op": {
@@ -1128,9 +1016,7 @@
               },
               "prefix_name": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "prefix_name_op": {
@@ -1139,23 +1025,17 @@
               },
               "called_ip": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "voip_provider_names": {
                 "title": "list of provider names, or string of one provider name",
-                "schema": {
-                  "type": "array"
-                },
+                "type": "array",
                 "required": false
               },
               "remote_ip": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               }
             }
@@ -1386,9 +1266,7 @@
             "properties": {
               "caller_id": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               }
             }
@@ -1966,19 +1844,17 @@
             "properties": {
               "group_by": {
                 "title": "",
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "title": "",
-                    "enum": [
-                      "prefix_name",
-                      "prefix_code",
-                      "cpm",
-                      "voip_provider_id",
-                      "voip_provider_prefix_code",
-                      "voip_provider_prefix_name"
-                    ]
-                  }
+                "type": "array",
+                "items": {
+                  "title": "",
+                  "enum": [
+                    "prefix_name",
+                    "prefix_code",
+                    "cpm",
+                    "voip_provider_id",
+                    "voip_provider_prefix_code",
+                    "voip_provider_prefix_name"
+                  ]
                 },
                 "required": false
               }
@@ -2112,59 +1988,49 @@
             "properties": {
               "user_ids": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "voip_username": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "admin": {
                 "title": "admin username",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "action": {
                 "title": "",
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "title": "",
-                    "enum": [
-                      "ADD_USER",
-                      "CHANGE_CREDIT",
-                      "DEL_USER",
-                      "RELATIVE_PERIODIC_CHANGE_CREDIT",
-                      "ABSOLUTE_PERIODIC_CHANGE_CREDIT",
-                      "RENEW_TRASH_REMAINING",
-                      "RENEW",
-                      "CREDIT_TRANSFER",
-                      "RECEIVE_CREDIT_TRANSFER",
-                      "ONLINE_PAYMENT",
-                      "AUTO_RENEW",
-                      "RECHARGE",
-                      "AUTO_RECHARGE",
-                      "TEMPORARY_EXTEND",
-                      "TEMPORARY_EXTEND_TRASH_REMAINING",
-                      "EXTRA_CHARGE",
-                      "VOUCHER"
-                    ]
-                  }
+                "type": "array",
+                "items": {
+                  "title": "",
+                  "enum": [
+                    "ADD_USER",
+                    "CHANGE_CREDIT",
+                    "DEL_USER",
+                    "RELATIVE_PERIODIC_CHANGE_CREDIT",
+                    "ABSOLUTE_PERIODIC_CHANGE_CREDIT",
+                    "RENEW_TRASH_REMAINING",
+                    "RENEW",
+                    "CREDIT_TRANSFER",
+                    "RECEIVE_CREDIT_TRANSFER",
+                    "ONLINE_PAYMENT",
+                    "AUTO_RENEW",
+                    "RECHARGE",
+                    "AUTO_RECHARGE",
+                    "TEMPORARY_EXTEND",
+                    "TEMPORARY_EXTEND_TRASH_REMAINING",
+                    "EXTRA_CHARGE",
+                    "VOUCHER"
+                  ]
                 },
                 "required": false
               },
               "per_user_credit": {
                 "title": "",
-                "schema": {
-                  "type": "number"
-                },
+                "type": "number",
                 "required": false
               },
               "per_user_credit_op": {
@@ -2173,9 +2039,7 @@
               },
               "isp_credit": {
                 "title": "",
-                "schema": {
-                  "type": "number"
-                },
+                "type": "number",
                 "required": false
               },
               "isp_credit_op": {
@@ -2184,9 +2048,7 @@
               },
               "change_time_from": {
                 "title": "datetime or number, ",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "change_time_from_unit": {
@@ -2203,9 +2065,7 @@
               },
               "change_time_to": {
                 "title": "datetime or number, ",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "change_time_to_unit": {
@@ -2222,30 +2082,22 @@
               },
               "remote_addr": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "comment": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "deleted_internet_username": {
                 "title": "internet username that is deleted",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "deleted_voip_username": {
                 "title": "voip username that is deleted",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               }
             }
@@ -2323,66 +2175,54 @@
             "properties": {
               "user_view": {
                 "title": "Key must be present for User-view",
-                "schema": {
-                  "type": ""
-                },
+                "type": "",
                 "required": false
               },
               "user_ids": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "voip_username": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "admin": {
                 "title": "admin username",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "action": {
                 "title": "",
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "title": "",
-                    "enum": [
-                      "ADD_USER",
-                      "CHANGE_CREDIT",
-                      "DEL_USER",
-                      "RELATIVE_PERIODIC_CHANGE_CREDIT",
-                      "ABSOLUTE_PERIODIC_CHANGE_CREDIT",
-                      "RENEW_TRASH_REMAINING",
-                      "RENEW",
-                      "CREDIT_TRANSFER",
-                      "RECEIVE_CREDIT_TRANSFER",
-                      "ONLINE_PAYMENT",
-                      "AUTO_RENEW",
-                      "RECHARGE",
-                      "AUTO_RECHARGE",
-                      "TEMPORARY_EXTEND",
-                      "TEMPORARY_EXTEND_TRASH_REMAINING",
-                      "EXTRA_CHARGE",
-                      "VOUCHER"
-                    ]
-                  }
+                "type": "array",
+                "items": {
+                  "title": "",
+                  "enum": [
+                    "ADD_USER",
+                    "CHANGE_CREDIT",
+                    "DEL_USER",
+                    "RELATIVE_PERIODIC_CHANGE_CREDIT",
+                    "ABSOLUTE_PERIODIC_CHANGE_CREDIT",
+                    "RENEW_TRASH_REMAINING",
+                    "RENEW",
+                    "CREDIT_TRANSFER",
+                    "RECEIVE_CREDIT_TRANSFER",
+                    "ONLINE_PAYMENT",
+                    "AUTO_RENEW",
+                    "RECHARGE",
+                    "AUTO_RECHARGE",
+                    "TEMPORARY_EXTEND",
+                    "TEMPORARY_EXTEND_TRASH_REMAINING",
+                    "EXTRA_CHARGE",
+                    "VOUCHER"
+                  ]
                 },
                 "required": false
               },
               "per_user_credit": {
                 "title": "",
-                "schema": {
-                  "type": "number"
-                },
+                "type": "number",
                 "required": false
               },
               "per_user_credit_op": {
@@ -2391,9 +2231,7 @@
               },
               "isp_credit": {
                 "title": "",
-                "schema": {
-                  "type": "number"
-                },
+                "type": "number",
                 "required": false
               },
               "isp_credit_op": {
@@ -2402,9 +2240,7 @@
               },
               "change_time_from": {
                 "title": "datetime or number, ",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "change_time_from_unit": {
@@ -2421,9 +2257,7 @@
               },
               "change_time_to": {
                 "title": "datetime or number, ",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "change_time_to_unit": {
@@ -2440,30 +2274,22 @@
               },
               "remote_addr": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "comment": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "deleted_internet_username": {
                 "title": "internet username that is deleted",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "deleted_voip_username": {
                 "title": "voip username that is deleted",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               }
             }
@@ -2541,45 +2367,39 @@
             "properties": {
               "user_view": {
                 "title": "Key must be present for User-view",
-                "schema": {
-                  "type": ""
-                },
+                "type": "",
                 "required": false
               },
               "action": {
                 "title": "",
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "title": "",
-                    "enum": [
-                      "ADD_USER",
-                      "CHANGE_CREDIT",
-                      "DEL_USER",
-                      "RELATIVE_PERIODIC_CHANGE_CREDIT",
-                      "ABSOLUTE_PERIODIC_CHANGE_CREDIT",
-                      "RENEW_TRASH_REMAINING",
-                      "RENEW",
-                      "CREDIT_TRANSFER",
-                      "RECEIVE_CREDIT_TRANSFER",
-                      "ONLINE_PAYMENT",
-                      "AUTO_RENEW",
-                      "RECHARGE",
-                      "AUTO_RECHARGE",
-                      "TEMPORARY_EXTEND",
-                      "TEMPORARY_EXTEND_TRASH_REMAINING",
-                      "EXTRA_CHARGE",
-                      "VOUCHER"
-                    ]
-                  }
+                "type": "array",
+                "items": {
+                  "title": "",
+                  "enum": [
+                    "ADD_USER",
+                    "CHANGE_CREDIT",
+                    "DEL_USER",
+                    "RELATIVE_PERIODIC_CHANGE_CREDIT",
+                    "ABSOLUTE_PERIODIC_CHANGE_CREDIT",
+                    "RENEW_TRASH_REMAINING",
+                    "RENEW",
+                    "CREDIT_TRANSFER",
+                    "RECEIVE_CREDIT_TRANSFER",
+                    "ONLINE_PAYMENT",
+                    "AUTO_RENEW",
+                    "RECHARGE",
+                    "AUTO_RECHARGE",
+                    "TEMPORARY_EXTEND",
+                    "TEMPORARY_EXTEND_TRASH_REMAINING",
+                    "EXTRA_CHARGE",
+                    "VOUCHER"
+                  ]
                 },
                 "required": false
               },
               "per_user_credit": {
                 "title": "",
-                "schema": {
-                  "type": "number"
-                },
+                "type": "number",
                 "required": false
               },
               "per_user_credit_op": {
@@ -2588,9 +2408,7 @@
               },
               "change_time_from": {
                 "title": "datetime or number, ",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "change_time_from_unit": {
@@ -2607,9 +2425,7 @@
               },
               "change_time_to": {
                 "title": "datetime or number, ",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "change_time_to_unit": {
@@ -2626,30 +2442,22 @@
               },
               "remote_addr": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "comment": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "deleted_internet_username": {
                 "title": "internet username that is deleted",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "deleted_voip_username": {
                 "title": "voip username that is deleted",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               }
             }
@@ -2811,45 +2619,37 @@
             "properties": {
               "user_ids": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "admin": {
                 "title": "list of admin usernames, or string of one admin username",
-                "schema": {
-                  "type": "array"
-                },
+                "type": "array",
                 "required": false
               },
               "action": {
                 "title": "",
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "title": "",
-                    "enum": [
-                      "ADD_USER",
-                      "CHANGE_DEPOSIT",
-                      "DEL_USER",
-                      "ONLINE_PAYMENT",
-                      "DEPOSIT_TRANSFER",
-                      "AUTO_RENEW",
-                      "RECEIVE_DEPOSIT_TRANSFER",
-                      "AUTO_RECHARGE",
-                      "EXTRA_CHARGE",
-                      "VOUCHER"
-                    ]
-                  }
+                "type": "array",
+                "items": {
+                  "title": "",
+                  "enum": [
+                    "ADD_USER",
+                    "CHANGE_DEPOSIT",
+                    "DEL_USER",
+                    "ONLINE_PAYMENT",
+                    "DEPOSIT_TRANSFER",
+                    "AUTO_RENEW",
+                    "RECEIVE_DEPOSIT_TRANSFER",
+                    "AUTO_RECHARGE",
+                    "EXTRA_CHARGE",
+                    "VOUCHER"
+                  ]
                 },
                 "required": false
               },
               "deposit": {
                 "title": "comes with deposit_op cond",
-                "schema": {
-                  "type": "number"
-                },
+                "type": "number",
                 "required": false
               },
               "deposit_op": {
@@ -2858,9 +2658,7 @@
               },
               "change_time_from": {
                 "title": "datetime or number, ",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "change_time_from_unit": {
@@ -2877,9 +2675,7 @@
               },
               "change_time_to": {
                 "title": "datetime or number, ",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "change_time_to_unit": {
@@ -2896,30 +2692,22 @@
               },
               "remote_addr": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "group_name": {
                 "title": "list of group names, or string of one group name",
-                "schema": {
-                  "type": "array"
-                },
+                "type": "array",
                 "required": false
               },
               "user_isp_names": {
                 "title": "list of isp names, or string one isp name",
-                "schema": {
-                  "type": "array"
-                },
+                "type": "array",
                 "required": false
               },
               "isp_names": {
                 "title": "list of isp names, or string one isp name",
-                "schema": {
-                  "type": "array"
-                },
+                "type": "array",
                 "required": false
               }
             }
@@ -3080,38 +2868,32 @@
             "properties": {
               "admin": {
                 "title": "list of admin usernames, or string of one admin username",
-                "schema": {
-                  "type": "array"
-                },
+                "type": "array",
                 "required": false
               },
               "action": {
                 "title": "",
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "title": "",
-                    "enum": [
-                      "ADD_USER",
-                      "CHANGE_DEPOSIT",
-                      "DEL_USER",
-                      "ONLINE_PAYMENT",
-                      "DEPOSIT_TRANSFER",
-                      "AUTO_RENEW",
-                      "RECEIVE_DEPOSIT_TRANSFER",
-                      "AUTO_RECHARGE",
-                      "EXTRA_CHARGE",
-                      "VOUCHER"
-                    ]
-                  }
+                "type": "array",
+                "items": {
+                  "title": "",
+                  "enum": [
+                    "ADD_USER",
+                    "CHANGE_DEPOSIT",
+                    "DEL_USER",
+                    "ONLINE_PAYMENT",
+                    "DEPOSIT_TRANSFER",
+                    "AUTO_RENEW",
+                    "RECEIVE_DEPOSIT_TRANSFER",
+                    "AUTO_RECHARGE",
+                    "EXTRA_CHARGE",
+                    "VOUCHER"
+                  ]
                 },
                 "required": false
               },
               "deposit": {
                 "title": "comes with deposit_op cond",
-                "schema": {
-                  "type": "number"
-                },
+                "type": "number",
                 "required": false
               },
               "deposit_op": {
@@ -3120,9 +2902,7 @@
               },
               "change_time_from": {
                 "title": "datetime or number, ",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "change_time_from_unit": {
@@ -3139,9 +2919,7 @@
               },
               "change_time_to": {
                 "title": "datetime or number, ",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "change_time_to_unit": {
@@ -3158,23 +2936,17 @@
               },
               "remote_addr": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "group_name": {
                 "title": "list of group names, or string of one group name",
-                "schema": {
-                  "type": "array"
-                },
+                "type": "array",
                 "required": false
               },
               "isp_names": {
                 "title": "list of isp names, or string one isp name",
-                "schema": {
-                  "type": "array"
-                },
+                "type": "array",
                 "required": false
               }
             }
@@ -3310,37 +3082,27 @@
             "properties": {
               "user_ids": {
                 "title": "sets is_user=yes and turns on user-mode",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "user_isp_names": {
                 "title": "sets is_user=yes and turns on user-mode",
-                "schema": {
-                  "type": "array"
-                },
+                "type": "array",
                 "required": false
               },
               "group_name": {
                 "title": "sets is_user=no and turns on group-mode",
-                "schema": {
-                  "type": "array"
-                },
+                "type": "array",
                 "required": false
               },
               "attr_names": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "change_time_from": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "change_time_from_unit": {
@@ -3357,9 +3119,7 @@
               },
               "change_time_to": {
                 "title": "datetime or number, ",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "change_time_to_unit": {
@@ -3380,16 +3140,12 @@
               },
               "isp_names": {
                 "title": "list of isp names, or string of one isp name",
-                "schema": {
-                  "type": "array"
-                },
+                "type": "array",
                 "required": false
               },
               "admin": {
                 "title": "admin username",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               }
             }
@@ -3562,30 +3318,22 @@
             "properties": {
               "admin": {
                 "title": "list of admin usernames, or string of one admin username",
-                "schema": {
-                  "type": "array"
-                },
+                "type": "array",
                 "required": false
               },
               "admin_isp_name": {
                 "title": "isp name of admin, list or string (of one)",
-                "schema": {
-                  "type": "array"
-                },
+                "type": "array",
                 "required": false
               },
               "isp_names": {
                 "title": "list of isp names, or string of one isp name",
-                "schema": {
-                  "type": "array"
-                },
+                "type": "array",
                 "required": false
               },
               "change_time_from": {
                 "title": "datetime or number, ",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "change_time_from_unit": {
@@ -3602,9 +3350,7 @@
               },
               "change_time_to": {
                 "title": "datetime or number, ",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "change_time_to_unit": {
@@ -3773,23 +3519,17 @@
             "properties": {
               "isp_names": {
                 "title": "list of isp names, or string of one isp name",
-                "schema": {
-                  "type": "array"
-                },
+                "type": "array",
                 "required": false
               },
               "user_ids": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "temporary_extend_date_from": {
                 "title": "datetime or number, ",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "temporary_extend_date_from_unit": {
@@ -3806,9 +3546,7 @@
               },
               "temporary_extend_date_to": {
                 "title": "datetime or number, ",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "temporary_extend_date_to_unit": {
@@ -4244,9 +3982,7 @@
             "properties": {
               "login_time_from": {
                 "title": "datetime or number, ",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "login_time_from_unit": {
@@ -4263,9 +3999,7 @@
               },
               "login_time_to": {
                 "title": "datetime or number, ",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "login_time_to_unit": {
@@ -4282,23 +4016,17 @@
               },
               "username": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "voip_username": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "user_ids": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "view_period": {
@@ -4307,27 +4035,21 @@
               },
               "included_objects": {
                 "title": "",
-                "schema": {
-                  "type": "array"
-                },
+                "type": "array",
                 "required": false
               },
               "report_targets": {
                 "title": "",
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "title": "",
-                    "enum": ["duration", "credit", "in_bytes", "out_bytes"]
-                  }
+                "type": "array",
+                "items": {
+                  "title": "",
+                  "enum": ["duration", "credit", "in_bytes", "out_bytes"]
                 },
                 "required": false
               },
               "called_number": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "called_number_op": {
@@ -4336,9 +4058,7 @@
               },
               "prefix_name": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "prefix_name_op": {
@@ -4347,30 +4067,22 @@
               },
               "called_ip": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "dnis": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "immediate_children_isps_only": {
                 "title": "true if exists, ",
-                "schema": {
-                  "type": "boolean"
-                },
+                "type": "boolean",
                 "required": false
               },
               "isp_names": {
                 "title": "list of isp names, or string of one isp name",
-                "schema": {
-                  "type": "array"
-                },
+                "type": "array",
                 "required": false
               }
             }
@@ -4410,79 +4122,69 @@
             "properties": {
               "categories": {
                 "title": "",
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "title": "",
-                    "enum": [
-                      "0",
-                      "1",
-                      "2",
-                      "3",
-                      "4",
-                      "5",
-                      "6",
-                      "7",
-                      "8",
-                      "9",
-                      "10",
-                      "11",
-                      "12"
-                    ],
-                    "value_comment": {
-                      "0": "_NO_CATEGORY_",
-                      "1": "RAS",
-                      "2": "CHARGE",
-                      "3": "ISP",
-                      "4": "VOIP-TARIFF",
-                      "5": "VOIP-PREFIX-GROUP",
-                      "6": "ADMIN",
-                      "7": "VOIP-PROVIDER",
-                      "8": "VOIP-ROUTING-PROFILE",
-                      "9": "VOIP-ROUTE",
-                      "10": "VOIP-ROUTE-PREFIX",
-                      "11": "ISP PAGE STYLE",
-                      "12": "ONLINE-PAYMENT"
-                    }
+                "type": "array",
+                "items": {
+                  "title": "",
+                  "enum": [
+                    "0",
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10",
+                    "11",
+                    "12"
+                  ],
+                  "value_comment": {
+                    "0": "_NO_CATEGORY_",
+                    "1": "RAS",
+                    "2": "CHARGE",
+                    "3": "ISP",
+                    "4": "VOIP-TARIFF",
+                    "5": "VOIP-PREFIX-GROUP",
+                    "6": "ADMIN",
+                    "7": "VOIP-PROVIDER",
+                    "8": "VOIP-ROUTING-PROFILE",
+                    "9": "VOIP-ROUTE",
+                    "10": "VOIP-ROUTE-PREFIX",
+                    "11": "ISP PAGE STYLE",
+                    "12": "ONLINE-PAYMENT"
                   }
                 },
                 "required": false
               },
               "events": {
                 "title": "",
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "title": "",
-                    "enum": ["1", "2", "3"],
-                    "value_comment": {
-                      "1": "ADD",
-                      "2": "CHANGE",
-                      "3": "DELETE"
-                    }
+                "type": "array",
+                "items": {
+                  "title": "",
+                  "enum": ["1", "2", "3"],
+                  "value_comment": {
+                    "1": "ADD",
+                    "2": "CHANGE",
+                    "3": "DELETE"
                   }
                 },
                 "required": false
               },
               "isp_names": {
                 "title": "list of isp names, or string of one isp name",
-                "schema": {
-                  "type": "array"
-                },
+                "type": "array",
                 "required": false
               },
               "admin": {
                 "title": "admin username",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "change_time_from": {
                 "title": "datetime or number, ",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "change_time_from_unit": {
@@ -4499,9 +4201,7 @@
               },
               "change_time_to": {
                 "title": "datetime or number, ",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "change_time_to_unit": {
@@ -4518,9 +4218,7 @@
               },
               "object_id": {
                 "title": "",
-                "schema": {
-                  "type": "number"
-                },
+                "type": "number",
                 "required": false
               }
             }
@@ -4731,9 +4429,7 @@
             "properties": {
               "requester_ids": {
                 "title": "Comma-seperated string of User IDs (or Admin IDs)",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "requester_type": {
@@ -4742,16 +4438,12 @@
               },
               "reference_id": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "amount": {
                 "title": "",
-                "schema": {
-                  "type": "number"
-                },
+                "type": "number",
                 "required": false
               },
               "amount_op": {
@@ -4760,9 +4452,7 @@
               },
               "payment_date_from": {
                 "title": "datetime or number, ",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "payment_date_from_unit": {
@@ -4779,9 +4469,7 @@
               },
               "payment_date_to": {
                 "title": "datetime or number, ",
-                "schema": {
-                  "type": "string"
-                },
+                "type": "string",
                 "required": false
               },
               "payment_date_to_unit": {
@@ -4802,9 +4490,7 @@
               },
               "gateway_name": {
                 "title": "list of gateway names, or string of one gateway name",
-                "schema": {
-                  "type": "array"
-                },
+                "type": "array",
                 "required": false
               }
             }
