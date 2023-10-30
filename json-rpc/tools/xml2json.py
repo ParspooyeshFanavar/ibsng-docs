@@ -96,6 +96,14 @@ def getChoiceJsonParam(param: "Element") -> dict:
 		if value is None:
 			print(f"choice with no value: {toStr(choiceElem)}")
 			return
+		_type = choiceElem.attrib.get("type")
+		if _type:
+			if _type == "int":
+				value = int(value)
+			elif _type == "str":
+				pass
+			else:
+				print(f"invalid choice value in {toStr(choiceElem)}")
 		values.append(value)
 		comment = choiceElem.attrib.get("comment")
 		if comment:
