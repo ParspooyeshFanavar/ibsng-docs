@@ -58,7 +58,7 @@ paramTypeMapping = {
 	"int, null": ParamType(("number", "null"), "int or null"),
 	"dynamic": ParamType("", "dynamic type"),
 
-	"list, str": ParamType(("array", "string"), ""),
+	"list, str": ParamType(("array", "string")),
 	"list, int": ParamType(("array", "number"), "array or int"),
 	"int, list": ParamType(("number", "array"), "int or array"),
 	"str, list": ParamType(("string", "array"), "string or array"),
@@ -134,11 +134,14 @@ def getListItemSchema(item: "Element") -> "dict | list":
 		for param in params:
 			if "schema" in param:
 				param.update(param.pop("schema"))
-		return {
+		res = {
 			"title": item.attrib.get("comment", ""),
 			"type": "object",
-			"params": params,
 		}
+		if item.attrib.get("dynamic_keys") == "true":
+			res["dynamic_keys"] = True
+		res["params"] = params
+		return res
 
 	return {
 		"title": item.attrib.get("comment", ""),
@@ -176,6 +179,49 @@ def getListSchema(elem: "Element", newType="array") -> "dict | list":
 	if length and length != "-1":
 		schema["length"] = length
 	return schema
+
+
+def setDynamicKeys(param: "Element", schema: dict):
+	schema["dynamic_keys"] = True
+	key = param.find("key")
+	if key is None:
+		return
+	value = param.find("value")
+	if value is None:
+		print(f"<key> without <value>: {toStr(param)}")
+		return
+	schema["__key__"] = {
+		"type": key.attrib.get("type", ""),
+		"title": key.attrib.get("comment", ""),
+	}
+	valueJson = getJsonParam(value)
+	if "schema" in valueJson:
+		valueJson.update(valueJson.pop("schema"))
+	schema["__value__"] = valueJson
+
+
+def setDictParamsSchema(param: "Element", schema: dict):
+	properties = {}
+	for subParam in getParams(param):
+		name = subParam.pop("name")
+		title = ""
+		if "description" in subParam:
+			title = subParam.pop("description")
+		prop = {
+			"title": title,
+		}
+		if "schema" in subParam:
+			prop.update(subParam.pop("schema"))
+		prop.update(subParam)
+		properties[name] = prop
+
+	if param.attrib.get("dynamic_keys") == "true":
+		setDynamicKeys(param, schema)
+	elif param.find("key") is not None:
+		print("forgot dynamic_keys=true: {toStr(param)}")
+
+	schema["properties"] = properties
+
 
 
 def getJsonParam(param: "Element") -> dict:
@@ -225,20 +271,7 @@ def getJsonParam(param: "Element") -> dict:
 	if newType.pattern:
 		schema["pattern"] = newType.pattern
 	elif paramType == "dict":
-		properties = {}
-		for subParam in getParams(param):
-			name = subParam.pop("name")
-			title = ""
-			if "description" in subParam:
-				title = subParam.pop("description")
-			prop = {
-				"title": title,
-			}
-			if "schema" in subParam:
-				prop.update(subParam.pop("schema"))
-			prop.update(subParam)
-			properties[name] = prop
-		schema["properties"] = properties
+		setDictParamsSchema(param, schema)
 	paramJson = {}
 	if paramName:
 		paramJson["name"] = paramName

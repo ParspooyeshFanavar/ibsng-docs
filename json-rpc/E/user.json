@@ -1418,6 +1418,7 @@
                     "index": 0,
                     "title": "attributes to update",
                     "type": "object",
+                    "dynamic_keys": true,
                     "params": []
                   },
                   {

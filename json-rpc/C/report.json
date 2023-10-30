@@ -170,16 +170,49 @@
             "ras_acct_not_started": {
               "title": "dict of ras_desc => count",
               "type": "object",
+              "dynamic_keys": true,
               "properties": {}
             },
             "ras_description": {
               "title": "dict of ras_desc => count",
               "type": "object",
+              "dynamic_keys": true,
               "properties": {}
             },
             "ras_counters": {
               "title": "dict of ras_desc => count_dict",
               "type": "object",
+              "dynamic_keys": true,
+              "__key__": {
+                "type": "str",
+                "title": "Ras ID"
+              },
+              "__value__": {
+                "description": "a dict containing per-state user count",
+                "type": "object",
+                "properties": {
+                  "ras_total": {
+                    "title": "total number of onlines in this ras",
+                    "type": "number"
+                  },
+                  "ras_reonlined": {
+                    "title": "number of re-onlined users in this ras",
+                    "type": "number"
+                  },
+                  "ras_failed": {
+                    "title": "number of failed users in this ras",
+                    "type": "number"
+                  },
+                  "ras_acct_not_started": {
+                    "title": "number of onlines users with Accounting Not Started status in this ras",
+                    "type": "number"
+                  },
+                  "ras_idle": {
+                    "title": "number of Idle users in this ras",
+                    "type": "number"
+                  }
+                }
+              },
               "properties": {}
             },
             "group_name": {
@@ -236,16 +269,49 @@
             "ras_acct_not_started": {
               "title": "dict of ras_desc => count",
               "type": "object",
+              "dynamic_keys": true,
               "properties": {}
             },
             "ras_description": {
               "title": "dict of ras_desc => count",
               "type": "object",
+              "dynamic_keys": true,
               "properties": {}
             },
             "ras_counters": {
               "title": "dict of ras_desc => count_dict",
               "type": "object",
+              "dynamic_keys": true,
+              "__key__": {
+                "type": "str",
+                "title": "Ras ID"
+              },
+              "__value__": {
+                "description": "a dict containing per-state user count",
+                "type": "object",
+                "properties": {
+                  "ras_total": {
+                    "title": "total number of onlines in this ras",
+                    "type": "number"
+                  },
+                  "ras_reonlined": {
+                    "title": "number of re-onlined users in this ras",
+                    "type": "number"
+                  },
+                  "ras_failed": {
+                    "title": "number of failed users in this ras",
+                    "type": "number"
+                  },
+                  "ras_acct_not_started": {
+                    "title": "number of onlines users with Accounting Not Started status in this ras",
+                    "type": "number"
+                  },
+                  "ras_idle": {
+                    "title": "number of Idle users in this ras",
+                    "type": "number"
+                  }
+                }
+              },
               "properties": {}
             },
             "group_name": {

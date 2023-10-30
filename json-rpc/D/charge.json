@@ -408,6 +408,7 @@
           "description": "",
           "schema": {
             "type": "object",
+            "dynamic_keys": true,
             "properties": {}
           }
         },
