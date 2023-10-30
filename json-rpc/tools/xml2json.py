@@ -111,8 +111,13 @@ def getChoiceJsonParam(param: "Element") -> dict:
 		paramJson["description"] = description
 	paramJson["enum"] = values
 	if default is not None:
-		#if default in ("true", "false"):
-		#	default = default == "true"
+		if default in ("true", "false"):
+			default = default == "true"
+		else:
+			try:
+				default = int(default)
+			except ValueError:
+				pass
 		paramJson["default"] = default
 	if comments:
 		paramJson["value_comment"] = comments
