@@ -36,7 +36,7 @@
         {
           "name": "sort_by",
           "description": "",
-          "value": ["issue_date", "user_id", "total_amount"]
+          "enum": ["issue_date", "user_id", "total_amount"]
         },
         {
           "name": "desc",
@@ -153,11 +153,11 @@
                     },
                     {
                       "name": "date_type",
-                      "value": ["jalali", "gregorian"]
+                      "enum": ["jalali", "gregorian"]
                     },
                     {
                       "name": "language",
-                      "value": ["fa", "en"]
+                      "enum": ["fa", "en"]
                     },
                     {
                       "name": "pi_exp_days",
@@ -175,12 +175,7 @@
                     },
                     {
                       "name": "auto_invoice_event",
-                      "value": [
-                        "null",
-                        "credit_finished",
-                        "exp_date",
-                        "always"
-                      ]
+                      "enum": ["null", "credit_finished", "exp_date", "always"]
                     },
                     {
                       "name": "auto_invoice_threshold",
@@ -198,7 +193,7 @@
                     },
                     {
                       "name": "action",
-                      "value": [
+                      "enum": [
                         "change_service",
                         "renew",
                         "renew_with_next_group",
@@ -367,11 +362,11 @@
                     },
                     {
                       "name": "date_type",
-                      "value": ["jalali", "gregorian"]
+                      "enum": ["jalali", "gregorian"]
                     },
                     {
                       "name": "language",
-                      "value": ["fa", "en"]
+                      "enum": ["fa", "en"]
                     },
                     {
                       "name": "pi_exp_days",
@@ -389,12 +384,7 @@
                     },
                     {
                       "name": "auto_invoice_event",
-                      "value": [
-                        "null",
-                        "credit_finished",
-                        "exp_date",
-                        "always"
-                      ]
+                      "enum": ["null", "credit_finished", "exp_date", "always"]
                     },
                     {
                       "name": "auto_invoice_threshold",
@@ -412,7 +402,7 @@
                     },
                     {
                       "name": "action",
-                      "value": [
+                      "enum": [
                         "change_service",
                         "renew",
                         "renew_with_next_group",
@@ -581,11 +571,11 @@
                     },
                     {
                       "name": "date_type",
-                      "value": ["jalali", "gregorian"]
+                      "enum": ["jalali", "gregorian"]
                     },
                     {
                       "name": "language",
-                      "value": ["fa", "en"]
+                      "enum": ["fa", "en"]
                     },
                     {
                       "name": "pi_exp_days",
@@ -603,12 +593,7 @@
                     },
                     {
                       "name": "auto_invoice_event",
-                      "value": [
-                        "null",
-                        "credit_finished",
-                        "exp_date",
-                        "always"
-                      ]
+                      "enum": ["null", "credit_finished", "exp_date", "always"]
                     },
                     {
                       "name": "auto_invoice_threshold",
@@ -626,7 +611,7 @@
                     },
                     {
                       "name": "action",
-                      "value": [
+                      "enum": [
                         "change_service",
                         "renew",
                         "renew_with_next_group",
@@ -795,11 +780,11 @@
                     },
                     {
                       "name": "date_type",
-                      "value": ["jalali", "gregorian"]
+                      "enum": ["jalali", "gregorian"]
                     },
                     {
                       "name": "language",
-                      "value": ["fa", "en"]
+                      "enum": ["fa", "en"]
                     },
                     {
                       "name": "pi_exp_days",
@@ -817,12 +802,7 @@
                     },
                     {
                       "name": "auto_invoice_event",
-                      "value": [
-                        "null",
-                        "credit_finished",
-                        "exp_date",
-                        "always"
-                      ]
+                      "enum": ["null", "credit_finished", "exp_date", "always"]
                     },
                     {
                       "name": "auto_invoice_threshold",
@@ -840,7 +820,7 @@
                     },
                     {
                       "name": "action",
-                      "value": [
+                      "enum": [
                         "change_service",
                         "renew",
                         "renew_with_next_group",
@@ -973,11 +953,11 @@
             },
             "date_type": {
               "title": "",
-              "value": ["jalali", "gregorian"]
+              "enum": ["jalali", "gregorian"]
             },
             "language": {
               "title": "",
-              "value": ["fa", "en"]
+              "enum": ["fa", "en"]
             },
             "pi_exp_days": {
               "title": "",
@@ -993,7 +973,7 @@
             },
             "auto_invoice_event": {
               "title": "",
-              "value": ["null", "credit_finished", "exp_date", "always"]
+              "enum": ["null", "credit_finished", "exp_date", "always"]
             },
             "auto_invoice_threshold": {
               "title": "",
@@ -1009,7 +989,7 @@
             },
             "action": {
               "title": "",
-              "value": [
+              "enum": [
                 "change_service",
                 "renew",
                 "renew_with_next_group",
@@ -1199,11 +1179,11 @@
                 },
                 {
                   "name": "date_type",
-                  "value": ["jalali", "gregorian"]
+                  "enum": ["jalali", "gregorian"]
                 },
                 {
                   "name": "language",
-                  "value": ["fa", "en"]
+                  "enum": ["fa", "en"]
                 },
                 {
                   "name": "pi_exp_days",
@@ -1221,7 +1201,7 @@
                 },
                 {
                   "name": "auto_invoice_event",
-                  "value": ["null", "credit_finished", "exp_date", "always"]
+                  "enum": ["null", "credit_finished", "exp_date", "always"]
                 },
                 {
                   "name": "auto_invoice_threshold",
@@ -1239,7 +1219,7 @@
                 },
                 {
                   "name": "action",
-                  "value": [
+                  "enum": [
                     "change_service",
                     "renew",
                     "renew_with_next_group",
@@ -1509,7 +1489,7 @@
               },
               "issue_date_from_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -1553,7 +1533,7 @@
         },
         {
           "name": "sort_by",
-          "value": ["issue_date", "user_id", "total_amount"]
+          "enum": ["issue_date", "user_id", "total_amount"]
         },
         {
           "name": "desc",
@@ -1812,7 +1792,7 @@
               },
               "issue_date_from_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -1856,7 +1836,7 @@
         },
         {
           "name": "sort_by",
-          "value": ["issue_date", "user_id", "total_amount"]
+          "enum": ["issue_date", "user_id", "total_amount"]
         },
         {
           "name": "desc",
@@ -2982,11 +2962,11 @@
                   },
                   "date_type": {
                     "title": "",
-                    "value": ["jalali", "gregorian"]
+                    "enum": ["jalali", "gregorian"]
                   },
                   "language": {
                     "title": "",
-                    "value": ["fa", "en"]
+                    "enum": ["fa", "en"]
                   },
                   "pi_exp_days": {
                     "title": "",
@@ -3002,7 +2982,7 @@
                   },
                   "auto_invoice_event": {
                     "title": "",
-                    "value": ["null", "credit_finished", "exp_date", "always"]
+                    "enum": ["null", "credit_finished", "exp_date", "always"]
                   },
                   "auto_invoice_threshold": {
                     "title": "",
@@ -3018,7 +2998,7 @@
                   },
                   "action": {
                     "title": "",
-                    "value": [
+                    "enum": [
                       "change_service",
                       "renew",
                       "renew_with_next_group",
@@ -3328,11 +3308,11 @@
                   },
                   "date_type": {
                     "title": "",
-                    "value": ["jalali", "gregorian"]
+                    "enum": ["jalali", "gregorian"]
                   },
                   "language": {
                     "title": "",
-                    "value": ["fa", "en"]
+                    "enum": ["fa", "en"]
                   },
                   "pi_exp_days": {
                     "title": "",
@@ -3348,7 +3328,7 @@
                   },
                   "auto_invoice_event": {
                     "title": "",
-                    "value": ["null", "credit_finished", "exp_date", "always"]
+                    "enum": ["null", "credit_finished", "exp_date", "always"]
                   },
                   "auto_invoice_threshold": {
                     "title": "",
@@ -3364,7 +3344,7 @@
                   },
                   "action": {
                     "title": "",
-                    "value": [
+                    "enum": [
                       "change_service",
                       "renew",
                       "renew_with_next_group",

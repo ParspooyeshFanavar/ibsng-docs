@@ -21,7 +21,7 @@
         {
           "name": "ras_type",
           "description": "",
-          "value": [
+          "enum": [
             "ACS2",
             "Cisco-IN",
             "CiscoVPDN",
@@ -116,7 +116,7 @@
             },
             "ras_type": {
               "title": "",
-              "value": [
+              "enum": [
                 "ACS2",
                 "Cisco-IN",
                 "CiscoVPDN",
@@ -263,7 +263,7 @@
         {
           "name": "ras_type",
           "description": "",
-          "value": [
+          "enum": [
             "ACS2",
             "Cisco-IN",
             "CiscoVPDN",

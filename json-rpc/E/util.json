@@ -55,7 +55,7 @@
           "title": "",
           "type": "boolean"
         },
-        "value": ["true"]
+        "enum": ["true"]
       }
     },
     {
@@ -506,18 +506,18 @@
         {
           "name": "report_status",
           "description": "",
-          "value": ["started", "finished"]
+          "enum": ["started", "finished"]
         },
         {
           "name": "report_format",
           "description": "",
-          "value": ["csv", "pdf"]
+          "enum": ["csv", "pdf"]
         }
       ],
       "result": {
         "name": "Response (one of following values)",
         "comment": "",
-        "value": ["true"]
+        "enum": ["true"]
       }
     },
     {

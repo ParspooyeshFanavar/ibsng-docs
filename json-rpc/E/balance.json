@@ -50,7 +50,7 @@
         {
           "name": "valid_for_start_unit",
           "description": "Date type for output date or datetime params, default is 'gregorian'",
-          "value": ["gregorian", "jalali"]
+          "enum": ["gregorian", "jalali"]
         },
         {
           "name": "valid_for_end",
@@ -63,7 +63,7 @@
         {
           "name": "valid_for_end_unit",
           "description": "Date type for output date or datetime params, default is 'gregorian'",
-          "value": ["gregorian", "jalali"]
+          "enum": ["gregorian", "jalali"]
         },
         {
           "name": "default_value",
@@ -276,7 +276,7 @@
         {
           "name": "valid_for_start_unit",
           "description": "Date type for output date or datetime params, default is 'gregorian'",
-          "value": ["gregorian", "jalali"]
+          "enum": ["gregorian", "jalali"]
         },
         {
           "name": "valid_for_end",
@@ -289,7 +289,7 @@
         {
           "name": "valid_for_end_unit",
           "description": "Date type for output date or datetime params, default is 'gregorian'",
-          "value": ["gregorian", "jalali"]
+          "enum": ["gregorian", "jalali"]
         },
         {
           "name": "default_value",
@@ -477,17 +477,11 @@
               },
               "balance_name_op": {
                 "title": "",
-                "value": [
-                  "like",
-                  "ilike",
-                  "starts_with",
-                  "ends_with",
-                  "equals"
-                ]
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "isp_name": {
                 "title": "lis of ISP(s)",
-                "value": []
+                "enum": []
               },
               "valid_for_start": {
                 "title": "datetime, ",
@@ -498,7 +492,7 @@
               },
               "valid_for_start_unit": {
                 "title": "Date type for output date or datetime params, default is 'gregorian'",
-                "value": ["gregorian", "jalali"]
+                "enum": ["gregorian", "jalali"]
               },
               "valid_for_end": {
                 "title": "datetime, ",
@@ -509,26 +503,26 @@
               },
               "valid_for_end_unit": {
                 "title": "Date type for output date or datetime params, default is 'gregorian'",
-                "value": ["gregorian", "jalali"]
+                "enum": ["gregorian", "jalali"]
               },
               "balance_classes": {
                 "title": "lis of balance classes",
-                "value": []
+                "enum": []
               },
               "life_cycle_status": {
                 "title": "lis of balance life cycle status",
-                "value": []
+                "enum": []
               },
               "value_type": {
                 "title": "lis of balance value type",
-                "value": []
+                "enum": []
               }
             }
           }
         },
         {
           "name": "sort_by",
-          "value": ["balance_name", "balance_id"]
+          "enum": ["balance_name", "balance_id"]
         },
         {
           "name": "desc",

@@ -27,7 +27,7 @@
         {
           "name": "view_type",
           "description": "",
-          "value": ["SEND", "REPORT"]
+          "enum": ["SEND", "REPORT"]
         }
       ],
       "result": {
@@ -93,7 +93,7 @@
             },
             "provider_type": {
               "title": "",
-              "value": [
+              "enum": [
                 "Parspooyesh",
                 "Pishgaman",
                 "Rahyab",
@@ -109,7 +109,7 @@
             },
             "msg_type": {
               "title": "",
-              "value": ["SMS", "E-Mail", "Message To Admin", "Message To User"]
+              "enum": ["SMS", "E-Mail", "Message To Admin", "Message To User"]
             }
           }
         }
@@ -146,7 +146,7 @@
         {
           "name": "provider_type",
           "description": "",
-          "value": [
+          "enum": [
             "Parspooyesh",
             "Pishgaman",
             "Rahyab",
@@ -170,7 +170,7 @@
         {
           "name": "msg_type",
           "description": "",
-          "value": ["SMS", "E-Mail", "Message To Admin", "Message To User"]
+          "enum": ["SMS", "E-Mail", "Message To Admin", "Message To User"]
         }
       ],
       "result": {
@@ -200,7 +200,7 @@
             },
             "provider_type": {
               "title": "",
-              "value": [
+              "enum": [
                 "Parspooyesh",
                 "Pishgaman",
                 "Rahyab",
@@ -216,7 +216,7 @@
             },
             "msg_type": {
               "title": "",
-              "value": ["SMS", "E-Mail", "Message To Admin", "Message To User"]
+              "enum": ["SMS", "E-Mail", "Message To Admin", "Message To User"]
             }
           }
         }
@@ -538,7 +538,7 @@
               },
               "msg_type": {
                 "title": "",
-                "value": [
+                "enum": [
                   "SMS",
                   "E-Mail",
                   "Message To Admin",
@@ -592,7 +592,7 @@
         {
           "name": "msg_type",
           "description": "",
-          "value": ["SMS", "E-Mail", "Message To Admin", "Message To User"]
+          "enum": ["SMS", "E-Mail", "Message To Admin", "Message To User"]
         }
       ],
       "result": {
@@ -626,7 +626,7 @@
         {
           "name": "msg_type",
           "description": "",
-          "value": ["SMS", "E-Mail", "Message To Admin", "Message To User"]
+          "enum": ["SMS", "E-Mail", "Message To Admin", "Message To User"]
         },
         {
           "name": "schedule_date",
@@ -637,7 +637,7 @@
         },
         {
           "name": "schedule_date_unit",
-          "value": [
+          "enum": [
             "jalali",
             "gregorian",
             "years",
@@ -679,7 +679,7 @@
         {
           "name": "msg_type",
           "description": "",
-          "value": ["SMS", "E-Mail", "Message To Admin", "Message To User"]
+          "enum": ["SMS", "E-Mail", "Message To Admin", "Message To User"]
         }
       ],
       "result": {
@@ -713,7 +713,7 @@
         {
           "name": "msg_type",
           "description": "",
-          "value": ["SMS", "E-Mail", "Message To Admin", "Message To User"]
+          "enum": ["SMS", "E-Mail", "Message To Admin", "Message To User"]
         },
         {
           "name": "schedule_date",
@@ -724,7 +724,7 @@
         },
         {
           "name": "schedule_date_unit",
-          "value": [
+          "enum": [
             "jalali",
             "gregorian",
             "years",
@@ -851,7 +851,7 @@
               },
               "receive_date_from_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -870,7 +870,7 @@
               },
               "receive_date_to_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -889,13 +889,7 @@
               },
               "body_op": {
                 "title": "",
-                "value": [
-                  "like",
-                  "ilike",
-                  "starts_with",
-                  "ends_with",
-                  "equals"
-                ]
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "from": {
                 "title": "source (sender) address (phone number / email)",
@@ -906,17 +900,11 @@
               },
               "from_op": {
                 "title": "",
-                "value": [
-                  "like",
-                  "ilike",
-                  "starts_with",
-                  "ends_with",
-                  "equals"
-                ]
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "msg_types": {
                 "title": "can be a list (of strings) too, for example msg_types=['SMS', 'E-Mail']",
-                "value": [
+                "enum": [
                   "SMS",
                   "E-Mail",
                   "Message To Admin",
@@ -943,7 +931,7 @@
         {
           "name": "order_by",
           "description": "",
-          "value": ["message_id", "msg_type", "transfer_date"]
+          "enum": ["message_id", "msg_type", "transfer_date"]
         },
         {
           "name": "desc",
@@ -976,7 +964,7 @@
             "properties": {
               "owner_type": {
                 "title": "",
-                "value": ["USER"]
+                "enum": ["USER"]
               },
               "user_ids": {
                 "title": "",
@@ -1008,7 +996,7 @@
               },
               "receive_date_from_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -1027,7 +1015,7 @@
               },
               "receive_date_to_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -1046,13 +1034,7 @@
               },
               "body_op": {
                 "title": "",
-                "value": [
-                  "like",
-                  "ilike",
-                  "starts_with",
-                  "ends_with",
-                  "equals"
-                ]
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "from": {
                 "title": "source (sender) address (phone number / email)",
@@ -1063,17 +1045,11 @@
               },
               "from_op": {
                 "title": "",
-                "value": [
-                  "like",
-                  "ilike",
-                  "starts_with",
-                  "ends_with",
-                  "equals"
-                ]
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "msg_types": {
                 "title": "can be a list (of strings) too, for example msg_types=['SMS', 'E-Mail']",
-                "value": [
+                "enum": [
                   "SMS",
                   "E-Mail",
                   "Message To Admin",
@@ -1100,7 +1076,7 @@
         {
           "name": "order_by",
           "description": "",
-          "value": ["message_id", "msg_type", "transfer_date"]
+          "enum": ["message_id", "msg_type", "transfer_date"]
         },
         {
           "name": "desc",
@@ -1133,7 +1109,7 @@
             "properties": {
               "owner_type": {
                 "title": "",
-                "value": ["ISP"]
+                "enum": ["ISP"]
               },
               "isp_ids": {
                 "title": "",
@@ -1158,7 +1134,7 @@
               },
               "receive_date_from_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -1177,7 +1153,7 @@
               },
               "receive_date_to_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -1196,13 +1172,7 @@
               },
               "body_op": {
                 "title": "",
-                "value": [
-                  "like",
-                  "ilike",
-                  "starts_with",
-                  "ends_with",
-                  "equals"
-                ]
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "from": {
                 "title": "source (sender) address (phone number / email)",
@@ -1213,17 +1183,11 @@
               },
               "from_op": {
                 "title": "",
-                "value": [
-                  "like",
-                  "ilike",
-                  "starts_with",
-                  "ends_with",
-                  "equals"
-                ]
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "msg_types": {
                 "title": "can be a list (of strings) too, for example msg_types=['SMS', 'E-Mail']",
-                "value": [
+                "enum": [
                   "SMS",
                   "E-Mail",
                   "Message To Admin",
@@ -1250,7 +1214,7 @@
         {
           "name": "order_by",
           "description": "",
-          "value": ["message_id", "msg_type", "transfer_date"]
+          "enum": ["message_id", "msg_type", "transfer_date"]
         },
         {
           "name": "desc",
@@ -1296,7 +1260,7 @@
               },
               "transfer_date_from_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -1315,7 +1279,7 @@
               },
               "transfer_date_to_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -1334,13 +1298,7 @@
               },
               "body_op": {
                 "title": "",
-                "value": [
-                  "like",
-                  "ilike",
-                  "starts_with",
-                  "ends_with",
-                  "equals"
-                ]
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "to": {
                 "title": "destination address (phone number/email)",
@@ -1351,17 +1309,11 @@
               },
               "to_op": {
                 "title": "",
-                "value": [
-                  "like",
-                  "ilike",
-                  "starts_with",
-                  "ends_with",
-                  "equals"
-                ]
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "msg_types": {
                 "title": "can be a list (of strings) too, for example msg_types=['SMS', 'E-Mail']",
-                "value": [
+                "enum": [
                   "SMS",
                   "E-Mail",
                   "Message To Admin",
@@ -1388,7 +1340,7 @@
         {
           "name": "order_by",
           "description": "",
-          "value": ["message_id", "msg_type", "transfer_date"]
+          "enum": ["message_id", "msg_type", "transfer_date"]
         },
         {
           "name": "desc",
@@ -1437,7 +1389,7 @@
             },
             "msg_type": {
               "title": "",
-              "value": ["SMS", "E-Mail", "Message To Admin", "Message To User"]
+              "enum": ["SMS", "E-Mail", "Message To Admin", "Message To User"]
             },
             "user_id": {
               "title": "",
@@ -1493,7 +1445,7 @@
             "properties": {
               "owner_type": {
                 "title": "",
-                "value": ["USER"]
+                "enum": ["USER"]
               },
               "user_ids": {
                 "title": "",
@@ -1525,7 +1477,7 @@
               },
               "transfer_date_from_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -1544,7 +1496,7 @@
               },
               "transfer_date_to_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -1563,13 +1515,7 @@
               },
               "body_op": {
                 "title": "",
-                "value": [
-                  "like",
-                  "ilike",
-                  "starts_with",
-                  "ends_with",
-                  "equals"
-                ]
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "to": {
                 "title": "destination address (phone number/email)",
@@ -1580,17 +1526,11 @@
               },
               "to_op": {
                 "title": "",
-                "value": [
-                  "like",
-                  "ilike",
-                  "starts_with",
-                  "ends_with",
-                  "equals"
-                ]
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "msg_types": {
                 "title": "can be a list (of strings) too, for example msg_types=['SMS', 'E-Mail']",
-                "value": [
+                "enum": [
                   "SMS",
                   "E-Mail",
                   "Message To Admin",
@@ -1617,7 +1557,7 @@
         {
           "name": "order_by",
           "description": "",
-          "value": ["message_id", "msg_type", "transfer_date"]
+          "enum": ["message_id", "msg_type", "transfer_date"]
         },
         {
           "name": "desc",
@@ -1666,7 +1606,7 @@
             },
             "msg_type": {
               "title": "",
-              "value": ["SMS", "E-Mail", "Message To Admin", "Message To User"]
+              "enum": ["SMS", "E-Mail", "Message To Admin", "Message To User"]
             },
             "user_id": {
               "title": "",
@@ -1722,7 +1662,7 @@
             "properties": {
               "owner_type": {
                 "title": "",
-                "value": ["ISP"]
+                "enum": ["ISP"]
               },
               "isp_ids": {
                 "title": "",
@@ -1747,7 +1687,7 @@
               },
               "transfer_date_from_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -1766,7 +1706,7 @@
               },
               "transfer_date_to_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -1785,13 +1725,7 @@
               },
               "body_op": {
                 "title": "",
-                "value": [
-                  "like",
-                  "ilike",
-                  "starts_with",
-                  "ends_with",
-                  "equals"
-                ]
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "to": {
                 "title": "destination address (number/email)",
@@ -1802,17 +1736,11 @@
               },
               "to_op": {
                 "title": "",
-                "value": [
-                  "like",
-                  "ilike",
-                  "starts_with",
-                  "ends_with",
-                  "equals"
-                ]
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "msg_types": {
                 "title": "can be a list (of strings) too, for example msg_types=['SMS', 'E-Mail']",
-                "value": [
+                "enum": [
                   "SMS",
                   "E-Mail",
                   "Message To Admin",
@@ -1839,7 +1767,7 @@
         {
           "name": "order_by",
           "description": "",
-          "value": ["message_id", "msg_type", "transfer_date"]
+          "enum": ["message_id", "msg_type", "transfer_date"]
         },
         {
           "name": "desc",
@@ -1888,7 +1816,7 @@
             },
             "msg_type": {
               "title": "",
-              "value": ["SMS", "E-Mail", "Message To Admin", "Message To User"]
+              "enum": ["SMS", "E-Mail", "Message To Admin", "Message To User"]
             },
             "user_id": {
               "title": "",
@@ -1944,7 +1872,7 @@
             "properties": {
               "owner_type": {
                 "title": "",
-                "value": ["ISP", "USER"]
+                "enum": ["ISP", "USER"]
               },
               "owner_ids": {
                 "title": "",
@@ -1976,7 +1904,7 @@
               },
               "schedule_date_from_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -1995,7 +1923,7 @@
               },
               "schedule_date_to_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -2014,13 +1942,7 @@
               },
               "body_op": {
                 "title": "",
-                "value": [
-                  "like",
-                  "ilike",
-                  "starts_with",
-                  "ends_with",
-                  "equals"
-                ]
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "to": {
                 "title": "destination address (number/email)",
@@ -2031,13 +1953,7 @@
               },
               "to_op": {
                 "title": "",
-                "value": [
-                  "like",
-                  "ilike",
-                  "starts_with",
-                  "ends_with",
-                  "equals"
-                ]
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "source": {
                 "title": "source address (number/email)",
@@ -2048,17 +1964,11 @@
               },
               "source_op": {
                 "title": "",
-                "value": [
-                  "like",
-                  "ilike",
-                  "starts_with",
-                  "ends_with",
-                  "equals"
-                ]
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "msg_types": {
                 "title": "can be a list (of strings) too, for example msg_types=['SMS', 'E-Mail']",
-                "value": [
+                "enum": [
                   "SMS",
                   "E-Mail",
                   "Message To Admin",
@@ -2085,7 +1995,7 @@
         {
           "name": "order_by",
           "description": "",
-          "value": ["message_id", "msg_type", "transfer_date"]
+          "enum": ["message_id", "msg_type", "transfer_date"]
         },
         {
           "name": "desc",
@@ -2116,11 +2026,11 @@
             },
             "msg_type": {
               "title": "",
-              "value": ["SMS", "E-Mail", "Message To Admin", "Message To User"]
+              "enum": ["SMS", "E-Mail", "Message To Admin", "Message To User"]
             },
             "owner_type": {
               "title": "",
-              "value": ["ISP", "USER"]
+              "enum": ["ISP", "USER"]
             },
             "owner_id": {
               "title": "",
@@ -2207,7 +2117,7 @@
               },
               "schedule_date_from_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -2226,7 +2136,7 @@
               },
               "schedule_date_to_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -2245,13 +2155,7 @@
               },
               "body_op": {
                 "title": "",
-                "value": [
-                  "like",
-                  "ilike",
-                  "starts_with",
-                  "ends_with",
-                  "equals"
-                ]
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "to": {
                 "title": "destination address (number/email)",
@@ -2262,13 +2166,7 @@
               },
               "to_op": {
                 "title": "",
-                "value": [
-                  "like",
-                  "ilike",
-                  "starts_with",
-                  "ends_with",
-                  "equals"
-                ]
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "source": {
                 "title": "source address (number/email)",
@@ -2279,17 +2177,11 @@
               },
               "source_op": {
                 "title": "",
-                "value": [
-                  "like",
-                  "ilike",
-                  "starts_with",
-                  "ends_with",
-                  "equals"
-                ]
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "msg_types": {
                 "title": "can be a list (of strings) too, for example msg_types=['SMS', 'E-Mail']",
-                "value": [
+                "enum": [
                   "SMS",
                   "E-Mail",
                   "Message To Admin",
@@ -2316,7 +2208,7 @@
         {
           "name": "order_by",
           "description": "",
-          "value": ["message_id", "msg_type", "transfer_date"]
+          "enum": ["message_id", "msg_type", "transfer_date"]
         },
         {
           "name": "desc",
@@ -2347,11 +2239,11 @@
             },
             "msg_type": {
               "title": "",
-              "value": ["SMS", "E-Mail", "Message To Admin", "Message To User"]
+              "enum": ["SMS", "E-Mail", "Message To Admin", "Message To User"]
             },
             "owner_type": {
               "title": "",
-              "value": ["ISP", "USER"]
+              "enum": ["ISP", "USER"]
             },
             "owner_id": {
               "title": "",
@@ -2433,7 +2325,7 @@
         {
           "name": "order_by",
           "description": "",
-          "value": ["message_id", "msg_type", "transfer_date"]
+          "enum": ["message_id", "msg_type", "transfer_date"]
         },
         {
           "name": "desc",
@@ -2515,7 +2407,7 @@
         {
           "name": "target_box",
           "description": "",
-          "value": ["USER_SEND", "USER_RECEIVE", "QUEUE"]
+          "enum": ["USER_SEND", "USER_RECEIVE", "QUEUE"]
         }
       ],
       "result": {
@@ -2543,7 +2435,7 @@
         {
           "name": "target_box",
           "description": "",
-          "value": [
+          "enum": [
             "USER_SEND",
             "USER_RECEIVE",
             "ISP_SEND",
@@ -2705,7 +2597,7 @@
         {
           "name": "type",
           "description": "",
-          "value": ["ADMIN", "USER"]
+          "enum": ["ADMIN", "USER"]
         }
       ],
       "result": {

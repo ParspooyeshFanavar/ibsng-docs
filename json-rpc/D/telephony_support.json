@@ -37,7 +37,7 @@
         {
           "name": "auth_by",
           "description": "",
-          "value": [
+          "enum": [
             "user_id",
             "serial",
             "voip_username",
@@ -148,7 +148,7 @@
       "result": {
         "name": "Response (one of following values)",
         "comment": "",
-        "value": [
+        "enum": [
           "0",
           "900",
           "901",
@@ -285,7 +285,7 @@
           "title": "",
           "type": "boolean"
         },
-        "value": ["true"]
+        "enum": ["true"]
       }
     }
   ]

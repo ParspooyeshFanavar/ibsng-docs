@@ -454,7 +454,7 @@
               },
               "creation_date_from_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -473,7 +473,7 @@
               },
               "creation_date_to_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -492,7 +492,7 @@
               },
               "used_date_from_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -511,7 +511,7 @@
               },
               "used_date_to_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -523,11 +523,11 @@
               },
               "expired": {
                 "title": "",
-                "value": ["yes", "no"]
+                "enum": ["yes", "no"]
               },
               "available": {
                 "title": "available means not expired",
-                "value": ["yes", "no"]
+                "enum": ["yes", "no"]
               }
             }
           }
@@ -549,7 +549,7 @@
         {
           "name": "sort_by",
           "description": "",
-          "value": ["otp_id", "creation_date", "used_date"]
+          "enum": ["otp_id", "creation_date", "used_date"]
         },
         {
           "name": "desc",

@@ -14,7 +14,7 @@
         {
           "name": "normal_sort_by",
           "description": "",
-          "value": [
+          "enum": [
             "user_id",
             "normal_username",
             "login_time_epoch",
@@ -45,7 +45,7 @@
         {
           "name": "voip_sort_by",
           "description": "",
-          "value": [
+          "enum": [
             "user_id",
             "voip_username",
             "login_time_epoch",
@@ -433,7 +433,7 @@
               },
               "credit_used_op": {
                 "title": "",
-                "value": ["=", ">", "<", ">=", "<="]
+                "enum": ["=", ">", "<", ">=", "<="]
               },
               "duration": {
                 "title": "in seconds",
@@ -444,7 +444,7 @@
               },
               "duration_op": {
                 "title": "",
-                "value": ["=", ">", "<", ">=", "<="]
+                "enum": ["=", ">", "<", ">=", "<="]
               },
               "login_time_from": {
                 "title": "datetime or number, ",
@@ -455,7 +455,7 @@
               },
               "login_time_from_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -474,7 +474,7 @@
               },
               "login_time_to_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -493,7 +493,7 @@
               },
               "logout_time_from_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -512,7 +512,7 @@
               },
               "logout_time_to_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -538,11 +538,11 @@
               },
               "successful": {
                 "title": "",
-                "value": ["yes", "no"]
+                "enum": ["yes", "no"]
               },
               "service": {
                 "title": "",
-                "value": ["Internet", "VoIP"]
+                "enum": ["Internet", "VoIP"]
               },
               "ras_ip": {
                 "title": "",
@@ -581,7 +581,7 @@
               },
               "caller_id_op": {
                 "title": "",
-                "value": ["=", ">", "<", ">=", "<="]
+                "enum": ["=", ">", "<", ">=", "<="]
               },
               "mac": {
                 "title": "",
@@ -627,7 +627,7 @@
               },
               "cpm_op": {
                 "title": "comes with cpm",
-                "value": ["=", ">", "<", ">=", "<="]
+                "enum": ["=", ">", "<", ">=", "<="]
               },
               "called_number": {
                 "title": "",
@@ -638,7 +638,7 @@
               },
               "called_number_op": {
                 "title": "",
-                "value": ["=", ">", "<", ">=", "<="]
+                "enum": ["=", ">", "<", ">=", "<="]
               },
               "prefix_name": {
                 "title": "",
@@ -649,7 +649,7 @@
               },
               "prefix_name_op": {
                 "title": "",
-                "value": ["=", ">", "<", ">=", "<="]
+                "enum": ["=", ">", "<", ">=", "<="]
               },
               "called_ip": {
                 "title": "",
@@ -692,7 +692,7 @@
         {
           "name": "sort_by",
           "description": "",
-          "value": [
+          "enum": [
             "user_id",
             "credit_used",
             "login_time",
@@ -773,7 +773,7 @@
                     {
                       "name": "service_type",
                       "description": "",
-                      "value": ["Internet", "VoIP"]
+                      "enum": ["Internet", "VoIP"]
                     },
                     {
                       "name": "login_time_formatted",
@@ -1081,7 +1081,7 @@
               },
               "credit_used_op": {
                 "title": "",
-                "value": ["=", ">", "<", ">=", "<="]
+                "enum": ["=", ">", "<", ">=", "<="]
               },
               "duration": {
                 "title": "in seconds",
@@ -1092,7 +1092,7 @@
               },
               "duration_op": {
                 "title": "",
-                "value": ["=", ">", "<", ">=", "<="]
+                "enum": ["=", ">", "<", ">=", "<="]
               },
               "login_time_from": {
                 "title": "datetime or number, ",
@@ -1103,7 +1103,7 @@
               },
               "login_time_from_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -1122,7 +1122,7 @@
               },
               "login_time_to_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -1141,7 +1141,7 @@
               },
               "logout_time_from_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -1160,7 +1160,7 @@
               },
               "logout_time_to_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -1172,11 +1172,11 @@
               },
               "successful": {
                 "title": "",
-                "value": ["yes", "no"]
+                "enum": ["yes", "no"]
               },
               "service": {
                 "title": "",
-                "value": ["Internet", "VoIP"]
+                "enum": ["Internet", "VoIP"]
               },
               "ras_ip": {
                 "title": "",
@@ -1201,7 +1201,7 @@
               },
               "caller_id_op": {
                 "title": "",
-                "value": ["=", ">", "<", ">=", "<="]
+                "enum": ["=", ">", "<", ">=", "<="]
               },
               "mac": {
                 "title": "",
@@ -1247,7 +1247,7 @@
               },
               "cpm_op": {
                 "title": "comes with cpm",
-                "value": ["=", ">", "<", ">=", "<="]
+                "enum": ["=", ">", "<", ">=", "<="]
               },
               "called_number": {
                 "title": "",
@@ -1258,7 +1258,7 @@
               },
               "called_number_op": {
                 "title": "",
-                "value": ["=", ">", "<", ">=", "<="]
+                "enum": ["=", ">", "<", ">=", "<="]
               },
               "prefix_name": {
                 "title": "",
@@ -1269,7 +1269,7 @@
               },
               "prefix_name_op": {
                 "title": "",
-                "value": ["=", ">", "<", ">=", "<="]
+                "enum": ["=", ">", "<", ">=", "<="]
               },
               "called_ip": {
                 "title": "",
@@ -1312,7 +1312,7 @@
         {
           "name": "sort_by",
           "description": "",
-          "value": [
+          "enum": [
             "credit_used",
             "login_time",
             "logout_time",
@@ -1392,7 +1392,7 @@
                     {
                       "name": "service_type",
                       "description": "",
-                      "value": ["Internet", "VoIP"]
+                      "enum": ["Internet", "VoIP"]
                     },
                     {
                       "name": "login_time_formatted",
@@ -1603,7 +1603,7 @@
         {
           "name": "sort_by",
           "description": "",
-          "value": [
+          "enum": [
             "credit_used",
             "login_time",
             "logout_time",
@@ -1805,7 +1805,7 @@
         {
           "name": "order_by",
           "description": "",
-          "value": ["creation_date", "normal_username", "sum"]
+          "enum": ["creation_date", "normal_username", "sum"]
         }
       ],
       "result": {
@@ -1866,7 +1866,7 @@
         {
           "name": "order_by",
           "description": "",
-          "value": ["creation_date", "normal_username", "sum"]
+          "enum": ["creation_date", "normal_username", "sum"]
         }
       ],
       "result": {
@@ -1927,7 +1927,7 @@
         {
           "name": "order_by",
           "description": "",
-          "value": ["creation_date", "normal_username", "sum"]
+          "enum": ["creation_date", "normal_username", "sum"]
         }
       ],
       "result": {
@@ -1988,7 +1988,7 @@
         {
           "name": "order_by",
           "description": "",
-          "value": [
+          "enum": [
             "total_credit",
             "total_duration",
             "total_in_bytes",
@@ -2154,7 +2154,7 @@
         {
           "name": "sort_by",
           "description": "",
-          "value": [
+          "enum": [
             "user_id",
             "normal_username",
             "voip_username",
@@ -2206,7 +2206,7 @@
                   "type": "array",
                   "items": {
                     "title": "",
-                    "value": [
+                    "enum": [
                       "prefix_name",
                       "prefix_code",
                       "cpm",
@@ -2238,7 +2238,7 @@
         {
           "name": "order_by",
           "description": "",
-          "value": [
+          "enum": [
             "prefix_name",
             "prefix_code",
             "duration_sum",
@@ -2312,7 +2312,7 @@
         {
           "name": "order_by",
           "description": "",
-          "value": ["creation_date", "normal_username", "sum"]
+          "enum": ["creation_date", "normal_username", "sum"]
         }
       ],
       "result": {
@@ -2381,7 +2381,7 @@
                   "type": "array",
                   "items": {
                     "title": "",
-                    "value": [
+                    "enum": [
                       "ADD_USER",
                       "CHANGE_CREDIT",
                       "DEL_USER",
@@ -2413,7 +2413,7 @@
               },
               "per_user_credit_op": {
                 "title": "",
-                "value": ["=", ">", "<", ">=", "<="]
+                "enum": ["=", ">", "<", ">=", "<="]
               },
               "isp_credit": {
                 "title": "",
@@ -2424,7 +2424,7 @@
               },
               "isp_credit_op": {
                 "title": "",
-                "value": ["=", ">", "<", ">=", "<="]
+                "enum": ["=", ">", "<", ">=", "<="]
               },
               "change_time_from": {
                 "title": "datetime or number, ",
@@ -2435,7 +2435,7 @@
               },
               "change_time_from_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -2454,7 +2454,7 @@
               },
               "change_time_to_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -2512,7 +2512,7 @@
         {
           "name": "sort_by",
           "description": "",
-          "value": ["change_time", "per_user_credit", "isp_credit"]
+          "enum": ["change_time", "per_user_credit", "isp_credit"]
         },
         {
           "name": "desc",
@@ -2574,7 +2574,7 @@
             "type": "object",
             "properties": {
               "user_view": {
-                "title": "",
+                "title": "Key must be present for User-view",
                 "schema": {
                   "type": ""
                 },
@@ -2607,7 +2607,7 @@
                   "type": "array",
                   "items": {
                     "title": "",
-                    "value": [
+                    "enum": [
                       "ADD_USER",
                       "CHANGE_CREDIT",
                       "DEL_USER",
@@ -2639,7 +2639,7 @@
               },
               "per_user_credit_op": {
                 "title": "",
-                "value": ["=", ">", "<", ">=", "<="]
+                "enum": ["=", ">", "<", ">=", "<="]
               },
               "isp_credit": {
                 "title": "",
@@ -2650,7 +2650,7 @@
               },
               "isp_credit_op": {
                 "title": "",
-                "value": ["=", ">", "<", ">=", "<="]
+                "enum": ["=", ">", "<", ">=", "<="]
               },
               "change_time_from": {
                 "title": "datetime or number, ",
@@ -2661,7 +2661,7 @@
               },
               "change_time_from_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -2680,7 +2680,7 @@
               },
               "change_time_to_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -2738,7 +2738,7 @@
         {
           "name": "sort_by",
           "description": "",
-          "value": ["change_time", "per_user_credit", "isp_credit"]
+          "enum": ["change_time", "per_user_credit", "isp_credit"]
         },
         {
           "name": "desc",
@@ -2800,7 +2800,7 @@
             "type": "object",
             "properties": {
               "user_view": {
-                "title": "",
+                "title": "Key must be present for User-view",
                 "schema": {
                   "type": ""
                 },
@@ -2812,7 +2812,7 @@
                   "type": "array",
                   "items": {
                     "title": "",
-                    "value": [
+                    "enum": [
                       "ADD_USER",
                       "CHANGE_CREDIT",
                       "DEL_USER",
@@ -2844,7 +2844,7 @@
               },
               "per_user_credit_op": {
                 "title": "",
-                "value": ["=", ">", "<", ">=", "<="]
+                "enum": ["=", ">", "<", ">=", "<="]
               },
               "change_time_from": {
                 "title": "datetime or number, ",
@@ -2855,7 +2855,7 @@
               },
               "change_time_from_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -2874,7 +2874,7 @@
               },
               "change_time_to_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -2932,7 +2932,7 @@
         {
           "name": "sort_by",
           "description": "",
-          "value": ["change_time", "per_user_credit"]
+          "enum": ["change_time", "per_user_credit"]
         },
         {
           "name": "desc",
@@ -3002,7 +3002,7 @@
             "type": "array",
             "items": {
               "title": "",
-              "value": [
+              "enum": [
                 "action",
                 "action_text",
                 "admin_id",
@@ -3041,7 +3041,7 @@
         {
           "name": "sort_by",
           "description": "",
-          "value": ["change_time", "per_user_credit", "isp_credit"]
+          "enum": ["change_time", "per_user_credit", "isp_credit"]
         },
         {
           "name": "desc",
@@ -3053,7 +3053,7 @@
         {
           "name": "output_type",
           "description": "",
-          "value": ["csv", "pdf"]
+          "enum": ["csv", "pdf"]
         }
       ],
       "result": {
@@ -3097,7 +3097,7 @@
                   "type": "array",
                   "items": {
                     "title": "",
-                    "value": [
+                    "enum": [
                       "ADD_USER",
                       "CHANGE_DEPOSIT",
                       "DEL_USER",
@@ -3122,7 +3122,7 @@
               },
               "deposit_op": {
                 "title": "comes with deposit cond",
-                "value": ["=", ">", "<", ">=", "<="]
+                "enum": ["=", ">", "<", ">=", "<="]
               },
               "change_time_from": {
                 "title": "datetime or number, ",
@@ -3133,7 +3133,7 @@
               },
               "change_time_from_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -3152,7 +3152,7 @@
               },
               "change_time_to_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -3210,7 +3210,7 @@
         {
           "name": "sort_by",
           "description": "",
-          "value": ["change_time", "user_id", "deposit_change"]
+          "enum": ["change_time", "user_id", "deposit_change"]
         },
         {
           "name": "desc",
@@ -3257,7 +3257,7 @@
                     {
                       "name": "action_text",
                       "description": "",
-                      "value": [
+                      "enum": [
                         "ADD_USER",
                         "CHANGE_DEPOSIT",
                         "DEL_USER",
@@ -3393,7 +3393,7 @@
                   "type": "array",
                   "items": {
                     "title": "",
-                    "value": [
+                    "enum": [
                       "ADD_USER",
                       "CHANGE_DEPOSIT",
                       "DEL_USER",
@@ -3418,7 +3418,7 @@
               },
               "deposit_op": {
                 "title": "comes with deposit cond",
-                "value": ["=", ">", "<", ">=", "<="]
+                "enum": ["=", ">", "<", ">=", "<="]
               },
               "change_time_from": {
                 "title": "datetime or number, ",
@@ -3429,7 +3429,7 @@
               },
               "change_time_from_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -3448,7 +3448,7 @@
               },
               "change_time_to_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -3499,7 +3499,7 @@
         {
           "name": "sort_by",
           "description": "",
-          "value": ["change_time", "user_id", "deposit_change"]
+          "enum": ["change_time", "user_id", "deposit_change"]
         },
         {
           "name": "desc",
@@ -3546,7 +3546,7 @@
                     {
                       "name": "action_text",
                       "description": "",
-                      "value": [
+                      "enum": [
                         "ADD_USER",
                         "CHANGE_DEPOSIT",
                         "DEL_USER",
@@ -3671,7 +3671,7 @@
               },
               "change_time_from_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -3690,7 +3690,7 @@
               },
               "change_time_to_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -3702,7 +3702,7 @@
               },
               "is_user": {
                 "title": "",
-                "value": ["yes", "no"]
+                "enum": ["yes", "no"]
               },
               "isp_names": {
                 "title": "list of isp names, or string of one isp name",
@@ -3738,7 +3738,7 @@
         {
           "name": "sort_by",
           "description": "",
-          "value": ["change_time", "object_id", "admin_id"]
+          "enum": ["change_time", "object_id", "admin_id"]
         },
         {
           "name": "desc",
@@ -3807,7 +3807,7 @@
                     {
                       "name": "is_user",
                       "description": "",
-                      "value": ["t", "f"],
+                      "enum": ["t", "f"],
                       "value_comment": {
                         "t": "true / yes",
                         "f": "false / no"
@@ -3888,7 +3888,7 @@
         {
           "name": "order_by",
           "description": "",
-          "value": ["count", "average_duration", "total_duration"]
+          "enum": ["count", "average_duration", "total_duration"]
         }
       ],
       "result": {
@@ -3942,7 +3942,7 @@
               },
               "change_time_from_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -3961,7 +3961,7 @@
               },
               "change_time_to_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -3991,7 +3991,7 @@
         {
           "name": "sort_by",
           "description": "",
-          "value": [
+          "enum": [
             "isp_deposit_change_admin_id",
             "isp_deposit_change_isp_id",
             "isp_deposit_change_time",
@@ -4043,7 +4043,7 @@
                     {
                       "name": "isp_deposit_change_action",
                       "description": "",
-                      "value": [
+                      "enum": [
                         "ADD_ISP",
                         "CHANGE_ISP_DEPOSIT",
                         "DEL_ISP",
@@ -4178,7 +4178,7 @@
               },
               "temporary_extend_date_from_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -4197,7 +4197,7 @@
               },
               "temporary_extend_date_to_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -4227,7 +4227,7 @@
         {
           "name": "sort_by",
           "description": "",
-          "value": [
+          "enum": [
             "temporary_extend_date",
             "user_id",
             "temporary_extend_hours",
@@ -4371,7 +4371,7 @@
         {
           "name": "date_unit",
           "description": "",
-          "value": [
+          "enum": [
             "jalali",
             "gregorian",
             "years",
@@ -4407,7 +4407,7 @@
         {
           "name": "connection_log_unit",
           "description": "",
-          "value": ["Seconds", "Minutes", "Hours", "Days", "Months", "Years"]
+          "enum": ["Seconds", "Minutes", "Hours", "Days", "Months", "Years"]
         },
         {
           "name": "credit_change_clean",
@@ -4419,7 +4419,7 @@
         {
           "name": "credit_change_unit",
           "description": "relative time unit",
-          "value": ["Seconds", "Minutes", "Hours", "Days", "Months", "Years"]
+          "enum": ["Seconds", "Minutes", "Hours", "Days", "Months", "Years"]
         },
         {
           "name": "user_audit_log_clean",
@@ -4431,7 +4431,7 @@
         {
           "name": "user_audit_log_unit",
           "description": "relative time unit",
-          "value": ["Seconds", "Minutes", "Hours", "Days", "Months", "Years"]
+          "enum": ["Seconds", "Minutes", "Hours", "Days", "Months", "Years"]
         },
         {
           "name": "snapshots_clean",
@@ -4443,7 +4443,7 @@
         {
           "name": "snapshots_unit",
           "description": "relative time unit",
-          "value": ["Seconds", "Minutes", "Hours", "Days", "Months", "Years"]
+          "enum": ["Seconds", "Minutes", "Hours", "Days", "Months", "Years"]
         },
         {
           "name": "bw_snapshots_clean",
@@ -4455,7 +4455,7 @@
         {
           "name": "bw_snapshots_unit",
           "description": "relative time unit",
-          "value": ["Seconds", "Minutes", "Hours", "Days", "Months", "Years"]
+          "enum": ["Seconds", "Minutes", "Hours", "Days", "Months", "Years"]
         },
         {
           "name": "web_analyzer_clean",
@@ -4467,7 +4467,7 @@
         {
           "name": "web_analyzer_unit",
           "description": "relative time unit",
-          "value": ["Seconds", "Minutes", "Hours", "Days", "Months", "Years"]
+          "enum": ["Seconds", "Minutes", "Hours", "Days", "Months", "Years"]
         }
       ],
       "result": {
@@ -4505,7 +4505,7 @@
                   {
                     "index": 1,
                     "title": "relative time unit",
-                    "value": [
+                    "enum": [
                       "Seconds",
                       "Minutes",
                       "Hours",
@@ -4531,7 +4531,7 @@
                   {
                     "index": 1,
                     "title": "relative time unit",
-                    "value": [
+                    "enum": [
                       "Seconds",
                       "Minutes",
                       "Hours",
@@ -4557,7 +4557,7 @@
                   {
                     "index": 1,
                     "title": "relative time unit",
-                    "value": [
+                    "enum": [
                       "Seconds",
                       "Minutes",
                       "Hours",
@@ -4583,7 +4583,7 @@
                   {
                     "index": 1,
                     "title": "relative time unit",
-                    "value": [
+                    "enum": [
                       "Seconds",
                       "Minutes",
                       "Hours",
@@ -4609,7 +4609,7 @@
                   {
                     "index": 1,
                     "title": "relative time unit",
-                    "value": [
+                    "enum": [
                       "Seconds",
                       "Minutes",
                       "Hours",
@@ -4635,7 +4635,7 @@
                   {
                     "index": 1,
                     "title": "relative time unit",
-                    "value": [
+                    "enum": [
                       "Seconds",
                       "Minutes",
                       "Hours",
@@ -4673,7 +4673,7 @@
               },
               "login_time_from_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -4692,7 +4692,7 @@
               },
               "login_time_to_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -4725,7 +4725,7 @@
               },
               "view_period": {
                 "title": "",
-                "value": ["daily", "weekly", "monthly", "yearly"]
+                "enum": ["daily", "weekly", "monthly", "yearly"]
               },
               "included_objects": {
                 "title": "",
@@ -4740,7 +4740,7 @@
                   "type": "array",
                   "items": {
                     "title": "",
-                    "value": ["duration", "credit", "in_bytes", "out_bytes"]
+                    "enum": ["duration", "credit", "in_bytes", "out_bytes"]
                   }
                 },
                 "required": false
@@ -4754,13 +4754,7 @@
               },
               "called_number_op": {
                 "title": "",
-                "value": [
-                  "like",
-                  "ilike",
-                  "starts_with",
-                  "ends_with",
-                  "equals"
-                ]
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "prefix_name": {
                 "title": "",
@@ -4771,13 +4765,7 @@
               },
               "prefix_name_op": {
                 "title": "",
-                "value": [
-                  "like",
-                  "ilike",
-                  "starts_with",
-                  "ends_with",
-                  "equals"
-                ]
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "called_ip": {
                 "title": "",
@@ -4850,7 +4838,7 @@
                   "type": "array",
                   "items": {
                     "title": "",
-                    "value": [
+                    "enum": [
                       "0",
                       "1",
                       "2",
@@ -4890,7 +4878,7 @@
                   "type": "array",
                   "items": {
                     "title": "",
-                    "value": ["1", "2", "3"],
+                    "enum": ["1", "2", "3"],
                     "value_comment": {
                       "1": "ADD",
                       "2": "CHANGE",
@@ -4923,7 +4911,7 @@
               },
               "change_time_from_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -4942,7 +4930,7 @@
               },
               "change_time_to_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -4979,7 +4967,7 @@
         {
           "name": "sort_by",
           "description": "",
-          "value": [
+          "enum": [
             "change_time",
             "object_id",
             "admin_id",
@@ -5048,7 +5036,7 @@
                     {
                       "name": "category",
                       "description": "",
-                      "value": [
+                      "enum": [
                         "0",
                         "1",
                         "2",
@@ -5082,7 +5070,7 @@
                     {
                       "name": "category_repr",
                       "description": "",
-                      "value": [
+                      "enum": [
                         "_NO_CATEGORY_",
                         "RAS",
                         "CHARGE",
@@ -5115,7 +5103,7 @@
                     {
                       "name": "event",
                       "description": "",
-                      "value": ["1", "2", "3"],
+                      "enum": ["1", "2", "3"],
                       "value_comment": {
                         "1": "ADD",
                         "2": "CHANGE",
@@ -5125,7 +5113,7 @@
                     {
                       "name": "event_repr",
                       "description": "",
-                      "value": ["ADD", "CHANGE", "DELETE"]
+                      "enum": ["ADD", "CHANGE", "DELETE"]
                     },
                     {
                       "name": "isp_id",
@@ -5204,7 +5192,7 @@
               },
               "requester_type": {
                 "title": "",
-                "value": ["USER", "ADMIN"]
+                "enum": ["USER", "ADMIN"]
               },
               "reference_id": {
                 "title": "",
@@ -5222,7 +5210,7 @@
               },
               "amount_op": {
                 "title": "",
-                "value": ["=", ">", "<", ">=", "<="]
+                "enum": ["=", ">", "<", ">=", "<="]
               },
               "payment_date_from": {
                 "title": "datetime or number, ",
@@ -5233,7 +5221,7 @@
               },
               "payment_date_from_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -5252,7 +5240,7 @@
               },
               "payment_date_to_unit": {
                 "title": "",
-                "value": [
+                "enum": [
                   "jalali",
                   "gregorian",
                   "years",
@@ -5264,7 +5252,7 @@
               },
               "succeed": {
                 "title": "",
-                "value": ["yes", "no"]
+                "enum": ["yes", "no"]
               },
               "gateway_name": {
                 "title": "list of gateway names, or string of one gateway name",
@@ -5293,7 +5281,7 @@
         {
           "name": "sort_by",
           "description": "",
-          "value": [
+          "enum": [
             "payment_id",
             "gateway_id",
             "unique_id",
@@ -5394,7 +5382,7 @@
                             {
                               "name": "stage_name",
                               "description": "",
-                              "value": [
+                              "enum": [
                                 "Prepare",
                                 "Settle",
                                 "Verify",
@@ -5468,12 +5456,12 @@
                     {
                       "name": "requester_type",
                       "description": "",
-                      "value": ["USER", "ADMIN"]
+                      "enum": ["USER", "ADMIN"]
                     },
                     {
                       "name": "succeed",
                       "description": "",
-                      "value": ["t", "f"],
+                      "enum": ["t", "f"],
                       "value_comment": {
                         "t": "true",
                         "f": "false"
@@ -5539,7 +5527,7 @@
         {
           "name": "sort_by",
           "description": "",
-          "value": [
+          "enum": [
             "user_id",
             "credit_used",
             "login_time",
@@ -5576,7 +5564,7 @@
         {
           "name": "report_type",
           "description": "",
-          "value": ["inout_usages", "credit_usages", "time_usages"]
+          "enum": ["inout_usages", "credit_usages", "time_usages"]
         },
         {
           "name": "conds",
@@ -5593,7 +5581,7 @@
             "type": "array",
             "items": {
               "title": "",
-              "value": [
+              "enum": [
                 "user_id",
                 "user_name",
                 "serial",
@@ -5608,12 +5596,12 @@
         {
           "name": "sort_by",
           "description": "",
-          "value": ["creation_date", "normal_username", "sum"]
+          "enum": ["creation_date", "normal_username", "sum"]
         },
         {
           "name": "output_type",
           "description": "",
-          "value": ["csv", "pdf"]
+          "enum": ["csv", "pdf"]
         }
       ],
       "result": {
@@ -5642,7 +5630,7 @@
         {
           "name": "order_by",
           "description": "",
-          "value": [
+          "enum": [
             "prefix_name",
             "prefix_code",
             "duration_sum",
@@ -5660,7 +5648,7 @@
         {
           "name": "output_type",
           "description": "",
-          "value": ["csv", "pdf"]
+          "enum": ["csv", "pdf"]
         }
       ],
       "result": {
@@ -5689,7 +5677,7 @@
         {
           "name": "sort_by",
           "description": "",
-          "value": [
+          "enum": [
             "payment_id",
             "gateway_id",
             "unique_id",
@@ -5710,7 +5698,7 @@
         {
           "name": "output_type",
           "description": "",
-          "value": ["csv", "pdf"]
+          "enum": ["csv", "pdf"]
         }
       ],
       "result": {

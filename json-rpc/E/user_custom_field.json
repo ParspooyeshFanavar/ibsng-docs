@@ -35,12 +35,12 @@
         {
           "name": "value_type",
           "description": "",
-          "value": ["string", "int", "float"]
+          "enum": ["string", "int", "float"]
         },
         {
           "name": "interface_type",
           "description": "",
-          "value": ["text_field", "single_select", "radio_button", "checkbox"]
+          "enum": ["text_field", "single_select", "radio_button", "checkbox"]
         },
         {
           "name": "allowable_values",
@@ -103,12 +103,12 @@
         {
           "name": "value_type",
           "description": "",
-          "value": ["string", "int", "float"]
+          "enum": ["string", "int", "float"]
         },
         {
           "name": "interface_type",
           "description": "",
-          "value": ["text_field", "single_select", "radio_button", "checkbox"]
+          "enum": ["text_field", "single_select", "radio_button", "checkbox"]
         },
         {
           "name": "allowable_values",

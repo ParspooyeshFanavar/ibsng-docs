@@ -134,7 +134,7 @@
             },
             "customer_name_op": {
               "title": "",
-              "value": ["like", "ilike", "starts_with", "ends_with", "equals"]
+              "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
             },
             "isp_name": {
               "title": "",
@@ -327,7 +327,7 @@
         },
         {
           "name": "sort_by",
-          "value": ["customer_name", "customer_id"]
+          "enum": ["customer_name", "customer_id"]
         },
         {
           "name": "desc",

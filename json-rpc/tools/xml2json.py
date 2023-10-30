@@ -10,6 +10,8 @@ from lxml.etree import _Element as Element
 from lxml.etree import tostring
 
 paramTypeMapping = {
+	"any": ("", ""),
+
 	"str": ("string", ""),
 	"srt": ("string", ""),
 
@@ -87,7 +89,7 @@ def getChoiceJsonParam(param: "Element") -> dict:
 		paramJson["name"] = paramName
 	if description is not None:
 		paramJson["description"] = description
-	paramJson["value"] = values
+	paramJson["enum"] = values
 	if comments:
 		paramJson["value_comment"] = comments
 	return paramJson
@@ -167,21 +169,16 @@ def getJsonParam(param: "Element") -> dict:
 	if paramType == "choice":
 		return getChoiceJsonParam(param)
 
-	paramValue = param.attrib.get("value")
+	description = param.attrib.get("comment", "")
 
-	if paramValue:
-		pass
-		# FIXME: like a choice with one value
+	paramValue = param.attrib.get("value")
 
 	if paramType:
 		newParamType, typeComment = paramTypeMapping[paramType]
-		if not newParamType:
-			print(f"invalid param type {paramType}")
-			newParamType = "string"
 	else:
 		newParamType, typeComment = "", ""
 
-	description = param.attrib.get("comment", "")
+
 	if typeComment:
 		description = typeComment + ", " + description
 
@@ -324,7 +321,7 @@ def getJsonMethod(handlerName: str, method: "Element", authTypes: list[str]):
 			resultSchema["properties"] = resultParams
 		result["schema"] = resultSchema
 	if resultValues is not None:
-		result["value"] = resultValues
+		result["enum"] = resultValues
 	jsonMethod["result"] = result
 	# jsonMethod["errors"] = []
 	return jsonMethod

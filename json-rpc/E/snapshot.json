@@ -106,7 +106,7 @@
         {
           "name": "type",
           "description": "",
-          "value": ["internet", "voip"]
+          "enum": ["internet", "voip"]
         }
       ],
       "result": {

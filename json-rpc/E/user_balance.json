@@ -50,7 +50,7 @@
         {
           "name": "start_time_unit",
           "description": "Date type for output date or datetime params, default is 'gregorian'",
-          "value": ["gregorian", "jalali"]
+          "enum": ["gregorian", "jalali"]
         },
         {
           "name": "expire_time",
@@ -63,7 +63,7 @@
         {
           "name": "expire_time_unit",
           "description": "Date type for output date or datetime params, default is 'gregorian'",
-          "value": ["gregorian", "jalali"]
+          "enum": ["gregorian", "jalali"]
         },
         {
           "name": "udr_tag",
@@ -261,7 +261,7 @@
         {
           "name": "start_time_unit",
           "description": "Date type for output date or datetime params, default is 'gregorian'",
-          "value": ["gregorian", "jalali"]
+          "enum": ["gregorian", "jalali"]
         },
         {
           "name": "expire_time",
@@ -274,7 +274,7 @@
         {
           "name": "expire_time_unit",
           "description": "Date type for output date or datetime params, default is 'gregorian'",
-          "value": ["gregorian", "jalali"]
+          "enum": ["gregorian", "jalali"]
         }
       ],
       "result": {
@@ -438,7 +438,7 @@
         },
         {
           "name": "balance_action",
-          "value": ["add", "multiply", "set"]
+          "enum": ["add", "multiply", "set"]
         }
       ],
       "result": {
@@ -463,7 +463,7 @@
             "properties": {
               "balance_name": {
                 "title": "list of balances that added in system",
-                "value": []
+                "enum": []
               },
               "remote_ip": {
                 "title": "",
@@ -473,13 +473,7 @@
               },
               "remote_ip_op": {
                 "title": "",
-                "value": [
-                  "like",
-                  "ilike",
-                  "starts_with",
-                  "ends_with",
-                  "equals"
-                ]
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "chnage_date_from": {
                 "title": "datetime, ",
@@ -490,7 +484,7 @@
               },
               "chnage_date_from_unit": {
                 "title": "Date type for output date or datetime params, default is 'gregorian'",
-                "value": ["gregorian", "jalali"]
+                "enum": ["gregorian", "jalali"]
               },
               "chnage_date_to": {
                 "title": "datetime, ",
@@ -501,19 +495,19 @@
               },
               "chnage_date_to_unit": {
                 "title": "Date type for output date or datetime params, default is 'gregorian'",
-                "value": ["gregorian", "jalali"]
+                "enum": ["gregorian", "jalali"]
               },
               "admin_name": {
                 "title": "list of admin in system",
-                "value": []
+                "enum": []
               },
               "action": {
                 "title": "action list in system",
-                "value": []
+                "enum": []
               },
               "isp_name": {
                 "title": "isp list in system",
-                "value": []
+                "enum": []
               },
               "user_balance_ids": {
                 "title": "",
@@ -542,7 +536,7 @@
         {
           "name": "sort_by",
           "description": "",
-          "value": ["change_time", "object_id", "admin_id"]
+          "enum": ["change_time", "object_id", "admin_id"]
         },
         {
           "name": "desc",

@@ -41,7 +41,7 @@
         {
           "name": "gateway_type",
           "description": "",
-          "value": [
+          "enum": [
             "Melli-shahparak",
             "Eghtesad_Novin",
             "Mellat-Shaparak",
@@ -106,7 +106,7 @@
             },
             "redirect_method": {
               "title": "",
-              "value": ["POST", "GET"]
+              "enum": ["POST", "GET"]
             },
             "url": {
               "title": "Redirect URL",
@@ -178,7 +178,7 @@
         {
           "name": "gateway_type",
           "description": "",
-          "value": [
+          "enum": [
             "Eghtesad_Novin",
             "Mellat-Shaparak",
             "Melli-shahparak",

@@ -72,7 +72,7 @@
         {
           "name": "sort_by",
           "description": "",
-          "value": ["pin", "voucher_id"]
+          "enum": ["pin", "voucher_id"]
         },
         {
           "name": "desc",
@@ -249,7 +249,7 @@
         {
           "name": "sort_by",
           "description": "",
-          "value": ["batch_id", "batch_name", "batch_credit"]
+          "enum": ["batch_id", "batch_name", "batch_credit"]
         },
         {
           "name": "desc",
@@ -627,7 +627,7 @@
               },
               "change_target": {
                 "title": "",
-                "value": ["credit", "deposit", "deposit_recharge"],
+                "enum": ["credit", "deposit", "deposit_recharge"],
                 "value_comment": {
                   "credit": "Credit",
                   "deposit": "Renew Deposit",
@@ -783,7 +783,7 @@
             },
             "change_target": {
               "title": "",
-              "value": ["credit", "deposit", "deposit_recharge"],
+              "enum": ["credit", "deposit", "deposit_recharge"],
               "value_comment": {
                 "credit": "Credit",
                 "deposit": "Renew Deposit",
@@ -974,7 +974,7 @@
         },
         {
           "name": "sort_by",
-          "value": ["batch_id", "batch_name", "credit"]
+          "enum": ["batch_id", "batch_name", "credit"]
         },
         {
           "name": "desc",
@@ -1049,7 +1049,7 @@
                     },
                     {
                       "name": "change_target",
-                      "value": ["credit", "deposit", "deposit_recharge"],
+                      "enum": ["credit", "deposit", "deposit_recharge"],
                       "value_comment": {
                         "credit": "Credit",
                         "deposit": "Renew Deposit",

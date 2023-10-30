@@ -58,7 +58,7 @@
               "params": [
                 {
                   "name": "start_from",
-                  "value": [
+                  "enum": [
                     "user_creation_date",
                     "user_real_first_login",
                     "package_first_login",
@@ -77,19 +77,19 @@
                 },
                 {
                   "name": "period",
-                  "value": ["monthly", "start_of_month", "daily", "none"]
+                  "enum": ["monthly", "start_of_month", "daily", "none"]
                 },
                 {
                   "name": "period_value",
-                  "value": ["gregorian", "jalali"]
+                  "enum": ["gregorian", "jalali"]
                 },
                 {
                   "name": "change_target",
-                  "value": ["credit", "deposit", "night_free"]
+                  "enum": ["credit", "deposit", "night_free"]
                 },
                 {
                   "name": "change_action",
-                  "value": ["SET", "ADD", "MULTIPLY"]
+                  "enum": ["SET", "ADD", "MULTIPLY"]
                 },
                 {
                   "name": "amount",
@@ -185,7 +185,7 @@
                 },
                 {
                   "name": "start_from",
-                  "value": [
+                  "enum": [
                     "user_creation_date",
                     "user_real_first_login",
                     "package_first_login",
@@ -204,19 +204,19 @@
                 },
                 {
                   "name": "period",
-                  "value": ["monthly", "start_of_month", "daily", "none"]
+                  "enum": ["monthly", "start_of_month", "daily", "none"]
                 },
                 {
                   "name": "period_value",
-                  "value": ["gregorian", "jalali"]
+                  "enum": ["gregorian", "jalali"]
                 },
                 {
                   "name": "change_target",
-                  "value": ["credit", "deposit", "night_free"]
+                  "enum": ["credit", "deposit", "night_free"]
                 },
                 {
                   "name": "change_action",
-                  "value": ["SET", "ADD", "MULTIPLY"]
+                  "enum": ["SET", "ADD", "MULTIPLY"]
                 },
                 {
                   "name": "amount",
@@ -360,7 +360,7 @@
                     },
                     {
                       "name": "start_from",
-                      "value": [
+                      "enum": [
                         "user_creation_date",
                         "user_real_first_login",
                         "package_first_login",
@@ -379,19 +379,19 @@
                     },
                     {
                       "name": "period",
-                      "value": ["monthly", "start_of_month", "daily", "none"]
+                      "enum": ["monthly", "start_of_month", "daily", "none"]
                     },
                     {
                       "name": "period_value",
-                      "value": ["gregorian", "jalali"]
+                      "enum": ["gregorian", "jalali"]
                     },
                     {
                       "name": "change_target",
-                      "value": ["credit", "deposit", "night_free"]
+                      "enum": ["credit", "deposit", "night_free"]
                     },
                     {
                       "name": "change_action",
-                      "value": ["SET", "ADD", "MULTIPLY"]
+                      "enum": ["SET", "ADD", "MULTIPLY"]
                     },
                     {
                       "name": "amount",
@@ -491,7 +491,7 @@
                     },
                     {
                       "name": "start_from",
-                      "value": [
+                      "enum": [
                         "user_creation_date",
                         "user_real_first_login",
                         "package_first_login",
@@ -510,19 +510,19 @@
                     },
                     {
                       "name": "period",
-                      "value": ["monthly", "start_of_month", "daily", "none"]
+                      "enum": ["monthly", "start_of_month", "daily", "none"]
                     },
                     {
                       "name": "period_value",
-                      "value": ["gregorian", "jalali"]
+                      "enum": ["gregorian", "jalali"]
                     },
                     {
                       "name": "change_target",
-                      "value": ["credit", "deposit", "night_free"]
+                      "enum": ["credit", "deposit", "night_free"]
                     },
                     {
                       "name": "change_action",
-                      "value": ["SET", "ADD", "MULTIPLY"]
+                      "enum": ["SET", "ADD", "MULTIPLY"]
                     },
                     {
                       "name": "amount",
