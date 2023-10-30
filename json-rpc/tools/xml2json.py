@@ -22,26 +22,26 @@ paramTypeMapping = {
 	"str_float": ("str", "float as string"),
 
 	"datetime": ("string", "datetime"),
-	"datetime, float": ("string", "datetime or number"),
-	"datetime, null": ("string", "datetime or null"),
+	"datetime, float": (("string", "number"), "datetime or number"),
+	"datetime, null": (("string", "null"), "datetime or null"),
 
 	"bool": ("boolean", ""),
 	"true_if_exists": ("boolean", "true if exists"),
 
 	"list": ("array", ""),
-	"list, str": ("array", ""),
+	"list, str": (("array", "string"), ""),
 
 	"dict": ("object", ""),
 
 	"null": ("null", ""),
 	
-	"int|null": ("int", "int or null"),
+	"int, null": (("number", "null"), "int or null"),
 	"dynamic": ("", "dynamic type"),
 
-	"list or string": ("array", "array or string"),
-	"list, int": ("array", "array or int"),
-	"int, list": ("array", "array or int"),
-	"str, list": ("array", "array or string"),
+	"list, str": (("array", "string"), ""),
+	"list, int": (("array", "number"), "array or int"),
+	"int, list": (("number", "array"), "array or int"),
+	"str, list": (("string", "array"), "array or string"),
 }
 
 
@@ -138,9 +138,9 @@ def getMultiTypeListItemSchema(items: "list[Element]") -> "dict | list":
 	return result
 
 
-def getListSchema(elem: "Element") -> "dict | list":
+def getListSchema(elem: "Element", newParamType="array") -> "dict | list":
 	schema = {
-		"type": "array",
+		"type": newParamType,
 	}
 	items = elem.findall("item")
 	if items:
@@ -195,8 +195,8 @@ def getJsonParam(param: "Element") -> dict:
 	if typeComment:
 		description = typeComment + ", " + description
 
-	if newParamType == "array":
-		schema = getListSchema(param)
+	if "array" in newParamType:
+		schema = getListSchema(param, newParamType)
 	else:
 		schema = {
 			"type": newParamType,

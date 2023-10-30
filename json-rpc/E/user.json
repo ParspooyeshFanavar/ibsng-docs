@@ -79,7 +79,7 @@
       "params": [
         {
           "name": "user_id",
-          "description": "",
+          "description": "User ID as string",
           "schema": {
             "type": "string"
           },
@@ -2481,7 +2481,7 @@
             "properties": {
               "exp_date_from": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "exp_date_from_unit": {
@@ -2498,7 +2498,7 @@
               },
               "exp_date_to": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "exp_date_to_unit": {
@@ -2515,17 +2515,17 @@
               },
               "isp_names": {
                 "title": "list of isp names, or string of one isp name",
-                "type": "array",
+                "type": ["array", "string"],
                 "required": false
               },
               "group_name": {
                 "title": "list of group names, or string of one group name",
-                "type": "array",
+                "type": ["array", "string"],
                 "required": false
               },
               "not_in_group_name": {
                 "title": "list of group names, or string of one group name",
-                "type": "array",
+                "type": ["array", "string"],
                 "required": false
               }
             }
@@ -2689,7 +2689,7 @@
               },
               "abs_exp_date_from": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "abs_exp_date_from_unit": {
@@ -2706,7 +2706,7 @@
               },
               "abs_exp_date_to": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "abs_exp_date_to_unit": {
@@ -2823,7 +2823,7 @@
               },
               "charge": {
                 "title": "list of charge names, or string of one charge name",
-                "type": "array",
+                "type": ["array", "string"],
                 "required": false
               },
               "comment": {
@@ -2917,7 +2917,7 @@
               },
               "creation_date_from": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "creation_date_from_unit": {
@@ -2934,7 +2934,7 @@
               },
               "creation_date_to": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "creation_date_to_unit": {
@@ -3015,7 +3015,7 @@
               },
               "user_value_exp_from_creation_date_from": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "user_value_exp_from_creation_date_from_unit": {
@@ -3032,7 +3032,7 @@
               },
               "user_value_exp_from_creation_date_to": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "user_value_exp_from_creation_date_to_unit": {
@@ -3049,7 +3049,7 @@
               },
               "user_value_exp_from_first_login_from": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "user_value_exp_from_first_login_from_unit": {
@@ -3066,7 +3066,7 @@
               },
               "user_value_exp_from_first_login_to": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "user_value_exp_from_first_login_to_unit": {
@@ -3083,7 +3083,7 @@
               },
               "exp_from_renew_user_value_from": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "exp_from_renew_user_value_from_unit": {
@@ -3100,7 +3100,7 @@
               },
               "exp_from_renew_user_value_to": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "exp_from_renew_user_value_to_unit": {
@@ -3117,7 +3117,7 @@
               },
               "exp_monthly_user_value_from": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "exp_monthly_user_value_from_unit": {
@@ -3134,7 +3134,7 @@
               },
               "exp_monthly_user_value_to": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "exp_monthly_user_value_to_unit": {
@@ -3151,7 +3151,7 @@
               },
               "first_login_from": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "first_login_from_unit": {
@@ -3168,7 +3168,7 @@
               },
               "first_login_to": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "first_login_to_unit": {
@@ -3185,7 +3185,7 @@
               },
               "real_first_login_from": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "real_first_login_from_unit": {
@@ -3202,7 +3202,7 @@
               },
               "real_first_login_to": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "real_first_login_to_unit": {
@@ -3219,7 +3219,7 @@
               },
               "group_name": {
                 "title": "list of group names or string of one group name",
-                "type": "array",
+                "type": ["array", "string"],
                 "required": false
               },
               "in_ras_ippool": {
@@ -3233,7 +3233,7 @@
               },
               "ippool": {
                 "title": "list of ippool names, or string of one ippool name",
-                "type": "array",
+                "type": ["array", "string"],
                 "required": false
               },
               "is_online": {
@@ -3258,12 +3258,12 @@
               },
               "isp_names": {
                 "title": "list of isp names, or string of one isp name",
-                "type": "array",
+                "type": ["array", "string"],
                 "required": false
               },
               "isp_id": {
                 "title": "array or int, list of ISP IDs, or integer of one ISP ID",
-                "type": "array",
+                "type": ["array", "number"],
                 "required": false
               },
               "limit_caller_id": {
@@ -3318,7 +3318,7 @@
               },
               "limit_usage_days": {
                 "title": "array or int, integer (number of days), or list of integers (number of days)",
-                "type": "array",
+                "type": ["number", "array"],
                 "required": false
               },
               "lock": {
@@ -3356,7 +3356,7 @@
               },
               "mikrotik_address_list": {
                 "title": "list of many string (to match according to given operator), or just a string",
-                "type": "array",
+                "type": ["array", "string"],
                 "required": false
               },
               "mikrotik_address_list_op": {
@@ -3384,7 +3384,7 @@
               },
               "not_logged_in_from": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "not_logged_in_from_unit": {
@@ -3401,7 +3401,7 @@
               },
               "not_logged_in_to": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "not_logged_in_to_unit": {
@@ -3437,7 +3437,7 @@
               },
               "notification_profile": {
                 "title": "array or string, list of notification profile names. or string of one profile name",
-                "type": "array",
+                "type": ["string", "array"],
                 "required": false
               },
               "online_payment": {
@@ -3525,7 +3525,7 @@
               },
               "rel_exp_date_from": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "rel_exp_date_from_unit": {
@@ -3542,7 +3542,7 @@
               },
               "rel_exp_date_to": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "rel_exp_date_to_unit": {
@@ -3559,7 +3559,7 @@
               },
               "rel_exp_date_negative_credit": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "rel_exp_date_negative_credit_unit": {
@@ -3600,7 +3600,7 @@
               },
               "renew_next_group": {
                 "title": "list of group names, or string of group name",
-                "type": "array",
+                "type": ["array", "string"],
                 "required": false
               },
               "save_bw_usage": {

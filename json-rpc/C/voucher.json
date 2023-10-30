@@ -39,7 +39,7 @@
               },
               "isp_names": {
                 "title": "list of isp names, or string of one isp name",
-                "type": "array",
+                "type": ["array", "string"],
                 "required": false
               }
             }
@@ -147,7 +147,7 @@
             "properties": {
               "isp_names": {
                 "title": "list of isp names, or string of one isp name",
-                "type": "array",
+                "type": ["array", "string"],
                 "required": false
               },
               "batch_ids": {
@@ -749,7 +749,7 @@
             "properties": {
               "isp_names": {
                 "title": "list of isp names, or string of one isp name",
-                "type": "array",
+                "type": ["array", "string"],
                 "required": false
               },
               "batch_ids": {

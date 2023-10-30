@@ -1200,7 +1200,7 @@
             "properties": {
               "isp_names": {
                 "title": "for admins, list of isp names, or string one isp name",
-                "type": "array",
+                "type": ["array", "string"],
                 "required": false
               },
               "user_ids": {
@@ -1356,12 +1356,12 @@
                   {
                     "name": "period_end",
                     "description": "datetime or null, str or null",
-                    "type": "string"
+                    "type": ["string", "null"]
                   },
                   {
                     "name": "period_start",
                     "description": "datetime or null, str or null",
-                    "type": "string"
+                    "type": ["string", "null"]
                   },
                   {
                     "name": "comment",
@@ -1449,7 +1449,7 @@
             "properties": {
               "isp_names": {
                 "title": "for admins, list of isp names, or string one isp name",
-                "type": "array",
+                "type": ["array", "string"],
                 "required": false
               },
               "user_ids": {

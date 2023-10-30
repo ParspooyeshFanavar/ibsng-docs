@@ -3244,7 +3244,7 @@
           <param name="isp_names" type="list" length="-1" item_type="str"  optional="true" comment="" />
           <param name="ras_ips" type="list" length="-1" item_type="str" optional="true" comment="" />
           <param name="remote_ip" type="str" multi_str="true" optional="true" comment="" />
-          <param name="username_starts_with" type="list or string" optional="true"
+          <param name="username_starts_with" type="list, str" optional="true"
                      comment="Array('A', 'B', 'C'), is like 'ABC'" />
         </param>
       </input>

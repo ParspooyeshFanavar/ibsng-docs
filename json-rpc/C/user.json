@@ -2628,7 +2628,7 @@
             "properties": {
               "exp_date_from": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "exp_date_from_unit": {
@@ -2645,7 +2645,7 @@
               },
               "exp_date_to": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "exp_date_to_unit": {
@@ -2662,17 +2662,17 @@
               },
               "isp_names": {
                 "title": "list of isp names, or string of one isp name",
-                "type": "array",
+                "type": ["array", "string"],
                 "required": false
               },
               "group_name": {
                 "title": "list of group names, or string of one group name",
-                "type": "array",
+                "type": ["array", "string"],
                 "required": false
               },
               "not_in_group_name": {
                 "title": "list of group names, or string of one group name",
-                "type": "array",
+                "type": ["array", "string"],
                 "required": false
               }
             }
@@ -2816,7 +2816,7 @@
           "name": "abs_exp_date_from",
           "description": "datetime or number, ",
           "schema": {
-            "type": "string"
+            "type": ["string", "number"]
           },
           "required": false
         },
@@ -2837,7 +2837,7 @@
           "name": "abs_exp_date_to",
           "description": "datetime or number, ",
           "schema": {
-            "type": "string"
+            "type": ["string", "number"]
           },
           "required": false
         },
@@ -3011,7 +3011,7 @@
           "name": "charge",
           "description": "list of charge names, or string of one charge name",
           "schema": {
-            "type": "array"
+            "type": ["array", "string"]
           },
           "required": false
         },
@@ -3144,7 +3144,7 @@
           "name": "creation_date_from",
           "description": "datetime or number, ",
           "schema": {
-            "type": "string"
+            "type": ["string", "number"]
           },
           "required": false
         },
@@ -3165,7 +3165,7 @@
           "name": "creation_date_to",
           "description": "datetime or number, ",
           "schema": {
-            "type": "string"
+            "type": ["string", "number"]
           },
           "required": false
         },
@@ -3280,7 +3280,7 @@
           "name": "user_value_exp_from_creation_date_from",
           "description": "datetime or number, ",
           "schema": {
-            "type": "string"
+            "type": ["string", "number"]
           },
           "required": false
         },
@@ -3301,7 +3301,7 @@
           "name": "user_value_exp_from_creation_date_to",
           "description": "datetime or number, ",
           "schema": {
-            "type": "string"
+            "type": ["string", "number"]
           },
           "required": false
         },
@@ -3322,7 +3322,7 @@
           "name": "user_value_exp_from_first_login_from",
           "description": "datetime or number, ",
           "schema": {
-            "type": "string"
+            "type": ["string", "number"]
           },
           "required": false
         },
@@ -3343,7 +3343,7 @@
           "name": "user_value_exp_from_first_login_to",
           "description": "datetime or number, ",
           "schema": {
-            "type": "string"
+            "type": ["string", "number"]
           },
           "required": false
         },
@@ -3364,7 +3364,7 @@
           "name": "exp_from_renew_user_value_from",
           "description": "datetime or number, ",
           "schema": {
-            "type": "string"
+            "type": ["string", "number"]
           },
           "required": false
         },
@@ -3385,7 +3385,7 @@
           "name": "exp_from_renew_user_value_to",
           "description": "datetime or number, ",
           "schema": {
-            "type": "string"
+            "type": ["string", "number"]
           },
           "required": false
         },
@@ -3406,7 +3406,7 @@
           "name": "exp_monthly_user_value_from",
           "description": "datetime or number, ",
           "schema": {
-            "type": "string"
+            "type": ["string", "number"]
           },
           "required": false
         },
@@ -3427,7 +3427,7 @@
           "name": "exp_monthly_user_value_to",
           "description": "datetime or number, ",
           "schema": {
-            "type": "string"
+            "type": ["string", "number"]
           },
           "required": false
         },
@@ -3448,7 +3448,7 @@
           "name": "first_login_from",
           "description": "datetime or number, ",
           "schema": {
-            "type": "string"
+            "type": ["string", "number"]
           },
           "required": false
         },
@@ -3469,7 +3469,7 @@
           "name": "first_login_to",
           "description": "datetime or number, ",
           "schema": {
-            "type": "string"
+            "type": ["string", "number"]
           },
           "required": false
         },
@@ -3490,7 +3490,7 @@
           "name": "real_first_login_from",
           "description": "datetime or number, ",
           "schema": {
-            "type": "string"
+            "type": ["string", "number"]
           },
           "required": false
         },
@@ -3511,7 +3511,7 @@
           "name": "real_first_login_to",
           "description": "datetime or number, ",
           "schema": {
-            "type": "string"
+            "type": ["string", "number"]
           },
           "required": false
         },
@@ -3532,7 +3532,7 @@
           "name": "group_name",
           "description": "list of group names or string of one group name",
           "schema": {
-            "type": "array"
+            "type": ["array", "string"]
           },
           "required": false
         },
@@ -3553,7 +3553,7 @@
           "name": "ippool",
           "description": "list of ippool names, or string of one ippool name",
           "schema": {
-            "type": "array"
+            "type": ["array", "string"]
           },
           "required": false
         },

@@ -103,8 +103,8 @@
                 "required": false
               },
               "username_starts_with": {
-                "title": "array or string, Array('A', 'B', 'C'), is like 'ABC'",
-                "type": "array",
+                "title": "Array('A', 'B', 'C'), is like 'ABC'",
+                "type": ["array", "string"],
                 "required": false
               }
             }
@@ -366,7 +366,7 @@
               },
               "login_time_from": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "login_time_from_unit": {
@@ -383,7 +383,7 @@
               },
               "login_time_to": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "login_time_to_unit": {
@@ -400,7 +400,7 @@
               },
               "logout_time_from": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "logout_time_from_unit": {
@@ -417,7 +417,7 @@
               },
               "logout_time_to": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "logout_time_to_unit": {
@@ -538,7 +538,7 @@
               },
               "voip_provider_names": {
                 "title": "list of provider names, or string of one provider name",
-                "type": "array",
+                "type": ["array", "string"],
                 "required": false
               },
               "remote_ip": {
@@ -887,7 +887,7 @@
               },
               "login_time_from": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "login_time_from_unit": {
@@ -904,7 +904,7 @@
               },
               "login_time_to": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "login_time_to_unit": {
@@ -921,7 +921,7 @@
               },
               "logout_time_from": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "logout_time_from_unit": {
@@ -938,7 +938,7 @@
               },
               "logout_time_to": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "logout_time_to_unit": {
@@ -1039,7 +1039,7 @@
               },
               "voip_provider_names": {
                 "title": "list of provider names, or string of one provider name",
-                "type": "array",
+                "type": ["array", "string"],
                 "required": false
               },
               "remote_ip": {
@@ -2062,7 +2062,7 @@
               },
               "change_time_from": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "change_time_from_unit": {
@@ -2079,7 +2079,7 @@
               },
               "change_time_to": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "change_time_to_unit": {
@@ -2254,7 +2254,7 @@
               },
               "change_time_from": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "change_time_from_unit": {
@@ -2271,7 +2271,7 @@
               },
               "change_time_to": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "change_time_to_unit": {
@@ -2422,7 +2422,7 @@
               },
               "change_time_from": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "change_time_from_unit": {
@@ -2439,7 +2439,7 @@
               },
               "change_time_to": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "change_time_to_unit": {
@@ -2638,7 +2638,7 @@
               },
               "admin": {
                 "title": "list of admin usernames, or string of one admin username",
-                "type": "array",
+                "type": ["array", "string"],
                 "required": false
               },
               "action": {
@@ -2672,7 +2672,7 @@
               },
               "change_time_from": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "change_time_from_unit": {
@@ -2689,7 +2689,7 @@
               },
               "change_time_to": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "change_time_to_unit": {
@@ -2711,17 +2711,17 @@
               },
               "group_name": {
                 "title": "list of group names, or string of one group name",
-                "type": "array",
+                "type": ["array", "string"],
                 "required": false
               },
               "user_isp_names": {
                 "title": "list of isp names, or string one isp name",
-                "type": "array",
+                "type": ["array", "string"],
                 "required": false
               },
               "isp_names": {
                 "title": "list of isp names, or string one isp name",
-                "type": "array",
+                "type": ["array", "string"],
                 "required": false
               }
             }
@@ -2882,7 +2882,7 @@
             "properties": {
               "admin": {
                 "title": "list of admin usernames, or string of one admin username",
-                "type": "array",
+                "type": ["array", "string"],
                 "required": false
               },
               "action": {
@@ -2916,7 +2916,7 @@
               },
               "change_time_from": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "change_time_from_unit": {
@@ -2933,7 +2933,7 @@
               },
               "change_time_to": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "change_time_to_unit": {
@@ -2955,12 +2955,12 @@
               },
               "group_name": {
                 "title": "list of group names, or string of one group name",
-                "type": "array",
+                "type": ["array", "string"],
                 "required": false
               },
               "isp_names": {
                 "title": "list of isp names, or string one isp name",
-                "type": "array",
+                "type": ["array", "string"],
                 "required": false
               }
             }
@@ -3133,7 +3133,7 @@
               },
               "change_time_to": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "change_time_to_unit": {
@@ -3154,7 +3154,7 @@
               },
               "isp_names": {
                 "title": "list of isp names, or string of one isp name",
-                "type": "array",
+                "type": ["array", "string"],
                 "required": false
               },
               "admin": {
@@ -3332,22 +3332,22 @@
             "properties": {
               "admin": {
                 "title": "list of admin usernames, or string of one admin username",
-                "type": "array",
+                "type": ["array", "string"],
                 "required": false
               },
               "admin_isp_name": {
                 "title": "isp name of admin, list or string (of one)",
-                "type": "array",
+                "type": ["array", "string"],
                 "required": false
               },
               "isp_names": {
                 "title": "list of isp names, or string of one isp name",
-                "type": "array",
+                "type": ["array", "string"],
                 "required": false
               },
               "change_time_from": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "change_time_from_unit": {
@@ -3364,7 +3364,7 @@
               },
               "change_time_to": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "change_time_to_unit": {
@@ -3533,7 +3533,7 @@
             "properties": {
               "isp_names": {
                 "title": "list of isp names, or string of one isp name",
-                "type": "array",
+                "type": ["array", "string"],
                 "required": false
               },
               "user_ids": {
@@ -3543,7 +3543,7 @@
               },
               "temporary_extend_date_from": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "temporary_extend_date_from_unit": {
@@ -3560,7 +3560,7 @@
               },
               "temporary_extend_date_to": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "temporary_extend_date_to_unit": {
@@ -3707,7 +3707,7 @@
           "name": "date",
           "description": "datetime or number, ",
           "schema": {
-            "type": "string"
+            "type": ["string", "number"]
           }
         },
         {
@@ -3996,7 +3996,7 @@
             "properties": {
               "login_time_from": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "login_time_from_unit": {
@@ -4013,7 +4013,7 @@
               },
               "login_time_to": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "login_time_to_unit": {
@@ -4096,7 +4096,7 @@
               },
               "isp_names": {
                 "title": "list of isp names, or string of one isp name",
-                "type": "array",
+                "type": ["array", "string"],
                 "required": false
               }
             }
@@ -4188,7 +4188,7 @@
               },
               "isp_names": {
                 "title": "list of isp names, or string of one isp name",
-                "type": "array",
+                "type": ["array", "string"],
                 "required": false
               },
               "admin": {
@@ -4198,7 +4198,7 @@
               },
               "change_time_from": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "change_time_from_unit": {
@@ -4215,7 +4215,7 @@
               },
               "change_time_to": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "change_time_to_unit": {
@@ -4466,7 +4466,7 @@
               },
               "payment_date_from": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "payment_date_from_unit": {
@@ -4483,7 +4483,7 @@
               },
               "payment_date_to": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "payment_date_to_unit": {
@@ -4504,7 +4504,7 @@
               },
               "gateway_name": {
                 "title": "list of gateway names, or string of one gateway name",
-                "type": "array",
+                "type": ["array", "string"],
                 "required": false
               }
             }

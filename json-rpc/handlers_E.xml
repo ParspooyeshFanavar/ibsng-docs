@@ -3162,7 +3162,7 @@
           <param name="isp_names" type="list" length="-1" item_type="str" optional="true" comment="" />
           <param name="ras_ips" type="list" length="-1" item_type="str" optional="true" comment="" />
           <param name="remote_ip" type="str" multi_str="true" optional="true" comment="" />
-          <param name="username_starts_with" type="list or string" optional="true"
+          <param name="username_starts_with" type="list, str" optional="true"
             comment="Array('A', 'B', 'C'), is like 'ABC'" />
         </param>
       </input>
@@ -5989,13 +5989,13 @@
     </method>
     <method name="getUserInfo" auth_type="NORMAL_USER, VOIP_USER" comment="By User">
       <input type="dict" comment="one of these params is needed">
-        <param name="user_id" type="str_int" multi_str="true" optional="true" comment="" />
+        <param name="user_id" type="str_int" multi_str="true" optional="true" comment="User ID as string" />
         <param name="normal_username" type="str" multi_str="true" optional="true" comment="" />
         <param name="voip_username" type="str" multi_str="true" optional="true" comment="" />
         <param name="serial" type="str" multi_str="true" optional="true" comment="" />
       </input>
       <output type="dict" comment="">
-        <key type="str_int" comment="User ID"></key>
+        <key type="str_int" comment="User ID as string"></key>
         <value type="dict" comment="User Info dict, the same as output of getUserInfo by Admin"></value>
       </output>
     </method>
@@ -9875,10 +9875,10 @@
         <param name="user_id" type="int" />
       </input>
       <output type="dict">
-        <param name="linked_user_id" type="int|null" comment="if not set return null" />
+        <param name="linked_user_id" type="int, null" comment="if not set return null" />
         <param name="balance_name" type="str" />
         <param name="balance_id" type="int" />
-        <param name="linked_balance_id" type="int|null" comment="if not set return null" />
+        <param name="linked_balance_id" type="int, null" comment="if not set return null" />
         <param name="value" type="float" />
         <param name="user_balance_id" type="float" />
         <param name="user_balance_urd_tag" type="str" />
@@ -9917,11 +9917,11 @@
       </input>
       <output type="dict">
         <param name="comment" type="str" />
-        <param name="linked_user_id" type="int|null" comment="if not set return null" />
+        <param name="linked_user_id" type="int, null" comment="if not set return null" />
         <param name="start_time" type="str" />
         <param name="balance_name" type="str" />
         <param name="balance_id" type="int" />
-        <param name="linked_balance_id" type="int|null" comment="if not set return null" />
+        <param name="linked_balance_id" type="int, null" comment="if not set return null" />
         <param name="user_id" type="int" />
         <param name="initial_value" type="float" />
         <param name="user_balance_urd_tag" type="str" />

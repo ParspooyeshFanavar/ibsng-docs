@@ -606,7 +606,7 @@
           "name": "schedule_date",
           "description": "datetime or number, ",
           "schema": {
-            "type": "string"
+            "type": ["string", "number"]
           }
         },
         {
@@ -693,7 +693,7 @@
           "name": "schedule_date",
           "description": "datetime or number, ",
           "schema": {
-            "type": "string"
+            "type": ["string", "number"]
           }
         },
         {
@@ -814,7 +814,7 @@
               },
               "receive_date_from": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "receive_date_from_unit": {
@@ -831,7 +831,7 @@
               },
               "receive_date_to": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "receive_date_to_unit": {
@@ -945,7 +945,7 @@
               },
               "receive_date_from": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "receive_date_from_unit": {
@@ -962,7 +962,7 @@
               },
               "receive_date_to": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "receive_date_to_unit": {
@@ -1071,7 +1071,7 @@
               },
               "receive_date_from": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "receive_date_from_unit": {
@@ -1088,7 +1088,7 @@
               },
               "receive_date_to": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "receive_date_to_unit": {
@@ -1187,7 +1187,7 @@
               },
               "transfer_date_from": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "transfer_date_from_unit": {
@@ -1204,7 +1204,7 @@
               },
               "transfer_date_to": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "transfer_date_to_unit": {
@@ -1368,7 +1368,7 @@
               },
               "transfer_date_from": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "transfer_date_from_unit": {
@@ -1385,7 +1385,7 @@
               },
               "transfer_date_to": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "transfer_date_to_unit": {
@@ -1544,7 +1544,7 @@
               },
               "transfer_date_from": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "transfer_date_from_unit": {
@@ -1561,7 +1561,7 @@
               },
               "transfer_date_to": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "transfer_date_to_unit": {
@@ -1725,7 +1725,7 @@
               },
               "schedule_date_from": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "schedule_date_from_unit": {
@@ -1742,7 +1742,7 @@
               },
               "schedule_date_to": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "schedule_date_to_unit": {
@@ -1904,7 +1904,7 @@
               },
               "schedule_date_from": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "schedule_date_from_unit": {
@@ -1921,7 +1921,7 @@
               },
               "schedule_date_to": {
                 "title": "datetime or number, ",
-                "type": "string",
+                "type": ["string", "number"],
                 "required": false
               },
               "schedule_date_to_unit": {

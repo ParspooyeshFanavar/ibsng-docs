@@ -132,7 +132,7 @@
           "properties": {
             "linked_user_id": {
               "title": "int or null, if not set return null",
-              "type": "int"
+              "type": ["number", "null"]
             },
             "balance_name": {
               "title": "name of balance that asssign to user",
@@ -144,7 +144,7 @@
             },
             "linked_balance_id": {
               "title": "int or null, if not set return null",
-              "type": "int"
+              "type": ["number", "null"]
             },
             "value": {
               "title": "",
@@ -286,7 +286,7 @@
             },
             "linked_user_id": {
               "title": "int or null, if not set return null",
-              "type": "int"
+              "type": ["number", "null"]
             },
             "start_time": {
               "title": "",
@@ -302,7 +302,7 @@
             },
             "linked_balance_id": {
               "title": "int or null, if not set return null",
-              "type": "int"
+              "type": ["number", "null"]
             },
             "user_id": {
               "title": "",
