@@ -23,9 +23,6 @@ paramTypeMapping = {
 
 	"datetime": ("string", "datetime"),
 	"datetime, float": ("string", "datetime or number"),
-	"str_datetime": ("string", "datetime"),
-	"str_datetime, float": ("string", "datetime or number"),
-	"str_datetime, null": ("string", "datetime or null"),
 	"datetime, null": ("string", "datetime or null"),
 
 	"bool": ("boolean", ""),
@@ -204,7 +201,7 @@ def getJsonParam(param: "Element") -> dict:
 		schema = {
 			"type": newParamType,
 		}		
-	if paramType in ("datetime", "str_datetime"):
+	if paramType == "datetime":
 		# %Y-%m-%d %H:%M:%S or %Y-%m-%d %H:%M
 		schema["pattern"] = "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
 	elif paramType == "dict":
