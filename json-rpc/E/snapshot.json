@@ -118,7 +118,75 @@
       "name": "snapshot.getBWSnapShot",
       "description": "",
       "auth_type": ["ADMIN", "NORMAL_USER", "VOIP_USER"],
-      "params": [],
+      "params": [
+        {
+          "name": "conds",
+          "description": "reporting condition",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "user_id": {
+                "title": "unique user id for limit reporting for that user",
+                "type": "string"
+              },
+              "date_from": {
+                "title": "start date and time, format '%Y-%m-%d %H:%M'",
+                "type": "string"
+              },
+              "date_to": {
+                "title": "start date and time, format '%Y-%m-%d %H:%M'",
+                "type": "string"
+              },
+              "date_from_unit": {
+                "title": "date unit",
+                "enum": [
+                  "gregorian",
+                  "jalali",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes",
+                  "seconds"
+                ]
+              },
+              "date_to_unit": {
+                "title": "date unit",
+                "enum": [
+                  "gregorian",
+                  "jalali",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes",
+                  "seconds"
+                ]
+              },
+              "date_from_op": {
+                "title": "operation for start date",
+                "enum": ["<", ">", "<=", ">="],
+                "value_comment": {
+                  "<": "less than",
+                  ">": "more than",
+                  "<=": "less equal",
+                  ">=": "more equal"
+                }
+              },
+              "date_to_op": {
+                "title": "operation for end date",
+                "enum": ["<", ">", "<=", ">="],
+                "value_comment": {
+                  "<": "less than",
+                  ">": "more than",
+                  "<=": "less equal",
+                  ">=": "more equal"
+                }
+              }
+            }
+          }
+        }
+      ],
       "result": {
         "name": "Response (array)",
         "comment": "",
@@ -132,7 +200,75 @@
       "name": "snapshot.getGroupBWSnapShot",
       "description": "",
       "auth_type": ["ADMIN"],
-      "params": [],
+      "params": [
+        {
+          "name": "conds",
+          "description": "reporting condition",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "group_names": {
+                "title": "list of group names",
+                "type": "string"
+              },
+              "date_from": {
+                "title": "start date and time, format '%Y-%m-%d %H:%M'",
+                "type": "string"
+              },
+              "date_to": {
+                "title": "start date and time, format '%Y-%m-%d %H:%M'",
+                "type": "string"
+              },
+              "date_from_unit": {
+                "title": "date unit",
+                "enum": [
+                  "gregorian",
+                  "jalali",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes",
+                  "seconds"
+                ]
+              },
+              "date_to_unit": {
+                "title": "date unit",
+                "enum": [
+                  "gregorian",
+                  "jalali",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes",
+                  "seconds"
+                ]
+              },
+              "date_from_op": {
+                "title": "operation for start date",
+                "enum": ["<", ">", "<=", ">="],
+                "value_comment": {
+                  "<": "less than",
+                  ">": "more than",
+                  "<=": "less equal",
+                  ">=": "more equal"
+                }
+              },
+              "date_to_op": {
+                "title": "operation for end date",
+                "enum": ["<", ">", "<=", ">="],
+                "value_comment": {
+                  "<": "less than",
+                  ">": "more than",
+                  "<=": "less equal",
+                  ">=": "more equal"
+                }
+              }
+            }
+          }
+        }
+      ],
       "result": {
         "name": "Response (array)",
         "comment": "",
@@ -146,7 +282,75 @@
       "name": "snapshot.getISPBWSnapShot",
       "description": "",
       "auth_type": ["ADMIN"],
-      "params": [],
+      "params": [
+        {
+          "name": "conds",
+          "description": "reporting condition",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "isp_names": {
+                "title": "list of isp names",
+                "type": "string"
+              },
+              "date_from": {
+                "title": "start date and time, format '%Y-%m-%d %H:%M'",
+                "type": "string"
+              },
+              "date_to": {
+                "title": "start date and time, format '%Y-%m-%d %H:%M'",
+                "type": "string"
+              },
+              "date_from_unit": {
+                "title": "date unit",
+                "enum": [
+                  "gregorian",
+                  "jalali",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes",
+                  "seconds"
+                ]
+              },
+              "date_to_unit": {
+                "title": "date unit",
+                "enum": [
+                  "gregorian",
+                  "jalali",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes",
+                  "seconds"
+                ]
+              },
+              "date_from_op": {
+                "title": "operation for start date",
+                "enum": ["<", ">", "<=", ">="],
+                "value_comment": {
+                  "<": "less than",
+                  ">": "more than",
+                  "<=": "less equal",
+                  ">=": "more equal"
+                }
+              },
+              "date_to_op": {
+                "title": "operation for end date",
+                "enum": ["<", ">", "<=", ">="],
+                "value_comment": {
+                  "<": "less than",
+                  ">": "more than",
+                  "<=": "less equal",
+                  ">=": "more equal"
+                }
+              }
+            }
+          }
+        }
+      ],
       "result": {
         "name": "Response (array)",
         "comment": "",

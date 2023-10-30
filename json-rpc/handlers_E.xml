@@ -5528,8 +5528,7 @@
     </method>
     <method name="getBWSnapShot" auth_type="ADMIN, NORMAL_USER, VOIP_USER" requires_perm="" comment="">
       <input type="dict">
-        <key type="str" comment="reporting condition" />
-        <value type="dict" comment="">
+        <param name="conds" type="dict" comment="reporting condition">
           <param name="user_id" type="str" comment="unique user id for limit reporting for that user" />
           <param name="date_from" type="str" comment="start date and time, format '%Y-%m-%d %H:%M'" />
           <param name="date_to" type="str" comment="start date and time, format '%Y-%m-%d %H:%M'" />
@@ -5565,7 +5564,7 @@
             <choice value="&lt;=" comment="less equal" />
             <choice value="&gt;=" comment="more equal" />
           </param>
-        </value>
+        </param>
       </input>
       <output type="list" length="3" comment="">
         <item index="0" type="int" comment="epoch time" />
@@ -5575,8 +5574,7 @@
     </method>
     <method name="getGroupBWSnapShot" auth_type="ADMIN" requires_perm="" comment="">
       <input type="dict">
-        <key type="str" comment="reporting condition" />
-        <value type="dict" comment="">
+        <param name="conds" type="dict" comment="reporting condition">
           <param name="group_names" type="str" comment="list of group names" />
           <param name="date_from" type="str" comment="start date and time, format '%Y-%m-%d %H:%M'" />
           <param name="date_to" type="str" comment="start date and time, format '%Y-%m-%d %H:%M'" />
@@ -5612,7 +5610,7 @@
             <choice value="&lt;=" comment="less equal" />
             <choice value="&gt;=" comment="more equal" />
           </param>
-        </value>
+        </param>
       </input>
       <output type="list" length="3" comment="">
         <item index="0" type="int" comment="epoch time" />
@@ -5622,8 +5620,7 @@
     </method>
     <method name="getISPBWSnapShot" auth_type="ADMIN" requires_perm="" comment="">
       <input type="dict">
-        <key type="str" comment="reporting condition" />
-        <value type="dict" comment="">
+        <param name="conds" type="dict" comment="reporting condition">
           <param name="isp_names" type="str" comment="list of isp names" />
           <param name="date_from" type="str" comment="start date and time, format '%Y-%m-%d %H:%M'" />
           <param name="date_to" type="str" comment="start date and time, format '%Y-%m-%d %H:%M'" />
@@ -5659,7 +5656,7 @@
             <choice value="&lt;=" comment="less equal" />
             <choice value="&gt;=" comment="more equal" />
           </param>
-        </value>
+        </param>
       </input>
       <output type="list" length="3" comment="">
         <item index="0" type="int" comment="epoch time" />
