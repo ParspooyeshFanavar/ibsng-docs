@@ -25,39 +25,43 @@ ParamType = namedtuple(
 )
 
 
+# %Y-%m-%d %H:%M:%S or %Y-%m-%d %H:%M
+datetimePattern = "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+
+
 paramTypeMapping = {
 	"any": ParamType(),
 
-	"str": ParamType("string", ""),
-	"srt": ParamType("string", ""),
+	"str": ParamType("string"),
+	"srt": ParamType("string"),
 
-	"str_int": ParamType("string", ""),
+	"str_int": ParamType("string", pattern="^[0-9]+$"),
 
-	"int": ParamType("number", ""),
-	"float": ParamType("number", ""),
+	"int": ParamType("number"),
+	"float": ParamType("number"),
 	"str_float": ParamType("str", "float as string"),
 
-	"datetime": ParamType("string", "datetime"),
+	"datetime": ParamType("string", "datetime", pattern=datetimePattern),
 	"datetime, float": ParamType(("string", "number"), "datetime or number"),
-	"datetime, null": ParamType(("string", "null"), "datetime or null"),
+	"datetime, null": ParamType(("string", "null"), "datetime or null", pattern=datetimePattern),
 
-	"bool": ParamType("boolean", ""),
+	"bool": ParamType("boolean"),
 	"true_if_exists": ParamType("boolean", "true if exists"),
 
 	"list": ParamType("array"),
-	"list, str": ParamType(("array", "string"), ""),
+	"list, str": ParamType(("array", "string")),
 
-	"dict": ParamType("object", ""),
+	"dict": ParamType("object"),
 
-	"null": ParamType("null", ""),
+	"null": ParamType("null"),
 	
 	"int, null": ParamType(("number", "null"), "int or null"),
 	"dynamic": ParamType("", "dynamic type"),
 
 	"list, str": ParamType(("array", "string"), ""),
 	"list, int": ParamType(("array", "number"), "array or int"),
-	"int, list": ParamType(("number", "array"), "array or int"),
-	"str, list": ParamType(("string", "array"), "array or string"),
+	"int, list": ParamType(("number", "array"), "int or array"),
+	"str, list": ParamType(("string", "array"), "string or array"),
 }
 
 
@@ -217,9 +221,9 @@ def getJsonParam(param: "Element") -> dict:
 		schema = {
 			"type": newType.type,
 		}		
-	if paramType == "datetime":
-		# %Y-%m-%d %H:%M:%S or %Y-%m-%d %H:%M
-		schema["pattern"] = "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+
+	if newType.pattern:
+		schema["pattern"] = newType.pattern
 	elif paramType == "dict":
 		properties = {}
 		for subParam in getParams(param):

@@ -280,6 +280,7 @@
                 "asterisk_ras_id": {
                   "title": "User Info: VoIP: Asterisk:  Astersik Ras IP (ras_id)",
                   "type": "string",
+                  "pattern": "^[0-9]+$",
                   "required": false
                 },
                 "asterisk_ext_details": {
@@ -440,6 +441,7 @@
                 "asterisk_did_ras_id": {
                   "title": "User Info: VoIP: Asterisk DID: Astersik DID Ras IP (ras_id)",
                   "type": "string",
+                  "pattern": "^[0-9]+$",
                   "required": false
                 },
                 "comment": {
@@ -560,6 +562,7 @@
                 "limit_caller_id_allow_not_defined": {
                   "title": "User Info: Limitations: Limit Caller ID: Allow users with no Caller ID: (0=No, 1=Yes)",
                   "type": "string",
+                  "pattern": "^[0-9]+$",
                   "required": false
                 },
                 "limit_mac": {
@@ -585,6 +588,7 @@
                 "limit_usage_days": {
                   "title": "number of days",
                   "type": "string",
+                  "pattern": "^[0-9]+$",
                   "required": false
                 },
                 "lock": {
@@ -605,16 +609,19 @@
                 "mc_charge_send_latin": {
                   "title": "Message Center: Message Charge: Send Charge: Latin",
                   "type": "string",
+                  "pattern": "^[0-9]+$",
                   "required": false
                 },
                 "mc_charge_send_unicode": {
                   "title": "Message Center: Message Charge: Send Charge: Unicode",
                   "type": "string",
+                  "pattern": "^[0-9]+$",
                   "required": false
                 },
                 "mc_charge_recv": {
                   "title": "Message Center: Message Charge: Receive Charge",
                   "type": "string",
+                  "pattern": "^[0-9]+$",
                   "required": false
                 },
                 "mc_min_user_credit": {
@@ -630,11 +637,13 @@
                 "mail_quota": {
                   "title": "MailBox: MailBox Quota",
                   "type": "string",
+                  "pattern": "^[0-9]+$",
                   "required": false
                 },
                 "mail_usage": {
                   "title": "MailBox: MailBox Usage",
                   "type": "string",
+                  "pattern": "^[0-9]+$",
                   "required": false
                 },
                 "mikrotik_address_list": {
@@ -650,61 +659,73 @@
                 "mikrotik_bw_recv_rate": {
                   "title": "Guarantee Receive Rate",
                   "type": "string",
+                  "pattern": "^[0-9]+$",
                   "required": false
                 },
                 "mikrotik_bw_send_rate": {
                   "title": "Guarantee Send Rate",
                   "type": "string",
+                  "pattern": "^[0-9]+$",
                   "required": false
                 },
                 "mikrotik_bw_recv_burst": {
                   "title": "",
                   "type": "string",
+                  "pattern": "^[0-9]+$",
                   "required": false
                 },
                 "mikrotik_bw_send_burst": {
                   "title": "",
                   "type": "string",
+                  "pattern": "^[0-9]+$",
                   "required": false
                 },
                 "mikrotik_bw_recv_burst_threshold": {
                   "title": "",
                   "type": "string",
+                  "pattern": "^[0-9]+$",
                   "required": false
                 },
                 "mikrotik_bw_send_burst_threshold": {
                   "title": "",
                   "type": "string",
+                  "pattern": "^[0-9]+$",
                   "required": false
                 },
                 "mikrotik_bw_recv_burst_time": {
                   "title": "",
                   "type": "string",
+                  "pattern": "^[0-9]+$",
                   "required": false
                 },
                 "mikrotik_bw_send_burst_time": {
                   "title": "",
                   "type": "string",
+                  "pattern": "^[0-9]+$",
                   "required": false
                 },
                 "mikrotik_bw_priority": {
                   "title": "",
                   "type": "string",
+                  "pattern": "^[0-9]+$",
                   "required": false
                 },
                 "mikrotik_bw_min_recv_rate": {
                   "title": "",
                   "type": "string",
+                  "pattern": "^[0-9]+$",
                   "required": false
                 },
                 "mikrotik_bw_min_send_rate": {
                   "title": "",
                   "type": "string",
+                  "pattern": "^[0-9]+$",
                   "required": false
                 },
                 "multi_login": {
                   "title": "Limitations: Multi Login, value is maximum number of instances",
                   "type": "string",
+                  "pattern": "^[0-9]+$",
                   "required": false
                 },
                 "notification_profile": {
@@ -719,11 +740,13 @@
                 "time_periodic_accounting_monthly_limit": {
                   "title": "Monthly Time: Monthly Time Limit",
                   "type": "string",
+                  "pattern": "^[0-9]+$",
                   "required": false
                 },
                 "time_periodic_accounting_monthly_usage": {
                   "title": "Monthly Time: This Period Usage",
                   "type": "string",
+                  "pattern": "^[0-9]+$",
                   "required": false
                 },
                 "time_periodic_accounting_monthly_reset": {
@@ -740,11 +763,13 @@
                 "traffic_periodic_accounting_monthly_limit": {
                   "title": "Monthly Traffic: Monthly Traffic Limit",
                   "type": "string",
+                  "pattern": "^[0-9]+$",
                   "required": false
                 },
                 "traffic_periodic_accounting_monthly_usage": {
                   "title": "Monthly Traffic: This Period Usage",
                   "type": "string",
+                  "pattern": "^[0-9]+$",
                   "required": false
                 },
                 "traffic_periodic_accounting_monthly_reset": {
@@ -761,11 +786,13 @@
                 "time_periodic_accounting_daily_limit": {
                   "title": "Daily Time: Time Limit",
                   "type": "string",
+                  "pattern": "^[0-9]+$",
                   "required": false
                 },
                 "time_periodic_accounting_daily_usage": {
                   "title": "Daily Time: This Period Usage",
                   "type": "string",
+                  "pattern": "^[0-9]+$",
                   "required": false
                 },
                 "time_periodic_accounting_daily_reset": {
@@ -782,11 +809,13 @@
                 "traffic_periodic_accounting_daily_limit": {
                   "title": "Daily Traffic: Time Limit",
                   "type": "string",
+                  "pattern": "^[0-9]+$",
                   "required": false
                 },
                 "traffic_periodic_accounting_daily_usage": {
                   "title": "Daily Traffic: This Period Usage",
                   "type": "string",
+                  "pattern": "^[0-9]+$",
                   "required": false
                 },
                 "traffic_periodic_accounting_daily_reset": {
@@ -803,11 +832,13 @@
                 "time_periodic_accounting_weekly_limit": {
                   "title": "Daily Time: Time Limit",
                   "type": "string",
+                  "pattern": "^[0-9]+$",
                   "required": false
                 },
                 "time_periodic_accounting_weekly_usage": {
                   "title": "Daily Time: This Period Usage",
                   "type": "string",
+                  "pattern": "^[0-9]+$",
                   "required": false
                 },
                 "time_periodic_accounting_weekly_reset": {
@@ -824,11 +855,13 @@
                 "traffic_periodic_accounting_weekly_limit": {
                   "title": "Weekly Traffic: Time Limit",
                   "type": "string",
+                  "pattern": "^[0-9]+$",
                   "required": false
                 },
                 "traffic_periodic_accounting_weekly_usage": {
                   "title": "Weekly Traffic: This Period Usage",
                   "type": "string",
+                  "pattern": "^[0-9]+$",
                   "required": false
                 },
                 "traffic_periodic_accounting_weekly_reset": {
@@ -879,6 +912,7 @@
                 "daily_periodic_credit_change": {
                   "title": "Monthly Credit Change: Number of days in period",
                   "type": "string",
+                  "pattern": "^[0-9]+$",
                   "required": false
                 },
                 "daily_periodic_credit_change_type": {
@@ -888,6 +922,7 @@
                 "daily_periodic_credit_change_amount": {
                   "title": "Daily Credit Change: Credit Change Amount",
                   "type": "string",
+                  "pattern": "^[0-9]+$",
                   "required": false
                 },
                 "daily_periodic_credit_change_after_first_login": {
@@ -986,6 +1021,7 @@
                 "session_timeout": {
                   "title": "User Info: Limitations: Session Timeout",
                   "type": "string",
+                  "pattern": "^[0-9]+$",
                   "required": false
                 },
                 "voip_preferred_language": {
@@ -1142,7 +1178,8 @@
           "name": "user_id",
           "description": "",
           "schema": {
-            "type": "string"
+            "type": "string",
+            "pattern": "^[0-9]+$"
           },
           "required": false
         },
@@ -1598,6 +1635,7 @@
               "asterisk_did_ras_id": {
                 "title": "User Info: VoIP: Asterisk DID: Astersik DID Ras IP (ras_id)",
                 "type": "string",
+                "pattern": "^[0-9]+$",
                 "required": false
               },
               "comment": {
@@ -1796,6 +1834,7 @@
               "limit_usage_days": {
                 "title": "number of days",
                 "type": "string",
+                "pattern": "^[0-9]+$",
                 "required": false
               },
               "lock": {
@@ -1816,16 +1855,19 @@
               "mc_charge_send_latin": {
                 "title": "Message Center: Message Charge: Send Charge: Latin",
                 "type": "string",
+                "pattern": "^[0-9]+$",
                 "required": false
               },
               "mc_charge_send_unicode": {
                 "title": "Message Center: Message Charge: Send Charge: Unicode",
                 "type": "string",
+                "pattern": "^[0-9]+$",
                 "required": false
               },
               "mc_charge_recv": {
                 "title": "Message Center: Message Charge: Receive Charge",
                 "type": "string",
+                "pattern": "^[0-9]+$",
                 "required": false
               },
               "mc_min_user_credit": {
@@ -1841,11 +1883,13 @@
               "mail_quota": {
                 "title": "MailBox: MailBox Quota",
                 "type": "string",
+                "pattern": "^[0-9]+$",
                 "required": false
               },
               "mail_usage": {
                 "title": "MailBox: MailBox Usage",
                 "type": "string",
+                "pattern": "^[0-9]+$",
                 "required": false
               },
               "mikrotik_address_list": {
@@ -1861,61 +1905,73 @@
               "mikrotik_bw_recv_rate": {
                 "title": "Guarantee Receive Rate",
                 "type": "string",
+                "pattern": "^[0-9]+$",
                 "required": false
               },
               "mikrotik_bw_send_rate": {
                 "title": "Guarantee Send Rate",
                 "type": "string",
+                "pattern": "^[0-9]+$",
                 "required": false
               },
               "mikrotik_bw_recv_burst": {
                 "title": "",
                 "type": "string",
+                "pattern": "^[0-9]+$",
                 "required": false
               },
               "mikrotik_bw_send_burst": {
                 "title": "",
                 "type": "string",
+                "pattern": "^[0-9]+$",
                 "required": false
               },
               "mikrotik_bw_recv_burst_threshold": {
                 "title": "",
                 "type": "string",
+                "pattern": "^[0-9]+$",
                 "required": false
               },
               "mikrotik_bw_send_burst_threshold": {
                 "title": "",
                 "type": "string",
+                "pattern": "^[0-9]+$",
                 "required": false
               },
               "mikrotik_bw_recv_burst_time": {
                 "title": "",
                 "type": "string",
+                "pattern": "^[0-9]+$",
                 "required": false
               },
               "mikrotik_bw_send_burst_time": {
                 "title": "",
                 "type": "string",
+                "pattern": "^[0-9]+$",
                 "required": false
               },
               "mikrotik_bw_priority": {
                 "title": "",
                 "type": "string",
+                "pattern": "^[0-9]+$",
                 "required": false
               },
               "mikrotik_bw_min_recv_rate": {
                 "title": "",
                 "type": "string",
+                "pattern": "^[0-9]+$",
                 "required": false
               },
               "mikrotik_bw_min_send_rate": {
                 "title": "",
                 "type": "string",
+                "pattern": "^[0-9]+$",
                 "required": false
               },
               "multi_login": {
                 "title": "Limitations: Multi Login, value is maximum number of instances",
                 "type": "string",
+                "pattern": "^[0-9]+$",
                 "required": false
               },
               "notification_profile": {
@@ -1930,11 +1986,13 @@
               "time_periodic_accounting_monthly_limit": {
                 "title": "Monthly Time: Monthly Time Limit",
                 "type": "string",
+                "pattern": "^[0-9]+$",
                 "required": false
               },
               "time_periodic_accounting_monthly_usage": {
                 "title": "Monthly Time: This Period Usage",
                 "type": "string",
+                "pattern": "^[0-9]+$",
                 "required": false
               },
               "time_periodic_accounting_monthly_reset": {
@@ -1951,11 +2009,13 @@
               "traffic_periodic_accounting_monthly_limit": {
                 "title": "Monthly Traffic: Monthly Traffic Limit",
                 "type": "string",
+                "pattern": "^[0-9]+$",
                 "required": false
               },
               "traffic_periodic_accounting_monthly_usage": {
                 "title": "Monthly Traffic: This Period Usage",
                 "type": "string",
+                "pattern": "^[0-9]+$",
                 "required": false
               },
               "traffic_periodic_accounting_monthly_reset": {
@@ -1972,11 +2032,13 @@
               "time_periodic_accounting_daily_limit": {
                 "title": "Daily Time: Time Limit",
                 "type": "string",
+                "pattern": "^[0-9]+$",
                 "required": false
               },
               "time_periodic_accounting_daily_usage": {
                 "title": "Daily Time: This Period Usage",
                 "type": "string",
+                "pattern": "^[0-9]+$",
                 "required": false
               },
               "time_periodic_accounting_daily_reset": {
@@ -1993,11 +2055,13 @@
               "traffic_periodic_accounting_daily_limit": {
                 "title": "Daily Traffic: Time Limit",
                 "type": "string",
+                "pattern": "^[0-9]+$",
                 "required": false
               },
               "traffic_periodic_accounting_daily_usage": {
                 "title": "Daily Traffic: This Period Usage",
                 "type": "string",
+                "pattern": "^[0-9]+$",
                 "required": false
               },
               "traffic_periodic_accounting_daily_reset": {
@@ -2014,11 +2078,13 @@
               "time_periodic_accounting_weekly_limit": {
                 "title": "Daily Time: Time Limit",
                 "type": "string",
+                "pattern": "^[0-9]+$",
                 "required": false
               },
               "time_periodic_accounting_weekly_usage": {
                 "title": "Daily Time: This Period Usage",
                 "type": "string",
+                "pattern": "^[0-9]+$",
                 "required": false
               },
               "time_periodic_accounting_weekly_reset": {
@@ -2035,11 +2101,13 @@
               "traffic_periodic_accounting_weekly_limit": {
                 "title": "Weekly Traffic: Time Limit",
                 "type": "string",
+                "pattern": "^[0-9]+$",
                 "required": false
               },
               "traffic_periodic_accounting_weekly_usage": {
                 "title": "Weekly Traffic: This Period Usage",
                 "type": "string",
+                "pattern": "^[0-9]+$",
                 "required": false
               },
               "traffic_periodic_accounting_weekly_reset": {
@@ -2090,6 +2158,7 @@
               "daily_periodic_credit_change": {
                 "title": "Monthly Credit Change: Number of days in period",
                 "type": "string",
+                "pattern": "^[0-9]+$",
                 "required": false
               },
               "daily_periodic_credit_change_type": {
@@ -2099,6 +2168,7 @@
               "daily_periodic_credit_change_amount": {
                 "title": "Daily Credit Change: Credit Change Amount",
                 "type": "string",
+                "pattern": "^[0-9]+$",
                 "required": false
               },
               "daily_periodic_credit_change_after_first_login": {
@@ -2217,6 +2287,7 @@
               "session_timeout": {
                 "title": "User Info: Limitations: Session Timeout",
                 "type": "string",
+                "pattern": "^[0-9]+$",
                 "required": false
               },
               "voip_preferred_language": {

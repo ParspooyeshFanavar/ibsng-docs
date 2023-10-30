@@ -1356,12 +1356,14 @@
                   {
                     "name": "period_end",
                     "description": "datetime or null, str or null",
-                    "type": ["string", "null"]
+                    "type": ["string", "null"],
+                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
                   },
                   {
                     "name": "period_start",
                     "description": "datetime or null, str or null",
-                    "type": ["string", "null"]
+                    "type": ["string", "null"],
+                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
                   },
                   {
                     "name": "comment",
