@@ -71,9 +71,7 @@
                 {
                   "name": "description",
                   "description": "",
-                  "schema": {
-                    "type": "string"
-                  }
+                  "type": "string"
                 },
                 {
                   "name": "period",
@@ -94,30 +92,22 @@
                 {
                   "name": "amount",
                   "description": "",
-                  "schema": {
-                    "type": "number"
-                  }
+                  "type": "number"
                 },
                 {
                   "name": "negate_credit",
                   "description": "",
-                  "schema": {
-                    "type": "boolean"
-                  }
+                  "type": "boolean"
                 },
                 {
                   "name": "pay_back",
                   "description": "",
-                  "schema": {
-                    "type": "boolean"
-                  }
+                  "type": "boolean"
                 },
                 {
                   "name": "ignore_first_time",
                   "description": "",
-                  "schema": {
-                    "type": "boolean"
-                  }
+                  "type": "boolean"
                 }
               ]
             }
@@ -179,9 +169,7 @@
                 {
                   "name": "rule_id",
                   "description": "leave -1 for new rules",
-                  "schema": {
-                    "type": "number"
-                  }
+                  "type": "number"
                 },
                 {
                   "name": "start_from",
@@ -198,9 +186,7 @@
                 {
                   "name": "description",
                   "description": "",
-                  "schema": {
-                    "type": "string"
-                  }
+                  "type": "string"
                 },
                 {
                   "name": "period",
@@ -221,30 +207,22 @@
                 {
                   "name": "amount",
                   "description": "",
-                  "schema": {
-                    "type": "number"
-                  }
+                  "type": "number"
                 },
                 {
                   "name": "negate_credit",
                   "description": "",
-                  "schema": {
-                    "type": "boolean"
-                  }
+                  "type": "boolean"
                 },
                 {
                   "name": "pay_back",
                   "description": "",
-                  "schema": {
-                    "type": "boolean"
-                  }
+                  "type": "boolean"
                 },
                 {
                   "name": "ignore_first_time",
                   "description": "",
-                  "schema": {
-                    "type": "boolean"
-                  }
+                  "type": "boolean"
                 }
               ]
             }
@@ -321,108 +299,86 @@
           "properties": {
             "profile_id": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "profile_name": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "comment": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "effective_hour": {
               "title": "format HH:MM",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "rules": {
               "title": "",
-              "schema": {
-                "type": "array",
-                "items": {
-                  "title": "rule info dict",
-                  "type": "object",
-                  "params": [
-                    {
-                      "name": "rule_id",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "start_from",
-                      "enum": [
-                        "user_creation_date",
-                        "user_real_first_login",
-                        "package_first_login",
-                        "user_expiration_date",
-                        "child_user_activation_fee",
-                        "child_user_creation_date",
-                        "child_active_user_creation_date"
-                      ]
-                    },
-                    {
-                      "name": "description",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "period",
-                      "enum": ["monthly", "start_of_month", "daily", "none"]
-                    },
-                    {
-                      "name": "period_value",
-                      "enum": ["gregorian", "jalali"]
-                    },
-                    {
-                      "name": "change_target",
-                      "enum": ["credit", "deposit", "night_free"]
-                    },
-                    {
-                      "name": "change_action",
-                      "enum": ["SET", "ADD", "MULTIPLY"]
-                    },
-                    {
-                      "name": "amount",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "negate_credit",
-                      "description": "",
-                      "schema": {
-                        "type": "boolean"
-                      }
-                    },
-                    {
-                      "name": "pay_back",
-                      "description": "",
-                      "schema": {
-                        "type": "boolean"
-                      }
-                    },
-                    {
-                      "name": "ignore_first_time",
-                      "description": "",
-                      "schema": {
-                        "type": "boolean"
-                      }
-                    }
-                  ]
-                }
+              "type": "array",
+              "items": {
+                "title": "rule info dict",
+                "type": "object",
+                "params": [
+                  {
+                    "name": "rule_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "start_from",
+                    "enum": [
+                      "user_creation_date",
+                      "user_real_first_login",
+                      "package_first_login",
+                      "user_expiration_date",
+                      "child_user_activation_fee",
+                      "child_user_creation_date",
+                      "child_active_user_creation_date"
+                    ]
+                  },
+                  {
+                    "name": "description",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "period",
+                    "enum": ["monthly", "start_of_month", "daily", "none"]
+                  },
+                  {
+                    "name": "period_value",
+                    "enum": ["gregorian", "jalali"]
+                  },
+                  {
+                    "name": "change_target",
+                    "enum": ["credit", "deposit", "night_free"]
+                  },
+                  {
+                    "name": "change_action",
+                    "enum": ["SET", "ADD", "MULTIPLY"]
+                  },
+                  {
+                    "name": "amount",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "negate_credit",
+                    "description": "",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "pay_back",
+                    "description": "",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "ignore_first_time",
+                    "description": "",
+                    "type": "boolean"
+                  }
+                ]
               }
             }
           }
@@ -452,108 +408,86 @@
           "properties": {
             "profile_id": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "profile_name": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "comment": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "effective_hour": {
               "title": "format HH:MM",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "rules": {
               "title": "",
-              "schema": {
-                "type": "array",
-                "items": {
-                  "title": "rule info dict",
-                  "type": "object",
-                  "params": [
-                    {
-                      "name": "rule_id",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "start_from",
-                      "enum": [
-                        "user_creation_date",
-                        "user_real_first_login",
-                        "package_first_login",
-                        "user_expiration_date",
-                        "child_user_activation_fee",
-                        "child_user_creation_date",
-                        "child_active_user_creation_date"
-                      ]
-                    },
-                    {
-                      "name": "description",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "period",
-                      "enum": ["monthly", "start_of_month", "daily", "none"]
-                    },
-                    {
-                      "name": "period_value",
-                      "enum": ["gregorian", "jalali"]
-                    },
-                    {
-                      "name": "change_target",
-                      "enum": ["credit", "deposit", "night_free"]
-                    },
-                    {
-                      "name": "change_action",
-                      "enum": ["SET", "ADD", "MULTIPLY"]
-                    },
-                    {
-                      "name": "amount",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "negate_credit",
-                      "description": "",
-                      "schema": {
-                        "type": "boolean"
-                      }
-                    },
-                    {
-                      "name": "pay_back",
-                      "description": "",
-                      "schema": {
-                        "type": "boolean"
-                      }
-                    },
-                    {
-                      "name": "ignore_first_time",
-                      "description": "",
-                      "schema": {
-                        "type": "boolean"
-                      }
-                    }
-                  ]
-                }
+              "type": "array",
+              "items": {
+                "title": "rule info dict",
+                "type": "object",
+                "params": [
+                  {
+                    "name": "rule_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "start_from",
+                    "enum": [
+                      "user_creation_date",
+                      "user_real_first_login",
+                      "package_first_login",
+                      "user_expiration_date",
+                      "child_user_activation_fee",
+                      "child_user_creation_date",
+                      "child_active_user_creation_date"
+                    ]
+                  },
+                  {
+                    "name": "description",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "period",
+                    "enum": ["monthly", "start_of_month", "daily", "none"]
+                  },
+                  {
+                    "name": "period_value",
+                    "enum": ["gregorian", "jalali"]
+                  },
+                  {
+                    "name": "change_target",
+                    "enum": ["credit", "deposit", "night_free"]
+                  },
+                  {
+                    "name": "change_action",
+                    "enum": ["SET", "ADD", "MULTIPLY"]
+                  },
+                  {
+                    "name": "amount",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "negate_credit",
+                    "description": "",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "pay_back",
+                    "description": "",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "ignore_first_time",
+                    "description": "",
+                    "type": "boolean"
+                  }
+                ]
               }
             }
           }

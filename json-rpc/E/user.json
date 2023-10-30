@@ -167,1467 +167,1451 @@
           "properties": {
             "user_id": {
               "title": "show user_id, content of this field is:",
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "online_status": {
-                    "title": "true if online, false if offline",
-                    "schema": {
-                      "type": "boolean"
-                    }
-                  },
-                  "basic_info": {
-                    "title": "",
-                    "schema": {
-                      "type": "object",
-                      "properties": {
-                        "user_role": {
-                          "title": "service or account",
-                          "schema": {
-                            "type": "string"
-                          }
-                        },
-                        "group_name": {
-                          "title": "",
-                          "schema": {
-                            "type": "string"
-                          }
-                        },
-                        "isp_name": {
-                          "title": "",
-                          "schema": {
-                            "type": "string"
-                          }
-                        },
-                        "creation_date": {
-                          "title": "",
-                          "schema": {
-                            "type": "string"
-                          }
-                        },
-                        "customer_name": {
-                          "title": "",
-                          "schema": {
-                            "type": "string"
-                          }
-                        },
-                        "group_id": {
-                          "title": "",
-                          "schema": {
-                            "type": "string"
-                          }
-                        },
-                        "nearest_exp_date": {
-                          "title": "",
-                          "schema": {
-                            "type": "string"
-                          }
-                        },
-                        "last_login": {
-                          "title": "",
-                          "schema": {
-                            "type": "string"
-                          }
-                        },
-                        "isp_id": {
-                          "title": "",
-                          "schema": {
-                            "type": "string"
-                          }
-                        },
-                        "parent_user_id": {
-                          "title": "",
-                          "schema": {
-                            "type": "string"
-                          }
-                        },
-                        "customer_id": {
-                          "title": "",
-                          "schema": {
-                            "type": "string"
-                          }
-                        }
-                      }
-                    }
-                  },
-                  "user_repr": {
-                    "title": "internet/voip username if exist",
-                    "schema": {
-                      "type": "string"
-                    }
-                  },
-                  "attrs": {
-                    "title": "also includes custom fields, as custom_field_NAME keys",
-                    "schema": {
-                      "type": "object",
-                      "properties": {
-                        "user_id": {
-                          "title": "",
-                          "schema": {
-                            "type": "number"
-                          },
-                          "required": false
-                        },
-                        "normal_username": {
-                          "title": "",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "normal_password": {
-                          "title": "",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "first_login": {
-                          "title": "",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "real_first_login": {
-                          "title": "",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "nearest_exp_date": {
-                          "title": "%Y-%m-%d %H:%M",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "nearest_exp_date_epoch": {
-                          "title": "epoch time",
-                          "schema": {
-                            "type": "number"
-                          },
-                          "required": false
-                        },
-                        "time_to_nearest_exp_date": {
-                          "title": "in seconds",
-                          "schema": {
-                            "type": "number"
-                          },
-                          "required": false
-                        },
-                        "charge_rule_usage": {
-                          "title": "",
-                          "schema": {
-                            "type": "array",
-                            "items": {
-                              "title": "",
-                              "type": "list"
-                            }
-                          },
-                          "required": false
-                        },
-                        "charge": {
-                          "title": "charge name",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "last_renew": {
-                          "title": "float as string, epoch time (float)",
-                          "schema": {
-                            "type": "str"
-                          },
-                          "required": false
-                        },
-                        "abs_exp_date": {
-                          "title": "datetime, gregorian datetime string",
-                          "schema": {
-                            "type": "string",
-                            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
-                          },
-                          "required": false
-                        },
-                        "abs_exp_date_unit": {
-                          "title": "",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "ippool": {
-                          "title": "User Info Internet IPpool (ippool name)",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "assign_ip": {
-                          "title": "User Info Internet Assign IP Address To User (comma-seperated values)",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "assign_netmask": {
-                          "title": "User Info Internet Assign Netmask To User",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "assign_route_ip": {
-                          "title": "User Info Internet  Assign Route IP To User (comma-seperated values)",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "assign_dns": {
-                          "title": "User Info Internet Assign DNS To User (First and Second DNSs, comma-seperated)",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "assign_dns_1": {
-                          "title": "User Info Internet Assign DNS To User (First DNS)",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "assign_dns_2": {
-                          "title": "User Info Internet Assign DNS To User (Second DNS)",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "in_ras_ippool": {
-                          "title": "User Info Internet In Ras IPPool (ippool name)",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "caller_id": {
-                          "title": "User Info VoIP Caller ID VoIP Caller ID",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "caller_id_bind_on_login": {
-                          "title": "true if exists, User Info VoIP VoIP Caller ID Bind On Next Login",
-                          "schema": {
-                            "type": "boolean"
-                          },
-                          "required": false
-                        },
-                        "fast_dial": {
-                          "title": "User Info VoIP Fast Dial",
-                          "schema": {
-                            "type": "array",
-                            "length": "20"
-                          },
-                          "required": false
-                        },
-                        "forward_number": {
-                          "title": "",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "asterisk_extension": {
-                          "title": "User Info VoIP Asterisk Asterisk Extension",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "asterisk_ras_ip": {
-                          "title": "User Info VoIP Asterisk Astersik Ras IP",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "asterisk_ras_id": {
-                          "title": "User Info VoIP Asterisk  Astersik Ras IP (ras_id)",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "asterisk_ext_details": {
-                          "title": "User Info VoIP Asterisk",
-                          "schema": {
-                            "type": "object",
-                            "properties": {
-                              "id": {
-                                "title": "",
-                                "schema": {
-                                  "type": "number"
-                                }
-                              },
-                              "priority": {
-                                "title": "",
-                                "schema": {
-                                  "type": "number"
-                                }
-                              },
-                              "user_id": {
-                                "title": "",
-                                "schema": {
-                                  "type": "number"
-                                }
-                              },
-                              "app": {
-                                "title": "'AGI' by default",
-                                "schema": {
-                                  "type": "string"
-                                }
-                              },
-                              "appdata": {
-                                "title": "",
-                                "schema": {
-                                  "type": "string"
-                                }
-                              },
-                              "context": {
-                                "title": "'ibs_users' by default",
-                                "schema": {
-                                  "type": "string"
-                                }
-                              },
-                              "exten": {
-                                "title": "the same as value of attrs.asterisk_extension",
-                                "schema": {
-                                  "type": "string"
-                                }
-                              },
-                              "sip_registered": {
-                                "title": "",
-                                "schema": {
-                                  "type": "boolean"
-                                }
-                              },
-                              "iax_registered": {
-                                "title": "",
-                                "schema": {
-                                  "type": "boolean"
-                                }
-                              }
-                            }
-                          },
-                          "required": false
-                        },
-                        "asterisk_sip_details": {
-                          "title": "User Info VoIP Asterisk SIP Details",
-                          "schema": {
-                            "type": "object",
-                            "properties": {
-                              "allow": {
-                                "title": "semicolon-seperated",
-                                "schema": {
-                                  "type": "string"
-                                }
-                              },
-                              "cancallforward": {
-                                "title": "",
-                                "enum": ["yes", "no"]
-                              },
-                              "canreinvite": {
-                                "title": "",
-                                "enum": ["yes", "no"]
-                              },
-                              "context": {
-                                "title": "'incoming' by default",
-                                "schema": {
-                                  "type": "string"
-                                }
-                              },
-                              "disallow": {
-                                "title": "'all' by default",
-                                "schema": {
-                                  "type": "string"
-                                }
-                              },
-                              "host": {
-                                "title": "'dynamic' by default",
-                                "schema": {
-                                  "type": "string"
-                                }
-                              },
-                              "nat": {
-                                "title": "",
-                                "enum": ["yes", "no"]
-                              },
-                              "port": {
-                                "title": "",
-                                "schema": {
-                                  "type": "number"
-                                }
-                              },
-                              "qualify": {
-                                "title": "",
-                                "enum": ["yes", "no"]
-                              },
-                              "regseconds": {
-                                "title": "",
-                                "schema": {
-                                  "type": "number"
-                                }
-                              },
-                              "type": {
-                                "title": "'friend' by default",
-                                "schema": {
-                                  "type": "string"
-                                }
-                              }
-                            }
-                          },
-                          "required": false
-                        },
-                        "asterisk_iax_details": {
-                          "title": "User Info VoIP Asterisk IAX Details",
-                          "schema": {
-                            "type": "object",
-                            "properties": {
-                              "allow": {
-                                "title": "semicolon-seperated",
-                                "schema": {
-                                  "type": "string"
-                                }
-                              },
-                              "auth": {
-                                "title": "'md5' by default",
-                                "schema": {
-                                  "type": "string"
-                                }
-                              },
-                              "context": {
-                                "title": "'incoming' by default",
-                                "schema": {
-                                  "type": "string"
-                                }
-                              },
-                              "disallow": {
-                                "title": "'all' by default",
-                                "schema": {
-                                  "type": "string"
-                                }
-                              },
-                              "host": {
-                                "title": "'dynamic' by default",
-                                "schema": {
-                                  "type": "string"
-                                }
-                              },
-                              "notransfer": {
-                                "title": "",
-                                "enum": ["yes", "no"]
-                              },
-                              "port": {
-                                "title": "",
-                                "schema": {
-                                  "type": "number"
-                                }
-                              },
-                              "qualify": {
-                                "title": "",
-                                "enum": ["yes", "no"]
-                              },
-                              "regseconds": {
-                                "title": "",
-                                "schema": {
-                                  "type": "number"
-                                }
-                              },
-                              "type": {
-                                "title": "'friend' by default",
-                                "schema": {
-                                  "type": "string"
-                                }
-                              }
-                            }
-                          },
-                          "required": false
-                        },
-                        "asterisk_did": {
-                          "title": "User Info VoIP Asterisk DID Asterisk DID",
-                          "schema": {
-                            "type": "array",
-                            "items": {
-                              "title": "",
-                              "type": "list"
-                            }
-                          },
-                          "required": false
-                        },
-                        "asterisk_did_ras_ip": {
-                          "title": "User Info VoIP Asterisk DID Astersik DID Ras IP",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "asterisk_did_ras_id": {
-                          "title": "User Info VoIP Asterisk DID Astersik DID Ras IP (ras_id)",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "comment": {
-                          "title": "User Info Comment Comment",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "name": {
-                          "title": "User Info Comment Name",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "email": {
-                          "title": "User Info Comment Email",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "phone": {
-                          "title": "User Info Comment Phone",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "cell_phone": {
-                          "title": "User Info Comment Cell Phone Number",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "birthdate": {
-                          "title": "User Info Comment Date of Birth",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "address": {
-                          "title": "User Info Comment Address",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "postal_code": {
-                          "title": "User Info Comment Postal Code",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "credit_limit": {
-                          "title": "float as string, User Info Limitations Credit Limit",
-                          "schema": {
-                            "type": "str"
-                          },
-                          "required": false
-                        },
-                        "exp_date_temp_extend": {
-                          "title": "User Info Exp Dates User Expiration Date Temporary Extend",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "temp_extend_log_id": {
-                          "title": "User Info Exp Dates User Expiration Date Temporary Extend",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "exp_from_creation_date": {
-                          "title": "User Info Exp Dates Package Expiration Dates Expiration Date From Creation Date",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "exp_from_first_login": {
-                          "title": "User Info Exp Dates Package Expiration Dates Expiration Date From Real First Login:",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "exp_from_renew": {
-                          "title": "User Info Exp Dates Package Expiration Dates Expiration Date From Renew",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "exp_monthly": {
-                          "title": "User Info Exp Dates Package Expiration Dates Monthly Expiration Date",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "extra_charge_profile": {
-                          "title": "User Info Extra Charge Profile",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "idle_threshold_timespan": {
-                          "title": "",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "idle_bytes_threshold": {
-                          "title": "",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "idle_timeout": {
-                          "title": "",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "bw_send_rate": {
-                          "title": "",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "bw_receive_rate": {
-                          "title": "",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "in_ras_bw": {
-                          "title": "",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "limit_caller_id": {
-                          "title": "User Info Limitations Limit Caller ID Caller ID",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "limit_caller_id_allow_not_defined": {
-                          "title": "User Info Limitations Limit Caller ID Allow users with no Caller ID (0=No, 1=Yes)",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "limit_mac": {
-                          "title": "User Info Limitations Limit Mac Address MAC Address",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "limit_port": {
-                          "title": "User Info Limitations Limit Port",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "limit_ras": {
-                          "title": "User Info Limitations Limit Ras (value is list of allowed RAS Descriptions)",
-                          "schema": {
-                            "type": "array"
-                          },
-                          "required": false
-                        },
-                        "limit_station_ip": {
-                          "title": "value is Station IP",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "limit_usage_days": {
-                          "title": "number of days",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "lock": {
-                          "title": "user is locked if this key in present, value shows the lock reason",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "assigned_endpoint": {
-                          "title": "Message Center End Point",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "mc_charge": {
-                          "title": "Message Center Message Charge, format 'send_latin,send_unicode,receive'",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "mc_charge_send_latin": {
-                          "title": "Message Center Message Charge Send Charge Latin",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "mc_charge_send_unicode": {
-                          "title": "Message Center Message Charge Send Charge Unicode",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "mc_charge_recv": {
-                          "title": "Message Center Message Charge Receive Charge",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "mc_min_user_credit": {
-                          "title": "float as string, Message Center Message Charge Minimum User Credit",
-                          "schema": {
-                            "type": "str"
-                          },
-                          "required": false
-                        },
-                        "email_address": {
-                          "title": "MailBox Email Address",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "mail_quota": {
-                          "title": "MailBox MailBox Quota",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "mail_usage": {
-                          "title": "MailBox MailBox Usage",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "mikrotik_address_list": {
-                          "title": "",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "mikrotik_bw": {
-                          "title": "Mikrotik BW Control (Burst), format GuaranteeReceiveRate/GuaranteeSendRate ReceiveBurst/SendBurst ReceiveBurstThreshold/SendBurstThreshold ReceiveBurstTime/SendBurstTime Priority MinReceiveRate/MinSendRate",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "mikrotik_bw_recv_rate": {
-                          "title": "Guarantee Receive Rate",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "mikrotik_bw_send_rate": {
-                          "title": "Guarantee Send Rate",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "mikrotik_bw_recv_burst": {
-                          "title": "",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "mikrotik_bw_send_burst": {
-                          "title": "",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "mikrotik_bw_recv_burst_threshold": {
-                          "title": "",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "mikrotik_bw_send_burst_threshold": {
-                          "title": "",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "mikrotik_bw_recv_burst_time": {
-                          "title": "",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "mikrotik_bw_send_burst_time": {
-                          "title": "",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "mikrotik_bw_priority": {
-                          "title": "",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "mikrotik_bw_min_recv_rate": {
-                          "title": "",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "mikrotik_bw_min_send_rate": {
-                          "title": "",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "multi_login": {
-                          "title": "Limitations Multi Login, value is maximum number of instances",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "notification_profile": {
-                          "title": "notification profile name",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "time_periodic_accounting_monthly": {
-                          "title": "Monthly Time Monthly Reset Type",
-                          "enum": ["gregorian", "jalali"]
-                        },
-                        "time_periodic_accounting_monthly_limit": {
-                          "title": "Monthly Time Monthly Time Limit",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "time_periodic_accounting_monthly_usage": {
-                          "title": "Monthly Time This Period Usage",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "time_periodic_accounting_monthly_reset": {
-                          "title": "datetime, Monthly Time Next Reset",
-                          "schema": {
-                            "type": "string",
-                            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
-                          },
-                          "required": false
-                        },
-                        "traffic_periodic_accounting_monthly": {
-                          "title": "Monthly Traffic Monthly Reset Type",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "traffic_periodic_accounting_monthly_limit": {
-                          "title": "Monthly Traffic Monthly Traffic Limit",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "traffic_periodic_accounting_monthly_usage": {
-                          "title": "Monthly Traffic This Period Usage",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "traffic_periodic_accounting_monthly_reset": {
-                          "title": "datetime, Monthly Traffic Next Reset",
-                          "schema": {
-                            "type": "string",
-                            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
-                          },
-                          "required": false
-                        },
-                        "time_periodic_accounting_daily": {
-                          "title": "Daily Time Number of days in period",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "time_periodic_accounting_daily_limit": {
-                          "title": "Daily Time Time Limit",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "time_periodic_accounting_daily_usage": {
-                          "title": "Daily Time This Period Usage",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "time_periodic_accounting_daily_reset": {
-                          "title": "datetime, Daily Time Next Reset",
-                          "schema": {
-                            "type": "string",
-                            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
-                          },
-                          "required": false
-                        },
-                        "traffic_periodic_accounting_daily": {
-                          "title": "Daily Traffic Number of days in period",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "traffic_periodic_accounting_daily_limit": {
-                          "title": "Daily Traffic Time Limit",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "traffic_periodic_accounting_daily_usage": {
-                          "title": "Daily Traffic This Period Usage",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "traffic_periodic_accounting_daily_reset": {
-                          "title": "datetime, Daily Traffic Next Reset",
-                          "schema": {
-                            "type": "string",
-                            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
-                          },
-                          "required": false
-                        },
-                        "time_periodic_accounting_weekly": {
-                          "title": "Daily Time Number of days in period",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "time_periodic_accounting_weekly_limit": {
-                          "title": "Daily Time Time Limit",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "time_periodic_accounting_weekly_usage": {
-                          "title": "Daily Time This Period Usage",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "time_periodic_accounting_weekly_reset": {
-                          "title": "datetime, Daily Time Next Reset",
-                          "schema": {
-                            "type": "string",
-                            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
-                          },
-                          "required": false
-                        },
-                        "traffic_periodic_accounting_weekly": {
-                          "title": "Weeklyy Traffic Number of days in period",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "traffic_periodic_accounting_weekly_limit": {
-                          "title": "Weekly Traffic Time Limit",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "traffic_periodic_accounting_weekly_usage": {
-                          "title": "Weekly Traffic This Period Usage",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "traffic_periodic_accounting_weekly_reset": {
-                          "title": "datetime, Weekly Traffic Next Reset",
-                          "schema": {
-                            "type": "string",
-                            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
-                          },
-                          "required": false
-                        },
-                        "monthly_periodic_credit_change": {
-                          "title": "Monthly Credit Change Monthly Reset Type",
-                          "enum": ["gregorian", "jalali"]
-                        },
-                        "monthly_periodic_credit_change_day": {
-                          "title": "Monthly Credit Change Monthly Reset Type Day",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "monthly_periodic_credit_change_type": {
-                          "title": "Monthly Credit Change Credit Change Type",
-                          "enum": ["absolute", "relative"]
-                        },
-                        "monthly_periodic_credit_change_amount": {
-                          "title": "Monthly Credit Change Credit Change Amount",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "monthly_periodic_credit_change_after_first_login": {
-                          "title": "Monthly Credit Change Effective After First Login",
-                          "schema": {
-                            "type": "boolean"
-                          },
-                          "required": false
-                        },
-                        "monthly_periodic_credit_change_negate_credit": {
-                          "title": "Monthly Credit Change Negate Credit",
-                          "schema": {
-                            "type": "boolean"
-                          },
-                          "required": false
-                        },
-                        "monthly_periodic_credit_change_do_on_first_login": {
-                          "title": "Monthly Credit Change Do On First Login",
-                          "schema": {
-                            "type": "boolean"
-                          },
-                          "required": false
-                        },
-                        "monthly_periodic_credit_change_reset": {
-                          "title": "datetime, Monthly Credit Change Next Reset",
-                          "schema": {
-                            "type": "string",
-                            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
-                          },
-                          "required": false
-                        },
-                        "daily_periodic_credit_change": {
-                          "title": "Monthly Credit Change Number of days in period",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "daily_periodic_credit_change_type": {
-                          "title": "Daily Credit Change Credit Change Type",
-                          "enum": ["absolute", "relative"]
-                        },
-                        "daily_periodic_credit_change_amount": {
-                          "title": "Daily Credit Change Credit Change Amount",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "daily_periodic_credit_change_after_first_login": {
-                          "title": "Daily Credit Change Effective After First Login",
-                          "schema": {
-                            "type": "boolean"
-                          },
-                          "required": false
-                        },
-                        "daily_periodic_credit_change_negate_credit": {
-                          "title": "Daily Credit Change Negate Credit",
-                          "schema": {
-                            "type": "boolean"
-                          },
-                          "required": false
-                        },
-                        "daily_periodic_credit_change_do_on_first_login": {
-                          "title": "Daily Credit Change Do On First Login",
-                          "schema": {
-                            "type": "boolean"
-                          },
-                          "required": false
-                        },
-                        "daily_periodic_credit_change_reset": {
-                          "title": "datetime, Daily Credit Change Next Reset",
-                          "schema": {
-                            "type": "string",
-                            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
-                          },
-                          "required": false
-                        },
-                        "persistent_lan_ip": {
-                          "title": "",
-                          "schema": {
-                            "type": "array"
-                          },
-                          "required": false
-                        },
-                        "persistent_lan_mac": {
-                          "title": "",
-                          "schema": {
-                            "type": "array"
-                          },
-                          "required": false
-                        },
-                        "persistent_lan_ras_ip": {
-                          "title": "",
-                          "schema": {
-                            "type": "array"
-                          },
-                          "required": false
-                        },
-                        "plan": {
-                          "title": "",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "radius_attrs": {
-                          "title": "User Info Misc Radius Attributes",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "rel_exp_date": {
-                          "title": "User Info Exp Dates Relative Expiration Date",
-                          "schema": {
-                            "type": "number"
-                          },
-                          "required": false
-                        },
-                        "rel_exp_date_unit": {
-                          "title": "",
-                          "enum": [
-                            "Minutes",
-                            "Hours",
-                            "Days",
-                            "Months",
-                            "Years"
-                          ],
-                          "value_comment": {
-                            "Months": "1 month means 30 days",
-                            "Years": "1 month means 365 days"
-                          }
-                        },
-                        "rel_exp_date_negative_credit": {
-                          "title": "User Info Exp Dates Negative Credit Expiration Date Negative Credit Relative Expiration Date",
-                          "schema": {
-                            "type": "number"
-                          },
-                          "required": false
-                        },
-                        "rel_exp_date_negative_credit_unit": {
-                          "title": "User Info Exp Dates Negative Credit Expiration Date Negative Credit Relative Expiration Date",
-                          "enum": [
-                            "Minutes",
-                            "Hours",
-                            "Days",
-                            "Months",
-                            "Years"
-                          ],
-                          "value_comment": {
-                            "Months": "1 month means 30 days",
-                            "Years": "1 month means 365 days"
-                          }
-                        },
-                        "negative_credit_start": {
-                          "title": "datetime, User Info Exp Dates Negative Credit Expiration Date Negative Credit Start",
-                          "schema": {
-                            "type": "string",
-                            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
-                          },
-                          "required": false
-                        },
-                        "renew_next_group": {
-                          "title": "group_name",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "second_normal_username": {
-                          "title": "Second Internet Username",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "serial": {
-                          "title": "User Info Username Serial ID",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "session_timeout": {
-                          "title": "User Info Limitations Session Timeout",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "voip_preferred_language": {
-                          "title": "preferred language code for VoIP telephony support",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "voip_username": {
-                          "title": "VoIP Username",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "save_bw_usage": {
-                          "title": "true if exists, User Info Flags Save Bandwidth Usage",
-                          "schema": {
-                            "type": "boolean"
-                          },
-                          "required": false
-                        },
-                        "allow_user_disconnect": {
-                          "title": "true if exists, User Info Flags Allow User Disconnect",
-                          "schema": {
-                            "type": "boolean"
-                          },
-                          "required": false
-                        },
-                        "deny_change_password": {
-                          "title": "true if exists, User Info Flags Deny Change Password",
-                          "schema": {
-                            "type": "boolean"
-                          }
-                        },
-                        "auto_renew": {
-                          "title": "true if exists, User Info Flags Auto Renew",
-                          "schema": {
-                            "type": "boolean"
-                          }
-                        },
-                        "reset_negative_credit_on_renew": {
-                          "title": "true if exists, User Info Flags Reset Negative Credit On Renew",
-                          "schema": {
-                            "type": "boolean"
-                          },
-                          "required": false
-                        },
-                        "renew_do_not_reset_credit": {
-                          "title": "true if exists, User Info Flags Renew Do Not Reset Credit",
-                          "schema": {
-                            "type": "boolean"
-                          },
-                          "required": false
-                        },
-                        "renew_do_not_reset_credit_on_state_package": {
-                          "title": "true if exists, User Info Flags Renew Do Not Reset Credit On Package State",
-                          "schema": {
-                            "type": "boolean"
-                          },
-                          "required": false
-                        },
-                        "renew_do_not_reset_credit_on_state_recharged": {
-                          "title": "true if exists, User Info Flags Do Not Reset Credit On Recharged State",
-                          "schema": {
-                            "type": "boolean"
-                          },
-                          "required": false
-                        },
-                        "auto_renew_on_credit_finish": {
-                          "title": "true if exists, User Info Flags Auto Renew On Credit Finish",
-                          "schema": {
-                            "type": "boolean"
-                          }
-                        },
-                        "auto_renew_do_not_reset_credit": {
-                          "title": "true if exists, User Info Flags Auto Renew No Not Reset Credit",
-                          "schema": {
-                            "type": "boolean"
-                          },
-                          "required": false
-                        },
-                        "auto_recharge": {
-                          "title": "true if exists, User Info Flags Auto Recharge",
-                          "schema": {
-                            "type": "boolean"
-                          }
-                        },
-                        "allow_recharge_by_voucher": {
-                          "title": "true if exists, User Info Flags Allow Recharge By Voucher",
-                          "schema": {
-                            "type": "boolean"
-                          }
-                        },
-                        "prevent_web_login": {
-                          "title": "true if exists, User Info Flags Prevent Web Login",
-                          "schema": {
-                            "type": "boolean"
-                          },
-                          "required": false
-                        },
-                        "enable_failed_login": {
-                          "title": "true if exists, User Info Flags Enable Failed Login",
-                          "schema": {
-                            "type": "boolean"
-                          }
-                        },
-                        "ignore_idle_threshold_static_ip": {
-                          "title": "User Info Flags Ignore Idle Threshold on static IP",
-                          "schema": {
-                            "type": "string"
-                          },
-                          "required": false
-                        },
-                        "ignore_idle_threshold": {
-                          "title": "true if exists, User Info Flags Ignore Idle Threshold",
-                          "schema": {
-                            "type": "boolean"
-                          },
-                          "required": false
-                        },
-                        "limit_caller_id_bind_on_login": {
-                          "title": "true if exists, User Info Limitations Limit Caller ID Bind on next login",
-                          "schema": {
-                            "type": "boolean"
-                          },
-                          "required": false
-                        },
-                        "limit_mac_bind_on_login": {
-                          "title": "true if exists, ",
-                          "schema": {
-                            "type": "boolean"
-                          },
-                          "required": false
-                        },
-                        "limit_port_bind_on_login": {
-                          "title": "true if exists, ",
-                          "schema": {
-                            "type": "boolean"
-                          },
-                          "required": false
-                        },
-                        "limit_ras_bind_on_login": {
-                          "title": "true if exists, ",
-                          "schema": {
-                            "type": "boolean"
-                          },
-                          "required": false
-                        },
-                        "limit_station_ip_bind_on_login": {
-                          "title": "true if exists, ",
-                          "schema": {
-                            "type": "boolean"
-                          },
-                          "required": false
-                        }
-                      }
-                    }
-                  },
-                  "voip_onlines": {
-                    "title": "list length is number of instances, usually 1",
-                    "schema": {
-                      "type": "array",
-                      "items": {
-                        "title": "user instance",
-                        "type": "list"
-                      }
-                    }
-                  },
-                  "internet_onlines": {
-                    "title": "list length is number of instances, usually 1",
-                    "schema": {
-                      "type": "array",
-                      "items": {
-                        "title": "user instance",
-                        "type": "list"
-                      }
-                    }
-                  },
-                  "has_online_payment_gateways": {
-                    "title": "",
-                    "schema": {
-                      "type": "boolean"
-                    },
-                    "required": false
+              "type": "object",
+              "properties": {
+                "online_status": {
+                  "title": "true if online, false if offline",
+                  "schema": {
+                    "type": "boolean"
                   }
+                },
+                "basic_info": {
+                  "title": "",
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "user_role": {
+                        "title": "service or account",
+                        "schema": {
+                          "type": "string"
+                        }
+                      },
+                      "group_name": {
+                        "title": "",
+                        "schema": {
+                          "type": "string"
+                        }
+                      },
+                      "isp_name": {
+                        "title": "",
+                        "schema": {
+                          "type": "string"
+                        }
+                      },
+                      "creation_date": {
+                        "title": "",
+                        "schema": {
+                          "type": "string"
+                        }
+                      },
+                      "customer_name": {
+                        "title": "",
+                        "schema": {
+                          "type": "string"
+                        }
+                      },
+                      "group_id": {
+                        "title": "",
+                        "schema": {
+                          "type": "string"
+                        }
+                      },
+                      "nearest_exp_date": {
+                        "title": "",
+                        "schema": {
+                          "type": "string"
+                        }
+                      },
+                      "last_login": {
+                        "title": "",
+                        "schema": {
+                          "type": "string"
+                        }
+                      },
+                      "isp_id": {
+                        "title": "",
+                        "schema": {
+                          "type": "string"
+                        }
+                      },
+                      "parent_user_id": {
+                        "title": "",
+                        "schema": {
+                          "type": "string"
+                        }
+                      },
+                      "customer_id": {
+                        "title": "",
+                        "schema": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                },
+                "user_repr": {
+                  "title": "internet/voip username if exist",
+                  "schema": {
+                    "type": "string"
+                  }
+                },
+                "attrs": {
+                  "title": "also includes custom fields, as custom_field_NAME keys",
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "user_id": {
+                        "title": "",
+                        "schema": {
+                          "type": "number"
+                        },
+                        "required": false
+                      },
+                      "normal_username": {
+                        "title": "",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "normal_password": {
+                        "title": "",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "first_login": {
+                        "title": "",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "real_first_login": {
+                        "title": "",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "nearest_exp_date": {
+                        "title": "%Y-%m-%d %H:%M",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "nearest_exp_date_epoch": {
+                        "title": "epoch time",
+                        "schema": {
+                          "type": "number"
+                        },
+                        "required": false
+                      },
+                      "time_to_nearest_exp_date": {
+                        "title": "in seconds",
+                        "schema": {
+                          "type": "number"
+                        },
+                        "required": false
+                      },
+                      "charge_rule_usage": {
+                        "title": "",
+                        "schema": {
+                          "type": "array",
+                          "items": {
+                            "title": "",
+                            "type": "list"
+                          }
+                        },
+                        "required": false
+                      },
+                      "charge": {
+                        "title": "charge name",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "last_renew": {
+                        "title": "float as string, epoch time (float)",
+                        "schema": {
+                          "type": "str"
+                        },
+                        "required": false
+                      },
+                      "abs_exp_date": {
+                        "title": "datetime, gregorian datetime string",
+                        "schema": {
+                          "type": "string",
+                          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+                        },
+                        "required": false
+                      },
+                      "abs_exp_date_unit": {
+                        "title": "",
+                        "enum": ["gregorian"],
+                        "required": false
+                      },
+                      "ippool": {
+                        "title": "User Info Internet IPpool (ippool name)",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "assign_ip": {
+                        "title": "User Info Internet Assign IP Address To User (comma-seperated values)",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "assign_netmask": {
+                        "title": "User Info Internet Assign Netmask To User",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "assign_route_ip": {
+                        "title": "User Info Internet  Assign Route IP To User (comma-seperated values)",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "assign_dns": {
+                        "title": "User Info Internet Assign DNS To User (First and Second DNSs, comma-seperated)",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "assign_dns_1": {
+                        "title": "User Info Internet Assign DNS To User (First DNS)",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "assign_dns_2": {
+                        "title": "User Info Internet Assign DNS To User (Second DNS)",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "in_ras_ippool": {
+                        "title": "User Info Internet In Ras IPPool (ippool name)",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "caller_id": {
+                        "title": "User Info VoIP Caller ID VoIP Caller ID",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "caller_id_bind_on_login": {
+                        "title": "true if exists, User Info VoIP VoIP Caller ID Bind On Next Login",
+                        "schema": {
+                          "type": "boolean"
+                        },
+                        "required": false
+                      },
+                      "fast_dial": {
+                        "title": "User Info VoIP Fast Dial",
+                        "schema": {
+                          "type": "array",
+                          "length": "20"
+                        },
+                        "required": false
+                      },
+                      "forward_number": {
+                        "title": "",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "asterisk_extension": {
+                        "title": "User Info VoIP Asterisk Asterisk Extension",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "asterisk_ras_ip": {
+                        "title": "User Info VoIP Asterisk Astersik Ras IP",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "asterisk_ras_id": {
+                        "title": "User Info VoIP Asterisk  Astersik Ras IP (ras_id)",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "asterisk_ext_details": {
+                        "title": "User Info VoIP Asterisk",
+                        "schema": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "title": "",
+                              "schema": {
+                                "type": "number"
+                              }
+                            },
+                            "priority": {
+                              "title": "",
+                              "schema": {
+                                "type": "number"
+                              }
+                            },
+                            "user_id": {
+                              "title": "",
+                              "schema": {
+                                "type": "number"
+                              }
+                            },
+                            "app": {
+                              "title": "'AGI' by default",
+                              "schema": {
+                                "type": "string"
+                              }
+                            },
+                            "appdata": {
+                              "title": "",
+                              "schema": {
+                                "type": "string"
+                              }
+                            },
+                            "context": {
+                              "title": "'ibs_users' by default",
+                              "schema": {
+                                "type": "string"
+                              }
+                            },
+                            "exten": {
+                              "title": "the same as value of attrs.asterisk_extension",
+                              "schema": {
+                                "type": "string"
+                              }
+                            },
+                            "sip_registered": {
+                              "title": "",
+                              "schema": {
+                                "type": "boolean"
+                              }
+                            },
+                            "iax_registered": {
+                              "title": "",
+                              "schema": {
+                                "type": "boolean"
+                              }
+                            }
+                          }
+                        },
+                        "required": false
+                      },
+                      "asterisk_sip_details": {
+                        "title": "User Info VoIP Asterisk SIP Details",
+                        "schema": {
+                          "type": "object",
+                          "properties": {
+                            "allow": {
+                              "title": "semicolon-seperated",
+                              "schema": {
+                                "type": "string"
+                              }
+                            },
+                            "cancallforward": {
+                              "title": "",
+                              "enum": ["yes", "no"]
+                            },
+                            "canreinvite": {
+                              "title": "",
+                              "enum": ["yes", "no"]
+                            },
+                            "context": {
+                              "title": "'incoming' by default",
+                              "schema": {
+                                "type": "string"
+                              }
+                            },
+                            "disallow": {
+                              "title": "'all' by default",
+                              "schema": {
+                                "type": "string"
+                              }
+                            },
+                            "host": {
+                              "title": "'dynamic' by default",
+                              "schema": {
+                                "type": "string"
+                              }
+                            },
+                            "nat": {
+                              "title": "",
+                              "enum": ["yes", "no"]
+                            },
+                            "port": {
+                              "title": "",
+                              "schema": {
+                                "type": "number"
+                              }
+                            },
+                            "qualify": {
+                              "title": "",
+                              "enum": ["yes", "no"]
+                            },
+                            "regseconds": {
+                              "title": "",
+                              "schema": {
+                                "type": "number"
+                              }
+                            },
+                            "type": {
+                              "title": "'friend' by default",
+                              "schema": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        },
+                        "required": false
+                      },
+                      "asterisk_iax_details": {
+                        "title": "User Info VoIP Asterisk IAX Details",
+                        "schema": {
+                          "type": "object",
+                          "properties": {
+                            "allow": {
+                              "title": "semicolon-seperated",
+                              "schema": {
+                                "type": "string"
+                              }
+                            },
+                            "auth": {
+                              "title": "'md5' by default",
+                              "schema": {
+                                "type": "string"
+                              }
+                            },
+                            "context": {
+                              "title": "'incoming' by default",
+                              "schema": {
+                                "type": "string"
+                              }
+                            },
+                            "disallow": {
+                              "title": "'all' by default",
+                              "schema": {
+                                "type": "string"
+                              }
+                            },
+                            "host": {
+                              "title": "'dynamic' by default",
+                              "schema": {
+                                "type": "string"
+                              }
+                            },
+                            "notransfer": {
+                              "title": "",
+                              "enum": ["yes", "no"]
+                            },
+                            "port": {
+                              "title": "",
+                              "schema": {
+                                "type": "number"
+                              }
+                            },
+                            "qualify": {
+                              "title": "",
+                              "enum": ["yes", "no"]
+                            },
+                            "regseconds": {
+                              "title": "",
+                              "schema": {
+                                "type": "number"
+                              }
+                            },
+                            "type": {
+                              "title": "'friend' by default",
+                              "schema": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        },
+                        "required": false
+                      },
+                      "asterisk_did": {
+                        "title": "User Info VoIP Asterisk DID Asterisk DID",
+                        "schema": {
+                          "type": "array",
+                          "items": {
+                            "title": "",
+                            "type": "list"
+                          }
+                        },
+                        "required": false
+                      },
+                      "asterisk_did_ras_ip": {
+                        "title": "User Info VoIP Asterisk DID Astersik DID Ras IP",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "asterisk_did_ras_id": {
+                        "title": "User Info VoIP Asterisk DID Astersik DID Ras IP (ras_id)",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "comment": {
+                        "title": "User Info Comment Comment",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "name": {
+                        "title": "User Info Comment Name",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "email": {
+                        "title": "User Info Comment Email",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "phone": {
+                        "title": "User Info Comment Phone",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "cell_phone": {
+                        "title": "User Info Comment Cell Phone Number",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "birthdate": {
+                        "title": "User Info Comment Date of Birth",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "address": {
+                        "title": "User Info Comment Address",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "postal_code": {
+                        "title": "User Info Comment Postal Code",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "credit_limit": {
+                        "title": "float as string, User Info Limitations Credit Limit",
+                        "schema": {
+                          "type": "str"
+                        },
+                        "required": false
+                      },
+                      "exp_date_temp_extend": {
+                        "title": "User Info Exp Dates User Expiration Date Temporary Extend",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "temp_extend_log_id": {
+                        "title": "User Info Exp Dates User Expiration Date Temporary Extend",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "exp_from_creation_date": {
+                        "title": "User Info Exp Dates Package Expiration Dates Expiration Date From Creation Date",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "exp_from_first_login": {
+                        "title": "User Info Exp Dates Package Expiration Dates Expiration Date From Real First Login:",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "exp_from_renew": {
+                        "title": "User Info Exp Dates Package Expiration Dates Expiration Date From Renew",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "exp_monthly": {
+                        "title": "User Info Exp Dates Package Expiration Dates Monthly Expiration Date",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "extra_charge_profile": {
+                        "title": "User Info Extra Charge Profile",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "idle_threshold_timespan": {
+                        "title": "",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "idle_bytes_threshold": {
+                        "title": "",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "idle_timeout": {
+                        "title": "",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "bw_send_rate": {
+                        "title": "",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "bw_receive_rate": {
+                        "title": "",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "in_ras_bw": {
+                        "title": "",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "limit_caller_id": {
+                        "title": "User Info Limitations Limit Caller ID Caller ID",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "limit_caller_id_allow_not_defined": {
+                        "title": "User Info Limitations Limit Caller ID Allow users with no Caller ID (0=No, 1=Yes)",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "limit_mac": {
+                        "title": "User Info Limitations Limit Mac Address MAC Address",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "limit_port": {
+                        "title": "User Info Limitations Limit Port",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "limit_ras": {
+                        "title": "User Info Limitations Limit Ras (value is list of allowed RAS Descriptions)",
+                        "schema": {
+                          "type": "array"
+                        },
+                        "required": false
+                      },
+                      "limit_station_ip": {
+                        "title": "value is Station IP",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "limit_usage_days": {
+                        "title": "number of days",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "lock": {
+                        "title": "user is locked if this key in present, value shows the lock reason",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "assigned_endpoint": {
+                        "title": "Message Center End Point",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "mc_charge": {
+                        "title": "Message Center Message Charge, format 'send_latin,send_unicode,receive'",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "mc_charge_send_latin": {
+                        "title": "Message Center Message Charge Send Charge Latin",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "mc_charge_send_unicode": {
+                        "title": "Message Center Message Charge Send Charge Unicode",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "mc_charge_recv": {
+                        "title": "Message Center Message Charge Receive Charge",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "mc_min_user_credit": {
+                        "title": "float as string, Message Center Message Charge Minimum User Credit",
+                        "schema": {
+                          "type": "str"
+                        },
+                        "required": false
+                      },
+                      "email_address": {
+                        "title": "MailBox Email Address",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "mail_quota": {
+                        "title": "MailBox MailBox Quota",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "mail_usage": {
+                        "title": "MailBox MailBox Usage",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "mikrotik_address_list": {
+                        "title": "",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "mikrotik_bw": {
+                        "title": "Mikrotik BW Control (Burst), format GuaranteeReceiveRate/GuaranteeSendRate ReceiveBurst/SendBurst ReceiveBurstThreshold/SendBurstThreshold ReceiveBurstTime/SendBurstTime Priority MinReceiveRate/MinSendRate",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "mikrotik_bw_recv_rate": {
+                        "title": "Guarantee Receive Rate",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "mikrotik_bw_send_rate": {
+                        "title": "Guarantee Send Rate",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "mikrotik_bw_recv_burst": {
+                        "title": "",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "mikrotik_bw_send_burst": {
+                        "title": "",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "mikrotik_bw_recv_burst_threshold": {
+                        "title": "",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "mikrotik_bw_send_burst_threshold": {
+                        "title": "",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "mikrotik_bw_recv_burst_time": {
+                        "title": "",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "mikrotik_bw_send_burst_time": {
+                        "title": "",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "mikrotik_bw_priority": {
+                        "title": "",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "mikrotik_bw_min_recv_rate": {
+                        "title": "",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "mikrotik_bw_min_send_rate": {
+                        "title": "",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "multi_login": {
+                        "title": "Limitations Multi Login, value is maximum number of instances",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "notification_profile": {
+                        "title": "notification profile name",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "time_periodic_accounting_monthly": {
+                        "title": "Monthly Time Monthly Reset Type",
+                        "enum": ["gregorian", "jalali"]
+                      },
+                      "time_periodic_accounting_monthly_limit": {
+                        "title": "Monthly Time Monthly Time Limit",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "time_periodic_accounting_monthly_usage": {
+                        "title": "Monthly Time This Period Usage",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "time_periodic_accounting_monthly_reset": {
+                        "title": "datetime, Monthly Time Next Reset",
+                        "schema": {
+                          "type": "string",
+                          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+                        },
+                        "required": false
+                      },
+                      "traffic_periodic_accounting_monthly": {
+                        "title": "Monthly Traffic Monthly Reset Type",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "traffic_periodic_accounting_monthly_limit": {
+                        "title": "Monthly Traffic Monthly Traffic Limit",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "traffic_periodic_accounting_monthly_usage": {
+                        "title": "Monthly Traffic This Period Usage",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "traffic_periodic_accounting_monthly_reset": {
+                        "title": "datetime, Monthly Traffic Next Reset",
+                        "schema": {
+                          "type": "string",
+                          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+                        },
+                        "required": false
+                      },
+                      "time_periodic_accounting_daily": {
+                        "title": "Daily Time Number of days in period",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "time_periodic_accounting_daily_limit": {
+                        "title": "Daily Time Time Limit",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "time_periodic_accounting_daily_usage": {
+                        "title": "Daily Time This Period Usage",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "time_periodic_accounting_daily_reset": {
+                        "title": "datetime, Daily Time Next Reset",
+                        "schema": {
+                          "type": "string",
+                          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+                        },
+                        "required": false
+                      },
+                      "traffic_periodic_accounting_daily": {
+                        "title": "Daily Traffic Number of days in period",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "traffic_periodic_accounting_daily_limit": {
+                        "title": "Daily Traffic Time Limit",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "traffic_periodic_accounting_daily_usage": {
+                        "title": "Daily Traffic This Period Usage",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "traffic_periodic_accounting_daily_reset": {
+                        "title": "datetime, Daily Traffic Next Reset",
+                        "schema": {
+                          "type": "string",
+                          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+                        },
+                        "required": false
+                      },
+                      "time_periodic_accounting_weekly": {
+                        "title": "Daily Time Number of days in period",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "time_periodic_accounting_weekly_limit": {
+                        "title": "Daily Time Time Limit",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "time_periodic_accounting_weekly_usage": {
+                        "title": "Daily Time This Period Usage",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "time_periodic_accounting_weekly_reset": {
+                        "title": "datetime, Daily Time Next Reset",
+                        "schema": {
+                          "type": "string",
+                          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+                        },
+                        "required": false
+                      },
+                      "traffic_periodic_accounting_weekly": {
+                        "title": "Weeklyy Traffic Number of days in period",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "traffic_periodic_accounting_weekly_limit": {
+                        "title": "Weekly Traffic Time Limit",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "traffic_periodic_accounting_weekly_usage": {
+                        "title": "Weekly Traffic This Period Usage",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "traffic_periodic_accounting_weekly_reset": {
+                        "title": "datetime, Weekly Traffic Next Reset",
+                        "schema": {
+                          "type": "string",
+                          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+                        },
+                        "required": false
+                      },
+                      "monthly_periodic_credit_change": {
+                        "title": "Monthly Credit Change Monthly Reset Type",
+                        "enum": ["gregorian", "jalali"]
+                      },
+                      "monthly_periodic_credit_change_day": {
+                        "title": "Monthly Credit Change Monthly Reset Type Day",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "monthly_periodic_credit_change_type": {
+                        "title": "Monthly Credit Change Credit Change Type",
+                        "enum": ["absolute", "relative"]
+                      },
+                      "monthly_periodic_credit_change_amount": {
+                        "title": "Monthly Credit Change Credit Change Amount",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "monthly_periodic_credit_change_after_first_login": {
+                        "title": "Monthly Credit Change Effective After First Login",
+                        "schema": {
+                          "type": "boolean"
+                        },
+                        "required": false
+                      },
+                      "monthly_periodic_credit_change_negate_credit": {
+                        "title": "Monthly Credit Change Negate Credit",
+                        "schema": {
+                          "type": "boolean"
+                        },
+                        "required": false
+                      },
+                      "monthly_periodic_credit_change_do_on_first_login": {
+                        "title": "Monthly Credit Change Do On First Login",
+                        "schema": {
+                          "type": "boolean"
+                        },
+                        "required": false
+                      },
+                      "monthly_periodic_credit_change_reset": {
+                        "title": "datetime, Monthly Credit Change Next Reset",
+                        "schema": {
+                          "type": "string",
+                          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+                        },
+                        "required": false
+                      },
+                      "daily_periodic_credit_change": {
+                        "title": "Monthly Credit Change Number of days in period",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "daily_periodic_credit_change_type": {
+                        "title": "Daily Credit Change Credit Change Type",
+                        "enum": ["absolute", "relative"]
+                      },
+                      "daily_periodic_credit_change_amount": {
+                        "title": "Daily Credit Change Credit Change Amount",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "daily_periodic_credit_change_after_first_login": {
+                        "title": "Daily Credit Change Effective After First Login",
+                        "schema": {
+                          "type": "boolean"
+                        },
+                        "required": false
+                      },
+                      "daily_periodic_credit_change_negate_credit": {
+                        "title": "Daily Credit Change Negate Credit",
+                        "schema": {
+                          "type": "boolean"
+                        },
+                        "required": false
+                      },
+                      "daily_periodic_credit_change_do_on_first_login": {
+                        "title": "Daily Credit Change Do On First Login",
+                        "schema": {
+                          "type": "boolean"
+                        },
+                        "required": false
+                      },
+                      "daily_periodic_credit_change_reset": {
+                        "title": "datetime, Daily Credit Change Next Reset",
+                        "schema": {
+                          "type": "string",
+                          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+                        },
+                        "required": false
+                      },
+                      "persistent_lan_ip": {
+                        "title": "",
+                        "schema": {
+                          "type": "array"
+                        },
+                        "required": false
+                      },
+                      "persistent_lan_mac": {
+                        "title": "",
+                        "schema": {
+                          "type": "array"
+                        },
+                        "required": false
+                      },
+                      "persistent_lan_ras_ip": {
+                        "title": "",
+                        "schema": {
+                          "type": "array"
+                        },
+                        "required": false
+                      },
+                      "plan": {
+                        "title": "",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "radius_attrs": {
+                        "title": "User Info Misc Radius Attributes",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "rel_exp_date": {
+                        "title": "User Info Exp Dates Relative Expiration Date",
+                        "schema": {
+                          "type": "number"
+                        },
+                        "required": false
+                      },
+                      "rel_exp_date_unit": {
+                        "title": "",
+                        "enum": ["Minutes", "Hours", "Days", "Months", "Years"],
+                        "value_comment": {
+                          "Months": "1 month means 30 days",
+                          "Years": "1 month means 365 days"
+                        }
+                      },
+                      "rel_exp_date_negative_credit": {
+                        "title": "User Info Exp Dates Negative Credit Expiration Date Negative Credit Relative Expiration Date",
+                        "schema": {
+                          "type": "number"
+                        },
+                        "required": false
+                      },
+                      "rel_exp_date_negative_credit_unit": {
+                        "title": "User Info Exp Dates Negative Credit Expiration Date Negative Credit Relative Expiration Date",
+                        "enum": ["Minutes", "Hours", "Days", "Months", "Years"],
+                        "value_comment": {
+                          "Months": "1 month means 30 days",
+                          "Years": "1 month means 365 days"
+                        }
+                      },
+                      "negative_credit_start": {
+                        "title": "datetime, User Info Exp Dates Negative Credit Expiration Date Negative Credit Start",
+                        "schema": {
+                          "type": "string",
+                          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+                        },
+                        "required": false
+                      },
+                      "renew_next_group": {
+                        "title": "group_name",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "second_normal_username": {
+                        "title": "Second Internet Username",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "serial": {
+                        "title": "User Info Username Serial ID",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "session_timeout": {
+                        "title": "User Info Limitations Session Timeout",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "voip_preferred_language": {
+                        "title": "preferred language code for VoIP telephony support",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "voip_username": {
+                        "title": "VoIP Username",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "save_bw_usage": {
+                        "title": "true if exists, User Info Flags Save Bandwidth Usage",
+                        "schema": {
+                          "type": "boolean"
+                        },
+                        "required": false
+                      },
+                      "allow_user_disconnect": {
+                        "title": "true if exists, User Info Flags Allow User Disconnect",
+                        "schema": {
+                          "type": "boolean"
+                        },
+                        "required": false
+                      },
+                      "deny_change_password": {
+                        "title": "true if exists, User Info Flags Deny Change Password",
+                        "schema": {
+                          "type": "boolean"
+                        }
+                      },
+                      "auto_renew": {
+                        "title": "true if exists, User Info Flags Auto Renew",
+                        "schema": {
+                          "type": "boolean"
+                        }
+                      },
+                      "reset_negative_credit_on_renew": {
+                        "title": "true if exists, User Info Flags Reset Negative Credit On Renew",
+                        "schema": {
+                          "type": "boolean"
+                        },
+                        "required": false
+                      },
+                      "renew_do_not_reset_credit": {
+                        "title": "true if exists, User Info Flags Renew Do Not Reset Credit",
+                        "schema": {
+                          "type": "boolean"
+                        },
+                        "required": false
+                      },
+                      "renew_do_not_reset_credit_on_state_package": {
+                        "title": "true if exists, User Info Flags Renew Do Not Reset Credit On Package State",
+                        "schema": {
+                          "type": "boolean"
+                        },
+                        "required": false
+                      },
+                      "renew_do_not_reset_credit_on_state_recharged": {
+                        "title": "true if exists, User Info Flags Do Not Reset Credit On Recharged State",
+                        "schema": {
+                          "type": "boolean"
+                        },
+                        "required": false
+                      },
+                      "auto_renew_on_credit_finish": {
+                        "title": "true if exists, User Info Flags Auto Renew On Credit Finish",
+                        "schema": {
+                          "type": "boolean"
+                        }
+                      },
+                      "auto_renew_do_not_reset_credit": {
+                        "title": "true if exists, User Info Flags Auto Renew No Not Reset Credit",
+                        "schema": {
+                          "type": "boolean"
+                        },
+                        "required": false
+                      },
+                      "auto_recharge": {
+                        "title": "true if exists, User Info Flags Auto Recharge",
+                        "schema": {
+                          "type": "boolean"
+                        }
+                      },
+                      "allow_recharge_by_voucher": {
+                        "title": "true if exists, User Info Flags Allow Recharge By Voucher",
+                        "schema": {
+                          "type": "boolean"
+                        }
+                      },
+                      "prevent_web_login": {
+                        "title": "true if exists, User Info Flags Prevent Web Login",
+                        "schema": {
+                          "type": "boolean"
+                        },
+                        "required": false
+                      },
+                      "enable_failed_login": {
+                        "title": "true if exists, User Info Flags Enable Failed Login",
+                        "schema": {
+                          "type": "boolean"
+                        }
+                      },
+                      "ignore_idle_threshold_static_ip": {
+                        "title": "User Info Flags Ignore Idle Threshold on static IP",
+                        "schema": {
+                          "type": "string"
+                        },
+                        "required": false
+                      },
+                      "ignore_idle_threshold": {
+                        "title": "true if exists, User Info Flags Ignore Idle Threshold",
+                        "schema": {
+                          "type": "boolean"
+                        },
+                        "required": false
+                      },
+                      "limit_caller_id_bind_on_login": {
+                        "title": "true if exists, User Info Limitations Limit Caller ID Bind on next login",
+                        "schema": {
+                          "type": "boolean"
+                        },
+                        "required": false
+                      },
+                      "limit_mac_bind_on_login": {
+                        "title": "true if exists, ",
+                        "schema": {
+                          "type": "boolean"
+                        },
+                        "required": false
+                      },
+                      "limit_port_bind_on_login": {
+                        "title": "true if exists, ",
+                        "schema": {
+                          "type": "boolean"
+                        },
+                        "required": false
+                      },
+                      "limit_ras_bind_on_login": {
+                        "title": "true if exists, ",
+                        "schema": {
+                          "type": "boolean"
+                        },
+                        "required": false
+                      },
+                      "limit_station_ip_bind_on_login": {
+                        "title": "true if exists, ",
+                        "schema": {
+                          "type": "boolean"
+                        },
+                        "required": false
+                      }
+                    }
+                  }
+                },
+                "voip_onlines": {
+                  "title": "list length is number of instances, usually 1",
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "title": "user instance",
+                      "type": "list"
+                    }
+                  }
+                },
+                "internet_onlines": {
+                  "title": "list length is number of instances, usually 1",
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "title": "user instance",
+                      "type": "list"
+                    }
+                  }
+                },
+                "has_online_payment_gateways": {
+                  "title": "",
+                  "schema": {
+                    "type": "boolean"
+                  },
+                  "required": false
                 }
               }
             }
@@ -1883,9 +1867,7 @@
               },
               "abs_exp_date_unit": {
                 "title": "",
-                "schema": {
-                  "type": "string"
-                },
+                "enum": ["gregorian"],
                 "required": false
               },
               "allow_recharge_by_voucher": {
@@ -4982,21 +4964,15 @@
           "properties": {
             "id": {
               "title": "return null if enter correct parameters",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "result": {
               "title": "return true if enter correct parameters",
-              "schema": {
-                "type": "boolean"
-              }
+              "type": "boolean"
             },
             "error": {
               "title": "return null if enter correct parameters",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             }
           }
         }
@@ -5306,107 +5282,77 @@
           "properties": {
             "action_id": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "action_name": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "conds": {
               "title": "",
-              "schema": {
-                "type": "object",
-                "properties": {}
-              }
+              "type": "object",
+              "properties": {}
             },
             "requester_id": {
               "title": "Admin ID",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "requester_username": {
               "title": "Admin Username",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "remote_ip": {
               "title": "Admin's Remote IP",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "action_timing": {
               "title": "",
-              "schema": {
-                "type": "array",
-                "items": [
-                  {
-                    "index": 0,
-                    "title": "epoch time of start",
-                    "type": "int"
-                  },
-                  {
-                    "index": 1,
-                    "title": "epoch time of end",
-                    "type": "int"
-                  }
-                ],
-                "length": "2"
-              }
+              "type": "array",
+              "items": [
+                {
+                  "index": 0,
+                  "title": "epoch time of start",
+                  "type": "int"
+                },
+                {
+                  "index": 1,
+                  "title": "epoch time of end",
+                  "type": "int"
+                }
+              ],
+              "length": "2"
             },
             "formated_start_date": {
               "title": "start datetime string, depending on input date_type",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "formated_end_date": {
               "title": "end datetime string, depending on input date_type",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "matched_users_count": {
               "title": "number of all matched users",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "checked_users_count": {
               "title": "number of done users",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "action_progress": {
               "title": "percentage of progress (0 to 100)",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "canceled": {
               "title": "true if the action is canceled",
-              "schema": {
-                "type": "boolean"
-              }
+              "type": "boolean"
             },
             "failed": {
               "title": "true if the action is failed",
-              "schema": {
-                "type": "boolean"
-              }
+              "type": "boolean"
             },
             "messages": {
               "title": "list of messages (strings)",
-              "schema": {
-                "type": "array"
-              }
+              "type": "array"
             }
           }
         }

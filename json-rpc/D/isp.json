@@ -272,105 +272,71 @@
           "properties": {
             "isp_id": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "isp_name": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "parent_isp_name": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "isp_has_deposit_limit": {
               "title": "",
-              "schema": {
-                "type": "boolean"
-              }
+              "type": "boolean"
             },
             "isp_deposit": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "isp_mapped_user_id": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "isp_mapped_user_repr": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "isp_mapped_user_credit": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "isp_online_users_count": {
               "title": "added in C_dev_326",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "isp_locked": {
               "title": "",
-              "schema": {
-                "type": "boolean"
-              }
+              "type": "boolean"
             },
             "isp_auth_domain": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "isp_web_domain": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "isp_email": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "prevent_neg_deposit_login": {
               "title": "",
-              "schema": {
-                "type": "boolean"
-              }
+              "type": "boolean"
             },
             "isp_comment": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "isp_failed_username": {
               "title": "removed in C_dev_326",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "isp_failed_user_id": {
               "title": "removed in C_dev_326",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             }
           }
         }
@@ -497,63 +463,43 @@
           "properties": {
             "isp_id": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "header_logo_ext": {
               "title": "header logo file extension, for example 'gif'",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "header_logo_contents": {
               "title": "base64-encoded data of header logo image",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "header_bg_color": {
               "title": "header background color, in html color format, for example 'E0DEDE'",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "header_text_color": {
               "title": "header text color, html color format, for example 'E0DEDE'",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "footer_logo_ext": {
               "title": "footer logo file extension, for example 'gif'",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "footer_logo_contents": {
               "title": "base64-encoded data of footer logo image",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "footer_bg_color": {
               "title": "footer background color, in html color format, for example 'E0DEDE'",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "footer_text_color": {
               "title": "footer text color, in html color format, for example 'E0DEDE'",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "footer_msg": {
               "title": "base64-encoded string of footer message",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             }
           }
         }
@@ -682,10 +628,8 @@
           "properties": {
             "result": {
               "title": "",
-              "schema": {
-                "type": "object",
-                "properties": {}
-              }
+              "type": "object",
+              "properties": {}
             }
           }
         }

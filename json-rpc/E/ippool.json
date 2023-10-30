@@ -135,39 +135,27 @@
           "properties": {
             "ippool_id": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "ippool_name": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "comment": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "ip_list": {
               "title": "list of all IPs",
-              "schema": {
-                "type": "array"
-              }
+              "type": "array"
             },
             "free": {
               "title": "list of free IPs",
-              "schema": {
-                "type": "array"
-              }
+              "type": "array"
             },
             "used": {
               "title": "list of used IPs",
-              "schema": {
-                "type": "array"
-              }
+              "type": "array"
             }
           }
         }

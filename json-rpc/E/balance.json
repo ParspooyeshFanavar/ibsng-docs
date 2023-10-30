@@ -103,9 +103,7 @@
           "properties": {
             "balance_id": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             }
           }
         }
@@ -125,15 +123,11 @@
           "properties": {
             "CURRENCY": {
               "title": "list of Currency",
-              "schema": {
-                "type": "array"
-              }
+              "type": "array"
             },
             "DATA": {
               "title": "list of DATA",
-              "schema": {
-                "type": "array"
-              }
+              "type": "array"
             }
           }
         }
@@ -153,15 +147,11 @@
           "properties": {
             "IRR": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "USD": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             }
           }
         }
@@ -181,21 +171,15 @@
           "properties": {
             "LAUNCHED": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "ACTIVE": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "RETIRED": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             }
           }
         }
@@ -344,15 +328,11 @@
           "properties": {
             "balance_id": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "balance_name": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             }
           }
         }
@@ -442,9 +422,7 @@
           "properties": {
             "balance_name": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             }
           }
         }
@@ -555,118 +533,86 @@
           "properties": {
             "total_rows": {
               "title": "Number of total rows",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "report": {
               "title": "",
-              "schema": {
-                "type": "array",
-                "items": {
-                  "title": "",
-                  "type": "object",
-                  "params": [
-                    {
-                      "name": "balance_id",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "balance_name",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "isp_name",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "balance_class",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "comment",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "uid",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "isp_name",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "balance_class",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "life_cycle_status",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "value_type",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "valid_for_start",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "valid_for_end",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "default_value",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "unit",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    }
-                  ]
-                }
+              "type": "array",
+              "items": {
+                "title": "",
+                "type": "object",
+                "params": [
+                  {
+                    "name": "balance_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "balance_name",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "isp_name",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "balance_class",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "comment",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "uid",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "isp_name",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "balance_class",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "life_cycle_status",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "value_type",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "valid_for_start",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "valid_for_end",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "default_value",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "unit",
+                    "description": "",
+                    "type": "string"
+                  }
+                ]
               }
             }
           }

@@ -123,103 +123,83 @@
           "properties": {
             "notification_profile_id": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "notification_profile_name": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "notification_profile_comment": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "notification_rules": {
               "title": "",
-              "schema": {
-                "type": "array",
-                "items": {
-                  "title": "rule dict",
-                  "type": "object",
-                  "params": [
-                    {
-                      "name": "notification_rule_id",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "notification_profile_id",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "notification_threshold",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "message_type",
-                      "description": "",
-                      "enum": [
-                        "sms",
-                        "email",
-                        "email_to_isp",
-                        "ibsng_message",
-                        "url",
-                        "user_event"
-                      ],
-                      "value_comment": {
-                        "url": "call a URL specified in `message_template`, added in tag 312",
-                        "user_event": "added in tag (NO TAG YET)"
-                      }
-                    },
-                    {
-                      "name": "notification_type",
-                      "description": "",
-                      "enum": [
-                        "expiration_date",
-                        "credit",
-                        "renew",
-                        "birth_day",
-                        "online_payment",
-                        "first_login",
-                        "credit_change",
-                        "deposit_change"
-                      ]
-                    },
-                    {
-                      "name": "message_template",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
+              "type": "array",
+              "items": {
+                "title": "rule dict",
+                "type": "object",
+                "params": [
+                  {
+                    "name": "notification_rule_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "notification_profile_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "notification_threshold",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "message_type",
+                    "description": "",
+                    "enum": [
+                      "sms",
+                      "email",
+                      "email_to_isp",
+                      "ibsng_message",
+                      "url",
+                      "user_event"
+                    ],
+                    "value_comment": {
+                      "url": "call a URL specified in `message_template`, added in tag 312",
+                      "user_event": "added in tag (NO TAG YET)"
                     }
-                  ]
-                }
+                  },
+                  {
+                    "name": "notification_type",
+                    "description": "",
+                    "enum": [
+                      "expiration_date",
+                      "credit",
+                      "renew",
+                      "birth_day",
+                      "online_payment",
+                      "first_login",
+                      "credit_change",
+                      "deposit_change"
+                    ]
+                  },
+                  {
+                    "name": "message_template",
+                    "description": "",
+                    "type": "string"
+                  }
+                ]
               }
             },
             "isp_id": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "owner_isp_name": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             }
           }
         }

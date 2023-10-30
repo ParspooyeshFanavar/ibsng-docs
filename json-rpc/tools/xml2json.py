@@ -114,6 +114,9 @@ def getListItemSchema(item: "Element") -> "dict | list":
 		return itemJson
 	if _type == "dict":
 		params = getParams(item)
+		for param in params:
+			if "schema" in param:
+				param.update(param.pop("schema"))
 		return {
 			"title": item.attrib.get("comment", ""),
 			"type": "object",
@@ -178,6 +181,16 @@ def getJsonParam(param: "Element") -> dict:
 	else:
 		newParamType, typeComment = "", ""
 
+	if paramValue:
+		# like a choice with one value
+		paramJson = {
+			"name": paramName,
+			"description": description,
+			"enum": [paramValue],
+		}
+		if param.attrib.get("optional"):
+			paramJson["required"] = False
+		return paramJson
 
 	if typeComment:
 		description = typeComment + ", " + description
@@ -194,7 +207,6 @@ def getJsonParam(param: "Element") -> dict:
 	elif paramType == "dict":
 		properties = {}
 		for subParam in getParams(param):
-			# print("getJsonParam:", subParam)
 			name = subParam.pop("name")
 			title = ""
 			if "description" in subParam:
@@ -301,6 +313,8 @@ def getJsonMethod(handlerName: str, method: "Element", authTypes: list[str]):
 		if "description" in jsonParamTmp:
 			title = jsonParamTmp.pop("description")
 		jsonParam = {"title": title}
+		if "schema" in jsonParamTmp:
+			jsonParam.update(jsonParamTmp.pop("schema"))
 		jsonParam.update(jsonParamTmp)
 		resultParams[paramName] = jsonParam
 	resultName = ""

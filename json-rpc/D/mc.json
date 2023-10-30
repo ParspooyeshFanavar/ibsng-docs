@@ -75,21 +75,15 @@
           "properties": {
             "provider_name": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "provider_id": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "owner_isp_id": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "provider_type": {
               "title": "",
@@ -182,21 +176,15 @@
           "properties": {
             "provider_name": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "provider_id": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "owner_isp_id": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "provider_type": {
               "title": "",
@@ -493,27 +481,19 @@
           "properties": {
             "end_point_id": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "end_point_group_id": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "end_point_repr": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "assigned_user_id": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             }
           }
         }
@@ -816,9 +796,7 @@
           "properties": {
             "activation_number": {
               "title": "cell_phone of user",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             }
           }
         }
@@ -964,9 +942,7 @@
             "properties": {
               "owner_type": {
                 "title": "",
-                "schema": {
-                  "type": ""
-                }
+                "enum": ["USER"]
               },
               "user_ids": {
                 "title": "",
@@ -1361,33 +1337,23 @@
           "properties": {
             "message_pack_id": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "message_id": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "failed": {
               "title": "",
-              "schema": {
-                "type": "boolean"
-              }
+              "type": "boolean"
             },
             "fail_reason": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "tracking_id": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "msg_type": {
               "title": "",
@@ -1395,39 +1361,27 @@
             },
             "user_id": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "transfer_date": {
               "title": "date type (gregorian/jalali) depends on input date_type",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "source": {
               "title": "source (sender) address (phone number / email)",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "destination": {
               "title": "destination address (phone number / email)",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "body": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "consumed_credit": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             }
           }
         }
@@ -1578,33 +1532,23 @@
           "properties": {
             "message_pack_id": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "message_id": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "failed": {
               "title": "",
-              "schema": {
-                "type": "boolean"
-              }
+              "type": "boolean"
             },
             "fail_reason": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "tracking_id": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "msg_type": {
               "title": "",
@@ -1612,39 +1556,27 @@
             },
             "user_id": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "transfer_date": {
               "title": "date type (gregorian/jalali) depends on input date_type",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "source": {
               "title": "source (sender) address (phone number / email)",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "destination": {
               "title": "destination address (phone number / email)",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "body": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "consumed_credit": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             }
           }
         }
@@ -1788,33 +1720,23 @@
           "properties": {
             "message_pack_id": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "message_id": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "failed": {
               "title": "",
-              "schema": {
-                "type": "boolean"
-              }
+              "type": "boolean"
             },
             "fail_reason": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "tracking_id": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "msg_type": {
               "title": "",
@@ -1822,39 +1744,27 @@
             },
             "user_id": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "transfer_date": {
               "title": "date type (gregorian/jalali) depends on input date_type",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "source": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "destination": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "body": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "consumed_credit": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             }
           }
         }
@@ -2016,15 +1926,11 @@
           "properties": {
             "message_pack_id": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "message_id": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "msg_type": {
               "title": "",
@@ -2036,57 +1942,39 @@
             },
             "owner_id": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "scheduled_date": {
               "title": "date type (gregorian/jalali) depends on input date_type",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "try_count": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "source": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "destination": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "body": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "consumed_credit": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "isp_send_to_all": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "in_process": {
               "title": "",
-              "schema": {
-                "type": "boolean"
-              }
+              "type": "boolean"
             }
           }
         }
@@ -2229,15 +2117,11 @@
           "properties": {
             "message_pack_id": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "message_id": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "msg_type": {
               "title": "",
@@ -2249,57 +2133,39 @@
             },
             "owner_id": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "scheduled_date": {
               "title": "date type (gregorian/jalali) depends on input date_type",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "try_count": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "source": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "destination": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "body": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "consumed_credit": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "isp_send_to_all": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "in_process": {
               "title": "",
-              "schema": {
-                "type": "boolean"
-              }
+              "type": "boolean"
             }
           }
         }
@@ -2346,12 +2212,10 @@
           "properties": {
             "messages": {
               "title": "",
-              "schema": {
-                "type": "array",
-                "items": {
-                  "title": "",
-                  "type": "list"
-                }
+              "type": "array",
+              "items": {
+                "title": "",
+                "type": "list"
               }
             }
           }

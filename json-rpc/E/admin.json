@@ -99,75 +99,51 @@
           "properties": {
             "admin_id": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "username": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "name": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "email": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "comment": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "isp_name": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "creator_admin_username": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "locked": {
               "title": "",
-              "schema": {
-                "type": "boolean"
-              }
+              "type": "boolean"
             },
             "last_request_ip": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "last_activity": {
               "title": "Epoch Time of admin's last activity",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "online_status": {
               "title": "true if online, false if offline",
-              "schema": {
-                "type": "boolean"
-              }
+              "type": "boolean"
             },
             "admin_has_otp": {
               "title": "",
-              "schema": {
-                "type": "boolean"
-              }
+              "type": "boolean"
             }
           }
         }
@@ -195,9 +171,7 @@
           "properties": {
             "isp_id": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             }
           }
         }
@@ -568,90 +542,66 @@
           "properties": {
             "total_rows": {
               "title": "Number of total rows",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "report": {
               "title": "",
-              "schema": {
-                "type": "array",
-                "items": {
-                  "title": "",
-                  "type": "object",
-                  "params": [
-                    {
-                      "name": "otp_id",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "admin_id",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "admin_name",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "password",
-                      "description": "str",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "expired",
-                      "description": "yes or no",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "used_date",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "used_date_formatted",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "creation_date",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "creation_date_formatted",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "remote_addr",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    }
-                  ]
-                }
+              "type": "array",
+              "items": {
+                "title": "",
+                "type": "object",
+                "params": [
+                  {
+                    "name": "otp_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "admin_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "admin_name",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "password",
+                    "description": "str",
+                    "type": "string"
+                  },
+                  {
+                    "name": "expired",
+                    "description": "yes or no",
+                    "type": "string"
+                  },
+                  {
+                    "name": "used_date",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "used_date_formatted",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "creation_date",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "creation_date_formatted",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "remote_addr",
+                    "description": "",
+                    "type": "string"
+                  }
+                ]
               }
             }
           }

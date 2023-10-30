@@ -99,10 +99,8 @@
           "properties": {
             "web_attributes": {
               "title": "",
-              "schema": {
-                "type": "object",
-                "properties": {}
-              }
+              "type": "object",
+              "properties": {}
             },
             "redirect_method": {
               "title": "",
@@ -110,9 +108,7 @@
             },
             "url": {
               "title": "Redirect URL",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             }
           }
         }
@@ -148,15 +144,11 @@
           "properties": {
             "amount": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "ref_id": {
               "title": "Bank Reference ID",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             }
           }
         }
@@ -340,9 +332,7 @@
           "properties": {
             "gateway_names": {
               "title": "list of gateway names",
-              "schema": {
-                "type": "array"
-              }
+              "type": "array"
             }
           }
         }

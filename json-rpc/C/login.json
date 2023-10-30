@@ -46,15 +46,11 @@
           "properties": {
             "session_id": {
               "title": "Session ID",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "auth_id": {
               "title": "username of admin/user",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "auth_type": {
               "title": "",
@@ -241,78 +237,60 @@
           "properties": {
             "total_rows": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "report": {
               "title": "",
-              "schema": {
-                "type": "array",
-                "items": {
-                  "title": "",
-                  "type": "object",
-                  "params": [
-                    {
-                      "name": "additional_info",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "admin_id",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "admin_name",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "log_id",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "login_date",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "login_date_formatted",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "remote_ip",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "successful",
-                      "description": "",
-                      "enum": ["t", "f"],
-                      "value_comment": {
-                        "t": "true",
-                        "f": "false"
-                      }
+              "type": "array",
+              "items": {
+                "title": "",
+                "type": "object",
+                "params": [
+                  {
+                    "name": "additional_info",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "admin_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "admin_name",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "log_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "login_date",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "login_date_formatted",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "remote_ip",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "successful",
+                    "description": "",
+                    "enum": ["t", "f"],
+                    "value_comment": {
+                      "t": "true",
+                      "f": "false"
                     }
-                  ]
-                }
+                  }
+                ]
               }
             }
           }

@@ -28,21 +28,15 @@
           "properties": {
             "customer": {
               "title": "last sequence of customer id if sequence_type equal CUSTOMER",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "user": {
               "title": "last sequence of user id if sequence_type equal USER",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "user_balance": {
               "title": "last sequence of user_balance id if sequence_type equal USER_BALANCE",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             }
           }
         }
@@ -84,9 +78,7 @@
           "properties": {
             "record_file_id": {
               "title": "return the id of generate of import_files table",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             }
           }
         }
@@ -114,84 +106,58 @@
           "properties": {
             "admin_user_name": {
               "title": "username of admin",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "description": {
               "title": "description when create record",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "admin_id": {
               "title": "id of admin",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "success_count": {
               "title": "number of data success full transfer",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "error_count": {
               "title": "number of data error transfer",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "import_file_id": {
               "title": "id of import_files table that inserted record",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "deleted_at": {
               "title": "datetime, date time of delete data uploaded",
-              "schema": {
-                "type": "string",
-                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
-              }
+              "type": "string",
+              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
             },
             "section": {
               "title": "set the section for upload file [CUSTOMER, USER, USER_BALANCE]",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "modified_at": {
               "title": "datetime, date time of change in recorde in import_files row",
-              "schema": {
-                "type": "string",
-                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
-              }
+              "type": "string",
+              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
             },
             "status_import": {
               "title": "status of import files [PENDING, RUNNING, DONE, STOPPED, ERROR]",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "total_row": {
               "title": "total of rows that in file uploaded",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "created_at": {
               "title": "datetime, date time of create recorde",
-              "schema": {
-                "type": "string",
-                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
-              }
+              "type": "string",
+              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
             },
             "remote_ip": {
               "title": "ip of admin that upload file",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             }
           }
         }
@@ -255,88 +221,60 @@
           "properties": {
             "phone_number": {
               "title": "phone number",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "comment": {
               "title": "comment",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "uid": {
               "title": "uid",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "success": {
               "title": "if f means have error else get t",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "created_at": {
               "title": "datetime, date time of created recorde",
-              "schema": {
-                "type": "string",
-                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
-              }
+              "type": "string",
+              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
             },
             "mobile_number": {
               "title": "mobile number",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "import_file_id": {
               "title": "id of recorde in import_files",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "address": {
               "title": "address",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "message_error": {
               "title": "if have message fill this",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "isp_name": {
               "title": "ISP name",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "customer_id": {
               "title": "customer id",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "email": {
               "title": "email",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "customer_name": {
               "title": "name of customer",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "row_number": {
               "title": "id of recorde ",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             }
           }
         }

@@ -109,21 +109,15 @@
           "properties": {
             "password": {
               "title": "internet password",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "group": {
               "title": "group name",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "credit": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             }
           }
         }
@@ -392,57 +386,39 @@
           "properties": {
             "header_logo_ext": {
               "title": "header logo file extension, for example 'gif'",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "header_logo_contents": {
               "title": "base64-encoded data of header logo image",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "header_bg_color": {
               "title": "header background color, in html color format, for example 'E0DEDE'",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "header_text_color": {
               "title": "header text color, html color format, for example 'E0DEDE'",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "footer_logo_ext": {
               "title": "footer logo file extension, for example 'gif'",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "footer_logo_contents": {
               "title": "base64-encoded data of footer logo image",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "footer_bg_color": {
               "title": "footer background color, in html color format, for example 'E0DEDE'",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "footer_text_color": {
               "title": "footer text color, in html color format, for example 'E0DEDE'",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "footer_msg": {
               "title": "base64-encoded string of footer message",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             }
           }
         }
@@ -534,21 +510,15 @@
           "properties": {
             "current_tag": {
               "title": "current tag",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "version": {
               "title": "version",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "branch": {
               "title": "branch",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             }
           }
         }

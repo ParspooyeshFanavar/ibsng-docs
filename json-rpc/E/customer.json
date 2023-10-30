@@ -77,9 +77,7 @@
           "properties": {
             "customer_id": {
               "title": "return customer id that add",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             }
           }
         }
@@ -116,21 +114,15 @@
           "properties": {
             "customer_id": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "uid": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "customer_name": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "customer_name_op": {
               "title": "",
@@ -138,39 +130,27 @@
             },
             "isp_name": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "address": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "mobile_number": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "phone_number": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "email": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "comment": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             }
           }
         }
@@ -360,83 +340,61 @@
           "properties": {
             "total_rows": {
               "title": "Number of total rows",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "report": {
               "title": "",
-              "schema": {
-                "type": "array",
-                "items": {
-                  "title": "",
-                  "type": "object",
-                  "params": [
-                    {
-                      "name": "customer_id",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "cusmert_name",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "mobile_number",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "phone_number",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "comment",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "uid",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "isp_name",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "address",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "email",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    }
-                  ]
-                }
+              "type": "array",
+              "items": {
+                "title": "",
+                "type": "object",
+                "params": [
+                  {
+                    "name": "customer_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "cusmert_name",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "mobile_number",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "phone_number",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "comment",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "uid",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "isp_name",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "address",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "email",
+                    "description": "",
+                    "type": "string"
+                  }
+                ]
               }
             }
           }

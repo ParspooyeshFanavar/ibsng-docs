@@ -49,73 +49,53 @@
           "properties": {
             "charge_id": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "charge_name": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "comment": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "isp_id": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "isp_name": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "charge_rules": {
               "title": "",
-              "schema": {
-                "type": "array",
-                "items": {
-                  "title": "",
-                  "type": "object",
-                  "params": [
-                    {
-                      "name": "charge_rule_id",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "charge_rule_description",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "charge_rule_priority",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "attrs",
-                      "description": "Charge Rule Attributes",
-                      "schema": {
-                        "type": "object",
-                        "properties": {}
-                      }
-                    }
-                  ]
-                }
+              "type": "array",
+              "items": {
+                "title": "",
+                "type": "object",
+                "params": [
+                  {
+                    "name": "charge_rule_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "charge_rule_description",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "charge_rule_priority",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "attrs",
+                    "description": "Charge Rule Attributes",
+                    "type": "object",
+                    "properties": {}
+                  }
+                ]
               }
             }
           }

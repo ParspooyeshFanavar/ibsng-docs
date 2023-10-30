@@ -157,74 +157,52 @@
           "properties": {
             "internet_onlines": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "voip_onlines": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "re_onlined": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "accounting_not_started": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "failed_users": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "idle_users": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "ras_acct_not_started": {
               "title": "dict of ras_desc => count",
-              "schema": {
-                "type": "object",
-                "properties": {}
-              }
+              "type": "object",
+              "properties": {}
             },
             "ras_description": {
               "title": "dict of ras_desc => count",
-              "schema": {
-                "type": "object",
-                "properties": {}
-              }
+              "type": "object",
+              "properties": {}
             },
             "ras_counters": {
               "title": "dict of ras_desc => count_dict",
-              "schema": {
-                "type": "object",
-                "properties": {}
-              }
+              "type": "object",
+              "properties": {}
             },
             "group_name": {
               "title": "a dict of group_name => count",
-              "schema": {
-                "type": "object",
-                "properties": {}
-              }
+              "type": "object",
+              "properties": {}
             },
             "isp_name": {
               "title": "a dict of isp_name => count",
-              "schema": {
-                "type": "object",
-                "properties": {}
-              }
+              "type": "object",
+              "properties": {}
             }
           }
         }
@@ -245,74 +223,52 @@
           "properties": {
             "internet_onlines": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "voip_onlines": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "re_onlined": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "accounting_not_started": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "failed_users": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "idle_users": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "ras_acct_not_started": {
               "title": "dict of ras_desc => count",
-              "schema": {
-                "type": "object",
-                "properties": {}
-              }
+              "type": "object",
+              "properties": {}
             },
             "ras_description": {
               "title": "dict of ras_desc => count",
-              "schema": {
-                "type": "object",
-                "properties": {}
-              }
+              "type": "object",
+              "properties": {}
             },
             "ras_counters": {
               "title": "dict of ras_desc => count_dict",
-              "schema": {
-                "type": "object",
-                "properties": {}
-              }
+              "type": "object",
+              "properties": {}
             },
             "group_name": {
               "title": "a dict of group_name => count",
-              "schema": {
-                "type": "object",
-                "properties": {}
-              }
+              "type": "object",
+              "properties": {}
             },
             "isp_name": {
               "title": "a dict of isp_name => count",
-              "schema": {
-                "type": "object",
-                "properties": {}
-              }
+              "type": "object",
+              "properties": {}
             }
           }
         }
@@ -333,10 +289,8 @@
           "properties": {
             "onlines_per_isp": {
               "title": "a dict of isp_id => count",
-              "schema": {
-                "type": "object",
-                "properties": {}
-              }
+              "type": "object",
+              "properties": {}
             }
           }
         }
@@ -720,341 +674,253 @@
           "properties": {
             "total_rows": {
               "title": "number of total rows",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "total_credit": {
               "title": "sum of total rows credit",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "total_duration": {
               "title": "sum of total rows duration, in seconds",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "total_in_bytes": {
               "title": "sum of total download, in bytes",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "total_out_bytes": {
               "title": "sum of total upload, in bytes",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "report": {
               "title": "report data of specified page (from - to)",
-              "schema": {
-                "type": "array",
-                "items": {
-                  "title": "",
-                  "type": "object",
-                  "params": [
-                    {
-                      "name": "connection_log_id",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "user_id",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "service_type",
-                      "description": "",
-                      "enum": ["Internet", "VoIP"]
-                    },
-                    {
-                      "name": "login_time_formatted",
-                      "description": "datetime, ",
-                      "schema": {
-                        "type": "string",
-                        "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
-                      }
-                    },
-                    {
-                      "name": "logout_time_formatted",
-                      "description": "datetime, ",
-                      "schema": {
-                        "type": "string",
-                        "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
-                      }
-                    },
-                    {
-                      "name": "duration_seconds",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "credit_used",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "before_credit",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "successful",
-                      "description": "",
-                      "schema": {
-                        "type": "boolean"
-                      }
-                    },
-                    {
-                      "name": "caller_id",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      },
-                      "required": false
-                    },
-                    {
-                      "name": "cpm",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      },
-                      "required": false
-                    },
-                    {
-                      "name": "persistent_lan",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      },
-                      "required": false
-                    },
-                    {
-                      "name": "kill_reason",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "username",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      },
-                      "required": false
-                    },
-                    {
-                      "name": "remote_ip",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      },
-                      "required": false
-                    },
-                    {
-                      "name": "mac",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      },
-                      "required": false
-                    },
-                    {
-                      "name": "bytes_in",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      },
-                      "required": false
-                    },
-                    {
-                      "name": "bytes_out",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      },
-                      "required": false
-                    },
-                    {
-                      "name": "station_ip",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      },
-                      "required": false
-                    },
-                    {
-                      "name": "details",
-                      "description": "",
-                      "schema": {
-                        "type": "array"
-                      }
-                    },
-                    {
-                      "name": "voip_username",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      },
-                      "required": false
-                    },
-                    {
-                      "name": "prefix_name",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      },
-                      "required": false
-                    },
-                    {
-                      "name": "prefix_cpm",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      },
-                      "required": false
-                    },
-                    {
-                      "name": "called_number",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      },
-                      "required": false
-                    },
-                    {
-                      "name": "charge_rule_details",
-                      "description": "",
-                      "schema": {
-                        "type": "array"
-                      }
-                    },
-                    {
-                      "name": "ras_description",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "ras_ip",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "serial",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "dnis",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      },
-                      "required": false
-                    },
-                    {
-                      "name": "called_ip",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      },
-                      "required": false
-                    },
-                    {
-                      "name": "prefix_code",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      },
-                      "required": false
-                    },
-                    {
-                      "name": "voip_provider_id",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      },
-                      "required": false
-                    },
-                    {
-                      "name": "voip_provider",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      },
-                      "required": false
-                    },
-                    {
-                      "name": "voip_provider_ip",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      },
-                      "required": false
-                    },
-                    {
-                      "name": "voip_provider_credit_used",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      },
-                      "required": false
-                    },
-                    {
-                      "name": "voip_provider_prefix_name",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      },
-                      "required": false
-                    },
-                    {
-                      "name": "voip_provider_prefix_code",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      },
-                      "required": false
-                    },
-                    {
-                      "name": "voip_provider_cpm",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      },
-                      "required": false
-                    },
-                    {
-                      "name": "disconnect_cause",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      },
-                      "required": false
-                    }
-                  ]
-                }
+              "type": "array",
+              "items": {
+                "title": "",
+                "type": "object",
+                "params": [
+                  {
+                    "name": "connection_log_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "user_id",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "service_type",
+                    "description": "",
+                    "enum": ["Internet", "VoIP"]
+                  },
+                  {
+                    "name": "login_time_formatted",
+                    "description": "datetime, ",
+                    "type": "string",
+                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+                  },
+                  {
+                    "name": "logout_time_formatted",
+                    "description": "datetime, ",
+                    "type": "string",
+                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+                  },
+                  {
+                    "name": "duration_seconds",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "credit_used",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "before_credit",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "successful",
+                    "description": "",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "caller_id",
+                    "description": "",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "name": "cpm",
+                    "description": "",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "name": "persistent_lan",
+                    "description": "",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "name": "kill_reason",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "username",
+                    "description": "",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "name": "remote_ip",
+                    "description": "",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "name": "mac",
+                    "description": "",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "name": "bytes_in",
+                    "description": "",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "name": "bytes_out",
+                    "description": "",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "name": "station_ip",
+                    "description": "",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "name": "details",
+                    "description": "",
+                    "type": "array"
+                  },
+                  {
+                    "name": "voip_username",
+                    "description": "",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "name": "prefix_name",
+                    "description": "",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "name": "prefix_cpm",
+                    "description": "",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "name": "called_number",
+                    "description": "",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "name": "charge_rule_details",
+                    "description": "",
+                    "type": "array"
+                  },
+                  {
+                    "name": "ras_description",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "ras_ip",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "serial",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "dnis",
+                    "description": "",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "name": "called_ip",
+                    "description": "",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "name": "prefix_code",
+                    "description": "",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "name": "voip_provider_id",
+                    "description": "",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "name": "voip_provider",
+                    "description": "",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "name": "voip_provider_ip",
+                    "description": "",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "name": "voip_provider_credit_used",
+                    "description": "",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "name": "voip_provider_prefix_name",
+                    "description": "",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "name": "voip_provider_prefix_code",
+                    "description": "",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "name": "voip_provider_cpm",
+                    "description": "",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "name": "disconnect_cause",
+                    "description": "",
+                    "required": false,
+                    "type": "string"
+                  }
+                ]
               }
             }
           }
@@ -1339,225 +1205,167 @@
           "properties": {
             "total_rows": {
               "title": "number of total rows",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "total_credit": {
               "title": "sum of total rows credit",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "total_duration": {
               "title": "sum of total rows duration, in seconds",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "total_in_bytes": {
               "title": "sum of total download, in bytes",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "total_out_bytes": {
               "title": "sum of total upload, in bytes",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "report": {
               "title": "report data of specified page (from - to)",
-              "schema": {
-                "type": "array",
-                "items": {
-                  "title": "",
-                  "type": "object",
-                  "params": [
-                    {
-                      "name": "connection_log_id",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "user_id",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "service_type",
-                      "description": "",
-                      "enum": ["Internet", "VoIP"]
-                    },
-                    {
-                      "name": "login_time_formatted",
-                      "description": "datetime, ",
-                      "schema": {
-                        "type": "string",
-                        "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
-                      }
-                    },
-                    {
-                      "name": "logout_time_formatted",
-                      "description": "datetime, ",
-                      "schema": {
-                        "type": "string",
-                        "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
-                      }
-                    },
-                    {
-                      "name": "duration_seconds",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "credit_used",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "before_credit",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "successful",
-                      "description": "",
-                      "schema": {
-                        "type": "boolean"
-                      }
-                    },
-                    {
-                      "name": "caller_id",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      },
-                      "required": false
-                    },
-                    {
-                      "name": "cpm",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      },
-                      "required": false
-                    },
-                    {
-                      "name": "persistent_lan",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      },
-                      "required": false
-                    },
-                    {
-                      "name": "kill_reason",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "username",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      },
-                      "required": false
-                    },
-                    {
-                      "name": "remote_ip",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      },
-                      "required": false
-                    },
-                    {
-                      "name": "mac",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      },
-                      "required": false
-                    },
-                    {
-                      "name": "bytes_in",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      },
-                      "required": false
-                    },
-                    {
-                      "name": "bytes_out",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      },
-                      "required": false
-                    },
-                    {
-                      "name": "station_ip",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      },
-                      "required": false
-                    },
-                    {
-                      "name": "details",
-                      "description": "",
-                      "schema": {
-                        "type": "array"
-                      }
-                    },
-                    {
-                      "name": "voip_username",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      },
-                      "required": false
-                    },
-                    {
-                      "name": "prefix_name",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      },
-                      "required": false
-                    },
-                    {
-                      "name": "prefix_cpm",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      },
-                      "required": false
-                    },
-                    {
-                      "name": "called_number",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      },
-                      "required": false
-                    }
-                  ]
-                }
+              "type": "array",
+              "items": {
+                "title": "",
+                "type": "object",
+                "params": [
+                  {
+                    "name": "connection_log_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "user_id",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "service_type",
+                    "description": "",
+                    "enum": ["Internet", "VoIP"]
+                  },
+                  {
+                    "name": "login_time_formatted",
+                    "description": "datetime, ",
+                    "type": "string",
+                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+                  },
+                  {
+                    "name": "logout_time_formatted",
+                    "description": "datetime, ",
+                    "type": "string",
+                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+                  },
+                  {
+                    "name": "duration_seconds",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "credit_used",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "before_credit",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "successful",
+                    "description": "",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "caller_id",
+                    "description": "",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "name": "cpm",
+                    "description": "",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "name": "persistent_lan",
+                    "description": "",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "name": "kill_reason",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "username",
+                    "description": "",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "name": "remote_ip",
+                    "description": "",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "name": "mac",
+                    "description": "",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "name": "bytes_in",
+                    "description": "",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "name": "bytes_out",
+                    "description": "",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "name": "station_ip",
+                    "description": "",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "name": "details",
+                    "description": "",
+                    "type": "array"
+                  },
+                  {
+                    "name": "voip_username",
+                    "description": "",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "name": "prefix_name",
+                    "description": "",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "name": "prefix_cpm",
+                    "description": "",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "name": "called_number",
+                    "description": "",
+                    "required": false,
+                    "type": "string"
+                  }
+                ]
               }
             }
           }
@@ -1817,18 +1625,14 @@
           "properties": {
             "total_rows": {
               "title": "Number of total rows",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "report": {
               "title": "",
-              "schema": {
-                "type": "array",
-                "items": {
-                  "title": "",
-                  "type": "list"
-                }
+              "type": "array",
+              "items": {
+                "title": "",
+                "type": "list"
               }
             }
           }
@@ -1878,18 +1682,14 @@
           "properties": {
             "total_rows": {
               "title": "Number of total rows",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "report": {
               "title": "",
-              "schema": {
-                "type": "array",
-                "items": {
-                  "title": "",
-                  "type": "list"
-                }
+              "type": "array",
+              "items": {
+                "title": "",
+                "type": "list"
               }
             }
           }
@@ -1939,18 +1739,14 @@
           "properties": {
             "total_rows": {
               "title": "Number of total rows",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "report": {
               "title": "",
-              "schema": {
-                "type": "array",
-                "items": {
-                  "title": "",
-                  "type": "list"
-                }
+              "type": "array",
+              "items": {
+                "title": "",
+                "type": "list"
               }
             }
           }
@@ -2005,118 +1801,86 @@
           "properties": {
             "total_rows": {
               "title": "Number of total rows",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "report": {
               "title": "",
-              "schema": {
-                "type": "array",
-                "items": {
-                  "title": "",
-                  "type": "object",
-                  "params": [
-                    {
-                      "name": "user_id",
-                      "description": "User ID",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "username",
-                      "description": "User username",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "serial",
-                      "description": "User serial",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "group_name",
-                      "description": "User group name",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "isp_name",
-                      "description": "User ISP name",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "creation_date",
-                      "description": "User creation date",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "name",
-                      "description": "Name of user",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "sub_service_name",
-                      "description": "Sub service name",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "sub_service_charging",
-                      "description": "Sub service charging name",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "seb_service_qos",
-                      "description": "Sub service QOS name",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "total_credit",
-                      "description": "Total credit",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "total_duration",
-                      "description": "Total duration",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "total_in_bytes",
-                      "description": "Total in bytes",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "total_out_bytes",
-                      "description": "Total out bytes",
-                      "schema": {
-                        "type": "number"
-                      }
-                    }
-                  ]
-                }
+              "type": "array",
+              "items": {
+                "title": "",
+                "type": "object",
+                "params": [
+                  {
+                    "name": "user_id",
+                    "description": "User ID",
+                    "type": "number"
+                  },
+                  {
+                    "name": "username",
+                    "description": "User username",
+                    "type": "string"
+                  },
+                  {
+                    "name": "serial",
+                    "description": "User serial",
+                    "type": "string"
+                  },
+                  {
+                    "name": "group_name",
+                    "description": "User group name",
+                    "type": "string"
+                  },
+                  {
+                    "name": "isp_name",
+                    "description": "User ISP name",
+                    "type": "string"
+                  },
+                  {
+                    "name": "creation_date",
+                    "description": "User creation date",
+                    "type": "string"
+                  },
+                  {
+                    "name": "name",
+                    "description": "Name of user",
+                    "type": "string"
+                  },
+                  {
+                    "name": "sub_service_name",
+                    "description": "Sub service name",
+                    "type": "string"
+                  },
+                  {
+                    "name": "sub_service_charging",
+                    "description": "Sub service charging name",
+                    "type": "string"
+                  },
+                  {
+                    "name": "seb_service_qos",
+                    "description": "Sub service QOS name",
+                    "type": "string"
+                  },
+                  {
+                    "name": "total_credit",
+                    "description": "Total credit",
+                    "type": "number"
+                  },
+                  {
+                    "name": "total_duration",
+                    "description": "Total duration",
+                    "type": "number"
+                  },
+                  {
+                    "name": "total_in_bytes",
+                    "description": "Total in bytes",
+                    "type": "number"
+                  },
+                  {
+                    "name": "total_out_bytes",
+                    "description": "Total out bytes",
+                    "type": "number"
+                  }
+                ]
               }
             }
           }
@@ -2263,18 +2027,14 @@
           "properties": {
             "total_rows": {
               "title": "total number of rows",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "report": {
               "title": "",
-              "schema": {
-                "type": "array",
-                "items": {
-                  "title": "",
-                  "type": "list"
-                }
+              "type": "array",
+              "items": {
+                "title": "",
+                "type": "list"
               }
             }
           }
@@ -2324,18 +2084,14 @@
           "properties": {
             "total_rows": {
               "title": "Number of total rows",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "report": {
               "title": "",
-              "schema": {
-                "type": "array",
-                "items": {
-                  "title": "",
-                  "type": "list"
-                }
+              "type": "array",
+              "items": {
+                "title": "",
+                "type": "list"
               }
             }
           }
@@ -2531,31 +2287,23 @@
           "properties": {
             "total_rows": {
               "title": "Number of total rows",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "report": {
               "title": "",
-              "schema": {
-                "type": "array",
-                "items": {
-                  "title": "",
-                  "type": "list"
-                }
+              "type": "array",
+              "items": {
+                "title": "",
+                "type": "list"
               }
             },
             "total_per_user_credit": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "total_admin_credit": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             }
           }
         }
@@ -2757,31 +2505,23 @@
           "properties": {
             "total_rows": {
               "title": "Number of total rows",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "report": {
               "title": "",
-              "schema": {
-                "type": "array",
-                "items": {
-                  "title": "",
-                  "type": "list"
-                }
+              "type": "array",
+              "items": {
+                "title": "",
+                "type": "list"
               }
             },
             "total_per_user_credit": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "total_admin_credit": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             }
           }
         }
@@ -2951,31 +2691,23 @@
           "properties": {
             "total_rows": {
               "title": "Number of total rows",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "report": {
               "title": "",
-              "schema": {
-                "type": "array",
-                "items": {
-                  "title": "",
-                  "type": "list"
-                }
+              "type": "array",
+              "items": {
+                "title": "",
+                "type": "list"
               }
             },
             "total_per_user_credit": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "total_isp_credit": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             }
           }
         }
@@ -3229,140 +2961,106 @@
           "properties": {
             "total_rows": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "total_deposit": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "report": {
               "title": "",
-              "schema": {
-                "type": "array",
-                "items": {
-                  "title": "",
-                  "type": "object",
-                  "params": [
-                    {
-                      "name": "action",
-                      "description": "1 to 10",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "action_text",
-                      "description": "",
-                      "enum": [
-                        "ADD_USER",
-                        "CHANGE_DEPOSIT",
-                        "DEL_USER",
-                        "ONLINE_PAYMENT",
-                        "DEPOSIT_TRANSFER",
-                        "AUTO_RENEW",
-                        "RECEIVE_DEPOSIT_TRANSFER",
-                        "AUTO_RECHARGE",
-                        "EXTRA_CHARGE",
-                        "VOUCHER"
-                      ]
-                    },
-                    {
-                      "name": "admin_id",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "admin_name",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "change_time",
-                      "description": "gregorian",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "change_time_formatted",
-                      "description": "depends on input date_type",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "comment",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "deposit_change",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "deposit_change_id",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "group_name",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "isp_id",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "isp_name",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "remote_addr",
-                      "description": "Remote IP",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "user_id",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "username",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    }
-                  ]
-                }
+              "type": "array",
+              "items": {
+                "title": "",
+                "type": "object",
+                "params": [
+                  {
+                    "name": "action",
+                    "description": "1 to 10",
+                    "type": "number"
+                  },
+                  {
+                    "name": "action_text",
+                    "description": "",
+                    "enum": [
+                      "ADD_USER",
+                      "CHANGE_DEPOSIT",
+                      "DEL_USER",
+                      "ONLINE_PAYMENT",
+                      "DEPOSIT_TRANSFER",
+                      "AUTO_RENEW",
+                      "RECEIVE_DEPOSIT_TRANSFER",
+                      "AUTO_RECHARGE",
+                      "EXTRA_CHARGE",
+                      "VOUCHER"
+                    ]
+                  },
+                  {
+                    "name": "admin_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "admin_name",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "change_time",
+                    "description": "gregorian",
+                    "type": "string"
+                  },
+                  {
+                    "name": "change_time_formatted",
+                    "description": "depends on input date_type",
+                    "type": "string"
+                  },
+                  {
+                    "name": "comment",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "deposit_change",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "deposit_change_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "group_name",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "isp_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "isp_name",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "remote_addr",
+                    "description": "Remote IP",
+                    "type": "string"
+                  },
+                  {
+                    "name": "user_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "username",
+                    "description": "",
+                    "type": "string"
+                  }
+                ]
               }
             }
           }
@@ -3518,105 +3216,81 @@
           "properties": {
             "total_rows": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "total_deposit": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "report": {
               "title": "",
-              "schema": {
-                "type": "array",
-                "items": {
-                  "title": "",
-                  "type": "object",
-                  "params": [
-                    {
-                      "name": "action",
-                      "description": "1 to 10",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "action_text",
-                      "description": "",
-                      "enum": [
-                        "ADD_USER",
-                        "CHANGE_DEPOSIT",
-                        "DEL_USER",
-                        "ONLINE_PAYMENT",
-                        "DEPOSIT_TRANSFER",
-                        "AUTO_RENEW",
-                        "RECEIVE_DEPOSIT_TRANSFER",
-                        "AUTO_RECHARGE",
-                        "EXTRA_CHARGE",
-                        "VOUCHER"
-                      ]
-                    },
-                    {
-                      "name": "change_time",
-                      "description": "gregorian",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "change_time_formatted",
-                      "description": "depends on input date_type",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "comment",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "deposit_change",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "deposit_change_id",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "group_name",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "user_id",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "username",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    }
-                  ]
-                }
+              "type": "array",
+              "items": {
+                "title": "",
+                "type": "object",
+                "params": [
+                  {
+                    "name": "action",
+                    "description": "1 to 10",
+                    "type": "number"
+                  },
+                  {
+                    "name": "action_text",
+                    "description": "",
+                    "enum": [
+                      "ADD_USER",
+                      "CHANGE_DEPOSIT",
+                      "DEL_USER",
+                      "ONLINE_PAYMENT",
+                      "DEPOSIT_TRANSFER",
+                      "AUTO_RENEW",
+                      "RECEIVE_DEPOSIT_TRANSFER",
+                      "AUTO_RECHARGE",
+                      "EXTRA_CHARGE",
+                      "VOUCHER"
+                    ]
+                  },
+                  {
+                    "name": "change_time",
+                    "description": "gregorian",
+                    "type": "string"
+                  },
+                  {
+                    "name": "change_time_formatted",
+                    "description": "depends on input date_type",
+                    "type": "string"
+                  },
+                  {
+                    "name": "comment",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "deposit_change",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "deposit_change_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "group_name",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "user_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "username",
+                    "description": "",
+                    "type": "string"
+                  }
+                ]
               }
             }
           }
@@ -3757,107 +3431,81 @@
           "properties": {
             "total_rows": {
               "title": "number of total rows",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "report": {
               "title": "",
-              "schema": {
-                "type": "array",
-                "items": {
-                  "title": "",
-                  "type": "object",
-                  "params": [
-                    {
-                      "name": "admin_id",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "admin_name",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "attr_name",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "change_time",
-                      "description": "gregorian",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "change_time_formatted",
-                      "description": "depending on input date_type",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "is_user",
-                      "description": "",
-                      "enum": ["t", "f"],
-                      "value_comment": {
-                        "t": "true / yes",
-                        "f": "false / no"
-                      }
-                    },
-                    {
-                      "name": "new_value",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "object_id",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "old_value",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "remote_ip",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "user_audit_log",
-                      "description": "log id",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "username",
-                      "description": "only exists in user-mode (is_user=yes)",
-                      "schema": {
-                        "type": "string"
-                      },
-                      "required": false
+              "type": "array",
+              "items": {
+                "title": "",
+                "type": "object",
+                "params": [
+                  {
+                    "name": "admin_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "admin_name",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "attr_name",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "change_time",
+                    "description": "gregorian",
+                    "type": "string"
+                  },
+                  {
+                    "name": "change_time_formatted",
+                    "description": "depending on input date_type",
+                    "type": "string"
+                  },
+                  {
+                    "name": "is_user",
+                    "description": "",
+                    "enum": ["t", "f"],
+                    "value_comment": {
+                      "t": "true / yes",
+                      "f": "false / no"
                     }
-                  ]
-                }
+                  },
+                  {
+                    "name": "new_value",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "object_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "old_value",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "remote_ip",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "user_audit_log",
+                    "description": "log id",
+                    "type": "number"
+                  },
+                  {
+                    "name": "username",
+                    "description": "only exists in user-mode (is_user=yes)",
+                    "required": false,
+                    "type": "string"
+                  }
+                ]
               }
             }
           }
@@ -4015,128 +3663,96 @@
           "properties": {
             "total_rows": {
               "title": "number of total rows",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "total_deposit_change": {
               "title": "total/sum of deposit change amounts",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "report": {
               "title": "",
-              "schema": {
-                "type": "array",
-                "items": {
-                  "title": "",
-                  "type": "object",
-                  "params": [
-                    {
-                      "name": "isp_deposit_before_change",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "isp_deposit_change_action",
-                      "description": "",
-                      "enum": [
-                        "ADD_ISP",
-                        "CHANGE_ISP_DEPOSIT",
-                        "DEL_ISP",
-                        "PENALTY"
-                      ]
-                    },
-                    {
-                      "name": "isp_deposit_change_admin_id",
-                      "description": "Admin ID",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "isp_deposit_change_admin_isp_id",
-                      "description": "Admin's Owner ISP ID",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "isp_deposit_change_admin_isp_name",
-                      "description": "Admin's Owner ISP Name",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "isp_deposit_change_admin_name",
-                      "description": "Admin Username",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "isp_deposit_change_amount",
-                      "description": "Changed Amount",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "isp_deposit_change_comment",
-                      "description": "Comment",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "isp_deposit_change_id",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "isp_deposit_change_isp_id",
-                      "description": "ISP ID",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "isp_deposit_change_isp_name",
-                      "description": "ISP Name",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "isp_deposit_change_remote_addr",
-                      "description": "Admin's Remote IP",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "isp_deposit_change_time",
-                      "description": "Change time, gregorian",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "isp_deposit_change_time_formatted",
-                      "description": "datetime, Change time, depending on input date_type",
-                      "schema": {
-                        "type": "string",
-                        "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
-                      }
-                    }
-                  ]
-                }
+              "type": "array",
+              "items": {
+                "title": "",
+                "type": "object",
+                "params": [
+                  {
+                    "name": "isp_deposit_before_change",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "isp_deposit_change_action",
+                    "description": "",
+                    "enum": [
+                      "ADD_ISP",
+                      "CHANGE_ISP_DEPOSIT",
+                      "DEL_ISP",
+                      "PENALTY"
+                    ]
+                  },
+                  {
+                    "name": "isp_deposit_change_admin_id",
+                    "description": "Admin ID",
+                    "type": "number"
+                  },
+                  {
+                    "name": "isp_deposit_change_admin_isp_id",
+                    "description": "Admin's Owner ISP ID",
+                    "type": "number"
+                  },
+                  {
+                    "name": "isp_deposit_change_admin_isp_name",
+                    "description": "Admin's Owner ISP Name",
+                    "type": "string"
+                  },
+                  {
+                    "name": "isp_deposit_change_admin_name",
+                    "description": "Admin Username",
+                    "type": "string"
+                  },
+                  {
+                    "name": "isp_deposit_change_amount",
+                    "description": "Changed Amount",
+                    "type": "number"
+                  },
+                  {
+                    "name": "isp_deposit_change_comment",
+                    "description": "Comment",
+                    "type": "string"
+                  },
+                  {
+                    "name": "isp_deposit_change_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "isp_deposit_change_isp_id",
+                    "description": "ISP ID",
+                    "type": "number"
+                  },
+                  {
+                    "name": "isp_deposit_change_isp_name",
+                    "description": "ISP Name",
+                    "type": "string"
+                  },
+                  {
+                    "name": "isp_deposit_change_remote_addr",
+                    "description": "Admin's Remote IP",
+                    "type": "string"
+                  },
+                  {
+                    "name": "isp_deposit_change_time",
+                    "description": "Change time, gregorian",
+                    "type": "string"
+                  },
+                  {
+                    "name": "isp_deposit_change_time_formatted",
+                    "description": "datetime, Change time, depending on input date_type",
+                    "type": "string",
+                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+                  }
+                ]
               }
             }
           }
@@ -4251,97 +3867,71 @@
           "properties": {
             "total_rows": {
               "title": "number of total rows",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "report": {
               "title": "",
-              "schema": {
-                "type": "array",
-                "items": {
-                  "title": "",
-                  "type": "object",
-                  "params": [
-                    {
-                      "name": "credit_usage",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "duration_seconds",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "finish_date",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "finish_date_formatted",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "temporary_extend_credit",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "temporary_extend_date",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "temporary_extend_date_formatted",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "temporary_extend_hours",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "temporary_extend_log_id",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "user_id",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "username",
-                      "description": "starts with 'I ' for internet users",
-                      "schema": {
-                        "type": "string"
-                      }
-                    }
-                  ]
-                }
+              "type": "array",
+              "items": {
+                "title": "",
+                "type": "object",
+                "params": [
+                  {
+                    "name": "credit_usage",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "duration_seconds",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "finish_date",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "finish_date_formatted",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "temporary_extend_credit",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "temporary_extend_date",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "temporary_extend_date_formatted",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "temporary_extend_hours",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "temporary_extend_log_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "user_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "username",
+                    "description": "starts with 'I ' for internet users",
+                    "type": "string"
+                  }
+                ]
               }
             }
           }
@@ -4494,159 +4084,147 @@
           "properties": {
             "bw_snapshots": {
               "title": "",
-              "schema": {
-                "type": "array",
-                "items": [
-                  {
-                    "index": 0,
-                    "title": "relative time",
-                    "type": "int"
-                  },
-                  {
-                    "index": 1,
-                    "title": "relative time unit",
-                    "enum": [
-                      "Seconds",
-                      "Minutes",
-                      "Hours",
-                      "Days",
-                      "Months",
-                      "Years"
-                    ]
-                  }
-                ],
-                "length": "2"
-              }
+              "type": "array",
+              "items": [
+                {
+                  "index": 0,
+                  "title": "relative time",
+                  "type": "int"
+                },
+                {
+                  "index": 1,
+                  "title": "relative time unit",
+                  "enum": [
+                    "Seconds",
+                    "Minutes",
+                    "Hours",
+                    "Days",
+                    "Months",
+                    "Years"
+                  ]
+                }
+              ],
+              "length": "2"
             },
             "connection_log": {
               "title": "",
-              "schema": {
-                "type": "array",
-                "items": [
-                  {
-                    "index": 0,
-                    "title": "relative time",
-                    "type": "int"
-                  },
-                  {
-                    "index": 1,
-                    "title": "relative time unit",
-                    "enum": [
-                      "Seconds",
-                      "Minutes",
-                      "Hours",
-                      "Days",
-                      "Months",
-                      "Years"
-                    ]
-                  }
-                ],
-                "length": "2"
-              }
+              "type": "array",
+              "items": [
+                {
+                  "index": 0,
+                  "title": "relative time",
+                  "type": "int"
+                },
+                {
+                  "index": 1,
+                  "title": "relative time unit",
+                  "enum": [
+                    "Seconds",
+                    "Minutes",
+                    "Hours",
+                    "Days",
+                    "Months",
+                    "Years"
+                  ]
+                }
+              ],
+              "length": "2"
             },
             "credit_change": {
               "title": "",
-              "schema": {
-                "type": "array",
-                "items": [
-                  {
-                    "index": 0,
-                    "title": "relative time",
-                    "type": "int"
-                  },
-                  {
-                    "index": 1,
-                    "title": "relative time unit",
-                    "enum": [
-                      "Seconds",
-                      "Minutes",
-                      "Hours",
-                      "Days",
-                      "Months",
-                      "Years"
-                    ]
-                  }
-                ],
-                "length": "2"
-              }
+              "type": "array",
+              "items": [
+                {
+                  "index": 0,
+                  "title": "relative time",
+                  "type": "int"
+                },
+                {
+                  "index": 1,
+                  "title": "relative time unit",
+                  "enum": [
+                    "Seconds",
+                    "Minutes",
+                    "Hours",
+                    "Days",
+                    "Months",
+                    "Years"
+                  ]
+                }
+              ],
+              "length": "2"
             },
             "snapshots": {
               "title": "",
-              "schema": {
-                "type": "array",
-                "items": [
-                  {
-                    "index": 0,
-                    "title": "relative time",
-                    "type": "int"
-                  },
-                  {
-                    "index": 1,
-                    "title": "relative time unit",
-                    "enum": [
-                      "Seconds",
-                      "Minutes",
-                      "Hours",
-                      "Days",
-                      "Months",
-                      "Years"
-                    ]
-                  }
-                ],
-                "length": "2"
-              }
+              "type": "array",
+              "items": [
+                {
+                  "index": 0,
+                  "title": "relative time",
+                  "type": "int"
+                },
+                {
+                  "index": 1,
+                  "title": "relative time unit",
+                  "enum": [
+                    "Seconds",
+                    "Minutes",
+                    "Hours",
+                    "Days",
+                    "Months",
+                    "Years"
+                  ]
+                }
+              ],
+              "length": "2"
             },
             "user_audit_log": {
               "title": "",
-              "schema": {
-                "type": "array",
-                "items": [
-                  {
-                    "index": 0,
-                    "title": "relative time",
-                    "type": "int"
-                  },
-                  {
-                    "index": 1,
-                    "title": "relative time unit",
-                    "enum": [
-                      "Seconds",
-                      "Minutes",
-                      "Hours",
-                      "Days",
-                      "Months",
-                      "Years"
-                    ]
-                  }
-                ],
-                "length": "2"
-              }
+              "type": "array",
+              "items": [
+                {
+                  "index": 0,
+                  "title": "relative time",
+                  "type": "int"
+                },
+                {
+                  "index": 1,
+                  "title": "relative time unit",
+                  "enum": [
+                    "Seconds",
+                    "Minutes",
+                    "Hours",
+                    "Days",
+                    "Months",
+                    "Years"
+                  ]
+                }
+              ],
+              "length": "2"
             },
             "web_analyzer_log": {
               "title": "",
-              "schema": {
-                "type": "array",
-                "items": [
-                  {
-                    "index": 0,
-                    "title": "relative time",
-                    "type": "int"
-                  },
-                  {
-                    "index": 1,
-                    "title": "relative time unit",
-                    "enum": [
-                      "Seconds",
-                      "Minutes",
-                      "Hours",
-                      "Days",
-                      "Months",
-                      "Years"
-                    ]
-                  }
-                ],
-                "length": "2"
-              }
+              "type": "array",
+              "items": [
+                {
+                  "index": 0,
+                  "title": "relative time",
+                  "type": "int"
+                },
+                {
+                  "index": 1,
+                  "title": "relative time unit",
+                  "enum": [
+                    "Seconds",
+                    "Minutes",
+                    "Hours",
+                    "Days",
+                    "Months",
+                    "Years"
+                  ]
+                }
+              ],
+              "length": "2"
             }
           }
         }
@@ -4808,12 +4386,10 @@
           "properties": {
             "report": {
               "title": "",
-              "schema": {
-                "type": "array",
-                "items": {
-                  "title": "",
-                  "type": "list"
-                }
+              "type": "array",
+              "items": {
+                "title": "",
+                "type": "list"
               }
             }
           }
@@ -4993,179 +4569,149 @@
           "properties": {
             "total_rows": {
               "title": "total number of rows",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "report": {
               "title": "",
-              "schema": {
-                "type": "array",
-                "items": {
-                  "title": "",
-                  "type": "object",
-                  "params": [
-                    {
-                      "name": "admin_id",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "admin_name",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "attr_name",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "audit_log_id",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "category",
-                      "description": "",
-                      "enum": [
-                        "0",
-                        "1",
-                        "2",
-                        "3",
-                        "4",
-                        "5",
-                        "6",
-                        "7",
-                        "8",
-                        "9",
-                        "10",
-                        "11",
-                        "12"
-                      ],
-                      "value_comment": {
-                        "0": "_NO_CATEGORY_",
-                        "1": "RAS",
-                        "2": "CHARGE",
-                        "3": "ISP",
-                        "4": "VOIP-TARIFF",
-                        "5": "VOIP-PREFIX-GROUP",
-                        "6": "ADMIN",
-                        "7": "VOIP-PROVIDER",
-                        "8": "VOIP-ROUTING-PROFILE",
-                        "9": "VOIP-ROUTE",
-                        "10": "VOIP-ROUTE-PREFIX",
-                        "11": "ISP PAGE STYLE",
-                        "12": "ONLINE-PAYMENT"
-                      }
-                    },
-                    {
-                      "name": "category_repr",
-                      "description": "",
-                      "enum": [
-                        "_NO_CATEGORY_",
-                        "RAS",
-                        "CHARGE",
-                        "ISP",
-                        "VOIP-TARIFF",
-                        "VOIP-PREFIX-GROUP",
-                        "ADMIN",
-                        "VOIP-PROVIDER",
-                        "VOIP-ROUTING-PROFILE",
-                        "VOIP-ROUTE",
-                        "VOIP-ROUTE-PREFIX",
-                        "ISP PAGE STYLE",
-                        "ONLINE-PAYMENT"
-                      ]
-                    },
-                    {
-                      "name": "change_time",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "change_time_formatted",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "event",
-                      "description": "",
-                      "enum": ["1", "2", "3"],
-                      "value_comment": {
-                        "1": "ADD",
-                        "2": "CHANGE",
-                        "3": "DELETE"
-                      }
-                    },
-                    {
-                      "name": "event_repr",
-                      "description": "",
-                      "enum": ["ADD", "CHANGE", "DELETE"]
-                    },
-                    {
-                      "name": "isp_id",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "isp_name",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "new_value",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "object_id",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "object_repr",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "old_value",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "remote_ip",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
+              "type": "array",
+              "items": {
+                "title": "",
+                "type": "object",
+                "params": [
+                  {
+                    "name": "admin_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "admin_name",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "attr_name",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "audit_log_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "category",
+                    "description": "",
+                    "enum": [
+                      "0",
+                      "1",
+                      "2",
+                      "3",
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "8",
+                      "9",
+                      "10",
+                      "11",
+                      "12"
+                    ],
+                    "value_comment": {
+                      "0": "_NO_CATEGORY_",
+                      "1": "RAS",
+                      "2": "CHARGE",
+                      "3": "ISP",
+                      "4": "VOIP-TARIFF",
+                      "5": "VOIP-PREFIX-GROUP",
+                      "6": "ADMIN",
+                      "7": "VOIP-PROVIDER",
+                      "8": "VOIP-ROUTING-PROFILE",
+                      "9": "VOIP-ROUTE",
+                      "10": "VOIP-ROUTE-PREFIX",
+                      "11": "ISP PAGE STYLE",
+                      "12": "ONLINE-PAYMENT"
                     }
-                  ]
-                }
+                  },
+                  {
+                    "name": "category_repr",
+                    "description": "",
+                    "enum": [
+                      "_NO_CATEGORY_",
+                      "RAS",
+                      "CHARGE",
+                      "ISP",
+                      "VOIP-TARIFF",
+                      "VOIP-PREFIX-GROUP",
+                      "ADMIN",
+                      "VOIP-PROVIDER",
+                      "VOIP-ROUTING-PROFILE",
+                      "VOIP-ROUTE",
+                      "VOIP-ROUTE-PREFIX",
+                      "ISP PAGE STYLE",
+                      "ONLINE-PAYMENT"
+                    ]
+                  },
+                  {
+                    "name": "change_time",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "change_time_formatted",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "event",
+                    "description": "",
+                    "enum": ["1", "2", "3"],
+                    "value_comment": {
+                      "1": "ADD",
+                      "2": "CHANGE",
+                      "3": "DELETE"
+                    }
+                  },
+                  {
+                    "name": "event_repr",
+                    "description": "",
+                    "enum": ["ADD", "CHANGE", "DELETE"]
+                  },
+                  {
+                    "name": "isp_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "isp_name",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "new_value",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "object_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "object_repr",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "old_value",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "remote_ip",
+                    "description": "",
+                    "type": "string"
+                  }
+                ]
               }
             }
           }
@@ -5309,187 +4855,145 @@
           "properties": {
             "total_rows": {
               "title": "total number of rows",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "report": {
               "title": "",
-              "schema": {
-                "type": "array",
-                "items": {
-                  "title": "",
-                  "type": "object",
-                  "params": [
-                    {
-                      "name": "amount",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "details",
-                      "description": "",
-                      "schema": {
-                        "type": "array",
-                        "items": {
-                          "title": "",
-                          "type": "object",
-                          "params": [
-                            {
-                              "name": "comment",
-                              "description": "",
-                              "schema": {
-                                "type": "string"
-                              }
-                            },
-                            {
-                              "name": "log_date",
-                              "description": "",
-                              "schema": {
-                                "type": "string"
-                              }
-                            },
-                            {
-                              "name": "log_id",
-                              "description": "",
-                              "schema": {
-                                "type": "number"
-                              }
-                            },
-                            {
-                              "name": "payment_id",
-                              "description": "",
-                              "schema": {
-                                "type": "number"
-                              }
-                            },
-                            {
-                              "name": "result_code",
-                              "description": "0 if successfull, otherwise Bank's error code",
-                              "schema": {
-                                "type": "number"
-                              }
-                            },
-                            {
-                              "name": "result_text",
-                              "description": "'Successful' or text of error",
-                              "schema": {
-                                "type": "string"
-                              }
-                            },
-                            {
-                              "name": "stage_name",
-                              "description": "",
-                              "enum": [
-                                "Prepare",
-                                "Settle",
-                                "Verify",
-                                "After-Verify"
-                              ],
-                              "value_comment": {
-                                "Settle": "for Bank Mellat only",
-                                "After-Verify": "only if there was an error after Verify stage"
-                              }
-                            }
-                          ]
+              "type": "array",
+              "items": {
+                "title": "",
+                "type": "object",
+                "params": [
+                  {
+                    "name": "amount",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "details",
+                    "description": "",
+                    "type": "array",
+                    "items": {
+                      "title": "",
+                      "type": "object",
+                      "params": [
+                        {
+                          "name": "comment",
+                          "description": "",
+                          "type": "string"
+                        },
+                        {
+                          "name": "log_date",
+                          "description": "",
+                          "type": "string"
+                        },
+                        {
+                          "name": "log_id",
+                          "description": "",
+                          "type": "number"
+                        },
+                        {
+                          "name": "payment_id",
+                          "description": "",
+                          "type": "number"
+                        },
+                        {
+                          "name": "result_code",
+                          "description": "0 if successfull, otherwise Bank's error code",
+                          "type": "number"
+                        },
+                        {
+                          "name": "result_text",
+                          "description": "'Successful' or text of error",
+                          "type": "string"
+                        },
+                        {
+                          "name": "stage_name",
+                          "description": "",
+                          "enum": [
+                            "Prepare",
+                            "Settle",
+                            "Verify",
+                            "After-Verify"
+                          ],
+                          "value_comment": {
+                            "Settle": "for Bank Mellat only",
+                            "After-Verify": "only if there was an error after Verify stage"
+                          }
                         }
-                      }
-                    },
-                    {
-                      "name": "gateway_id",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "gateway_name",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "isp_id",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "log_id",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "payment_date",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "payment_id",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "reference_id",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "requester_id",
-                      "description": "",
-                      "schema": {
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "requester_type",
-                      "description": "",
-                      "enum": ["USER", "ADMIN"]
-                    },
-                    {
-                      "name": "succeed",
-                      "description": "",
-                      "enum": ["t", "f"],
-                      "value_comment": {
-                        "t": "true",
-                        "f": "false"
-                      }
-                    },
-                    {
-                      "name": "unique_id",
-                      "description": "",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "username",
-                      "description": "user's username",
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "name",
-                      "description": "user's full name",
-                      "schema": {
-                        "type": "string"
-                      }
+                      ]
                     }
-                  ]
-                }
+                  },
+                  {
+                    "name": "gateway_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "gateway_name",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "isp_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "log_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "payment_date",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "payment_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "reference_id",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "requester_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "requester_type",
+                    "description": "",
+                    "enum": ["USER", "ADMIN"]
+                  },
+                  {
+                    "name": "succeed",
+                    "description": "",
+                    "enum": ["t", "f"],
+                    "value_comment": {
+                      "t": "true",
+                      "f": "false"
+                    }
+                  },
+                  {
+                    "name": "unique_id",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "username",
+                    "description": "user's username",
+                    "type": "string"
+                  },
+                  {
+                    "name": "name",
+                    "description": "user's full name",
+                    "type": "string"
+                  }
+                ]
               }
             }
           }
@@ -5747,27 +5251,19 @@
           "properties": {
             "night_download": {
               "title": "in bytes",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "night_upload": {
               "title": "in bytes",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "day_download": {
               "title": "in bytes",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "day_upload": {
               "title": "in bytes",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             }
           }
         }

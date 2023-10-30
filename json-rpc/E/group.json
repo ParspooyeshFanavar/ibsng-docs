@@ -228,47 +228,33 @@
           "properties": {
             "group_id": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "group_name": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "comment": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "isp_id": {
               "title": "",
-              "schema": {
-                "type": "number"
-              }
+              "type": "number"
             },
             "isp_name": {
               "title": "",
-              "schema": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "raw_attrs": {
               "title": "dates are gregorian",
-              "schema": {
-                "type": "object",
-                "properties": {}
-              }
+              "type": "object",
+              "properties": {}
             },
             "attrs": {
               "title": "dates are based on request date_type",
-              "schema": {
-                "type": "object",
-                "properties": {}
-              }
+              "type": "object",
+              "properties": {}
             }
           }
         }
