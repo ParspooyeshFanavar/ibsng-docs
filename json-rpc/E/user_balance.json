@@ -459,7 +459,70 @@
           "name": "conds",
           "description": "",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "balance_name": {
+                "title": "list of balances that added in system",
+                "value": []
+              },
+              "remote_ip": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "remote_ip_op": {
+                "title": "",
+                "value": [
+                  "like",
+                  "ilike",
+                  "starts_with",
+                  "ends_with",
+                  "equals"
+                ]
+              },
+              "chnage_date_from": {
+                "title": "datetime, ",
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+                }
+              },
+              "chnage_date_from_unit": {
+                "title": "Date type for output date or datetime params, default is 'gregorian'",
+                "value": ["gregorian", "jalali"]
+              },
+              "chnage_date_to": {
+                "title": "datetime, ",
+                "schema": {
+                  "type": "string",
+                  "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+                }
+              },
+              "chnage_date_to_unit": {
+                "title": "Date type for output date or datetime params, default is 'gregorian'",
+                "value": ["gregorian", "jalali"]
+              },
+              "admin_name": {
+                "title": "list of admin in system",
+                "value": []
+              },
+              "action": {
+                "title": "action list in system",
+                "value": []
+              },
+              "isp_name": {
+                "title": "isp list in system",
+                "value": []
+              },
+              "user_balance_ids": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              }
+            }
           }
         },
         {

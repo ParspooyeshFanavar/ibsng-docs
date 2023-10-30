@@ -299,7 +299,30 @@
           "name": "conds",
           "description": "",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "customer_id": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "uid": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "customer_name": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              }
+            }
           }
         },
         {

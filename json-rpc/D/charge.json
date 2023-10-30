@@ -110,7 +110,8 @@
                       "name": "attrs",
                       "description": "Charge Rule Attributes",
                       "schema": {
-                        "type": "object"
+                        "type": "object",
+                        "properties": {}
                       }
                     }
                   ]
@@ -426,7 +427,8 @@
           "name": "update_attrs",
           "description": "",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {}
           }
         },
         {

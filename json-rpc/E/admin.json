@@ -443,7 +443,93 @@
           "name": "conds",
           "description": "",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "creation_date_from": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "creation_date_from_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "creation_date_to": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "creation_date_to_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "used_date_from": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "used_date_from_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "used_date_to": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "used_date_to_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "expired": {
+                "title": "",
+                "value": ["yes", "no"]
+              },
+              "available": {
+                "title": "available means not expired",
+                "value": ["yes", "no"]
+              }
+            }
           }
         },
         {

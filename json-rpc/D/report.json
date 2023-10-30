@@ -75,7 +75,51 @@
           "name": "conds",
           "description": "",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "dnis": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "isp_ids": {
+                "title": "",
+                "schema": {
+                  "type": "array"
+                },
+                "required": false
+              },
+              "isp_names": {
+                "title": "",
+                "schema": {
+                  "type": "array"
+                },
+                "required": false
+              },
+              "ras_ips": {
+                "title": "",
+                "schema": {
+                  "type": "array"
+                },
+                "required": false
+              },
+              "remote_ip": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "username_starts_with": {
+                "title": "array or string, Array('A', 'B', 'C'), is like 'ABC'",
+                "schema": {
+                  "type": "array"
+                },
+                "required": false
+              }
+            }
           }
         }
       ],
@@ -98,7 +142,8 @@
           "name": "conds",
           "description": "the same as getOnlineUsers",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {}
           },
           "required": false
         }
@@ -149,31 +194,36 @@
             "ras_acct_not_started": {
               "title": "dict of ras_desc => count",
               "schema": {
-                "type": "object"
+                "type": "object",
+                "properties": {}
               }
             },
             "ras_description": {
               "title": "dict of ras_desc => count",
               "schema": {
-                "type": "object"
+                "type": "object",
+                "properties": {}
               }
             },
             "ras_counters": {
               "title": "dict of ras_desc => count_dict",
               "schema": {
-                "type": "object"
+                "type": "object",
+                "properties": {}
               }
             },
             "group_name": {
               "title": "a dict of group_name => count",
               "schema": {
-                "type": "object"
+                "type": "object",
+                "properties": {}
               }
             },
             "isp_name": {
               "title": "a dict of isp_name => count",
               "schema": {
-                "type": "object"
+                "type": "object",
+                "properties": {}
               }
             }
           }
@@ -232,31 +282,36 @@
             "ras_acct_not_started": {
               "title": "dict of ras_desc => count",
               "schema": {
-                "type": "object"
+                "type": "object",
+                "properties": {}
               }
             },
             "ras_description": {
               "title": "dict of ras_desc => count",
               "schema": {
-                "type": "object"
+                "type": "object",
+                "properties": {}
               }
             },
             "ras_counters": {
               "title": "dict of ras_desc => count_dict",
               "schema": {
-                "type": "object"
+                "type": "object",
+                "properties": {}
               }
             },
             "group_name": {
               "title": "a dict of group_name => count",
               "schema": {
-                "type": "object"
+                "type": "object",
+                "properties": {}
               }
             },
             "isp_name": {
               "title": "a dict of isp_name => count",
               "schema": {
-                "type": "object"
+                "type": "object",
+                "properties": {}
               }
             }
           }
@@ -279,7 +334,8 @@
             "onlines_per_isp": {
               "title": "a dict of isp_id => count",
               "schema": {
-                "type": "object"
+                "type": "object",
+                "properties": {}
               }
             }
           }
@@ -296,7 +352,327 @@
           "name": "conds",
           "description": "",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "user_ids": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "connection_username": {
+                "title": "internet username",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "connection_voip_username": {
+                "title": "voip username",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "not_username": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "username": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "voip_username": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "serial": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "sub_service_name": {
+                "title": "subservice name",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "sub_service_charging": {
+                "title": "subservice charging",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "isp_names": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "credit_used": {
+                "title": "",
+                "schema": {
+                  "type": "number"
+                },
+                "required": false
+              },
+              "credit_used_op": {
+                "title": "",
+                "value": ["=", ">", "<", ">=", "<="]
+              },
+              "duration": {
+                "title": "in seconds",
+                "schema": {
+                  "type": "number"
+                },
+                "required": false
+              },
+              "duration_op": {
+                "title": "",
+                "value": ["=", ">", "<", ">=", "<="]
+              },
+              "login_time_from": {
+                "title": "datetime or number, ",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "login_time_from_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "login_time_to": {
+                "title": "datetime or number, ",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "login_time_to_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "logout_time_from": {
+                "title": "datetime or number, ",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "logout_time_from_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "logout_time_to": {
+                "title": "datetime or number, ",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "logout_time_to_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "show_total_credit_used": {
+                "title": "if initialize with 'on' in result returns total credit used",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "show_total_inouts": {
+                "title": "if initialize with 'on' in result returns total download and upload",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "successful": {
+                "title": "",
+                "value": ["yes", "no"]
+              },
+              "service": {
+                "title": "",
+                "value": ["Internet", "VoIP"]
+              },
+              "ras_ip": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "ras_desc": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "group_name": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "exclude_isp_mapped_users": {
+                "title": "true if exists, ",
+                "schema": {
+                  "type": "boolean"
+                },
+                "required": false
+              },
+              "caller_id": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "caller_id_op": {
+                "title": "",
+                "value": ["=", ">", "<", ">=", "<="]
+              },
+              "mac": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "port": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "dnis": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "assigned_ip": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "station_ip": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "cpm": {
+                "title": "",
+                "schema": {
+                  "type": "number"
+                },
+                "required": false
+              },
+              "cpm_op": {
+                "title": "comes with cpm",
+                "value": ["=", ">", "<", ">=", "<="]
+              },
+              "called_number": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "called_number_op": {
+                "title": "",
+                "value": ["=", ">", "<", ">=", "<="]
+              },
+              "prefix_name": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "prefix_name_op": {
+                "title": "",
+                "value": ["=", ">", "<", ">=", "<="]
+              },
+              "called_ip": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "voip_provider_names": {
+                "title": "list of provider names, or string of one provider name",
+                "schema": {
+                  "type": "array"
+                },
+                "required": false
+              },
+              "remote_ip": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              }
+            }
           }
         },
         {
@@ -707,7 +1083,229 @@
           "name": "conds",
           "description": "",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "credit_used": {
+                "title": "",
+                "schema": {
+                  "type": "number"
+                },
+                "required": false
+              },
+              "credit_used_op": {
+                "title": "",
+                "value": ["=", ">", "<", ">=", "<="]
+              },
+              "duration": {
+                "title": "in seconds",
+                "schema": {
+                  "type": "number"
+                },
+                "required": false
+              },
+              "duration_op": {
+                "title": "",
+                "value": ["=", ">", "<", ">=", "<="]
+              },
+              "login_time_from": {
+                "title": "datetime or number, ",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "login_time_from_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "login_time_to": {
+                "title": "datetime or number, ",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "login_time_to_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "logout_time_from": {
+                "title": "datetime or number, ",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "logout_time_from_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "logout_time_to": {
+                "title": "datetime or number, ",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "logout_time_to_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "successful": {
+                "title": "",
+                "value": ["yes", "no"]
+              },
+              "service": {
+                "title": "",
+                "value": ["Internet", "VoIP"]
+              },
+              "ras_ip": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "ras_desc": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "caller_id": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "caller_id_op": {
+                "title": "",
+                "value": ["=", ">", "<", ">=", "<="]
+              },
+              "mac": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "port": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "dnis": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "assigned_ip": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "station_ip": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "cpm": {
+                "title": "",
+                "schema": {
+                  "type": "number"
+                },
+                "required": false
+              },
+              "cpm_op": {
+                "title": "comes with cpm",
+                "value": ["=", ">", "<", ">=", "<="]
+              },
+              "called_number": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "called_number_op": {
+                "title": "",
+                "value": ["=", ">", "<", ">=", "<="]
+              },
+              "prefix_name": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "prefix_name_op": {
+                "title": "",
+                "value": ["=", ">", "<", ">=", "<="]
+              },
+              "called_ip": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "voip_provider_names": {
+                "title": "list of provider names, or string of one provider name",
+                "schema": {
+                  "type": "array"
+                },
+                "required": false
+              },
+              "remote_ip": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              }
+            }
           }
         },
         {
@@ -996,7 +1594,16 @@
           "name": "conds",
           "description": "the same as 'report.getConnections' method, plus caller_id",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "caller_id": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              }
+            }
           }
         },
         {
@@ -1053,7 +1660,8 @@
           "name": "conds",
           "description": "the same as 'report.getConnections' method",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {}
           }
         }
       ],
@@ -1076,7 +1684,8 @@
           "name": "conds",
           "description": "the same as 'report.getConnections' method",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {}
           }
         }
       ],
@@ -1099,7 +1708,8 @@
           "name": "conds",
           "description": "the same as 'report.getConnections' method",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {}
           }
         }
       ],
@@ -1122,7 +1732,8 @@
           "name": "conds",
           "description": "the same as 'report.getConnections' method",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {}
           }
         }
       ],
@@ -1145,7 +1756,8 @@
           "name": "conds",
           "description": "the same as 'report.getConnections' method",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {}
           }
         }
       ],
@@ -1168,7 +1780,8 @@
           "name": "conds",
           "description": "the same as 'report.getConnections' method",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {}
           }
         }
       ],
@@ -1191,7 +1804,8 @@
           "name": "conds",
           "description": "the same as 'report.getConnections' method",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {}
           }
         },
         {
@@ -1251,7 +1865,8 @@
           "name": "conds",
           "description": "the same as 'report.getConnections' method",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {}
           }
         },
         {
@@ -1311,7 +1926,8 @@
           "name": "conds",
           "description": "the same as 'report.getConnections' method",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {}
           }
         },
         {
@@ -1371,7 +1987,8 @@
           "name": "conds",
           "description": "the same as 'report.getConnections' method",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {}
           }
         },
         {
@@ -1536,7 +2153,8 @@
           "name": "conds",
           "description": "the same as user.searchUser",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {}
           }
         },
         {
@@ -1600,7 +2218,27 @@
           "name": "conds",
           "description": "the same as 'report.getConnections' method",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "group_by": {
+                "title": "",
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "title": "",
+                    "value": [
+                      "prefix_name",
+                      "prefix_code",
+                      "cpm",
+                      "voip_provider_id",
+                      "voip_provider_prefix_code",
+                      "voip_provider_prefix_name"
+                    ]
+                  }
+                },
+                "required": false
+              }
+            }
           }
         },
         {
@@ -1673,7 +2311,8 @@
           "name": "conds",
           "description": "the same as 'report.getConnections' method",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {}
           }
         },
         {
@@ -1733,7 +2372,147 @@
           "name": "conds",
           "description": "",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "user_ids": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "voip_username": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "admin": {
+                "title": "admin username",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "action": {
+                "title": "",
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "title": "",
+                    "value": [
+                      "ADD_USER",
+                      "CHANGE_CREDIT",
+                      "DEL_USER",
+                      "RELATIVE_PERIODIC_CHANGE_CREDIT",
+                      "ABSOLUTE_PERIODIC_CHANGE_CREDIT",
+                      "RENEW_TRASH_REMAINING",
+                      "RENEW",
+                      "CREDIT_TRANSFER",
+                      "RECEIVE_CREDIT_TRANSFER",
+                      "ONLINE_PAYMENT",
+                      "AUTO_RENEW",
+                      "RECHARGE",
+                      "AUTO_RECHARGE",
+                      "TEMPORARY_EXTEND",
+                      "TEMPORARY_EXTEND_TRASH_REMAINING",
+                      "EXTRA_CHARGE",
+                      "VOUCHER"
+                    ]
+                  }
+                },
+                "required": false
+              },
+              "per_user_credit": {
+                "title": "",
+                "schema": {
+                  "type": "number"
+                },
+                "required": false
+              },
+              "per_user_credit_op": {
+                "title": "",
+                "value": ["=", ">", "<", ">=", "<="]
+              },
+              "isp_credit": {
+                "title": "",
+                "schema": {
+                  "type": "number"
+                },
+                "required": false
+              },
+              "isp_credit_op": {
+                "title": "",
+                "value": ["=", ">", "<", ">=", "<="]
+              },
+              "change_time_from": {
+                "title": "datetime or number, ",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "change_time_from_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "change_time_to": {
+                "title": "datetime or number, ",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "change_time_to_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "remote_addr": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "comment": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "deleted_internet_username": {
+                "title": "internet username that is deleted",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "deleted_voip_username": {
+                "title": "voip username that is deleted",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              }
+            }
           }
         },
         {
@@ -1812,7 +2591,154 @@
           "name": "conds",
           "description": "",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "user_view": {
+                "title": "",
+                "schema": {
+                  "type": ""
+                },
+                "required": false
+              },
+              "user_ids": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "voip_username": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "admin": {
+                "title": "admin username",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "action": {
+                "title": "",
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "title": "",
+                    "value": [
+                      "ADD_USER",
+                      "CHANGE_CREDIT",
+                      "DEL_USER",
+                      "RELATIVE_PERIODIC_CHANGE_CREDIT",
+                      "ABSOLUTE_PERIODIC_CHANGE_CREDIT",
+                      "RENEW_TRASH_REMAINING",
+                      "RENEW",
+                      "CREDIT_TRANSFER",
+                      "RECEIVE_CREDIT_TRANSFER",
+                      "ONLINE_PAYMENT",
+                      "AUTO_RENEW",
+                      "RECHARGE",
+                      "AUTO_RECHARGE",
+                      "TEMPORARY_EXTEND",
+                      "TEMPORARY_EXTEND_TRASH_REMAINING",
+                      "EXTRA_CHARGE",
+                      "VOUCHER"
+                    ]
+                  }
+                },
+                "required": false
+              },
+              "per_user_credit": {
+                "title": "",
+                "schema": {
+                  "type": "number"
+                },
+                "required": false
+              },
+              "per_user_credit_op": {
+                "title": "",
+                "value": ["=", ">", "<", ">=", "<="]
+              },
+              "isp_credit": {
+                "title": "",
+                "schema": {
+                  "type": "number"
+                },
+                "required": false
+              },
+              "isp_credit_op": {
+                "title": "",
+                "value": ["=", ">", "<", ">=", "<="]
+              },
+              "change_time_from": {
+                "title": "datetime or number, ",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "change_time_from_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "change_time_to": {
+                "title": "datetime or number, ",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "change_time_to_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "remote_addr": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "comment": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "deleted_internet_username": {
+                "title": "internet username that is deleted",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "deleted_voip_username": {
+                "title": "voip username that is deleted",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              }
+            }
           }
         },
         {
@@ -1891,7 +2817,122 @@
           "name": "conds",
           "description": "",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "user_view": {
+                "title": "",
+                "schema": {
+                  "type": ""
+                },
+                "required": false
+              },
+              "action": {
+                "title": "",
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "title": "",
+                    "value": [
+                      "ADD_USER",
+                      "CHANGE_CREDIT",
+                      "DEL_USER",
+                      "RELATIVE_PERIODIC_CHANGE_CREDIT",
+                      "ABSOLUTE_PERIODIC_CHANGE_CREDIT",
+                      "RENEW_TRASH_REMAINING",
+                      "RENEW",
+                      "CREDIT_TRANSFER",
+                      "RECEIVE_CREDIT_TRANSFER",
+                      "ONLINE_PAYMENT",
+                      "AUTO_RENEW",
+                      "RECHARGE",
+                      "AUTO_RECHARGE",
+                      "TEMPORARY_EXTEND",
+                      "TEMPORARY_EXTEND_TRASH_REMAINING",
+                      "EXTRA_CHARGE",
+                      "VOUCHER"
+                    ]
+                  }
+                },
+                "required": false
+              },
+              "per_user_credit": {
+                "title": "",
+                "schema": {
+                  "type": "number"
+                },
+                "required": false
+              },
+              "per_user_credit_op": {
+                "title": "",
+                "value": ["=", ">", "<", ">=", "<="]
+              },
+              "change_time_from": {
+                "title": "datetime or number, ",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "change_time_from_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "change_time_to": {
+                "title": "datetime or number, ",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "change_time_to_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "remote_addr": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "comment": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "deleted_internet_username": {
+                "title": "internet username that is deleted",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "deleted_voip_username": {
+                "title": "voip username that is deleted",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              }
+            }
           }
         },
         {
@@ -1970,7 +3011,8 @@
           "name": "conds",
           "description": "the same as getCreditChanges",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {}
           }
         },
         {
@@ -2053,7 +3095,122 @@
           "name": "conds",
           "description": "",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "user_ids": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "admin": {
+                "title": "list of admin usernames, or string of one admin username",
+                "schema": {
+                  "type": "array"
+                },
+                "required": false
+              },
+              "action": {
+                "title": "",
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "title": "",
+                    "value": [
+                      "ADD_USER",
+                      "CHANGE_DEPOSIT",
+                      "DEL_USER",
+                      "ONLINE_PAYMENT",
+                      "DEPOSIT_TRANSFER",
+                      "AUTO_RENEW",
+                      "RECEIVE_DEPOSIT_TRANSFER",
+                      "AUTO_RECHARGE",
+                      "EXTRA_CHARGE",
+                      "VOUCHER"
+                    ]
+                  }
+                },
+                "required": false
+              },
+              "deposit": {
+                "title": "comes with deposit_op cond",
+                "schema": {
+                  "type": "number"
+                },
+                "required": false
+              },
+              "deposit_op": {
+                "title": "comes with deposit cond",
+                "value": ["=", ">", "<", ">=", "<="]
+              },
+              "change_time_from": {
+                "title": "datetime or number, ",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "change_time_from_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "change_time_to": {
+                "title": "datetime or number, ",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "change_time_to_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "remote_addr": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "group_name": {
+                "title": "list of group names, or string of one group name",
+                "schema": {
+                  "type": "array"
+                },
+                "required": false
+              },
+              "user_isp_names": {
+                "title": "list of isp names, or string one isp name",
+                "schema": {
+                  "type": "array"
+                },
+                "required": false
+              },
+              "isp_names": {
+                "title": "list of isp names, or string one isp name",
+                "schema": {
+                  "type": "array"
+                },
+                "required": false
+              }
+            }
           }
         },
         {
@@ -2241,7 +3398,108 @@
           "name": "conds",
           "description": "",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "admin": {
+                "title": "list of admin usernames, or string of one admin username",
+                "schema": {
+                  "type": "array"
+                },
+                "required": false
+              },
+              "action": {
+                "title": "",
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "title": "",
+                    "value": [
+                      "ADD_USER",
+                      "CHANGE_DEPOSIT",
+                      "DEL_USER",
+                      "ONLINE_PAYMENT",
+                      "DEPOSIT_TRANSFER",
+                      "AUTO_RENEW",
+                      "RECEIVE_DEPOSIT_TRANSFER",
+                      "AUTO_RECHARGE",
+                      "EXTRA_CHARGE",
+                      "VOUCHER"
+                    ]
+                  }
+                },
+                "required": false
+              },
+              "deposit": {
+                "title": "comes with deposit_op cond",
+                "schema": {
+                  "type": "number"
+                },
+                "required": false
+              },
+              "deposit_op": {
+                "title": "comes with deposit cond",
+                "value": ["=", ">", "<", ">=", "<="]
+              },
+              "change_time_from": {
+                "title": "datetime or number, ",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "change_time_from_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "change_time_to": {
+                "title": "datetime or number, ",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "change_time_to_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "remote_addr": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "group_name": {
+                "title": "list of group names, or string of one group name",
+                "schema": {
+                  "type": "array"
+                },
+                "required": false
+              },
+              "isp_names": {
+                "title": "list of isp names, or string one isp name",
+                "schema": {
+                  "type": "array"
+                },
+                "required": false
+              }
+            }
           }
         },
         {
@@ -2394,7 +3652,93 @@
           "name": "conds",
           "description": "",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "user_ids": {
+                "title": "sets is_user=yes and turns on user-mode",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "user_isp_names": {
+                "title": "sets is_user=yes and turns on user-mode",
+                "schema": {
+                  "type": "array"
+                },
+                "required": false
+              },
+              "group_name": {
+                "title": "sets is_user=no and turns on group-mode",
+                "schema": {
+                  "type": "array"
+                },
+                "required": false
+              },
+              "attr_names": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "change_time_from": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "change_time_from_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "change_time_to": {
+                "title": "datetime or number, ",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "change_time_to_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "is_user": {
+                "title": "",
+                "value": ["yes", "no"]
+              },
+              "isp_names": {
+                "title": "list of isp names, or string of one isp name",
+                "schema": {
+                  "type": "array"
+                },
+                "required": false
+              },
+              "admin": {
+                "title": "admin username",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              }
+            }
           }
         },
         {
@@ -2586,7 +3930,68 @@
           "name": "conds",
           "description": "",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "admin": {
+                "title": "list of admin usernames, or string of one admin username",
+                "schema": {
+                  "type": "array"
+                },
+                "required": false
+              },
+              "admin_isp_name": {
+                "title": "isp name of admin, list or string (of one)",
+                "schema": {
+                  "type": "array"
+                },
+                "required": false
+              },
+              "isp_names": {
+                "title": "list of isp names, or string of one isp name",
+                "schema": {
+                  "type": "array"
+                },
+                "required": false
+              },
+              "change_time_from": {
+                "title": "datetime or number, ",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "change_time_from_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "change_time_to": {
+                "title": "datetime or number, ",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "change_time_to_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              }
+            }
           }
         },
         {
@@ -2768,7 +4173,61 @@
           "name": "conds",
           "description": "",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "isp_names": {
+                "title": "list of isp names, or string of one isp name",
+                "schema": {
+                  "type": "array"
+                },
+                "required": false
+              },
+              "user_ids": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "temporary_extend_date_from": {
+                "title": "datetime or number, ",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "temporary_extend_date_from_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "temporary_extend_date_to": {
+                "title": "datetime or number, ",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "temporary_extend_date_to_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              }
+            }
           }
         },
         {
@@ -3223,7 +4682,152 @@
           "name": "conds",
           "description": "",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "login_time_from": {
+                "title": "datetime or number, ",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "login_time_from_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "login_time_to": {
+                "title": "datetime or number, ",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "login_time_to_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "username": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "voip_username": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "user_ids": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "view_period": {
+                "title": "",
+                "value": ["daily", "weekly", "monthly", "yearly"]
+              },
+              "included_objects": {
+                "title": "",
+                "schema": {
+                  "type": "array"
+                },
+                "required": false
+              },
+              "report_targets": {
+                "title": "",
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "title": "",
+                    "value": ["duration", "credit", "in_bytes", "out_bytes"]
+                  }
+                },
+                "required": false
+              },
+              "called_number": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "called_number_op": {
+                "title": "",
+                "value": [
+                  "like",
+                  "ilike",
+                  "starts_with",
+                  "ends_with",
+                  "equals"
+                ]
+              },
+              "prefix_name": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "prefix_name_op": {
+                "title": "",
+                "value": [
+                  "like",
+                  "ilike",
+                  "starts_with",
+                  "ends_with",
+                  "equals"
+                ]
+              },
+              "called_ip": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "dnis": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "immediate_children_isps_only": {
+                "title": "true if exists, ",
+                "schema": {
+                  "type": "boolean"
+                },
+                "required": false
+              },
+              "isp_names": {
+                "title": "list of isp names, or string of one isp name",
+                "schema": {
+                  "type": "array"
+                },
+                "required": false
+              }
+            }
           }
         }
       ],
@@ -3258,7 +4862,124 @@
           "name": "conds",
           "description": "",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "categories": {
+                "title": "",
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "title": "",
+                    "value": [
+                      "0",
+                      "1",
+                      "2",
+                      "3",
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "8",
+                      "9",
+                      "10",
+                      "11",
+                      "12"
+                    ],
+                    "value_comment": {
+                      "0": "_NO_CATEGORY_",
+                      "1": "RAS",
+                      "2": "CHARGE",
+                      "3": "ISP",
+                      "4": "VOIP-TARIFF",
+                      "5": "VOIP-PREFIX-GROUP",
+                      "6": "ADMIN",
+                      "7": "VOIP-PROVIDER",
+                      "8": "VOIP-ROUTING-PROFILE",
+                      "9": "VOIP-ROUTE",
+                      "10": "VOIP-ROUTE-PREFIX",
+                      "11": "ISP PAGE STYLE",
+                      "12": "ONLINE-PAYMENT"
+                    }
+                  }
+                },
+                "required": false
+              },
+              "events": {
+                "title": "",
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "title": "",
+                    "value": ["1", "2", "3"],
+                    "value_comment": {
+                      "1": "ADD",
+                      "2": "CHANGE",
+                      "3": "DELETE"
+                    }
+                  }
+                },
+                "required": false
+              },
+              "isp_names": {
+                "title": "list of isp names, or string of one isp name",
+                "schema": {
+                  "type": "array"
+                },
+                "required": false
+              },
+              "admin": {
+                "title": "admin username",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "change_time_from": {
+                "title": "datetime or number, ",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "change_time_from_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "change_time_to": {
+                "title": "datetime or number, ",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "change_time_to_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "object_id": {
+                "title": "",
+                "schema": {
+                  "type": "number"
+                },
+                "required": false
+              }
+            }
           }
         },
         {
@@ -3492,7 +5213,87 @@
           "name": "conds",
           "description": "",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "requester_ids": {
+                "title": "Comma-seperated string of User IDs (or Admin IDs)",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "requester_type": {
+                "title": "",
+                "value": ["USER", "ADMIN"]
+              },
+              "reference_id": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "amount": {
+                "title": "",
+                "schema": {
+                  "type": "number"
+                },
+                "required": false
+              },
+              "amount_op": {
+                "title": "",
+                "value": ["=", ">", "<", ">=", "<="]
+              },
+              "payment_date_from": {
+                "title": "datetime or number, ",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "payment_date_from_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "payment_date_to": {
+                "title": "datetime or number, ",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "payment_date_to_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "succeed": {
+                "title": "",
+                "value": ["yes", "no"]
+              },
+              "gateway_name": {
+                "title": "list of gateway names, or string of one gateway name",
+                "schema": {
+                  "type": "array"
+                },
+                "required": false
+              }
+            }
           }
         },
         {
@@ -3737,7 +5538,8 @@
           "name": "conds",
           "description": "the same as 'report.getConnections' method",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {}
           }
         },
         {
@@ -3800,7 +5602,8 @@
           "name": "conds",
           "description": "the same as 'report.getConnections' method",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {}
           }
         },
         {
@@ -3852,7 +5655,8 @@
           "name": "conds",
           "description": "the same as 'report.getConnections' method",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {}
           }
         },
         {
@@ -3898,7 +5702,8 @@
           "name": "conds",
           "description": "the same as 'report.getOnlinePaymentReport' method",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {}
           }
         },
         {

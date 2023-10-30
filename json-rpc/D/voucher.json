@@ -15,7 +15,44 @@
           "name": "conds",
           "description": "",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "voucher_ids": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "batch_ids": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "pins": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "is_used": {
+                "title": "true means voucher is used",
+                "schema": {
+                  "type": "boolean"
+                },
+                "required": false
+              },
+              "isp_names": {
+                "title": "list of isp names, or string of one isp name",
+                "schema": {
+                  "type": "array"
+                },
+                "required": false
+              }
+            }
           }
         },
         {
@@ -134,7 +171,65 @@
           "name": "conds",
           "description": "",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "isp_names": {
+                "title": "list of isp names, or string of one isp name",
+                "schema": {
+                  "type": "array"
+                },
+                "required": false
+              },
+              "batch_ids": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "batch_names": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "is_locked": {
+                "title": "true means batch is locked",
+                "schema": {
+                  "type": "boolean"
+                },
+                "required": false
+              },
+              "can_recharge_user": {
+                "title": "true means batch can be used to recharge user",
+                "schema": {
+                  "type": "boolean"
+                },
+                "required": false
+              },
+              "can_create_user": {
+                "title": "true means batch can be used to create user",
+                "schema": {
+                  "type": "boolean"
+                },
+                "required": false
+              },
+              "credit_from": {
+                "title": "",
+                "schema": {
+                  "type": "number"
+                },
+                "required": false
+              },
+              "credit_to": {
+                "title": "",
+                "schema": {
+                  "type": "number"
+                },
+                "required": false
+              }
+            }
           }
         },
         {
@@ -498,7 +593,60 @@
           "name": "batch_dict",
           "description": "",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "batch_name": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "is_locked": {
+                "title": "",
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "credit": {
+                "title": "",
+                "schema": {
+                  "type": "number"
+                }
+              },
+              "can_recharge_user": {
+                "title": "",
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "can_create_user": {
+                "title": "",
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "change_target": {
+                "title": "",
+                "value": ["credit", "deposit", "deposit_recharge"],
+                "value_comment": {
+                  "credit": "Credit",
+                  "deposit": "Renew Deposit",
+                  "deposit_recharge": "Recharge Deposit"
+                }
+              },
+              "allow_use_by_children_isp": {
+                "title": "",
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "comment": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
           }
         },
         {
@@ -749,7 +897,65 @@
           "name": "conds",
           "description": "",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "isp_names": {
+                "title": "list of isp names, or string of one isp name",
+                "schema": {
+                  "type": "array"
+                },
+                "required": false
+              },
+              "batch_ids": {
+                "title": "comma-separated Batch IDs",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "batch_names": {
+                "title": "comma-separated Batch Names",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "is_locked": {
+                "title": "",
+                "schema": {
+                  "type": "boolean"
+                },
+                "required": false
+              },
+              "can_recharge_user": {
+                "title": "",
+                "schema": {
+                  "type": "boolean"
+                },
+                "required": false
+              },
+              "can_create_user": {
+                "title": "",
+                "schema": {
+                  "type": "boolean"
+                },
+                "required": false
+              },
+              "credit_from": {
+                "title": "only batches with credit >= {credit_from}",
+                "schema": {
+                  "type": "number"
+                },
+                "required": false
+              },
+              "credit_to": {
+                "title": "only batches with credit <= {credit_to}",
+                "schema": {
+                  "type": "number"
+                },
+                "required": false
+              }
+            }
           }
         },
         {

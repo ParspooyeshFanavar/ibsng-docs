@@ -239,7 +239,8 @@
           "name": "to_update_attrs",
           "description": "",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {}
           }
         }
       ],
@@ -527,7 +528,36 @@
           "name": "msg_info",
           "description": "",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "dst": {
+                "title": "list of destinations",
+                "schema": {
+                  "type": "array"
+                }
+              },
+              "msg_type": {
+                "title": "",
+                "value": [
+                  "SMS",
+                  "E-Mail",
+                  "Message To Admin",
+                  "Message To User"
+                ]
+              },
+              "from": {
+                "title": "source (sender) address (phone number / email)",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "body": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       ],
@@ -803,7 +833,97 @@
           "name": "conds",
           "description": "",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "message_ids": {
+                "title": "",
+                "schema": {
+                  "type": "number"
+                },
+                "required": false
+              },
+              "receive_date_from": {
+                "title": "datetime or number, ",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "receive_date_from_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "receive_date_to": {
+                "title": "datetime or number, ",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "receive_date_to_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "body": {
+                "title": "message body",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "body_op": {
+                "title": "",
+                "value": [
+                  "like",
+                  "ilike",
+                  "starts_with",
+                  "ends_with",
+                  "equals"
+                ]
+              },
+              "from": {
+                "title": "source (sender) address (phone number / email)",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "from_op": {
+                "title": "",
+                "value": [
+                  "like",
+                  "ilike",
+                  "starts_with",
+                  "ends_with",
+                  "equals"
+                ]
+              },
+              "msg_types": {
+                "title": "can be a list (of strings) too, for example: msg_types=['SMS', 'E-Mail']",
+                "value": [
+                  "SMS",
+                  "E-Mail",
+                  "Message To Admin",
+                  "Message To User"
+                ]
+              }
+            }
           }
         },
         {
@@ -852,7 +972,115 @@
           "name": "conds",
           "description": "",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "owner_type": {
+                "title": "",
+                "value": ["USER"]
+              },
+              "user_ids": {
+                "title": "",
+                "schema": {
+                  "type": "number"
+                },
+                "required": false
+              },
+              "user_deleted": {
+                "title": "",
+                "schema": {
+                  "type": "boolean"
+                },
+                "required": false
+              },
+              "message_ids": {
+                "title": "",
+                "schema": {
+                  "type": "number"
+                },
+                "required": false
+              },
+              "receive_date_from": {
+                "title": "datetime or number, ",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "receive_date_from_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "receive_date_to": {
+                "title": "datetime or number, ",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "receive_date_to_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "body": {
+                "title": "message body",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "body_op": {
+                "title": "",
+                "value": [
+                  "like",
+                  "ilike",
+                  "starts_with",
+                  "ends_with",
+                  "equals"
+                ]
+              },
+              "from": {
+                "title": "source (sender) address (phone number / email)",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "from_op": {
+                "title": "",
+                "value": [
+                  "like",
+                  "ilike",
+                  "starts_with",
+                  "ends_with",
+                  "equals"
+                ]
+              },
+              "msg_types": {
+                "title": "can be a list (of strings) too, for example: msg_types=['SMS', 'E-Mail']",
+                "value": [
+                  "SMS",
+                  "E-Mail",
+                  "Message To Admin",
+                  "Message To User"
+                ]
+              }
+            }
           }
         },
         {
@@ -901,7 +1129,108 @@
           "name": "conds",
           "description": "",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "owner_type": {
+                "title": "",
+                "value": ["ISP"]
+              },
+              "isp_ids": {
+                "title": "",
+                "schema": {
+                  "type": "number"
+                },
+                "required": false
+              },
+              "message_ids": {
+                "title": "",
+                "schema": {
+                  "type": "number"
+                },
+                "required": false
+              },
+              "receive_date_from": {
+                "title": "datetime or number, ",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "receive_date_from_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "receive_date_to": {
+                "title": "datetime or number, ",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "receive_date_to_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "body": {
+                "title": "message body",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "body_op": {
+                "title": "",
+                "value": [
+                  "like",
+                  "ilike",
+                  "starts_with",
+                  "ends_with",
+                  "equals"
+                ]
+              },
+              "from": {
+                "title": "source (sender) address (phone number / email)",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "from_op": {
+                "title": "",
+                "value": [
+                  "like",
+                  "ilike",
+                  "starts_with",
+                  "ends_with",
+                  "equals"
+                ]
+              },
+              "msg_types": {
+                "title": "can be a list (of strings) too, for example: msg_types=['SMS', 'E-Mail']",
+                "value": [
+                  "SMS",
+                  "E-Mail",
+                  "Message To Admin",
+                  "Message To User"
+                ]
+              }
+            }
           }
         },
         {
@@ -949,7 +1278,97 @@
           "name": "conds",
           "description": "",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "message_ids": {
+                "title": "",
+                "schema": {
+                  "type": "number"
+                },
+                "required": false
+              },
+              "transfer_date_from": {
+                "title": "datetime or number, ",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "transfer_date_from_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "transfer_date_to": {
+                "title": "datetime or number, ",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "transfer_date_to_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "body": {
+                "title": "message body",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "body_op": {
+                "title": "",
+                "value": [
+                  "like",
+                  "ilike",
+                  "starts_with",
+                  "ends_with",
+                  "equals"
+                ]
+              },
+              "to": {
+                "title": "destination address (phone number/email)",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "to_op": {
+                "title": "",
+                "value": [
+                  "like",
+                  "ilike",
+                  "starts_with",
+                  "ends_with",
+                  "equals"
+                ]
+              },
+              "msg_types": {
+                "title": "can be a list (of strings) too, for example: msg_types=['SMS', 'E-Mail']",
+                "value": [
+                  "SMS",
+                  "E-Mail",
+                  "Message To Admin",
+                  "Message To User"
+                ]
+              }
+            }
           }
         },
         {
@@ -1070,7 +1489,115 @@
           "name": "conds",
           "description": "",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "owner_type": {
+                "title": "",
+                "value": ["USER"]
+              },
+              "user_ids": {
+                "title": "",
+                "schema": {
+                  "type": "number"
+                },
+                "required": false
+              },
+              "user_deleted": {
+                "title": "",
+                "schema": {
+                  "type": "boolean"
+                },
+                "required": false
+              },
+              "message_ids": {
+                "title": "",
+                "schema": {
+                  "type": "number"
+                },
+                "required": false
+              },
+              "transfer_date_from": {
+                "title": "datetime or number, ",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "transfer_date_from_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "transfer_date_to": {
+                "title": "datetime or number, ",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "transfer_date_to_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "body": {
+                "title": "message body",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "body_op": {
+                "title": "",
+                "value": [
+                  "like",
+                  "ilike",
+                  "starts_with",
+                  "ends_with",
+                  "equals"
+                ]
+              },
+              "to": {
+                "title": "destination address (phone number/email)",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "to_op": {
+                "title": "",
+                "value": [
+                  "like",
+                  "ilike",
+                  "starts_with",
+                  "ends_with",
+                  "equals"
+                ]
+              },
+              "msg_types": {
+                "title": "can be a list (of strings) too, for example: msg_types=['SMS', 'E-Mail']",
+                "value": [
+                  "SMS",
+                  "E-Mail",
+                  "Message To Admin",
+                  "Message To User"
+                ]
+              }
+            }
           }
         },
         {
@@ -1191,7 +1718,108 @@
           "name": "conds",
           "description": "",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "owner_type": {
+                "title": "",
+                "value": ["ISP"]
+              },
+              "isp_ids": {
+                "title": "",
+                "schema": {
+                  "type": "number"
+                },
+                "required": false
+              },
+              "message_ids": {
+                "title": "",
+                "schema": {
+                  "type": "number"
+                },
+                "required": false
+              },
+              "transfer_date_from": {
+                "title": "datetime or number, ",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "transfer_date_from_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "transfer_date_to": {
+                "title": "datetime or number, ",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "transfer_date_to_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "body": {
+                "title": "message body",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "body_op": {
+                "title": "",
+                "value": [
+                  "like",
+                  "ilike",
+                  "starts_with",
+                  "ends_with",
+                  "equals"
+                ]
+              },
+              "to": {
+                "title": "destination address (number/email)",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "to_op": {
+                "title": "",
+                "value": [
+                  "like",
+                  "ilike",
+                  "starts_with",
+                  "ends_with",
+                  "equals"
+                ]
+              },
+              "msg_types": {
+                "title": "can be a list (of strings) too, for example: msg_types=['SMS', 'E-Mail']",
+                "value": [
+                  "SMS",
+                  "E-Mail",
+                  "Message To Admin",
+                  "Message To User"
+                ]
+              }
+            }
           }
         },
         {
@@ -1312,7 +1940,132 @@
           "name": "conds",
           "description": "",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "owner_type": {
+                "title": "",
+                "value": ["ISP", "USER"]
+              },
+              "owner_ids": {
+                "title": "",
+                "schema": {
+                  "type": "number"
+                },
+                "required": false
+              },
+              "message_ids": {
+                "title": "",
+                "schema": {
+                  "type": "number"
+                },
+                "required": false
+              },
+              "isp_names": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "schedule_date_from": {
+                "title": "datetime or number, ",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "schedule_date_from_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "schedule_date_to": {
+                "title": "datetime or number, ",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "schedule_date_to_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "body": {
+                "title": "message body",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "body_op": {
+                "title": "",
+                "value": [
+                  "like",
+                  "ilike",
+                  "starts_with",
+                  "ends_with",
+                  "equals"
+                ]
+              },
+              "to": {
+                "title": "destination address (number/email)",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "to_op": {
+                "title": "",
+                "value": [
+                  "like",
+                  "ilike",
+                  "starts_with",
+                  "ends_with",
+                  "equals"
+                ]
+              },
+              "source": {
+                "title": "source address (number/email)",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "source_op": {
+                "title": "",
+                "value": [
+                  "like",
+                  "ilike",
+                  "starts_with",
+                  "ends_with",
+                  "equals"
+                ]
+              },
+              "msg_types": {
+                "title": "can be a list (of strings) too, for example: msg_types=['SMS', 'E-Mail']",
+                "value": [
+                  "SMS",
+                  "E-Mail",
+                  "Message To Admin",
+                  "Message To User"
+                ]
+              }
+            }
           }
         },
         {
@@ -1436,7 +2189,114 @@
           "name": "conds",
           "description": "",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "message_ids": {
+                "title": "",
+                "schema": {
+                  "type": "number"
+                },
+                "required": false
+              },
+              "schedule_date_from": {
+                "title": "datetime or number, ",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "schedule_date_from_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "schedule_date_to": {
+                "title": "datetime or number, ",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "schedule_date_to_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "body": {
+                "title": "message body",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "body_op": {
+                "title": "",
+                "value": [
+                  "like",
+                  "ilike",
+                  "starts_with",
+                  "ends_with",
+                  "equals"
+                ]
+              },
+              "to": {
+                "title": "destination address (number/email)",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "to_op": {
+                "title": "",
+                "value": [
+                  "like",
+                  "ilike",
+                  "starts_with",
+                  "ends_with",
+                  "equals"
+                ]
+              },
+              "source": {
+                "title": "source address (number/email)",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "source_op": {
+                "title": "",
+                "value": [
+                  "like",
+                  "ilike",
+                  "starts_with",
+                  "ends_with",
+                  "equals"
+                ]
+              },
+              "msg_types": {
+                "title": "can be a list (of strings) too, for example: msg_types=['SMS', 'E-Mail']",
+                "value": [
+                  "SMS",
+                  "E-Mail",
+                  "Message To Admin",
+                  "Message To User"
+                ]
+              }
+            }
           }
         },
         {
@@ -1777,7 +2637,8 @@
           "name": "attrs",
           "description": "",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {}
           }
         }
       ],
@@ -1821,7 +2682,8 @@
           "name": "attrs",
           "description": "",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {}
           }
         }
       ],

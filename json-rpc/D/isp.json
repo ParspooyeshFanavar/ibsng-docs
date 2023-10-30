@@ -683,7 +683,8 @@
             "result": {
               "title": "",
               "schema": {
-                "type": "object"
+                "type": "object",
+                "properties": {}
               }
             }
           }

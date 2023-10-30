@@ -77,7 +77,16 @@
           "name": "attributes",
           "description": "you can put all the parameters you want here",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "no_action": {
+                "title": "true if exists, if you put this in attributes, we won't perform any action (credit / deposit / invoice) after verifying payment",
+                "schema": {
+                  "type": "boolean"
+                },
+                "required": false
+              }
+            }
           }
         }
       ],
@@ -91,7 +100,8 @@
             "web_attributes": {
               "title": "",
               "schema": {
-                "type": "object"
+                "type": "object",
+                "properties": {}
               }
             },
             "redirect_method": {
@@ -124,7 +134,8 @@
           "name": "web_attributes",
           "description": "",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {}
           }
         }
       ],
@@ -203,7 +214,8 @@
           "name": "attributes",
           "description": "",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {}
           }
         }
       ],
@@ -261,7 +273,8 @@
           "name": "attributes",
           "description": "",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {}
           }
         }
       ],

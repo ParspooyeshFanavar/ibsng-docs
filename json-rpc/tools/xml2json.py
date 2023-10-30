@@ -17,6 +17,7 @@ paramTypeMapping = {
 
 	"int": ("number", ""),
 	"float": ("number", ""),
+	"str_float": ("str", "float as string"),
 
 	"datetime": ("string", "datetime"),
 	"datetime, float": ("string", "datetime or number"),
@@ -37,6 +38,11 @@ paramTypeMapping = {
 	
 	"int|null": ("int", "int or null"),
 	"dynamic": ("", "dynamic type"),
+
+	"list or string": ("array", "array or string"),
+	"list, int": ("array", "array or int"),
+	"int, list": ("array", "array or int"),
+	"str, list": ("array", "array or string"),
 }
 
 
@@ -156,15 +162,24 @@ def getJsonParam(param: "Element") -> dict:
 	paramType = param.attrib.get("type")
 	if not paramType:
 		print(f"{branch=}: param type is empty: {toStr(param)}")
-		return
+		#return
 
 	if paramType == "choice":
 		return getChoiceJsonParam(param)
 
-	newParamType, typeComment = paramTypeMapping[paramType]
-	if not newParamType:
-		print(f"invalid param type {paramType}")
-		newParamType = "string"
+	paramValue = param.attrib.get("value")
+
+	if paramValue:
+		pass
+		# FIXME: like a choice with one value
+
+	if paramType:
+		newParamType, typeComment = paramTypeMapping[paramType]
+		if not newParamType:
+			print(f"invalid param type {paramType}")
+			newParamType = "string"
+	else:
+		newParamType, typeComment = "", ""
 
 	description = param.attrib.get("comment", "")
 	if typeComment:
@@ -179,6 +194,22 @@ def getJsonParam(param: "Element") -> dict:
 	if paramType in ("datetime", "str_datetime"):
 		# %Y-%m-%d %H:%M:%S or %Y-%m-%d %H:%M
 		schema["pattern"] = "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+	elif paramType == "dict":
+		properties = {}
+		for subParam in getParams(param):
+			# print("getJsonParam:", subParam)
+			name = subParam.pop("name")
+			title = ""
+			if "description" in subParam:
+				title = subParam.pop("description")
+			prop = {
+				"title": title,
+			}
+			if "schema" in subParam:
+				prop["schema"] = subParam.pop("schema")
+			prop.update(subParam)
+			properties[name] = prop
+		schema["properties"] = properties
 	paramJson = {}
 	if paramName:
 		paramJson["name"] = paramName

@@ -155,7 +155,54 @@
           "name": "conds",
           "description": "",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "admin": {
+                "title": "admin username, must have access",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "login_date_from": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "login_date_from_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "login_date_to": {
+                "title": "",
+                "schema": {
+                  "type": "string"
+                },
+                "required": false
+              },
+              "login_date_to_unit": {
+                "title": "",
+                "value": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              }
+            }
           }
         },
         {

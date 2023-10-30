@@ -315,7 +315,8 @@
           "name": "children_ippool_percentages",
           "description": "keys are IPPool Names, values are percentage numbers",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {}
           }
         }
       ],
@@ -364,7 +365,8 @@
           "name": "children_ippool_percentages",
           "description": "keys are IPPool Names, values are percentage numbers",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {}
           }
         }
       ],

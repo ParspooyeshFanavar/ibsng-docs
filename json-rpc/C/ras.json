@@ -130,7 +130,8 @@
             "attrs": {
               "title": "",
               "schema": {
-                "type": "object"
+                "type": "object",
+                "properties": {}
               }
             }
           }
@@ -321,7 +322,8 @@
           "name": "attrs",
           "description": "",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {}
           }
         }
       ],

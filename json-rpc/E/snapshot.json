@@ -86,7 +86,21 @@
           "name": "conds",
           "description": "",
           "schema": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "ras_ips": {
+                "title": "",
+                "schema": {
+                  "type": "array"
+                }
+              },
+              "isp_names": {
+                "title": "",
+                "schema": {
+                  "type": "array"
+                }
+              }
+            }
           }
         },
         {
