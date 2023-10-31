@@ -279,7 +279,7 @@
                     "name": "successful",
                     "description": "",
                     "enum": ["t", "f"],
-                    "value_comment": {
+                    "__value_comment__": {
                       "t": "true",
                       "f": "false"
                     }

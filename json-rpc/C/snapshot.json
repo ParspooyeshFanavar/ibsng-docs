@@ -166,7 +166,7 @@
               "date_from_op": {
                 "title": "operation for start date",
                 "enum": ["<", ">", "<=", ">="],
-                "value_comment": {
+                "__value_comment__": {
                   "<": "less than",
                   ">": "more than",
                   "<=": "less equal",
@@ -176,7 +176,7 @@
               "date_to_op": {
                 "title": "operation for end date",
                 "enum": ["<", ">", "<=", ">="],
-                "value_comment": {
+                "__value_comment__": {
                   "<": "less than",
                   ">": "more than",
                   "<=": "less equal",
@@ -248,7 +248,7 @@
               "date_from_op": {
                 "title": "operation for start date",
                 "enum": ["<", ">", "<=", ">="],
-                "value_comment": {
+                "__value_comment__": {
                   "<": "less than",
                   ">": "more than",
                   "<=": "less equal",
@@ -258,7 +258,7 @@
               "date_to_op": {
                 "title": "operation for end date",
                 "enum": ["<", ">", "<=", ">="],
-                "value_comment": {
+                "__value_comment__": {
                   "<": "less than",
                   ">": "more than",
                   "<=": "less equal",
@@ -330,7 +330,7 @@
               "date_from_op": {
                 "title": "operation for start date",
                 "enum": ["<", ">", "<=", ">="],
-                "value_comment": {
+                "__value_comment__": {
                   "<": "less than",
                   ">": "more than",
                   "<=": "less equal",
@@ -340,7 +340,7 @@
               "date_to_op": {
                 "title": "operation for end date",
                 "enum": ["<", ">", "<=", ">="],
-                "value_comment": {
+                "__value_comment__": {
                   "<": "less than",
                   ">": "more than",
                   "<=": "less equal",

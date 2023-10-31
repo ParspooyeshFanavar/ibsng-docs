@@ -166,7 +166,7 @@
                       "url",
                       "user_event"
                     ],
-                    "value_comment": {
+                    "__value_comment__": {
                       "url": "call a URL specified in `message_template`, added in tag 312",
                       "user_event": "added in tag (NO TAG YET)"
                     }
@@ -273,7 +273,7 @@
             "url",
             "user_event"
           ],
-          "value_comment": {
+          "__value_comment__": {
             "url": "call a URL specified in `message_template`, added in tag 312",
             "user_event": "added in tag (NO TAG YET)"
           }
@@ -375,7 +375,7 @@
             "url",
             "user_event"
           ],
-          "value_comment": {
+          "__value_comment__": {
             "url": "call a URL specified in `message_template`, added in tag 312",
             "user_event": "added in tag (NO TAG YET)"
           }

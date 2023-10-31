@@ -126,7 +126,7 @@
                   "type": "number",
                   "minimum": 0,
                   "maximum": 2,
-                  "value_comment": {
+                  "__value_comment__": {
                     "0": "Package",
                     "1": "Recharged",
                     "2": "Temporary Extended"
@@ -981,7 +981,7 @@
                 "rel_exp_date_unit": {
                   "title": "",
                   "enum": ["Minutes", "Hours", "Days", "Months", "Years"],
-                  "value_comment": {
+                  "__value_comment__": {
                     "Months": "1 month means 30 days",
                     "Years": "1 month means 365 days"
                   }
@@ -994,7 +994,7 @@
                 "rel_exp_date_negative_credit_unit": {
                   "title": "User Info: Exp Dates: Negative Credit Expiration Date: Negative Credit Relative Expiration Date",
                   "enum": ["Minutes", "Hours", "Days", "Months", "Years"],
-                  "value_comment": {
+                  "__value_comment__": {
                     "Months": "1 month means 30 days",
                     "Years": "1 month means 365 days"
                   }
@@ -1301,7 +1301,7 @@
                     "minimum": 0,
                     "maximum": 2,
                     "default": 2,
-                    "value_comment": {
+                    "__value_comment__": {
                       "0": "alphanumeric: abcdefghijkmnpqrstuvwxyz23456789",
                       "1": "alphabet only: abcdefghijklmnopqrstuvwxyz",
                       "2": "numbers only: 123456789"
@@ -1323,7 +1323,7 @@
                     "minimum": 0,
                     "maximum": 2,
                     "default": 2,
-                    "value_comment": {
+                    "__value_comment__": {
                       "0": "alphanumeric: abcdefghijkmnpqrstuvwxyz23456789",
                       "1": "alphabet only: abcdefghijklmnopqrstuvwxyz",
                       "2": "numbers only: 123456789"
@@ -1362,7 +1362,7 @@
                     "minimum": 0,
                     "maximum": 2,
                     "default": 2,
-                    "value_comment": {
+                    "__value_comment__": {
                       "0": "alphanumeric: abcdefghijkmnpqrstuvwxyz23456789",
                       "1": "alphabet only: abcdefghijklmnopqrstuvwxyz",
                       "2": "numbers only: 123456789"
@@ -1384,7 +1384,7 @@
                     "minimum": 0,
                     "maximum": 2,
                     "default": 2,
-                    "value_comment": {
+                    "__value_comment__": {
                       "0": "alphanumeric: abcdefghijkmnpqrstuvwxyz23456789",
                       "1": "alphabet only: abcdefghijklmnopqrstuvwxyz",
                       "2": "numbers only: 123456789"
@@ -2244,7 +2244,7 @@
               "rel_exp_date_unit": {
                 "title": "",
                 "enum": ["Minutes", "Hours", "Days", "Months", "Years"],
-                "value_comment": {
+                "__value_comment__": {
                   "Months": "1 month means 30 days",
                   "Years": "1 month means 365 days"
                 }
@@ -2257,7 +2257,7 @@
               "rel_exp_date_negative_credit_unit": {
                 "title": "User Info: Exp Dates: Negative Credit Expiration Date: Negative Credit Relative Expiration Date",
                 "enum": ["Minutes", "Hours", "Days", "Months", "Years"],
-                "value_comment": {
+                "__value_comment__": {
                   "Months": "1 month means 30 days",
                   "Years": "1 month means 365 days"
                 }

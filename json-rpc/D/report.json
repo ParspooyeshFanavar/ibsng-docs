@@ -1889,7 +1889,7 @@
             "serial",
             "serial_numeric"
           ],
-          "value_comment": {
+          "__value_comment__": {
             "owner_id": "owner isp id"
           }
         },
@@ -2645,7 +2645,7 @@
                 "before_credit",
                 "user_ids"
               ],
-              "value_comment": {
+              "__value_comment__": {
                 "user_id": "in user_view mode only",
                 "username": "in user_view mode only",
                 "name": "in user_view mode only",
@@ -3305,7 +3305,7 @@
                     "name": "is_user",
                     "description": "",
                     "enum": ["t", "f"],
-                    "value_comment": {
+                    "__value_comment__": {
                       "t": "true / yes",
                       "f": "false / no"
                     }
@@ -4220,7 +4220,7 @@
                     "11",
                     "12"
                   ],
-                  "value_comment": {
+                  "__value_comment__": {
                     "0": "_NO_CATEGORY_",
                     "1": "RAS",
                     "2": "CHARGE",
@@ -4244,7 +4244,7 @@
                 "items": {
                   "title": "",
                   "enum": ["1", "2", "3"],
-                  "value_comment": {
+                  "__value_comment__": {
                     "1": "ADD",
                     "2": "CHANGE",
                     "3": "DELETE"
@@ -4382,7 +4382,7 @@
                     "type": "number",
                     "minimum": 0,
                     "maximum": 12,
-                    "value_comment": {
+                    "__value_comment__": {
                       "0": "_NO_CATEGORY_",
                       "1": "RAS",
                       "2": "CHARGE",
@@ -4433,7 +4433,7 @@
                     "type": "number",
                     "minimum": 1,
                     "maximum": 3,
-                    "value_comment": {
+                    "__value_comment__": {
                       "1": "ADD",
                       "2": "CHANGE",
                       "3": "DELETE"
@@ -4672,7 +4672,7 @@
                             "Verify",
                             "After-Verify"
                           ],
-                          "value_comment": {
+                          "__value_comment__": {
                             "Settle": "for Bank Mellat only",
                             "After-Verify": "only if there was an error after Verify stage"
                           }
@@ -4729,7 +4729,7 @@
                     "name": "succeed",
                     "description": "",
                     "enum": ["t", "f"],
-                    "value_comment": {
+                    "__value_comment__": {
                       "t": "true",
                       "f": "false"
                     }

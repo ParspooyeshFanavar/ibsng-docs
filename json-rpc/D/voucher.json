@@ -516,7 +516,7 @@
               "change_target": {
                 "title": "",
                 "enum": ["credit", "deposit", "deposit_recharge"],
-                "value_comment": {
+                "__value_comment__": {
                   "credit": "Credit",
                   "deposit": "Renew Deposit",
                   "deposit_recharge": "Recharge Deposit"
@@ -656,7 +656,7 @@
             "change_target": {
               "title": "",
               "enum": ["credit", "deposit", "deposit_recharge"],
-              "value_comment": {
+              "__value_comment__": {
                 "credit": "Credit",
                 "deposit": "Renew Deposit",
                 "deposit_recharge": "Recharge Deposit"
@@ -869,7 +869,7 @@
                   {
                     "name": "change_target",
                     "enum": ["credit", "deposit", "deposit_recharge"],
-                    "value_comment": {
+                    "__value_comment__": {
                       "credit": "Credit",
                       "deposit": "Renew Deposit",
                       "deposit_recharge": "Recharge Deposit"

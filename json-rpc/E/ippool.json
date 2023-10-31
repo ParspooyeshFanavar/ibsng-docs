@@ -97,7 +97,7 @@
           "name": "ippool_type",
           "description": "",
           "enum": ["load_balancing", ""],
-          "value_comment": {
+          "__value_comment__": {
             "load_balancing": "Load Balancing IPPool",
             "": "Not a Load Balancing IPPool"
           }
