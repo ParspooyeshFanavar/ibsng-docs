@@ -82,12 +82,14 @@ def dataToPrettyJson(data):
 	)
 
 
+
 def getChoiceJsonParam(param: "Element") -> dict:
 	paramName = param.attrib.get("name")
 	description = param.attrib.get("comment")
 	values = []
 	comments = {}
 	default = None
+	valueTypes = set()
 	for choiceElem in param.getchildren():
 		if choiceElem.tag != "choice":
 			# print(f"getChoiceJsonParam: expected choice tag, got {toStr(choiceElem)}")
@@ -98,6 +100,7 @@ def getChoiceJsonParam(param: "Element") -> dict:
 			return
 		_type = choiceElem.attrib.get("type")
 		if _type:
+			valueTypes.add(_type)
 			if _type == "int":
 				value = int(value)
 			elif _type == "str":
@@ -110,14 +113,32 @@ def getChoiceJsonParam(param: "Element") -> dict:
 			comments[value] = comment
 		if choiceElem.attrib.get("default"):
 			default = value
+	seqauential = False
 	if not values:
 		print(f"choice with no values: {toStr(param)}")
+	elif len(valueTypes) > 1:
+		print(f"more than one value type for: {toStr(param)}")
+	elif valueTypes:
+		_type = list(valueTypes)[0]
+		if _type == "int":
+			values = sorted(values)
+			if values[-1] - values[0] == len(values) - 1:
+				# print(f"seqauential: {values}")
+				seqauential = True
+			else:
+				print(f"non-seqauential integer choice values: {values}")
+
 	paramJson = {}
 	if paramName:
 		paramJson["name"] = paramName
 	if description is not None:
 		paramJson["description"] = description
-	paramJson["enum"] = values
+	if seqauential:
+		paramJson["type"] = "number"
+		paramJson["minimum"] = values[0]
+		paramJson["maximum"] = values[-1]
+	else:
+		paramJson["enum"] = values
 	if default is not None:
 		if default in ("true", "false"):
 			default = default == "true"
@@ -474,8 +495,8 @@ def convert(xmlFileName, branch, outDir):
 
 
 if __name__ == '__main__':
-    fpath = sys.argv[1]
-    branch = sys.argv[2]
-    outDir = sys.argv[3]
-    convert(fpath, branch, outDir)
+	fpath = sys.argv[1]
+	branch = sys.argv[2]
+	outDir = sys.argv[3]
+	convert(fpath, branch, outDir)
 

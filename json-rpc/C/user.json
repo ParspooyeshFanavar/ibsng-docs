@@ -123,7 +123,9 @@
                 },
                 "status": {
                   "title": "",
-                  "enum": [0, 1, 2],
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 2,
                   "value_comment": {
                     "0": "Package",
                     "1": "Recharged",
@@ -1295,7 +1297,9 @@
                   },
                   "normal_username_random_type": {
                     "title": "",
-                    "enum": [0, 1, 2],
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 2,
                     "default": 2,
                     "value_comment": {
                       "0": "alphanumeric: abcdefghijkmnpqrstuvwxyz23456789",
@@ -1315,7 +1319,9 @@
                   },
                   "normal_password_random_type": {
                     "title": "",
-                    "enum": [0, 1, 2],
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 2,
                     "default": 2,
                     "value_comment": {
                       "0": "alphanumeric: abcdefghijkmnpqrstuvwxyz23456789",
@@ -1352,7 +1358,9 @@
                   },
                   "voip_username_random_type": {
                     "title": "",
-                    "enum": [0, 1, 2],
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 2,
                     "default": 2,
                     "value_comment": {
                       "0": "alphanumeric: abcdefghijkmnpqrstuvwxyz23456789",
@@ -1372,7 +1380,9 @@
                   },
                   "voip_password_random_type": {
                     "title": "",
-                    "enum": [0, 1, 2],
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 2,
                     "default": 2,
                     "value_comment": {
                       "0": "alphanumeric: abcdefghijkmnpqrstuvwxyz23456789",
