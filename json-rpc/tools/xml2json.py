@@ -495,8 +495,8 @@ def convertSubsystem(handler, branch, outDir):
 		_file.write(dataToPrettyJson({
 			"openrpc": "1.2.1",
 			"info": {
+				"title": f"IBSng: branch {branch}: {handlerName}",
 				"version": "1.0.0",
-				"title": f"IBSng: branch {branch}: {handlerName}"
 			},
 			"methods": methods,
 		}))

@@ -1,8 +1,8 @@
 {
   "openrpc": "1.2.1",
   "info": {
-    "version": "1.0.0",
-    "title": "IBSng: branch D: user_custom_field"
+    "title": "IBSng: branch D: user_custom_field",
+    "version": "1.0.0"
   },
   "methods": [
     {

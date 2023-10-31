@@ -1,8 +1,8 @@
 {
   "openrpc": "1.2.1",
   "info": {
-    "version": "1.0.0",
-    "title": "IBSng: branch C: telephony_support"
+    "title": "IBSng: branch C: telephony_support",
+    "version": "1.0.0"
   },
   "methods": [
     {
