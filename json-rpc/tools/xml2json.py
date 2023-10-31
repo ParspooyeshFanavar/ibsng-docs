@@ -295,7 +295,11 @@ def getJsonParam(param: "Element") -> dict:
 	else:
 		newType = ParamType()
 
-	if paramValue:
+	if paramValue in ("true", "false"):
+		if description:
+			description += ", "
+		description += f"always {paramValue}"
+	elif paramValue:
 		# like a choice with one value
 		paramJson = {
 			"name": paramName,
@@ -367,23 +371,37 @@ def getJsonMethod(handlerName: str, method: "Element", authTypes: list[str]):
 
 	params = getParams(inputElem)
 
+	methodDesc = method.attrib.get("comment", "")
+	outputComment = outputElem.attrib.get("comment", "")
+	outputType = outputElem.attrib.get("type")
+	outputValue = outputElem.attrib.get("value")
+
+	resultName = ""
+
+	resultValues: "list | None" = None
+	if outputValue in ("true", "false"):
+		#if outputComment:
+		#	outputComment += ", "
+		#outputComment += f"always {outputValue}"
+		resultName = f"Response (always {outputValue})"
+	elif outputValue:
+		resultValues = [outputValue]
+
+
 	jsonMethod = {
 		"name": handlerName + "." + methodName,
-		"description": method.attrib.get("comment", ""),
+		"description": methodDesc,
 		"auth_type": authTypes,
 	}
 	requires_perm = method.attrib.get("requires_perm")
 	if requires_perm:
 		jsonMethod["requires_perm"] = requires_perm
 	jsonMethod["params"] = params
-	outputComment = outputElem.attrib.get("comment", "")
-	outputType = outputElem.attrib.get("type")
-	outputValue = outputElem.attrib.get("value")
+
 	resultType = ParamType()
-	resultValues: "list | None" = None
-	if outputValue:
-		resultValues = [outputValue]
-	elif not outputType:
+
+
+	if not (outputValue or outputType):
 		print(f"no output type nor value: {branch=}: {toStr(method)}")
 		return None
 	if outputType == "choice":
@@ -419,11 +437,11 @@ def getJsonMethod(handlerName: str, method: "Element", authTypes: list[str]):
 			jsonParam.update(jsonParamTmp.pop("schema"))
 		jsonParam.update(jsonParamTmp)
 		resultParams[paramName] = jsonParam
-	resultName = ""
-	if resultValues is not None:
-		resultName = "Response (one of following values)"
-	elif resultType.type:
-		resultName = f"Response ({resultType.type})"
+	if not resultName:
+		if resultValues is not None:
+			resultName = "Response (one of following values)"
+		elif resultType.type:
+			resultName = f"Response ({resultType.type})"
 	result = {
 		"name": resultName,
 		"comment": outputComment,

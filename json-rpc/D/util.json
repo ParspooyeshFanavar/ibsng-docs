@@ -49,13 +49,12 @@
         }
       ],
       "result": {
-        "name": "Response (one of following values)",
+        "name": "Response (always true)",
         "comment": "",
         "schema": {
           "title": "",
           "type": "boolean"
-        },
-        "enum": ["true"]
+        }
       }
     },
     {
@@ -491,9 +490,8 @@
         }
       ],
       "result": {
-        "name": "Response (one of following values)",
-        "comment": "",
-        "enum": ["true"]
+        "name": "Response (always true)",
+        "comment": ""
       }
     },
     {
