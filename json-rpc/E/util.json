@@ -27,7 +27,7 @@
       ],
       "result": {
         "name": "Response (array)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "array"
@@ -50,7 +50,7 @@
       ],
       "result": {
         "name": "Response (always true)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "boolean"
@@ -64,7 +64,7 @@
       "params": [],
       "result": {
         "name": "Response (string)",
-        "comment": "date string with format '%Y-%m-%d'",
+        "summary": "date string with format '%Y-%m-%d'",
         "schema": {
           "title": "",
           "type": "string"
@@ -78,7 +78,7 @@
       "params": [],
       "result": {
         "name": "Response (string)",
-        "comment": "formatted datetime of current time",
+        "summary": "formatted datetime of current time",
         "schema": {
           "title": "",
           "type": "string"
@@ -101,7 +101,7 @@
       ],
       "result": {
         "name": "Response (object)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "object",
@@ -130,7 +130,7 @@
       "params": [],
       "result": {
         "name": "Response (array)",
-        "comment": "list of group names",
+        "summary": "list of group names",
         "schema": {
           "title": "",
           "type": "array"
@@ -167,7 +167,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -190,7 +190,7 @@
       ],
       "result": {
         "name": "Response (string)",
-        "comment": "a user id, or 'No User Found'",
+        "summary": "a user id, or 'No User Found'",
         "schema": {
           "title": "",
           "type": "string"
@@ -213,7 +213,7 @@
       ],
       "result": {
         "name": "Response (string)",
-        "comment": "a username, or 'No User Found'",
+        "summary": "a username, or 'No User Found'",
         "schema": {
           "title": "",
           "type": "string"
@@ -227,7 +227,7 @@
       "params": [],
       "result": {
         "name": "Response (string)",
-        "comment": "Session ID",
+        "summary": "Session ID",
         "schema": {
           "title": "",
           "type": "string"
@@ -241,7 +241,7 @@
       "params": [],
       "result": {
         "name": "Response (string)",
-        "comment": "Session ID",
+        "summary": "Session ID",
         "schema": {
           "title": "",
           "type": "string"
@@ -255,7 +255,7 @@
       "params": [],
       "result": {
         "name": "Response (array)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "array"
@@ -269,7 +269,7 @@
       "params": [],
       "result": {
         "name": "Response (boolean)",
-        "comment": "returns true if online user was found and disconnected, returns false otherwise",
+        "summary": "returns true if online user was found and disconnected, returns false otherwise",
         "schema": {
           "title": "",
           "type": "boolean"
@@ -291,7 +291,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -314,7 +314,7 @@
       ],
       "result": {
         "name": "Response (string)",
-        "comment": "the same value of 'echo' param",
+        "summary": "the same value of 'echo' param",
         "schema": {
           "title": "",
           "type": "string"
@@ -328,7 +328,7 @@
       "params": [],
       "result": {
         "name": "Response (number)",
-        "comment": "ISP ID for Page Style to show to this user/admin",
+        "summary": "ISP ID for Page Style to show to this user/admin",
         "schema": {
           "title": "",
           "type": "number"
@@ -350,7 +350,7 @@
       ],
       "result": {
         "name": "Response (number)",
-        "comment": "ISP ID for Page Style to show to this user/admin",
+        "summary": "ISP ID for Page Style to show to this user/admin",
         "schema": {
           "title": "",
           "type": "number"
@@ -364,7 +364,7 @@
       "params": [],
       "result": {
         "name": "Response (number)",
-        "comment": "Revision Number of ISP Page Style",
+        "summary": "Revision Number of ISP Page Style",
         "schema": {
           "title": "",
           "type": "number"
@@ -378,7 +378,7 @@
       "params": [],
       "result": {
         "name": "Response (object)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "object",
@@ -431,7 +431,7 @@
       "params": [],
       "result": {
         "name": "Response (array)",
-        "comment": "see http://www.drbd.org/en/doc/users-guide-83/ch-admin#s-drbd-overview",
+        "summary": "see http://www.drbd.org/en/doc/users-guide-83/ch-admin#s-drbd-overview",
         "schema": {
           "title": "",
           "type": "array"
@@ -445,7 +445,7 @@
       "params": [],
       "result": {
         "name": "Response (array)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "array"
@@ -491,7 +491,7 @@
       ],
       "result": {
         "name": "Response (always true)",
-        "comment": ""
+        "summary": ""
       }
     },
     {
@@ -501,7 +501,7 @@
       "params": [],
       "result": {
         "name": "Response (object)",
-        "comment": "return version,tag,branch",
+        "summary": "return version,tag,branch",
         "schema": {
           "title": "",
           "type": "object",

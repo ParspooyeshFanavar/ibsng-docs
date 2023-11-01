@@ -13,7 +13,7 @@
       "params": [],
       "result": {
         "name": "Response (array)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "array"
@@ -28,7 +28,7 @@
       "params": [],
       "result": {
         "name": "Response (object)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "object"
@@ -43,7 +43,7 @@
       "params": [],
       "result": {
         "name": "Response (array)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "array"

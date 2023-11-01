@@ -20,7 +20,7 @@
       ],
       "result": {
         "name": "Response (array)",
-        "comment": "list of charge names",
+        "summary": "list of charge names",
         "schema": {
           "title": "",
           "type": "array"
@@ -42,7 +42,7 @@
       ],
       "result": {
         "name": "Response (object)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "object",
@@ -132,7 +132,7 @@
       ],
       "result": {
         "name": "Response (number)",
-        "comment": "Charge ID",
+        "summary": "Charge ID",
         "schema": {
           "title": "",
           "type": "number"
@@ -162,7 +162,7 @@
       ],
       "result": {
         "name": "Response (array)",
-        "comment": "New Charge IDs",
+        "summary": "New Charge IDs",
         "schema": {
           "title": "",
           "type": "array"
@@ -199,7 +199,7 @@
       ],
       "result": {
         "name": "Response (array)",
-        "comment": "New Charge IDs",
+        "summary": "New Charge IDs",
         "schema": {
           "title": "",
           "type": "array"
@@ -243,7 +243,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -266,7 +266,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -303,7 +303,7 @@
       ],
       "result": {
         "name": "Response (number)",
-        "comment": "Charge Rule ID",
+        "summary": "Charge Rule ID",
         "schema": {
           "title": "",
           "type": "number"
@@ -347,7 +347,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -377,7 +377,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -422,7 +422,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"

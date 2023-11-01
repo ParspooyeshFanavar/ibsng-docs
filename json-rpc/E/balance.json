@@ -96,7 +96,7 @@
       ],
       "result": {
         "name": "Response (object)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "object",
@@ -116,7 +116,7 @@
       "params": [],
       "result": {
         "name": "Response (object)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "object",
@@ -140,7 +140,7 @@
       "params": [],
       "result": {
         "name": "Response (array)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "array",
@@ -164,7 +164,7 @@
       "params": [],
       "result": {
         "name": "Response (array)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "array",
@@ -209,7 +209,7 @@
       ],
       "result": {
         "name": "Response (object)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "object"
@@ -306,7 +306,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -321,7 +321,7 @@
       "params": [],
       "result": {
         "name": "Response (object)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "object",
@@ -354,7 +354,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -378,7 +378,7 @@
       ],
       "result": {
         "name": "Response (array)",
-        "comment": "list of name balances",
+        "summary": "list of name balances",
         "schema": {
           "title": "",
           "type": "array"
@@ -393,7 +393,7 @@
       "params": [],
       "result": {
         "name": "Response (array)",
-        "comment": "list of balance name and balance id",
+        "summary": "list of balance name and balance id",
         "schema": {
           "title": "",
           "type": "array"
@@ -415,7 +415,7 @@
       ],
       "result": {
         "name": "Response (object)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "object",
@@ -522,7 +522,7 @@
       ],
       "result": {
         "name": "Response (object)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "object",

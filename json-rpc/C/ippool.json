@@ -28,7 +28,7 @@
       ],
       "result": {
         "name": "Response (number)",
-        "comment": "IPPool ID",
+        "summary": "IPPool ID",
         "schema": {
           "title": "",
           "type": "number"
@@ -65,7 +65,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -80,7 +80,7 @@
       "params": [],
       "result": {
         "name": "Response (array)",
-        "comment": "list of ippool names",
+        "summary": "list of ippool names",
         "schema": {
           "title": "",
           "type": "array"
@@ -105,7 +105,7 @@
       ],
       "result": {
         "name": "Response (array)",
-        "comment": "list of ippool names",
+        "summary": "list of ippool names",
         "schema": {
           "title": "",
           "type": "array"
@@ -128,7 +128,7 @@
       ],
       "result": {
         "name": "Response (object)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "object",
@@ -177,7 +177,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -207,7 +207,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -237,7 +237,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -267,7 +267,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -310,7 +310,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -360,7 +360,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -383,7 +383,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"

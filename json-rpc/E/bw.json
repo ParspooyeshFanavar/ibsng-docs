@@ -40,7 +40,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -98,7 +98,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -170,7 +170,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -233,7 +233,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -248,7 +248,7 @@
       "params": [],
       "result": {
         "name": "Response (object)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "object"
@@ -271,7 +271,7 @@
       ],
       "result": {
         "name": "Response (object)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "object",
@@ -340,7 +340,7 @@
       ],
       "result": {
         "name": "Response (object)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "object",
@@ -424,7 +424,7 @@
       ],
       "result": {
         "name": "Response (array)",
-        "comment": "tree",
+        "summary": "tree",
         "schema": {
           "title": "",
           "type": "array"
@@ -454,7 +454,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -477,7 +477,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -492,7 +492,7 @@
       "params": [],
       "result": {
         "name": "Response (array)",
-        "comment": "list of leaf names",
+        "summary": "list of leaf names",
         "schema": {
           "title": "",
           "type": "array"
@@ -515,7 +515,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -545,7 +545,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -594,7 +594,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -638,7 +638,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -710,7 +710,7 @@
       ],
       "result": {
         "name": "Response (object)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "object"
@@ -780,7 +780,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -817,7 +817,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -861,7 +861,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -884,7 +884,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -899,7 +899,7 @@
       "params": [],
       "result": {
         "name": "Response (array)",
-        "comment": "list of IPs",
+        "summary": "list of IPs",
         "schema": {
           "title": "",
           "type": "array"
@@ -922,7 +922,7 @@
       ],
       "result": {
         "name": "Response (object)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "object",
@@ -978,7 +978,7 @@
       ],
       "result": {
         "name": "Response (array)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "array"
@@ -1001,7 +1001,7 @@
       ],
       "result": {
         "name": "Response (array)",
-        "comment": "list of charge names",
+        "summary": "list of charge names",
         "schema": {
           "title": "",
           "type": "array"
@@ -1029,7 +1029,7 @@
       ],
       "result": {
         "name": "Response (array)",
-        "comment": "list of interfaces",
+        "summary": "list of interfaces",
         "schema": {
           "title": "",
           "type": "array"

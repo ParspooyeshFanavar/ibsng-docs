@@ -21,7 +21,7 @@
       ],
       "result": {
         "name": "Response (array)",
-        "comment": "list of usernames",
+        "summary": "list of usernames",
         "schema": {
           "title": "",
           "type": "array"
@@ -44,7 +44,7 @@
       ],
       "result": {
         "name": "Response (array)",
-        "comment": "list of usernames",
+        "summary": "list of usernames",
         "schema": {
           "title": "",
           "type": "array"
@@ -67,7 +67,7 @@
       ],
       "result": {
         "name": "Response (object)",
-        "comment": "user info",
+        "summary": "user info",
         "schema": {
           "title": "",
           "type": "object"
@@ -90,7 +90,7 @@
       ],
       "result": {
         "name": "Response (array)",
-        "comment": "domain info keys",
+        "summary": "domain info keys",
         "schema": {
           "title": "",
           "type": "array"
@@ -134,7 +134,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -157,7 +157,7 @@
       ],
       "result": {
         "name": "Response (array)",
-        "comment": "ldap keys mapping",
+        "summary": "ldap keys mapping",
         "schema": {
           "title": "",
           "type": "array"
@@ -201,7 +201,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -238,7 +238,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -261,7 +261,7 @@
       ],
       "result": {
         "name": "Response (object)",
-        "comment": "dictionary of two key-values representing search filter and search base",
+        "summary": "dictionary of two key-values representing search filter and search base",
         "schema": {
           "title": "",
           "type": "object"

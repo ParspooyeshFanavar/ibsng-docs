@@ -29,7 +29,7 @@
       ],
       "result": {
         "name": "Response (array)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "array"
@@ -58,7 +58,7 @@
       ],
       "result": {
         "name": "Response (number)",
-        "comment": "number of updated notifications",
+        "summary": "number of updated notifications",
         "schema": {
           "title": "",
           "type": "number"

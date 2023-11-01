@@ -444,7 +444,7 @@ def getJsonMethod(handlerName: str, method: "Element", authTypes: list[str]):
 			resultName = f"Response ({resultType.type})"
 	result = {
 		"name": resultName,
-		"comment": outputComment,
+		"summary": outputComment,
 	}
 	if resultType.type:
 		resultSchema = {

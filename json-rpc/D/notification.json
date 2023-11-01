@@ -12,7 +12,7 @@
       "params": [],
       "result": {
         "name": "Response (array)",
-        "comment": "list of profile names",
+        "summary": "list of profile names",
         "schema": {
           "title": "",
           "type": "array"
@@ -27,7 +27,7 @@
       "params": [],
       "result": {
         "name": "Response (array)",
-        "comment": "list of profile infos",
+        "summary": "list of profile infos",
         "schema": {
           "title": "",
           "type": "array"
@@ -57,7 +57,7 @@
       ],
       "result": {
         "name": "Response (number)",
-        "comment": "the new notification_profile_id",
+        "summary": "the new notification_profile_id",
         "schema": {
           "title": "",
           "type": "number"
@@ -94,7 +94,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -116,7 +116,7 @@
       ],
       "result": {
         "name": "Response (object)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "object",
@@ -221,7 +221,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -288,7 +288,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -318,7 +318,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -390,7 +390,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"

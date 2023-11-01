@@ -13,7 +13,7 @@
       "params": [],
       "result": {
         "name": "Response (array)",
-        "comment": "list of profile names",
+        "summary": "list of profile names",
         "schema": {
           "title": "",
           "type": "array"
@@ -28,7 +28,7 @@
       "params": [],
       "result": {
         "name": "Response (array)",
-        "comment": "list of provider names",
+        "summary": "list of provider names",
         "schema": {
           "title": "",
           "type": "array"

@@ -21,7 +21,7 @@
       ],
       "result": {
         "name": "Response (array)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "array"
@@ -55,7 +55,7 @@
       ],
       "result": {
         "name": "Response (array)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "array"
@@ -78,7 +78,7 @@
       ],
       "result": {
         "name": "Response (number)",
-        "comment": "credit",
+        "summary": "credit",
         "schema": {
           "title": "",
           "type": "number"
@@ -101,7 +101,7 @@
       ],
       "result": {
         "name": "Response (array)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "array"
@@ -124,7 +124,7 @@
       ],
       "result": {
         "name": "Response (string)",
-        "comment": "expiration date",
+        "summary": "expiration date",
         "schema": {
           "title": "",
           "type": "string"
@@ -147,7 +147,7 @@
       ],
       "result": {
         "name": "Response (one of following values)",
-        "comment": "",
+        "summary": "",
         "enum": [
           "0",
           "900",
@@ -190,7 +190,7 @@
       ],
       "result": {
         "name": "Response (array)",
-        "comment": "length=0 if there is no connection",
+        "summary": "length=0 if there is no connection",
         "schema": {
           "title": "",
           "type": "array"
@@ -220,7 +220,7 @@
       ],
       "result": {
         "name": "Response (number)",
-        "comment": "increased credit",
+        "summary": "increased credit",
         "schema": {
           "title": "",
           "type": "number"
@@ -250,7 +250,7 @@
       ],
       "result": {
         "name": "Response (boolean)",
-        "comment": "true if password is correct, false otherwise",
+        "summary": "true if password is correct, false otherwise",
         "schema": {
           "title": "",
           "type": "boolean"
@@ -280,7 +280,7 @@
       ],
       "result": {
         "name": "Response (always true)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "boolean"

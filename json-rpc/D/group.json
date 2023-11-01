@@ -35,7 +35,7 @@
       ],
       "result": {
         "name": "Response (number)",
-        "comment": "Group ID",
+        "summary": "Group ID",
         "schema": {
           "title": "",
           "type": "number"
@@ -79,7 +79,7 @@
       ],
       "result": {
         "name": "Response (array)",
-        "comment": "list of Group IDs",
+        "summary": "list of Group IDs",
         "schema": {
           "title": "",
           "type": "array"
@@ -109,7 +109,7 @@
       ],
       "result": {
         "name": "Response (array)",
-        "comment": "list of group names",
+        "summary": "list of group names",
         "schema": {
           "title": "",
           "type": "array"
@@ -132,7 +132,7 @@
       ],
       "result": {
         "name": "Response (array)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "array"
@@ -162,7 +162,7 @@
       ],
       "result": {
         "name": "Response (array)",
-        "comment": "list of group informations",
+        "summary": "list of group informations",
         "schema": {
           "title": "",
           "type": "array"
@@ -176,7 +176,7 @@
       "params": [],
       "result": {
         "name": "Response (object)",
-        "comment": "keys are group names, values are group credits",
+        "summary": "keys are group names, values are group credits",
         "schema": {
           "title": "",
           "type": "object"
@@ -190,7 +190,7 @@
       "params": [],
       "result": {
         "name": "Response (object)",
-        "comment": "keys are group names, values are user count in each group",
+        "summary": "keys are group names, values are user count in each group",
         "schema": {
           "title": "",
           "type": "object"
@@ -221,7 +221,7 @@
       ],
       "result": {
         "name": "Response (object)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "object",
@@ -290,7 +290,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -328,7 +328,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -351,7 +351,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"

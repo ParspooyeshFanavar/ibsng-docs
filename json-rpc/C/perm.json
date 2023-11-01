@@ -28,7 +28,7 @@
       ],
       "result": {
         "name": "Response (boolean)",
-        "comment": "true if admin has this permission, false otherwise",
+        "summary": "true if admin has this permission, false otherwise",
         "schema": {
           "title": "",
           "type": "boolean"
@@ -65,7 +65,7 @@
       ],
       "result": {
         "name": "Response (boolean)",
-        "comment": "true if admin can do it, false otherwise",
+        "summary": "true if admin can do it, false otherwise",
         "schema": {
           "title": "",
           "type": "boolean"
@@ -88,7 +88,7 @@
       ],
       "result": {
         "name": "Response (array)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "array"
@@ -102,7 +102,7 @@
       "params": [],
       "result": {
         "name": "Response (array)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "array"
@@ -132,7 +132,7 @@
       ],
       "result": {
         "name": "",
-        "comment": "type depends on {perm_name}"
+        "summary": "type depends on {perm_name}"
       }
     },
     {
@@ -165,7 +165,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -194,7 +194,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -231,7 +231,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -261,7 +261,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -276,7 +276,7 @@
       "params": [],
       "result": {
         "name": "Response (array)",
-        "comment": "list of template names",
+        "summary": "list of template names",
         "schema": {
           "title": "",
           "type": "array"
@@ -299,7 +299,7 @@
       ],
       "result": {
         "name": "Response (array)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "array"
@@ -329,7 +329,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -352,7 +352,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -382,7 +382,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"

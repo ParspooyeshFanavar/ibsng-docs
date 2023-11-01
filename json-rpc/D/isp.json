@@ -91,7 +91,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -191,7 +191,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -205,7 +205,7 @@
       "params": [],
       "result": {
         "name": "Response (array)",
-        "comment": "list of ISP names",
+        "summary": "list of ISP names",
         "schema": {
           "title": "",
           "type": "array"
@@ -219,7 +219,7 @@
       "params": [],
       "result": {
         "name": "Response (array)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "array"
@@ -233,7 +233,7 @@
       "params": [],
       "result": {
         "name": "Response (array)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "array"
@@ -265,7 +265,7 @@
       ],
       "result": {
         "name": "Response (object)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "object",
@@ -372,7 +372,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -395,7 +395,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -418,7 +418,7 @@
       ],
       "result": {
         "name": "Response (object)",
-        "comment": "a nested dict {isp_name => sub_tree} which represents ISP tree",
+        "summary": "a nested dict {isp_name => sub_tree} which represents ISP tree",
         "schema": {
           "title": "",
           "type": "object"
@@ -433,7 +433,7 @@
       "params": [],
       "result": {
         "name": "Response (array)",
-        "comment": "list of Mapped User IDs",
+        "summary": "list of Mapped User IDs",
         "schema": {
           "title": "",
           "type": "array"
@@ -456,7 +456,7 @@
       ],
       "result": {
         "name": "Response (object)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "object",
@@ -584,7 +584,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -607,7 +607,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -621,7 +621,7 @@
       "params": [],
       "result": {
         "name": "Response (object)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "object",

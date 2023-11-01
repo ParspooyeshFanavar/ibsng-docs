@@ -59,7 +59,7 @@
       ],
       "result": {
         "name": "Response (array)",
-        "comment": "user_ids",
+        "summary": "user_ids",
         "schema": {
           "title": "",
           "type": "array"
@@ -73,7 +73,7 @@
       "params": [],
       "result": {
         "name": "Response (object)",
-        "comment": "User Info dict",
+        "summary": "User Info dict",
         "schema": {
           "title": "",
           "type": "object",
@@ -1233,7 +1233,7 @@
       ],
       "result": {
         "name": "Response (object)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "object"
@@ -1255,7 +1255,7 @@
       ],
       "result": {
         "name": "Response (boolean)",
-        "comment": "true if username exists, false otherwise",
+        "summary": "true if username exists, false otherwise",
         "schema": {
           "title": "",
           "type": "boolean"
@@ -2481,7 +2481,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -2525,7 +2525,7 @@
       ],
       "result": {
         "name": "Response (array)",
-        "comment": "change_log_ids",
+        "summary": "change_log_ids",
         "schema": {
           "title": "",
           "type": "array"
@@ -2568,7 +2568,7 @@
       ],
       "result": {
         "name": "Response (array)",
-        "comment": "change_log_ids",
+        "summary": "change_log_ids",
         "schema": {
           "title": "",
           "type": "array"
@@ -2612,7 +2612,7 @@
       ],
       "result": {
         "name": "Response (array)",
-        "comment": "change_log_ids",
+        "summary": "change_log_ids",
         "schema": {
           "title": "",
           "type": "array"
@@ -2654,7 +2654,7 @@
       ],
       "result": {
         "name": "Response (array)",
-        "comment": "change_log_ids",
+        "summary": "change_log_ids",
         "schema": {
           "title": "",
           "type": "array"
@@ -2676,7 +2676,7 @@
       ],
       "result": {
         "name": "Response (array)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "array"
@@ -2698,7 +2698,7 @@
       ],
       "result": {
         "name": "Response (array)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "array"
@@ -2805,7 +2805,7 @@
       ],
       "result": {
         "name": "Response (array)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "array"
@@ -2820,7 +2820,7 @@
       "params": [],
       "result": {
         "name": "Response (array)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "array"
@@ -2882,7 +2882,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -3705,7 +3705,7 @@
       ],
       "result": {
         "name": "Response (array)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "array"
@@ -3749,7 +3749,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -3794,7 +3794,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -3826,7 +3826,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -3840,7 +3840,7 @@
       "params": [],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -3869,7 +3869,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -3891,7 +3891,7 @@
       ],
       "result": {
         "name": "Response (object)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "object"
@@ -3905,7 +3905,7 @@
       "params": [],
       "result": {
         "name": "Response (object)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "object"
@@ -3935,7 +3935,7 @@
       ],
       "result": {
         "name": "Response (object)",
-        "comment": "renewUsers output",
+        "summary": "renewUsers output",
         "schema": {
           "title": "",
           "type": "object",
@@ -3979,7 +3979,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -4016,7 +4016,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -4070,7 +4070,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -4092,7 +4092,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -4175,7 +4175,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -4203,7 +4203,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -4218,7 +4218,7 @@
       "params": [],
       "result": {
         "name": "Response (array)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "array"
@@ -4241,7 +4241,7 @@
       ],
       "result": {
         "name": "Response (object)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "object",
@@ -4340,7 +4340,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -4363,7 +4363,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -4402,7 +4402,7 @@
       ],
       "result": {
         "name": "Response (string)",
-        "comment": "action_id (string)",
+        "summary": "action_id (string)",
         "schema": {
           "title": "",
           "type": "string"
@@ -4445,7 +4445,7 @@
       ],
       "result": {
         "name": "Response (string)",
-        "comment": "action_id (string)",
+        "summary": "action_id (string)",
         "schema": {
           "title": "",
           "type": "string"
@@ -4488,7 +4488,7 @@
       ],
       "result": {
         "name": "Response (string)",
-        "comment": "action_id (string)",
+        "summary": "action_id (string)",
         "schema": {
           "title": "",
           "type": "string"
@@ -4533,7 +4533,7 @@
       ],
       "result": {
         "name": "Response (string)",
-        "comment": "action_id (string)",
+        "summary": "action_id (string)",
         "schema": {
           "title": "",
           "type": "string"
@@ -4564,7 +4564,7 @@
       ],
       "result": {
         "name": "Response (string)",
-        "comment": "action_id (string)",
+        "summary": "action_id (string)",
         "schema": {
           "title": "",
           "type": "string"
@@ -4597,7 +4597,7 @@
       ],
       "result": {
         "name": "Response (string)",
-        "comment": "action_id (string)",
+        "summary": "action_id (string)",
         "schema": {
           "title": "",
           "type": "string"
@@ -4612,7 +4612,7 @@
       "params": [],
       "result": {
         "name": "Response (object)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "object"
@@ -4663,7 +4663,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -4709,7 +4709,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"

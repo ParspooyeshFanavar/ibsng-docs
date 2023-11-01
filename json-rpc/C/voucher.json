@@ -74,7 +74,7 @@
       ],
       "result": {
         "name": "Response (object)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "object",
@@ -217,7 +217,7 @@
       ],
       "result": {
         "name": "Response (object)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "object",
@@ -319,7 +319,7 @@
       ],
       "result": {
         "name": "Response (number)",
-        "comment": "voucher credit",
+        "summary": "voucher credit",
         "schema": {
           "title": "",
           "type": "number"
@@ -341,7 +341,7 @@
       ],
       "result": {
         "name": "Response (number)",
-        "comment": "voucher credit",
+        "summary": "voucher credit",
         "schema": {
           "title": "",
           "type": "number"
@@ -378,7 +378,7 @@
       ],
       "result": {
         "name": "Response (number)",
-        "comment": "User ID of newly created user",
+        "summary": "User ID of newly created user",
         "schema": {
           "title": "",
           "type": "number"
@@ -400,7 +400,7 @@
       ],
       "result": {
         "name": "Response (object)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "object",
@@ -571,7 +571,7 @@
       ],
       "result": {
         "name": "Response (number)",
-        "comment": "batch_id",
+        "summary": "batch_id",
         "schema": {
           "title": "",
           "type": "number"
@@ -601,7 +601,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -624,7 +624,7 @@
       ],
       "result": {
         "name": "Response (object)",
-        "comment": "batch info dict",
+        "summary": "batch info dict",
         "schema": {
           "title": "",
           "type": "object",
@@ -699,7 +699,7 @@
       ],
       "result": {
         "name": "Response (object)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "object",
@@ -820,7 +820,7 @@
       ],
       "result": {
         "name": "Response (object)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "object",

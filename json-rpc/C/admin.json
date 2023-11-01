@@ -70,7 +70,7 @@
       ],
       "result": {
         "name": "Response (number)",
-        "comment": "Admin ID",
+        "summary": "Admin ID",
         "schema": {
           "title": "",
           "type": "number"
@@ -92,7 +92,7 @@
       ],
       "result": {
         "name": "Response (object)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "object",
@@ -164,7 +164,7 @@
       ],
       "result": {
         "name": "Response (object)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "object",
@@ -200,7 +200,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -215,7 +215,7 @@
       "params": [],
       "result": {
         "name": "Response (array)",
-        "comment": "List of admin usernames",
+        "summary": "List of admin usernames",
         "schema": {
           "title": "",
           "type": "array"
@@ -238,7 +238,7 @@
       ],
       "result": {
         "name": "Response (array)",
-        "comment": "List of admin usernames",
+        "summary": "List of admin usernames",
         "schema": {
           "title": "",
           "type": "array"
@@ -261,7 +261,7 @@
       ],
       "result": {
         "name": "Response (array)",
-        "comment": "List of admin informations",
+        "summary": "List of admin informations",
         "schema": {
           "title": "",
           "type": "array"
@@ -340,7 +340,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -363,7 +363,7 @@
       ],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
@@ -400,7 +400,7 @@
       ],
       "result": {
         "name": "Response (array)",
-        "comment": "List of passwords",
+        "summary": "List of passwords",
         "schema": {
           "title": "",
           "type": "array"
@@ -527,7 +527,7 @@
       ],
       "result": {
         "name": "Response (object)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "object",
@@ -608,7 +608,7 @@
       "params": [],
       "result": {
         "name": "Response (null)",
-        "comment": "",
+        "summary": "",
         "schema": {
           "title": "",
           "type": "null"
