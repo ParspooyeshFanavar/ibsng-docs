@@ -44,7 +44,8 @@
           "name": "effective_hour",
           "description": "format HH:MM",
           "schema": {
-            "type": "string"
+            "type": "string",
+            "pattern": "^[0-9]{2}:[0-9]{2}$"
           }
         },
         {
@@ -154,7 +155,8 @@
           "name": "effective_hour",
           "description": "format HH:MM",
           "schema": {
-            "type": "string"
+            "type": "string",
+            "pattern": "^[0-9]{2}:[0-9]{2}$"
           }
         },
         {
@@ -313,7 +315,8 @@
             },
             "effective_hour": {
               "title": "format HH:MM",
-              "type": "string"
+              "type": "string",
+              "pattern": "^[0-9]{2}:[0-9]{2}$"
             },
             "rules": {
               "title": "",
@@ -422,7 +425,8 @@
             },
             "effective_hour": {
               "title": "format HH:MM",
-              "type": "string"
+              "type": "string",
+              "pattern": "^[0-9]{2}:[0-9]{2}$"
             },
             "rules": {
               "title": "",

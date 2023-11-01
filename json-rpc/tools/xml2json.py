@@ -330,6 +330,10 @@ def getJsonParam(param: "Element") -> dict:
 		schema["pattern"] = newType.pattern
 	elif paramType == "dict":
 		setDictParamsSchema(param, schema)
+	else:
+		pattern = param.attrib.get("pattern")
+		if pattern:
+			schema["pattern"] = pattern
 	paramJson = {}
 	if paramName:
 		paramJson["name"] = paramName

@@ -965,7 +965,7 @@
       <input type="dict">
         <param name="profile_name" type="str" />
         <param name="comment" type="str" />
-        <param name="effective_hour" type="str" comment="format HH:MM" />
+        <param name="effective_hour" type="str" pattern="^[0-9]{2}:[0-9]{2}$" comment="format HH:MM" />
         <param name="rules" type="list" item_type="dict">
           <item type="dict" comment="rule info dict">
             <param name="start_from" type="choice">
@@ -1012,7 +1012,7 @@
         <param name="profile_id" type="int" />
         <param name="profile_name" type="str" />
         <param name="comment" type="str" />
-        <param name="effective_hour" type="str" comment="format HH:MM" />
+        <param name="effective_hour" type="str" pattern="^[0-9]{2}:[0-9]{2}$" comment="format HH:MM" />
         <param name="rules" type="list" item_type="dict">
           <item type="dict" comment="rule info dict">
             <param name="rule_id" type="int" default="-1" comment="leave -1 for new rules" />
@@ -1068,7 +1068,7 @@
           <param name="profile_id" type="int" />
           <param name="profile_name" type="str" />
           <param name="comment" type="str" />
-          <param name="effective_hour" type="str" comment="format HH:MM" />
+          <param name="effective_hour" type="str" pattern="^[0-9]{2}:[0-9]{2}$" comment="format HH:MM" />
           <param name="rules" type="list" item_type="dict">
             <item type="dict" comment="rule info dict">
               <param name="rule_id" type="int" />
@@ -1119,7 +1119,7 @@
         <param name="profile_id" type="int" />
         <param name="profile_name" type="str" />
         <param name="comment" type="str" />
-        <param name="effective_hour" type="str" comment="format HH:MM" />
+        <param name="effective_hour" type="str" pattern="^[0-9]{2}:[0-9]{2}$" comment="format HH:MM" />
         <param name="rules" type="list" item_type="dict">
           <item type="dict" comment="rule info dict">
             <param name="rule_id" type="int" />
@@ -1169,7 +1169,7 @@
         <param name="profile_id" type="int" />
         <param name="profile_name" type="str" />
         <param name="comment" type="str" />
-        <param name="effective_hour" type="str" comment="format HH:MM" />
+        <param name="effective_hour" type="str" pattern="^[0-9]{2}:[0-9]{2}$" comment="format HH:MM" />
         <param name="rules" type="list" item_type="dict">
           <item type="dict" comment="rule info dict">
             <param name="rule_id" type="int" />
