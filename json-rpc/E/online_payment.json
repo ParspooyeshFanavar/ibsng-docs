@@ -41,16 +41,18 @@
         {
           "name": "gateway_type",
           "description": "",
-          "enum": [
-            "Melli-shahparak",
-            "Eghtesad_Novin",
-            "Mellat-Shaparak",
-            "Parsian",
-            "Pasargad",
-            "Saman",
-            "Tejarat",
-            "ZarinPal"
-          ]
+          "schema": {
+            "enum": [
+              "Melli-shahparak",
+              "Eghtesad_Novin",
+              "Mellat-Shaparak",
+              "Parsian",
+              "Pasargad",
+              "Saman",
+              "Tejarat",
+              "ZarinPal"
+            ]
+          }
         },
         {
           "name": "amount",
@@ -168,16 +170,18 @@
         {
           "name": "gateway_type",
           "description": "",
-          "enum": [
-            "Eghtesad_Novin",
-            "Mellat-Shaparak",
-            "Melli-shahparak",
-            "Parsian",
-            "Pasargad",
-            "Saman",
-            "Tejarat",
-            "ZarinPal"
-          ]
+          "schema": {
+            "enum": [
+              "Eghtesad_Novin",
+              "Mellat-Shaparak",
+              "Melli-shahparak",
+              "Parsian",
+              "Pasargad",
+              "Saman",
+              "Tejarat",
+              "ZarinPal"
+            ]
+          }
         },
         {
           "name": "owner_isp_name",

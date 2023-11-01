@@ -102,7 +102,9 @@
         {
           "name": "type",
           "description": "",
-          "enum": ["internet", "voip"]
+          "schema": {
+            "enum": ["internet", "voip"]
+          }
         }
       ],
       "result": {

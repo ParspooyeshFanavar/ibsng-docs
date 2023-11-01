@@ -50,7 +50,9 @@
         {
           "name": "start_time_unit",
           "description": "Date type for output date or datetime params, default is 'gregorian'",
-          "enum": ["gregorian", "jalali"]
+          "schema": {
+            "enum": ["gregorian", "jalali"]
+          }
         },
         {
           "name": "expire_time",
@@ -63,7 +65,9 @@
         {
           "name": "expire_time_unit",
           "description": "Date type for output date or datetime params, default is 'gregorian'",
-          "enum": ["gregorian", "jalali"]
+          "schema": {
+            "enum": ["gregorian", "jalali"]
+          }
         },
         {
           "name": "udr_tag",
@@ -235,7 +239,9 @@
         {
           "name": "start_time_unit",
           "description": "Date type for output date or datetime params, default is 'gregorian'",
-          "enum": ["gregorian", "jalali"]
+          "schema": {
+            "enum": ["gregorian", "jalali"]
+          }
         },
         {
           "name": "expire_time",
@@ -248,7 +254,9 @@
         {
           "name": "expire_time_unit",
           "description": "Date type for output date or datetime params, default is 'gregorian'",
-          "enum": ["gregorian", "jalali"]
+          "schema": {
+            "enum": ["gregorian", "jalali"]
+          }
         }
       ],
       "result": {
@@ -386,7 +394,9 @@
         },
         {
           "name": "balance_action",
-          "enum": ["add", "multiply", "set"]
+          "schema": {
+            "enum": ["add", "multiply", "set"]
+          }
         }
       ],
       "result": {
@@ -477,7 +487,9 @@
         {
           "name": "sort_by",
           "description": "",
-          "enum": ["change_time", "object_id", "admin_id"]
+          "schema": {
+            "enum": ["change_time", "object_id", "admin_id"]
+          }
         },
         {
           "name": "desc",

@@ -21,16 +21,18 @@
         {
           "name": "ras_type",
           "description": "",
-          "enum": [
-            "ACS2",
-            "Cisco-IN",
-            "CiscoVPDN",
-            "Generic",
-            "Huawei",
-            "Mikrotik",
-            "Ruckus",
-            "ZTE"
-          ]
+          "schema": {
+            "enum": [
+              "ACS2",
+              "Cisco-IN",
+              "CiscoVPDN",
+              "Generic",
+              "Huawei",
+              "Mikrotik",
+              "Ruckus",
+              "ZTE"
+            ]
+          }
         },
         {
           "name": "radius_secret",
@@ -251,16 +253,18 @@
         {
           "name": "ras_type",
           "description": "",
-          "enum": [
-            "ACS2",
-            "Cisco-IN",
-            "CiscoVPDN",
-            "Generic",
-            "Huawei",
-            "Mikrotik",
-            "Ruckus",
-            "ZTE"
-          ]
+          "schema": {
+            "enum": [
+              "ACS2",
+              "Cisco-IN",
+              "CiscoVPDN",
+              "Generic",
+              "Huawei",
+              "Mikrotik",
+              "Ruckus",
+              "ZTE"
+            ]
+          }
         },
         {
           "name": "radius_secret",

@@ -158,6 +158,10 @@
                   {
                     "name": "message_type",
                     "description": "",
+                    "__value_comment__": {
+                      "url": "call a URL specified in `message_template`, added in tag 312",
+                      "user_event": "added in tag (NO TAG YET)"
+                    },
                     "enum": [
                       "sms",
                       "email",
@@ -165,11 +169,7 @@
                       "ibsng_message",
                       "url",
                       "user_event"
-                    ],
-                    "__value_comment__": {
-                      "url": "call a URL specified in `message_template`, added in tag 312",
-                      "user_event": "added in tag (NO TAG YET)"
-                    }
+                    ]
                   },
                   {
                     "name": "notification_type",
@@ -244,16 +244,18 @@
         {
           "name": "notification_type",
           "description": "",
-          "enum": [
-            "expiration_date",
-            "credit",
-            "renew",
-            "birth_day",
-            "online_payment",
-            "first_login",
-            "credit_change",
-            "deposit_change"
-          ]
+          "schema": {
+            "enum": [
+              "expiration_date",
+              "credit",
+              "renew",
+              "birth_day",
+              "online_payment",
+              "first_login",
+              "credit_change",
+              "deposit_change"
+            ]
+          }
         },
         {
           "name": "notification_threshold",
@@ -265,14 +267,16 @@
         {
           "name": "message_type",
           "description": "",
-          "enum": [
-            "sms",
-            "email",
-            "email_to_isp",
-            "ibsng_message",
-            "url",
-            "user_event"
-          ],
+          "schema": {
+            "enum": [
+              "sms",
+              "email",
+              "email_to_isp",
+              "ibsng_message",
+              "url",
+              "user_event"
+            ]
+          },
           "__value_comment__": {
             "url": "call a URL specified in `message_template`, added in tag 312",
             "user_event": "added in tag (NO TAG YET)"
@@ -347,16 +351,18 @@
         },
         {
           "name": "notification_type",
-          "enum": [
-            "expiration_date",
-            "credit",
-            "renew",
-            "birth_day",
-            "online_payment",
-            "first_login",
-            "credit_change",
-            "deposit_change"
-          ]
+          "schema": {
+            "enum": [
+              "expiration_date",
+              "credit",
+              "renew",
+              "birth_day",
+              "online_payment",
+              "first_login",
+              "credit_change",
+              "deposit_change"
+            ]
+          }
         },
         {
           "name": "notification_threshold",
@@ -367,14 +373,16 @@
         },
         {
           "name": "message_type",
-          "enum": [
-            "sms",
-            "email",
-            "email_to_isp",
-            "ibsng_message",
-            "url",
-            "user_event"
-          ],
+          "schema": {
+            "enum": [
+              "sms",
+              "email",
+              "email_to_isp",
+              "ibsng_message",
+              "url",
+              "user_event"
+            ]
+          },
           "__value_comment__": {
             "url": "call a URL specified in `message_template`, added in tag 312",
             "user_event": "added in tag (NO TAG YET)"

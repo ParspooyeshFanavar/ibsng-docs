@@ -134,11 +134,15 @@ def getChoiceJsonParam(param: "Element") -> dict:
 	if description is not None:
 		paramJson["description"] = description
 	if seqauential:
-		paramJson["type"] = "number"
-		paramJson["minimum"] = values[0]
-		paramJson["maximum"] = values[-1]
+		paramJson["schema"] = {
+			"type": "number",
+			"minimum": values[0],
+			"maximum": values[-1],
+		}
 	else:
-		paramJson["enum"] = values
+		paramJson["schema"] = {
+			"enum": values,
+		}
 	if default is not None:
 		if default in ("true", "false"):
 			default = default == "true"
@@ -304,10 +308,10 @@ def getJsonParam(param: "Element") -> dict:
 		paramJson = {
 			"name": paramName,
 			"description": description,
-			"enum": [paramValue],
-			#"schema": {
+			"schema": {
+				"enum": [paramValue],
 			#	"type": newType.type,
-			#},
+			},
 		}
 		addParamExtraAttrs(param, paramJson)
 		return paramJson
@@ -446,16 +450,20 @@ def getJsonMethod(handlerName: str, method: "Element", authTypes: list[str]):
 		"name": resultName,
 		"summary": outputComment,
 	}
-	if resultType.type:
+	if resultType.type or resultValues:
+		resultSchemaType = resultType.type
+		if not resultSchemaType:
+			pass # FIXME: str or int?
 		resultSchema = {
 			"title": "",
-			"type": resultType.type,
+			"type": resultSchemaType,
 		}
 		if resultParams:
 			resultSchema["properties"] = resultParams
 		result["schema"] = resultSchema
-	if resultValues is not None:
-		result["enum"] = resultValues
+		if resultValues:
+			resultSchema["enum"] = resultValues
+
 	jsonMethod["result"] = result
 	# jsonMethod["errors"] = []
 	return jsonMethod

@@ -62,7 +62,9 @@
         {
           "name": "sort_by",
           "description": "",
-          "enum": ["pin", "voucher_id"]
+          "schema": {
+            "enum": ["pin", "voucher_id"]
+          }
         },
         {
           "name": "desc",
@@ -205,7 +207,9 @@
         {
           "name": "sort_by",
           "description": "",
-          "enum": ["batch_id", "batch_name", "batch_credit"]
+          "schema": {
+            "enum": ["batch_id", "batch_name", "batch_credit"]
+          }
         },
         {
           "name": "desc",
@@ -808,7 +812,9 @@
         },
         {
           "name": "sort_by",
-          "enum": ["batch_id", "batch_name", "credit"]
+          "schema": {
+            "enum": ["batch_id", "batch_name", "credit"]
+          }
         },
         {
           "name": "desc",
@@ -868,12 +874,12 @@
                   },
                   {
                     "name": "change_target",
-                    "enum": ["credit", "deposit", "deposit_recharge"],
                     "__value_comment__": {
                       "credit": "Credit",
                       "deposit": "Renew Deposit",
                       "deposit_recharge": "Recharge Deposit"
-                    }
+                    },
+                    "enum": ["credit", "deposit", "deposit_recharge"]
                   },
                   {
                     "name": "comment",

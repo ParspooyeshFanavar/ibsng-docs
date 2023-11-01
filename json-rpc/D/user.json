@@ -2381,7 +2381,9 @@
                 "type": "array",
                 "items": {
                   "title": "",
-                  "enum": ["CONFERENCE", "DIVERT"]
+                  "schema": {
+                    "enum": ["CONFERENCE", "DIVERT"]
+                  }
                 },
                 "required": false
               },
@@ -2556,7 +2558,9 @@
         {
           "name": "change_type",
           "description": "",
-          "enum": ["ADD", "SET", "MULTIPLY"]
+          "schema": {
+            "enum": ["ADD", "SET", "MULTIPLY"]
+          }
         },
         {
           "name": "credit_comment",
@@ -2642,7 +2646,9 @@
         {
           "name": "change_type",
           "description": "",
-          "enum": ["ADD", "SET", "MULTIPLY"]
+          "schema": {
+            "enum": ["ADD", "SET", "MULTIPLY"]
+          }
         },
         {
           "name": "deposit_comment",
@@ -2786,14 +2792,16 @@
         {
           "name": "order_by",
           "description": "",
-          "enum": [
-            "user_id",
-            "isp_id",
-            "group_id",
-            "creation_date",
-            "credit",
-            "Deposit"
-          ]
+          "schema": {
+            "enum": [
+              "user_id",
+              "isp_id",
+              "group_id",
+              "creation_date",
+              "credit",
+              "Deposit"
+            ]
+          }
         },
         {
           "name": "desc",
@@ -2836,7 +2844,9 @@
         {
           "name": "output_type",
           "description": "",
-          "enum": ["csv", "pdf"]
+          "schema": {
+            "enum": ["csv", "pdf"]
+          }
         },
         {
           "name": "conds",
@@ -2849,14 +2859,16 @@
         {
           "name": "order_by",
           "description": "",
-          "enum": [
-            "user_id",
-            "isp_id",
-            "group_id",
-            "creation_date",
-            "credit",
-            "Deposit"
-          ]
+          "schema": {
+            "enum": [
+              "user_id",
+              "isp_id",
+              "group_id",
+              "creation_date",
+              "credit",
+              "Deposit"
+            ]
+          }
         },
         {
           "name": "desc",
@@ -2914,15 +2926,17 @@
         {
           "name": "abs_exp_date_from_unit",
           "description": "",
-          "enum": [
-            "jalali",
-            "gregorian",
-            "years",
-            "months",
-            "days",
-            "hours",
-            "minutes"
-          ]
+          "schema": {
+            "enum": [
+              "jalali",
+              "gregorian",
+              "years",
+              "months",
+              "days",
+              "hours",
+              "minutes"
+            ]
+          }
         },
         {
           "name": "abs_exp_date_to",
@@ -2935,15 +2949,17 @@
         {
           "name": "abs_exp_date_to_unit",
           "description": "",
-          "enum": [
-            "jalali",
-            "gregorian",
-            "years",
-            "months",
-            "days",
-            "hours",
-            "minutes"
-          ]
+          "schema": {
+            "enum": [
+              "jalali",
+              "gregorian",
+              "years",
+              "months",
+              "days",
+              "hours",
+              "minutes"
+            ]
+          }
         },
         {
           "name": "allow_recharge_by_voucher",
@@ -2972,7 +2988,9 @@
         {
           "name": "assign_dns_op",
           "description": "",
-          "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+          "schema": {
+            "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+          }
         },
         {
           "name": "has_assign_ip",
@@ -2993,7 +3011,9 @@
         {
           "name": "assign_ip_op",
           "description": "",
-          "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+          "schema": {
+            "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+          }
         },
         {
           "name": "has_assign_netmask",
@@ -3014,7 +3034,9 @@
         {
           "name": "assign_netmask_op",
           "description": "",
-          "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+          "schema": {
+            "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+          }
         },
         {
           "name": "has_assign_route_ip",
@@ -3035,7 +3057,9 @@
         {
           "name": "assign_route_ip_op",
           "description": "",
-          "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+          "schema": {
+            "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+          }
         },
         {
           "name": "asterisk_did_number",
@@ -3096,7 +3120,9 @@
         {
           "name": "caller_id_op",
           "description": "",
-          "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+          "schema": {
+            "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+          }
         },
         {
           "name": "charge",
@@ -3117,7 +3143,9 @@
         {
           "name": "comment_op",
           "description": "",
-          "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+          "schema": {
+            "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+          }
         },
         {
           "name": "name",
@@ -3130,7 +3158,9 @@
         {
           "name": "name_op",
           "description": "",
-          "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+          "schema": {
+            "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+          }
         },
         {
           "name": "postal_code",
@@ -3143,7 +3173,9 @@
         {
           "name": "postal_code_op",
           "description": "",
-          "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+          "schema": {
+            "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+          }
         },
         {
           "name": "phone",
@@ -3156,7 +3188,9 @@
         {
           "name": "phone_op",
           "description": "",
-          "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+          "schema": {
+            "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+          }
         },
         {
           "name": "cell_phone",
@@ -3169,7 +3203,9 @@
         {
           "name": "cell_phone_op",
           "description": "",
-          "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+          "schema": {
+            "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+          }
         },
         {
           "name": "email",
@@ -3182,7 +3218,9 @@
         {
           "name": "email_op",
           "description": "",
-          "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+          "schema": {
+            "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+          }
         },
         {
           "name": "birthdate",
@@ -3195,20 +3233,24 @@
         {
           "name": "birthdate_unit",
           "description": "",
-          "enum": [
-            "jalali",
-            "gregorian",
-            "years",
-            "months",
-            "days",
-            "hours",
-            "minutes"
-          ]
+          "schema": {
+            "enum": [
+              "jalali",
+              "gregorian",
+              "years",
+              "months",
+              "days",
+              "hours",
+              "minutes"
+            ]
+          }
         },
         {
           "name": "birthdate_op",
           "description": "",
-          "enum": ["=", ">", "<", ">=", "<="]
+          "schema": {
+            "enum": ["=", ">", "<", ">=", "<="]
+          }
         },
         {
           "name": "address",
@@ -3221,7 +3263,9 @@
         {
           "name": "address_op",
           "description": "",
-          "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+          "schema": {
+            "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+          }
         },
         {
           "name": "has_connection_log_archive",
@@ -3242,15 +3286,17 @@
         {
           "name": "creation_date_from_unit",
           "description": "",
-          "enum": [
-            "jalali",
-            "gregorian",
-            "years",
-            "months",
-            "days",
-            "hours",
-            "minutes"
-          ]
+          "schema": {
+            "enum": [
+              "jalali",
+              "gregorian",
+              "years",
+              "months",
+              "days",
+              "hours",
+              "minutes"
+            ]
+          }
         },
         {
           "name": "creation_date_to",
@@ -3263,15 +3309,17 @@
         {
           "name": "creation_date_to_unit",
           "description": "",
-          "enum": [
-            "jalali",
-            "gregorian",
-            "years",
-            "months",
-            "days",
-            "hours",
-            "minutes"
-          ]
+          "schema": {
+            "enum": [
+              "jalali",
+              "gregorian",
+              "years",
+              "months",
+              "days",
+              "hours",
+              "minutes"
+            ]
+          }
         },
         {
           "name": "credit",
@@ -3284,7 +3332,9 @@
         {
           "name": "credit_op",
           "description": "",
-          "enum": ["=", ">", "<", ">=", "<="]
+          "schema": {
+            "enum": ["=", ">", "<", ">=", "<="]
+          }
         },
         {
           "name": "credit_limit",
@@ -3305,7 +3355,9 @@
         {
           "name": "custom_field_test_integer_op",
           "description": "",
-          "enum": ["=", ">", "<", ">=", "<="]
+          "schema": {
+            "enum": ["=", ">", "<", ">=", "<="]
+          }
         },
         {
           "name": "custom_field_test_string",
@@ -3318,7 +3370,9 @@
         {
           "name": "custom_field_test_string_op",
           "description": "",
-          "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+          "schema": {
+            "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+          }
         },
         {
           "name": "deny_change_password",
@@ -3339,7 +3393,9 @@
         {
           "name": "deposit_op",
           "description": "",
-          "enum": ["=", ">", "<", ">=", "<="]
+          "schema": {
+            "enum": ["=", ">", "<", ">=", "<="]
+          }
         },
         {
           "name": "deposit_recharge",
@@ -3352,7 +3408,9 @@
         {
           "name": "deposit_recharge_op",
           "description": "",
-          "enum": ["=", ">", "<", ">=", "<="]
+          "schema": {
+            "enum": ["=", ">", "<", ">=", "<="]
+          }
         },
         {
           "name": "email_address",
@@ -3365,7 +3423,9 @@
         {
           "name": "email_address_op",
           "description": "",
-          "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+          "schema": {
+            "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+          }
         },
         {
           "name": "user_value_exp_from_creation_date_from",
@@ -3378,15 +3438,17 @@
         {
           "name": "user_value_exp_from_creation_date_from_unit",
           "description": "",
-          "enum": [
-            "jalali",
-            "gregorian",
-            "years",
-            "months",
-            "days",
-            "hours",
-            "minutes"
-          ]
+          "schema": {
+            "enum": [
+              "jalali",
+              "gregorian",
+              "years",
+              "months",
+              "days",
+              "hours",
+              "minutes"
+            ]
+          }
         },
         {
           "name": "user_value_exp_from_creation_date_to",
@@ -3399,15 +3461,17 @@
         {
           "name": "user_value_exp_from_creation_date_to_unit",
           "description": "",
-          "enum": [
-            "jalali",
-            "gregorian",
-            "years",
-            "months",
-            "days",
-            "hours",
-            "minutes"
-          ]
+          "schema": {
+            "enum": [
+              "jalali",
+              "gregorian",
+              "years",
+              "months",
+              "days",
+              "hours",
+              "minutes"
+            ]
+          }
         },
         {
           "name": "user_value_exp_from_first_login_from",
@@ -3420,15 +3484,17 @@
         {
           "name": "user_value_exp_from_first_login_from_unit",
           "description": "",
-          "enum": [
-            "jalali",
-            "gregorian",
-            "years",
-            "months",
-            "days",
-            "hours",
-            "minutes"
-          ]
+          "schema": {
+            "enum": [
+              "jalali",
+              "gregorian",
+              "years",
+              "months",
+              "days",
+              "hours",
+              "minutes"
+            ]
+          }
         },
         {
           "name": "user_value_exp_from_first_login_to",
@@ -3441,15 +3507,17 @@
         {
           "name": "user_value_exp_from_first_login_to_unit",
           "description": "",
-          "enum": [
-            "jalali",
-            "gregorian",
-            "years",
-            "months",
-            "days",
-            "hours",
-            "minutes"
-          ]
+          "schema": {
+            "enum": [
+              "jalali",
+              "gregorian",
+              "years",
+              "months",
+              "days",
+              "hours",
+              "minutes"
+            ]
+          }
         },
         {
           "name": "exp_from_renew_user_value_from",
@@ -3462,15 +3530,17 @@
         {
           "name": "exp_from_renew_user_value_from_unit",
           "description": "",
-          "enum": [
-            "jalali",
-            "gregorian",
-            "years",
-            "months",
-            "days",
-            "hours",
-            "minutes"
-          ]
+          "schema": {
+            "enum": [
+              "jalali",
+              "gregorian",
+              "years",
+              "months",
+              "days",
+              "hours",
+              "minutes"
+            ]
+          }
         },
         {
           "name": "exp_from_renew_user_value_to",
@@ -3483,15 +3553,17 @@
         {
           "name": "exp_from_renew_user_value_to_unit",
           "description": "",
-          "enum": [
-            "jalali",
-            "gregorian",
-            "years",
-            "months",
-            "days",
-            "hours",
-            "minutes"
-          ]
+          "schema": {
+            "enum": [
+              "jalali",
+              "gregorian",
+              "years",
+              "months",
+              "days",
+              "hours",
+              "minutes"
+            ]
+          }
         },
         {
           "name": "exp_monthly_user_value_from",
@@ -3504,15 +3576,17 @@
         {
           "name": "exp_monthly_user_value_from_unit",
           "description": "",
-          "enum": [
-            "jalali",
-            "gregorian",
-            "years",
-            "months",
-            "days",
-            "hours",
-            "minutes"
-          ]
+          "schema": {
+            "enum": [
+              "jalali",
+              "gregorian",
+              "years",
+              "months",
+              "days",
+              "hours",
+              "minutes"
+            ]
+          }
         },
         {
           "name": "exp_monthly_user_value_to",
@@ -3525,15 +3599,17 @@
         {
           "name": "exp_monthly_user_value_to_unit",
           "description": "",
-          "enum": [
-            "jalali",
-            "gregorian",
-            "years",
-            "months",
-            "days",
-            "hours",
-            "minutes"
-          ]
+          "schema": {
+            "enum": [
+              "jalali",
+              "gregorian",
+              "years",
+              "months",
+              "days",
+              "hours",
+              "minutes"
+            ]
+          }
         },
         {
           "name": "first_login_from",
@@ -3546,15 +3622,17 @@
         {
           "name": "first_login_from_unit",
           "description": "",
-          "enum": [
-            "jalali",
-            "gregorian",
-            "years",
-            "months",
-            "days",
-            "hours",
-            "minutes"
-          ]
+          "schema": {
+            "enum": [
+              "jalali",
+              "gregorian",
+              "years",
+              "months",
+              "days",
+              "hours",
+              "minutes"
+            ]
+          }
         },
         {
           "name": "first_login_to",
@@ -3567,15 +3645,17 @@
         {
           "name": "first_login_to_unit",
           "description": "",
-          "enum": [
-            "jalali",
-            "gregorian",
-            "years",
-            "months",
-            "days",
-            "hours",
-            "minutes"
-          ]
+          "schema": {
+            "enum": [
+              "jalali",
+              "gregorian",
+              "years",
+              "months",
+              "days",
+              "hours",
+              "minutes"
+            ]
+          }
         },
         {
           "name": "real_first_login_from",
@@ -3588,15 +3668,17 @@
         {
           "name": "real_first_login_from_unit",
           "description": "",
-          "enum": [
-            "jalali",
-            "gregorian",
-            "years",
-            "months",
-            "days",
-            "hours",
-            "minutes"
-          ]
+          "schema": {
+            "enum": [
+              "jalali",
+              "gregorian",
+              "years",
+              "months",
+              "days",
+              "hours",
+              "minutes"
+            ]
+          }
         },
         {
           "name": "real_first_login_to",
@@ -3609,15 +3691,17 @@
         {
           "name": "real_first_login_to_unit",
           "description": "",
-          "enum": [
-            "jalali",
-            "gregorian",
-            "years",
-            "months",
-            "days",
-            "hours",
-            "minutes"
-          ]
+          "schema": {
+            "enum": [
+              "jalali",
+              "gregorian",
+              "years",
+              "months",
+              "days",
+              "hours",
+              "minutes"
+            ]
+          }
         },
         {
           "name": "group_name",
@@ -3638,7 +3722,9 @@
         {
           "name": "in_ras_ippool_op",
           "description": "",
-          "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+          "schema": {
+            "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+          }
         },
         {
           "name": "ippool",
@@ -3681,19 +3767,21 @@
         {
           "name": "order_by",
           "description": "",
-          "enum": [
-            "normal_username",
-            "voip_username",
-            "user_id",
-            "group_id",
-            "creation_date",
-            "owner_id",
-            "credit",
-            "deposit",
-            "first_login",
-            "serial",
-            "serial_numeric"
-          ]
+          "schema": {
+            "enum": [
+              "normal_username",
+              "voip_username",
+              "user_id",
+              "group_id",
+              "creation_date",
+              "owner_id",
+              "credit",
+              "deposit",
+              "first_login",
+              "serial",
+              "serial_numeric"
+            ]
+          }
         },
         {
           "name": "desc",
@@ -4116,19 +4204,21 @@
         {
           "name": "order_by",
           "description": "",
-          "enum": [
-            "normal_username",
-            "voip_username",
-            "user_id",
-            "group_id",
-            "creation_date",
-            "owner_id",
-            "credit",
-            "deposit",
-            "first_login",
-            "serial",
-            "serial_numeric"
-          ]
+          "schema": {
+            "enum": [
+              "normal_username",
+              "voip_username",
+              "user_id",
+              "group_id",
+              "creation_date",
+              "owner_id",
+              "credit",
+              "deposit",
+              "first_login",
+              "serial",
+              "serial_numeric"
+            ]
+          }
         },
         {
           "name": "desc",
@@ -4144,19 +4234,21 @@
             "type": "array",
             "items": {
               "title": "",
-              "enum": [
-                "user_id",
-                "creation_date",
-                "credit",
-                "deposit",
-                "group_id",
-                "group_name",
-                "isp_id",
-                "isp_name",
-                "nearest_exp_date",
-                "recharge_deposit",
-                "status"
-              ]
+              "schema": {
+                "enum": [
+                  "user_id",
+                  "creation_date",
+                  "credit",
+                  "deposit",
+                  "group_id",
+                  "group_name",
+                  "isp_id",
+                  "isp_name",
+                  "nearest_exp_date",
+                  "recharge_deposit",
+                  "status"
+                ]
+              }
             }
           }
         },
@@ -4170,7 +4262,9 @@
         {
           "name": "output_type",
           "description": "",
-          "enum": ["csv", "pdf"]
+          "schema": {
+            "enum": ["csv", "pdf"]
+          }
         }
       ],
       "result": {
@@ -4198,7 +4292,9 @@
         {
           "name": "status",
           "description": "",
-          "enum": ["Package", "Recharged", "Temporary Extended"]
+          "schema": {
+            "enum": ["Package", "Recharged", "Temporary Extended"]
+          }
         }
       ],
       "result": {
@@ -4433,7 +4529,9 @@
         {
           "name": "change_type",
           "description": "the same as method 'user.changeCreditExtended'",
-          "enum": ["ADD", "SET", "MULTIPLY"]
+          "schema": {
+            "enum": ["ADD", "SET", "MULTIPLY"]
+          }
         },
         {
           "name": "credit_comment",
@@ -4476,7 +4574,9 @@
         {
           "name": "change_type",
           "description": "the same as method 'user.changeDepositExtended'",
-          "enum": ["ADD", "SET", "MULTIPLY"]
+          "schema": {
+            "enum": ["ADD", "SET", "MULTIPLY"]
+          }
         },
         {
           "name": "deposit_comment",

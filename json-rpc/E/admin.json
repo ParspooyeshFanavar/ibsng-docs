@@ -515,7 +515,9 @@
         {
           "name": "sort_by",
           "description": "",
-          "enum": ["otp_id", "creation_date", "used_date"]
+          "schema": {
+            "enum": ["otp_id", "creation_date", "used_date"]
+          }
         },
         {
           "name": "desc",

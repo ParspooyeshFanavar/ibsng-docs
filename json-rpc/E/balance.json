@@ -50,7 +50,9 @@
         {
           "name": "valid_for_start_unit",
           "description": "Date type for output date or datetime params, default is 'gregorian'",
-          "enum": ["gregorian", "jalali"]
+          "schema": {
+            "enum": ["gregorian", "jalali"]
+          }
         },
         {
           "name": "valid_for_end",
@@ -63,7 +65,9 @@
         {
           "name": "valid_for_end_unit",
           "description": "Date type for output date or datetime params, default is 'gregorian'",
-          "enum": ["gregorian", "jalali"]
+          "schema": {
+            "enum": ["gregorian", "jalali"]
+          }
         },
         {
           "name": "default_value",
@@ -260,7 +264,9 @@
         {
           "name": "valid_for_start_unit",
           "description": "Date type for output date or datetime params, default is 'gregorian'",
-          "enum": ["gregorian", "jalali"]
+          "schema": {
+            "enum": ["gregorian", "jalali"]
+          }
         },
         {
           "name": "valid_for_end",
@@ -273,7 +279,9 @@
         {
           "name": "valid_for_end_unit",
           "description": "Date type for output date or datetime params, default is 'gregorian'",
-          "enum": ["gregorian", "jalali"]
+          "schema": {
+            "enum": ["gregorian", "jalali"]
+          }
         },
         {
           "name": "default_value",
@@ -496,7 +504,9 @@
         },
         {
           "name": "sort_by",
-          "enum": ["balance_name", "balance_id"]
+          "schema": {
+            "enum": ["balance_name", "balance_id"]
+          }
         },
         {
           "name": "desc",

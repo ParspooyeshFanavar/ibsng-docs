@@ -14,26 +14,28 @@
         {
           "name": "normal_sort_by",
           "description": "",
-          "enum": [
-            "user_id",
-            "normal_username",
-            "login_time_epoch",
-            "duration_secs",
-            "ras_description",
-            "ras_ip",
-            "isp_name",
-            "unique_id_val",
-            "current_credit",
-            "group_name",
-            "attrs_remote_ip",
-            "in_bytes",
-            "out_bytes",
-            "in_rate",
-            "out_rate",
-            "attrs_mac",
-            "attrs_station_ip",
-            "attrs_caller_id"
-          ]
+          "schema": {
+            "enum": [
+              "user_id",
+              "normal_username",
+              "login_time_epoch",
+              "duration_secs",
+              "ras_description",
+              "ras_ip",
+              "isp_name",
+              "unique_id_val",
+              "current_credit",
+              "group_name",
+              "attrs_remote_ip",
+              "in_bytes",
+              "out_bytes",
+              "in_rate",
+              "out_rate",
+              "attrs_mac",
+              "attrs_station_ip",
+              "attrs_caller_id"
+            ]
+          }
         },
         {
           "name": "normal_desc",
@@ -45,24 +47,26 @@
         {
           "name": "voip_sort_by",
           "description": "",
-          "enum": [
-            "user_id",
-            "voip_username",
-            "login_time_epoch",
-            "duration_secs",
-            "ras_ip",
-            "ras_description",
-            "isp_name",
-            "unique_id_val",
-            "current_credit",
-            "called_number",
-            "prefix_name",
-            "group_name",
-            "attrs_caller_id",
-            "attrs_caller_ip",
-            "attrs_called_ip",
-            "voip_provider"
-          ]
+          "schema": {
+            "enum": [
+              "user_id",
+              "voip_username",
+              "login_time_epoch",
+              "duration_secs",
+              "ras_ip",
+              "ras_description",
+              "isp_name",
+              "unique_id_val",
+              "current_credit",
+              "called_number",
+              "prefix_name",
+              "group_name",
+              "attrs_caller_id",
+              "attrs_caller_ip",
+              "attrs_called_ip",
+              "voip_provider"
+            ]
+          }
         },
         {
           "name": "voip_desc",
@@ -632,16 +636,18 @@
         {
           "name": "sort_by",
           "description": "",
-          "enum": [
-            "user_id",
-            "credit_used",
-            "login_time",
-            "logout_time",
-            "successful",
-            "service",
-            "ras_id",
-            "connection_log_id"
-          ]
+          "schema": {
+            "enum": [
+              "user_id",
+              "credit_used",
+              "login_time",
+              "logout_time",
+              "successful",
+              "service",
+              "ras_id",
+              "connection_log_id"
+            ]
+          }
         },
         {
           "name": "desc",
@@ -1124,15 +1130,17 @@
         {
           "name": "sort_by",
           "description": "",
-          "enum": [
-            "credit_used",
-            "login_time",
-            "logout_time",
-            "successful",
-            "service",
-            "ras_id",
-            "connection_log_id"
-          ]
+          "schema": {
+            "enum": [
+              "credit_used",
+              "login_time",
+              "logout_time",
+              "successful",
+              "service",
+              "ras_id",
+              "connection_log_id"
+            ]
+          }
         },
         {
           "name": "desc",
@@ -1355,15 +1363,17 @@
         {
           "name": "sort_by",
           "description": "",
-          "enum": [
-            "credit_used",
-            "login_time",
-            "logout_time",
-            "successful",
-            "service",
-            "ras_id",
-            "connection_log_id"
-          ]
+          "schema": {
+            "enum": [
+              "credit_used",
+              "login_time",
+              "logout_time",
+              "successful",
+              "service",
+              "ras_id",
+              "connection_log_id"
+            ]
+          }
         },
         {
           "name": "desc",
@@ -1557,7 +1567,9 @@
         {
           "name": "order_by",
           "description": "",
-          "enum": ["creation_date", "normal_username", "sum"]
+          "schema": {
+            "enum": ["creation_date", "normal_username", "sum"]
+          }
         }
       ],
       "result": {
@@ -1614,7 +1626,9 @@
         {
           "name": "order_by",
           "description": "",
-          "enum": ["creation_date", "normal_username", "sum"]
+          "schema": {
+            "enum": ["creation_date", "normal_username", "sum"]
+          }
         }
       ],
       "result": {
@@ -1671,7 +1685,9 @@
         {
           "name": "order_by",
           "description": "",
-          "enum": ["creation_date", "normal_username", "sum"]
+          "schema": {
+            "enum": ["creation_date", "normal_username", "sum"]
+          }
         }
       ],
       "result": {
@@ -1728,12 +1744,14 @@
         {
           "name": "order_by",
           "description": "",
-          "enum": [
-            "total_credit",
-            "total_duration",
-            "total_in_bytes",
-            "total_out_bytes"
-          ]
+          "schema": {
+            "enum": [
+              "total_credit",
+              "total_duration",
+              "total_in_bytes",
+              "total_out_bytes"
+            ]
+          }
         }
       ],
       "result": {
@@ -1862,19 +1880,21 @@
         {
           "name": "sort_by",
           "description": "",
-          "enum": [
-            "user_id",
-            "normal_username",
-            "voip_username",
-            "group_id",
-            "owner_id",
-            "creation_date",
-            "credit",
-            "deposit",
-            "first_login",
-            "serial",
-            "serial_numeric"
-          ],
+          "schema": {
+            "enum": [
+              "user_id",
+              "normal_username",
+              "voip_username",
+              "group_id",
+              "owner_id",
+              "creation_date",
+              "credit",
+              "deposit",
+              "first_login",
+              "serial",
+              "serial_numeric"
+            ]
+          },
           "__value_comment__": {
             "owner_id": "owner isp id"
           }
@@ -1913,14 +1933,16 @@
                 "type": "array",
                 "items": {
                   "title": "",
-                  "enum": [
-                    "prefix_name",
-                    "prefix_code",
-                    "cpm",
-                    "voip_provider_id",
-                    "voip_provider_prefix_code",
-                    "voip_provider_prefix_name"
-                  ]
+                  "schema": {
+                    "enum": [
+                      "prefix_name",
+                      "prefix_code",
+                      "cpm",
+                      "voip_provider_id",
+                      "voip_provider_prefix_code",
+                      "voip_provider_prefix_name"
+                    ]
+                  }
                 },
                 "required": false
               }
@@ -1944,13 +1966,15 @@
         {
           "name": "order_by",
           "description": "",
-          "enum": [
-            "prefix_name",
-            "prefix_code",
-            "duration_sum",
-            "count",
-            "credit"
-          ]
+          "schema": {
+            "enum": [
+              "prefix_name",
+              "prefix_code",
+              "duration_sum",
+              "count",
+              "credit"
+            ]
+          }
         },
         {
           "name": "desc",
@@ -2014,7 +2038,9 @@
         {
           "name": "order_by",
           "description": "",
-          "enum": ["creation_date", "normal_username", "sum"]
+          "schema": {
+            "enum": ["creation_date", "normal_username", "sum"]
+          }
         }
       ],
       "result": {
@@ -2072,25 +2098,27 @@
                 "type": "array",
                 "items": {
                   "title": "",
-                  "enum": [
-                    "ADD_USER",
-                    "CHANGE_CREDIT",
-                    "DEL_USER",
-                    "RELATIVE_PERIODIC_CHANGE_CREDIT",
-                    "ABSOLUTE_PERIODIC_CHANGE_CREDIT",
-                    "RENEW_TRASH_REMAINING",
-                    "RENEW",
-                    "CREDIT_TRANSFER",
-                    "RECEIVE_CREDIT_TRANSFER",
-                    "ONLINE_PAYMENT",
-                    "AUTO_RENEW",
-                    "RECHARGE",
-                    "AUTO_RECHARGE",
-                    "TEMPORARY_EXTEND",
-                    "TEMPORARY_EXTEND_TRASH_REMAINING",
-                    "EXTRA_CHARGE",
-                    "VOUCHER"
-                  ]
+                  "schema": {
+                    "enum": [
+                      "ADD_USER",
+                      "CHANGE_CREDIT",
+                      "DEL_USER",
+                      "RELATIVE_PERIODIC_CHANGE_CREDIT",
+                      "ABSOLUTE_PERIODIC_CHANGE_CREDIT",
+                      "RENEW_TRASH_REMAINING",
+                      "RENEW",
+                      "CREDIT_TRANSFER",
+                      "RECEIVE_CREDIT_TRANSFER",
+                      "ONLINE_PAYMENT",
+                      "AUTO_RENEW",
+                      "RECHARGE",
+                      "AUTO_RECHARGE",
+                      "TEMPORARY_EXTEND",
+                      "TEMPORARY_EXTEND_TRASH_REMAINING",
+                      "EXTRA_CHARGE",
+                      "VOUCHER"
+                    ]
+                  }
                 },
                 "required": false
               },
@@ -2186,7 +2214,9 @@
         {
           "name": "sort_by",
           "description": "",
-          "enum": ["change_time", "per_user_credit", "isp_credit"]
+          "schema": {
+            "enum": ["change_time", "per_user_credit", "isp_credit"]
+          }
         },
         {
           "name": "desc",
@@ -2264,25 +2294,27 @@
                 "type": "array",
                 "items": {
                   "title": "",
-                  "enum": [
-                    "ADD_USER",
-                    "CHANGE_CREDIT",
-                    "DEL_USER",
-                    "RELATIVE_PERIODIC_CHANGE_CREDIT",
-                    "ABSOLUTE_PERIODIC_CHANGE_CREDIT",
-                    "RENEW_TRASH_REMAINING",
-                    "RENEW",
-                    "CREDIT_TRANSFER",
-                    "RECEIVE_CREDIT_TRANSFER",
-                    "ONLINE_PAYMENT",
-                    "AUTO_RENEW",
-                    "RECHARGE",
-                    "AUTO_RECHARGE",
-                    "TEMPORARY_EXTEND",
-                    "TEMPORARY_EXTEND_TRASH_REMAINING",
-                    "EXTRA_CHARGE",
-                    "VOUCHER"
-                  ]
+                  "schema": {
+                    "enum": [
+                      "ADD_USER",
+                      "CHANGE_CREDIT",
+                      "DEL_USER",
+                      "RELATIVE_PERIODIC_CHANGE_CREDIT",
+                      "ABSOLUTE_PERIODIC_CHANGE_CREDIT",
+                      "RENEW_TRASH_REMAINING",
+                      "RENEW",
+                      "CREDIT_TRANSFER",
+                      "RECEIVE_CREDIT_TRANSFER",
+                      "ONLINE_PAYMENT",
+                      "AUTO_RENEW",
+                      "RECHARGE",
+                      "AUTO_RECHARGE",
+                      "TEMPORARY_EXTEND",
+                      "TEMPORARY_EXTEND_TRASH_REMAINING",
+                      "EXTRA_CHARGE",
+                      "VOUCHER"
+                    ]
+                  }
                 },
                 "required": false
               },
@@ -2378,7 +2410,9 @@
         {
           "name": "sort_by",
           "description": "",
-          "enum": ["change_time", "per_user_credit", "isp_credit"]
+          "schema": {
+            "enum": ["change_time", "per_user_credit", "isp_credit"]
+          }
         },
         {
           "name": "desc",
@@ -2441,25 +2475,27 @@
                 "type": "array",
                 "items": {
                   "title": "",
-                  "enum": [
-                    "ADD_USER",
-                    "CHANGE_CREDIT",
-                    "DEL_USER",
-                    "RELATIVE_PERIODIC_CHANGE_CREDIT",
-                    "ABSOLUTE_PERIODIC_CHANGE_CREDIT",
-                    "RENEW_TRASH_REMAINING",
-                    "RENEW",
-                    "CREDIT_TRANSFER",
-                    "RECEIVE_CREDIT_TRANSFER",
-                    "ONLINE_PAYMENT",
-                    "AUTO_RENEW",
-                    "RECHARGE",
-                    "AUTO_RECHARGE",
-                    "TEMPORARY_EXTEND",
-                    "TEMPORARY_EXTEND_TRASH_REMAINING",
-                    "EXTRA_CHARGE",
-                    "VOUCHER"
-                  ]
+                  "schema": {
+                    "enum": [
+                      "ADD_USER",
+                      "CHANGE_CREDIT",
+                      "DEL_USER",
+                      "RELATIVE_PERIODIC_CHANGE_CREDIT",
+                      "ABSOLUTE_PERIODIC_CHANGE_CREDIT",
+                      "RENEW_TRASH_REMAINING",
+                      "RENEW",
+                      "CREDIT_TRANSFER",
+                      "RECEIVE_CREDIT_TRANSFER",
+                      "ONLINE_PAYMENT",
+                      "AUTO_RENEW",
+                      "RECHARGE",
+                      "AUTO_RECHARGE",
+                      "TEMPORARY_EXTEND",
+                      "TEMPORARY_EXTEND_TRASH_REMAINING",
+                      "EXTRA_CHARGE",
+                      "VOUCHER"
+                    ]
+                  }
                 },
                 "required": false
               },
@@ -2546,7 +2582,9 @@
         {
           "name": "sort_by",
           "description": "",
-          "enum": ["change_time", "per_user_credit"]
+          "schema": {
+            "enum": ["change_time", "per_user_credit"]
+          }
         },
         {
           "name": "desc",
@@ -2608,29 +2646,31 @@
             "type": "array",
             "items": {
               "title": "",
-              "enum": [
-                "action",
-                "action_text",
-                "admin_id",
-                "admin_name",
-                "change_time",
-                "change_time_formatted",
-                "comment",
-                "credit_change_id",
-                "isp_credit",
-                "isp_id",
-                "isp_name",
-                "per_user_credit",
-                "remote_addr",
-                "user_id",
-                "username",
-                "name",
-                "serial",
-                "group",
-                "group_id",
-                "before_credit",
-                "user_ids"
-              ],
+              "schema": {
+                "enum": [
+                  "action",
+                  "action_text",
+                  "admin_id",
+                  "admin_name",
+                  "change_time",
+                  "change_time_formatted",
+                  "comment",
+                  "credit_change_id",
+                  "isp_credit",
+                  "isp_id",
+                  "isp_name",
+                  "per_user_credit",
+                  "remote_addr",
+                  "user_id",
+                  "username",
+                  "name",
+                  "serial",
+                  "group",
+                  "group_id",
+                  "before_credit",
+                  "user_ids"
+                ]
+              },
               "__value_comment__": {
                 "user_id": "in user_view mode only",
                 "username": "in user_view mode only",
@@ -2647,7 +2687,9 @@
         {
           "name": "sort_by",
           "description": "",
-          "enum": ["change_time", "per_user_credit", "isp_credit"]
+          "schema": {
+            "enum": ["change_time", "per_user_credit", "isp_credit"]
+          }
         },
         {
           "name": "desc",
@@ -2659,7 +2701,9 @@
         {
           "name": "output_type",
           "description": "",
-          "enum": ["csv", "pdf"]
+          "schema": {
+            "enum": ["csv", "pdf"]
+          }
         }
       ],
       "result": {
@@ -2698,18 +2742,20 @@
                 "type": "array",
                 "items": {
                   "title": "",
-                  "enum": [
-                    "ADD_USER",
-                    "CHANGE_DEPOSIT",
-                    "DEL_USER",
-                    "ONLINE_PAYMENT",
-                    "DEPOSIT_TRANSFER",
-                    "AUTO_RENEW",
-                    "RECEIVE_DEPOSIT_TRANSFER",
-                    "AUTO_RECHARGE",
-                    "EXTRA_CHARGE",
-                    "VOUCHER"
-                  ]
+                  "schema": {
+                    "enum": [
+                      "ADD_USER",
+                      "CHANGE_DEPOSIT",
+                      "DEL_USER",
+                      "ONLINE_PAYMENT",
+                      "DEPOSIT_TRANSFER",
+                      "AUTO_RENEW",
+                      "RECEIVE_DEPOSIT_TRANSFER",
+                      "AUTO_RECHARGE",
+                      "EXTRA_CHARGE",
+                      "VOUCHER"
+                    ]
+                  }
                 },
                 "required": false
               },
@@ -2796,7 +2842,9 @@
         {
           "name": "sort_by",
           "description": "",
-          "enum": ["change_time", "user_id", "deposit_change"]
+          "schema": {
+            "enum": ["change_time", "user_id", "deposit_change"]
+          }
         },
         {
           "name": "desc",
@@ -2942,18 +2990,20 @@
                 "type": "array",
                 "items": {
                   "title": "",
-                  "enum": [
-                    "ADD_USER",
-                    "CHANGE_DEPOSIT",
-                    "DEL_USER",
-                    "ONLINE_PAYMENT",
-                    "DEPOSIT_TRANSFER",
-                    "AUTO_RENEW",
-                    "RECEIVE_DEPOSIT_TRANSFER",
-                    "AUTO_RECHARGE",
-                    "EXTRA_CHARGE",
-                    "VOUCHER"
-                  ]
+                  "schema": {
+                    "enum": [
+                      "ADD_USER",
+                      "CHANGE_DEPOSIT",
+                      "DEL_USER",
+                      "ONLINE_PAYMENT",
+                      "DEPOSIT_TRANSFER",
+                      "AUTO_RENEW",
+                      "RECEIVE_DEPOSIT_TRANSFER",
+                      "AUTO_RECHARGE",
+                      "EXTRA_CHARGE",
+                      "VOUCHER"
+                    ]
+                  }
                 },
                 "required": false
               },
@@ -3035,7 +3085,9 @@
         {
           "name": "sort_by",
           "description": "",
-          "enum": ["change_time", "user_id", "deposit_change"]
+          "schema": {
+            "enum": ["change_time", "user_id", "deposit_change"]
+          }
         },
         {
           "name": "desc",
@@ -3234,7 +3286,9 @@
         {
           "name": "sort_by",
           "description": "",
-          "enum": ["change_time", "object_id", "admin_id"]
+          "schema": {
+            "enum": ["change_time", "object_id", "admin_id"]
+          }
         },
         {
           "name": "desc",
@@ -3290,11 +3344,11 @@
                   {
                     "name": "is_user",
                     "description": "",
-                    "enum": ["t", "f"],
                     "__value_comment__": {
                       "t": "true / yes",
                       "f": "false / no"
-                    }
+                    },
+                    "enum": ["t", "f"]
                   },
                   {
                     "name": "new_value",
@@ -3358,7 +3412,9 @@
         {
           "name": "order_by",
           "description": "",
-          "enum": ["count", "average_duration", "total_duration"]
+          "schema": {
+            "enum": ["count", "average_duration", "total_duration"]
+          }
         }
       ],
       "result": {
@@ -3451,12 +3507,14 @@
         {
           "name": "sort_by",
           "description": "",
-          "enum": [
-            "isp_deposit_change_admin_id",
-            "isp_deposit_change_isp_id",
-            "isp_deposit_change_time",
-            "isp_deposit_change_amount"
-          ]
+          "schema": {
+            "enum": [
+              "isp_deposit_change_admin_id",
+              "isp_deposit_change_isp_id",
+              "isp_deposit_change_time",
+              "isp_deposit_change_amount"
+            ]
+          }
         },
         {
           "name": "desc",
@@ -3647,12 +3705,14 @@
         {
           "name": "sort_by",
           "description": "",
-          "enum": [
-            "temporary_extend_date",
-            "user_id",
-            "temporary_extend_hours",
-            "credit_usage"
-          ]
+          "schema": {
+            "enum": [
+              "temporary_extend_date",
+              "user_id",
+              "temporary_extend_hours",
+              "credit_usage"
+            ]
+          }
         },
         {
           "name": "desc",
@@ -3765,15 +3825,17 @@
         {
           "name": "date_unit",
           "description": "",
-          "enum": [
-            "jalali",
-            "gregorian",
-            "years",
-            "months",
-            "days",
-            "hours",
-            "minutes"
-          ]
+          "schema": {
+            "enum": [
+              "jalali",
+              "gregorian",
+              "years",
+              "months",
+              "days",
+              "hours",
+              "minutes"
+            ]
+          }
         }
       ],
       "result": {
@@ -3801,7 +3863,9 @@
         {
           "name": "connection_log_unit",
           "description": "",
-          "enum": ["Seconds", "Minutes", "Hours", "Days", "Months", "Years"]
+          "schema": {
+            "enum": ["Seconds", "Minutes", "Hours", "Days", "Months", "Years"]
+          }
         },
         {
           "name": "credit_change_clean",
@@ -3813,7 +3877,9 @@
         {
           "name": "credit_change_unit",
           "description": "relative time unit",
-          "enum": ["Seconds", "Minutes", "Hours", "Days", "Months", "Years"]
+          "schema": {
+            "enum": ["Seconds", "Minutes", "Hours", "Days", "Months", "Years"]
+          }
         },
         {
           "name": "user_audit_log_clean",
@@ -3825,7 +3891,9 @@
         {
           "name": "user_audit_log_unit",
           "description": "relative time unit",
-          "enum": ["Seconds", "Minutes", "Hours", "Days", "Months", "Years"]
+          "schema": {
+            "enum": ["Seconds", "Minutes", "Hours", "Days", "Months", "Years"]
+          }
         },
         {
           "name": "snapshots_clean",
@@ -3837,7 +3905,9 @@
         {
           "name": "snapshots_unit",
           "description": "relative time unit",
-          "enum": ["Seconds", "Minutes", "Hours", "Days", "Months", "Years"]
+          "schema": {
+            "enum": ["Seconds", "Minutes", "Hours", "Days", "Months", "Years"]
+          }
         },
         {
           "name": "bw_snapshots_clean",
@@ -3849,7 +3919,9 @@
         {
           "name": "bw_snapshots_unit",
           "description": "relative time unit",
-          "enum": ["Seconds", "Minutes", "Hours", "Days", "Months", "Years"]
+          "schema": {
+            "enum": ["Seconds", "Minutes", "Hours", "Days", "Months", "Years"]
+          }
         },
         {
           "name": "web_analyzer_clean",
@@ -3861,7 +3933,9 @@
         {
           "name": "web_analyzer_unit",
           "description": "relative time unit",
-          "enum": ["Seconds", "Minutes", "Hours", "Days", "Months", "Years"]
+          "schema": {
+            "enum": ["Seconds", "Minutes", "Hours", "Days", "Months", "Years"]
+          }
         }
       ],
       "result": {
@@ -3898,14 +3972,16 @@
                 {
                   "index": 1,
                   "title": "relative time unit",
-                  "enum": [
-                    "Seconds",
-                    "Minutes",
-                    "Hours",
-                    "Days",
-                    "Months",
-                    "Years"
-                  ]
+                  "schema": {
+                    "enum": [
+                      "Seconds",
+                      "Minutes",
+                      "Hours",
+                      "Days",
+                      "Months",
+                      "Years"
+                    ]
+                  }
                 }
               ],
               "length": "2"
@@ -3922,14 +3998,16 @@
                 {
                   "index": 1,
                   "title": "relative time unit",
-                  "enum": [
-                    "Seconds",
-                    "Minutes",
-                    "Hours",
-                    "Days",
-                    "Months",
-                    "Years"
-                  ]
+                  "schema": {
+                    "enum": [
+                      "Seconds",
+                      "Minutes",
+                      "Hours",
+                      "Days",
+                      "Months",
+                      "Years"
+                    ]
+                  }
                 }
               ],
               "length": "2"
@@ -3946,14 +4024,16 @@
                 {
                   "index": 1,
                   "title": "relative time unit",
-                  "enum": [
-                    "Seconds",
-                    "Minutes",
-                    "Hours",
-                    "Days",
-                    "Months",
-                    "Years"
-                  ]
+                  "schema": {
+                    "enum": [
+                      "Seconds",
+                      "Minutes",
+                      "Hours",
+                      "Days",
+                      "Months",
+                      "Years"
+                    ]
+                  }
                 }
               ],
               "length": "2"
@@ -3970,14 +4050,16 @@
                 {
                   "index": 1,
                   "title": "relative time unit",
-                  "enum": [
-                    "Seconds",
-                    "Minutes",
-                    "Hours",
-                    "Days",
-                    "Months",
-                    "Years"
-                  ]
+                  "schema": {
+                    "enum": [
+                      "Seconds",
+                      "Minutes",
+                      "Hours",
+                      "Days",
+                      "Months",
+                      "Years"
+                    ]
+                  }
                 }
               ],
               "length": "2"
@@ -3994,14 +4076,16 @@
                 {
                   "index": 1,
                   "title": "relative time unit",
-                  "enum": [
-                    "Seconds",
-                    "Minutes",
-                    "Hours",
-                    "Days",
-                    "Months",
-                    "Years"
-                  ]
+                  "schema": {
+                    "enum": [
+                      "Seconds",
+                      "Minutes",
+                      "Hours",
+                      "Days",
+                      "Months",
+                      "Years"
+                    ]
+                  }
                 }
               ],
               "length": "2"
@@ -4018,14 +4102,16 @@
                 {
                   "index": 1,
                   "title": "relative time unit",
-                  "enum": [
-                    "Seconds",
-                    "Minutes",
-                    "Hours",
-                    "Days",
-                    "Months",
-                    "Years"
-                  ]
+                  "schema": {
+                    "enum": [
+                      "Seconds",
+                      "Minutes",
+                      "Hours",
+                      "Days",
+                      "Months",
+                      "Years"
+                    ]
+                  }
                 }
               ],
               "length": "2"
@@ -4109,7 +4195,9 @@
                 "type": "array",
                 "items": {
                   "title": "",
-                  "enum": ["duration", "credit", "in_bytes", "out_bytes"]
+                  "schema": {
+                    "enum": ["duration", "credit", "in_bytes", "out_bytes"]
+                  }
                 },
                 "required": false
               },
@@ -4191,21 +4279,23 @@
                 "type": "array",
                 "items": {
                   "title": "",
-                  "enum": [
-                    "0",
-                    "1",
-                    "2",
-                    "3",
-                    "4",
-                    "5",
-                    "6",
-                    "7",
-                    "8",
-                    "9",
-                    "10",
-                    "11",
-                    "12"
-                  ],
+                  "schema": {
+                    "enum": [
+                      "0",
+                      "1",
+                      "2",
+                      "3",
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "8",
+                      "9",
+                      "10",
+                      "11",
+                      "12"
+                    ]
+                  },
                   "__value_comment__": {
                     "0": "_NO_CATEGORY_",
                     "1": "RAS",
@@ -4229,7 +4319,9 @@
                 "type": "array",
                 "items": {
                   "title": "",
-                  "enum": ["1", "2", "3"],
+                  "schema": {
+                    "enum": ["1", "2", "3"]
+                  },
                   "__value_comment__": {
                     "1": "ADD",
                     "2": "CHANGE",
@@ -4307,14 +4399,16 @@
         {
           "name": "sort_by",
           "description": "",
-          "enum": [
-            "change_time",
-            "object_id",
-            "admin_id",
-            "event",
-            "category",
-            "isp_id"
-          ]
+          "schema": {
+            "enum": [
+              "change_time",
+              "object_id",
+              "admin_id",
+              "event",
+              "category",
+              "isp_id"
+            ]
+          }
         },
         {
           "name": "desc",
@@ -4365,9 +4459,6 @@
                   {
                     "name": "category",
                     "description": "",
-                    "type": "number",
-                    "minimum": 0,
-                    "maximum": 12,
                     "__value_comment__": {
                       "0": "_NO_CATEGORY_",
                       "1": "RAS",
@@ -4382,7 +4473,10 @@
                       "10": "VOIP-ROUTE-PREFIX",
                       "11": "ISP PAGE STYLE",
                       "12": "ONLINE-PAYMENT"
-                    }
+                    },
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 12
                   },
                   {
                     "name": "category_repr",
@@ -4416,14 +4510,14 @@
                   {
                     "name": "event",
                     "description": "",
-                    "type": "number",
-                    "minimum": 1,
-                    "maximum": 3,
                     "__value_comment__": {
                       "1": "ADD",
                       "2": "CHANGE",
                       "3": "DELETE"
-                    }
+                    },
+                    "type": "number",
+                    "minimum": 1,
+                    "maximum": 3
                   },
                   {
                     "name": "event_repr",
@@ -4569,16 +4663,18 @@
         {
           "name": "sort_by",
           "description": "",
-          "enum": [
-            "payment_id",
-            "gateway_id",
-            "unique_id",
-            "amount",
-            "payment_date",
-            "requester_id",
-            "requester_type",
-            "succeed"
-          ]
+          "schema": {
+            "enum": [
+              "payment_id",
+              "gateway_id",
+              "unique_id",
+              "amount",
+              "payment_date",
+              "requester_id",
+              "requester_type",
+              "succeed"
+            ]
+          }
         },
         {
           "name": "desc",
@@ -4652,16 +4748,16 @@
                         {
                           "name": "stage_name",
                           "description": "",
+                          "__value_comment__": {
+                            "Settle": "for Bank Mellat only",
+                            "After-Verify": "only if there was an error after Verify stage"
+                          },
                           "enum": [
                             "Prepare",
                             "Settle",
                             "Verify",
                             "After-Verify"
-                          ],
-                          "__value_comment__": {
-                            "Settle": "for Bank Mellat only",
-                            "After-Verify": "only if there was an error after Verify stage"
-                          }
+                          ]
                         }
                       ]
                     }
@@ -4714,11 +4810,11 @@
                   {
                     "name": "succeed",
                     "description": "",
-                    "enum": ["t", "f"],
                     "__value_comment__": {
                       "t": "true",
                       "f": "false"
-                    }
+                    },
+                    "enum": ["t", "f"]
                   },
                   {
                     "name": "unique_id",
@@ -4773,16 +4869,18 @@
         {
           "name": "sort_by",
           "description": "",
-          "enum": [
-            "user_id",
-            "credit_used",
-            "login_time",
-            "logout_time",
-            "successful",
-            "service",
-            "ras_id",
-            "connection_log_id"
-          ]
+          "schema": {
+            "enum": [
+              "user_id",
+              "credit_used",
+              "login_time",
+              "logout_time",
+              "successful",
+              "service",
+              "ras_id",
+              "connection_log_id"
+            ]
+          }
         },
         {
           "name": "desc",
@@ -4810,7 +4908,9 @@
         {
           "name": "report_type",
           "description": "",
-          "enum": ["inout_usages", "credit_usages", "time_usages"]
+          "schema": {
+            "enum": ["inout_usages", "credit_usages", "time_usages"]
+          }
         },
         {
           "name": "conds",
@@ -4827,27 +4927,33 @@
             "type": "array",
             "items": {
               "title": "",
-              "enum": [
-                "user_id",
-                "user_name",
-                "serial",
-                "group_name",
-                "isp_name",
-                "creation_date",
-                "name"
-              ]
+              "schema": {
+                "enum": [
+                  "user_id",
+                  "user_name",
+                  "serial",
+                  "group_name",
+                  "isp_name",
+                  "creation_date",
+                  "name"
+                ]
+              }
             }
           }
         },
         {
           "name": "sort_by",
           "description": "",
-          "enum": ["creation_date", "normal_username", "sum"]
+          "schema": {
+            "enum": ["creation_date", "normal_username", "sum"]
+          }
         },
         {
           "name": "output_type",
           "description": "",
-          "enum": ["csv", "pdf"]
+          "schema": {
+            "enum": ["csv", "pdf"]
+          }
         }
       ],
       "result": {
@@ -4876,13 +4982,15 @@
         {
           "name": "order_by",
           "description": "",
-          "enum": [
-            "prefix_name",
-            "prefix_code",
-            "duration_sum",
-            "count",
-            "credit"
-          ]
+          "schema": {
+            "enum": [
+              "prefix_name",
+              "prefix_code",
+              "duration_sum",
+              "count",
+              "credit"
+            ]
+          }
         },
         {
           "name": "desc",
@@ -4894,7 +5002,9 @@
         {
           "name": "output_type",
           "description": "",
-          "enum": ["csv", "pdf"]
+          "schema": {
+            "enum": ["csv", "pdf"]
+          }
         }
       ],
       "result": {
@@ -4923,16 +5033,18 @@
         {
           "name": "sort_by",
           "description": "",
-          "enum": [
-            "payment_id",
-            "gateway_id",
-            "unique_id",
-            "amount",
-            "payment_date",
-            "requester_id",
-            "requester_type",
-            "succeed"
-          ]
+          "schema": {
+            "enum": [
+              "payment_id",
+              "gateway_id",
+              "unique_id",
+              "amount",
+              "payment_date",
+              "requester_id",
+              "requester_type",
+              "succeed"
+            ]
+          }
         },
         {
           "name": "desc",
@@ -4944,7 +5056,9 @@
         {
           "name": "output_type",
           "description": "",
-          "enum": ["csv", "pdf"]
+          "schema": {
+            "enum": ["csv", "pdf"]
+          }
         }
       ],
       "result": {

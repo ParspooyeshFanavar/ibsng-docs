@@ -13,7 +13,9 @@
         {
           "name": "login_auth_type",
           "description": "",
-          "enum": ["ADMIN", "NORMAL_USER", "VOIP_USER"]
+          "schema": {
+            "enum": ["ADMIN", "NORMAL_USER", "VOIP_USER"]
+          }
         },
         {
           "name": "login_auth_name",
@@ -68,7 +70,9 @@
         {
           "name": "login_auth_type",
           "description": "",
-          "enum": ["ADMIN", "NORMAL_USER", "VOIP_USER"]
+          "schema": {
+            "enum": ["ADMIN", "NORMAL_USER", "VOIP_USER"]
+          }
         },
         {
           "name": "login_auth_name",
@@ -116,7 +120,9 @@
         {
           "name": "login_auth_type",
           "description": "",
-          "enum": ["ADMIN", "NORMAL_USER", "VOIP_USER"]
+          "schema": {
+            "enum": ["ADMIN", "NORMAL_USER", "VOIP_USER"]
+          }
         },
         {
           "name": "login_auth_name",
@@ -212,7 +218,9 @@
         {
           "name": "sort_by",
           "description": "",
-          "enum": ["admin_login_history_id", "login_date"]
+          "schema": {
+            "enum": ["admin_login_history_id", "login_date"]
+          }
         },
         {
           "name": "desc",
@@ -278,11 +286,11 @@
                   {
                     "name": "successful",
                     "description": "",
-                    "enum": ["t", "f"],
                     "__value_comment__": {
                       "t": "true",
                       "f": "false"
-                    }
+                    },
+                    "enum": ["t", "f"]
                   }
                 ]
               }

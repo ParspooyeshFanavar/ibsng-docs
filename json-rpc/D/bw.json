@@ -35,7 +35,9 @@
         {
           "name": "host_type",
           "description": "",
-          "enum": ["Linux", "Mikrotik"]
+          "schema": {
+            "enum": ["Linux", "Mikrotik"]
+          }
         }
       ],
       "result": {
@@ -200,7 +202,9 @@
         {
           "name": "protocol",
           "description": "",
-          "enum": ["tcp", "udp", "icmp", "ip"]
+          "schema": {
+            "enum": ["tcp", "udp", "icmp", "ip"]
+          }
         },
         {
           "name": "filter",
@@ -589,7 +593,9 @@
         {
           "name": "host_type",
           "description": "",
-          "enum": ["Linux", "Mikrotik"]
+          "schema": {
+            "enum": ["Linux", "Mikrotik"]
+          }
         }
       ],
       "result": {
@@ -747,7 +753,9 @@
         {
           "name": "protocol",
           "description": "",
-          "enum": ["tcp", "udp", "icmp", "ip"]
+          "schema": {
+            "enum": ["tcp", "udp", "icmp", "ip"]
+          }
         },
         {
           "name": "filter",
@@ -1024,7 +1032,9 @@
         {
           "name": "host_type",
           "description": "",
-          "enum": ["Linux", "Mikrotik"]
+          "schema": {
+            "enum": ["Linux", "Mikrotik"]
+          }
         }
       ],
       "result": {

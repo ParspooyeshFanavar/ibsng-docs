@@ -2401,7 +2401,9 @@
                 "type": "array",
                 "items": {
                   "title": "",
-                  "enum": ["CONFERENCE", "DIVERT"]
+                  "schema": {
+                    "enum": ["CONFERENCE", "DIVERT"]
+                  }
                 },
                 "required": false
               },
@@ -2633,14 +2635,16 @@
         {
           "name": "order_by",
           "description": "",
-          "enum": [
-            "user_id",
-            "isp_id",
-            "group_id",
-            "creation_date",
-            "credit",
-            "Deposit"
-          ]
+          "schema": {
+            "enum": [
+              "user_id",
+              "isp_id",
+              "group_id",
+              "creation_date",
+              "credit",
+              "Deposit"
+            ]
+          }
         },
         {
           "name": "desc",
@@ -2683,7 +2687,9 @@
         {
           "name": "output_type",
           "description": "",
-          "enum": ["csv", "pdf"]
+          "schema": {
+            "enum": ["csv", "pdf"]
+          }
         },
         {
           "name": "conds",
@@ -2696,14 +2702,16 @@
         {
           "name": "order_by",
           "description": "",
-          "enum": [
-            "user_id",
-            "isp_id",
-            "group_id",
-            "creation_date",
-            "credit",
-            "Deposit"
-          ]
+          "schema": {
+            "enum": [
+              "user_id",
+              "isp_id",
+              "group_id",
+              "creation_date",
+              "credit",
+              "Deposit"
+            ]
+          }
         },
         {
           "name": "desc",
@@ -3773,19 +3781,21 @@
         {
           "name": "order_by",
           "description": "",
-          "enum": [
-            "normal_username",
-            "voip_username",
-            "user_id",
-            "group_id",
-            "creation_date",
-            "owner_id",
-            "credit",
-            "deposit",
-            "first_login",
-            "serial",
-            "serial_numeric"
-          ]
+          "schema": {
+            "enum": [
+              "normal_username",
+              "voip_username",
+              "user_id",
+              "group_id",
+              "creation_date",
+              "owner_id",
+              "credit",
+              "deposit",
+              "first_login",
+              "serial",
+              "serial_numeric"
+            ]
+          }
         },
         {
           "name": "desc",
@@ -4208,19 +4218,21 @@
         {
           "name": "order_by",
           "description": "",
-          "enum": [
-            "normal_username",
-            "voip_username",
-            "user_id",
-            "group_id",
-            "creation_date",
-            "owner_id",
-            "credit",
-            "deposit",
-            "first_login",
-            "serial",
-            "serial_numeric"
-          ]
+          "schema": {
+            "enum": [
+              "normal_username",
+              "voip_username",
+              "user_id",
+              "group_id",
+              "creation_date",
+              "owner_id",
+              "credit",
+              "deposit",
+              "first_login",
+              "serial",
+              "serial_numeric"
+            ]
+          }
         },
         {
           "name": "desc",
@@ -4236,19 +4248,21 @@
             "type": "array",
             "items": {
               "title": "",
-              "enum": [
-                "user_id",
-                "creation_date",
-                "credit",
-                "deposit",
-                "group_id",
-                "group_name",
-                "isp_id",
-                "isp_name",
-                "nearest_exp_date",
-                "recharge_deposit",
-                "status"
-              ]
+              "schema": {
+                "enum": [
+                  "user_id",
+                  "creation_date",
+                  "credit",
+                  "deposit",
+                  "group_id",
+                  "group_name",
+                  "isp_id",
+                  "isp_name",
+                  "nearest_exp_date",
+                  "recharge_deposit",
+                  "status"
+                ]
+              }
             }
           }
         },
@@ -4262,7 +4276,9 @@
         {
           "name": "output_type",
           "description": "",
-          "enum": ["csv", "pdf"]
+          "schema": {
+            "enum": ["csv", "pdf"]
+          }
         }
       ],
       "result": {
@@ -4290,7 +4306,9 @@
         {
           "name": "status",
           "description": "",
-          "enum": ["Package", "Recharged", "Temporary Extended"]
+          "schema": {
+            "enum": ["Package", "Recharged", "Temporary Extended"]
+          }
         }
       ],
       "result": {
@@ -4525,7 +4543,9 @@
         {
           "name": "change_type",
           "description": "the same as method 'user.changeCreditExtended'",
-          "enum": ["ADD", "SET", "MULTIPLY"]
+          "schema": {
+            "enum": ["ADD", "SET", "MULTIPLY"]
+          }
         },
         {
           "name": "credit_comment",
@@ -4568,7 +4588,9 @@
         {
           "name": "change_type",
           "description": "the same as method 'user.changeDepositExtended'",
-          "enum": ["ADD", "SET", "MULTIPLY"]
+          "schema": {
+            "enum": ["ADD", "SET", "MULTIPLY"]
+          }
         },
         {
           "name": "deposit_comment",

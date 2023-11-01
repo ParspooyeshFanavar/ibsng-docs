@@ -27,7 +27,9 @@
         {
           "name": "view_type",
           "description": "",
-          "enum": ["SEND", "REPORT"]
+          "schema": {
+            "enum": ["SEND", "REPORT"]
+          }
         }
       ],
       "result": {
@@ -140,19 +142,21 @@
         {
           "name": "provider_type",
           "description": "",
-          "enum": [
-            "Parspooyesh",
-            "Pishgaman",
-            "Rahyab",
-            "I-Email",
-            "ADP",
-            "Generic-HTTP",
-            "IBSngMessaging",
-            "Magfa",
-            "MihanSMSCenter",
-            "AsreFaraErtebat",
-            "AFE-WS"
-          ]
+          "schema": {
+            "enum": [
+              "Parspooyesh",
+              "Pishgaman",
+              "Rahyab",
+              "I-Email",
+              "ADP",
+              "Generic-HTTP",
+              "IBSngMessaging",
+              "Magfa",
+              "MihanSMSCenter",
+              "AsreFaraErtebat",
+              "AFE-WS"
+            ]
+          }
         },
         {
           "name": "provider_name",
@@ -164,7 +168,9 @@
         {
           "name": "msg_type",
           "description": "",
-          "enum": ["SMS", "E-Mail", "Message To Admin", "Message To User"]
+          "schema": {
+            "enum": ["SMS", "E-Mail", "Message To Admin", "Message To User"]
+          }
         }
       ],
       "result": {
@@ -566,7 +572,9 @@
         {
           "name": "msg_type",
           "description": "",
-          "enum": ["SMS", "E-Mail", "Message To Admin", "Message To User"]
+          "schema": {
+            "enum": ["SMS", "E-Mail", "Message To Admin", "Message To User"]
+          }
         }
       ],
       "result": {
@@ -600,7 +608,9 @@
         {
           "name": "msg_type",
           "description": "",
-          "enum": ["SMS", "E-Mail", "Message To Admin", "Message To User"]
+          "schema": {
+            "enum": ["SMS", "E-Mail", "Message To Admin", "Message To User"]
+          }
         },
         {
           "name": "schedule_date",
@@ -611,15 +621,17 @@
         },
         {
           "name": "schedule_date_unit",
-          "enum": [
-            "jalali",
-            "gregorian",
-            "years",
-            "months",
-            "days",
-            "hours",
-            "minutes"
-          ]
+          "schema": {
+            "enum": [
+              "jalali",
+              "gregorian",
+              "years",
+              "months",
+              "days",
+              "hours",
+              "minutes"
+            ]
+          }
         }
       ],
       "result": {
@@ -653,7 +665,9 @@
         {
           "name": "msg_type",
           "description": "",
-          "enum": ["SMS", "E-Mail", "Message To Admin", "Message To User"]
+          "schema": {
+            "enum": ["SMS", "E-Mail", "Message To Admin", "Message To User"]
+          }
         }
       ],
       "result": {
@@ -687,7 +701,9 @@
         {
           "name": "msg_type",
           "description": "",
-          "enum": ["SMS", "E-Mail", "Message To Admin", "Message To User"]
+          "schema": {
+            "enum": ["SMS", "E-Mail", "Message To Admin", "Message To User"]
+          }
         },
         {
           "name": "schedule_date",
@@ -698,15 +714,17 @@
         },
         {
           "name": "schedule_date_unit",
-          "enum": [
-            "jalali",
-            "gregorian",
-            "years",
-            "months",
-            "days",
-            "hours",
-            "minutes"
-          ]
+          "schema": {
+            "enum": [
+              "jalali",
+              "gregorian",
+              "years",
+              "months",
+              "days",
+              "hours",
+              "minutes"
+            ]
+          }
         }
       ],
       "result": {
@@ -893,7 +911,9 @@
         {
           "name": "order_by",
           "description": "",
-          "enum": ["message_id", "msg_type", "transfer_date"]
+          "schema": {
+            "enum": ["message_id", "msg_type", "transfer_date"]
+          }
         },
         {
           "name": "desc",
@@ -1024,7 +1044,9 @@
         {
           "name": "order_by",
           "description": "",
-          "enum": ["message_id", "msg_type", "transfer_date"]
+          "schema": {
+            "enum": ["message_id", "msg_type", "transfer_date"]
+          }
         },
         {
           "name": "desc",
@@ -1150,7 +1172,9 @@
         {
           "name": "order_by",
           "description": "",
-          "enum": ["message_id", "msg_type", "transfer_date"]
+          "schema": {
+            "enum": ["message_id", "msg_type", "transfer_date"]
+          }
         },
         {
           "name": "desc",
@@ -1266,7 +1290,9 @@
         {
           "name": "order_by",
           "description": "",
-          "enum": ["message_id", "msg_type", "transfer_date"]
+          "schema": {
+            "enum": ["message_id", "msg_type", "transfer_date"]
+          }
         },
         {
           "name": "desc",
@@ -1447,7 +1473,9 @@
         {
           "name": "order_by",
           "description": "",
-          "enum": ["message_id", "msg_type", "transfer_date"]
+          "schema": {
+            "enum": ["message_id", "msg_type", "transfer_date"]
+          }
         },
         {
           "name": "desc",
@@ -1623,7 +1651,9 @@
         {
           "name": "order_by",
           "description": "",
-          "enum": ["message_id", "msg_type", "transfer_date"]
+          "schema": {
+            "enum": ["message_id", "msg_type", "transfer_date"]
+          }
         },
         {
           "name": "desc",
@@ -1813,7 +1843,9 @@
         {
           "name": "order_by",
           "description": "",
-          "enum": ["message_id", "msg_type", "transfer_date"]
+          "schema": {
+            "enum": ["message_id", "msg_type", "transfer_date"]
+          }
         },
         {
           "name": "desc",
@@ -1992,7 +2024,9 @@
         {
           "name": "order_by",
           "description": "",
-          "enum": ["message_id", "msg_type", "transfer_date"]
+          "schema": {
+            "enum": ["message_id", "msg_type", "transfer_date"]
+          }
         },
         {
           "name": "desc",
@@ -2087,7 +2121,9 @@
         {
           "name": "order_by",
           "description": "",
-          "enum": ["message_id", "msg_type", "transfer_date"]
+          "schema": {
+            "enum": ["message_id", "msg_type", "transfer_date"]
+          }
         },
         {
           "name": "desc",
@@ -2167,7 +2203,9 @@
         {
           "name": "target_box",
           "description": "",
-          "enum": ["USER_SEND", "USER_RECEIVE", "QUEUE"]
+          "schema": {
+            "enum": ["USER_SEND", "USER_RECEIVE", "QUEUE"]
+          }
         }
       ],
       "result": {
@@ -2195,13 +2233,15 @@
         {
           "name": "target_box",
           "description": "",
-          "enum": [
-            "USER_SEND",
-            "USER_RECEIVE",
-            "ISP_SEND",
-            "ISP_RECEIVE",
-            "QUEUE"
-          ]
+          "schema": {
+            "enum": [
+              "USER_SEND",
+              "USER_RECEIVE",
+              "ISP_SEND",
+              "ISP_RECEIVE",
+              "QUEUE"
+            ]
+          }
         }
       ],
       "result": {
@@ -2357,7 +2397,9 @@
         {
           "name": "type",
           "description": "",
-          "enum": ["ADMIN", "USER"]
+          "schema": {
+            "enum": ["ADMIN", "USER"]
+          }
         }
       ],
       "result": {

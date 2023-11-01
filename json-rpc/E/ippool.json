@@ -96,7 +96,9 @@
         {
           "name": "ippool_type",
           "description": "",
-          "enum": ["load_balancing", ""],
+          "schema": {
+            "enum": ["load_balancing", ""]
+          },
           "__value_comment__": {
             "load_balancing": "Load Balancing IPPool",
             "": "Not a Load Balancing IPPool"
@@ -297,7 +299,9 @@
         {
           "name": "balancing_strategy",
           "description": "",
-          "enum": ["distributive", "fill_first"]
+          "schema": {
+            "enum": ["distributive", "fill_first"]
+          }
         },
         {
           "name": "children_ippool_percentages",
@@ -347,7 +351,9 @@
         {
           "name": "balancing_strategy",
           "description": "",
-          "enum": ["distributive", "fill_first"]
+          "schema": {
+            "enum": ["distributive", "fill_first"]
+          }
         },
         {
           "name": "children_ippool_percentages",

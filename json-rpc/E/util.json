@@ -481,12 +481,16 @@
         {
           "name": "report_status",
           "description": "",
-          "enum": ["started", "finished"]
+          "schema": {
+            "enum": ["started", "finished"]
+          }
         },
         {
           "name": "report_format",
           "description": "",
-          "enum": ["csv", "pdf"]
+          "schema": {
+            "enum": ["csv", "pdf"]
+          }
         }
       ],
       "result": {

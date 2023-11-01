@@ -301,7 +301,9 @@
         },
         {
           "name": "sort_by",
-          "enum": ["customer_name", "customer_id"]
+          "schema": {
+            "enum": ["customer_name", "customer_id"]
+          }
         },
         {
           "name": "desc",

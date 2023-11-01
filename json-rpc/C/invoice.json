@@ -36,7 +36,9 @@
         {
           "name": "sort_by",
           "description": "",
-          "enum": ["issue_date", "user_id", "total_amount"]
+          "schema": {
+            "enum": ["issue_date", "user_id", "total_amount"]
+          }
         },
         {
           "name": "desc",
@@ -1288,7 +1290,9 @@
         },
         {
           "name": "sort_by",
-          "enum": ["issue_date", "user_id", "total_amount"]
+          "schema": {
+            "enum": ["issue_date", "user_id", "total_amount"]
+          }
         },
         {
           "name": "desc",
@@ -1534,7 +1538,9 @@
         },
         {
           "name": "sort_by",
-          "enum": ["issue_date", "user_id", "total_amount"]
+          "schema": {
+            "enum": ["issue_date", "user_id", "total_amount"]
+          }
         },
         {
           "name": "desc",
