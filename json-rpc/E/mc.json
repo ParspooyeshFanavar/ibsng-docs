@@ -137,7 +137,7 @@
       "name": "mc.addNewProvider",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE PROVIDERS",
+      "requires_perm": ["CHANGE PROVIDERS"],
       "params": [
         {
           "name": "provider_type",
@@ -220,7 +220,7 @@
       "name": "mc.updateProviderAttrs",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE PROVIDERS",
+      "requires_perm": ["CHANGE PROVIDERS"],
       "params": [
         {
           "name": "provider_name",
@@ -265,7 +265,7 @@
       "name": "mc.removeProvider",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE PROVIDERS",
+      "requires_perm": ["CHANGE PROVIDERS"],
       "params": [
         {
           "name": "provider_name",
@@ -288,7 +288,7 @@
       "name": "mc.resetProviderAttrs",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE PROVIDERS",
+      "requires_perm": ["CHANGE PROVIDERS"],
       "params": [
         {
           "name": "provider_name",
@@ -311,7 +311,7 @@
       "name": "mc.addNewEPGroupToProvider",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE PROVIDERS",
+      "requires_perm": ["CHANGE PROVIDERS"],
       "params": [
         {
           "name": "end_point_range",
@@ -341,7 +341,7 @@
       "name": "mc.getAllEPGroupsOfProvider",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE PROVIDERS",
+      "requires_perm": ["CHANGE PROVIDERS"],
       "params": [
         {
           "name": "provider_name",
@@ -364,7 +364,7 @@
       "name": "mc.getProviderUnassignedEPs",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE PROVIDERS",
+      "requires_perm": ["CHANGE PROVIDERS"],
       "params": [
         {
           "name": "provider_name",
@@ -401,7 +401,7 @@
       "name": "mc.unAssingAllFromGroup",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE PROVIDERS",
+      "requires_perm": ["CHANGE PROVIDERS"],
       "params": [
         {
           "name": "provider_name",
@@ -431,7 +431,7 @@
       "name": "mc.removeEPGroupFromProvider",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE PROVIDERS",
+      "requires_perm": ["CHANGE PROVIDERS"],
       "params": [
         {
           "name": "provider_id",
@@ -461,7 +461,7 @@
       "name": "mc.getEPGroupUsageInfo",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE PROVIDERS",
+      "requires_perm": ["CHANGE PROVIDERS"],
       "params": [
         {
           "name": "end_point_group_id",
@@ -936,7 +936,7 @@
       "name": "mc.adminSearchReceivedMessage",
       "description": "Messages of Users",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE MESSAGE CENTER REPORTS",
+      "requires_perm": ["SEE MESSAGE CENTER REPORTS"],
       "params": [
         {
           "name": "conds",
@@ -1069,7 +1069,7 @@
       "name": "mc.adminSearchReceivedMessage",
       "description": "Messages of ISP",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE MESSAGE CENTER REPORTS",
+      "requires_perm": ["SEE MESSAGE CENTER REPORTS"],
       "params": [
         {
           "name": "conds",
@@ -1365,7 +1365,7 @@
       "name": "mc.adminSearchSentMessage",
       "description": "Messages of Users",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE MESSAGE CENTER REPORTS",
+      "requires_perm": ["SEE MESSAGE CENTER REPORTS"],
       "params": [
         {
           "name": "conds",
@@ -1548,7 +1548,7 @@
       "name": "mc.adminSearchSentMessage",
       "description": "Messages of ISP",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE MESSAGE CENTER REPORTS",
+      "requires_perm": ["SEE MESSAGE CENTER REPORTS"],
       "params": [
         {
           "name": "conds",
@@ -1726,7 +1726,7 @@
       "name": "mc.adminSearchQueuedMessage",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE MESSAGE CENTER REPORTS",
+      "requires_perm": ["SEE MESSAGE CENTER REPORTS"],
       "params": [
         {
           "name": "conds",
@@ -2221,7 +2221,7 @@
       "name": "mc.adminDeleteMessage",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE MESSAGE CENTER REPORTS",
+      "requires_perm": ["SEE MESSAGE CENTER REPORTS"],
       "params": [
         {
           "name": "message_ids",
@@ -2279,7 +2279,7 @@
       "name": "mc.adminCancelScheduledMessages",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE MESSAGE CENTER REPORTS",
+      "requires_perm": ["SEE MESSAGE CENTER REPORTS"],
       "params": [
         {
           "name": "message_ids",
@@ -2302,7 +2302,7 @@
       "name": "mc.updateAdminRemoteRequestAttrs",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE MESSAGE CENTER REPORTS",
+      "requires_perm": ["SEE MESSAGE CENTER REPORTS"],
       "params": [
         {
           "name": "remote_report_status",
@@ -2347,7 +2347,7 @@
       "name": "mc.updateUserRemoteRequestAttrs",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE MESSAGE CENTER REPORTS",
+      "requires_perm": ["SEE MESSAGE CENTER REPORTS"],
       "params": [
         {
           "name": "remote_report_status",
@@ -2392,7 +2392,7 @@
       "name": "mc.getRemoteRequestAttrs",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE MESSAGE CENTER REPORTS",
+      "requires_perm": ["SEE MESSAGE CENTER REPORTS"],
       "params": [
         {
           "name": "type",

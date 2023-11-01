@@ -399,7 +399,10 @@ def getJsonMethod(handlerName: str, method: "Element", authTypes: list[str]):
 	}
 	requires_perm = method.attrib.get("requires_perm")
 	if requires_perm:
-		jsonMethod["requires_perm"] = requires_perm
+		jsonMethod["requires_perm"] = [
+			x.strip()
+			for x in requires_perm.split(",")
+		]
 	jsonMethod["params"] = params
 
 	resultType = ParamType()

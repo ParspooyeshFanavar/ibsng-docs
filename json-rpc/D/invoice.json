@@ -9,7 +9,7 @@
       "name": "invoice.getInvoiceProfileNames",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE INVOICE PROFILE",
+      "requires_perm": ["SEE INVOICE PROFILE"],
       "params": [
         {
           "name": "conds",
@@ -61,7 +61,7 @@
       "name": "invoice.getInvoiceProfiles",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE INVOICE PROFILE",
+      "requires_perm": ["SEE INVOICE PROFILE"],
       "params": [],
       "result": {
         "name": "Response (array)",
@@ -76,7 +76,7 @@
       "name": "invoice.getInvoiceProfileByName",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE INVOICE PROFILE",
+      "requires_perm": ["SEE INVOICE PROFILE"],
       "params": [
         {
           "name": "profile_name",
@@ -243,7 +243,7 @@
       "name": "invoice.getInvoiceProfileByID",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE INVOICE PROFILE",
+      "requires_perm": ["SEE INVOICE PROFILE"],
       "params": [
         {
           "name": "profile_id",
@@ -410,7 +410,7 @@
       "name": "invoice.getInvoiceProfileByUserID",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE INVOICE PROFILE",
+      "requires_perm": ["SEE INVOICE PROFILE"],
       "params": [
         {
           "name": "user_id",
@@ -577,7 +577,7 @@
       "name": "invoice.getInvoiceProfileByGroupName",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE INVOICE PROFILE",
+      "requires_perm": ["SEE INVOICE PROFILE"],
       "params": [
         {
           "name": "group_name",
@@ -744,7 +744,7 @@
       "name": "invoice.getInvoiceRuleByID",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE INVOICE PROFILE",
+      "requires_perm": ["SEE INVOICE PROFILE"],
       "params": [
         {
           "name": "rule_id",
@@ -874,7 +874,7 @@
       "name": "invoice.addInvoiceProfile",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE INVOICE PROFILE",
+      "requires_perm": ["CHANGE INVOICE PROFILE"],
       "params": [
         {
           "name": "profile_name",
@@ -912,7 +912,7 @@
       "name": "invoice.updateInvoiceProfile",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE INVOICE PROFILE",
+      "requires_perm": ["CHANGE INVOICE PROFILE"],
       "params": [
         {
           "name": "profile_id",
@@ -1085,7 +1085,7 @@
       "name": "invoice.deleteInvoiceProfile",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE INVOICE PROFILE",
+      "requires_perm": ["CHANGE INVOICE PROFILE"],
       "params": [
         {
           "name": "profile_id",
@@ -1108,7 +1108,7 @@
       "name": "invoice.getInvoiceRulesDescByProfileName",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE INVOICE PROFILE",
+      "requires_perm": ["SEE INVOICE PROFILE"],
       "params": [
         {
           "name": "profile_name",
@@ -1131,7 +1131,7 @@
       "name": "invoice.getAllTemplateNames",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE INVOICE PROFILE",
+      "requires_perm": ["SEE INVOICE PROFILE"],
       "params": [],
       "result": {
         "name": "Response (array)",
@@ -1146,7 +1146,7 @@
       "name": "invoice.addInvoiceTemplate",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE INVOICE PROFILE",
+      "requires_perm": ["CHANGE INVOICE PROFILE"],
       "params": [
         {
           "name": "template_name",
@@ -1169,7 +1169,7 @@
       "name": "invoice.deleteInvoiceTemplate",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE INVOICE PROFILE",
+      "requires_perm": ["CHANGE INVOICE PROFILE"],
       "params": [
         {
           "name": "template_name",
@@ -1192,7 +1192,10 @@
       "name": "invoice.searchInvoices",
       "description": "",
       "auth_type": ["ADMIN", "NORMAL_USER", "VOIP_USER"],
-      "requires_perm": "user can only see his own invoices,         admin must have permission 'SEE INVOICE'",
+      "requires_perm": [
+        "user can only see his own invoices",
+        "admin must have permission 'SEE INVOICE'"
+      ],
       "params": [
         {
           "name": "conds",
@@ -1445,7 +1448,10 @@
       "name": "invoice.searchProformaInvoices",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "user can only see his own proforma invoices,         admin must have permission 'SEE INVOICE'",
+      "requires_perm": [
+        "user can only see his own proforma invoices",
+        "admin must have permission 'SEE INVOICE'"
+      ],
       "params": [
         {
           "name": "conds",
@@ -1881,7 +1887,7 @@
       "name": "invoice.invoicePutUserOnDept",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "PAY INVOICE",
+      "requires_perm": ["PAY INVOICE"],
       "params": [
         {
           "name": "pi_id_list",
@@ -1914,7 +1920,7 @@
       "name": "invoice.proformaInvoicePaid",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "PAY INVOICE",
+      "requires_perm": ["PAY INVOICE"],
       "params": [
         {
           "name": "pi_id_list",
@@ -1957,7 +1963,7 @@
       "name": "invoice.invoicePaid",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "PAY INVOICE",
+      "requires_perm": ["PAY INVOICE"],
       "params": [
         {
           "name": "invoice_id_list",

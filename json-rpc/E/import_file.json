@@ -9,7 +9,7 @@
       "name": "import_file.getLastSequenceValue",
       "description": "see the last sequence of customer ID",
       "auth_type": ["ADMIN"],
-      "requires_perm": "ADD CUSTOMER",
+      "requires_perm": ["ADD CUSTOMER"],
       "params": [
         {
           "name": "sequence_type",

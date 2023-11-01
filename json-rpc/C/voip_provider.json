@@ -9,7 +9,7 @@
       "name": "voip_provider.listRoutingProfiles",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE VOIP PROVIDER",
+      "requires_perm": ["SEE VOIP PROVIDER"],
       "params": [],
       "result": {
         "name": "Response (array)",
@@ -24,7 +24,7 @@
       "name": "voip_provider.listVoIPProviders",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE VOIP PROVIDER",
+      "requires_perm": ["SEE VOIP PROVIDER"],
       "params": [],
       "result": {
         "name": "Response (array)",

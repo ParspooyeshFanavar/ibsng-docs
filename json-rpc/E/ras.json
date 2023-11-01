@@ -9,7 +9,7 @@
       "name": "ras.addNewRas",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE RAS",
+      "requires_perm": ["CHANGE RAS"],
       "params": [
         {
           "name": "ras_ip",
@@ -69,7 +69,7 @@
       "name": "ras.getRasInfo",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "GET RAS INFORMATION",
+      "requires_perm": ["GET RAS INFORMATION"],
       "params": [
         {
           "name": "ras_ip",
@@ -182,7 +182,7 @@
       "name": "ras.getInActiveRases",
       "description": "List of inactive RAS IPs",
       "auth_type": ["ADMIN"],
-      "requires_perm": "LIST RAS",
+      "requires_perm": ["LIST RAS"],
       "params": [],
       "result": {
         "name": "Response (array)",
@@ -197,7 +197,7 @@
       "name": "ras.getRasTypes",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "GET RAS INFORMATION",
+      "requires_perm": ["GET RAS INFORMATION"],
       "params": [],
       "result": {
         "name": "Response (array)",
@@ -212,7 +212,7 @@
       "name": "ras.getRasAttributes",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "GET RAS INFORMATION",
+      "requires_perm": ["GET RAS INFORMATION"],
       "params": [
         {
           "name": "ras_ip",
@@ -301,7 +301,7 @@
       "name": "ras.updateAttributes",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE RAS",
+      "requires_perm": ["CHANGE RAS"],
       "params": [
         {
           "name": "ras_ip",
@@ -332,7 +332,7 @@
       "name": "ras.resetAttributes",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE RAS",
+      "requires_perm": ["CHANGE RAS"],
       "params": [
         {
           "name": "ras_ip",
@@ -355,7 +355,7 @@
       "name": "ras.deActiveRas",
       "description": "Deactivate RAS",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE RAS",
+      "requires_perm": ["CHANGE RAS"],
       "params": [
         {
           "name": "ras_ip",
@@ -378,7 +378,7 @@
       "name": "ras.deleteRas",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE RAS",
+      "requires_perm": ["CHANGE RAS"],
       "params": [
         {
           "name": "ras_id",
@@ -401,7 +401,7 @@
       "name": "ras.reActiveRas",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE RAS",
+      "requires_perm": ["CHANGE RAS"],
       "params": [
         {
           "name": "ras_ip",
@@ -424,7 +424,7 @@
       "name": "ras.getRasIPpools",
       "description": "Returns a sorted list of IPPool names for a RAS",
       "auth_type": ["ADMIN"],
-      "requires_perm": "GET RAS INFORMATION",
+      "requires_perm": ["GET RAS INFORMATION"],
       "params": [
         {
           "name": "ras_ip",

@@ -9,7 +9,7 @@
       "name": "user.addNewUsers",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "ADD NEW USER",
+      "requires_perm": ["ADD NEW USER"],
       "params": [
         {
           "name": "count",
@@ -1179,7 +1179,7 @@
       "name": "user.getUserInfo",
       "description": "By Admin",
       "auth_type": ["ADMIN"],
-      "requires_perm": "GET USER INFORMATION",
+      "requires_perm": ["GET USER INFORMATION"],
       "params": [
         {
           "name": "user_id",
@@ -1266,7 +1266,7 @@
       "name": "user.updateUserAttrs",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE USER ATTRIBUTES",
+      "requires_perm": ["CHANGE USER ATTRIBUTES"],
       "params": [
         {
           "name": "user_id",
@@ -2494,7 +2494,7 @@
       "name": "user.changeCredit",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE USER CREDIT",
+      "requires_perm": ["CHANGE USER CREDIT"],
       "params": [
         {
           "name": "user_id",
@@ -2538,7 +2538,7 @@
       "name": "user.changeCreditExtended",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE USER CREDIT",
+      "requires_perm": ["CHANGE USER CREDIT"],
       "params": [
         {
           "name": "user_id",
@@ -2583,7 +2583,7 @@
       "name": "user.changeDeposit",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE USER DEPOSIT",
+      "requires_perm": ["CHANGE USER DEPOSIT"],
       "params": [
         {
           "name": "user_id",
@@ -2627,7 +2627,7 @@
       "name": "user.changeDepositExtended",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE USER DEPOSIT",
+      "requires_perm": ["CHANGE USER DEPOSIT"],
       "params": [
         {
           "name": "user_id",
@@ -2715,7 +2715,7 @@
       "name": "user.searchExpiredUsers",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "GET USER INFORMATION",
+      "requires_perm": ["GET USER INFORMATION"],
       "params": [
         {
           "name": "conds",
@@ -2824,7 +2824,7 @@
       "name": "user.searchExpiredUsersExtended",
       "description": "larger output than searchExpiredUsers, returns expiration dates too",
       "auth_type": ["ADMIN"],
-      "requires_perm": "GET USER INFORMATION",
+      "requires_perm": ["GET USER INFORMATION"],
       "params": [],
       "result": {
         "name": "Response (array)",
@@ -2839,7 +2839,7 @@
       "name": "user.saveSearchExpiredUsers",
       "description": "use SystemNotification.getNotifications() method to see if the report is finished and get the URL to download it",
       "auth_type": ["ADMIN"],
-      "requires_perm": "GET USER INFORMATION",
+      "requires_perm": ["GET USER INFORMATION"],
       "params": [
         {
           "name": "output_type",
@@ -2905,7 +2905,7 @@
       "name": "user.searchUser",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEARCH USER",
+      "requires_perm": ["SEARCH USER"],
       "params": [
         {
           "name": "conds",
@@ -3804,7 +3804,7 @@
       "name": "user.delUser",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "DELETE USER",
+      "requires_perm": ["DELETE USER"],
       "params": [
         {
           "name": "user_id",
@@ -3893,7 +3893,7 @@
       "name": "user.killUserByID",
       "description": "by admin, disconnects all instances of given users",
       "auth_type": ["ADMIN"],
-      "requires_perm": "KILL USER",
+      "requires_perm": ["KILL USER"],
       "params": [
         {
           "name": "user_id",
@@ -4004,7 +4004,7 @@
       "name": "user.renewUsers",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "RENEW USER",
+      "requires_perm": ["RENEW USER"],
       "params": [
         {
           "name": "user_id",
@@ -4048,7 +4048,7 @@
       "name": "user.rechargeUsers",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "RECHARGE USER",
+      "requires_perm": ["RECHARGE USER"],
       "params": [
         {
           "name": "user_id",
@@ -4078,7 +4078,7 @@
       "name": "user.temporaryExtendUsers",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "TEMPORARY EXTEND",
+      "requires_perm": ["TEMPORARY EXTEND"],
       "params": [
         {
           "name": "user_id",
@@ -4191,7 +4191,7 @@
       "name": "user.saveSearchUser",
       "description": "use SystemNotification.getNotifications() method to see if the report is finished and get the URL to download it",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEARCH USER",
+      "requires_perm": ["SEARCH USER"],
       "params": [
         {
           "name": "conds",
@@ -4280,7 +4280,7 @@
       "name": "user.changeStatus",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE USER ATTRIBUTES",
+      "requires_perm": ["CHANGE USER ATTRIBUTES"],
       "params": [
         {
           "name": "user_id",
@@ -4310,7 +4310,7 @@
       "name": "user.getBulkActionsForAdmin",
       "description": "get list of performed or running Bulk Actions, which admin has access to see them",
       "auth_type": ["ADMIN"],
-      "requires_perm": "PERFORM BULK ACTION",
+      "requires_perm": ["PERFORM BULK ACTION"],
       "params": [],
       "result": {
         "name": "Response (array)",
@@ -4325,7 +4325,7 @@
       "name": "user.viewBulkActionStatus",
       "description": "get status of a Bulk Action (that has been started by the admin himself)",
       "auth_type": ["ADMIN"],
-      "requires_perm": "PERFORM BULK ACTION",
+      "requires_perm": ["PERFORM BULK ACTION"],
       "params": [
         {
           "name": "action_id",
@@ -4424,7 +4424,7 @@
       "name": "user.cancelBulkAction",
       "description": "cancel a Bulk Action (that has been started by the admin himself)",
       "auth_type": ["ADMIN"],
-      "requires_perm": "PERFORM BULK ACTION",
+      "requires_perm": ["PERFORM BULK ACTION"],
       "params": [
         {
           "name": "action_id",
@@ -4447,7 +4447,7 @@
       "name": "user.clearBulkAction",
       "description": "clear (remove from list) a Bulk Action (that has been started by the admin himself), and is finished",
       "auth_type": ["ADMIN"],
-      "requires_perm": "PERFORM BULK ACTION",
+      "requires_perm": ["PERFORM BULK ACTION"],
       "params": [
         {
           "name": "action_id",
@@ -4470,7 +4470,7 @@
       "name": "user.bulkUpdateUserAttrs",
       "description": "combines methods 'user.searchUser' and 'user.updateUserAttrs'",
       "auth_type": ["ADMIN"],
-      "requires_perm": "PERFORM BULK ACTION, SEARCH USER",
+      "requires_perm": ["PERFORM BULK ACTION", "SEARCH USER"],
       "params": [
         {
           "name": "conds",
@@ -4509,7 +4509,7 @@
       "name": "user.bulkChangeUserCredit",
       "description": "combines methods 'user.searchUser' and 'user.changeCreditExtended'",
       "auth_type": ["ADMIN"],
-      "requires_perm": "PERFORM BULK ACTION, BULK CHANGE USER CREDIT",
+      "requires_perm": ["PERFORM BULK ACTION", "BULK CHANGE USER CREDIT"],
       "params": [
         {
           "name": "conds",
@@ -4554,7 +4554,7 @@
       "name": "user.bulkChangeUserDeposit",
       "description": "combines methods 'user.searchUser' and 'user.changeDepositExtended'",
       "auth_type": ["ADMIN"],
-      "requires_perm": "PERFORM BULK ACTION, BULK CHANGE USER DEPOSIT",
+      "requires_perm": ["PERFORM BULK ACTION", "BULK CHANGE USER DEPOSIT"],
       "params": [
         {
           "name": "conds",
@@ -4599,7 +4599,7 @@
       "name": "user.bulkDeleteUser",
       "description": "combines methods 'user.searchUser' and 'user.delUser'",
       "auth_type": ["ADMIN"],
-      "requires_perm": "PERFORM BULK ACTION, BULK DELETE USER",
+      "requires_perm": ["PERFORM BULK ACTION", "BULK DELETE USER"],
       "params": [
         {
           "name": "conds",
@@ -4644,7 +4644,7 @@
       "name": "user.bulkRenewUsers",
       "description": "combines methods 'user.searchUser' and 'user.renewUsers'",
       "auth_type": ["ADMIN"],
-      "requires_perm": "PERFORM BULK ACTION, RENEW USER",
+      "requires_perm": ["PERFORM BULK ACTION", "RENEW USER"],
       "params": [
         {
           "name": "conds",
@@ -4675,7 +4675,7 @@
       "name": "user.bulkKillUsers",
       "description": "combines methods 'user.searchUser' and 'user.renewUsers'",
       "auth_type": ["ADMIN"],
-      "requires_perm": "PERFORM BULK ACTION, RENEW USER",
+      "requires_perm": ["PERFORM BULK ACTION", "RENEW USER"],
       "params": [
         {
           "name": "conds",
@@ -4708,7 +4708,7 @@
       "name": "user.getUsersExpDateFirstLogin",
       "description": "returns username, expiration date and first login for ALL USERS                returns a large amount of data                for use by CRM only",
       "auth_type": ["ADMIN"],
-      "requires_perm": "GOD",
+      "requires_perm": ["GOD"],
       "params": [],
       "result": {
         "name": "Response (object)",
@@ -4723,7 +4723,7 @@
       "name": "user.setOneChargeRuleUsage",
       "description": "set or clear charge rule usage of one rule for one user",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE USER ATTRIBUTES",
+      "requires_perm": ["CHANGE USER ATTRIBUTES"],
       "params": [
         {
           "name": "user_id",
@@ -4774,7 +4774,7 @@
       "name": "user.setFeshfesheParams",
       "description": "Added in tag 320, See: http://wiki.parspooyesh.com/index.php/Feshfeshe",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE USER ATTRIBUTES",
+      "requires_perm": ["CHANGE USER ATTRIBUTES"],
       "params": [
         {
           "name": "user_id",

@@ -9,7 +9,7 @@
       "name": "extra_charge.getExtraChargeProfileNames",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE EXTRA CHARGE",
+      "requires_perm": ["SEE EXTRA CHARGE"],
       "params": [],
       "result": {
         "name": "Response (array)",
@@ -24,7 +24,7 @@
       "name": "extra_charge.addExtraChargeProfile",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE EXTRA CHARGE",
+      "requires_perm": ["CHANGE EXTRA CHARGE"],
       "params": [
         {
           "name": "profile_name",
@@ -127,7 +127,7 @@
       "name": "extra_charge.updateExtraChargeProfile",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE EXTRA CHARGE",
+      "requires_perm": ["CHANGE EXTRA CHARGE"],
       "params": [
         {
           "name": "profile_id",
@@ -244,7 +244,7 @@
       "name": "extra_charge.deleteExtraChargeProfile",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE EXTRA CHARGE",
+      "requires_perm": ["CHANGE EXTRA CHARGE"],
       "params": [
         {
           "name": "profile_name",
@@ -267,7 +267,7 @@
       "name": "extra_charge.getExtraChargeProfiles",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE EXTRA CHARGE",
+      "requires_perm": ["SEE EXTRA CHARGE"],
       "params": [],
       "result": {
         "name": "Response (array)",
@@ -282,7 +282,7 @@
       "name": "extra_charge.getExtraChargeProfileByName",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE EXTRA CHARGE",
+      "requires_perm": ["SEE EXTRA CHARGE"],
       "params": [
         {
           "name": "profile_name",
@@ -391,7 +391,7 @@
       "name": "extra_charge.getExtraChargeProfileByID",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE EXTRA CHARGE",
+      "requires_perm": ["SEE EXTRA CHARGE"],
       "params": [
         {
           "name": "profile_id",

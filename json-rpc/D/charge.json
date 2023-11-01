@@ -106,7 +106,7 @@
       "name": "charge.addNewCharge",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE CHARGE",
+      "requires_perm": ["CHANGE CHARGE"],
       "params": [
         {
           "name": "charge_name",
@@ -143,7 +143,7 @@
       "name": "charge.copyCharge",
       "description": "just one copy",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE CHARGE",
+      "requires_perm": ["CHANGE CHARGE"],
       "params": [
         {
           "name": "charge_name",
@@ -173,7 +173,7 @@
       "name": "charge.copyCharge",
       "description": "one or more copies",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE CHARGE",
+      "requires_perm": ["CHANGE CHARGE"],
       "params": [
         {
           "name": "charge_name",
@@ -210,7 +210,7 @@
       "name": "charge.updateCharge",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE CHARGE",
+      "requires_perm": ["CHANGE CHARGE"],
       "params": [
         {
           "name": "charge_id",
@@ -254,7 +254,7 @@
       "name": "charge.deleteCharge",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE CHARGE",
+      "requires_perm": ["CHANGE CHARGE"],
       "params": [
         {
           "name": "charge_name",
@@ -277,7 +277,7 @@
       "name": "charge.addNewChargeRule",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE CHARGE",
+      "requires_perm": ["CHANGE CHARGE"],
       "params": [
         {
           "name": "charge_rule_description",
@@ -314,7 +314,7 @@
       "name": "charge.updateChargeRule",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE CHARGE",
+      "requires_perm": ["CHANGE CHARGE"],
       "params": [
         {
           "name": "charge_rule_id",
@@ -358,7 +358,7 @@
       "name": "charge.deleteChargeRule",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE CHARGE",
+      "requires_perm": ["CHANGE CHARGE"],
       "params": [
         {
           "name": "charge_rule_id",

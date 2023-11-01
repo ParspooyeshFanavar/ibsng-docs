@@ -9,7 +9,7 @@
       "name": "log_console.getConsoleBuffer",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE CONNECTION LOGS",
+      "requires_perm": ["SEE CONNECTION LOGS"],
       "params": [],
       "result": {
         "name": "Response (array)",

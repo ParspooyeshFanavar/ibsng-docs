@@ -9,7 +9,7 @@
       "name": "user_custom_field.addNewCustomField",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE USER CUSTOM FIELDS",
+      "requires_perm": ["CHANGE USER CUSTOM FIELDS"],
       "params": [
         {
           "name": "name",
@@ -74,7 +74,7 @@
       "name": "user_custom_field.updateCustomField",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE USER CUSTOM FIELDS",
+      "requires_perm": ["CHANGE USER CUSTOM FIELDS"],
       "params": [
         {
           "name": "custom_field_id",
@@ -146,7 +146,7 @@
       "name": "user_custom_field.deleteCustomField",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE USER CUSTOM FIELDS",
+      "requires_perm": ["CHANGE USER CUSTOM FIELDS"],
       "params": [
         {
           "name": "name",

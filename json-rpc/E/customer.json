@@ -9,7 +9,7 @@
       "name": "customer.addNewCustomer",
       "description": "add a new customer",
       "auth_type": ["ADMIN"],
-      "requires_perm": "ADD CUSTOMER",
+      "requires_perm": ["ADD CUSTOMER"],
       "params": [
         {
           "name": "uid",
@@ -160,7 +160,7 @@
       "name": "customer.updateCustomer",
       "description": "update info customer with uid or customer_id",
       "auth_type": ["ADMIN"],
-      "requires_perm": "UPDATE CUSTOMER",
+      "requires_perm": ["UPDATE CUSTOMER"],
       "params": [
         {
           "name": "customer_id",
@@ -241,7 +241,7 @@
       "name": "customer.deleteCustomer",
       "description": "delete info customer with uid or customer_id",
       "auth_type": ["ADMIN"],
-      "requires_perm": "DELETE CUSTOMER",
+      "requires_perm": ["DELETE CUSTOMER"],
       "params": [
         {
           "name": "uid",
@@ -273,7 +273,7 @@
       "name": "customer.searchCustomer",
       "description": "Search in customer information",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEARCH CUSTOMER",
+      "requires_perm": ["SEARCH CUSTOMER"],
       "params": [
         {
           "name": "conds",

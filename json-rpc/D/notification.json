@@ -23,7 +23,7 @@
       "name": "notification.getNotificationProfiles",
       "description": "list of notification profile informations that admin has access to.",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE NOTIFICATION",
+      "requires_perm": ["CHANGE NOTIFICATION"],
       "params": [],
       "result": {
         "name": "Response (array)",
@@ -38,7 +38,7 @@
       "name": "notification.addNotificationProfile",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE NOTIFICATION",
+      "requires_perm": ["CHANGE NOTIFICATION"],
       "params": [
         {
           "name": "notification_profile_name",
@@ -68,7 +68,7 @@
       "name": "notification.updateNotificationProfile",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE NOTIFICATION",
+      "requires_perm": ["CHANGE NOTIFICATION"],
       "params": [
         {
           "name": "notification_profile_id",
@@ -209,7 +209,7 @@
       "name": "notification.deleteNotificationProfile",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE NOTIFICATION",
+      "requires_perm": ["CHANGE NOTIFICATION"],
       "params": [
         {
           "name": "notification_profile_name",
@@ -232,7 +232,7 @@
       "name": "notification.addNotificationRule",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE NOTIFICATION",
+      "requires_perm": ["CHANGE NOTIFICATION"],
       "params": [
         {
           "name": "notification_profile_id",
@@ -303,7 +303,7 @@
       "name": "notification.deleteNotificationRule",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE NOTIFICATION",
+      "requires_perm": ["CHANGE NOTIFICATION"],
       "params": [
         {
           "name": "notification_profile_id",
@@ -333,7 +333,7 @@
       "name": "notification.updateNotificationRule",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE NOTIFICATION",
+      "requires_perm": ["CHANGE NOTIFICATION"],
       "params": [
         {
           "name": "notification_rule_id",

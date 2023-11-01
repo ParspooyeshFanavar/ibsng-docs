@@ -38,7 +38,7 @@
       "name": "util.runDebugCode",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "GOD",
+      "requires_perm": ["GOD"],
       "params": [
         {
           "name": "command",
@@ -89,7 +89,7 @@
       "name": "util.afeGetUserInfo",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "AFE REMOTE ADMIN",
+      "requires_perm": ["AFE REMOTE ADMIN"],
       "params": [
         {
           "name": "username",
@@ -126,7 +126,7 @@
       "name": "util.afeGetAllGroups",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "AFE REMOTE ADMIN",
+      "requires_perm": ["AFE REMOTE ADMIN"],
       "params": [],
       "result": {
         "name": "Response (array)",
@@ -141,7 +141,7 @@
       "name": "util.afeChangeUserCredit",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "AFE REMOTE ADMIN",
+      "requires_perm": ["AFE REMOTE ADMIN"],
       "params": [
         {
           "name": "username",
@@ -178,7 +178,7 @@
       "name": "util.getUserIDForIP",
       "description": "returns user id for an online user with given remote ip",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE ONLINE USERS",
+      "requires_perm": ["SEE ONLINE USERS"],
       "params": [
         {
           "name": "ip",
@@ -201,7 +201,7 @@
       "name": "util.getUsernameForIP",
       "description": "returns internet username for an online user with given remote ip",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE ONLINE USERS",
+      "requires_perm": ["SEE ONLINE USERS"],
       "params": [
         {
           "name": "ip",
@@ -302,7 +302,7 @@
       "name": "util.echo",
       "description": "returns same the input string",
       "auth_type": ["ADMIN"],
-      "requires_perm": "GOD",
+      "requires_perm": ["GOD"],
       "params": [
         {
           "name": "echo",
@@ -427,7 +427,7 @@
       "name": "util.getDRBDStatus",
       "description": "return status of DRBD",
       "auth_type": ["ADMIN"],
-      "requires_perm": "GOD",
+      "requires_perm": ["GOD"],
       "params": [],
       "result": {
         "name": "Response (array)",

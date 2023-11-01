@@ -9,7 +9,7 @@
       "name": "snapshot.getBWSnapShotForUserAjax",
       "description": "by admin",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE REALTIME SNAPSHOTS",
+      "requires_perm": ["SEE REALTIME SNAPSHOTS"],
       "params": [
         {
           "name": "user_id",
@@ -80,7 +80,7 @@
       "name": "snapshot.getOnlinesSnapShot",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE ONLINE SNAPSHOTS",
+      "requires_perm": ["SEE ONLINE SNAPSHOTS"],
       "params": [
         {
           "name": "conds",

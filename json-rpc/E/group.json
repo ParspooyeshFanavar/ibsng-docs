@@ -9,7 +9,7 @@
       "name": "group.addNewGroup",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE GROUP",
+      "requires_perm": ["CHANGE GROUP"],
       "params": [
         {
           "name": "group_name",
@@ -46,7 +46,7 @@
       "name": "group.copyGroup",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE GROUP",
+      "requires_perm": ["CHANGE GROUP"],
       "params": [
         {
           "name": "group_name",
@@ -264,7 +264,7 @@
       "name": "group.updateGroup",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE GROUP",
+      "requires_perm": ["CHANGE GROUP"],
       "params": [
         {
           "name": "group_id",
@@ -301,7 +301,7 @@
       "name": "group.updateGroupAttrs",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE GROUP",
+      "requires_perm": ["CHANGE GROUP"],
       "params": [
         {
           "name": "group_name",
@@ -339,7 +339,7 @@
       "name": "group.delGroup",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE GROUP",
+      "requires_perm": ["CHANGE GROUP"],
       "params": [
         {
           "name": "group_name",

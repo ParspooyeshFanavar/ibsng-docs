@@ -9,7 +9,7 @@
       "name": "balance.addNewBalance",
       "description": "add new balance",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE BALANCE",
+      "requires_perm": ["CHANGE BALANCE"],
       "params": [
         {
           "name": "name",
@@ -325,7 +325,7 @@
       "name": "balance.getListValidBalanceName",
       "description": "The meaning of validity is that the date range considered for                                                                                                     the balance is within the day and that the balance status is active.",
       "auth_type": ["ADMIN"],
-      "requires_perm": "LIST BALANCES",
+      "requires_perm": ["LIST BALANCES"],
       "params": [],
       "result": {
         "name": "Response (object)",
@@ -350,7 +350,7 @@
       "name": "balance.deleteBalance",
       "description": "Delete the balance",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE BALANCE",
+      "requires_perm": ["CHANGE BALANCE"],
       "params": [
         {
           "name": "balance_id",
@@ -373,7 +373,7 @@
       "name": "balance.getAllBalancesNames",
       "description": "get list balances can filter with status",
       "auth_type": ["ADMIN"],
-      "requires_perm": "LIST BALANCES",
+      "requires_perm": ["LIST BALANCES"],
       "params": [
         {
           "name": "include_retired",
@@ -397,7 +397,7 @@
       "name": "balance.getAllBalanceIdsAndNames",
       "description": "get all list balances without filter",
       "auth_type": ["ADMIN"],
-      "requires_perm": "LIST BALANCES",
+      "requires_perm": ["LIST BALANCES"],
       "params": [],
       "result": {
         "name": "Response (array)",

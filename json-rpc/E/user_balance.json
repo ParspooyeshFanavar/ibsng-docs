@@ -9,7 +9,7 @@
       "name": "user_balance.addNewUserBalance",
       "description": "assign balance to user (add new user_balance)",
       "auth_type": ["ADMIN"],
-      "requires_perm": "ADD NEW USER BALANCE",
+      "requires_perm": ["ADD NEW USER BALANCE"],
       "params": [
         {
           "name": "user_id",

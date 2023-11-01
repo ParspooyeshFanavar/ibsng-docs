@@ -158,7 +158,7 @@
       "name": "online_payment.addGateway",
       "description": "Added in tag C_dev_326",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE ONLINE PAYMENT",
+      "requires_perm": ["CHANGE ONLINE PAYMENT"],
       "params": [
         {
           "name": "gateway_name",
@@ -226,7 +226,7 @@
       "name": "online_payment.updateGateway",
       "description": "Added in tag C_dev_326",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE ONLINE PAYMENT",
+      "requires_perm": ["CHANGE ONLINE PAYMENT"],
       "params": [
         {
           "name": "gateway_id",
@@ -285,7 +285,7 @@
       "name": "online_payment.deleteGateway",
       "description": "Added in tag C_dev_326",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE ONLINE PAYMENT",
+      "requires_perm": ["CHANGE ONLINE PAYMENT"],
       "params": [
         {
           "name": "gateway_name",
@@ -308,7 +308,7 @@
       "name": "online_payment.getAllGatewayTypes",
       "description": "Added in tag C_dev_326",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE ONLINE PAYMENT",
+      "requires_perm": ["SEE ONLINE PAYMENT"],
       "params": [],
       "result": {
         "name": "Response (array)",
@@ -323,7 +323,7 @@
       "name": "online_payment.getAllGatewayNames",
       "description": "Added in tag C_dev_326",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE ONLINE PAYMENT",
+      "requires_perm": ["SEE ONLINE PAYMENT"],
       "params": [],
       "result": {
         "name": "Response (object)",
@@ -344,7 +344,7 @@
       "name": "online_payment.getAllGatewayInfos",
       "description": "Added in tag C_dev_326",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE ONLINE PAYMENT",
+      "requires_perm": ["CHANGE ONLINE PAYMENT"],
       "params": [],
       "result": {
         "name": "Response (array)",
@@ -359,7 +359,7 @@
       "name": "online_payment.purgePayment",
       "description": "Added in tag C_dev_326",
       "auth_type": ["ADMIN"],
-      "requires_perm": "PURGE ONLINE PAYMENT",
+      "requires_perm": ["PURGE ONLINE PAYMENT"],
       "params": [
         {
           "name": "payment_id",

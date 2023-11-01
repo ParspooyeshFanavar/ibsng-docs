@@ -9,7 +9,7 @@
       "name": "report.getOnlineUsers",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE ONLINE USERS",
+      "requires_perm": ["SEE ONLINE USERS"],
       "params": [
         {
           "name": "normal_sort_by",
@@ -128,7 +128,7 @@
       "name": "report.getOnlineUsersCountLoop",
       "description": "with conditions (filters)",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE ONLINE USERS",
+      "requires_perm": ["SEE ONLINE USERS"],
       "params": [
         {
           "name": "conds",
@@ -237,7 +237,7 @@
       "name": "report.getOnlineUsersCount",
       "description": "without conditions",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE ONLINE USERS",
+      "requires_perm": ["SEE ONLINE USERS"],
       "params": [],
       "result": {
         "name": "Response (object)",
@@ -336,7 +336,7 @@
       "name": "report.getOnlineUsersCountPerISP",
       "description": "without conditions",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE ONLINE USERS",
+      "requires_perm": ["SEE ONLINE USERS"],
       "params": [],
       "result": {
         "name": "Response (object)",
@@ -358,7 +358,7 @@
       "name": "report.getConnections",
       "description": "Get Connection Logs By Admin",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE CONNECTION LOGS",
+      "requires_perm": ["SEE CONNECTION LOGS"],
       "params": [
         {
           "name": "conds",
@@ -1330,7 +1330,7 @@
       "name": "report.getINConnections",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE CONNECTION LOGS",
+      "requires_perm": ["SEE CONNECTION LOGS"],
       "params": [
         {
           "name": "conds",
@@ -1396,7 +1396,7 @@
       "name": "report.getDurations",
       "description": "",
       "auth_type": ["ADMIN", "NORMAL_USER", "VOIP_USER"],
-      "requires_perm": "SEE CONNECTION LOGS",
+      "requires_perm": ["SEE CONNECTION LOGS"],
       "params": [
         {
           "name": "conds",
@@ -1420,7 +1420,7 @@
       "name": "report.getGroupUsages",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE CONNECTION LOGS",
+      "requires_perm": ["SEE CONNECTION LOGS"],
       "params": [
         {
           "name": "conds",
@@ -1444,7 +1444,7 @@
       "name": "report.getRasUsages",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE CONNECTION LOGS",
+      "requires_perm": ["SEE CONNECTION LOGS"],
       "params": [
         {
           "name": "conds",
@@ -1468,7 +1468,7 @@
       "name": "report.getVoIPDisconnectCauses",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE CONNECTION LOGS",
+      "requires_perm": ["SEE CONNECTION LOGS"],
       "params": [
         {
           "name": "conds",
@@ -1492,7 +1492,7 @@
       "name": "report.getSuccessfulCounts",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE CONNECTION LOGS",
+      "requires_perm": ["SEE CONNECTION LOGS"],
       "params": [
         {
           "name": "conds",
@@ -1516,7 +1516,7 @@
       "name": "report.getISPUsages",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE CONNECTION LOGS",
+      "requires_perm": ["SEE CONNECTION LOGS"],
       "params": [
         {
           "name": "conds",
@@ -1540,7 +1540,7 @@
       "name": "report.getInOutUsages",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE CONNECTION LOGS",
+      "requires_perm": ["SEE CONNECTION LOGS"],
       "params": [
         {
           "name": "conds",
@@ -1599,7 +1599,7 @@
       "name": "report.getCreditUsages",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE CONNECTION LOGS",
+      "requires_perm": ["SEE CONNECTION LOGS"],
       "params": [
         {
           "name": "conds",
@@ -1658,7 +1658,7 @@
       "name": "report.getDurationUsages",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE CONNECTION LOGS",
+      "requires_perm": ["SEE CONNECTION LOGS"],
       "params": [
         {
           "name": "conds",
@@ -1717,7 +1717,7 @@
       "name": "report.getConnectionUsages",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE CONNECTION LOGS",
+      "requires_perm": ["SEE CONNECTION LOGS"],
       "params": [
         {
           "name": "conds",
@@ -1853,7 +1853,7 @@
       "name": "report.getExpiredUsers",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE CONNECTION LOGS",
+      "requires_perm": ["SEE CONNECTION LOGS"],
       "params": [
         {
           "name": "conds",
@@ -1920,7 +1920,7 @@
       "name": "report.getPrefixNameUsage",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE CONNECTION LOGS",
+      "requires_perm": ["SEE CONNECTION LOGS"],
       "params": [
         {
           "name": "conds",
@@ -2011,7 +2011,7 @@
       "name": "report.getCallerIDUsages",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE CONNECTION LOGS",
+      "requires_perm": ["SEE CONNECTION LOGS"],
       "params": [
         {
           "name": "conds",
@@ -2070,7 +2070,7 @@
       "name": "report.getCreditChanges",
       "description": "Admin-View Credit Changes",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE CREDIT CHANGES",
+      "requires_perm": ["SEE CREDIT CHANGES"],
       "params": [
         {
           "name": "conds",
@@ -2261,7 +2261,7 @@
       "name": "report.getCreditChanges",
       "description": "User-View Credit Changes",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE CREDIT CHANGES",
+      "requires_perm": ["SEE CREDIT CHANGES"],
       "params": [
         {
           "name": "conds",
@@ -2457,7 +2457,7 @@
       "name": "report.getCreditChanges",
       "description": "User-View Credit Changes by User",
       "auth_type": ["NORMAL_USER", "VOIP_USER"],
-      "requires_perm": "SEE CREDIT CHANGES",
+      "requires_perm": ["SEE CREDIT CHANGES"],
       "params": [
         {
           "name": "conds",
@@ -2629,7 +2629,7 @@
       "name": "report.saveCreditChanges",
       "description": "use SystemNotification.getNotifications() method to see if the report is finished         and get the URL to download it",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE CREDIT CHANGES",
+      "requires_perm": ["SEE CREDIT CHANGES"],
       "params": [
         {
           "name": "conds",
@@ -2719,7 +2719,7 @@
       "name": "report.getUserDepositChanges",
       "description": "by admin",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE USER DEPOSIT CHANGES",
+      "requires_perm": ["SEE USER DEPOSIT CHANGES"],
       "params": [
         {
           "name": "conds",
@@ -3392,7 +3392,7 @@
       "name": "report.getRequestCount",
       "description": "number of admin requests for each minute in the last hour",
       "auth_type": ["ADMIN"],
-      "requires_perm": "GOD",
+      "requires_perm": ["GOD"],
       "params": [],
       "result": {
         "name": "Response (object)",
@@ -3407,7 +3407,7 @@
       "name": "report.getRequestTopStats",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "GOD",
+      "requires_perm": ["GOD"],
       "params": [
         {
           "name": "order_by",
@@ -3430,7 +3430,7 @@
       "name": "report.getISPDepositChangeLogs",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE DEPOSIT CHANGES",
+      "requires_perm": ["SEE DEPOSIT CHANGES"],
       "params": [
         {
           "name": "conds",
@@ -3633,7 +3633,7 @@
       "name": "report.getTemporaryExtendLogs",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "TEMPORARY EXTEND",
+      "requires_perm": ["TEMPORARY EXTEND"],
       "params": [
         {
           "name": "conds",
@@ -3806,7 +3806,7 @@
       "name": "report.delReports",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "DELETE REPORTS",
+      "requires_perm": ["DELETE REPORTS"],
       "params": [
         {
           "name": "table",
@@ -3851,7 +3851,7 @@
       "name": "report.autoCleanReports",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "DELETE REPORTS",
+      "requires_perm": ["DELETE REPORTS"],
       "params": [
         {
           "name": "connection_log_clean",
@@ -3951,7 +3951,7 @@
       "name": "report.getAutoCleanDates",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "DELETE REPORTS",
+      "requires_perm": ["DELETE REPORTS"],
       "params": [],
       "result": {
         "name": "Response (object)",
@@ -4124,7 +4124,7 @@
       "name": "report.getManagementSummaryReport",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE CONNECTION LOGS",
+      "requires_perm": ["SEE CONNECTION LOGS"],
       "params": [
         {
           "name": "conds",
@@ -4266,7 +4266,7 @@
       "name": "report.getSystemAuditLogs",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE SYSTEM AUDIT LOGS",
+      "requires_perm": ["SEE SYSTEM AUDIT LOGS"],
       "params": [
         {
           "name": "conds",
@@ -4842,7 +4842,7 @@
       "name": "report.saveConnections",
       "description": "use SystemNotification.getNotifications() method to see if the report is finished         and get the URL to download it",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE CONNECTION LOGS",
+      "requires_perm": ["SEE CONNECTION LOGS"],
       "params": [
         {
           "name": "conds",
@@ -4903,7 +4903,7 @@
       "name": "report.saveConnectionUsages",
       "description": "use SystemNotification.getNotifications() method to see if the report is finished         and get the URL to download it",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE CONNECTION LOGS",
+      "requires_perm": ["SEE CONNECTION LOGS"],
       "params": [
         {
           "name": "report_type",
@@ -4969,7 +4969,7 @@
       "name": "report.savePrefixNameUsage",
       "description": "use SystemNotification.getNotifications() method to see if the report is finished and get the URL to download it",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE CONNECTION LOGS",
+      "requires_perm": ["SEE CONNECTION LOGS"],
       "params": [
         {
           "name": "conds",
@@ -5020,7 +5020,7 @@
       "name": "report.saveOnlinePaymentReport",
       "description": "use SystemNotification.getNotifications() method to see if the report is finished and get the URL to download it",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE CONNECTION LOGS",
+      "requires_perm": ["SEE CONNECTION LOGS"],
       "params": [
         {
           "name": "conds",
@@ -5074,7 +5074,7 @@
       "name": "report.getDayNightUsage",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "GOD",
+      "requires_perm": ["GOD"],
       "params": [
         {
           "name": "start_date",

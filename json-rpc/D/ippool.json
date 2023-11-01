@@ -9,7 +9,7 @@
       "name": "ippool.addNewIPpool",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE IPPOOL",
+      "requires_perm": ["CHANGE IPPOOL"],
       "params": [
         {
           "name": "ippool_name",
@@ -39,7 +39,7 @@
       "name": "ippool.updateIPpool",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE IPPOOL",
+      "requires_perm": ["CHANGE IPPOOL"],
       "params": [
         {
           "name": "ippool_id",
@@ -76,7 +76,7 @@
       "name": "ippool.getIPpoolNames",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "LIST IPPOOL",
+      "requires_perm": ["LIST IPPOOL"],
       "params": [],
       "result": {
         "name": "Response (array)",
@@ -91,7 +91,7 @@
       "name": "ippool.getIPpoolNames",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "LIST IPPOOL",
+      "requires_perm": ["LIST IPPOOL"],
       "params": [
         {
           "name": "ippool_type",
@@ -118,7 +118,7 @@
       "name": "ippool.getIPpoolInfo",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "LIST IPPOOL",
+      "requires_perm": ["LIST IPPOOL"],
       "params": [
         {
           "name": "ippool_name",
@@ -167,7 +167,7 @@
       "name": "ippool.deleteIPpool",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE IPPOOL",
+      "requires_perm": ["CHANGE IPPOOL"],
       "params": [
         {
           "name": "ippool_name",
@@ -190,7 +190,7 @@
       "name": "ippool.delIPfromPool",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE IPPOOL",
+      "requires_perm": ["CHANGE IPPOOL"],
       "params": [
         {
           "name": "ippool_name",
@@ -220,7 +220,7 @@
       "name": "ippool.forceDelIPfromPool",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE IPPOOL",
+      "requires_perm": ["CHANGE IPPOOL"],
       "params": [
         {
           "name": "ippool_name",
@@ -250,7 +250,7 @@
       "name": "ippool.addIPtoPool",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE IPPOOL",
+      "requires_perm": ["CHANGE IPPOOL"],
       "params": [
         {
           "name": "ippool_name",
@@ -280,7 +280,7 @@
       "name": "ippool.addNewLoadBalancingIPpool",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE IPPOOL",
+      "requires_perm": ["CHANGE IPPOOL"],
       "params": [
         {
           "name": "ippool_name",
@@ -325,7 +325,7 @@
       "name": "ippool.updateLoadBalancingIPpool",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE IPPOOL",
+      "requires_perm": ["CHANGE IPPOOL"],
       "params": [
         {
           "name": "ippool_id",
@@ -377,7 +377,7 @@
       "name": "ippool.deleteLoadBalancingIPpool",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE IPPOOL",
+      "requires_perm": ["CHANGE IPPOOL"],
       "params": [
         {
           "name": "ippool_name",

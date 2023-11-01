@@ -9,7 +9,7 @@
       "name": "voucher.searchVoucher",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE VOUCHER",
+      "requires_perm": ["SEE VOUCHER"],
       "params": [
         {
           "name": "conds",
@@ -139,7 +139,7 @@
       "name": "voucher.searchBatch",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE VOUCHER",
+      "requires_perm": ["SEE VOUCHER"],
       "params": [
         {
           "name": "conds",
@@ -304,7 +304,7 @@
       "name": "voucher.voucherRechargeUser",
       "description": "by admin",
       "auth_type": ["ADMIN"],
-      "requires_perm": "USE VOUCHER ON USERS",
+      "requires_perm": ["USE VOUCHER ON USERS"],
       "params": [
         {
           "name": "voucher_pin",
@@ -356,7 +356,7 @@
       "name": "voucher.voucherAddNewUser",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "USE VOUCHER ON USERS, ADD NEW USER",
+      "requires_perm": ["USE VOUCHER ON USERS", "ADD NEW USER"],
       "params": [
         {
           "name": "voucher_pin",
@@ -487,7 +487,7 @@
       "name": "voucher.voucherAddBatch",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE VOUCHER",
+      "requires_perm": ["CHANGE VOUCHER"],
       "params": [
         {
           "name": "batch_dict",
@@ -586,7 +586,7 @@
       "name": "voucher.voucherChangeBatchLockStatus",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE VOUCHER",
+      "requires_perm": ["CHANGE VOUCHER"],
       "params": [
         {
           "name": "batch_id",
@@ -616,7 +616,7 @@
       "name": "voucher.voucherGetBatchByID",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE VOUCHER",
+      "requires_perm": ["SEE VOUCHER"],
       "params": [
         {
           "name": "batch_id",
@@ -691,7 +691,7 @@
       "name": "voucher.getVoucherByID",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE VOUCHER",
+      "requires_perm": ["SEE VOUCHER"],
       "params": [
         {
           "name": "voucher_id",
@@ -745,7 +745,7 @@
       "name": "voucher.voucherSearchBatch",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE VOUCHER",
+      "requires_perm": ["SEE VOUCHER"],
       "params": [
         {
           "name": "conds",

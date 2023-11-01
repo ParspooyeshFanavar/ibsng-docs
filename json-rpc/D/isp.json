@@ -9,7 +9,7 @@
       "name": "isp.addNewISP",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "MANIPULATE ISP",
+      "requires_perm": ["MANIPULATE ISP"],
       "params": [
         {
           "name": "isp_name",
@@ -102,7 +102,7 @@
       "name": "isp.updateISP",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "MANIPULATE ISP",
+      "requires_perm": ["MANIPULATE ISP"],
       "params": [
         {
           "name": "isp_id",
@@ -244,7 +244,7 @@
       "name": "isp.getISPInfo",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE ISP INFO",
+      "requires_perm": ["SEE ISP INFO"],
       "params": [
         {
           "name": "isp_name",
@@ -346,7 +346,7 @@
       "name": "isp.changeISPDeposit",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "MANIPULATE ISP",
+      "requires_perm": ["MANIPULATE ISP"],
       "params": [
         {
           "name": "isp_name",
@@ -383,7 +383,7 @@
       "name": "isp.deleteISP",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "DELETE ISP",
+      "requires_perm": ["DELETE ISP"],
       "params": [
         {
           "name": "isp_name",
@@ -429,7 +429,7 @@
       "name": "isp.getAllISPMappedUserIDs",
       "description": "returns list of all Mapped User IDs used in each one of ISPs",
       "auth_type": ["ADMIN"],
-      "requires_perm": "GOD",
+      "requires_perm": ["GOD"],
       "params": [],
       "result": {
         "name": "Response (array)",
@@ -444,7 +444,7 @@
       "name": "isp.getISPPageStyle",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "SEE ISP INFO",
+      "requires_perm": ["SEE ISP INFO"],
       "params": [
         {
           "name": "isp_id",
@@ -509,7 +509,7 @@
       "name": "isp.setISPPageStyle",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE ISP PAGE STYLE",
+      "requires_perm": ["CHANGE ISP PAGE STYLE"],
       "params": [
         {
           "name": "isp_id",
@@ -595,7 +595,7 @@
       "name": "isp.resetISPPageStyle",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE ISP PAGE STYLE",
+      "requires_perm": ["CHANGE ISP PAGE STYLE"],
       "params": [
         {
           "name": "isp_id",

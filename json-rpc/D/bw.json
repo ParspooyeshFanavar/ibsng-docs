@@ -9,7 +9,7 @@
       "name": "bw.addInterface",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE BANDWIDTH MANAGER",
+      "requires_perm": ["CHANGE BANDWIDTH MANAGER"],
       "params": [
         {
           "name": "hostname",
@@ -53,7 +53,7 @@
       "name": "bw.addNode",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE BANDWIDTH MANAGER",
+      "requires_perm": ["CHANGE BANDWIDTH MANAGER"],
       "params": [
         {
           "name": "hostname",
@@ -111,7 +111,7 @@
       "name": "bw.addLeaf",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE BANDWIDTH MANAGER",
+      "requires_perm": ["CHANGE BANDWIDTH MANAGER"],
       "params": [
         {
           "name": "leaf_name",
@@ -183,7 +183,7 @@
       "name": "bw.addLeafService",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE BANDWIDTH MANAGER",
+      "requires_perm": ["CHANGE BANDWIDTH MANAGER"],
       "params": [
         {
           "name": "leaf_name",
@@ -248,7 +248,7 @@
       "name": "bw.getInterfaces",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE BANDWIDTH MANAGER",
+      "requires_perm": ["CHANGE BANDWIDTH MANAGER"],
       "params": [],
       "result": {
         "name": "Response (object)",
@@ -263,7 +263,7 @@
       "name": "bw.getNodeInfo",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE BANDWIDTH MANAGER",
+      "requires_perm": ["CHANGE BANDWIDTH MANAGER"],
       "params": [
         {
           "name": "node_id",
@@ -332,7 +332,7 @@
       "name": "bw.getLeafInfo",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE BANDWIDTH MANAGER",
+      "requires_perm": ["CHANGE BANDWIDTH MANAGER"],
       "params": [
         {
           "name": "leaf_name",
@@ -409,7 +409,7 @@
       "name": "bw.getTree",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE BANDWIDTH MANAGER",
+      "requires_perm": ["CHANGE BANDWIDTH MANAGER"],
       "params": [
         {
           "name": "hostname",
@@ -439,7 +439,7 @@
       "name": "bw.delLeafService",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE BANDWIDTH MANAGER",
+      "requires_perm": ["CHANGE BANDWIDTH MANAGER"],
       "params": [
         {
           "name": "leaf_service_id",
@@ -469,7 +469,7 @@
       "name": "bw.delNode",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE BANDWIDTH MANAGER",
+      "requires_perm": ["CHANGE BANDWIDTH MANAGER"],
       "params": [
         {
           "name": "node_id",
@@ -492,7 +492,7 @@
       "name": "bw.getAllLeafNames",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE CHARGE",
+      "requires_perm": ["CHANGE CHARGE"],
       "params": [],
       "result": {
         "name": "Response (array)",
@@ -507,7 +507,7 @@
       "name": "bw.delLeaf",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE BANDWIDTH MANAGER",
+      "requires_perm": ["CHANGE BANDWIDTH MANAGER"],
       "params": [
         {
           "name": "leaf_name",
@@ -530,7 +530,7 @@
       "name": "bw.delInterface",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE BANDWIDTH MANAGER",
+      "requires_perm": ["CHANGE BANDWIDTH MANAGER"],
       "params": [
         {
           "name": "hostname",
@@ -560,7 +560,7 @@
       "name": "bw.updateInterface",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE BANDWIDTH MANAGER",
+      "requires_perm": ["CHANGE BANDWIDTH MANAGER"],
       "params": [
         {
           "name": "interface_id",
@@ -611,7 +611,7 @@
       "name": "bw.updateNode",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE BANDWIDTH MANAGER",
+      "requires_perm": ["CHANGE BANDWIDTH MANAGER"],
       "params": [
         {
           "name": "node_id",
@@ -655,7 +655,7 @@
       "name": "bw.updateLeaf",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE BANDWIDTH MANAGER",
+      "requires_perm": ["CHANGE BANDWIDTH MANAGER"],
       "params": [
         {
           "name": "leaf_id",
@@ -727,7 +727,7 @@
       "name": "bw.updateLeafService",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE BANDWIDTH MANAGER",
+      "requires_perm": ["CHANGE BANDWIDTH MANAGER"],
       "params": [
         {
           "name": "leaf_name",
@@ -799,7 +799,7 @@
       "name": "bw.addBwStaticIP",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE BANDWIDTH MANAGER",
+      "requires_perm": ["CHANGE BANDWIDTH MANAGER"],
       "params": [
         {
           "name": "ip_addr",
@@ -836,7 +836,7 @@
       "name": "bw.updateBwStaticIP",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE BANDWIDTH MANAGER",
+      "requires_perm": ["CHANGE BANDWIDTH MANAGER"],
       "params": [
         {
           "name": "static_ip_id",
@@ -880,7 +880,7 @@
       "name": "bw.delBwStaticIP",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE BANDWIDTH MANAGER",
+      "requires_perm": ["CHANGE BANDWIDTH MANAGER"],
       "params": [
         {
           "name": "ip_addr",
@@ -903,7 +903,7 @@
       "name": "bw.getAllBwStaticIPs",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE BANDWIDTH MANAGER",
+      "requires_perm": ["CHANGE BANDWIDTH MANAGER"],
       "params": [],
       "result": {
         "name": "Response (array)",
@@ -918,7 +918,7 @@
       "name": "bw.getBwStaticIPInfo",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE BANDWIDTH MANAGER",
+      "requires_perm": ["CHANGE BANDWIDTH MANAGER"],
       "params": [
         {
           "name": "ip_addr",
@@ -967,7 +967,7 @@
       "name": "bw.getActiveLeaves",
       "description": "",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE BANDWIDTH MANAGER",
+      "requires_perm": ["CHANGE BANDWIDTH MANAGER"],
       "params": [
         {
           "name": "order_by",
@@ -997,7 +997,7 @@
       "name": "bw.getLeafCharges",
       "description": "return a list of charge names that given leaf is used in",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE BANDWIDTH MANAGER",
+      "requires_perm": ["CHANGE BANDWIDTH MANAGER"],
       "params": [
         {
           "name": "leaf_name",
@@ -1020,7 +1020,7 @@
       "name": "bw.getRealHostInterfaces",
       "description": "Returns a list of interfaces install on given hostname",
       "auth_type": ["ADMIN"],
-      "requires_perm": "CHANGE BANDWIDTH MANAGER",
+      "requires_perm": ["CHANGE BANDWIDTH MANAGER"],
       "params": [
         {
           "name": "hostname",
