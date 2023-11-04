@@ -140,6 +140,12 @@ def getChoiceJsonParam(param: "Element") -> dict:
 			"maximum": values[-1],
 		}
 	else:
+		if comments:
+			values = {
+				value: comments.get(value, "")
+				for value in values
+			}
+			comments = None
 		paramJson["schema"] = {
 			"enum": values,
 		}

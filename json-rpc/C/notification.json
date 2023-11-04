@@ -154,15 +154,11 @@
                   },
                   "message_type": {
                     "title": "",
-                    "enum": [
-                      "sms",
-                      "email",
-                      "email_to_isp",
-                      "ibsng_message",
-                      "url",
-                      "user_event"
-                    ],
-                    "__value_comment__": {
+                    "enum": {
+                      "sms": "",
+                      "email": "",
+                      "email_to_isp": "",
+                      "ibsng_message": "",
                       "url": "call a URL specified in `message_template`, added in tag 312",
                       "user_event": "added in tag (NO TAG YET)"
                     }
@@ -262,15 +258,11 @@
           "name": "message_type",
           "description": "",
           "schema": {
-            "enum": [
-              "sms",
-              "email",
-              "email_to_isp",
-              "ibsng_message",
-              "url",
-              "user_event"
-            ],
-            "__value_comment__": {
+            "enum": {
+              "sms": "",
+              "email": "",
+              "email_to_isp": "",
+              "ibsng_message": "",
               "url": "call a URL specified in `message_template`, added in tag 312",
               "user_event": "added in tag (NO TAG YET)"
             }
@@ -368,15 +360,11 @@
         {
           "name": "message_type",
           "schema": {
-            "enum": [
-              "sms",
-              "email",
-              "email_to_isp",
-              "ibsng_message",
-              "url",
-              "user_event"
-            ],
-            "__value_comment__": {
+            "enum": {
+              "sms": "",
+              "email": "",
+              "email_to_isp": "",
+              "ibsng_message": "",
               "url": "call a URL specified in `message_template`, added in tag 312",
               "user_event": "added in tag (NO TAG YET)"
             }

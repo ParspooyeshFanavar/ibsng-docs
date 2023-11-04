@@ -1826,21 +1826,18 @@
           "name": "sort_by",
           "description": "",
           "schema": {
-            "enum": [
-              "user_id",
-              "normal_username",
-              "voip_username",
-              "group_id",
-              "owner_id",
-              "creation_date",
-              "credit",
-              "deposit",
-              "first_login",
-              "serial",
-              "serial_numeric"
-            ],
-            "__value_comment__": {
-              "owner_id": "owner isp id"
+            "enum": {
+              "user_id": "",
+              "normal_username": "",
+              "voip_username": "",
+              "group_id": "",
+              "owner_id": "owner isp id",
+              "creation_date": "",
+              "credit": "",
+              "deposit": "",
+              "first_login": "",
+              "serial": "",
+              "serial_numeric": ""
             }
           }
         },
@@ -2592,30 +2589,20 @@
             "items": {
               "title": "",
               "schema": {
-                "enum": [
-                  "action",
-                  "action_text",
-                  "admin_id",
-                  "admin_name",
-                  "change_time",
-                  "change_time_formatted",
-                  "comment",
-                  "credit_change_id",
-                  "isp_credit",
-                  "isp_id",
-                  "isp_name",
-                  "per_user_credit",
-                  "remote_addr",
-                  "user_id",
-                  "username",
-                  "name",
-                  "serial",
-                  "group",
-                  "group_id",
-                  "before_credit",
-                  "user_ids"
-                ],
-                "__value_comment__": {
+                "enum": {
+                  "action": "",
+                  "action_text": "",
+                  "admin_id": "",
+                  "admin_name": "",
+                  "change_time": "",
+                  "change_time_formatted": "",
+                  "comment": "",
+                  "credit_change_id": "",
+                  "isp_credit": "",
+                  "isp_id": "",
+                  "isp_name": "",
+                  "per_user_credit": "",
+                  "remote_addr": "",
                   "user_id": "in user_view mode only",
                   "username": "in user_view mode only",
                   "name": "in user_view mode only",
@@ -3258,8 +3245,7 @@
                   },
                   "is_user": {
                     "title": "",
-                    "enum": ["t", "f"],
-                    "__value_comment__": {
+                    "enum": {
                       "t": "true / yes",
                       "f": "false / no"
                     }
@@ -4163,22 +4149,7 @@
                 "items": {
                   "title": "",
                   "schema": {
-                    "enum": [
-                      "0",
-                      "1",
-                      "2",
-                      "3",
-                      "4",
-                      "5",
-                      "6",
-                      "7",
-                      "8",
-                      "9",
-                      "10",
-                      "11",
-                      "12"
-                    ],
-                    "__value_comment__": {
+                    "enum": {
                       "0": "_NO_CATEGORY_",
                       "1": "RAS",
                       "2": "CHARGE",
@@ -4203,8 +4174,7 @@
                 "items": {
                   "title": "",
                   "schema": {
-                    "enum": ["1", "2", "3"],
-                    "__value_comment__": {
+                    "enum": {
                       "1": "ADD",
                       "2": "CHANGE",
                       "3": "DELETE"
@@ -4605,14 +4575,10 @@
                         },
                         "stage_name": {
                           "title": "",
-                          "enum": [
-                            "Prepare",
-                            "Settle",
-                            "Verify",
-                            "After-Verify"
-                          ],
-                          "__value_comment__": {
+                          "enum": {
+                            "Prepare": "",
                             "Settle": "for Bank Mellat only",
+                            "Verify": "",
                             "After-Verify": "only if there was an error after Verify stage"
                           }
                         }
@@ -4657,8 +4623,7 @@
                   },
                   "succeed": {
                     "title": "",
-                    "enum": ["t", "f"],
-                    "__value_comment__": {
+                    "enum": {
                       "t": "true",
                       "f": "false"
                     }

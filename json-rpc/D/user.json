@@ -985,8 +985,10 @@
                 },
                 "rel_exp_date_unit": {
                   "title": "",
-                  "enum": ["Minutes", "Hours", "Days", "Months", "Years"],
-                  "__value_comment__": {
+                  "enum": {
+                    "Minutes": "",
+                    "Hours": "",
+                    "Days": "",
                     "Months": "1 month means 30 days",
                     "Years": "1 month means 365 days"
                   }
@@ -998,8 +1000,10 @@
                 },
                 "rel_exp_date_negative_credit_unit": {
                   "title": "User Info: Exp Dates: Negative Credit Expiration Date: Negative Credit Relative Expiration Date",
-                  "enum": ["Minutes", "Hours", "Days", "Months", "Years"],
-                  "__value_comment__": {
+                  "enum": {
+                    "Minutes": "",
+                    "Hours": "",
+                    "Days": "",
                     "Months": "1 month means 30 days",
                     "Years": "1 month means 365 days"
                   }
@@ -2256,8 +2260,10 @@
               },
               "rel_exp_date_unit": {
                 "title": "",
-                "enum": ["Minutes", "Hours", "Days", "Months", "Years"],
-                "__value_comment__": {
+                "enum": {
+                  "Minutes": "",
+                  "Hours": "",
+                  "Days": "",
                   "Months": "1 month means 30 days",
                   "Years": "1 month means 365 days"
                 }
@@ -2269,8 +2275,10 @@
               },
               "rel_exp_date_negative_credit_unit": {
                 "title": "User Info: Exp Dates: Negative Credit Expiration Date: Negative Credit Relative Expiration Date",
-                "enum": ["Minutes", "Hours", "Days", "Months", "Years"],
-                "__value_comment__": {
+                "enum": {
+                  "Minutes": "",
+                  "Hours": "",
+                  "Days": "",
                   "Months": "1 month means 30 days",
                   "Years": "1 month means 365 days"
                 }

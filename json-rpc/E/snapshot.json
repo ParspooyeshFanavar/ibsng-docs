@@ -167,8 +167,7 @@
               },
               "date_from_op": {
                 "title": "operation for start date",
-                "enum": ["<", ">", "<=", ">="],
-                "__value_comment__": {
+                "enum": {
                   "<": "less than",
                   ">": "more than",
                   "<=": "less equal",
@@ -177,8 +176,7 @@
               },
               "date_to_op": {
                 "title": "operation for end date",
-                "enum": ["<", ">", "<=", ">="],
-                "__value_comment__": {
+                "enum": {
                   "<": "less than",
                   ">": "more than",
                   "<=": "less equal",
@@ -249,8 +247,7 @@
               },
               "date_from_op": {
                 "title": "operation for start date",
-                "enum": ["<", ">", "<=", ">="],
-                "__value_comment__": {
+                "enum": {
                   "<": "less than",
                   ">": "more than",
                   "<=": "less equal",
@@ -259,8 +256,7 @@
               },
               "date_to_op": {
                 "title": "operation for end date",
-                "enum": ["<", ">", "<=", ">="],
-                "__value_comment__": {
+                "enum": {
                   "<": "less than",
                   ">": "more than",
                   "<=": "less equal",
@@ -331,8 +327,7 @@
               },
               "date_from_op": {
                 "title": "operation for start date",
-                "enum": ["<", ">", "<=", ">="],
-                "__value_comment__": {
+                "enum": {
                   "<": "less than",
                   ">": "more than",
                   "<=": "less equal",
@@ -341,8 +336,7 @@
               },
               "date_to_op": {
                 "title": "operation for end date",
-                "enum": ["<", ">", "<=", ">="],
-                "__value_comment__": {
+                "enum": {
                   "<": "less than",
                   ">": "more than",
                   "<=": "less equal",
@@ -413,8 +407,7 @@
               },
               "date_from_op": {
                 "title": "operation for start date",
-                "enum": ["<", ">", "<=", ">="],
-                "__value_comment__": {
+                "enum": {
                   "<": "less than",
                   ">": "more than",
                   "<=": "less equal",
@@ -423,8 +416,7 @@
               },
               "date_to_op": {
                 "title": "operation for end date",
-                "enum": ["<", ">", "<=", ">="],
-                "__value_comment__": {
+                "enum": {
                   "<": "less than",
                   ">": "more than",
                   "<=": "less equal",

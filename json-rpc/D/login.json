@@ -278,8 +278,7 @@
                   },
                   "successful": {
                     "title": "",
-                    "enum": ["t", "f"],
-                    "__value_comment__": {
+                    "enum": {
                       "t": "true",
                       "f": "false"
                     }
