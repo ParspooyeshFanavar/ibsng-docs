@@ -404,7 +404,13 @@
           "description": "",
           "schema": {
             "type": "object",
-            "dynamic_keys": true,
+            "additionalProperties": {
+              "type": "string",
+              "title": "",
+              "schema": {
+                "type": ""
+              }
+            },
             "properties": {}
           }
         },

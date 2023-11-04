@@ -223,22 +223,33 @@ def getListSchema(elem: "Element", newType="array") -> "dict | list":
 
 
 def setDynamicKeys(param: "Element", schema: dict):
-	schema["dynamic_keys"] = True
 	key = param.find("key")
 	if key is None:
+		value = param.find("value")
+		if value is not None:
+			print(value)
+		schema["additionalProperties"] = {
+			"type": "string",
+			"title": "",
+			"schema": {
+				"type": "",
+			},
+		}
 		return
 	value = param.find("value")
 	if value is None:
 		print(f"<key> without <value>: {toStr(param)}")
 		return
-	schema["__key__"] = {
-		"type": key.attrib.get("type", ""),
-		"title": key.attrib.get("comment", ""),
-	}
-	valueJson = getJsonParam(value)
+
+	valueJson = getJsonParam(value)	
 	if "schema" in valueJson:
 		valueJson.update(valueJson.pop("schema"))
-	schema["__value__"] = valueJson
+	schema["additionalProperties"] = {
+		"type": key.attrib.get("type", ""),
+		"title": key.attrib.get("comment", ""),
+		"schema": valueJson,
+	}
+	
 
 
 def setDictParamsSchema(param: "Element", schema: dict):
@@ -466,6 +477,8 @@ def getJsonMethod(handlerName: str, method: "Element", authTypes: list[str]):
 		result["schema"] = resultSchema
 		if resultValues:
 			resultSchema["enum"] = resultValues
+	else:
+		result["schema"] = None
 
 	jsonMethod["result"] = result
 	# jsonMethod["errors"] = []

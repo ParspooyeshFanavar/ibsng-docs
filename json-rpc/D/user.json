@@ -1411,14 +1411,13 @@
                     "index": 0,
                     "title": "attributes to update",
                     "type": "object",
-                    "dynamic_keys": true,
-                    "__key__": {
+                    "additionalProperties": {
                       "type": "str",
-                      "title": "custom_field_NAME"
-                    },
-                    "__value__": {
-                      "description": "custom field value",
-                      "type": "string"
+                      "title": "custom_field_NAME",
+                      "schema": {
+                        "description": "custom field value",
+                        "type": "string"
+                      }
                     },
                     "properties": {}
                   },

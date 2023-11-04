@@ -629,14 +629,13 @@
             "result": {
               "title": "",
               "type": "object",
-              "dynamic_keys": true,
-              "__key__": {
+              "additionalProperties": {
                 "type": "str_int",
-                "title": "ISP ID (string for compatibility)"
-              },
-              "__value__": {
-                "description": "total credit of users",
-                "type": "number"
+                "title": "ISP ID (string for compatibility)",
+                "schema": {
+                  "description": "total credit of users",
+                  "type": "number"
+                }
               },
               "properties": {}
             }
