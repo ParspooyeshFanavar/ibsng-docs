@@ -97,11 +97,11 @@
           "name": "ippool_type",
           "description": "",
           "schema": {
-            "enum": ["load_balancing", ""]
-          },
-          "__value_comment__": {
-            "load_balancing": "Load Balancing IPPool",
-            "": "Not a Load Balancing IPPool"
+            "enum": ["load_balancing", ""],
+            "__value_comment__": {
+              "load_balancing": "Load Balancing IPPool",
+              "": "Not a Load Balancing IPPool"
+            }
           }
         }
       ],

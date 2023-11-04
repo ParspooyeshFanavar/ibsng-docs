@@ -153,7 +153,7 @@ def getChoiceJsonParam(param: "Element") -> dict:
 				pass
 		paramJson["default"] = default
 	if comments:
-		paramJson["__value_comment__"] = comments
+		paramJson["schema"]["__value_comment__"] = comments
 	return paramJson
 
 

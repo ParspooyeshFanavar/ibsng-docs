@@ -1300,12 +1300,12 @@
                     "type": "number",
                     "minimum": 0,
                     "maximum": 2,
-                    "default": 2,
                     "__value_comment__": {
                       "0": "alphanumeric: abcdefghijkmnpqrstuvwxyz23456789",
                       "1": "alphabet only: abcdefghijklmnopqrstuvwxyz",
                       "2": "numbers only: 123456789"
-                    }
+                    },
+                    "default": 2
                   },
                   "normal_password": {
                     "title": "if missing, password will be generated randomly",
@@ -1322,12 +1322,12 @@
                     "type": "number",
                     "minimum": 0,
                     "maximum": 2,
-                    "default": 2,
                     "__value_comment__": {
                       "0": "alphanumeric: abcdefghijkmnpqrstuvwxyz23456789",
                       "1": "alphabet only: abcdefghijklmnopqrstuvwxyz",
                       "2": "numbers only: 123456789"
-                    }
+                    },
+                    "default": 2
                   },
                   "normal_save": {
                     "title": "true, is you want the username and password to be saved in database, defaults to false",
@@ -1361,12 +1361,12 @@
                     "type": "number",
                     "minimum": 0,
                     "maximum": 2,
-                    "default": 2,
                     "__value_comment__": {
                       "0": "alphanumeric: abcdefghijkmnpqrstuvwxyz23456789",
                       "1": "alphabet only: abcdefghijklmnopqrstuvwxyz",
                       "2": "numbers only: 123456789"
-                    }
+                    },
+                    "default": 2
                   },
                   "voip_password": {
                     "title": "if missing, password will be generated randomly",
@@ -1383,12 +1383,12 @@
                     "type": "number",
                     "minimum": 0,
                     "maximum": 2,
-                    "default": 2,
                     "__value_comment__": {
                       "0": "alphanumeric: abcdefghijkmnpqrstuvwxyz23456789",
                       "1": "alphabet only: abcdefghijklmnopqrstuvwxyz",
                       "2": "numbers only: 123456789"
-                    }
+                    },
+                    "default": 2
                   },
                   "voip_save": {
                     "title": "true, is you want the username and password to be saved in database, defaults to false",

@@ -1816,10 +1816,10 @@
               "first_login",
               "serial",
               "serial_numeric"
-            ]
-          },
-          "__value_comment__": {
-            "owner_id": "owner isp id"
+            ],
+            "__value_comment__": {
+              "owner_id": "owner isp id"
+            }
           }
         },
         {
@@ -2592,17 +2592,17 @@
                   "group_id",
                   "before_credit",
                   "user_ids"
-                ]
-              },
-              "__value_comment__": {
-                "user_id": "in user_view mode only",
-                "username": "in user_view mode only",
-                "name": "in user_view mode only",
-                "serial": "in user_view mode only",
-                "group": "in user_view mode only",
-                "group_id": "in user_view mode only",
-                "before_credit": "in user_view mode only",
-                "user_ids": "in admin-view only (no user_view in conds) "
+                ],
+                "__value_comment__": {
+                  "user_id": "in user_view mode only",
+                  "username": "in user_view mode only",
+                  "name": "in user_view mode only",
+                  "serial": "in user_view mode only",
+                  "group": "in user_view mode only",
+                  "group_id": "in user_view mode only",
+                  "before_credit": "in user_view mode only",
+                  "user_ids": "in admin-view only (no user_view in conds) "
+                }
               }
             }
           }
@@ -4155,22 +4155,22 @@
                       "10",
                       "11",
                       "12"
-                    ]
-                  },
-                  "__value_comment__": {
-                    "0": "_NO_CATEGORY_",
-                    "1": "RAS",
-                    "2": "CHARGE",
-                    "3": "ISP",
-                    "4": "VOIP-TARIFF",
-                    "5": "VOIP-PREFIX-GROUP",
-                    "6": "ADMIN",
-                    "7": "VOIP-PROVIDER",
-                    "8": "VOIP-ROUTING-PROFILE",
-                    "9": "VOIP-ROUTE",
-                    "10": "VOIP-ROUTE-PREFIX",
-                    "11": "ISP PAGE STYLE",
-                    "12": "ONLINE-PAYMENT"
+                    ],
+                    "__value_comment__": {
+                      "0": "_NO_CATEGORY_",
+                      "1": "RAS",
+                      "2": "CHARGE",
+                      "3": "ISP",
+                      "4": "VOIP-TARIFF",
+                      "5": "VOIP-PREFIX-GROUP",
+                      "6": "ADMIN",
+                      "7": "VOIP-PROVIDER",
+                      "8": "VOIP-ROUTING-PROFILE",
+                      "9": "VOIP-ROUTE",
+                      "10": "VOIP-ROUTE-PREFIX",
+                      "11": "ISP PAGE STYLE",
+                      "12": "ONLINE-PAYMENT"
+                    }
                   }
                 },
                 "required": false
@@ -4181,12 +4181,12 @@
                 "items": {
                   "title": "",
                   "schema": {
-                    "enum": ["1", "2", "3"]
-                  },
-                  "__value_comment__": {
-                    "1": "ADD",
-                    "2": "CHANGE",
-                    "3": "DELETE"
+                    "enum": ["1", "2", "3"],
+                    "__value_comment__": {
+                      "1": "ADD",
+                      "2": "CHANGE",
+                      "3": "DELETE"
+                    }
                   }
                 },
                 "required": false

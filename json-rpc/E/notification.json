@@ -269,11 +269,11 @@
               "ibsng_message",
               "url",
               "user_event"
-            ]
-          },
-          "__value_comment__": {
-            "url": "call a URL specified in `message_template`, added in tag 312",
-            "user_event": "added in tag (NO TAG YET)"
+            ],
+            "__value_comment__": {
+              "url": "call a URL specified in `message_template`, added in tag 312",
+              "user_event": "added in tag (NO TAG YET)"
+            }
           }
         },
         {
@@ -375,11 +375,11 @@
               "ibsng_message",
               "url",
               "user_event"
-            ]
-          },
-          "__value_comment__": {
-            "url": "call a URL specified in `message_template`, added in tag 312",
-            "user_event": "added in tag (NO TAG YET)"
+            ],
+            "__value_comment__": {
+              "url": "call a URL specified in `message_template`, added in tag 312",
+              "user_event": "added in tag (NO TAG YET)"
+            }
           }
         },
         {
