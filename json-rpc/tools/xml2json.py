@@ -37,7 +37,7 @@ paramTypeMapping = {
 
 	"str_int": ParamType("string", pattern="^[0-9]+$"),
 
-	"int": ParamType("number"),
+	"int": ParamType("integer"),
 	"float": ParamType("number"),
 	"str_float": ParamType("str", "float as string"),
 
@@ -55,12 +55,12 @@ paramTypeMapping = {
 
 	"null": ParamType("null"),
 	
-	"int, null": ParamType(("number", "null"), "int or null"),
+	"int, null": ParamType(("integer", "null"), "int or null"),
 	"dynamic": ParamType("", "dynamic type"),
 
 	"list, str": ParamType(("array", "string")),
-	"list, int": ParamType(("array", "number"), "array or int"),
-	"int, list": ParamType(("number", "array"), "int or array"),
+	"list, int": ParamType(("array", "integer"), "array or int"),
+	"int, list": ParamType(("integer", "array"), "int or array"),
 	"str, list": ParamType(("string", "array"), "string or array"),
 }
 
@@ -114,6 +114,7 @@ def getChoiceJsonParam(param: "Element") -> dict:
 		if choiceElem.attrib.get("default"):
 			default = value
 	seqauential = False
+	valueType = ""
 	if not values:
 		print(f"choice with no values: {toStr(param)}")
 	elif len(valueTypes) > 1:
@@ -127,6 +128,10 @@ def getChoiceJsonParam(param: "Element") -> dict:
 				seqauential = True
 			else:
 				print(f"non-seqauential integer choice values: {values}")
+		valueType = paramTypeMapping[_type].type
+
+	if not valueType:
+		valueType = "string"
 
 	paramJson = {}
 	if paramName:
@@ -135,18 +140,23 @@ def getChoiceJsonParam(param: "Element") -> dict:
 		paramJson["description"] = description
 	if seqauential:
 		paramJson["schema"] = {
-			"type": "number",
+			"type": "integer",
 			"minimum": values[0],
 			"maximum": values[-1],
 		}
+		if comments:
+			paramJson["schema"]["enum"] = {
+				str(value): comments.get(value, "")
+				for value in values
+			}
 	else:
 		if comments:
 			values = {
 				value: comments.get(value, "")
 				for value in values
 			}
-			comments = None
 		paramJson["schema"] = {
+			"type": valueType,
 			"enum": values,
 		}
 	if default is not None:
@@ -158,8 +168,6 @@ def getChoiceJsonParam(param: "Element") -> dict:
 			except ValueError:
 				pass
 		paramJson["default"] = default
-	if comments:
-		paramJson["schema"]["__value_comment__"] = comments
 	return paramJson
 
 

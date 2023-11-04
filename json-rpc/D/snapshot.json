@@ -15,7 +15,7 @@
           "name": "user_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           },
           "required": false
         },
@@ -103,6 +103,7 @@
           "name": "type",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["internet", "voip"]
           }
         }
@@ -141,6 +142,7 @@
               },
               "date_from_unit": {
                 "title": "date unit",
+                "type": "string",
                 "enum": [
                   "gregorian",
                   "jalali",
@@ -154,6 +156,7 @@
               },
               "date_to_unit": {
                 "title": "date unit",
+                "type": "string",
                 "enum": [
                   "gregorian",
                   "jalali",
@@ -167,6 +170,7 @@
               },
               "date_from_op": {
                 "title": "operation for start date",
+                "type": "string",
                 "enum": {
                   "<": "less than",
                   ">": "more than",
@@ -176,6 +180,7 @@
               },
               "date_to_op": {
                 "title": "operation for end date",
+                "type": "string",
                 "enum": {
                   "<": "less than",
                   ">": "more than",
@@ -221,6 +226,7 @@
               },
               "date_from_unit": {
                 "title": "date unit",
+                "type": "string",
                 "enum": [
                   "gregorian",
                   "jalali",
@@ -234,6 +240,7 @@
               },
               "date_to_unit": {
                 "title": "date unit",
+                "type": "string",
                 "enum": [
                   "gregorian",
                   "jalali",
@@ -247,6 +254,7 @@
               },
               "date_from_op": {
                 "title": "operation for start date",
+                "type": "string",
                 "enum": {
                   "<": "less than",
                   ">": "more than",
@@ -256,6 +264,7 @@
               },
               "date_to_op": {
                 "title": "operation for end date",
+                "type": "string",
                 "enum": {
                   "<": "less than",
                   ">": "more than",
@@ -301,6 +310,7 @@
               },
               "date_from_unit": {
                 "title": "date unit",
+                "type": "string",
                 "enum": [
                   "gregorian",
                   "jalali",
@@ -314,6 +324,7 @@
               },
               "date_to_unit": {
                 "title": "date unit",
+                "type": "string",
                 "enum": [
                   "gregorian",
                   "jalali",
@@ -327,6 +338,7 @@
               },
               "date_from_op": {
                 "title": "operation for start date",
+                "type": "string",
                 "enum": {
                   "<": "less than",
                   ">": "more than",
@@ -336,6 +348,7 @@
               },
               "date_to_op": {
                 "title": "operation for end date",
+                "type": "string",
                 "enum": {
                   "<": "less than",
                   ">": "more than",
@@ -381,6 +394,7 @@
               },
               "date_from_unit": {
                 "title": "date unit",
+                "type": "string",
                 "enum": [
                   "gregorian",
                   "jalali",
@@ -394,6 +408,7 @@
               },
               "date_to_unit": {
                 "title": "date unit",
+                "type": "string",
                 "enum": [
                   "gregorian",
                   "jalali",
@@ -407,6 +422,7 @@
               },
               "date_from_op": {
                 "title": "operation for start date",
+                "type": "string",
                 "enum": {
                   "<": "less than",
                   ">": "more than",
@@ -416,6 +432,7 @@
               },
               "date_to_op": {
                 "title": "operation for end date",
+                "type": "string",
                 "enum": {
                   "<": "less than",
                   ">": "more than",

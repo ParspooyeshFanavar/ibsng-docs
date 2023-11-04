@@ -77,7 +77,7 @@
           "properties": {
             "customer_id": {
               "title": "return customer id that add",
-              "type": "number"
+              "type": "integer"
             }
           }
         }
@@ -114,7 +114,7 @@
           "properties": {
             "customer_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "uid": {
               "title": "",
@@ -126,6 +126,7 @@
             },
             "customer_name_op": {
               "title": "",
+              "type": "string",
               "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
             },
             "isp_name": {
@@ -166,7 +167,7 @@
           "name": "customer_id",
           "description": "If you don't need customer_id , send an empty string",
           "schema": {
-            "type": "number"
+            "type": "integer"
           },
           "required": false
         },
@@ -255,7 +256,7 @@
           "name": "customer_id",
           "description": "If you don't need customer_id, sned an empty string",
           "schema": {
-            "type": "number"
+            "type": "integer"
           },
           "required": false
         }
@@ -302,6 +303,7 @@
         {
           "name": "sort_by",
           "schema": {
+            "type": "string",
             "enum": ["customer_name", "customer_id"]
           }
         },
@@ -316,14 +318,14 @@
           "name": "_from",
           "description": "pagination start",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "to",
           "description": "pagination end",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         }
       ],
@@ -336,7 +338,7 @@
           "properties": {
             "total_rows": {
               "title": "Number of total rows",
-              "type": "number"
+              "type": "integer"
             },
             "report": {
               "title": "",
@@ -347,7 +349,7 @@
                 "properties": {
                   "customer_id": {
                     "title": "",
-                    "type": "number"
+                    "type": "integer"
                   },
                   "cusmert_name": {
                     "title": "",

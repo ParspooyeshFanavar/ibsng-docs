@@ -15,7 +15,7 @@
           "name": "count",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
@@ -45,7 +45,7 @@
           "name": "customer_id",
           "description": "The client ID to which we want to assign the user",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
@@ -59,7 +59,7 @@
           "name": "parent_user_id",
           "description": "User's parent ID",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         }
       ],
@@ -235,7 +235,7 @@
                   "properties": {
                     "user_id": {
                       "title": "",
-                      "type": "number",
+                      "type": "integer",
                       "required": false
                     },
                     "normal_username": {
@@ -265,7 +265,7 @@
                     },
                     "nearest_exp_date_epoch": {
                       "title": "epoch time",
-                      "type": "number",
+                      "type": "integer",
                       "required": false
                     },
                     "time_to_nearest_exp_date": {
@@ -386,15 +386,15 @@
                       "properties": {
                         "id": {
                           "title": "",
-                          "type": "number"
+                          "type": "integer"
                         },
                         "priority": {
                           "title": "",
-                          "type": "number"
+                          "type": "integer"
                         },
                         "user_id": {
                           "title": "",
-                          "type": "number"
+                          "type": "integer"
                         },
                         "app": {
                           "title": "'AGI' by default",
@@ -433,10 +433,12 @@
                         },
                         "cancallforward": {
                           "title": "",
+                          "type": "string",
                           "enum": ["yes", "no"]
                         },
                         "canreinvite": {
                           "title": "",
+                          "type": "string",
                           "enum": ["yes", "no"]
                         },
                         "context": {
@@ -453,19 +455,21 @@
                         },
                         "nat": {
                           "title": "",
+                          "type": "string",
                           "enum": ["yes", "no"]
                         },
                         "port": {
                           "title": "",
-                          "type": "number"
+                          "type": "integer"
                         },
                         "qualify": {
                           "title": "",
+                          "type": "string",
                           "enum": ["yes", "no"]
                         },
                         "regseconds": {
                           "title": "",
-                          "type": "number"
+                          "type": "integer"
                         },
                         "type": {
                           "title": "'friend' by default",
@@ -500,19 +504,21 @@
                         },
                         "notransfer": {
                           "title": "",
+                          "type": "string",
                           "enum": ["yes", "no"]
                         },
                         "port": {
                           "title": "",
-                          "type": "number"
+                          "type": "integer"
                         },
                         "qualify": {
                           "title": "",
+                          "type": "string",
                           "enum": ["yes", "no"]
                         },
                         "regseconds": {
                           "title": "",
-                          "type": "number"
+                          "type": "integer"
                         },
                         "type": {
                           "title": "'friend' by default",
@@ -832,6 +838,7 @@
                     },
                     "time_periodic_accounting_monthly": {
                       "title": "Monthly Time Monthly Reset Type",
+                      "type": "string",
                       "enum": ["gregorian", "jalali"]
                     },
                     "time_periodic_accounting_monthly_limit": {
@@ -969,6 +976,7 @@
                     },
                     "monthly_periodic_credit_change": {
                       "title": "Monthly Credit Change Monthly Reset Type",
+                      "type": "string",
                       "enum": ["gregorian", "jalali"]
                     },
                     "monthly_periodic_credit_change_day": {
@@ -978,6 +986,7 @@
                     },
                     "monthly_periodic_credit_change_type": {
                       "title": "Monthly Credit Change Credit Change Type",
+                      "type": "string",
                       "enum": ["absolute", "relative"]
                     },
                     "monthly_periodic_credit_change_amount": {
@@ -1014,6 +1023,7 @@
                     },
                     "daily_periodic_credit_change_type": {
                       "title": "Daily Credit Change Credit Change Type",
+                      "type": "string",
                       "enum": ["absolute", "relative"]
                     },
                     "daily_periodic_credit_change_amount": {
@@ -1070,11 +1080,12 @@
                     },
                     "rel_exp_date": {
                       "title": "User Info Exp Dates Relative Expiration Date",
-                      "type": "number",
+                      "type": "integer",
                       "required": false
                     },
                     "rel_exp_date_unit": {
                       "title": "",
+                      "type": "string",
                       "enum": {
                         "Minutes": "",
                         "Hours": "",
@@ -1085,11 +1096,12 @@
                     },
                     "rel_exp_date_negative_credit": {
                       "title": "User Info Exp Dates Negative Credit Expiration Date Negative Credit Relative Expiration Date",
-                      "type": "number",
+                      "type": "integer",
                       "required": false
                     },
                     "rel_exp_date_negative_credit_unit": {
                       "title": "User Info Exp Dates Negative Credit Expiration Date Negative Credit Relative Expiration Date",
+                      "type": "string",
                       "enum": {
                         "Minutes": "",
                         "Hours": "",
@@ -1320,15 +1332,15 @@
                   },
                   "normal_username_random_length": {
                     "title": "default to 8",
-                    "type": "number",
+                    "type": "integer",
                     "required": false
                   },
                   "normal_username_random_type": {
                     "title": "",
-                    "type": "number",
+                    "type": "integer",
                     "minimum": 0,
                     "maximum": 2,
-                    "__value_comment__": {
+                    "enum": {
                       "0": "alphanumeric abcdefghijkmnpqrstuvwxyz23456789",
                       "1": "alphabet only abcdefghijklmnopqrstuvwxyz",
                       "2": "numbers only 123456789"
@@ -1342,15 +1354,15 @@
                   },
                   "normal_password_random_length": {
                     "title": "default to 8",
-                    "type": "number",
+                    "type": "integer",
                     "required": false
                   },
                   "normal_password_random_type": {
                     "title": "",
-                    "type": "number",
+                    "type": "integer",
                     "minimum": 0,
                     "maximum": 2,
-                    "__value_comment__": {
+                    "enum": {
                       "0": "alphanumeric abcdefghijkmnpqrstuvwxyz23456789",
                       "1": "alphabet only abcdefghijklmnopqrstuvwxyz",
                       "2": "numbers only 123456789"
@@ -1381,15 +1393,15 @@
                   },
                   "voip_username_random_length": {
                     "title": "default to 8",
-                    "type": "number",
+                    "type": "integer",
                     "required": false
                   },
                   "voip_username_random_type": {
                     "title": "",
-                    "type": "number",
+                    "type": "integer",
                     "minimum": 0,
                     "maximum": 2,
-                    "__value_comment__": {
+                    "enum": {
                       "0": "alphanumeric abcdefghijkmnpqrstuvwxyz23456789",
                       "1": "alphabet only abcdefghijklmnopqrstuvwxyz",
                       "2": "numbers only 123456789"
@@ -1403,15 +1415,15 @@
                   },
                   "voip_password_random_length": {
                     "title": "default to 8",
-                    "type": "number",
+                    "type": "integer",
                     "required": false
                   },
                   "voip_password_random_type": {
                     "title": "",
-                    "type": "number",
+                    "type": "integer",
                     "minimum": 0,
                     "maximum": 2,
-                    "__value_comment__": {
+                    "enum": {
                       "0": "alphanumeric abcdefghijkmnpqrstuvwxyz23456789",
                       "1": "alphabet only abcdefghijklmnopqrstuvwxyz",
                       "2": "numbers only 123456789"
@@ -1455,7 +1467,7 @@
               },
               "first_login": {
                 "title": "epoch time",
-                "type": "number",
+                "type": "integer",
                 "required": false
               },
               "auto_renew": {
@@ -1566,10 +1578,12 @@
                   },
                   "cancallforward": {
                     "title": "",
+                    "type": "string",
                     "enum": ["yes", "no"]
                   },
                   "canreinvite": {
                     "title": "",
+                    "type": "string",
                     "enum": ["yes", "no"]
                   },
                   "context": {
@@ -1589,20 +1603,22 @@
                   },
                   "nat": {
                     "title": "",
+                    "type": "string",
                     "enum": ["yes", "no"]
                   },
                   "port": {
                     "title": "",
-                    "type": "number",
+                    "type": "integer",
                     "required": false
                   },
                   "qualify": {
                     "title": "",
+                    "type": "string",
                     "enum": ["yes", "no"]
                   },
                   "regseconds": {
                     "title": "",
-                    "type": "number",
+                    "type": "integer",
                     "required": false
                   },
                   "type": {
@@ -1644,20 +1660,22 @@
                   },
                   "notransfer": {
                     "title": "",
+                    "type": "string",
                     "enum": ["yes", "no"]
                   },
                   "port": {
                     "title": "",
-                    "type": "number",
+                    "type": "integer",
                     "required": false
                   },
                   "qualify": {
                     "title": "",
+                    "type": "string",
                     "enum": ["yes", "no"]
                   },
                   "regseconds": {
                     "title": "",
-                    "type": "number",
+                    "type": "integer",
                     "required": false
                   },
                   "type": {
@@ -2031,6 +2049,7 @@
               },
               "time_periodic_accounting_monthly": {
                 "title": "Monthly Time Monthly Reset Type",
+                "type": "string",
                 "enum": ["gregorian", "jalali"]
               },
               "time_periodic_accounting_monthly_limit": {
@@ -2168,6 +2187,7 @@
               },
               "monthly_periodic_credit_change": {
                 "title": "Monthly Credit Change Monthly Reset Type",
+                "type": "string",
                 "enum": ["gregorian", "jalali"]
               },
               "monthly_periodic_credit_change_day": {
@@ -2177,6 +2197,7 @@
               },
               "monthly_periodic_credit_change_type": {
                 "title": "Monthly Credit Change Credit Change Type",
+                "type": "string",
                 "enum": ["absolute", "relative"]
               },
               "monthly_periodic_credit_change_amount": {
@@ -2213,6 +2234,7 @@
               },
               "daily_periodic_credit_change_type": {
                 "title": "Daily Credit Change Credit Change Type",
+                "type": "string",
                 "enum": ["absolute", "relative"]
               },
               "daily_periodic_credit_change_amount": {
@@ -2274,11 +2296,12 @@
               },
               "rel_exp_date": {
                 "title": "",
-                "type": "number",
+                "type": "integer",
                 "required": false
               },
               "rel_exp_date_unit": {
                 "title": "",
+                "type": "string",
                 "enum": {
                   "Minutes": "",
                   "Hours": "",
@@ -2289,11 +2312,12 @@
               },
               "rel_exp_date_negative_credit": {
                 "title": "User Info Exp Dates Negative Credit Expiration Date Negative Credit Relative Expiration Date",
-                "type": "number",
+                "type": "integer",
                 "required": false
               },
               "rel_exp_date_negative_credit_unit": {
                 "title": "User Info Exp Dates Negative Credit Expiration Date Negative Credit Relative Expiration Date",
+                "type": "string",
                 "enum": {
                   "Minutes": "",
                   "Hours": "",
@@ -2404,6 +2428,7 @@
               },
               "chakavak_call_blocking_status": {
                 "title": "Call blocking",
+                "type": "string",
                 "enum": ["ONEWAY", "TWOWAY", "BARRED"]
               },
               "chakavak_callerid_name": {
@@ -2417,6 +2442,7 @@
                 "items": {
                   "title": "",
                   "schema": {
+                    "type": "string",
                     "enum": ["CONFERENCE", "DIVERT"]
                   }
                 },
@@ -2429,6 +2455,7 @@
               },
               "chakavak_codec": {
                 "title": "Set of codecs user can use",
+                "type": "string",
                 "enum": [
                   "iLBC@30i",
                   "speex@8000h@20i",
@@ -2588,6 +2615,7 @@
               },
               "exp_date_from_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -2605,6 +2633,7 @@
               },
               "exp_date_to_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -2637,20 +2666,21 @@
           "name": "from",
           "description": "start index, for pagination",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "to",
           "description": "start index, for pagination",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "order_by",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": [
               "user_id",
               "isp_id",
@@ -2703,6 +2733,7 @@
           "name": "output_type",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["csv", "pdf"]
           }
         },
@@ -2718,6 +2749,7 @@
           "name": "order_by",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": [
               "user_id",
               "isp_id",
@@ -2773,16 +2805,17 @@
             "properties": {
               "user_role": {
                 "title": "",
+                "type": "string",
                 "enum": ["account", "role"]
               },
               "parent_user_id": {
                 "title": "",
-                "type": "number",
+                "type": "integer",
                 "required": false
               },
               "customer_id": {
                 "title": "",
-                "type": "number",
+                "type": "integer",
                 "required": false
               },
               "customer_name": {
@@ -2802,6 +2835,7 @@
               },
               "abs_exp_date_from_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -2819,6 +2853,7 @@
               },
               "abs_exp_date_to_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -2846,6 +2881,7 @@
               },
               "assign_dns_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "has_assign_ip": {
@@ -2860,6 +2896,7 @@
               },
               "assign_ip_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "has_assign_netmask": {
@@ -2874,6 +2911,7 @@
               },
               "assign_netmask_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "has_assign_route_ip": {
@@ -2888,6 +2926,7 @@
               },
               "assign_route_ip_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "asterisk_did_number": {
@@ -2927,6 +2966,7 @@
               },
               "caller_id_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "charge": {
@@ -2941,6 +2981,7 @@
               },
               "comment_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "name": {
@@ -2950,6 +2991,7 @@
               },
               "name_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "postal_code": {
@@ -2959,6 +3001,7 @@
               },
               "postal_code_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "phone": {
@@ -2968,6 +3011,7 @@
               },
               "phone_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "cell_phone": {
@@ -2977,6 +3021,7 @@
               },
               "cell_phone_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "email": {
@@ -2986,6 +3031,7 @@
               },
               "email_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "birthdate": {
@@ -2995,6 +3041,7 @@
               },
               "birthdate_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -3007,6 +3054,7 @@
               },
               "birthdate_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["=", ">", "<", ">=", "<="]
               },
               "address": {
@@ -3016,6 +3064,7 @@
               },
               "address_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "has_connection_log_archive": {
@@ -3030,6 +3079,7 @@
               },
               "creation_date_from_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -3047,6 +3097,7 @@
               },
               "creation_date_to_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -3064,6 +3115,7 @@
               },
               "credit_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["=", ">", "<", ">=", "<="]
               },
               "credit_limit": {
@@ -3073,11 +3125,12 @@
               },
               "custom_field_test_integer": {
                 "title": "sample cutom field with name 'test_integer' and type 'Integer'",
-                "type": "number",
+                "type": "integer",
                 "required": false
               },
               "custom_field_test_integer_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["=", ">", "<", ">=", "<="]
               },
               "custom_field_test_string": {
@@ -3087,6 +3140,7 @@
               },
               "custom_field_test_string_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "deny_change_password": {
@@ -3101,6 +3155,7 @@
               },
               "deposit_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["=", ">", "<", ">=", "<="]
               },
               "deposit_recharge": {
@@ -3110,6 +3165,7 @@
               },
               "deposit_recharge_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["=", ">", "<", ">=", "<="]
               },
               "email_address": {
@@ -3119,6 +3175,7 @@
               },
               "email_address_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "user_value_exp_from_creation_date_from": {
@@ -3128,6 +3185,7 @@
               },
               "user_value_exp_from_creation_date_from_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -3145,6 +3203,7 @@
               },
               "user_value_exp_from_creation_date_to_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -3162,6 +3221,7 @@
               },
               "user_value_exp_from_first_login_from_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -3179,6 +3239,7 @@
               },
               "user_value_exp_from_first_login_to_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -3196,6 +3257,7 @@
               },
               "exp_from_renew_user_value_from_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -3213,6 +3275,7 @@
               },
               "exp_from_renew_user_value_to_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -3230,6 +3293,7 @@
               },
               "exp_monthly_user_value_from_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -3247,6 +3311,7 @@
               },
               "exp_monthly_user_value_to_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -3264,6 +3329,7 @@
               },
               "first_login_from_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -3281,6 +3347,7 @@
               },
               "first_login_to_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -3298,6 +3365,7 @@
               },
               "real_first_login_from_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -3315,6 +3383,7 @@
               },
               "real_first_login_to_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -3337,6 +3406,7 @@
               },
               "in_ras_ippool_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "ippool": {
@@ -3371,7 +3441,7 @@
               },
               "isp_id": {
                 "title": "array or int, list of ISP IDs, or integer of one ISP ID",
-                "type": ["array", "number"],
+                "type": ["array", "integer"],
                 "required": false
               },
               "limit_caller_id": {
@@ -3381,6 +3451,7 @@
               },
               "limit_caller_id_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "limit_mac": {
@@ -3390,6 +3461,7 @@
               },
               "limit_mac_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "limit_port": {
@@ -3399,6 +3471,7 @@
               },
               "limit_port_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "has_limit_ras": {
@@ -3413,6 +3486,7 @@
               },
               "limit_ras_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["and", "or"]
               },
               "limit_station_ip": {
@@ -3422,11 +3496,12 @@
               },
               "limit_station_ip_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "limit_usage_days": {
                 "title": "int or array, integer (number of days), or list of integers (number of days)",
-                "type": ["number", "array"],
+                "type": ["integer", "array"],
                 "required": false
               },
               "lock": {
@@ -3446,15 +3521,17 @@
               },
               "lock_reason_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "mail_quota": {
                 "title": "",
-                "type": "number",
+                "type": "integer",
                 "required": false
               },
               "mail_quota_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["=", ">", "<", ">=", "<="]
               },
               "activation_required": {
@@ -3469,15 +3546,17 @@
               },
               "mikrotik_address_list_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "multi_login": {
                 "title": "",
-                "type": "number",
+                "type": "integer",
                 "required": false
               },
               "multi_login_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["=", ">", "<", ">=", "<="]
               },
               "never_expire_users": {
@@ -3497,6 +3576,7 @@
               },
               "not_logged_in_from_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -3514,6 +3594,7 @@
               },
               "not_logged_in_to_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -3531,6 +3612,7 @@
               },
               "normal_username_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "no_normal_username": {
@@ -3560,6 +3642,7 @@
               },
               "daily_periodic_credit_change_reset_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "epoch",
                   "jalali",
@@ -3573,6 +3656,7 @@
               },
               "daily_periodic_credit_change_reset_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["=", ">", "<", ">=", "<="]
               },
               "monthly_periodic_credit_change_reset": {
@@ -3582,6 +3666,7 @@
               },
               "monthly_periodic_credit_change_reset_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "epoch",
                   "jalali",
@@ -3595,6 +3680,7 @@
               },
               "monthly_periodic_credit_change_reset_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["=", ">", "<", ">=", "<="]
               },
               "periodic_reset_rule_usage": {
@@ -3604,6 +3690,7 @@
               },
               "periodic_reset_rule_usage_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "persistent_lan_mac": {
@@ -3638,6 +3725,7 @@
               },
               "rel_exp_date_from_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -3655,6 +3743,7 @@
               },
               "rel_exp_date_to_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -3672,6 +3761,7 @@
               },
               "rel_exp_date_negative_credit_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -3684,6 +3774,7 @@
               },
               "rel_exp_date_negative_credit_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["=", ">", "<", ">=", "<="]
               },
               "renew_do_not_reset_credit": {
@@ -3723,6 +3814,7 @@
               },
               "second_normal_username_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "serial": {
@@ -3732,6 +3824,7 @@
               },
               "serial_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "sms_charge": {
@@ -3741,6 +3834,7 @@
               },
               "sms_charge_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["=", ">", "<", ">=", "<="]
               },
               "user_id": {
@@ -3750,6 +3844,7 @@
               },
               "user_id_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["=", ">", "<", ">=", "<="]
               },
               "user_status": {
@@ -3765,6 +3860,7 @@
               },
               "voip_preferred_language_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "voip_username": {
@@ -3774,6 +3870,7 @@
               },
               "voip_username_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               }
             }
@@ -3783,20 +3880,21 @@
           "name": "from",
           "description": "start index, for pagination",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "to",
           "description": "end index, for pagination",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "order_by",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": [
               "normal_username",
               "voip_username",
@@ -3928,7 +4026,7 @@
           "name": "user_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
@@ -4002,7 +4100,7 @@
           "name": "user_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         }
       ],
@@ -4059,7 +4157,7 @@
           "properties": {
             "id": {
               "title": "return null if enter correct parameters",
-              "type": "number"
+              "type": "integer"
             },
             "result": {
               "title": "return true if enter correct parameters",
@@ -4120,7 +4218,7 @@
           "name": "temporary_extend_hours",
           "description": "hours",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
@@ -4234,6 +4332,7 @@
           "name": "order_by",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": [
               "normal_username",
               "voip_username",
@@ -4264,6 +4363,7 @@
             "items": {
               "title": "",
               "schema": {
+                "type": "string",
                 "enum": [
                   "user_id",
                   "creation_date",
@@ -4292,6 +4392,7 @@
           "name": "output_type",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["csv", "pdf"]
           }
         }
@@ -4322,6 +4423,7 @@
           "name": "status",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["Package", "Recharged", "Temporary Extended"]
           }
         }
@@ -4386,7 +4488,7 @@
             },
             "requester_id": {
               "title": "Admin ID",
-              "type": "number"
+              "type": "integer"
             },
             "requester_username": {
               "title": "Admin Username",
@@ -4403,12 +4505,12 @@
                 {
                   "index": 0,
                   "title": "epoch time of start",
-                  "type": "number"
+                  "type": "integer"
                 },
                 {
                   "index": 1,
                   "title": "epoch time of end",
-                  "type": "number"
+                  "type": "integer"
                 }
               ],
               "length": "2"
@@ -4423,15 +4525,15 @@
             },
             "matched_users_count": {
               "title": "number of all matched users",
-              "type": "number"
+              "type": "integer"
             },
             "checked_users_count": {
               "title": "number of done users",
-              "type": "number"
+              "type": "integer"
             },
             "action_progress": {
               "title": "percentage of progress (0 to 100)",
-              "type": "number"
+              "type": "integer"
             },
             "canceled": {
               "title": "true if the action is canceled",
@@ -4559,6 +4661,7 @@
           "name": "change_type",
           "description": "the same as method 'user.changeCreditExtended'",
           "schema": {
+            "type": "string",
             "enum": ["ADD", "SET", "MULTIPLY"]
           }
         },
@@ -4604,6 +4707,7 @@
           "name": "change_type",
           "description": "the same as method 'user.changeDepositExtended'",
           "schema": {
+            "type": "string",
             "enum": ["ADD", "SET", "MULTIPLY"]
           }
         },
@@ -4758,35 +4862,35 @@
           "name": "user_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "charge_rule_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "credit_usage",
           "description": "pass 0 if you want to reset",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "time_usage",
           "description": "in seconds, pass 0 if you want to reset",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "traffic_usage",
           "description": "in bytes, pass 0 if you want to reset",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         }
       ],
@@ -4809,14 +4913,14 @@
           "name": "user_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "traffic",
           "description": "Traffic, in Mega Bytes",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {

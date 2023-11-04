@@ -49,7 +49,7 @@
           "properties": {
             "charge_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "charge_name": {
               "title": "",
@@ -61,7 +61,7 @@
             },
             "isp_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "isp_name": {
               "title": "",
@@ -76,7 +76,7 @@
                 "properties": {
                   "charge_rule_id": {
                     "title": "",
-                    "type": "number"
+                    "type": "integer"
                   },
                   "charge_rule_description": {
                     "title": "",
@@ -84,7 +84,7 @@
                   },
                   "charge_rule_priority": {
                     "title": "",
-                    "type": "number"
+                    "type": "integer"
                   },
                   "attrs": {
                     "title": "Charge Rule Attributes",
@@ -127,11 +127,11 @@
         }
       ],
       "result": {
-        "name": "Response (number)",
+        "name": "Response (integer)",
         "summary": "Charge ID",
         "schema": {
           "title": "",
-          "type": "number"
+          "type": "integer"
         }
       }
     },
@@ -189,7 +189,7 @@
           "name": "copy_count",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         }
       ],
@@ -212,7 +212,7 @@
           "name": "charge_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
@@ -286,7 +286,7 @@
           "name": "charge_rule_priority",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
@@ -298,11 +298,11 @@
         }
       ],
       "result": {
-        "name": "Response (number)",
+        "name": "Response (integer)",
         "summary": "Charge Rule ID",
         "schema": {
           "title": "",
-          "type": "number"
+          "type": "integer"
         }
       }
     },
@@ -316,7 +316,7 @@
           "name": "charge_rule_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
@@ -330,7 +330,7 @@
           "name": "charge_rule_priority",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
@@ -360,7 +360,7 @@
           "name": "charge_rule_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
@@ -389,7 +389,7 @@
           "name": "charge_rule_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {

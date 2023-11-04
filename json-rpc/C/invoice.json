@@ -23,20 +23,21 @@
           "name": "_from",
           "description": "start index",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "to",
           "description": "end index",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "sort_by",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["issue_date", "user_id", "total_amount"]
           }
         },
@@ -95,7 +96,7 @@
           "properties": {
             "profile_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "profile_name": {
               "title": "",
@@ -118,7 +119,7 @@
                 "properties": {
                   "rule_id": {
                     "title": "",
-                    "type": "number"
+                    "type": "integer"
                   },
                   "description": {
                     "title": "",
@@ -134,27 +135,30 @@
                   },
                   "date_type": {
                     "title": "",
+                    "type": "string",
                     "enum": ["jalali", "gregorian"]
                   },
                   "language": {
                     "title": "",
+                    "type": "string",
                     "enum": ["fa", "en"]
                   },
                   "pi_exp_days": {
                     "title": "",
-                    "type": "number"
+                    "type": "integer"
                   },
                   "roundup_scale": {
                     "title": "",
-                    "type": "number"
+                    "type": "integer"
                   },
                   "auto_invoice_event": {
                     "title": "",
+                    "type": "string",
                     "enum": ["null", "credit_finished", "exp_date", "always"]
                   },
                   "auto_invoice_threshold": {
                     "title": "",
-                    "type": "number"
+                    "type": "integer"
                   },
                   "allow_user_issue_invoice": {
                     "title": "",
@@ -162,6 +166,7 @@
                   },
                   "action": {
                     "title": "",
+                    "type": "string",
                     "enum": [
                       "change_service",
                       "renew",
@@ -195,7 +200,7 @@
                       "properties": {
                         "rule_item_id": {
                           "title": "",
-                          "type": "number"
+                          "type": "integer"
                         },
                         "description": {
                           "title": "",
@@ -233,7 +238,7 @@
           "name": "profile_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         }
       ],
@@ -246,7 +251,7 @@
           "properties": {
             "profile_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "profile_name": {
               "title": "",
@@ -269,7 +274,7 @@
                 "properties": {
                   "rule_id": {
                     "title": "",
-                    "type": "number"
+                    "type": "integer"
                   },
                   "description": {
                     "title": "",
@@ -285,27 +290,30 @@
                   },
                   "date_type": {
                     "title": "",
+                    "type": "string",
                     "enum": ["jalali", "gregorian"]
                   },
                   "language": {
                     "title": "",
+                    "type": "string",
                     "enum": ["fa", "en"]
                   },
                   "pi_exp_days": {
                     "title": "",
-                    "type": "number"
+                    "type": "integer"
                   },
                   "roundup_scale": {
                     "title": "",
-                    "type": "number"
+                    "type": "integer"
                   },
                   "auto_invoice_event": {
                     "title": "",
+                    "type": "string",
                     "enum": ["null", "credit_finished", "exp_date", "always"]
                   },
                   "auto_invoice_threshold": {
                     "title": "",
-                    "type": "number"
+                    "type": "integer"
                   },
                   "allow_user_issue_invoice": {
                     "title": "",
@@ -313,6 +321,7 @@
                   },
                   "action": {
                     "title": "",
+                    "type": "string",
                     "enum": [
                       "change_service",
                       "renew",
@@ -346,7 +355,7 @@
                       "properties": {
                         "rule_item_id": {
                           "title": "",
-                          "type": "number"
+                          "type": "integer"
                         },
                         "description": {
                           "title": "",
@@ -384,7 +393,7 @@
           "name": "user_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         }
       ],
@@ -397,7 +406,7 @@
           "properties": {
             "profile_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "profile_name": {
               "title": "",
@@ -420,7 +429,7 @@
                 "properties": {
                   "rule_id": {
                     "title": "",
-                    "type": "number"
+                    "type": "integer"
                   },
                   "description": {
                     "title": "",
@@ -436,27 +445,30 @@
                   },
                   "date_type": {
                     "title": "",
+                    "type": "string",
                     "enum": ["jalali", "gregorian"]
                   },
                   "language": {
                     "title": "",
+                    "type": "string",
                     "enum": ["fa", "en"]
                   },
                   "pi_exp_days": {
                     "title": "",
-                    "type": "number"
+                    "type": "integer"
                   },
                   "roundup_scale": {
                     "title": "",
-                    "type": "number"
+                    "type": "integer"
                   },
                   "auto_invoice_event": {
                     "title": "",
+                    "type": "string",
                     "enum": ["null", "credit_finished", "exp_date", "always"]
                   },
                   "auto_invoice_threshold": {
                     "title": "",
-                    "type": "number"
+                    "type": "integer"
                   },
                   "allow_user_issue_invoice": {
                     "title": "",
@@ -464,6 +476,7 @@
                   },
                   "action": {
                     "title": "",
+                    "type": "string",
                     "enum": [
                       "change_service",
                       "renew",
@@ -497,7 +510,7 @@
                       "properties": {
                         "rule_item_id": {
                           "title": "",
-                          "type": "number"
+                          "type": "integer"
                         },
                         "description": {
                           "title": "",
@@ -548,7 +561,7 @@
           "properties": {
             "profile_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "profile_name": {
               "title": "",
@@ -571,7 +584,7 @@
                 "properties": {
                   "rule_id": {
                     "title": "",
-                    "type": "number"
+                    "type": "integer"
                   },
                   "description": {
                     "title": "",
@@ -587,27 +600,30 @@
                   },
                   "date_type": {
                     "title": "",
+                    "type": "string",
                     "enum": ["jalali", "gregorian"]
                   },
                   "language": {
                     "title": "",
+                    "type": "string",
                     "enum": ["fa", "en"]
                   },
                   "pi_exp_days": {
                     "title": "",
-                    "type": "number"
+                    "type": "integer"
                   },
                   "roundup_scale": {
                     "title": "",
-                    "type": "number"
+                    "type": "integer"
                   },
                   "auto_invoice_event": {
                     "title": "",
+                    "type": "string",
                     "enum": ["null", "credit_finished", "exp_date", "always"]
                   },
                   "auto_invoice_threshold": {
                     "title": "",
-                    "type": "number"
+                    "type": "integer"
                   },
                   "allow_user_issue_invoice": {
                     "title": "",
@@ -615,6 +631,7 @@
                   },
                   "action": {
                     "title": "",
+                    "type": "string",
                     "enum": [
                       "change_service",
                       "renew",
@@ -648,7 +665,7 @@
                       "properties": {
                         "rule_item_id": {
                           "title": "",
-                          "type": "number"
+                          "type": "integer"
                         },
                         "description": {
                           "title": "",
@@ -686,7 +703,7 @@
           "name": "rule_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         }
       ],
@@ -699,7 +716,7 @@
           "properties": {
             "rule_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "description": {
               "title": "",
@@ -715,27 +732,30 @@
             },
             "date_type": {
               "title": "",
+              "type": "string",
               "enum": ["jalali", "gregorian"]
             },
             "language": {
               "title": "",
+              "type": "string",
               "enum": ["fa", "en"]
             },
             "pi_exp_days": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "roundup_scale": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "auto_invoice_event": {
               "title": "",
+              "type": "string",
               "enum": ["null", "credit_finished", "exp_date", "always"]
             },
             "auto_invoice_threshold": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "allow_user_issue_invoice": {
               "title": "",
@@ -743,6 +763,7 @@
             },
             "action": {
               "title": "",
+              "type": "string",
               "enum": [
                 "change_service",
                 "renew",
@@ -776,7 +797,7 @@
                 "properties": {
                   "rule_item_id": {
                     "title": "",
-                    "type": "number"
+                    "type": "integer"
                   },
                   "description": {
                     "title": "",
@@ -831,11 +852,11 @@
         }
       ],
       "result": {
-        "name": "Response (number)",
+        "name": "Response (integer)",
         "summary": "Invoice Profile ID",
         "schema": {
           "title": "",
-          "type": "number"
+          "type": "integer"
         }
       }
     },
@@ -849,7 +870,7 @@
           "name": "profile_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
@@ -884,7 +905,7 @@
               "properties": {
                 "rule_id": {
                   "title": "",
-                  "type": "number"
+                  "type": "integer"
                 },
                 "description": {
                   "title": "",
@@ -900,27 +921,30 @@
                 },
                 "date_type": {
                   "title": "",
+                  "type": "string",
                   "enum": ["jalali", "gregorian"]
                 },
                 "language": {
                   "title": "",
+                  "type": "string",
                   "enum": ["fa", "en"]
                 },
                 "pi_exp_days": {
                   "title": "",
-                  "type": "number"
+                  "type": "integer"
                 },
                 "roundup_scale": {
                   "title": "",
-                  "type": "number"
+                  "type": "integer"
                 },
                 "auto_invoice_event": {
                   "title": "",
+                  "type": "string",
                   "enum": ["null", "credit_finished", "exp_date", "always"]
                 },
                 "auto_invoice_threshold": {
                   "title": "",
-                  "type": "number"
+                  "type": "integer"
                 },
                 "allow_user_issue_invoice": {
                   "title": "",
@@ -928,6 +952,7 @@
                 },
                 "action": {
                   "title": "",
+                  "type": "string",
                   "enum": [
                     "change_service",
                     "renew",
@@ -961,7 +986,7 @@
                     "properties": {
                       "rule_item_id": {
                         "title": "",
-                        "type": "number"
+                        "type": "integer"
                       },
                       "description": {
                         "title": "",
@@ -1006,7 +1031,7 @@
           "name": "profile_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         }
       ],
@@ -1161,6 +1186,7 @@
               },
               "issue_date_from_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -1179,6 +1205,7 @@
               },
               "issue_date_to_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -1196,19 +1223,20 @@
           "name": "_from",
           "description": "pagination start",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "to",
           "description": "pagination end",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "sort_by",
           "schema": {
+            "type": "string",
             "enum": ["issue_date", "user_id", "total_amount"]
           }
         },
@@ -1229,7 +1257,7 @@
           "properties": {
             "total_rows": {
               "title": "total number of results",
-              "type": "number"
+              "type": "integer"
             },
             "report": {
               "title": "",
@@ -1240,7 +1268,7 @@
                 "properties": {
                   "invoice_id": {
                     "title": "",
-                    "type": "number"
+                    "type": "integer"
                   },
                   "invoice_issue_date": {
                     "title": "datetime, ",
@@ -1262,7 +1290,7 @@
                   },
                   "rule_id": {
                     "title": "",
-                    "type": "number"
+                    "type": "integer"
                   },
                   "rule_description": {
                     "title": "",
@@ -1304,7 +1332,7 @@
                   },
                   "user_id": {
                     "title": "",
-                    "type": "number"
+                    "type": "integer"
                   },
                   "owner_name": {
                     "title": "",
@@ -1390,6 +1418,7 @@
               },
               "issue_date_from_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -1408,6 +1437,7 @@
               },
               "issue_date_to_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -1425,19 +1455,20 @@
           "name": "_from",
           "description": "pagination start",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "to",
           "description": "pagination end",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "sort_by",
           "schema": {
+            "type": "string",
             "enum": ["issue_date", "user_id", "total_amount"]
           }
         },
@@ -1458,7 +1489,7 @@
           "properties": {
             "total_rows": {
               "title": "total number of results",
-              "type": "number"
+              "type": "integer"
             },
             "report": {
               "title": "",
@@ -1469,11 +1500,11 @@
                 "properties": {
                   "pi_id": {
                     "title": "",
-                    "type": "number"
+                    "type": "integer"
                   },
                   "rule_id": {
                     "title": "",
-                    "type": "number"
+                    "type": "integer"
                   },
                   "rule_description": {
                     "title": "",
@@ -1518,7 +1549,7 @@
                   },
                   "user_id": {
                     "title": "",
-                    "type": "number"
+                    "type": "integer"
                   },
                   "user_name": {
                     "title": "",
@@ -1567,11 +1598,11 @@
                 },
                 "user_id": {
                   "title": "",
-                  "type": "number"
+                  "type": "integer"
                 },
                 "rule_id": {
                   "title": "",
-                  "type": "number"
+                  "type": "integer"
                 },
                 "add_user": {
                   "title": "",
@@ -1610,11 +1641,11 @@
                 "properties": {
                   "pi_id": {
                     "title": "Proforma Invoice ID",
-                    "type": "number"
+                    "type": "integer"
                   },
                   "rule_id": {
                     "title": "",
-                    "type": "number"
+                    "type": "integer"
                   },
                   "rule_description": {
                     "title": "",
@@ -1647,7 +1678,7 @@
                   },
                   "user_id": {
                     "title": "",
-                    "type": "number"
+                    "type": "integer"
                   },
                   "user_name": {
                     "title": "",
@@ -1716,7 +1747,7 @@
                 "properties": {
                   "user_id": {
                     "title": "",
-                    "type": "number"
+                    "type": "integer"
                   },
                   "failure_msg": {
                     "title": "error message",
@@ -1857,7 +1888,7 @@
           "name": "pi_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         }
       ],
@@ -1870,11 +1901,11 @@
           "properties": {
             "pi_id": {
               "title": "Proforma Invoice ID",
-              "type": "number"
+              "type": "integer"
             },
             "rule_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "rule_description": {
               "title": "",
@@ -1907,7 +1938,7 @@
             },
             "user_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "user_name": {
               "title": "",
@@ -1977,7 +2008,7 @@
           "name": "invoice_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         }
       ],
@@ -1990,11 +2021,11 @@
           "properties": {
             "invoice_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "rule_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "rule_description": {
               "title": "",
@@ -2050,7 +2081,7 @@
             },
             "user_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "user_name": {
               "title": "",
@@ -2089,7 +2120,7 @@
                 "properties": {
                   "invoice_item_id": {
                     "title": "",
-                    "type": "number"
+                    "type": "integer"
                   },
                   "description": {
                     "title": "",
@@ -2115,7 +2146,7 @@
           "name": "pi_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         }
       ],
@@ -2132,11 +2163,11 @@
               "properties": {
                 "pi_id": {
                   "title": "Proforma Invoice ID",
-                  "type": "number"
+                  "type": "integer"
                 },
                 "rule_id": {
                   "title": "",
-                  "type": "number"
+                  "type": "integer"
                 },
                 "rule_description": {
                   "title": "",
@@ -2169,7 +2200,7 @@
                 },
                 "user_id": {
                   "title": "",
-                  "type": "number"
+                  "type": "integer"
                 },
                 "user_name": {
                   "title": "",
@@ -2234,7 +2265,7 @@
               "properties": {
                 "rule_id": {
                   "title": "",
-                  "type": "number"
+                  "type": "integer"
                 },
                 "description": {
                   "title": "",
@@ -2250,27 +2281,30 @@
                 },
                 "date_type": {
                   "title": "",
+                  "type": "string",
                   "enum": ["jalali", "gregorian"]
                 },
                 "language": {
                   "title": "",
+                  "type": "string",
                   "enum": ["fa", "en"]
                 },
                 "pi_exp_days": {
                   "title": "",
-                  "type": "number"
+                  "type": "integer"
                 },
                 "roundup_scale": {
                   "title": "",
-                  "type": "number"
+                  "type": "integer"
                 },
                 "auto_invoice_event": {
                   "title": "",
+                  "type": "string",
                   "enum": ["null", "credit_finished", "exp_date", "always"]
                 },
                 "auto_invoice_threshold": {
                   "title": "",
-                  "type": "number"
+                  "type": "integer"
                 },
                 "allow_user_issue_invoice": {
                   "title": "",
@@ -2278,6 +2312,7 @@
                 },
                 "action": {
                   "title": "",
+                  "type": "string",
                   "enum": [
                     "change_service",
                     "renew",
@@ -2311,7 +2346,7 @@
                     "properties": {
                       "rule_item_id": {
                         "title": "",
-                        "type": "number"
+                        "type": "integer"
                       },
                       "description": {
                         "title": "",
@@ -2347,7 +2382,7 @@
           "name": "invoice_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         }
       ],
@@ -2364,11 +2399,11 @@
               "properties": {
                 "invoice_id": {
                   "title": "",
-                  "type": "number"
+                  "type": "integer"
                 },
                 "rule_id": {
                   "title": "",
-                  "type": "number"
+                  "type": "integer"
                 },
                 "rule_description": {
                   "title": "",
@@ -2424,7 +2459,7 @@
                 },
                 "user_id": {
                   "title": "",
-                  "type": "number"
+                  "type": "integer"
                 },
                 "user_name": {
                   "title": "",
@@ -2463,7 +2498,7 @@
                     "properties": {
                       "invoice_item_id": {
                         "title": "",
-                        "type": "number"
+                        "type": "integer"
                       },
                       "description": {
                         "title": "",
@@ -2484,7 +2519,7 @@
               "properties": {
                 "rule_id": {
                   "title": "",
-                  "type": "number"
+                  "type": "integer"
                 },
                 "description": {
                   "title": "",
@@ -2500,27 +2535,30 @@
                 },
                 "date_type": {
                   "title": "",
+                  "type": "string",
                   "enum": ["jalali", "gregorian"]
                 },
                 "language": {
                   "title": "",
+                  "type": "string",
                   "enum": ["fa", "en"]
                 },
                 "pi_exp_days": {
                   "title": "",
-                  "type": "number"
+                  "type": "integer"
                 },
                 "roundup_scale": {
                   "title": "",
-                  "type": "number"
+                  "type": "integer"
                 },
                 "auto_invoice_event": {
                   "title": "",
+                  "type": "string",
                   "enum": ["null", "credit_finished", "exp_date", "always"]
                 },
                 "auto_invoice_threshold": {
                   "title": "",
-                  "type": "number"
+                  "type": "integer"
                 },
                 "allow_user_issue_invoice": {
                   "title": "",
@@ -2528,6 +2566,7 @@
                 },
                 "action": {
                   "title": "",
+                  "type": "string",
                   "enum": [
                     "change_service",
                     "renew",
@@ -2561,7 +2600,7 @@
                     "properties": {
                       "rule_item_id": {
                         "title": "",
-                        "type": "number"
+                        "type": "integer"
                       },
                       "description": {
                         "title": "",

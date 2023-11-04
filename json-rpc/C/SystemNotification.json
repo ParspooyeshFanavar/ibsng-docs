@@ -14,7 +14,7 @@
           "name": "last_notifications",
           "description": "default is 5",
           "schema": {
-            "type": "number"
+            "type": "integer"
           },
           "required": false
         },
@@ -45,7 +45,7 @@
           "name": "notification_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
@@ -57,11 +57,11 @@
         }
       ],
       "result": {
-        "name": "Response (number)",
+        "name": "Response (integer)",
         "summary": "number of updated notifications",
         "schema": {
           "title": "",
-          "type": "number"
+          "type": "integer"
         }
       }
     }

@@ -42,6 +42,7 @@
           "name": "gateway_type",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": [
               "Melli-shahparak",
               "Eghtesad_Novin",
@@ -104,6 +105,7 @@
             },
             "redirect_method": {
               "title": "",
+              "type": "string",
               "enum": ["POST", "GET"]
             },
             "url": {
@@ -171,6 +173,7 @@
           "name": "gateway_type",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": [
               "Eghtesad_Novin",
               "Mellat-Shaparak",
@@ -194,7 +197,7 @@
           "name": "priority",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
@@ -232,7 +235,7 @@
           "name": "gateway_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
@@ -253,7 +256,7 @@
           "name": "priority",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
@@ -365,7 +368,7 @@
           "name": "payment_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         }
       ],

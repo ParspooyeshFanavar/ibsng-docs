@@ -38,6 +38,7 @@
           "name": "auth_by",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": [
               "user_id",
               "serial",
@@ -74,7 +75,7 @@
           "name": "user_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         }
       ],
@@ -97,7 +98,7 @@
           "name": "user_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         }
       ],
@@ -120,7 +121,7 @@
           "name": "user_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         }
       ],
@@ -143,7 +144,7 @@
           "name": "user_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         }
       ],
@@ -190,7 +191,7 @@
           "name": "user_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         }
       ],
@@ -213,7 +214,7 @@
           "name": "user_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
@@ -243,7 +244,7 @@
           "name": "user_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
@@ -273,7 +274,7 @@
           "name": "user_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {

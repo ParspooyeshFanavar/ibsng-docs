@@ -59,6 +59,7 @@
               "properties": {
                 "start_from": {
                   "title": "",
+                  "type": "string",
                   "enum": [
                     "user_creation_date",
                     "user_real_first_login",
@@ -75,18 +76,22 @@
                 },
                 "period": {
                   "title": "",
+                  "type": "string",
                   "enum": ["monthly", "start_of_month", "daily", "none"]
                 },
                 "period_value": {
                   "title": "",
+                  "type": "string",
                   "enum": ["gregorian", "jalali"]
                 },
                 "change_target": {
                   "title": "",
+                  "type": "string",
                   "enum": ["credit", "deposit", "night_free"]
                 },
                 "change_action": {
                   "title": "",
+                  "type": "string",
                   "enum": ["SET", "ADD", "MULTIPLY"]
                 },
                 "amount": {
@@ -111,11 +116,11 @@
         }
       ],
       "result": {
-        "name": "Response (number)",
+        "name": "Response (integer)",
         "summary": "extra_charge_profile_id",
         "schema": {
           "title": "",
-          "type": "number"
+          "type": "integer"
         }
       }
     },
@@ -129,7 +134,7 @@
           "name": "profile_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
@@ -165,12 +170,13 @@
               "properties": {
                 "rule_id": {
                   "title": "leave -1 for new rules",
-                  "type": "number",
+                  "type": "integer",
                   "required": false,
                   "default": "-1"
                 },
                 "start_from": {
                   "title": "",
+                  "type": "string",
                   "enum": [
                     "user_creation_date",
                     "user_real_first_login",
@@ -187,18 +193,22 @@
                 },
                 "period": {
                   "title": "",
+                  "type": "string",
                   "enum": ["monthly", "start_of_month", "daily", "none"]
                 },
                 "period_value": {
                   "title": "",
+                  "type": "string",
                   "enum": ["gregorian", "jalali"]
                 },
                 "change_target": {
                   "title": "",
+                  "type": "string",
                   "enum": ["credit", "deposit", "night_free"]
                 },
                 "change_action": {
                   "title": "",
+                  "type": "string",
                   "enum": ["SET", "ADD", "MULTIPLY"]
                 },
                 "amount": {
@@ -292,7 +302,7 @@
           "properties": {
             "profile_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "profile_name": {
               "title": "",
@@ -316,10 +326,11 @@
                 "properties": {
                   "rule_id": {
                     "title": "",
-                    "type": "number"
+                    "type": "integer"
                   },
                   "start_from": {
                     "title": "",
+                    "type": "string",
                     "enum": [
                       "user_creation_date",
                       "user_real_first_login",
@@ -336,18 +347,22 @@
                   },
                   "period": {
                     "title": "",
+                    "type": "string",
                     "enum": ["monthly", "start_of_month", "daily", "none"]
                   },
                   "period_value": {
                     "title": "",
+                    "type": "string",
                     "enum": ["gregorian", "jalali"]
                   },
                   "change_target": {
                     "title": "",
+                    "type": "string",
                     "enum": ["credit", "deposit", "night_free"]
                   },
                   "change_action": {
                     "title": "",
+                    "type": "string",
                     "enum": ["SET", "ADD", "MULTIPLY"]
                   },
                   "amount": {
@@ -383,7 +398,7 @@
           "name": "profile_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         }
       ],
@@ -396,7 +411,7 @@
           "properties": {
             "profile_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "profile_name": {
               "title": "",
@@ -420,10 +435,11 @@
                 "properties": {
                   "rule_id": {
                     "title": "",
-                    "type": "number"
+                    "type": "integer"
                   },
                   "start_from": {
                     "title": "",
+                    "type": "string",
                     "enum": [
                       "user_creation_date",
                       "user_real_first_login",
@@ -440,18 +456,22 @@
                   },
                   "period": {
                     "title": "",
+                    "type": "string",
                     "enum": ["monthly", "start_of_month", "daily", "none"]
                   },
                   "period_value": {
                     "title": "",
+                    "type": "string",
                     "enum": ["gregorian", "jalali"]
                   },
                   "change_target": {
                     "title": "",
+                    "type": "string",
                     "enum": ["credit", "deposit", "night_free"]
                   },
                   "change_action": {
                     "title": "",
+                    "type": "string",
                     "enum": ["SET", "ADD", "MULTIPLY"]
                   },
                   "amount": {

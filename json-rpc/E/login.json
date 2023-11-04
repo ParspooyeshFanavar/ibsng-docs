@@ -14,6 +14,7 @@
           "name": "login_auth_type",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["ADMIN", "NORMAL_USER", "VOIP_USER"]
           }
         },
@@ -56,6 +57,7 @@
             },
             "auth_type": {
               "title": "",
+              "type": "string",
               "enum": ["ADMIN", "NORMAL_USER", "VOIP_USER"]
             }
           }
@@ -71,6 +73,7 @@
           "name": "login_auth_type",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["ADMIN", "NORMAL_USER", "VOIP_USER"]
           }
         },
@@ -121,6 +124,7 @@
           "name": "login_auth_type",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["ADMIN", "NORMAL_USER", "VOIP_USER"]
           }
         },
@@ -171,6 +175,7 @@
               },
               "login_date_from_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -188,6 +193,7 @@
               },
               "login_date_to_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -205,20 +211,21 @@
           "name": "_from",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "to",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "sort_by",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["admin_login_history_id", "login_date"]
           }
         },
@@ -239,7 +246,7 @@
           "properties": {
             "total_rows": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "report": {
               "title": "",
@@ -254,7 +261,7 @@
                   },
                   "admin_id": {
                     "title": "",
-                    "type": "number"
+                    "type": "integer"
                   },
                   "admin_name": {
                     "title": "",
@@ -262,7 +269,7 @@
                   },
                   "log_id": {
                     "title": "",
-                    "type": "number"
+                    "type": "integer"
                   },
                   "login_date": {
                     "title": "",
@@ -278,6 +285,7 @@
                   },
                   "successful": {
                     "title": "",
+                    "type": "string",
                     "enum": {
                       "t": "true",
                       "f": "false"
