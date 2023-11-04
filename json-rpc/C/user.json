@@ -1411,8 +1411,8 @@
                     "title": "attributes to update",
                     "type": "object",
                     "additionalProperties": {
-                      "type": "str",
                       "title": "custom_field_NAME",
+                      "type": "str",
                       "schema": {
                         "description": "custom field value",
                         "type": "string"

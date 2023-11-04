@@ -175,10 +175,11 @@
               "title": "dict of ras_desc => count",
               "type": "object",
               "additionalProperties": {
-                "type": "string",
-                "title": "",
+                "title": "ras_desc",
+                "type": "str",
                 "schema": {
-                  "type": ""
+                  "description": "count",
+                  "type": "number"
                 }
               },
               "properties": {}
@@ -187,10 +188,11 @@
               "title": "dict of ras_desc => count",
               "type": "object",
               "additionalProperties": {
-                "type": "string",
-                "title": "",
+                "title": "ras_desc",
+                "type": "str",
                 "schema": {
-                  "type": ""
+                  "description": "count",
+                  "type": "number"
                 }
               },
               "properties": {}
@@ -199,8 +201,8 @@
               "title": "dict of ras_desc => count_dict",
               "type": "object",
               "additionalProperties": {
-                "type": "str",
                 "title": "Ras ID",
+                "type": "str",
                 "schema": {
                   "description": "a dict containing per-state user count",
                   "type": "object",
@@ -285,10 +287,11 @@
               "title": "dict of ras_desc => count",
               "type": "object",
               "additionalProperties": {
-                "type": "string",
-                "title": "",
+                "title": "ras_desc",
+                "type": "str",
                 "schema": {
-                  "type": ""
+                  "description": "count",
+                  "type": "number"
                 }
               },
               "properties": {}
@@ -297,10 +300,11 @@
               "title": "dict of ras_desc => count",
               "type": "object",
               "additionalProperties": {
-                "type": "string",
-                "title": "",
+                "title": "ras_desc",
+                "type": "str",
                 "schema": {
-                  "type": ""
+                  "description": "count",
+                  "type": "number"
                 }
               },
               "properties": {}
@@ -309,8 +313,8 @@
               "title": "dict of ras_desc => count_dict",
               "type": "object",
               "additionalProperties": {
-                "type": "str",
                 "title": "Ras ID",
+                "type": "str",
                 "schema": {
                   "description": "a dict containing per-state user count",
                   "type": "object",

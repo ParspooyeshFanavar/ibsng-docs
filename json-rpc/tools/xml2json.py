@@ -231,12 +231,10 @@ def getListSchema(elem: "Element", newType="array") -> "dict | list":
 def setDynamicKeys(param: "Element", schema: dict):
 	key = param.find("key")
 	if key is None:
-		value = param.find("value")
-		if value is not None:
-			print(value)
+		print(toStr(param))
 		schema["additionalProperties"] = {
-			"type": "string",
 			"title": "",
+			"type": "string",
 			"schema": {
 				"type": "",
 			},
@@ -251,8 +249,8 @@ def setDynamicKeys(param: "Element", schema: dict):
 	if "schema" in valueJson:
 		valueJson.update(valueJson.pop("schema"))
 	schema["additionalProperties"] = {
-		"type": key.attrib.get("type", ""),
 		"title": key.attrib.get("comment", ""),
+		"type": key.attrib.get("type", ""),
 		"schema": valueJson,
 	}
 	

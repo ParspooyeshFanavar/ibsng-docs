@@ -405,9 +405,10 @@
           "schema": {
             "type": "object",
             "additionalProperties": {
-              "type": "string",
               "title": "",
+              "type": "str",
               "schema": {
+                "description": "",
                 "type": ""
               }
             },

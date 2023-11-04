@@ -630,8 +630,8 @@
               "title": "",
               "type": "object",
               "additionalProperties": {
-                "type": "str_int",
                 "title": "ISP ID (string for compatibility)",
+                "type": "str_int",
                 "schema": {
                   "description": "total credit of users",
                   "type": "number"
