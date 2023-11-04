@@ -247,52 +247,44 @@
               "items": {
                 "title": "",
                 "type": "object",
-                "params": [
-                  {
-                    "name": "additional_info",
-                    "description": "",
+                "properties": {
+                  "additional_info": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "admin_id",
-                    "description": "",
+                  "admin_id": {
+                    "title": "",
                     "type": "number"
                   },
-                  {
-                    "name": "admin_name",
-                    "description": "",
+                  "admin_name": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "log_id",
-                    "description": "",
+                  "log_id": {
+                    "title": "",
                     "type": "number"
                   },
-                  {
-                    "name": "login_date",
-                    "description": "",
+                  "login_date": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "login_date_formatted",
-                    "description": "",
+                  "login_date_formatted": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "remote_ip",
-                    "description": "",
+                  "remote_ip": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "successful",
-                    "description": "",
+                  "successful": {
+                    "title": "",
+                    "enum": ["t", "f"],
                     "__value_comment__": {
                       "t": "true",
                       "f": "false"
-                    },
-                    "enum": ["t", "f"]
+                    }
                   }
-                ]
+                }
               }
             }
           }

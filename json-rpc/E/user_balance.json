@@ -516,68 +516,56 @@
               "items": {
                 "title": "",
                 "type": "object",
-                "params": [
-                  {
-                    "name": "user_balance_id",
-                    "description": "",
+                "properties": {
+                  "user_balance_id": {
+                    "title": "",
                     "type": "number"
                   },
-                  {
-                    "name": "user_id",
-                    "description": "",
+                  "user_id": {
+                    "title": "",
                     "type": "number"
                   },
-                  {
-                    "name": "remote_ip",
-                    "description": "",
+                  "remote_ip": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "chnage_log",
-                    "description": "",
+                  "chnage_log": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "isp_name",
-                    "description": "",
+                  "isp_name": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "group_name",
-                    "description": "",
+                  "group_name": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "balance_name",
-                    "description": "",
+                  "balance_name": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "intial_value",
-                    "description": "",
+                  "intial_value": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "old_value",
-                    "description": "",
+                  "old_value": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "new_value",
-                    "description": "",
+                  "new_value": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "action",
-                    "description": "",
+                  "action": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "comment",
-                    "description": "",
+                  "comment": {
+                    "title": "",
                     "type": "string"
                   }
-                ]
+                }
               }
             }
           }

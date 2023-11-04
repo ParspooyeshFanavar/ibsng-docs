@@ -544,58 +544,48 @@
               "items": {
                 "title": "",
                 "type": "object",
-                "params": [
-                  {
-                    "name": "otp_id",
-                    "description": "",
+                "properties": {
+                  "otp_id": {
+                    "title": "",
                     "type": "number"
                   },
-                  {
-                    "name": "admin_id",
-                    "description": "",
+                  "admin_id": {
+                    "title": "",
                     "type": "number"
                   },
-                  {
-                    "name": "admin_name",
-                    "description": "",
+                  "admin_name": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "password",
-                    "description": "str",
+                  "password": {
+                    "title": "str",
                     "type": "string"
                   },
-                  {
-                    "name": "expired",
-                    "description": "yes or no",
+                  "expired": {
+                    "title": "yes or no",
                     "type": "string"
                   },
-                  {
-                    "name": "used_date",
-                    "description": "",
+                  "used_date": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "used_date_formatted",
-                    "description": "",
+                  "used_date_formatted": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "creation_date",
-                    "description": "",
+                  "creation_date": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "creation_date_formatted",
-                    "description": "",
+                  "creation_date_formatted": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "remote_addr",
-                    "description": "",
+                  "remote_addr": {
+                    "title": "",
                     "type": "string"
                   }
-                ]
+                }
               }
             }
           }

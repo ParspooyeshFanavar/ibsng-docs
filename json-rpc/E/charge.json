@@ -73,29 +73,25 @@
               "items": {
                 "title": "",
                 "type": "object",
-                "params": [
-                  {
-                    "name": "charge_rule_id",
-                    "description": "",
+                "properties": {
+                  "charge_rule_id": {
+                    "title": "",
                     "type": "number"
                   },
-                  {
-                    "name": "charge_rule_description",
-                    "description": "",
+                  "charge_rule_description": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "charge_rule_priority",
-                    "description": "",
+                  "charge_rule_priority": {
+                    "title": "",
                     "type": "number"
                   },
-                  {
-                    "name": "attrs",
-                    "description": "Charge Rule Attributes",
+                  "attrs": {
+                    "title": "Charge Rule Attributes",
                     "type": "object",
                     "properties": {}
                   }
-                ]
+                }
               }
             }
           }

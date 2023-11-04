@@ -175,17 +175,11 @@ def getListItemSchema(item: "Element") -> "dict | list":
 			del itemJson["description"]
 		return itemJson
 	if _type == "dict":
-		params = getParams(item)
-		for param in params:
-			if "schema" in param:
-				param.update(param.pop("schema"))
 		res = {
 			"title": item.attrib.get("comment", ""),
 			"type": "object",
 		}
-		if item.attrib.get("dynamic_keys") == "true":
-			res["dynamic_keys"] = True
-		res["params"] = params
+		setDictParamsSchema(item, res)
 		return res
 
 	newType = paramTypeMapping[_type]
@@ -265,7 +259,7 @@ def setDictParamsSchema(param: "Element", schema: dict):
 	if param.attrib.get("dynamic_keys") == "true":
 		setDynamicKeys(param, schema)
 	elif param.find("key") is not None:
-		print("forgot dynamic_keys=true: {toStr(param)}")
+		print(f"forgot dynamic_keys=true: {toStr(param)}")
 
 	schema["properties"] = properties
 

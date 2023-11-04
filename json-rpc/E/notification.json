@@ -139,29 +139,21 @@
               "items": {
                 "title": "rule dict",
                 "type": "object",
-                "params": [
-                  {
-                    "name": "notification_rule_id",
-                    "description": "",
+                "properties": {
+                  "notification_rule_id": {
+                    "title": "",
                     "type": "number"
                   },
-                  {
-                    "name": "notification_profile_id",
-                    "description": "",
+                  "notification_profile_id": {
+                    "title": "",
                     "type": "number"
                   },
-                  {
-                    "name": "notification_threshold",
-                    "description": "",
+                  "notification_threshold": {
+                    "title": "",
                     "type": "number"
                   },
-                  {
-                    "name": "message_type",
-                    "description": "",
-                    "__value_comment__": {
-                      "url": "call a URL specified in `message_template`, added in tag 312",
-                      "user_event": "added in tag (NO TAG YET)"
-                    },
+                  "message_type": {
+                    "title": "",
                     "enum": [
                       "sms",
                       "email",
@@ -169,11 +161,14 @@
                       "ibsng_message",
                       "url",
                       "user_event"
-                    ]
+                    ],
+                    "__value_comment__": {
+                      "url": "call a URL specified in `message_template`, added in tag 312",
+                      "user_event": "added in tag (NO TAG YET)"
+                    }
                   },
-                  {
-                    "name": "notification_type",
-                    "description": "",
+                  "notification_type": {
+                    "title": "",
                     "enum": [
                       "expiration_date",
                       "credit",
@@ -185,12 +180,11 @@
                       "deposit_change"
                     ]
                   },
-                  {
-                    "name": "message_template",
-                    "description": "",
+                  "message_template": {
+                    "title": "",
                     "type": "string"
                   }
-                ]
+                }
               }
             },
             "isp_id": {

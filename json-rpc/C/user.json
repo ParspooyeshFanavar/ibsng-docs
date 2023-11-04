@@ -1406,7 +1406,16 @@
                     "index": 0,
                     "title": "attributes to update",
                     "type": "object",
-                    "params": []
+                    "dynamic_keys": true,
+                    "__key__": {
+                      "type": "str",
+                      "title": "custom_field_NAME"
+                    },
+                    "__value__": {
+                      "description": "custom field value",
+                      "type": "string"
+                    },
+                    "properties": {}
                   },
                   {
                     "index": 1,
