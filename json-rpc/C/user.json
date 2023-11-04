@@ -183,7 +183,7 @@
                   "type": "array",
                   "items": {
                     "title": "",
-                    "type": "list"
+                    "type": "array"
                   },
                   "required": false
                 },
@@ -431,7 +431,7 @@
                   "type": "array",
                   "items": {
                     "title": "",
-                    "type": "list"
+                    "type": "array"
                   },
                   "required": false
                 },
@@ -1155,7 +1155,7 @@
               "type": "array",
               "items": {
                 "title": "user instance",
-                "type": "list"
+                "type": "array"
               }
             },
             "voip_onlines": {
@@ -1163,7 +1163,7 @@
               "type": "array",
               "items": {
                 "title": "user instance",
-                "type": "list"
+                "type": "array"
               }
             }
           }
@@ -1411,7 +1411,7 @@
                   {
                     "index": 1,
                     "title": "attributes to delete",
-                    "type": "list"
+                    "type": "array"
                   }
                 ],
                 "length": "2",
@@ -1637,7 +1637,7 @@
                 "type": "array",
                 "items": {
                   "title": "",
-                  "type": "list"
+                  "type": "array"
                 },
                 "required": false
               },
@@ -4368,12 +4368,12 @@
                 {
                   "index": 0,
                   "title": "epoch time of start",
-                  "type": "int"
+                  "type": "number"
                 },
                 {
                   "index": 1,
                   "title": "epoch time of end",
-                  "type": "int"
+                  "type": "number"
                 }
               ],
               "length": "2"

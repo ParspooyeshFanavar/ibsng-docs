@@ -2145,7 +2145,7 @@
               "type": "array",
               "items": {
                 "title": "",
-                "type": "list"
+                "type": "array"
               }
             }
           }

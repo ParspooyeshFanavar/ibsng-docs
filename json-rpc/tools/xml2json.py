@@ -188,9 +188,11 @@ def getListItemSchema(item: "Element") -> "dict | list":
 		res["params"] = params
 		return res
 
+	newType = paramTypeMapping[_type]
+
 	return {
 		"title": item.attrib.get("comment", ""),
-		"type": _type,
+		"type": newType.type,
 	}
 
 

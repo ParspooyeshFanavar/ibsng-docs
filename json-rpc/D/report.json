@@ -1602,7 +1602,7 @@
               "type": "array",
               "items": {
                 "title": "",
-                "type": "list"
+                "type": "array"
               }
             }
           }
@@ -1661,7 +1661,7 @@
               "type": "array",
               "items": {
                 "title": "",
-                "type": "list"
+                "type": "array"
               }
             }
           }
@@ -1720,7 +1720,7 @@
               "type": "array",
               "items": {
                 "title": "",
-                "type": "list"
+                "type": "array"
               }
             }
           }
@@ -2014,7 +2014,7 @@
               "type": "array",
               "items": {
                 "title": "",
-                "type": "list"
+                "type": "array"
               }
             }
           }
@@ -2073,7 +2073,7 @@
               "type": "array",
               "items": {
                 "title": "",
-                "type": "list"
+                "type": "array"
               }
             }
           }
@@ -2256,7 +2256,7 @@
               "type": "array",
               "items": {
                 "title": "",
-                "type": "list"
+                "type": "array"
               }
             },
             "total_per_user_credit": {
@@ -2452,7 +2452,7 @@
               "type": "array",
               "items": {
                 "title": "",
-                "type": "list"
+                "type": "array"
               }
             },
             "total_per_user_credit": {
@@ -2624,7 +2624,7 @@
               "type": "array",
               "items": {
                 "title": "",
-                "type": "list"
+                "type": "array"
               }
             },
             "total_per_user_credit": {
@@ -3981,7 +3981,7 @@
                 {
                   "index": 0,
                   "title": "relative time",
-                  "type": "int"
+                  "type": "number"
                 },
                 {
                   "index": 1,
@@ -4007,7 +4007,7 @@
                 {
                   "index": 0,
                   "title": "relative time",
-                  "type": "int"
+                  "type": "number"
                 },
                 {
                   "index": 1,
@@ -4033,7 +4033,7 @@
                 {
                   "index": 0,
                   "title": "relative time",
-                  "type": "int"
+                  "type": "number"
                 },
                 {
                   "index": 1,
@@ -4059,7 +4059,7 @@
                 {
                   "index": 0,
                   "title": "relative time",
-                  "type": "int"
+                  "type": "number"
                 },
                 {
                   "index": 1,
@@ -4085,7 +4085,7 @@
                 {
                   "index": 0,
                   "title": "relative time",
-                  "type": "int"
+                  "type": "number"
                 },
                 {
                   "index": 1,
@@ -4111,7 +4111,7 @@
                 {
                   "index": 0,
                   "title": "relative time",
-                  "type": "int"
+                  "type": "number"
                 },
                 {
                   "index": 1,
@@ -4269,7 +4269,7 @@
               "type": "array",
               "items": {
                 "title": "",
-                "type": "list"
+                "type": "array"
               }
             }
           }
