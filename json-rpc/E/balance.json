@@ -1,0 +1,629 @@
+{
+  "openrpc": "1.2.1",
+  "info": {
+    "title": "IBSng: branch E: balance",
+    "version": "1.0.0"
+  },
+  "methods": [
+    {
+      "name": "balance.addNewBalance",
+      "description": "add new balance",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["CHANGE BALANCE"],
+      "params": [
+        {
+          "name": "name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "isp_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "class",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "value_type",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "valid_for_start",
+          "description": "datetime, ",
+          "schema": {
+            "type": "string",
+            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+          }
+        },
+        {
+          "name": "valid_for_start_unit",
+          "description": "Date type for output date or datetime params, default is 'gregorian'",
+          "schema": {
+            "enum": ["gregorian", "jalali"]
+          }
+        },
+        {
+          "name": "valid_for_end",
+          "description": "datetime, ",
+          "schema": {
+            "type": "string",
+            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+          }
+        },
+        {
+          "name": "valid_for_end_unit",
+          "description": "Date type for output date or datetime params, default is 'gregorian'",
+          "schema": {
+            "enum": ["gregorian", "jalali"]
+          }
+        },
+        {
+          "name": "default_value",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "unit",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "udr_tag",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "comment",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (object)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "properties": {
+            "balance_id": {
+              "title": "",
+              "type": "number"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "balance.getBalanceClasses",
+      "description": "get the list of balance classes",
+      "auth_type": ["ADMIN"],
+      "params": [],
+      "result": {
+        "name": "Response (object)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "properties": {
+            "CURRENCY": {
+              "title": "list of Currency",
+              "type": "array"
+            },
+            "DATA": {
+              "title": "list of DATA",
+              "type": "array"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "balance.getBalanceValueTypes",
+      "description": "get the list of balance value type",
+      "auth_type": ["ADMIN"],
+      "params": [],
+      "result": {
+        "name": "Response (array)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "array",
+          "properties": {
+            "IRR": {
+              "title": "",
+              "type": "string"
+            },
+            "USD": {
+              "title": "",
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "balance.getBalanceLifeCycleStatuses",
+      "description": "get the list of balance life cycle statuses",
+      "auth_type": ["ADMIN"],
+      "params": [],
+      "result": {
+        "name": "Response (array)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "array",
+          "properties": {
+            "LAUNCHED": {
+              "title": "",
+              "type": "string"
+            },
+            "ACTIVE": {
+              "title": "",
+              "type": "string"
+            },
+            "RETIRED": {
+              "title": "",
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "balance.getBalanceInfo",
+      "description": "get balance info by balance name or balance id",
+      "auth_type": ["ADMIN"],
+      "params": [
+        {
+          "name": "balance_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "balance_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "Response (object)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "balance.updateBalance",
+      "description": "update the balance information",
+      "auth_type": ["ADMIN"],
+      "params": [
+        {
+          "name": "name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "isp_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "class",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "value_type",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "valid_for_start",
+          "description": "datetime, ",
+          "schema": {
+            "type": "string",
+            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+          }
+        },
+        {
+          "name": "valid_for_start_unit",
+          "description": "Date type for output date or datetime params, default is 'gregorian'",
+          "schema": {
+            "enum": ["gregorian", "jalali"]
+          }
+        },
+        {
+          "name": "valid_for_end",
+          "description": "datetime, ",
+          "schema": {
+            "type": "string",
+            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+          }
+        },
+        {
+          "name": "valid_for_end_unit",
+          "description": "Date type for output date or datetime params, default is 'gregorian'",
+          "schema": {
+            "enum": ["gregorian", "jalali"]
+          }
+        },
+        {
+          "name": "default_value",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "unit",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "udr_tag",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "comment",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (null)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "balance.getListValidBalanceName",
+      "description": "The meaning of validity is that the date range considered for                                                                                                     the balance is within the day and that the balance status is active.",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["LIST BALANCES"],
+      "params": [],
+      "result": {
+        "name": "Response (object)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "properties": {
+            "balance_id": {
+              "title": "",
+              "type": "number"
+            },
+            "balance_name": {
+              "title": "",
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "balance.deleteBalance",
+      "description": "Delete the balance",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["CHANGE BALANCE"],
+      "params": [
+        {
+          "name": "balance_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (null)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "balance.getAllBalancesNames",
+      "description": "get list balances can filter with status",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["LIST BALANCES"],
+      "params": [
+        {
+          "name": "include_retired",
+          "description": "if set, return balances that status is RETIRED",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "Response (array)",
+        "summary": "list of name balances",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "balance.getAllBalanceIdsAndNames",
+      "description": "get all list balances without filter",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["LIST BALANCES"],
+      "params": [],
+      "result": {
+        "name": "Response (array)",
+        "summary": "list of balance name and balance id",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "balance.getBalanceNameById",
+      "description": "get balance id and return name of balance",
+      "auth_type": ["ADMIN"],
+      "params": [
+        {
+          "name": "balance_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (object)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "properties": {
+            "balance_name": {
+              "title": "",
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "balance.searchBalance",
+      "description": "search in balances",
+      "auth_type": ["ADMIN"],
+      "params": [
+        {
+          "name": "conds",
+          "description": "",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "balance_id": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "balance_name": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "balance_name_op": {
+                "title": "",
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+              },
+              "isp_name": {
+                "title": "list of ISP(s)",
+                "type": "string",
+                "required": false
+              },
+              "valid_for_start": {
+                "title": "datetime, ",
+                "type": "string",
+                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+              },
+              "valid_for_start_unit": {
+                "title": "Date type for output date or datetime params, default is 'gregorian'",
+                "enum": ["gregorian", "jalali"]
+              },
+              "valid_for_end": {
+                "title": "datetime, ",
+                "type": "string",
+                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+              },
+              "valid_for_end_unit": {
+                "title": "Date type for output date or datetime params, default is 'gregorian'",
+                "enum": ["gregorian", "jalali"]
+              },
+              "balance_classes": {
+                "title": "list of balance classes",
+                "type": "array",
+                "required": false
+              },
+              "life_cycle_status": {
+                "title": "list of balance life cycle status",
+                "type": "array",
+                "required": false
+              },
+              "value_type": {
+                "title": "list of balance value type",
+                "type": "array",
+                "required": false
+              }
+            }
+          }
+        },
+        {
+          "name": "sort_by",
+          "schema": {
+            "enum": ["balance_name", "balance_id"]
+          }
+        },
+        {
+          "name": "desc",
+          "description": "descending",
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "_from",
+          "description": "pagination start",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "to",
+          "description": "pagination end",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (object)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "properties": {
+            "total_rows": {
+              "title": "Number of total rows",
+              "type": "number"
+            },
+            "report": {
+              "title": "",
+              "type": "array",
+              "items": {
+                "title": "",
+                "type": "object",
+                "params": [
+                  {
+                    "name": "balance_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "balance_name",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "isp_name",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "balance_class",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "comment",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "uid",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "isp_name",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "balance_class",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "life_cycle_status",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "value_type",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "valid_for_start",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "valid_for_end",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "default_value",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "unit",
+                    "description": "",
+                    "type": "string"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

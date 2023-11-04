@@ -1,0 +1,648 @@
+{
+  "openrpc": "1.2.1",
+  "info": {
+    "title": "IBSng: branch D: isp",
+    "version": "1.0.0"
+  },
+  "methods": [
+    {
+      "name": "isp.addNewISP",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["MANIPULATE ISP"],
+      "params": [
+        {
+          "name": "isp_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "parent_isp_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "isp_has_deposit_limit",
+          "description": "",
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "isp_deposit",
+          "description": "float",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "isp_mapped_user_id",
+          "description": "or -1",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "isp_auth_domain",
+          "description": "or ''",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "isp_web_domain",
+          "description": "or ''",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "isp_email",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "prevent_neg_deposit_login",
+          "description": "",
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "isp_comment",
+          "description": "or ''",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "isp_failed_user_id",
+          "description": "or -1, removed in C_dev_326",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (null)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "isp.updateISP",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["MANIPULATE ISP"],
+      "params": [
+        {
+          "name": "isp_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "isp_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "parent_isp_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "isp_has_deposit_limit",
+          "description": "",
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "isp_mapped_user_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "isp_auth_domain",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "isp_web_domain",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "isp_email",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "prevent_neg_deposit_login",
+          "description": "",
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "isp_comment",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "isp_failed_user_id",
+          "description": "removed in C_dev_326",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "isp_locked",
+          "description": "",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (null)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "isp.getAllISPNames",
+      "description": "returns list of ISP names that the admin has access to",
+      "auth_type": ["ADMIN"],
+      "params": [],
+      "result": {
+        "name": "Response (array)",
+        "summary": "list of ISP names",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "isp.listISPsWithIDs",
+      "description": "return a list of ISP IDs and names that the admin has access to.         Added in tag 320",
+      "auth_type": ["ADMIN"],
+      "params": [],
+      "result": {
+        "name": "Response (array)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "isp.getAllISPInfos",
+      "description": "returns list of ISP informations that the admin has access to.         Added in tag 320",
+      "auth_type": ["ADMIN"],
+      "params": [],
+      "result": {
+        "name": "Response (array)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "isp.getISPInfo",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["SEE ISP INFO"],
+      "params": [
+        {
+          "name": "isp_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "isp_id",
+          "description": "added in C_312",
+          "schema": {
+            "type": "number"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "Response (object)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "properties": {
+            "isp_id": {
+              "title": "",
+              "type": "number"
+            },
+            "isp_name": {
+              "title": "",
+              "type": "string"
+            },
+            "parent_isp_name": {
+              "title": "",
+              "type": "string"
+            },
+            "isp_has_deposit_limit": {
+              "title": "",
+              "type": "boolean"
+            },
+            "isp_deposit": {
+              "title": "",
+              "type": "number"
+            },
+            "isp_mapped_user_id": {
+              "title": "",
+              "type": "number"
+            },
+            "isp_mapped_user_repr": {
+              "title": "",
+              "type": "string"
+            },
+            "isp_mapped_user_credit": {
+              "title": "",
+              "type": "number"
+            },
+            "isp_online_users_count": {
+              "title": "added in C_dev_326",
+              "type": "number"
+            },
+            "isp_locked": {
+              "title": "",
+              "type": "boolean"
+            },
+            "isp_auth_domain": {
+              "title": "",
+              "type": "string"
+            },
+            "isp_web_domain": {
+              "title": "",
+              "type": "string"
+            },
+            "isp_email": {
+              "title": "",
+              "type": "string"
+            },
+            "prevent_neg_deposit_login": {
+              "title": "",
+              "type": "boolean"
+            },
+            "isp_comment": {
+              "title": "",
+              "type": "string"
+            },
+            "isp_failed_username": {
+              "title": "removed in C_dev_326",
+              "type": "string"
+            },
+            "isp_failed_user_id": {
+              "title": "removed in C_dev_326",
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "isp.changeISPDeposit",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["MANIPULATE ISP"],
+      "params": [
+        {
+          "name": "isp_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "deposit_amount",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "comment",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (null)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "isp.deleteISP",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["DELETE ISP"],
+      "params": [
+        {
+          "name": "isp_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (null)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "isp.getISPTree",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "params": [
+        {
+          "name": "isp_name",
+          "description": "if this param is missing, we use admin's owner ISP",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "Response (object)",
+        "summary": "a nested dict {isp_name => sub_tree} which represents ISP tree",
+        "schema": {
+          "title": "",
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "isp.getAllISPMappedUserIDs",
+      "description": "returns list of all Mapped User IDs used in each one of ISPs",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["GOD"],
+      "params": [],
+      "result": {
+        "name": "Response (array)",
+        "summary": "list of Mapped User IDs",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "isp.getISPPageStyle",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["SEE ISP INFO"],
+      "params": [
+        {
+          "name": "isp_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (object)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "properties": {
+            "isp_id": {
+              "title": "",
+              "type": "number"
+            },
+            "header_logo_ext": {
+              "title": "header logo file extension, for example 'gif'",
+              "type": "string"
+            },
+            "header_logo_contents": {
+              "title": "base64-encoded data of header logo image",
+              "type": "string"
+            },
+            "header_bg_color": {
+              "title": "header background color, in html color format, for example 'E0DEDE'",
+              "type": "string"
+            },
+            "header_text_color": {
+              "title": "header text color, html color format, for example 'E0DEDE'",
+              "type": "string"
+            },
+            "footer_logo_ext": {
+              "title": "footer logo file extension, for example 'gif'",
+              "type": "string"
+            },
+            "footer_logo_contents": {
+              "title": "base64-encoded data of footer logo image",
+              "type": "string"
+            },
+            "footer_bg_color": {
+              "title": "footer background color, in html color format, for example 'E0DEDE'",
+              "type": "string"
+            },
+            "footer_text_color": {
+              "title": "footer text color, in html color format, for example 'E0DEDE'",
+              "type": "string"
+            },
+            "footer_msg": {
+              "title": "base64-encoded string of footer message",
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "isp.setISPPageStyle",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["CHANGE ISP PAGE STYLE"],
+      "params": [
+        {
+          "name": "isp_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "header_logo_ext",
+          "description": "header logo file extension, for example 'gif'",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "header_logo_contents",
+          "description": "base64-encoded data of header logo image",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "header_bg_color",
+          "description": "header background color, in html color format, for example 'E0DEDE'",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "header_text_color",
+          "description": "header text color, html color format, for example 'E0DEDE'",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "footer_logo_ext",
+          "description": "footer logo file extension, for example 'gif'",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "footer_logo_contents",
+          "description": "base64-encoded data of footer logo image",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "footer_bg_color",
+          "description": "footer background color, in html color format, for example 'E0DEDE'",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "footer_text_color",
+          "description": "footer text color, in html color format, for example 'E0DEDE'",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "footer_msg",
+          "description": "base64-encoded string of footer message",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (null)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "isp.resetISPPageStyle",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["CHANGE ISP PAGE STYLE"],
+      "params": [
+        {
+          "name": "isp_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (null)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "isp.getISPUsersCredit",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "params": [],
+      "result": {
+        "name": "Response (object)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "",
+              "type": "object",
+              "dynamic_keys": true,
+              "__key__": {
+                "type": "str_int",
+                "title": "ISP ID (string for compatibility)"
+              },
+              "__value__": {
+                "description": "total credit of users",
+                "type": "number"
+              },
+              "properties": {}
+            }
+          }
+        }
+      }
+    }
+  ]
+}

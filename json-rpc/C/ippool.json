@@ -1,0 +1,400 @@
+{
+  "openrpc": "1.2.1",
+  "info": {
+    "title": "IBSng: branch C: ippool",
+    "version": "1.0.0"
+  },
+  "methods": [
+    {
+      "name": "ippool.addNewIPpool",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["CHANGE IPPOOL"],
+      "params": [
+        {
+          "name": "ippool_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "comment",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (number)",
+        "summary": "IPPool ID",
+        "schema": {
+          "title": "",
+          "type": "number"
+        }
+      }
+    },
+    {
+      "name": "ippool.updateIPpool",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["CHANGE IPPOOL"],
+      "params": [
+        {
+          "name": "ippool_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "ippool_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "comment",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (null)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "ippool.getIPpoolNames",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["LIST IPPOOL"],
+      "params": [],
+      "result": {
+        "name": "Response (array)",
+        "summary": "list of ippool names",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "ippool.getIPpoolNames",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["LIST IPPOOL"],
+      "params": [
+        {
+          "name": "ippool_type",
+          "description": "",
+          "schema": {
+            "enum": ["load_balancing", ""]
+          },
+          "__value_comment__": {
+            "load_balancing": "Load Balancing IPPool",
+            "": "Not a Load Balancing IPPool"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (array)",
+        "summary": "list of ippool names",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "ippool.getIPpoolInfo",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["LIST IPPOOL"],
+      "params": [
+        {
+          "name": "ippool_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (object)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "properties": {
+            "ippool_id": {
+              "title": "",
+              "type": "number"
+            },
+            "ippool_name": {
+              "title": "",
+              "type": "string"
+            },
+            "comment": {
+              "title": "",
+              "type": "string"
+            },
+            "ip_list": {
+              "title": "list of all IPs",
+              "type": "array"
+            },
+            "free": {
+              "title": "list of free IPs",
+              "type": "array"
+            },
+            "used": {
+              "title": "list of used IPs",
+              "type": "array"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "ippool.deleteIPpool",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["CHANGE IPPOOL"],
+      "params": [
+        {
+          "name": "ippool_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (null)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "ippool.delIPfromPool",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["CHANGE IPPOOL"],
+      "params": [
+        {
+          "name": "ippool_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "ip",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (null)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "ippool.forceDelIPfromPool",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["CHANGE IPPOOL"],
+      "params": [
+        {
+          "name": "ippool_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "ip",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (null)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "ippool.addIPtoPool",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["CHANGE IPPOOL"],
+      "params": [
+        {
+          "name": "ippool_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "ip",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (null)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "ippool.addNewLoadBalancingIPpool",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["CHANGE IPPOOL"],
+      "params": [
+        {
+          "name": "ippool_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "ippool_comment",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "balancing_strategy",
+          "description": "",
+          "schema": {
+            "enum": ["distributive", "fill_first"]
+          }
+        },
+        {
+          "name": "children_ippool_percentages",
+          "description": "keys are IPPool Names, values are percentage numbers",
+          "schema": {
+            "type": "object",
+            "properties": {}
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (null)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "ippool.updateLoadBalancingIPpool",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["CHANGE IPPOOL"],
+      "params": [
+        {
+          "name": "ippool_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "ippool_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "ippool_comment",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "balancing_strategy",
+          "description": "",
+          "schema": {
+            "enum": ["distributive", "fill_first"]
+          }
+        },
+        {
+          "name": "children_ippool_percentages",
+          "description": "keys are IPPool Names, values are percentage numbers",
+          "schema": {
+            "type": "object",
+            "properties": {}
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (null)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "ippool.deleteLoadBalancingIPpool",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["CHANGE IPPOOL"],
+      "params": [
+        {
+          "name": "ippool_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (null)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    }
+  ]
+}

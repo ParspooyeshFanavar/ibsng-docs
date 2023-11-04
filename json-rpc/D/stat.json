@@ -1,0 +1,54 @@
+{
+  "openrpc": "1.2.1",
+  "info": {
+    "title": "IBSng: branch D: stat",
+    "version": "1.0.0"
+  },
+  "methods": [
+    {
+      "name": "stat.getStatistics",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["GOD"],
+      "params": [],
+      "result": {
+        "name": "Response (array)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "stat.getAllStatsByStatCategory",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["GOD"],
+      "params": [],
+      "result": {
+        "name": "Response (object)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "stat.getUserQueueStats",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["GOD"],
+      "params": [],
+      "result": {
+        "name": "Response (array)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    }
+  ]
+}

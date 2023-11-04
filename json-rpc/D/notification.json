@@ -1,0 +1,409 @@
+{
+  "openrpc": "1.2.1",
+  "info": {
+    "title": "IBSng: branch D: notification",
+    "version": "1.0.0"
+  },
+  "methods": [
+    {
+      "name": "notification.getNotificationProfileNames",
+      "description": "list of notification profile names that admin has access to.",
+      "auth_type": ["ADMIN"],
+      "params": [],
+      "result": {
+        "name": "Response (array)",
+        "summary": "list of profile names",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "notification.getNotificationProfiles",
+      "description": "list of notification profile informations that admin has access to.",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["CHANGE NOTIFICATION"],
+      "params": [],
+      "result": {
+        "name": "Response (array)",
+        "summary": "list of profile infos",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "notification.addNotificationProfile",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["CHANGE NOTIFICATION"],
+      "params": [
+        {
+          "name": "notification_profile_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "notification_profile_comment",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (number)",
+        "summary": "the new notification_profile_id",
+        "schema": {
+          "title": "",
+          "type": "number"
+        }
+      }
+    },
+    {
+      "name": "notification.updateNotificationProfile",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["CHANGE NOTIFICATION"],
+      "params": [
+        {
+          "name": "notification_profile_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "notification_profile_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "notification_profile_comment",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (null)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "notification.getNotificationProfileByName",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "params": [
+        {
+          "name": "notification_profile_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (object)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "properties": {
+            "notification_profile_id": {
+              "title": "",
+              "type": "number"
+            },
+            "notification_profile_name": {
+              "title": "",
+              "type": "string"
+            },
+            "notification_profile_comment": {
+              "title": "",
+              "type": "string"
+            },
+            "notification_rules": {
+              "title": "",
+              "type": "array",
+              "items": {
+                "title": "rule dict",
+                "type": "object",
+                "params": [
+                  {
+                    "name": "notification_rule_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "notification_profile_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "notification_threshold",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "message_type",
+                    "description": "",
+                    "__value_comment__": {
+                      "url": "call a URL specified in `message_template`, added in tag 312",
+                      "user_event": "added in tag (NO TAG YET)"
+                    },
+                    "enum": [
+                      "sms",
+                      "email",
+                      "email_to_isp",
+                      "ibsng_message",
+                      "url",
+                      "user_event"
+                    ]
+                  },
+                  {
+                    "name": "notification_type",
+                    "description": "",
+                    "enum": [
+                      "expiration_date",
+                      "credit",
+                      "renew",
+                      "birth_day",
+                      "online_payment",
+                      "first_login",
+                      "credit_change",
+                      "deposit_change"
+                    ]
+                  },
+                  {
+                    "name": "message_template",
+                    "description": "",
+                    "type": "string"
+                  }
+                ]
+              }
+            },
+            "isp_id": {
+              "title": "",
+              "type": "number"
+            },
+            "owner_isp_name": {
+              "title": "",
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "notification.deleteNotificationProfile",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["CHANGE NOTIFICATION"],
+      "params": [
+        {
+          "name": "notification_profile_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (null)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "notification.addNotificationRule",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["CHANGE NOTIFICATION"],
+      "params": [
+        {
+          "name": "notification_profile_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "notification_type",
+          "description": "",
+          "schema": {
+            "enum": [
+              "expiration_date",
+              "credit",
+              "renew",
+              "birth_day",
+              "online_payment",
+              "first_login",
+              "credit_change",
+              "deposit_change"
+            ]
+          }
+        },
+        {
+          "name": "notification_threshold",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "message_type",
+          "description": "",
+          "schema": {
+            "enum": [
+              "sms",
+              "email",
+              "email_to_isp",
+              "ibsng_message",
+              "url",
+              "user_event"
+            ]
+          },
+          "__value_comment__": {
+            "url": "call a URL specified in `message_template`, added in tag 312",
+            "user_event": "added in tag (NO TAG YET)"
+          }
+        },
+        {
+          "name": "message_template",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (null)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "notification.deleteNotificationRule",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["CHANGE NOTIFICATION"],
+      "params": [
+        {
+          "name": "notification_profile_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "notification_rule_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (null)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "notification.updateNotificationRule",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["CHANGE NOTIFICATION"],
+      "params": [
+        {
+          "name": "notification_rule_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "notification_profile_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "notification_type",
+          "schema": {
+            "enum": [
+              "expiration_date",
+              "credit",
+              "renew",
+              "birth_day",
+              "online_payment",
+              "first_login",
+              "credit_change",
+              "deposit_change"
+            ]
+          }
+        },
+        {
+          "name": "notification_threshold",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "message_type",
+          "schema": {
+            "enum": [
+              "sms",
+              "email",
+              "email_to_isp",
+              "ibsng_message",
+              "url",
+              "user_event"
+            ]
+          },
+          "__value_comment__": {
+            "url": "call a URL specified in `message_template`, added in tag 312",
+            "user_event": "added in tag (NO TAG YET)"
+          }
+        },
+        {
+          "name": "message_template",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (null)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,2766 @@
+{
+  "openrpc": "1.2.1",
+  "info": {
+    "title": "IBSng: branch C: invoice",
+    "version": "1.0.0"
+  },
+  "methods": [
+    {
+      "name": "invoice.getInvoiceProfileNames",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["SEE INVOICE PROFILE"],
+      "params": [
+        {
+          "name": "conds",
+          "description": "",
+          "schema": {
+            "type": "object",
+            "properties": {}
+          }
+        },
+        {
+          "name": "_from",
+          "description": "start index",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "to",
+          "description": "end index",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "sort_by",
+          "description": "",
+          "schema": {
+            "enum": ["issue_date", "user_id", "total_amount"]
+          }
+        },
+        {
+          "name": "desc",
+          "description": "descending",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (array)",
+        "summary": "list of profile names",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "invoice.getInvoiceProfiles",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["SEE INVOICE PROFILE"],
+      "params": [],
+      "result": {
+        "name": "Response (array)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "invoice.getInvoiceProfileByName",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["SEE INVOICE PROFILE"],
+      "params": [
+        {
+          "name": "profile_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (object)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "properties": {
+            "profile_id": {
+              "title": "",
+              "type": "number"
+            },
+            "profile_name": {
+              "title": "",
+              "type": "string"
+            },
+            "isp_name": {
+              "title": "",
+              "type": "string"
+            },
+            "comment": {
+              "title": "",
+              "type": "string"
+            },
+            "rules": {
+              "title": "",
+              "type": "array",
+              "items": {
+                "title": "rule info dict",
+                "type": "object",
+                "params": [
+                  {
+                    "name": "rule_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "description",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "invoice_template_name",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "pi_template_name",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "date_type",
+                    "enum": ["jalali", "gregorian"]
+                  },
+                  {
+                    "name": "language",
+                    "enum": ["fa", "en"]
+                  },
+                  {
+                    "name": "pi_exp_days",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "roundup_scale",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "auto_invoice_event",
+                    "enum": ["null", "credit_finished", "exp_date", "always"]
+                  },
+                  {
+                    "name": "auto_invoice_threshold",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "allow_user_issue_invoice",
+                    "description": "",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "action",
+                    "enum": [
+                      "change_service",
+                      "renew",
+                      "renew_with_next_group",
+                      "recharge",
+                      "increase_deposit",
+                      "increase_deposit_by_group_credit",
+                      "increase_recharge_deposit",
+                      "increase_credit",
+                      "increase_deposit_constant",
+                      "increase_recharge_deposit_constant",
+                      "increase_credit_constant",
+                      "set_deposit_constant",
+                      "set_credit_constant"
+                    ]
+                  },
+                  {
+                    "name": "action_args",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "disabled",
+                    "description": "",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "invoice_rule_items",
+                    "description": "",
+                    "type": "array",
+                    "items": {
+                      "title": "rule item info dict",
+                      "type": "object",
+                      "params": [
+                        {
+                          "name": "rule_item_id",
+                          "description": "",
+                          "type": "number"
+                        },
+                        {
+                          "name": "description",
+                          "description": "",
+                          "type": "string"
+                        },
+                        {
+                          "name": "formula",
+                          "description": "",
+                          "type": "string"
+                        },
+                        {
+                          "name": "is_bonus",
+                          "description": "",
+                          "type": "boolean"
+                        },
+                        {
+                          "name": "none_effective",
+                          "description": "",
+                          "type": "boolean"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "invoice.getInvoiceProfileByID",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["SEE INVOICE PROFILE"],
+      "params": [
+        {
+          "name": "profile_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (object)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "properties": {
+            "profile_id": {
+              "title": "",
+              "type": "number"
+            },
+            "profile_name": {
+              "title": "",
+              "type": "string"
+            },
+            "isp_name": {
+              "title": "",
+              "type": "string"
+            },
+            "comment": {
+              "title": "",
+              "type": "string"
+            },
+            "rules": {
+              "title": "",
+              "type": "array",
+              "items": {
+                "title": "rule info dict",
+                "type": "object",
+                "params": [
+                  {
+                    "name": "rule_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "description",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "invoice_template_name",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "pi_template_name",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "date_type",
+                    "enum": ["jalali", "gregorian"]
+                  },
+                  {
+                    "name": "language",
+                    "enum": ["fa", "en"]
+                  },
+                  {
+                    "name": "pi_exp_days",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "roundup_scale",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "auto_invoice_event",
+                    "enum": ["null", "credit_finished", "exp_date", "always"]
+                  },
+                  {
+                    "name": "auto_invoice_threshold",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "allow_user_issue_invoice",
+                    "description": "",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "action",
+                    "enum": [
+                      "change_service",
+                      "renew",
+                      "renew_with_next_group",
+                      "recharge",
+                      "increase_deposit",
+                      "increase_deposit_by_group_credit",
+                      "increase_recharge_deposit",
+                      "increase_credit",
+                      "increase_deposit_constant",
+                      "increase_recharge_deposit_constant",
+                      "increase_credit_constant",
+                      "set_deposit_constant",
+                      "set_credit_constant"
+                    ]
+                  },
+                  {
+                    "name": "action_args",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "disabled",
+                    "description": "",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "invoice_rule_items",
+                    "description": "",
+                    "type": "array",
+                    "items": {
+                      "title": "rule item info dict",
+                      "type": "object",
+                      "params": [
+                        {
+                          "name": "rule_item_id",
+                          "description": "",
+                          "type": "number"
+                        },
+                        {
+                          "name": "description",
+                          "description": "",
+                          "type": "string"
+                        },
+                        {
+                          "name": "formula",
+                          "description": "",
+                          "type": "string"
+                        },
+                        {
+                          "name": "is_bonus",
+                          "description": "",
+                          "type": "boolean"
+                        },
+                        {
+                          "name": "none_effective",
+                          "description": "",
+                          "type": "boolean"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "invoice.getInvoiceProfileByUserID",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["SEE INVOICE PROFILE"],
+      "params": [
+        {
+          "name": "user_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (object)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "properties": {
+            "profile_id": {
+              "title": "",
+              "type": "number"
+            },
+            "profile_name": {
+              "title": "",
+              "type": "string"
+            },
+            "isp_name": {
+              "title": "",
+              "type": "string"
+            },
+            "comment": {
+              "title": "",
+              "type": "string"
+            },
+            "rules": {
+              "title": "",
+              "type": "array",
+              "items": {
+                "title": "rule info dict",
+                "type": "object",
+                "params": [
+                  {
+                    "name": "rule_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "description",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "invoice_template_name",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "pi_template_name",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "date_type",
+                    "enum": ["jalali", "gregorian"]
+                  },
+                  {
+                    "name": "language",
+                    "enum": ["fa", "en"]
+                  },
+                  {
+                    "name": "pi_exp_days",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "roundup_scale",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "auto_invoice_event",
+                    "enum": ["null", "credit_finished", "exp_date", "always"]
+                  },
+                  {
+                    "name": "auto_invoice_threshold",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "allow_user_issue_invoice",
+                    "description": "",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "action",
+                    "enum": [
+                      "change_service",
+                      "renew",
+                      "renew_with_next_group",
+                      "recharge",
+                      "increase_deposit",
+                      "increase_deposit_by_group_credit",
+                      "increase_recharge_deposit",
+                      "increase_credit",
+                      "increase_deposit_constant",
+                      "increase_recharge_deposit_constant",
+                      "increase_credit_constant",
+                      "set_deposit_constant",
+                      "set_credit_constant"
+                    ]
+                  },
+                  {
+                    "name": "action_args",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "disabled",
+                    "description": "",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "invoice_rule_items",
+                    "description": "",
+                    "type": "array",
+                    "items": {
+                      "title": "rule item info dict",
+                      "type": "object",
+                      "params": [
+                        {
+                          "name": "rule_item_id",
+                          "description": "",
+                          "type": "number"
+                        },
+                        {
+                          "name": "description",
+                          "description": "",
+                          "type": "string"
+                        },
+                        {
+                          "name": "formula",
+                          "description": "",
+                          "type": "string"
+                        },
+                        {
+                          "name": "is_bonus",
+                          "description": "",
+                          "type": "boolean"
+                        },
+                        {
+                          "name": "none_effective",
+                          "description": "",
+                          "type": "boolean"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "invoice.getInvoiceProfileByGroupName",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["SEE INVOICE PROFILE"],
+      "params": [
+        {
+          "name": "group_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (object)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "properties": {
+            "profile_id": {
+              "title": "",
+              "type": "number"
+            },
+            "profile_name": {
+              "title": "",
+              "type": "string"
+            },
+            "isp_name": {
+              "title": "",
+              "type": "string"
+            },
+            "comment": {
+              "title": "",
+              "type": "string"
+            },
+            "rules": {
+              "title": "",
+              "type": "array",
+              "items": {
+                "title": "rule info dict",
+                "type": "object",
+                "params": [
+                  {
+                    "name": "rule_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "description",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "invoice_template_name",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "pi_template_name",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "date_type",
+                    "enum": ["jalali", "gregorian"]
+                  },
+                  {
+                    "name": "language",
+                    "enum": ["fa", "en"]
+                  },
+                  {
+                    "name": "pi_exp_days",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "roundup_scale",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "auto_invoice_event",
+                    "enum": ["null", "credit_finished", "exp_date", "always"]
+                  },
+                  {
+                    "name": "auto_invoice_threshold",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "allow_user_issue_invoice",
+                    "description": "",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "action",
+                    "enum": [
+                      "change_service",
+                      "renew",
+                      "renew_with_next_group",
+                      "recharge",
+                      "increase_deposit",
+                      "increase_deposit_by_group_credit",
+                      "increase_recharge_deposit",
+                      "increase_credit",
+                      "increase_deposit_constant",
+                      "increase_recharge_deposit_constant",
+                      "increase_credit_constant",
+                      "set_deposit_constant",
+                      "set_credit_constant"
+                    ]
+                  },
+                  {
+                    "name": "action_args",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "disabled",
+                    "description": "",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "invoice_rule_items",
+                    "description": "",
+                    "type": "array",
+                    "items": {
+                      "title": "rule item info dict",
+                      "type": "object",
+                      "params": [
+                        {
+                          "name": "rule_item_id",
+                          "description": "",
+                          "type": "number"
+                        },
+                        {
+                          "name": "description",
+                          "description": "",
+                          "type": "string"
+                        },
+                        {
+                          "name": "formula",
+                          "description": "",
+                          "type": "string"
+                        },
+                        {
+                          "name": "is_bonus",
+                          "description": "",
+                          "type": "boolean"
+                        },
+                        {
+                          "name": "none_effective",
+                          "description": "",
+                          "type": "boolean"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "invoice.getInvoiceRuleByID",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["SEE INVOICE PROFILE"],
+      "params": [
+        {
+          "name": "rule_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (object)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "properties": {
+            "rule_id": {
+              "title": "",
+              "type": "number"
+            },
+            "description": {
+              "title": "",
+              "type": "string"
+            },
+            "invoice_template_name": {
+              "title": "",
+              "type": "string"
+            },
+            "pi_template_name": {
+              "title": "",
+              "type": "string"
+            },
+            "date_type": {
+              "title": "",
+              "enum": ["jalali", "gregorian"]
+            },
+            "language": {
+              "title": "",
+              "enum": ["fa", "en"]
+            },
+            "pi_exp_days": {
+              "title": "",
+              "type": "number"
+            },
+            "roundup_scale": {
+              "title": "",
+              "type": "number"
+            },
+            "auto_invoice_event": {
+              "title": "",
+              "enum": ["null", "credit_finished", "exp_date", "always"]
+            },
+            "auto_invoice_threshold": {
+              "title": "",
+              "type": "number"
+            },
+            "allow_user_issue_invoice": {
+              "title": "",
+              "type": "boolean"
+            },
+            "action": {
+              "title": "",
+              "enum": [
+                "change_service",
+                "renew",
+                "renew_with_next_group",
+                "recharge",
+                "increase_deposit",
+                "increase_deposit_by_group_credit",
+                "increase_recharge_deposit",
+                "increase_credit",
+                "increase_deposit_constant",
+                "increase_recharge_deposit_constant",
+                "increase_credit_constant",
+                "set_deposit_constant",
+                "set_credit_constant"
+              ]
+            },
+            "action_args": {
+              "title": "",
+              "type": "string"
+            },
+            "disabled": {
+              "title": "",
+              "type": "boolean"
+            },
+            "invoice_rule_items": {
+              "title": "",
+              "type": "array",
+              "items": {
+                "title": "rule item info dict",
+                "type": "object",
+                "params": [
+                  {
+                    "name": "rule_item_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "description",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "formula",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "is_bonus",
+                    "description": "",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "none_effective",
+                    "description": "",
+                    "type": "boolean"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "invoice.addInvoiceProfile",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["CHANGE INVOICE PROFILE"],
+      "params": [
+        {
+          "name": "profile_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "isp_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "comment",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (number)",
+        "summary": "Invoice Profile ID",
+        "schema": {
+          "title": "",
+          "type": "number"
+        }
+      }
+    },
+    {
+      "name": "invoice.updateInvoiceProfile",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["CHANGE INVOICE PROFILE"],
+      "params": [
+        {
+          "name": "profile_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "profile_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "isp_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "comment",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "rules",
+          "description": "",
+          "schema": {
+            "type": "array",
+            "items": {
+              "title": "rule info dict",
+              "type": "object",
+              "params": [
+                {
+                  "name": "rule_id",
+                  "description": "",
+                  "type": "number"
+                },
+                {
+                  "name": "description",
+                  "description": "",
+                  "type": "string"
+                },
+                {
+                  "name": "invoice_template_name",
+                  "description": "",
+                  "type": "string"
+                },
+                {
+                  "name": "pi_template_name",
+                  "description": "",
+                  "type": "string"
+                },
+                {
+                  "name": "date_type",
+                  "enum": ["jalali", "gregorian"]
+                },
+                {
+                  "name": "language",
+                  "enum": ["fa", "en"]
+                },
+                {
+                  "name": "pi_exp_days",
+                  "description": "",
+                  "type": "number"
+                },
+                {
+                  "name": "roundup_scale",
+                  "description": "",
+                  "type": "number"
+                },
+                {
+                  "name": "auto_invoice_event",
+                  "enum": ["null", "credit_finished", "exp_date", "always"]
+                },
+                {
+                  "name": "auto_invoice_threshold",
+                  "description": "",
+                  "type": "number"
+                },
+                {
+                  "name": "allow_user_issue_invoice",
+                  "description": "",
+                  "type": "boolean"
+                },
+                {
+                  "name": "action",
+                  "enum": [
+                    "change_service",
+                    "renew",
+                    "renew_with_next_group",
+                    "recharge",
+                    "increase_deposit",
+                    "increase_deposit_by_group_credit",
+                    "increase_recharge_deposit",
+                    "increase_credit",
+                    "increase_deposit_constant",
+                    "increase_recharge_deposit_constant",
+                    "increase_credit_constant",
+                    "set_deposit_constant",
+                    "set_credit_constant"
+                  ]
+                },
+                {
+                  "name": "action_args",
+                  "description": "",
+                  "type": "string"
+                },
+                {
+                  "name": "disabled",
+                  "description": "",
+                  "type": "boolean"
+                },
+                {
+                  "name": "invoice_rule_items",
+                  "description": "",
+                  "type": "array",
+                  "items": {
+                    "title": "rule item info dict",
+                    "type": "object",
+                    "params": [
+                      {
+                        "name": "rule_item_id",
+                        "description": "",
+                        "type": "number"
+                      },
+                      {
+                        "name": "description",
+                        "description": "",
+                        "type": "string"
+                      },
+                      {
+                        "name": "formula",
+                        "description": "",
+                        "type": "string"
+                      },
+                      {
+                        "name": "is_bonus",
+                        "description": "",
+                        "type": "boolean"
+                      },
+                      {
+                        "name": "none_effective",
+                        "description": "",
+                        "type": "boolean"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (null)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "invoice.deleteInvoiceProfile",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["CHANGE INVOICE PROFILE"],
+      "params": [
+        {
+          "name": "profile_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (null)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "invoice.getInvoiceRulesDescByProfileName",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["SEE INVOICE PROFILE"],
+      "params": [
+        {
+          "name": "profile_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (object)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "invoice.getAllTemplateNames",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["SEE INVOICE PROFILE"],
+      "params": [],
+      "result": {
+        "name": "Response (array)",
+        "summary": "list of all invoice template names",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "invoice.addInvoiceTemplate",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["CHANGE INVOICE PROFILE"],
+      "params": [
+        {
+          "name": "template_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (null)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "invoice.deleteInvoiceTemplate",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["CHANGE INVOICE PROFILE"],
+      "params": [
+        {
+          "name": "template_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (null)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "invoice.searchInvoices",
+      "description": "",
+      "auth_type": ["ADMIN", "NORMAL_USER", "VOIP_USER"],
+      "requires_perm": [
+        "user can only see his own invoices",
+        "admin must have permission 'SEE INVOICE'"
+      ],
+      "params": [
+        {
+          "name": "conds",
+          "description": "",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "isp_names": {
+                "title": "for admins, list of isp names, or string one isp name",
+                "type": ["array", "string"],
+                "required": false
+              },
+              "user_ids": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "invoice_ids": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "is_active": {
+                "title": "",
+                "type": "boolean",
+                "required": false
+              },
+              "is_paid": {
+                "title": "",
+                "type": "boolean",
+                "required": false
+              },
+              "total_amount_from": {
+                "title": "",
+                "type": "number",
+                "required": false
+              },
+              "total_amount_to": {
+                "title": "",
+                "type": "number",
+                "required": false
+              },
+              "issue_date_from": {
+                "title": "datetime, ",
+                "type": "string",
+                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$",
+                "required": false
+              },
+              "issue_date_from_unit": {
+                "title": "",
+                "enum": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "issue_date_to": {
+                "title": "datetime, ",
+                "type": "string",
+                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$",
+                "required": false
+              },
+              "issue_date_to_unit": {
+                "title": "",
+                "enum": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "name": "_from",
+          "description": "pagination start",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "to",
+          "description": "pagination end",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "sort_by",
+          "schema": {
+            "enum": ["issue_date", "user_id", "total_amount"]
+          }
+        },
+        {
+          "name": "desc",
+          "description": "descending",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (object)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "properties": {
+            "total_rows": {
+              "title": "total number of results",
+              "type": "number"
+            },
+            "report": {
+              "title": "",
+              "type": "array",
+              "items": {
+                "title": "",
+                "type": "object",
+                "params": [
+                  {
+                    "name": "invoice_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "invoice_issue_date",
+                    "description": "datetime, ",
+                    "type": "string",
+                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+                  },
+                  {
+                    "name": "is_active",
+                    "description": "",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "is_paid",
+                    "description": "",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "pi_issue_date",
+                    "description": "datetime, ",
+                    "type": "string",
+                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+                  },
+                  {
+                    "name": "rule_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "rule_description",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "period_end",
+                    "description": "datetime or null, str or null",
+                    "type": ["string", "null"],
+                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+                  },
+                  {
+                    "name": "period_start",
+                    "description": "datetime or null, str or null",
+                    "type": ["string", "null"],
+                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+                  },
+                  {
+                    "name": "comment",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "sum_up_amount",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "previous_due",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "roundup_amount",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "effective_amount",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "paid_amount",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "user_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "owner_name",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "user_address",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "user_email",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "user_name",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "user_phone",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "user_postal_code",
+                    "description": "",
+                    "type": "string"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "invoice.searchProformaInvoices",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": [
+        "user can only see his own proforma invoices",
+        "admin must have permission 'SEE INVOICE'"
+      ],
+      "params": [
+        {
+          "name": "conds",
+          "description": "",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "isp_names": {
+                "title": "for admins, list of isp names, or string one isp name",
+                "type": ["array", "string"],
+                "required": false
+              },
+              "user_ids": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "pi_ids": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "is_expired": {
+                "title": "",
+                "type": "boolean",
+                "required": false
+              },
+              "total_amount_from": {
+                "title": "",
+                "type": "number",
+                "required": false
+              },
+              "total_amount_to": {
+                "title": "",
+                "type": "number",
+                "required": false
+              },
+              "issue_date_from": {
+                "title": "datetime, ",
+                "type": "string",
+                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$",
+                "required": false
+              },
+              "issue_date_from_unit": {
+                "title": "",
+                "enum": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "issue_date_to": {
+                "title": "datetime, ",
+                "type": "string",
+                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$",
+                "required": false
+              },
+              "issue_date_to_unit": {
+                "title": "",
+                "enum": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "name": "_from",
+          "description": "pagination start",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "to",
+          "description": "pagination end",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "sort_by",
+          "schema": {
+            "enum": ["issue_date", "user_id", "total_amount"]
+          }
+        },
+        {
+          "name": "desc",
+          "description": "descending",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (object)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "properties": {
+            "total_rows": {
+              "title": "total number of results",
+              "type": "number"
+            },
+            "report": {
+              "title": "",
+              "type": "array",
+              "items": {
+                "title": "",
+                "type": "object",
+                "params": [
+                  {
+                    "name": "pi_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "rule_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "rule_description",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "add_user",
+                    "description": "",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "issue_date",
+                    "description": "datetime, ",
+                    "type": "string",
+                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+                  },
+                  {
+                    "name": "expired",
+                    "description": "",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "sum_up_amount",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "previous_due",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "roundup_amount",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "effective_amount",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "comment",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "owner_name",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "user_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "user_name",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "user_address",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "user_email",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "user_phone",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "user_postal_code",
+                    "description": "",
+                    "type": "string"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "invoice.issueProformaInvoice",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "params": [
+        {
+          "name": "attrs_list",
+          "description": "",
+          "schema": {
+            "type": "array",
+            "items": {
+              "title": "",
+              "type": "object",
+              "params": [
+                {
+                  "name": "comment",
+                  "description": "",
+                  "type": "string"
+                },
+                {
+                  "name": "user_id",
+                  "description": "",
+                  "type": "number"
+                },
+                {
+                  "name": "rule_id",
+                  "description": "",
+                  "type": "number"
+                },
+                {
+                  "name": "add_user",
+                  "description": "",
+                  "type": "boolean"
+                },
+                {
+                  "name": "add_user_details",
+                  "description": "",
+                  "type": "object",
+                  "properties": {}
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "arbitrary_amount",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (object)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "properties": {
+            "issued_pis": {
+              "title": "",
+              "type": "array",
+              "items": {
+                "title": "",
+                "type": "object",
+                "params": [
+                  {
+                    "name": "pi_id",
+                    "description": "Proforma Invoice ID",
+                    "type": "number"
+                  },
+                  {
+                    "name": "rule_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "rule_description",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "issue_date",
+                    "description": "datetime, ",
+                    "type": "string",
+                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+                  },
+                  {
+                    "name": "expired",
+                    "description": "",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "sum_up_amount",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "roundup_amount",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "previous_due",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "effective_amount",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "user_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "user_name",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "owner_name",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "email",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "address",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "phone",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "postal_code",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "add_user",
+                    "description": "",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "add_user_details_dict",
+                    "description": "",
+                    "type": "object",
+                    "properties": {}
+                  },
+                  {
+                    "name": "comment",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "pi_items",
+                    "description": "",
+                    "type": "array",
+                    "items": {
+                      "title": "",
+                      "type": "object",
+                      "params": [
+                        {
+                          "name": "amount",
+                          "description": "",
+                          "type": "number"
+                        },
+                        {
+                          "name": "description",
+                          "description": "",
+                          "type": "string"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            "failed_users": {
+              "title": "",
+              "type": "array",
+              "items": {
+                "title": "",
+                "type": "object",
+                "params": [
+                  {
+                    "name": "user_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "failure_msg",
+                    "description": "error message",
+                    "type": "string"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "invoice.invoicePutUserOnDept",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["PAY INVOICE"],
+      "params": [
+        {
+          "name": "pi_id_list",
+          "description": "list of Proforma Invoice IDs",
+          "schema": {
+            "type": "array"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (object)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "properties": {
+            "failed_user_ids": {
+              "title": "list of User IDs",
+              "type": "array"
+            },
+            "successful_user_ids": {
+              "title": "list of User IDs",
+              "type": "array"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "invoice.proformaInvoicePaid",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["PAY INVOICE"],
+      "params": [
+        {
+          "name": "pi_id_list",
+          "description": "list of Proforma Invoice IDs",
+          "schema": {
+            "type": "array"
+          }
+        },
+        {
+          "name": "paid_amount_list",
+          "description": "list of paid amounts, length of list must be the same as `pi_id_list`",
+          "schema": {
+            "type": "array"
+          }
+        },
+        {
+          "name": "payment_comment_list",
+          "description": "list of comment strings, length of list must be the same as `pi_id_list`",
+          "schema": {
+            "type": "array"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (object)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "properties": {
+            "user_ids": {
+              "title": "list of User IDs",
+              "type": "array"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "invoice.invoicePaid",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["PAY INVOICE"],
+      "params": [
+        {
+          "name": "invoice_id_list",
+          "description": "list of Invoice IDs",
+          "schema": {
+            "type": "array"
+          }
+        },
+        {
+          "name": "paid_amount_list",
+          "description": "list of paid amounts, length of list must be the same as `invoice_id_list`",
+          "schema": {
+            "type": "array"
+          }
+        },
+        {
+          "name": "payment_comment_list",
+          "description": "list of comment strings, length of list must be the same as `invoice_id_list`",
+          "schema": {
+            "type": "array"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (object)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "properties": {
+            "user_ids": {
+              "title": "list of User IDs",
+              "type": "array"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "invoice.getPIByID",
+      "description": "user must own the proforma invoice,                  admin must have access to owner user and have permission 'SEE INVOICE'",
+      "auth_type": ["ADMIN", "NORMAL_USER", "VOIP_USER"],
+      "params": [
+        {
+          "name": "pi_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (object)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "properties": {
+            "pi_id": {
+              "title": "Proforma Invoice ID",
+              "type": "number"
+            },
+            "rule_id": {
+              "title": "",
+              "type": "number"
+            },
+            "rule_description": {
+              "title": "",
+              "type": "string"
+            },
+            "issue_date": {
+              "title": "datetime, ",
+              "type": "string",
+              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+            },
+            "expired": {
+              "title": "",
+              "type": "boolean"
+            },
+            "sum_up_amount": {
+              "title": "",
+              "type": "number"
+            },
+            "roundup_amount": {
+              "title": "",
+              "type": "number"
+            },
+            "previous_due": {
+              "title": "",
+              "type": "number"
+            },
+            "effective_amount": {
+              "title": "",
+              "type": "number"
+            },
+            "user_id": {
+              "title": "",
+              "type": "number"
+            },
+            "user_name": {
+              "title": "",
+              "type": "string"
+            },
+            "owner_name": {
+              "title": "",
+              "type": "string"
+            },
+            "email": {
+              "title": "",
+              "type": "string"
+            },
+            "address": {
+              "title": "",
+              "type": "string"
+            },
+            "phone": {
+              "title": "",
+              "type": "string"
+            },
+            "postal_code": {
+              "title": "",
+              "type": "string"
+            },
+            "add_user": {
+              "title": "",
+              "type": "boolean"
+            },
+            "add_user_details_dict": {
+              "title": "",
+              "type": "object",
+              "properties": {}
+            },
+            "comment": {
+              "title": "",
+              "type": "string"
+            },
+            "pi_items": {
+              "title": "",
+              "type": "array",
+              "items": {
+                "title": "",
+                "type": "object",
+                "params": [
+                  {
+                    "name": "amount",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "description",
+                    "description": "",
+                    "type": "string"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "invoice.getInvoiceByID",
+      "description": "user must own the invoice,                  admin must have access to owner user and have permission 'SEE INVOICE'",
+      "auth_type": ["ADMIN", "NORMAL_USER", "VOIP_USER"],
+      "params": [
+        {
+          "name": "invoice_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (object)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "properties": {
+            "invoice_id": {
+              "title": "",
+              "type": "number"
+            },
+            "rule_id": {
+              "title": "",
+              "type": "number"
+            },
+            "rule_description": {
+              "title": "",
+              "type": "string"
+            },
+            "is_active": {
+              "title": "",
+              "type": "boolean"
+            },
+            "is_paid": {
+              "title": "",
+              "type": "boolean"
+            },
+            "pi_issue_date": {
+              "title": "datetime, ",
+              "type": "string",
+              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+            },
+            "invoice_issue_date": {
+              "title": "datetime, ",
+              "type": "string",
+              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+            },
+            "period_end": {
+              "title": "datetime, ",
+              "type": "string",
+              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+            },
+            "period_start": {
+              "title": "datetime, ",
+              "type": "string",
+              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+            },
+            "previous_due": {
+              "title": "",
+              "type": "number"
+            },
+            "sum_up_amount": {
+              "title": "",
+              "type": "number"
+            },
+            "roundup_amount": {
+              "title": "",
+              "type": "number"
+            },
+            "effective_amount": {
+              "title": "",
+              "type": "number"
+            },
+            "paid_amount": {
+              "title": "",
+              "type": "number"
+            },
+            "user_id": {
+              "title": "",
+              "type": "number"
+            },
+            "user_name": {
+              "title": "",
+              "type": "string"
+            },
+            "owner_name": {
+              "title": "",
+              "type": "string"
+            },
+            "address": {
+              "title": "",
+              "type": "string"
+            },
+            "comment": {
+              "title": "",
+              "type": "string"
+            },
+            "email": {
+              "title": "",
+              "type": "string"
+            },
+            "phone": {
+              "title": "",
+              "type": "string"
+            },
+            "postal_code": {
+              "title": "",
+              "type": "string"
+            },
+            "invoice_items": {
+              "title": "",
+              "type": "array",
+              "items": {
+                "title": "invoice item",
+                "type": "object",
+                "params": [
+                  {
+                    "name": "invoice_item_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "description",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "amount",
+                    "description": "",
+                    "type": "number"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "invoice.getPIWithRuleByPIID",
+      "description": "user must own the proforma invoice,                  admin must have access to owner user and have permission 'SEE INVOICE'",
+      "auth_type": ["ADMIN"],
+      "params": [
+        {
+          "name": "pi_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (object)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "properties": {
+            "pi": {
+              "title": "",
+              "type": "object",
+              "properties": {
+                "pi_id": {
+                  "title": "Proforma Invoice ID",
+                  "type": "number"
+                },
+                "rule_id": {
+                  "title": "",
+                  "type": "number"
+                },
+                "rule_description": {
+                  "title": "",
+                  "type": "string"
+                },
+                "issue_date": {
+                  "title": "datetime, ",
+                  "type": "string",
+                  "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+                },
+                "expired": {
+                  "title": "",
+                  "type": "boolean"
+                },
+                "sum_up_amount": {
+                  "title": "",
+                  "type": "number"
+                },
+                "roundup_amount": {
+                  "title": "",
+                  "type": "number"
+                },
+                "previous_due": {
+                  "title": "",
+                  "type": "number"
+                },
+                "effective_amount": {
+                  "title": "",
+                  "type": "number"
+                },
+                "user_id": {
+                  "title": "",
+                  "type": "number"
+                },
+                "user_name": {
+                  "title": "",
+                  "type": "string"
+                },
+                "owner_name": {
+                  "title": "",
+                  "type": "string"
+                },
+                "email": {
+                  "title": "",
+                  "type": "string"
+                },
+                "address": {
+                  "title": "",
+                  "type": "string"
+                },
+                "phone": {
+                  "title": "",
+                  "type": "string"
+                },
+                "postal_code": {
+                  "title": "",
+                  "type": "string"
+                },
+                "add_user": {
+                  "title": "",
+                  "type": "boolean"
+                },
+                "add_user_details_dict": {
+                  "title": "",
+                  "type": "object",
+                  "properties": {}
+                },
+                "comment": {
+                  "title": "",
+                  "type": "string"
+                },
+                "pi_items": {
+                  "title": "",
+                  "type": "array",
+                  "items": {
+                    "title": "",
+                    "type": "object",
+                    "params": [
+                      {
+                        "name": "amount",
+                        "description": "",
+                        "type": "number"
+                      },
+                      {
+                        "name": "description",
+                        "description": "",
+                        "type": "string"
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            "rule": {
+              "title": "",
+              "type": "object",
+              "properties": {
+                "rule_id": {
+                  "title": "",
+                  "type": "number"
+                },
+                "description": {
+                  "title": "",
+                  "type": "string"
+                },
+                "invoice_template_name": {
+                  "title": "",
+                  "type": "string"
+                },
+                "pi_template_name": {
+                  "title": "",
+                  "type": "string"
+                },
+                "date_type": {
+                  "title": "",
+                  "enum": ["jalali", "gregorian"]
+                },
+                "language": {
+                  "title": "",
+                  "enum": ["fa", "en"]
+                },
+                "pi_exp_days": {
+                  "title": "",
+                  "type": "number"
+                },
+                "roundup_scale": {
+                  "title": "",
+                  "type": "number"
+                },
+                "auto_invoice_event": {
+                  "title": "",
+                  "enum": ["null", "credit_finished", "exp_date", "always"]
+                },
+                "auto_invoice_threshold": {
+                  "title": "",
+                  "type": "number"
+                },
+                "allow_user_issue_invoice": {
+                  "title": "",
+                  "type": "boolean"
+                },
+                "action": {
+                  "title": "",
+                  "enum": [
+                    "change_service",
+                    "renew",
+                    "renew_with_next_group",
+                    "recharge",
+                    "increase_deposit",
+                    "increase_deposit_by_group_credit",
+                    "increase_recharge_deposit",
+                    "increase_credit",
+                    "increase_deposit_constant",
+                    "increase_recharge_deposit_constant",
+                    "increase_credit_constant",
+                    "set_deposit_constant",
+                    "set_credit_constant"
+                  ]
+                },
+                "action_args": {
+                  "title": "",
+                  "type": "string"
+                },
+                "disabled": {
+                  "title": "",
+                  "type": "boolean"
+                },
+                "invoice_rule_items": {
+                  "title": "",
+                  "type": "array",
+                  "items": {
+                    "title": "rule item info dict",
+                    "type": "object",
+                    "params": [
+                      {
+                        "name": "rule_item_id",
+                        "description": "",
+                        "type": "number"
+                      },
+                      {
+                        "name": "description",
+                        "description": "",
+                        "type": "string"
+                      },
+                      {
+                        "name": "formula",
+                        "description": "",
+                        "type": "string"
+                      },
+                      {
+                        "name": "is_bonus",
+                        "description": "",
+                        "type": "boolean"
+                      },
+                      {
+                        "name": "none_effective",
+                        "description": "",
+                        "type": "boolean"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "invoice.getInvoiceWithRuleByInvoiceID",
+      "description": "user must own the invoice,                  admin must have access to owner user and have permission 'SEE INVOICE'",
+      "auth_type": ["ADMIN"],
+      "params": [
+        {
+          "name": "invoice_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (object)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "properties": {
+            "invoice": {
+              "title": "",
+              "type": "object",
+              "properties": {
+                "invoice_id": {
+                  "title": "",
+                  "type": "number"
+                },
+                "rule_id": {
+                  "title": "",
+                  "type": "number"
+                },
+                "rule_description": {
+                  "title": "",
+                  "type": "string"
+                },
+                "is_active": {
+                  "title": "",
+                  "type": "boolean"
+                },
+                "is_paid": {
+                  "title": "",
+                  "type": "boolean"
+                },
+                "pi_issue_date": {
+                  "title": "datetime, ",
+                  "type": "string",
+                  "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+                },
+                "invoice_issue_date": {
+                  "title": "datetime, ",
+                  "type": "string",
+                  "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+                },
+                "period_end": {
+                  "title": "datetime, ",
+                  "type": "string",
+                  "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+                },
+                "period_start": {
+                  "title": "datetime, ",
+                  "type": "string",
+                  "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+                },
+                "previous_due": {
+                  "title": "",
+                  "type": "number"
+                },
+                "sum_up_amount": {
+                  "title": "",
+                  "type": "number"
+                },
+                "roundup_amount": {
+                  "title": "",
+                  "type": "number"
+                },
+                "effective_amount": {
+                  "title": "",
+                  "type": "number"
+                },
+                "paid_amount": {
+                  "title": "",
+                  "type": "number"
+                },
+                "user_id": {
+                  "title": "",
+                  "type": "number"
+                },
+                "user_name": {
+                  "title": "",
+                  "type": "string"
+                },
+                "owner_name": {
+                  "title": "",
+                  "type": "string"
+                },
+                "address": {
+                  "title": "",
+                  "type": "string"
+                },
+                "comment": {
+                  "title": "",
+                  "type": "string"
+                },
+                "email": {
+                  "title": "",
+                  "type": "string"
+                },
+                "phone": {
+                  "title": "",
+                  "type": "string"
+                },
+                "postal_code": {
+                  "title": "",
+                  "type": "string"
+                },
+                "invoice_items": {
+                  "title": "",
+                  "type": "array",
+                  "items": {
+                    "title": "invoice item",
+                    "type": "object",
+                    "params": [
+                      {
+                        "name": "invoice_item_id",
+                        "description": "",
+                        "type": "number"
+                      },
+                      {
+                        "name": "description",
+                        "description": "",
+                        "type": "string"
+                      },
+                      {
+                        "name": "amount",
+                        "description": "",
+                        "type": "number"
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            "rule": {
+              "title": "",
+              "type": "object",
+              "properties": {
+                "rule_id": {
+                  "title": "",
+                  "type": "number"
+                },
+                "description": {
+                  "title": "",
+                  "type": "string"
+                },
+                "invoice_template_name": {
+                  "title": "",
+                  "type": "string"
+                },
+                "pi_template_name": {
+                  "title": "",
+                  "type": "string"
+                },
+                "date_type": {
+                  "title": "",
+                  "enum": ["jalali", "gregorian"]
+                },
+                "language": {
+                  "title": "",
+                  "enum": ["fa", "en"]
+                },
+                "pi_exp_days": {
+                  "title": "",
+                  "type": "number"
+                },
+                "roundup_scale": {
+                  "title": "",
+                  "type": "number"
+                },
+                "auto_invoice_event": {
+                  "title": "",
+                  "enum": ["null", "credit_finished", "exp_date", "always"]
+                },
+                "auto_invoice_threshold": {
+                  "title": "",
+                  "type": "number"
+                },
+                "allow_user_issue_invoice": {
+                  "title": "",
+                  "type": "boolean"
+                },
+                "action": {
+                  "title": "",
+                  "enum": [
+                    "change_service",
+                    "renew",
+                    "renew_with_next_group",
+                    "recharge",
+                    "increase_deposit",
+                    "increase_deposit_by_group_credit",
+                    "increase_recharge_deposit",
+                    "increase_credit",
+                    "increase_deposit_constant",
+                    "increase_recharge_deposit_constant",
+                    "increase_credit_constant",
+                    "set_deposit_constant",
+                    "set_credit_constant"
+                  ]
+                },
+                "action_args": {
+                  "title": "",
+                  "type": "string"
+                },
+                "disabled": {
+                  "title": "",
+                  "type": "boolean"
+                },
+                "invoice_rule_items": {
+                  "title": "",
+                  "type": "array",
+                  "items": {
+                    "title": "rule item info dict",
+                    "type": "object",
+                    "params": [
+                      {
+                        "name": "rule_item_id",
+                        "description": "",
+                        "type": "number"
+                      },
+                      {
+                        "name": "description",
+                        "description": "",
+                        "type": "string"
+                      },
+                      {
+                        "name": "formula",
+                        "description": "",
+                        "type": "string"
+                      },
+                      {
+                        "name": "is_bonus",
+                        "description": "",
+                        "type": "boolean"
+                      },
+                      {
+                        "name": "none_effective",
+                        "description": "",
+                        "type": "boolean"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,500 @@
+{
+  "openrpc": "1.2.1",
+  "info": {
+    "title": "IBSng: branch D: extra_charge",
+    "version": "1.0.0"
+  },
+  "methods": [
+    {
+      "name": "extra_charge.getExtraChargeProfileNames",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["SEE EXTRA CHARGE"],
+      "params": [],
+      "result": {
+        "name": "Response (array)",
+        "summary": "list of profile names",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "extra_charge.addExtraChargeProfile",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["CHANGE EXTRA CHARGE"],
+      "params": [
+        {
+          "name": "profile_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "comment",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "effective_hour",
+          "description": "format: HH:MM",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "rules",
+          "description": "",
+          "schema": {
+            "type": "array",
+            "items": {
+              "title": "rule info dict",
+              "type": "object",
+              "params": [
+                {
+                  "name": "start_from",
+                  "enum": [
+                    "user_creation_date",
+                    "user_real_first_login",
+                    "package_first_login",
+                    "user_expiration_date",
+                    "child_user_activation_fee",
+                    "child_user_creation_date",
+                    "child_active_user_creation_date"
+                  ]
+                },
+                {
+                  "name": "description",
+                  "description": "",
+                  "type": "string"
+                },
+                {
+                  "name": "period",
+                  "enum": ["monthly", "start_of_month", "daily", "none"]
+                },
+                {
+                  "name": "period_value",
+                  "enum": ["gregorian", "jalali"]
+                },
+                {
+                  "name": "change_target",
+                  "enum": ["credit", "deposit", "night_free"]
+                },
+                {
+                  "name": "change_action",
+                  "enum": ["SET", "ADD", "MULTIPLY"]
+                },
+                {
+                  "name": "amount",
+                  "description": "",
+                  "type": "number"
+                },
+                {
+                  "name": "negate_credit",
+                  "description": "",
+                  "type": "boolean"
+                },
+                {
+                  "name": "pay_back",
+                  "description": "",
+                  "type": "boolean"
+                },
+                {
+                  "name": "ignore_first_time",
+                  "description": "",
+                  "type": "boolean"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (number)",
+        "summary": "extra_charge_profile_id",
+        "schema": {
+          "title": "",
+          "type": "number"
+        }
+      }
+    },
+    {
+      "name": "extra_charge.updateExtraChargeProfile",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["CHANGE EXTRA CHARGE"],
+      "params": [
+        {
+          "name": "profile_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "profile_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "comment",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "effective_hour",
+          "description": "format: HH:MM",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "rules",
+          "description": "",
+          "schema": {
+            "type": "array",
+            "items": {
+              "title": "rule info dict",
+              "type": "object",
+              "params": [
+                {
+                  "name": "rule_id",
+                  "description": "leave -1 for new rules",
+                  "required": false,
+                  "default": "-1",
+                  "type": "number"
+                },
+                {
+                  "name": "start_from",
+                  "enum": [
+                    "user_creation_date",
+                    "user_real_first_login",
+                    "package_first_login",
+                    "user_expiration_date",
+                    "child_user_activation_fee",
+                    "child_user_creation_date",
+                    "child_active_user_creation_date"
+                  ]
+                },
+                {
+                  "name": "description",
+                  "description": "",
+                  "type": "string"
+                },
+                {
+                  "name": "period",
+                  "enum": ["monthly", "start_of_month", "daily", "none"]
+                },
+                {
+                  "name": "period_value",
+                  "enum": ["gregorian", "jalali"]
+                },
+                {
+                  "name": "change_target",
+                  "enum": ["credit", "deposit", "night_free"]
+                },
+                {
+                  "name": "change_action",
+                  "enum": ["SET", "ADD", "MULTIPLY"]
+                },
+                {
+                  "name": "amount",
+                  "description": "",
+                  "type": "number"
+                },
+                {
+                  "name": "negate_credit",
+                  "description": "",
+                  "type": "boolean"
+                },
+                {
+                  "name": "pay_back",
+                  "description": "",
+                  "type": "boolean"
+                },
+                {
+                  "name": "ignore_first_time",
+                  "description": "",
+                  "type": "boolean"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (null)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "extra_charge.deleteExtraChargeProfile",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["CHANGE EXTRA CHARGE"],
+      "params": [
+        {
+          "name": "profile_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (null)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "extra_charge.getExtraChargeProfiles",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["SEE EXTRA CHARGE"],
+      "params": [],
+      "result": {
+        "name": "Response (array)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "extra_charge.getExtraChargeProfileByName",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["SEE EXTRA CHARGE"],
+      "params": [
+        {
+          "name": "profile_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (object)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "properties": {
+            "profile_id": {
+              "title": "",
+              "type": "number"
+            },
+            "profile_name": {
+              "title": "",
+              "type": "string"
+            },
+            "comment": {
+              "title": "",
+              "type": "string"
+            },
+            "effective_hour": {
+              "title": "format: HH:MM",
+              "type": "string"
+            },
+            "rules": {
+              "title": "",
+              "type": "array",
+              "items": {
+                "title": "rule info dict",
+                "type": "object",
+                "params": [
+                  {
+                    "name": "rule_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "start_from",
+                    "enum": [
+                      "user_creation_date",
+                      "user_real_first_login",
+                      "package_first_login",
+                      "user_expiration_date",
+                      "child_user_activation_fee",
+                      "child_user_creation_date",
+                      "child_active_user_creation_date"
+                    ]
+                  },
+                  {
+                    "name": "description",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "period",
+                    "enum": ["monthly", "start_of_month", "daily", "none"]
+                  },
+                  {
+                    "name": "period_value",
+                    "enum": ["gregorian", "jalali"]
+                  },
+                  {
+                    "name": "change_target",
+                    "enum": ["credit", "deposit", "night_free"]
+                  },
+                  {
+                    "name": "change_action",
+                    "enum": ["SET", "ADD", "MULTIPLY"]
+                  },
+                  {
+                    "name": "amount",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "negate_credit",
+                    "description": "",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "pay_back",
+                    "description": "",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "ignore_first_time",
+                    "description": "",
+                    "type": "boolean"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "extra_charge.getExtraChargeProfileByID",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["SEE EXTRA CHARGE"],
+      "params": [
+        {
+          "name": "profile_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (object)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "properties": {
+            "profile_id": {
+              "title": "",
+              "type": "number"
+            },
+            "profile_name": {
+              "title": "",
+              "type": "string"
+            },
+            "comment": {
+              "title": "",
+              "type": "string"
+            },
+            "effective_hour": {
+              "title": "format: HH:MM",
+              "type": "string"
+            },
+            "rules": {
+              "title": "",
+              "type": "array",
+              "items": {
+                "title": "rule info dict",
+                "type": "object",
+                "params": [
+                  {
+                    "name": "rule_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "start_from",
+                    "enum": [
+                      "user_creation_date",
+                      "user_real_first_login",
+                      "package_first_login",
+                      "user_expiration_date",
+                      "child_user_activation_fee",
+                      "child_user_creation_date",
+                      "child_active_user_creation_date"
+                    ]
+                  },
+                  {
+                    "name": "description",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "period",
+                    "enum": ["monthly", "start_of_month", "daily", "none"]
+                  },
+                  {
+                    "name": "period_value",
+                    "enum": ["gregorian", "jalali"]
+                  },
+                  {
+                    "name": "change_target",
+                    "enum": ["credit", "deposit", "night_free"]
+                  },
+                  {
+                    "name": "change_action",
+                    "enum": ["SET", "ADD", "MULTIPLY"]
+                  },
+                  {
+                    "name": "amount",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "negate_credit",
+                    "description": "",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "pay_back",
+                    "description": "",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "ignore_first_time",
+                    "description": "",
+                    "type": "boolean"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

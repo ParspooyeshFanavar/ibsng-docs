@@ -1,0 +1,448 @@
+{
+  "openrpc": "1.2.1",
+  "info": {
+    "title": "IBSng: branch E: snapshot",
+    "version": "1.0.0"
+  },
+  "methods": [
+    {
+      "name": "snapshot.getBWSnapShotForUserAjax",
+      "description": "by admin",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["SEE REALTIME SNAPSHOTS"],
+      "params": [
+        {
+          "name": "user_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          },
+          "required": false
+        },
+        {
+          "name": "from",
+          "description": "",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "from_unit",
+          "description": "",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "Response (array)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "snapshot.getBWSnapShotForUserAjax",
+      "description": "",
+      "auth_type": ["NORMAL_USER", "VOIP_USER"],
+      "params": [
+        {
+          "name": "from",
+          "description": "by user",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "from_unit",
+          "description": "",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "Response (array)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "snapshot.getOnlinesSnapShot",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["SEE ONLINE SNAPSHOTS"],
+      "params": [
+        {
+          "name": "conds",
+          "description": "",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "ras_ips": {
+                "title": "",
+                "type": ["array", "string"]
+              },
+              "isp_names": {
+                "title": "",
+                "type": ["array", "string"]
+              }
+            }
+          }
+        },
+        {
+          "name": "type",
+          "description": "",
+          "schema": {
+            "enum": ["internet", "voip"]
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (array)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "snapshot.getBWSnapShot",
+      "description": "",
+      "auth_type": ["ADMIN", "NORMAL_USER", "VOIP_USER"],
+      "params": [
+        {
+          "name": "conds",
+          "description": "reporting condition",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "user_id": {
+                "title": "unique user id for limit reporting for that user",
+                "type": "string"
+              },
+              "date_from": {
+                "title": "start date and time, format '%Y-%m-%d %H:%M'",
+                "type": "string"
+              },
+              "date_to": {
+                "title": "start date and time, format '%Y-%m-%d %H:%M'",
+                "type": "string"
+              },
+              "date_from_unit": {
+                "title": "date unit",
+                "enum": [
+                  "gregorian",
+                  "jalali",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes",
+                  "seconds"
+                ]
+              },
+              "date_to_unit": {
+                "title": "date unit",
+                "enum": [
+                  "gregorian",
+                  "jalali",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes",
+                  "seconds"
+                ]
+              },
+              "date_from_op": {
+                "title": "operation for start date",
+                "enum": ["<", ">", "<=", ">="],
+                "__value_comment__": {
+                  "<": "less than",
+                  ">": "more than",
+                  "<=": "less equal",
+                  ">=": "more equal"
+                }
+              },
+              "date_to_op": {
+                "title": "operation for end date",
+                "enum": ["<", ">", "<=", ">="],
+                "__value_comment__": {
+                  "<": "less than",
+                  ">": "more than",
+                  "<=": "less equal",
+                  ">=": "more equal"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (array)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "snapshot.getGroupBWSnapShot",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "params": [
+        {
+          "name": "conds",
+          "description": "reporting condition",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "group_names": {
+                "title": "list of group names",
+                "type": "string"
+              },
+              "date_from": {
+                "title": "start date and time, format '%Y-%m-%d %H:%M'",
+                "type": "string"
+              },
+              "date_to": {
+                "title": "start date and time, format '%Y-%m-%d %H:%M'",
+                "type": "string"
+              },
+              "date_from_unit": {
+                "title": "date unit",
+                "enum": [
+                  "gregorian",
+                  "jalali",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes",
+                  "seconds"
+                ]
+              },
+              "date_to_unit": {
+                "title": "date unit",
+                "enum": [
+                  "gregorian",
+                  "jalali",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes",
+                  "seconds"
+                ]
+              },
+              "date_from_op": {
+                "title": "operation for start date",
+                "enum": ["<", ">", "<=", ">="],
+                "__value_comment__": {
+                  "<": "less than",
+                  ">": "more than",
+                  "<=": "less equal",
+                  ">=": "more equal"
+                }
+              },
+              "date_to_op": {
+                "title": "operation for end date",
+                "enum": ["<", ">", "<=", ">="],
+                "__value_comment__": {
+                  "<": "less than",
+                  ">": "more than",
+                  "<=": "less equal",
+                  ">=": "more equal"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (array)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "snapshot.getISPBWSnapShot",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "params": [
+        {
+          "name": "conds",
+          "description": "reporting condition",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "isp_names": {
+                "title": "list of isp names",
+                "type": "string"
+              },
+              "date_from": {
+                "title": "start date and time, format '%Y-%m-%d %H:%M'",
+                "type": "string"
+              },
+              "date_to": {
+                "title": "start date and time, format '%Y-%m-%d %H:%M'",
+                "type": "string"
+              },
+              "date_from_unit": {
+                "title": "date unit",
+                "enum": [
+                  "gregorian",
+                  "jalali",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes",
+                  "seconds"
+                ]
+              },
+              "date_to_unit": {
+                "title": "date unit",
+                "enum": [
+                  "gregorian",
+                  "jalali",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes",
+                  "seconds"
+                ]
+              },
+              "date_from_op": {
+                "title": "operation for start date",
+                "enum": ["<", ">", "<=", ">="],
+                "__value_comment__": {
+                  "<": "less than",
+                  ">": "more than",
+                  "<=": "less equal",
+                  ">=": "more equal"
+                }
+              },
+              "date_to_op": {
+                "title": "operation for end date",
+                "enum": ["<", ">", "<=", ">="],
+                "__value_comment__": {
+                  "<": "less than",
+                  ">": "more than",
+                  "<=": "less equal",
+                  ">=": "more equal"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (array)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "snapshot.getRasBWSnapShot",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "params": [
+        {
+          "name": "conds",
+          "description": "reporting condition",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "ras_ips": {
+                "title": "list of ras ips",
+                "type": "string"
+              },
+              "date_from": {
+                "title": "start date and time, format '%Y-%m-%d %H:%M'",
+                "type": "string"
+              },
+              "date_to": {
+                "title": "start date and time, format '%Y-%m-%d %H:%M'",
+                "type": "string"
+              },
+              "date_from_unit": {
+                "title": "date unit",
+                "enum": [
+                  "gregorian",
+                  "jalali",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes",
+                  "seconds"
+                ]
+              },
+              "date_to_unit": {
+                "title": "date unit",
+                "enum": [
+                  "gregorian",
+                  "jalali",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes",
+                  "seconds"
+                ]
+              },
+              "date_from_op": {
+                "title": "operation for start date",
+                "enum": ["<", ">", "<=", ">="],
+                "__value_comment__": {
+                  "<": "less than",
+                  ">": "more than",
+                  "<=": "less equal",
+                  ">=": "more equal"
+                }
+              },
+              "date_to_op": {
+                "title": "operation for end date",
+                "enum": ["<", ">", "<=", ">="],
+                "__value_comment__": {
+                  "<": "less than",
+                  ">": "more than",
+                  "<=": "less equal",
+                  ">=": "more equal"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (array)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    }
+  ]
+}

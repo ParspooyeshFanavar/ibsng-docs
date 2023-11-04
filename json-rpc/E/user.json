@@ -1,0 +1,4834 @@
+{
+  "openrpc": "1.2.1",
+  "info": {
+    "title": "IBSng: branch E: user",
+    "version": "1.0.0"
+  },
+  "methods": [
+    {
+      "name": "user.addNewUsers",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["ADD NEW USER"],
+      "params": [
+        {
+          "name": "count",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "isp_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "group_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "custom_fields",
+          "description": "",
+          "schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "required": false
+        },
+        {
+          "name": "customer_id",
+          "description": "The client ID to which we want to assign the user",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "user_role",
+          "description": "The role intended for the user, which can contain the values account or service",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "parent_user_id",
+          "description": "User's parent ID",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (array)",
+        "summary": "user_ids",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "user.getUserInfo",
+      "description": "By User",
+      "auth_type": ["NORMAL_USER", "VOIP_USER"],
+      "params": [
+        {
+          "name": "user_id",
+          "description": "User ID as string",
+          "schema": {
+            "type": "string",
+            "pattern": "^[0-9]+$"
+          },
+          "required": false
+        },
+        {
+          "name": "normal_username",
+          "description": "",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "voip_username",
+          "description": "",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "serial",
+          "description": "",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "Response (object)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "user.getUserInfo",
+      "description": "By Admin",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["GET USER INFORMATION"],
+      "params": [
+        {
+          "name": "user_id",
+          "description": "",
+          "schema": {
+            "type": "string",
+            "pattern": "^[0-9]+$"
+          },
+          "required": false
+        },
+        {
+          "name": "normal_username",
+          "description": "",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "voip_username",
+          "description": "",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "serial",
+          "description": "",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "Response (object)",
+        "summary": "User Info dict",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "properties": {
+            "user_id": {
+              "title": "show user_id, content of this field is:",
+              "type": "object",
+              "properties": {
+                "online_status": {
+                  "title": "true if online, false if offline",
+                  "type": "boolean"
+                },
+                "basic_info": {
+                  "title": "",
+                  "type": "object",
+                  "properties": {
+                    "user_role": {
+                      "title": "service or account",
+                      "type": "string"
+                    },
+                    "group_name": {
+                      "title": "",
+                      "type": "string"
+                    },
+                    "isp_name": {
+                      "title": "",
+                      "type": "string"
+                    },
+                    "creation_date": {
+                      "title": "",
+                      "type": "string"
+                    },
+                    "customer_name": {
+                      "title": "",
+                      "type": "string"
+                    },
+                    "group_id": {
+                      "title": "",
+                      "type": "string"
+                    },
+                    "nearest_exp_date": {
+                      "title": "",
+                      "type": "string"
+                    },
+                    "last_login": {
+                      "title": "",
+                      "type": "string"
+                    },
+                    "isp_id": {
+                      "title": "",
+                      "type": "string"
+                    },
+                    "parent_user_id": {
+                      "title": "",
+                      "type": "string"
+                    },
+                    "customer_id": {
+                      "title": "",
+                      "type": "string"
+                    }
+                  }
+                },
+                "user_repr": {
+                  "title": "internet/voip username if exist",
+                  "type": "string"
+                },
+                "attrs": {
+                  "title": "also includes custom fields, as custom_field_NAME keys",
+                  "type": "object",
+                  "properties": {
+                    "user_id": {
+                      "title": "",
+                      "type": "number",
+                      "required": false
+                    },
+                    "normal_username": {
+                      "title": "",
+                      "type": "string",
+                      "required": false
+                    },
+                    "normal_password": {
+                      "title": "",
+                      "type": "string",
+                      "required": false
+                    },
+                    "first_login": {
+                      "title": "",
+                      "type": "string",
+                      "required": false
+                    },
+                    "real_first_login": {
+                      "title": "",
+                      "type": "string",
+                      "required": false
+                    },
+                    "nearest_exp_date": {
+                      "title": "%Y-%m-%d %H:%M",
+                      "type": "string",
+                      "required": false
+                    },
+                    "nearest_exp_date_epoch": {
+                      "title": "epoch time",
+                      "type": "number",
+                      "required": false
+                    },
+                    "time_to_nearest_exp_date": {
+                      "title": "in seconds",
+                      "type": "number",
+                      "required": false
+                    },
+                    "charge_rule_usage": {
+                      "title": "",
+                      "type": "array",
+                      "items": {
+                        "title": "",
+                        "type": "list"
+                      },
+                      "required": false
+                    },
+                    "charge": {
+                      "title": "charge name",
+                      "type": "string",
+                      "required": false
+                    },
+                    "last_renew": {
+                      "title": "float as string, epoch time (float)",
+                      "type": "str",
+                      "required": false
+                    },
+                    "abs_exp_date": {
+                      "title": "datetime, gregorian datetime string",
+                      "type": "string",
+                      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$",
+                      "required": false
+                    },
+                    "abs_exp_date_unit": {
+                      "title": "",
+                      "enum": ["gregorian"],
+                      "required": false
+                    },
+                    "ippool": {
+                      "title": "User Info Internet IPpool (ippool name)",
+                      "type": "string",
+                      "required": false
+                    },
+                    "assign_ip": {
+                      "title": "User Info Internet Assign IP Address To User (comma-seperated values)",
+                      "type": "string",
+                      "required": false
+                    },
+                    "assign_netmask": {
+                      "title": "User Info Internet Assign Netmask To User",
+                      "type": "string",
+                      "required": false
+                    },
+                    "assign_route_ip": {
+                      "title": "User Info Internet  Assign Route IP To User (comma-seperated values)",
+                      "type": "string",
+                      "required": false
+                    },
+                    "assign_dns": {
+                      "title": "User Info Internet Assign DNS To User (First and Second DNSs, comma-seperated)",
+                      "type": "string",
+                      "required": false
+                    },
+                    "assign_dns_1": {
+                      "title": "User Info Internet Assign DNS To User (First DNS)",
+                      "type": "string",
+                      "required": false
+                    },
+                    "assign_dns_2": {
+                      "title": "User Info Internet Assign DNS To User (Second DNS)",
+                      "type": "string",
+                      "required": false
+                    },
+                    "in_ras_ippool": {
+                      "title": "User Info Internet In Ras IPPool (ippool name)",
+                      "type": "string",
+                      "required": false
+                    },
+                    "caller_id": {
+                      "title": "User Info VoIP Caller ID VoIP Caller ID",
+                      "type": "string",
+                      "required": false
+                    },
+                    "caller_id_bind_on_login": {
+                      "title": "true if exists, User Info VoIP VoIP Caller ID Bind On Next Login",
+                      "type": "boolean",
+                      "required": false
+                    },
+                    "fast_dial": {
+                      "title": "User Info VoIP Fast Dial",
+                      "type": "array",
+                      "length": "20",
+                      "required": false
+                    },
+                    "forward_number": {
+                      "title": "",
+                      "type": "string",
+                      "required": false
+                    },
+                    "asterisk_extension": {
+                      "title": "User Info VoIP Asterisk Asterisk Extension",
+                      "type": "string",
+                      "required": false
+                    },
+                    "asterisk_ras_ip": {
+                      "title": "User Info VoIP Asterisk Astersik Ras IP",
+                      "type": "string",
+                      "required": false
+                    },
+                    "asterisk_ras_id": {
+                      "title": "User Info VoIP Asterisk  Astersik Ras IP (ras_id)",
+                      "type": "string",
+                      "pattern": "^[0-9]+$",
+                      "required": false
+                    },
+                    "asterisk_ext_details": {
+                      "title": "User Info VoIP Asterisk",
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "title": "",
+                          "type": "number"
+                        },
+                        "priority": {
+                          "title": "",
+                          "type": "number"
+                        },
+                        "user_id": {
+                          "title": "",
+                          "type": "number"
+                        },
+                        "app": {
+                          "title": "'AGI' by default",
+                          "type": "string"
+                        },
+                        "appdata": {
+                          "title": "",
+                          "type": "string"
+                        },
+                        "context": {
+                          "title": "'ibs_users' by default",
+                          "type": "string"
+                        },
+                        "exten": {
+                          "title": "the same as value of attrs.asterisk_extension",
+                          "type": "string"
+                        },
+                        "sip_registered": {
+                          "title": "",
+                          "type": "boolean"
+                        },
+                        "iax_registered": {
+                          "title": "",
+                          "type": "boolean"
+                        }
+                      },
+                      "required": false
+                    },
+                    "asterisk_sip_details": {
+                      "title": "User Info VoIP Asterisk SIP Details",
+                      "type": "object",
+                      "properties": {
+                        "allow": {
+                          "title": "semicolon-seperated",
+                          "type": "string"
+                        },
+                        "cancallforward": {
+                          "title": "",
+                          "enum": ["yes", "no"]
+                        },
+                        "canreinvite": {
+                          "title": "",
+                          "enum": ["yes", "no"]
+                        },
+                        "context": {
+                          "title": "'incoming' by default",
+                          "type": "string"
+                        },
+                        "disallow": {
+                          "title": "'all' by default",
+                          "type": "string"
+                        },
+                        "host": {
+                          "title": "'dynamic' by default",
+                          "type": "string"
+                        },
+                        "nat": {
+                          "title": "",
+                          "enum": ["yes", "no"]
+                        },
+                        "port": {
+                          "title": "",
+                          "type": "number"
+                        },
+                        "qualify": {
+                          "title": "",
+                          "enum": ["yes", "no"]
+                        },
+                        "regseconds": {
+                          "title": "",
+                          "type": "number"
+                        },
+                        "type": {
+                          "title": "'friend' by default",
+                          "type": "string"
+                        }
+                      },
+                      "required": false
+                    },
+                    "asterisk_iax_details": {
+                      "title": "User Info VoIP Asterisk IAX Details",
+                      "type": "object",
+                      "properties": {
+                        "allow": {
+                          "title": "semicolon-seperated",
+                          "type": "string"
+                        },
+                        "auth": {
+                          "title": "'md5' by default",
+                          "type": "string"
+                        },
+                        "context": {
+                          "title": "'incoming' by default",
+                          "type": "string"
+                        },
+                        "disallow": {
+                          "title": "'all' by default",
+                          "type": "string"
+                        },
+                        "host": {
+                          "title": "'dynamic' by default",
+                          "type": "string"
+                        },
+                        "notransfer": {
+                          "title": "",
+                          "enum": ["yes", "no"]
+                        },
+                        "port": {
+                          "title": "",
+                          "type": "number"
+                        },
+                        "qualify": {
+                          "title": "",
+                          "enum": ["yes", "no"]
+                        },
+                        "regseconds": {
+                          "title": "",
+                          "type": "number"
+                        },
+                        "type": {
+                          "title": "'friend' by default",
+                          "type": "string"
+                        }
+                      },
+                      "required": false
+                    },
+                    "asterisk_did": {
+                      "title": "User Info VoIP Asterisk DID Asterisk DID",
+                      "type": "array",
+                      "items": {
+                        "title": "",
+                        "type": "list"
+                      },
+                      "required": false
+                    },
+                    "asterisk_did_ras_ip": {
+                      "title": "User Info VoIP Asterisk DID Astersik DID Ras IP",
+                      "type": "string",
+                      "required": false
+                    },
+                    "asterisk_did_ras_id": {
+                      "title": "User Info VoIP Asterisk DID Astersik DID Ras IP (ras_id)",
+                      "type": "string",
+                      "pattern": "^[0-9]+$",
+                      "required": false
+                    },
+                    "comment": {
+                      "title": "User Info Comment Comment",
+                      "type": "string",
+                      "required": false
+                    },
+                    "name": {
+                      "title": "User Info Comment Name",
+                      "type": "string",
+                      "required": false
+                    },
+                    "email": {
+                      "title": "User Info Comment Email",
+                      "type": "string",
+                      "required": false
+                    },
+                    "phone": {
+                      "title": "User Info Comment Phone",
+                      "type": "string",
+                      "required": false
+                    },
+                    "cell_phone": {
+                      "title": "User Info Comment Cell Phone Number",
+                      "type": "string",
+                      "required": false
+                    },
+                    "birthdate": {
+                      "title": "User Info Comment Date of Birth",
+                      "type": "string",
+                      "required": false
+                    },
+                    "address": {
+                      "title": "User Info Comment Address",
+                      "type": "string",
+                      "required": false
+                    },
+                    "postal_code": {
+                      "title": "User Info Comment Postal Code",
+                      "type": "string",
+                      "required": false
+                    },
+                    "credit_limit": {
+                      "title": "float as string, User Info Limitations Credit Limit",
+                      "type": "str",
+                      "required": false
+                    },
+                    "exp_date_temp_extend": {
+                      "title": "User Info Exp Dates User Expiration Date Temporary Extend",
+                      "type": "string",
+                      "required": false
+                    },
+                    "temp_extend_log_id": {
+                      "title": "User Info Exp Dates User Expiration Date Temporary Extend",
+                      "type": "string",
+                      "required": false
+                    },
+                    "exp_from_creation_date": {
+                      "title": "User Info Exp Dates Package Expiration Dates Expiration Date From Creation Date",
+                      "type": "string",
+                      "required": false
+                    },
+                    "exp_from_first_login": {
+                      "title": "User Info Exp Dates Package Expiration Dates Expiration Date From Real First Login:",
+                      "type": "string",
+                      "required": false
+                    },
+                    "exp_from_renew": {
+                      "title": "User Info Exp Dates Package Expiration Dates Expiration Date From Renew",
+                      "type": "string",
+                      "required": false
+                    },
+                    "exp_monthly": {
+                      "title": "User Info Exp Dates Package Expiration Dates Monthly Expiration Date",
+                      "type": "string",
+                      "required": false
+                    },
+                    "extra_charge_profile": {
+                      "title": "User Info Extra Charge Profile",
+                      "type": "string",
+                      "required": false
+                    },
+                    "idle_threshold_timespan": {
+                      "title": "",
+                      "type": "string",
+                      "required": false
+                    },
+                    "idle_bytes_threshold": {
+                      "title": "",
+                      "type": "string",
+                      "required": false
+                    },
+                    "idle_timeout": {
+                      "title": "",
+                      "type": "string",
+                      "required": false
+                    },
+                    "bw_send_rate": {
+                      "title": "",
+                      "type": "string",
+                      "required": false
+                    },
+                    "bw_receive_rate": {
+                      "title": "",
+                      "type": "string",
+                      "required": false
+                    },
+                    "in_ras_bw": {
+                      "title": "",
+                      "type": "string",
+                      "required": false
+                    },
+                    "limit_caller_id": {
+                      "title": "User Info Limitations Limit Caller ID Caller ID",
+                      "type": "string",
+                      "required": false
+                    },
+                    "limit_caller_id_allow_not_defined": {
+                      "title": "User Info Limitations Limit Caller ID Allow users with no Caller ID (0=No, 1=Yes)",
+                      "type": "string",
+                      "pattern": "^[0-9]+$",
+                      "required": false
+                    },
+                    "limit_mac": {
+                      "title": "User Info Limitations Limit Mac Address MAC Address",
+                      "type": "string",
+                      "required": false
+                    },
+                    "limit_port": {
+                      "title": "User Info Limitations Limit Port",
+                      "type": "string",
+                      "required": false
+                    },
+                    "limit_ras": {
+                      "title": "User Info Limitations Limit Ras (value is list of allowed RAS Descriptions)",
+                      "type": "array",
+                      "required": false
+                    },
+                    "limit_station_ip": {
+                      "title": "value is Station IP",
+                      "type": "string",
+                      "required": false
+                    },
+                    "limit_usage_days": {
+                      "title": "number of days",
+                      "type": "string",
+                      "pattern": "^[0-9]+$",
+                      "required": false
+                    },
+                    "lock": {
+                      "title": "user is locked if this key in present, value shows the lock reason",
+                      "type": "string",
+                      "required": false
+                    },
+                    "assigned_endpoint": {
+                      "title": "Message Center End Point",
+                      "type": "string",
+                      "required": false
+                    },
+                    "mc_charge": {
+                      "title": "Message Center Message Charge, format 'send_latin,send_unicode,receive'",
+                      "type": "string",
+                      "required": false
+                    },
+                    "mc_charge_send_latin": {
+                      "title": "Message Center Message Charge Send Charge Latin",
+                      "type": "string",
+                      "pattern": "^[0-9]+$",
+                      "required": false
+                    },
+                    "mc_charge_send_unicode": {
+                      "title": "Message Center Message Charge Send Charge Unicode",
+                      "type": "string",
+                      "pattern": "^[0-9]+$",
+                      "required": false
+                    },
+                    "mc_charge_recv": {
+                      "title": "Message Center Message Charge Receive Charge",
+                      "type": "string",
+                      "pattern": "^[0-9]+$",
+                      "required": false
+                    },
+                    "mc_min_user_credit": {
+                      "title": "float as string, Message Center Message Charge Minimum User Credit",
+                      "type": "str",
+                      "required": false
+                    },
+                    "email_address": {
+                      "title": "MailBox Email Address",
+                      "type": "string",
+                      "required": false
+                    },
+                    "mail_quota": {
+                      "title": "MailBox MailBox Quota",
+                      "type": "string",
+                      "pattern": "^[0-9]+$",
+                      "required": false
+                    },
+                    "mail_usage": {
+                      "title": "MailBox MailBox Usage",
+                      "type": "string",
+                      "pattern": "^[0-9]+$",
+                      "required": false
+                    },
+                    "mikrotik_address_list": {
+                      "title": "",
+                      "type": "string",
+                      "required": false
+                    },
+                    "mikrotik_bw": {
+                      "title": "Mikrotik BW Control (Burst), format GuaranteeReceiveRate/GuaranteeSendRate ReceiveBurst/SendBurst ReceiveBurstThreshold/SendBurstThreshold ReceiveBurstTime/SendBurstTime Priority MinReceiveRate/MinSendRate",
+                      "type": "string",
+                      "required": false
+                    },
+                    "mikrotik_bw_recv_rate": {
+                      "title": "Guarantee Receive Rate",
+                      "type": "string",
+                      "pattern": "^[0-9]+$",
+                      "required": false
+                    },
+                    "mikrotik_bw_send_rate": {
+                      "title": "Guarantee Send Rate",
+                      "type": "string",
+                      "pattern": "^[0-9]+$",
+                      "required": false
+                    },
+                    "mikrotik_bw_recv_burst": {
+                      "title": "",
+                      "type": "string",
+                      "pattern": "^[0-9]+$",
+                      "required": false
+                    },
+                    "mikrotik_bw_send_burst": {
+                      "title": "",
+                      "type": "string",
+                      "pattern": "^[0-9]+$",
+                      "required": false
+                    },
+                    "mikrotik_bw_recv_burst_threshold": {
+                      "title": "",
+                      "type": "string",
+                      "pattern": "^[0-9]+$",
+                      "required": false
+                    },
+                    "mikrotik_bw_send_burst_threshold": {
+                      "title": "",
+                      "type": "string",
+                      "pattern": "^[0-9]+$",
+                      "required": false
+                    },
+                    "mikrotik_bw_recv_burst_time": {
+                      "title": "",
+                      "type": "string",
+                      "pattern": "^[0-9]+$",
+                      "required": false
+                    },
+                    "mikrotik_bw_send_burst_time": {
+                      "title": "",
+                      "type": "string",
+                      "pattern": "^[0-9]+$",
+                      "required": false
+                    },
+                    "mikrotik_bw_priority": {
+                      "title": "",
+                      "type": "string",
+                      "pattern": "^[0-9]+$",
+                      "required": false
+                    },
+                    "mikrotik_bw_min_recv_rate": {
+                      "title": "",
+                      "type": "string",
+                      "pattern": "^[0-9]+$",
+                      "required": false
+                    },
+                    "mikrotik_bw_min_send_rate": {
+                      "title": "",
+                      "type": "string",
+                      "pattern": "^[0-9]+$",
+                      "required": false
+                    },
+                    "multi_login": {
+                      "title": "Limitations Multi Login, value is maximum number of instances",
+                      "type": "string",
+                      "pattern": "^[0-9]+$",
+                      "required": false
+                    },
+                    "notification_profile": {
+                      "title": "notification profile name",
+                      "type": "string",
+                      "required": false
+                    },
+                    "time_periodic_accounting_monthly": {
+                      "title": "Monthly Time Monthly Reset Type",
+                      "enum": ["gregorian", "jalali"]
+                    },
+                    "time_periodic_accounting_monthly_limit": {
+                      "title": "Monthly Time Monthly Time Limit",
+                      "type": "string",
+                      "pattern": "^[0-9]+$",
+                      "required": false
+                    },
+                    "time_periodic_accounting_monthly_usage": {
+                      "title": "Monthly Time This Period Usage",
+                      "type": "string",
+                      "pattern": "^[0-9]+$",
+                      "required": false
+                    },
+                    "time_periodic_accounting_monthly_reset": {
+                      "title": "datetime, Monthly Time Next Reset",
+                      "type": "string",
+                      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$",
+                      "required": false
+                    },
+                    "traffic_periodic_accounting_monthly": {
+                      "title": "Monthly Traffic Monthly Reset Type",
+                      "type": "string",
+                      "required": false
+                    },
+                    "traffic_periodic_accounting_monthly_limit": {
+                      "title": "Monthly Traffic Monthly Traffic Limit",
+                      "type": "string",
+                      "pattern": "^[0-9]+$",
+                      "required": false
+                    },
+                    "traffic_periodic_accounting_monthly_usage": {
+                      "title": "Monthly Traffic This Period Usage",
+                      "type": "string",
+                      "pattern": "^[0-9]+$",
+                      "required": false
+                    },
+                    "traffic_periodic_accounting_monthly_reset": {
+                      "title": "datetime, Monthly Traffic Next Reset",
+                      "type": "string",
+                      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$",
+                      "required": false
+                    },
+                    "time_periodic_accounting_daily": {
+                      "title": "Daily Time Number of days in period",
+                      "type": "string",
+                      "required": false
+                    },
+                    "time_periodic_accounting_daily_limit": {
+                      "title": "Daily Time Time Limit",
+                      "type": "string",
+                      "pattern": "^[0-9]+$",
+                      "required": false
+                    },
+                    "time_periodic_accounting_daily_usage": {
+                      "title": "Daily Time This Period Usage",
+                      "type": "string",
+                      "pattern": "^[0-9]+$",
+                      "required": false
+                    },
+                    "time_periodic_accounting_daily_reset": {
+                      "title": "datetime, Daily Time Next Reset",
+                      "type": "string",
+                      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$",
+                      "required": false
+                    },
+                    "traffic_periodic_accounting_daily": {
+                      "title": "Daily Traffic Number of days in period",
+                      "type": "string",
+                      "required": false
+                    },
+                    "traffic_periodic_accounting_daily_limit": {
+                      "title": "Daily Traffic Time Limit",
+                      "type": "string",
+                      "pattern": "^[0-9]+$",
+                      "required": false
+                    },
+                    "traffic_periodic_accounting_daily_usage": {
+                      "title": "Daily Traffic This Period Usage",
+                      "type": "string",
+                      "pattern": "^[0-9]+$",
+                      "required": false
+                    },
+                    "traffic_periodic_accounting_daily_reset": {
+                      "title": "datetime, Daily Traffic Next Reset",
+                      "type": "string",
+                      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$",
+                      "required": false
+                    },
+                    "time_periodic_accounting_weekly": {
+                      "title": "Daily Time Number of days in period",
+                      "type": "string",
+                      "required": false
+                    },
+                    "time_periodic_accounting_weekly_limit": {
+                      "title": "Daily Time Time Limit",
+                      "type": "string",
+                      "pattern": "^[0-9]+$",
+                      "required": false
+                    },
+                    "time_periodic_accounting_weekly_usage": {
+                      "title": "Daily Time This Period Usage",
+                      "type": "string",
+                      "pattern": "^[0-9]+$",
+                      "required": false
+                    },
+                    "time_periodic_accounting_weekly_reset": {
+                      "title": "datetime, Daily Time Next Reset",
+                      "type": "string",
+                      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$",
+                      "required": false
+                    },
+                    "traffic_periodic_accounting_weekly": {
+                      "title": "Weeklyy Traffic Number of days in period",
+                      "type": "string",
+                      "required": false
+                    },
+                    "traffic_periodic_accounting_weekly_limit": {
+                      "title": "Weekly Traffic Time Limit",
+                      "type": "string",
+                      "pattern": "^[0-9]+$",
+                      "required": false
+                    },
+                    "traffic_periodic_accounting_weekly_usage": {
+                      "title": "Weekly Traffic This Period Usage",
+                      "type": "string",
+                      "pattern": "^[0-9]+$",
+                      "required": false
+                    },
+                    "traffic_periodic_accounting_weekly_reset": {
+                      "title": "datetime, Weekly Traffic Next Reset",
+                      "type": "string",
+                      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$",
+                      "required": false
+                    },
+                    "monthly_periodic_credit_change": {
+                      "title": "Monthly Credit Change Monthly Reset Type",
+                      "enum": ["gregorian", "jalali"]
+                    },
+                    "monthly_periodic_credit_change_day": {
+                      "title": "Monthly Credit Change Monthly Reset Type Day",
+                      "type": "string",
+                      "required": false
+                    },
+                    "monthly_periodic_credit_change_type": {
+                      "title": "Monthly Credit Change Credit Change Type",
+                      "enum": ["absolute", "relative"]
+                    },
+                    "monthly_periodic_credit_change_amount": {
+                      "title": "Monthly Credit Change Credit Change Amount",
+                      "type": "string",
+                      "required": false
+                    },
+                    "monthly_periodic_credit_change_after_first_login": {
+                      "title": "Monthly Credit Change Effective After First Login",
+                      "type": "boolean",
+                      "required": false
+                    },
+                    "monthly_periodic_credit_change_negate_credit": {
+                      "title": "Monthly Credit Change Negate Credit",
+                      "type": "boolean",
+                      "required": false
+                    },
+                    "monthly_periodic_credit_change_do_on_first_login": {
+                      "title": "Monthly Credit Change Do On First Login",
+                      "type": "boolean",
+                      "required": false
+                    },
+                    "monthly_periodic_credit_change_reset": {
+                      "title": "datetime, Monthly Credit Change Next Reset",
+                      "type": "string",
+                      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$",
+                      "required": false
+                    },
+                    "daily_periodic_credit_change": {
+                      "title": "Monthly Credit Change Number of days in period",
+                      "type": "string",
+                      "pattern": "^[0-9]+$",
+                      "required": false
+                    },
+                    "daily_periodic_credit_change_type": {
+                      "title": "Daily Credit Change Credit Change Type",
+                      "enum": ["absolute", "relative"]
+                    },
+                    "daily_periodic_credit_change_amount": {
+                      "title": "Daily Credit Change Credit Change Amount",
+                      "type": "string",
+                      "pattern": "^[0-9]+$",
+                      "required": false
+                    },
+                    "daily_periodic_credit_change_after_first_login": {
+                      "title": "Daily Credit Change Effective After First Login",
+                      "type": "boolean",
+                      "required": false
+                    },
+                    "daily_periodic_credit_change_negate_credit": {
+                      "title": "Daily Credit Change Negate Credit",
+                      "type": "boolean",
+                      "required": false
+                    },
+                    "daily_periodic_credit_change_do_on_first_login": {
+                      "title": "Daily Credit Change Do On First Login",
+                      "type": "boolean",
+                      "required": false
+                    },
+                    "daily_periodic_credit_change_reset": {
+                      "title": "datetime, Daily Credit Change Next Reset",
+                      "type": "string",
+                      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$",
+                      "required": false
+                    },
+                    "persistent_lan_ip": {
+                      "title": "",
+                      "type": "array",
+                      "required": false
+                    },
+                    "persistent_lan_mac": {
+                      "title": "",
+                      "type": "array",
+                      "required": false
+                    },
+                    "persistent_lan_ras_ip": {
+                      "title": "",
+                      "type": "array",
+                      "required": false
+                    },
+                    "plan": {
+                      "title": "",
+                      "type": "string",
+                      "required": false
+                    },
+                    "radius_attrs": {
+                      "title": "User Info Misc Radius Attributes",
+                      "type": "string",
+                      "required": false
+                    },
+                    "rel_exp_date": {
+                      "title": "User Info Exp Dates Relative Expiration Date",
+                      "type": "number",
+                      "required": false
+                    },
+                    "rel_exp_date_unit": {
+                      "title": "",
+                      "enum": ["Minutes", "Hours", "Days", "Months", "Years"],
+                      "__value_comment__": {
+                        "Months": "1 month means 30 days",
+                        "Years": "1 month means 365 days"
+                      }
+                    },
+                    "rel_exp_date_negative_credit": {
+                      "title": "User Info Exp Dates Negative Credit Expiration Date Negative Credit Relative Expiration Date",
+                      "type": "number",
+                      "required": false
+                    },
+                    "rel_exp_date_negative_credit_unit": {
+                      "title": "User Info Exp Dates Negative Credit Expiration Date Negative Credit Relative Expiration Date",
+                      "enum": ["Minutes", "Hours", "Days", "Months", "Years"],
+                      "__value_comment__": {
+                        "Months": "1 month means 30 days",
+                        "Years": "1 month means 365 days"
+                      }
+                    },
+                    "negative_credit_start": {
+                      "title": "datetime, User Info Exp Dates Negative Credit Expiration Date Negative Credit Start",
+                      "type": "string",
+                      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$",
+                      "required": false
+                    },
+                    "renew_next_group": {
+                      "title": "group_name",
+                      "type": "string",
+                      "required": false
+                    },
+                    "second_normal_username": {
+                      "title": "Second Internet Username",
+                      "type": "string",
+                      "required": false
+                    },
+                    "serial": {
+                      "title": "User Info Username Serial ID",
+                      "type": "string",
+                      "required": false
+                    },
+                    "session_timeout": {
+                      "title": "User Info Limitations Session Timeout",
+                      "type": "string",
+                      "pattern": "^[0-9]+$",
+                      "required": false
+                    },
+                    "voip_preferred_language": {
+                      "title": "preferred language code for VoIP telephony support",
+                      "type": "string",
+                      "required": false
+                    },
+                    "voip_username": {
+                      "title": "VoIP Username",
+                      "type": "string",
+                      "required": false
+                    },
+                    "save_bw_usage": {
+                      "title": "true if exists, User Info Flags Save Bandwidth Usage",
+                      "type": "boolean",
+                      "required": false
+                    },
+                    "allow_user_disconnect": {
+                      "title": "true if exists, User Info Flags Allow User Disconnect",
+                      "type": "boolean",
+                      "required": false
+                    },
+                    "deny_change_password": {
+                      "title": "true if exists, User Info Flags Deny Change Password",
+                      "type": "boolean"
+                    },
+                    "auto_renew": {
+                      "title": "true if exists, User Info Flags Auto Renew",
+                      "type": "boolean"
+                    },
+                    "reset_negative_credit_on_renew": {
+                      "title": "true if exists, User Info Flags Reset Negative Credit On Renew",
+                      "type": "boolean",
+                      "required": false
+                    },
+                    "renew_do_not_reset_credit": {
+                      "title": "true if exists, User Info Flags Renew Do Not Reset Credit",
+                      "type": "boolean",
+                      "required": false
+                    },
+                    "renew_do_not_reset_credit_on_state_package": {
+                      "title": "true if exists, User Info Flags Renew Do Not Reset Credit On Package State",
+                      "type": "boolean",
+                      "required": false
+                    },
+                    "renew_do_not_reset_credit_on_state_recharged": {
+                      "title": "true if exists, User Info Flags Do Not Reset Credit On Recharged State",
+                      "type": "boolean",
+                      "required": false
+                    },
+                    "auto_renew_on_credit_finish": {
+                      "title": "true if exists, User Info Flags Auto Renew On Credit Finish",
+                      "type": "boolean"
+                    },
+                    "auto_renew_do_not_reset_credit": {
+                      "title": "true if exists, User Info Flags Auto Renew No Not Reset Credit",
+                      "type": "boolean",
+                      "required": false
+                    },
+                    "auto_recharge": {
+                      "title": "true if exists, User Info Flags Auto Recharge",
+                      "type": "boolean"
+                    },
+                    "allow_recharge_by_voucher": {
+                      "title": "true if exists, User Info Flags Allow Recharge By Voucher",
+                      "type": "boolean"
+                    },
+                    "prevent_web_login": {
+                      "title": "true if exists, User Info Flags Prevent Web Login",
+                      "type": "boolean",
+                      "required": false
+                    },
+                    "enable_failed_login": {
+                      "title": "true if exists, User Info Flags Enable Failed Login",
+                      "type": "boolean"
+                    },
+                    "ignore_idle_threshold_static_ip": {
+                      "title": "User Info Flags Ignore Idle Threshold on static IP",
+                      "type": "string",
+                      "required": false
+                    },
+                    "ignore_idle_threshold": {
+                      "title": "true if exists, User Info Flags Ignore Idle Threshold",
+                      "type": "boolean",
+                      "required": false
+                    },
+                    "limit_caller_id_bind_on_login": {
+                      "title": "true if exists, User Info Limitations Limit Caller ID Bind on next login",
+                      "type": "boolean",
+                      "required": false
+                    },
+                    "limit_mac_bind_on_login": {
+                      "title": "true if exists, ",
+                      "type": "boolean",
+                      "required": false
+                    },
+                    "limit_port_bind_on_login": {
+                      "title": "true if exists, ",
+                      "type": "boolean",
+                      "required": false
+                    },
+                    "limit_ras_bind_on_login": {
+                      "title": "true if exists, ",
+                      "type": "boolean",
+                      "required": false
+                    },
+                    "limit_station_ip_bind_on_login": {
+                      "title": "true if exists, ",
+                      "type": "boolean",
+                      "required": false
+                    }
+                  }
+                },
+                "voip_onlines": {
+                  "title": "list length is number of instances, usually 1",
+                  "type": "array",
+                  "items": {
+                    "title": "user instance",
+                    "type": "list"
+                  }
+                },
+                "internet_onlines": {
+                  "title": "list length is number of instances, usually 1",
+                  "type": "array",
+                  "items": {
+                    "title": "user instance",
+                    "type": "list"
+                  }
+                },
+                "has_online_payment_gateways": {
+                  "title": "",
+                  "type": "boolean",
+                  "required": false
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "user.doesUserExists",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "params": [
+        {
+          "name": "normal_username",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (boolean)",
+        "summary": "true if username exists, false otherwise",
+        "schema": {
+          "title": "",
+          "type": "boolean"
+        }
+      }
+    },
+    {
+      "name": "user.updateUserAttrs",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["CHANGE USER ATTRIBUTES"],
+      "params": [
+        {
+          "name": "user_id",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "attrs",
+          "description": "",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "normal_user_spec": {
+                "title": "",
+                "type": "object",
+                "properties": {
+                  "normal_username": {
+                    "title": "if missing, username will be generated randomly",
+                    "type": "string",
+                    "required": false
+                  },
+                  "normal_username_random_prefix": {
+                    "title": "default to empty string",
+                    "type": "string",
+                    "required": false
+                  },
+                  "normal_username_random_length": {
+                    "title": "default to 8",
+                    "type": "number",
+                    "required": false
+                  },
+                  "normal_username_random_type": {
+                    "title": "",
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 2,
+                    "default": 2,
+                    "__value_comment__": {
+                      "0": "alphanumeric abcdefghijkmnpqrstuvwxyz23456789",
+                      "1": "alphabet only abcdefghijklmnopqrstuvwxyz",
+                      "2": "numbers only 123456789"
+                    }
+                  },
+                  "normal_password": {
+                    "title": "if missing, password will be generated randomly",
+                    "type": "string",
+                    "required": false
+                  },
+                  "normal_password_random_length": {
+                    "title": "default to 8",
+                    "type": "number",
+                    "required": false
+                  },
+                  "normal_password_random_type": {
+                    "title": "",
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 2,
+                    "default": 2,
+                    "__value_comment__": {
+                      "0": "alphanumeric abcdefghijkmnpqrstuvwxyz23456789",
+                      "1": "alphabet only abcdefghijklmnopqrstuvwxyz",
+                      "2": "numbers only 123456789"
+                    }
+                  },
+                  "normal_save": {
+                    "title": "true, is you want the username and password to be saved in database, defaults to false",
+                    "type": "boolean",
+                    "required": false
+                  }
+                },
+                "required": false
+              },
+              "voip_user_spec": {
+                "title": "",
+                "type": "object",
+                "properties": {
+                  "voip_username": {
+                    "title": "if missing, username will be generated randomly",
+                    "type": "string",
+                    "required": false
+                  },
+                  "voip_username_random_prefix": {
+                    "title": "default to empty string",
+                    "type": "string",
+                    "required": false
+                  },
+                  "voip_username_random_length": {
+                    "title": "default to 8",
+                    "type": "number",
+                    "required": false
+                  },
+                  "voip_username_random_type": {
+                    "title": "",
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 2,
+                    "default": 2,
+                    "__value_comment__": {
+                      "0": "alphanumeric abcdefghijkmnpqrstuvwxyz23456789",
+                      "1": "alphabet only abcdefghijklmnopqrstuvwxyz",
+                      "2": "numbers only 123456789"
+                    }
+                  },
+                  "voip_password": {
+                    "title": "if missing, password will be generated randomly",
+                    "type": "string",
+                    "required": false
+                  },
+                  "voip_password_random_length": {
+                    "title": "default to 8",
+                    "type": "number",
+                    "required": false
+                  },
+                  "voip_password_random_type": {
+                    "title": "",
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 2,
+                    "default": 2,
+                    "__value_comment__": {
+                      "0": "alphanumeric abcdefghijkmnpqrstuvwxyz23456789",
+                      "1": "alphabet only abcdefghijklmnopqrstuvwxyz",
+                      "2": "numbers only 123456789"
+                    }
+                  },
+                  "voip_save": {
+                    "title": "true, is you want the username and password to be saved in database, defaults to false",
+                    "type": "boolean",
+                    "required": false
+                  }
+                },
+                "required": false
+              },
+              "custom_fields": {
+                "title": "",
+                "type": "array",
+                "items": [
+                  {
+                    "index": 0,
+                    "title": "attributes to update",
+                    "type": "object",
+                    "dynamic_keys": true,
+                    "params": []
+                  },
+                  {
+                    "index": 1,
+                    "title": "attributes to delete",
+                    "type": "list"
+                  }
+                ],
+                "length": "2",
+                "required": false
+              },
+              "first_login": {
+                "title": "epoch time",
+                "type": "number",
+                "required": false
+              },
+              "auto_renew": {
+                "title": "true if exists, User Info Flags Auto Renew",
+                "type": "boolean"
+              },
+              "auto_recharge": {
+                "title": "true if exists, User Info Flags Auto Recharge",
+                "type": "boolean"
+              },
+              "auto_renew_on_credit_finish": {
+                "title": "true if exists, User Info Flags Auto Renew On Credit Finish",
+                "type": "boolean"
+              },
+              "auto_renew_do_not_reset_credit": {
+                "title": "true if exists, User Info Flags Auto Renew No Not Reset Credit",
+                "type": "boolean",
+                "required": false
+              },
+              "charge": {
+                "title": "charge name",
+                "type": "string",
+                "required": false
+              },
+              "abs_exp_date": {
+                "title": "gregorian datetime string",
+                "type": "string",
+                "required": false
+              },
+              "abs_exp_date_unit": {
+                "title": "",
+                "enum": ["gregorian"],
+                "required": false
+              },
+              "allow_recharge_by_voucher": {
+                "title": "true if exists, User Info Flags Allow Recharge By Voucher",
+                "type": "boolean"
+              },
+              "allow_user_disconnect": {
+                "title": "true if exists, User Info Flags Allow User Disconnect",
+                "type": "boolean",
+                "required": false
+              },
+              "assign_dns_1": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "assign_dns_2": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "assign_ip": {
+                "title": "comma-seperated values",
+                "type": "string",
+                "required": false
+              },
+              "assign_netmask": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "assign_route_ip": {
+                "title": "comma-seperated values",
+                "type": "string",
+                "required": false
+              },
+              "caller_id": {
+                "title": "User Info VoIP Caller ID VoIP Caller ID",
+                "type": "string",
+                "required": false
+              },
+              "caller_id_bind_on_login": {
+                "title": "true if exists, User Info VoIP VoIP Caller ID Bind On Next Login",
+                "type": "boolean",
+                "required": false
+              },
+              "fast_dial": {
+                "title": "User Info VoIP Fast Dial",
+                "type": "array",
+                "length": "20",
+                "required": false
+              },
+              "forward_number": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "asterisk_extension": {
+                "title": "User Info VoIP Asterisk Asterisk Extension",
+                "type": "string",
+                "required": false
+              },
+              "asterisk_ras_ip": {
+                "title": "User Info VoIP Asterisk Astersik Ras IP",
+                "type": "string",
+                "required": false
+              },
+              "asterisk_sip_details": {
+                "title": "User Info VoIP Asterisk SIP Details",
+                "type": "object",
+                "properties": {
+                  "allow": {
+                    "title": "semicolon-seperated",
+                    "type": "string",
+                    "required": false
+                  },
+                  "cancallforward": {
+                    "title": "",
+                    "enum": ["yes", "no"]
+                  },
+                  "canreinvite": {
+                    "title": "",
+                    "enum": ["yes", "no"]
+                  },
+                  "context": {
+                    "title": "'incoming' by default",
+                    "type": "string",
+                    "required": false
+                  },
+                  "disallow": {
+                    "title": "'all' by default",
+                    "type": "string",
+                    "required": false
+                  },
+                  "host": {
+                    "title": "'dynamic' by default",
+                    "type": "string",
+                    "required": false
+                  },
+                  "nat": {
+                    "title": "",
+                    "enum": ["yes", "no"]
+                  },
+                  "port": {
+                    "title": "",
+                    "type": "number",
+                    "required": false
+                  },
+                  "qualify": {
+                    "title": "",
+                    "enum": ["yes", "no"]
+                  },
+                  "regseconds": {
+                    "title": "",
+                    "type": "number",
+                    "required": false
+                  },
+                  "type": {
+                    "title": "'friend' by default",
+                    "type": "string",
+                    "required": false
+                  }
+                },
+                "required": false
+              },
+              "asterisk_iax_details": {
+                "title": "User Info VoIP Asterisk IAX Details",
+                "type": "object",
+                "properties": {
+                  "allow": {
+                    "title": "semicolon-seperated",
+                    "type": "string",
+                    "required": false
+                  },
+                  "auth": {
+                    "title": "'md5' by default",
+                    "type": "string",
+                    "required": false
+                  },
+                  "context": {
+                    "title": "'incoming' by default",
+                    "type": "string",
+                    "required": false
+                  },
+                  "disallow": {
+                    "title": "'all' by default",
+                    "type": "string",
+                    "required": false
+                  },
+                  "host": {
+                    "title": "'dynamic' by default",
+                    "type": "string",
+                    "required": false
+                  },
+                  "notransfer": {
+                    "title": "",
+                    "enum": ["yes", "no"]
+                  },
+                  "port": {
+                    "title": "",
+                    "type": "number",
+                    "required": false
+                  },
+                  "qualify": {
+                    "title": "",
+                    "enum": ["yes", "no"]
+                  },
+                  "regseconds": {
+                    "title": "",
+                    "type": "number",
+                    "required": false
+                  },
+                  "type": {
+                    "title": "'friend' by default",
+                    "type": "string",
+                    "required": false
+                  }
+                },
+                "required": false
+              },
+              "asterisk_did": {
+                "title": "User Info VoIP Asterisk DID Asterisk DID",
+                "type": "array",
+                "items": {
+                  "title": "",
+                  "type": "list"
+                },
+                "required": false
+              },
+              "asterisk_did_ras_ip": {
+                "title": "User Info VoIP Asterisk DID Astersik DID Ras IP",
+                "type": "string",
+                "required": false
+              },
+              "asterisk_did_ras_id": {
+                "title": "User Info VoIP Asterisk DID Astersik DID Ras IP (ras_id)",
+                "type": "string",
+                "pattern": "^[0-9]+$",
+                "required": false
+              },
+              "comment": {
+                "title": "Comment Comment",
+                "type": "string",
+                "required": false
+              },
+              "name": {
+                "title": "Comment Name",
+                "type": "string",
+                "required": false
+              },
+              "email": {
+                "title": "Comment Email",
+                "type": "string",
+                "required": false
+              },
+              "phone": {
+                "title": "Comment Phone",
+                "type": "string",
+                "required": false
+              },
+              "cell_phone": {
+                "title": "Comment Cell Phone Number",
+                "type": "string",
+                "required": false
+              },
+              "birthdate": {
+                "title": "Comment Date of Birth",
+                "type": "string",
+                "required": false
+              },
+              "address": {
+                "title": "Comment Address",
+                "type": "string",
+                "required": false
+              },
+              "postal_code": {
+                "title": "Comment Postal Code",
+                "type": "string",
+                "required": false
+              },
+              "credit_limit": {
+                "title": "float as string, Limitations Credit Limit",
+                "type": "str",
+                "required": false
+              },
+              "deny_change_password": {
+                "title": "true if exists, User Info Flags Deny Change Password",
+                "type": "boolean"
+              },
+              "enable_failed_login": {
+                "title": "true if exists, User Info Flags Enable Failed Login",
+                "type": "boolean"
+              },
+              "exp_date_temp_extend": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "temp_extend_log_id": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "exp_from_creation_date": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "exp_from_first_login": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "exp_from_renew": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "exp_monthly": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "extra_charge_profile": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "idle_threshold_timespan": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "idle_bytes_threshold": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "ignore_idle_threshold_static_ip": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "ignore_idle_threshold": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "idle_timeout": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "bw_send_rate": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "bw_receive_rate": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "in_ras_bw": {
+                "title": "format 'SendRate/ReceiveRate'",
+                "type": "string",
+                "required": false
+              },
+              "in_ras_ippool": {
+                "title": "User Info Internet In Ras IPPool (ippool name)",
+                "type": "string",
+                "required": false
+              },
+              "ippool": {
+                "title": "User Info Internet IPpool (ippool name)",
+                "type": "string",
+                "required": false
+              },
+              "limit_caller_id": {
+                "title": "value is Caller ID",
+                "type": "string",
+                "required": false
+              },
+              "limit_caller_id_allow_not_defined": {
+                "title": "Allow users with no Caller ID, 0=No, 1=Yes",
+                "type": "string",
+                "required": false
+              },
+              "limit_caller_id_bind_on_login": {
+                "title": "true if exists, ",
+                "type": "boolean",
+                "required": false
+              },
+              "limit_mac": {
+                "title": "value is MAC address",
+                "type": "string",
+                "required": false
+              },
+              "limit_mac_bind_on_login": {
+                "title": "true if exists, ",
+                "type": "boolean",
+                "required": false
+              },
+              "limit_port": {
+                "title": "value is port",
+                "type": "string",
+                "required": false
+              },
+              "limit_port_bind_on_login": {
+                "title": "true if exists, ",
+                "type": "boolean",
+                "required": false
+              },
+              "limit_ras": {
+                "title": "value is list of allowed RAS IPs",
+                "type": "array",
+                "required": false
+              },
+              "limit_ras_bind_on_login": {
+                "title": "true if exists, ",
+                "type": "boolean",
+                "required": false
+              },
+              "limit_station_ip": {
+                "title": "value is Station IP",
+                "type": "string",
+                "required": false
+              },
+              "limit_station_ip_bind_on_login": {
+                "title": "true if exists, ",
+                "type": "boolean",
+                "required": false
+              },
+              "limit_usage_days": {
+                "title": "number of days",
+                "type": "string",
+                "pattern": "^[0-9]+$",
+                "required": false
+              },
+              "lock": {
+                "title": "user is locked if this key in present, value shows the lock reason",
+                "type": "string",
+                "required": false
+              },
+              "assigned_endpoint": {
+                "title": "Message Center End Point",
+                "type": "string",
+                "required": false
+              },
+              "mc_charge": {
+                "title": "Message Center Message Charge, format 'send_latin,send_unicode,receive'",
+                "type": "string",
+                "required": false
+              },
+              "mc_charge_send_latin": {
+                "title": "Message Center Message Charge Send Charge Latin",
+                "type": "string",
+                "pattern": "^[0-9]+$",
+                "required": false
+              },
+              "mc_charge_send_unicode": {
+                "title": "Message Center Message Charge Send Charge Unicode",
+                "type": "string",
+                "pattern": "^[0-9]+$",
+                "required": false
+              },
+              "mc_charge_recv": {
+                "title": "Message Center Message Charge Receive Charge",
+                "type": "string",
+                "pattern": "^[0-9]+$",
+                "required": false
+              },
+              "mc_min_user_credit": {
+                "title": "float as string, Message Center Message Charge Minimum User Credit",
+                "type": "str",
+                "required": false
+              },
+              "email_address": {
+                "title": "MailBox Email Address",
+                "type": "string",
+                "required": false
+              },
+              "mail_quota": {
+                "title": "MailBox MailBox Quota",
+                "type": "string",
+                "pattern": "^[0-9]+$",
+                "required": false
+              },
+              "mail_usage": {
+                "title": "MailBox MailBox Usage",
+                "type": "string",
+                "pattern": "^[0-9]+$",
+                "required": false
+              },
+              "mikrotik_address_list": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "mikrotik_bw": {
+                "title": "Mikrotik BW Control (Burst), format GuaranteeReceiveRate/GuaranteeSendRate ReceiveBurst/SendBurst ReceiveBurstThreshold/SendBurstThreshold ReceiveBurstTime/SendBurstTime Priority MinReceiveRate/MinSendRate",
+                "type": "string",
+                "required": false
+              },
+              "mikrotik_bw_recv_rate": {
+                "title": "Guarantee Receive Rate",
+                "type": "string",
+                "pattern": "^[0-9]+$",
+                "required": false
+              },
+              "mikrotik_bw_send_rate": {
+                "title": "Guarantee Send Rate",
+                "type": "string",
+                "pattern": "^[0-9]+$",
+                "required": false
+              },
+              "mikrotik_bw_recv_burst": {
+                "title": "",
+                "type": "string",
+                "pattern": "^[0-9]+$",
+                "required": false
+              },
+              "mikrotik_bw_send_burst": {
+                "title": "",
+                "type": "string",
+                "pattern": "^[0-9]+$",
+                "required": false
+              },
+              "mikrotik_bw_recv_burst_threshold": {
+                "title": "",
+                "type": "string",
+                "pattern": "^[0-9]+$",
+                "required": false
+              },
+              "mikrotik_bw_send_burst_threshold": {
+                "title": "",
+                "type": "string",
+                "pattern": "^[0-9]+$",
+                "required": false
+              },
+              "mikrotik_bw_recv_burst_time": {
+                "title": "",
+                "type": "string",
+                "pattern": "^[0-9]+$",
+                "required": false
+              },
+              "mikrotik_bw_send_burst_time": {
+                "title": "",
+                "type": "string",
+                "pattern": "^[0-9]+$",
+                "required": false
+              },
+              "mikrotik_bw_priority": {
+                "title": "",
+                "type": "string",
+                "pattern": "^[0-9]+$",
+                "required": false
+              },
+              "mikrotik_bw_min_recv_rate": {
+                "title": "",
+                "type": "string",
+                "pattern": "^[0-9]+$",
+                "required": false
+              },
+              "mikrotik_bw_min_send_rate": {
+                "title": "",
+                "type": "string",
+                "pattern": "^[0-9]+$",
+                "required": false
+              },
+              "multi_login": {
+                "title": "Limitations Multi Login, value is maximum number of instances",
+                "type": "string",
+                "pattern": "^[0-9]+$",
+                "required": false
+              },
+              "notification_profile": {
+                "title": "notification profile name",
+                "type": "string",
+                "required": false
+              },
+              "time_periodic_accounting_monthly": {
+                "title": "Monthly Time Monthly Reset Type",
+                "enum": ["gregorian", "jalali"]
+              },
+              "time_periodic_accounting_monthly_limit": {
+                "title": "Monthly Time Monthly Time Limit",
+                "type": "string",
+                "pattern": "^[0-9]+$",
+                "required": false
+              },
+              "time_periodic_accounting_monthly_usage": {
+                "title": "Monthly Time This Period Usage",
+                "type": "string",
+                "pattern": "^[0-9]+$",
+                "required": false
+              },
+              "time_periodic_accounting_monthly_reset": {
+                "title": "datetime, Monthly Time Next Reset",
+                "type": "string",
+                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$",
+                "required": false
+              },
+              "traffic_periodic_accounting_monthly": {
+                "title": "Monthly Traffic Monthly Reset Type",
+                "type": "string",
+                "required": false
+              },
+              "traffic_periodic_accounting_monthly_limit": {
+                "title": "Monthly Traffic Monthly Traffic Limit",
+                "type": "string",
+                "pattern": "^[0-9]+$",
+                "required": false
+              },
+              "traffic_periodic_accounting_monthly_usage": {
+                "title": "Monthly Traffic This Period Usage",
+                "type": "string",
+                "pattern": "^[0-9]+$",
+                "required": false
+              },
+              "traffic_periodic_accounting_monthly_reset": {
+                "title": "datetime, Monthly Traffic Next Reset",
+                "type": "string",
+                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$",
+                "required": false
+              },
+              "time_periodic_accounting_daily": {
+                "title": "Daily Time Number of days in period",
+                "type": "string",
+                "required": false
+              },
+              "time_periodic_accounting_daily_limit": {
+                "title": "Daily Time Time Limit",
+                "type": "string",
+                "pattern": "^[0-9]+$",
+                "required": false
+              },
+              "time_periodic_accounting_daily_usage": {
+                "title": "Daily Time This Period Usage",
+                "type": "string",
+                "pattern": "^[0-9]+$",
+                "required": false
+              },
+              "time_periodic_accounting_daily_reset": {
+                "title": "datetime, Daily Time Next Reset",
+                "type": "string",
+                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$",
+                "required": false
+              },
+              "traffic_periodic_accounting_daily": {
+                "title": "Daily Traffic Number of days in period",
+                "type": "string",
+                "required": false
+              },
+              "traffic_periodic_accounting_daily_limit": {
+                "title": "Daily Traffic Time Limit",
+                "type": "string",
+                "pattern": "^[0-9]+$",
+                "required": false
+              },
+              "traffic_periodic_accounting_daily_usage": {
+                "title": "Daily Traffic This Period Usage",
+                "type": "string",
+                "pattern": "^[0-9]+$",
+                "required": false
+              },
+              "traffic_periodic_accounting_daily_reset": {
+                "title": "datetime, Daily Traffic Next Reset",
+                "type": "string",
+                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$",
+                "required": false
+              },
+              "time_periodic_accounting_weekly": {
+                "title": "Daily Time Number of days in period",
+                "type": "string",
+                "required": false
+              },
+              "time_periodic_accounting_weekly_limit": {
+                "title": "Daily Time Time Limit",
+                "type": "string",
+                "pattern": "^[0-9]+$",
+                "required": false
+              },
+              "time_periodic_accounting_weekly_usage": {
+                "title": "Daily Time This Period Usage",
+                "type": "string",
+                "pattern": "^[0-9]+$",
+                "required": false
+              },
+              "time_periodic_accounting_weekly_reset": {
+                "title": "datetime, Daily Time Next Reset",
+                "type": "string",
+                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$",
+                "required": false
+              },
+              "traffic_periodic_accounting_weekly": {
+                "title": "Weeklyy Traffic Number of days in period",
+                "type": "string",
+                "required": false
+              },
+              "traffic_periodic_accounting_weekly_limit": {
+                "title": "Weekly Traffic Time Limit",
+                "type": "string",
+                "pattern": "^[0-9]+$",
+                "required": false
+              },
+              "traffic_periodic_accounting_weekly_usage": {
+                "title": "Weekly Traffic This Period Usage",
+                "type": "string",
+                "pattern": "^[0-9]+$",
+                "required": false
+              },
+              "traffic_periodic_accounting_weekly_reset": {
+                "title": "datetime, Weekly Traffic Next Reset",
+                "type": "string",
+                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$",
+                "required": false
+              },
+              "monthly_periodic_credit_change": {
+                "title": "Monthly Credit Change Monthly Reset Type",
+                "enum": ["gregorian", "jalali"]
+              },
+              "monthly_periodic_credit_change_day": {
+                "title": "Monthly Credit Change Monthly Reset Type Day",
+                "type": "string",
+                "required": false
+              },
+              "monthly_periodic_credit_change_type": {
+                "title": "Monthly Credit Change Credit Change Type",
+                "enum": ["absolute", "relative"]
+              },
+              "monthly_periodic_credit_change_amount": {
+                "title": "Monthly Credit Change Credit Change Amount",
+                "type": "string",
+                "required": false
+              },
+              "monthly_periodic_credit_change_after_first_login": {
+                "title": "Monthly Credit Change Effective After First Login",
+                "type": "boolean",
+                "required": false
+              },
+              "monthly_periodic_credit_change_negate_credit": {
+                "title": "Monthly Credit Change Negate Credit",
+                "type": "boolean",
+                "required": false
+              },
+              "monthly_periodic_credit_change_do_on_first_login": {
+                "title": "Monthly Credit Change Do On First Login",
+                "type": "boolean",
+                "required": false
+              },
+              "monthly_periodic_credit_change_reset": {
+                "title": "datetime, Monthly Credit Change Next Reset",
+                "type": "string",
+                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$",
+                "required": false
+              },
+              "daily_periodic_credit_change": {
+                "title": "Monthly Credit Change Number of days in period",
+                "type": "string",
+                "pattern": "^[0-9]+$",
+                "required": false
+              },
+              "daily_periodic_credit_change_type": {
+                "title": "Daily Credit Change Credit Change Type",
+                "enum": ["absolute", "relative"]
+              },
+              "daily_periodic_credit_change_amount": {
+                "title": "Daily Credit Change Credit Change Amount",
+                "type": "string",
+                "pattern": "^[0-9]+$",
+                "required": false
+              },
+              "daily_periodic_credit_change_after_first_login": {
+                "title": "Daily Credit Change Effective After First Login",
+                "type": "boolean",
+                "required": false
+              },
+              "daily_periodic_credit_change_negate_credit": {
+                "title": "Daily Credit Change Negate Credit",
+                "type": "boolean",
+                "required": false
+              },
+              "daily_periodic_credit_change_do_on_first_login": {
+                "title": "Daily Credit Change Do On First Login",
+                "type": "boolean",
+                "required": false
+              },
+              "daily_periodic_credit_change_reset": {
+                "title": "datetime, Daily Credit Change Next Reset",
+                "type": "string",
+                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$",
+                "required": false
+              },
+              "persistent_lan_ip": {
+                "title": "",
+                "type": "array",
+                "required": false
+              },
+              "persistent_lan_mac": {
+                "title": "",
+                "type": "array",
+                "required": false
+              },
+              "persistent_lan_ras_ip": {
+                "title": "",
+                "type": "array",
+                "required": false
+              },
+              "plan": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "prevent_web_login": {
+                "title": "true if exists, User Info Flags Prevent Web Login",
+                "type": "boolean",
+                "required": false
+              },
+              "radius_attrs": {
+                "title": "User Info Misc Radius Attributes",
+                "type": "string",
+                "required": false
+              },
+              "rel_exp_date": {
+                "title": "",
+                "type": "number",
+                "required": false
+              },
+              "rel_exp_date_unit": {
+                "title": "",
+                "enum": ["Minutes", "Hours", "Days", "Months", "Years"],
+                "__value_comment__": {
+                  "Months": "1 month means 30 days",
+                  "Years": "1 month means 365 days"
+                }
+              },
+              "rel_exp_date_negative_credit": {
+                "title": "User Info Exp Dates Negative Credit Expiration Date Negative Credit Relative Expiration Date",
+                "type": "number",
+                "required": false
+              },
+              "rel_exp_date_negative_credit_unit": {
+                "title": "User Info Exp Dates Negative Credit Expiration Date Negative Credit Relative Expiration Date",
+                "enum": ["Minutes", "Hours", "Days", "Months", "Years"],
+                "__value_comment__": {
+                  "Months": "1 month means 30 days",
+                  "Years": "1 month means 365 days"
+                }
+              },
+              "negative_credit_start": {
+                "title": "datetime, User Info Exp Dates Negative Credit Expiration Date Negative Credit Start",
+                "type": "string",
+                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$",
+                "required": false
+              },
+              "renew_do_not_reset_credit": {
+                "title": "true if exists, User Info Flags Renew Do Not Reset Credit",
+                "type": "boolean",
+                "required": false
+              },
+              "reset_negative_credit_on_renew": {
+                "title": "true if exists, User Info Flags Reset Negative Credit On Renew",
+                "type": "boolean",
+                "required": false
+              },
+              "renew_next_group": {
+                "title": "group_name",
+                "type": "string",
+                "required": false
+              },
+              "save_bw_usage": {
+                "title": "true if exists, User Info Flags Save Bandwidth Usage",
+                "type": "boolean",
+                "required": false
+              },
+              "second_normal_username": {
+                "title": "Second Internet Username",
+                "type": "string",
+                "required": false
+              },
+              "serial": {
+                "title": "User Info Username Serial ID",
+                "type": "string",
+                "required": false
+              },
+              "session_timeout": {
+                "title": "User Info Limitations Session Timeout",
+                "type": "string",
+                "pattern": "^[0-9]+$",
+                "required": false
+              },
+              "voip_preferred_language": {
+                "title": "preferred language code for VoIP telephony support",
+                "type": "string",
+                "required": false
+              },
+              "bill_period": {
+                "title": "which is define period number it could be number of days or months",
+                "type": "string",
+                "required": false
+              },
+              "notification_last_formula_threshold": {
+                "title": "which is the last thereshold of formula notification that IBSng sent it",
+                "type": "string",
+                "required": false
+              },
+              "notification_last_bill_cycle_threshold": {
+                "title": "which is the last threshold of bill cycle end which IBSng sent it",
+                "type": "string",
+                "required": false
+              },
+              "notification_last_exp_threshold": {
+                "title": "which is the last threshold of expiration date  which IBSng sent it",
+                "type": "string",
+                "required": false
+              },
+              "notification_last_credit1_threshold": {
+                "title": "which is the last threshold of credit which IBSng sent it",
+                "type": "string",
+                "required": false
+              },
+              "unpaid_bill_cycle_end": {
+                "title": "datetime, Which is unpaid bill cycle",
+                "type": "string",
+                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$",
+                "required": false
+              },
+              "bill_cycle_start": {
+                "title": "datetime, which is the bill cycle start",
+                "type": "string",
+                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$",
+                "required": false
+              },
+              "bill_cycle_end": {
+                "title": "datetime, Which is the bill cycle start",
+                "type": "string",
+                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$",
+                "required": false
+              },
+              "announce_credit_threshold": {
+                "title": "The threshold to which an announcement will be player for subscriber",
+                "type": "string",
+                "required": false
+              },
+              "chakavak_area_code": {
+                "title": "Area code of user",
+                "type": "string",
+                "required": false
+              },
+              "chakavak_call_blocking_status": {
+                "title": "Call blocking",
+                "enum": ["ONEWAY", "TWOWAY", "BARRED"]
+              },
+              "chakavak_callerid_name": {
+                "title": "Name of caller id which will be sent for user",
+                "type": "string",
+                "required": false
+              },
+              "chakavak_capabilities": {
+                "title": "Available capabilities for user",
+                "type": "array",
+                "items": {
+                  "title": "",
+                  "schema": {
+                    "enum": ["CONFERENCE", "DIVERT"]
+                  }
+                },
+                "required": false
+              },
+              "chakavak_cc_code": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "chakavak_codec": {
+                "title": "Set of codecs user can use",
+                "enum": [
+                  "iLBC@30i",
+                  "speex@8000h@20i",
+                  "speex@16000h@20i",
+                  "speex@32000h@20i",
+                  "G7221@16000h",
+                  "G7221@32000h",
+                  "GSM@40i",
+                  "G722",
+                  "PCMU",
+                  "PCMA",
+                  "G726-16",
+                  "G726-24",
+                  "G726-32",
+                  "G726-40",
+                  "LPC",
+                  "G729",
+                  "G723",
+                  "AMR",
+                  "H261",
+                  "H263",
+                  "H263-1998",
+                  "H263-2000",
+                  "H264"
+                ]
+              },
+              "chakavak_codec_negotiation": {
+                "title": "Perform Early or Late negotiation. Overrides switch defaults",
+                "type": "string",
+                "required": false
+              },
+              "chakavak_codec_transcoding": {
+                "title": "Allow/Disallow transcoding for user",
+                "type": "string",
+                "required": false
+              },
+              "divert_number_unconditional": {
+                "title": "Unconditional divert number",
+                "type": "string",
+                "required": false
+              },
+              "divert_number_busy": {
+                "title": "Busy divert number",
+                "type": "string",
+                "required": false
+              },
+              "divert_number_noanswer": {
+                "title": "No answer divert number",
+                "type": "string",
+                "required": false
+              },
+              "chakavak_limit_client_ip": {
+                "title": "List of IP's user allowed to register from (comma separated list of IP's)",
+                "type": "string",
+                "required": false
+              },
+              "chakavak_location": {
+                "title": "Location of user. Currently unused",
+                "type": "string",
+                "required": false
+              },
+              "chakavak_ringback": {
+                "title": "Name of ringback file. Ringbacks should be defined in a separate system and just the selected ringback will be kept in user profile",
+                "type": "string",
+                "required": false
+              },
+              "chakavak_sip_password": {
+                "title": "SIP password. This is different from voip_password and is just used for sip registration",
+                "type": "string",
+                "required": false
+              },
+              "chakavak_voicemail": {
+                "title": "Voice mail password (Digits only)",
+                "type": "string",
+                "required": false
+              }
+            }
+          }
+        },
+        {
+          "name": "to_del_attrs",
+          "description": "list of attributes to be deleted",
+          "schema": {
+            "type": "array"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (null)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "user.getUsersWithPhone",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "params": [
+        {
+          "name": "phone",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (array)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "user.getUsersWithCellPhone",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "params": [
+        {
+          "name": "cell_phone",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (array)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "user.searchExpiredUsers",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["GET USER INFORMATION"],
+      "params": [
+        {
+          "name": "conds",
+          "description": "",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "exp_date_from": {
+                "title": "datetime or number, ",
+                "type": ["string", "number"],
+                "required": false
+              },
+              "exp_date_from_unit": {
+                "title": "",
+                "enum": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "exp_date_to": {
+                "title": "datetime or number, ",
+                "type": ["string", "number"],
+                "required": false
+              },
+              "exp_date_to_unit": {
+                "title": "",
+                "enum": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "isp_names": {
+                "title": "list of isp names, or string of one isp name",
+                "type": ["array", "string"],
+                "required": false
+              },
+              "group_name": {
+                "title": "list of group names, or string of one group name",
+                "type": ["array", "string"],
+                "required": false
+              },
+              "not_in_group_name": {
+                "title": "list of group names, or string of one group name",
+                "type": ["array", "string"],
+                "required": false
+              }
+            }
+          }
+        },
+        {
+          "name": "from",
+          "description": "start index, for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "to",
+          "description": "start index, for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "order_by",
+          "description": "",
+          "schema": {
+            "enum": [
+              "user_id",
+              "isp_id",
+              "group_id",
+              "creation_date",
+              "credit",
+              "Deposit"
+            ]
+          }
+        },
+        {
+          "name": "desc",
+          "description": "descending",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (array)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "user.searchExpiredUsersExtended",
+      "description": "larger output than searchExpiredUsers, returns expiration dates too",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["GET USER INFORMATION"],
+      "params": [],
+      "result": {
+        "name": "Response (array)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "user.saveSearchExpiredUsers",
+      "description": "use SystemNotification.getNotifications() method to see if the report is finished and get the URL to download it",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["GET USER INFORMATION"],
+      "params": [
+        {
+          "name": "output_type",
+          "description": "",
+          "schema": {
+            "enum": ["csv", "pdf"]
+          }
+        },
+        {
+          "name": "conds",
+          "description": "the same as searchExpiredUsers, at least one condition is necessary",
+          "schema": {
+            "type": "object",
+            "properties": {}
+          }
+        },
+        {
+          "name": "order_by",
+          "description": "",
+          "schema": {
+            "enum": [
+              "user_id",
+              "isp_id",
+              "group_id",
+              "creation_date",
+              "credit",
+              "Deposit"
+            ]
+          }
+        },
+        {
+          "name": "desc",
+          "description": "descending",
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "basic",
+          "description": "the same as user.saveSearchUser",
+          "schema": {
+            "type": "array"
+          }
+        },
+        {
+          "name": "attrs",
+          "description": "the same as user.saveSearchUser",
+          "schema": {
+            "type": "array"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (null)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "user.searchUser",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["SEARCH USER"],
+      "params": [
+        {
+          "name": "conds",
+          "description": "",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "user_role": {
+                "title": "",
+                "enum": ["account", "role"]
+              },
+              "parent_user_id": {
+                "title": "",
+                "type": "number",
+                "required": false
+              },
+              "customer_id": {
+                "title": "",
+                "type": "number",
+                "required": false
+              },
+              "customer_name": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "customer_uid": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "abs_exp_date_from": {
+                "title": "datetime or number, ",
+                "type": ["string", "number"],
+                "required": false
+              },
+              "abs_exp_date_from_unit": {
+                "title": "",
+                "enum": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "abs_exp_date_to": {
+                "title": "datetime or number, ",
+                "type": ["string", "number"],
+                "required": false
+              },
+              "abs_exp_date_to_unit": {
+                "title": "",
+                "enum": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "allow_recharge_by_voucher": {
+                "title": "true if exists, User Info Flags Allow Recharge By Voucher",
+                "type": "boolean",
+                "required": false
+              },
+              "allow_user_disconnect": {
+                "title": "true if exists, ",
+                "type": "boolean",
+                "required": false
+              },
+              "assign_dns": {
+                "title": "User Info Internet Assign DNS To User",
+                "type": "string",
+                "required": false
+              },
+              "assign_dns_op": {
+                "title": "",
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+              },
+              "has_assign_ip": {
+                "title": "true if exists, ",
+                "type": "boolean",
+                "required": false
+              },
+              "assign_ip": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "assign_ip_op": {
+                "title": "",
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+              },
+              "has_assign_netmask": {
+                "title": "true if exists, ",
+                "type": "boolean",
+                "required": false
+              },
+              "assign_netmask": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "assign_netmask_op": {
+                "title": "",
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+              },
+              "has_assign_route_ip": {
+                "title": "true if exists, ",
+                "type": "boolean",
+                "required": false
+              },
+              "assign_route_ip": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "assign_route_ip_op": {
+                "title": "",
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+              },
+              "asterisk_did_number": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "asterisk_did_destination": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "asterisk_did_peer_address": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "auto_recharge": {
+                "title": "true if exists, ",
+                "type": "boolean",
+                "required": false
+              },
+              "auto_renew": {
+                "title": "true if exists, ",
+                "type": "boolean",
+                "required": false
+              },
+              "auto_renew_do_not_reset_credit": {
+                "title": "true if exists, ",
+                "type": "boolean",
+                "required": false
+              },
+              "caller_id": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "caller_id_op": {
+                "title": "",
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+              },
+              "charge": {
+                "title": "list of charge names, or string of one charge name",
+                "type": ["array", "string"],
+                "required": false
+              },
+              "comment": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "comment_op": {
+                "title": "",
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+              },
+              "name": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "name_op": {
+                "title": "",
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+              },
+              "postal_code": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "postal_code_op": {
+                "title": "",
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+              },
+              "phone": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "phone_op": {
+                "title": "",
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+              },
+              "cell_phone": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "cell_phone_op": {
+                "title": "",
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+              },
+              "email": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "email_op": {
+                "title": "",
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+              },
+              "birthdate": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "birthdate_unit": {
+                "title": "",
+                "enum": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "birthdate_op": {
+                "title": "",
+                "enum": ["=", ">", "<", ">=", "<="]
+              },
+              "address": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "address_op": {
+                "title": "",
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+              },
+              "has_connection_log_archive": {
+                "title": "true if exists, ",
+                "type": "boolean",
+                "required": false
+              },
+              "creation_date_from": {
+                "title": "datetime or number, ",
+                "type": ["string", "number"],
+                "required": false
+              },
+              "creation_date_from_unit": {
+                "title": "",
+                "enum": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "creation_date_to": {
+                "title": "datetime or number, ",
+                "type": ["string", "number"],
+                "required": false
+              },
+              "creation_date_to_unit": {
+                "title": "",
+                "enum": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "credit": {
+                "title": "",
+                "type": "number",
+                "required": false
+              },
+              "credit_op": {
+                "title": "",
+                "enum": ["=", ">", "<", ">=", "<="]
+              },
+              "credit_limit": {
+                "title": "true if exists, ",
+                "type": "boolean",
+                "required": false
+              },
+              "custom_field_test_integer": {
+                "title": "sample cutom field with name 'test_integer' and type 'Integer'",
+                "type": "number",
+                "required": false
+              },
+              "custom_field_test_integer_op": {
+                "title": "",
+                "enum": ["=", ">", "<", ">=", "<="]
+              },
+              "custom_field_test_string": {
+                "title": "sample cutom field with name 'test_string' and type 'String'",
+                "type": "string",
+                "required": false
+              },
+              "custom_field_test_string_op": {
+                "title": "",
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+              },
+              "deny_change_password": {
+                "title": "true if exists, ",
+                "type": "boolean",
+                "required": false
+              },
+              "deposit": {
+                "title": "",
+                "type": "number",
+                "required": false
+              },
+              "deposit_op": {
+                "title": "",
+                "enum": ["=", ">", "<", ">=", "<="]
+              },
+              "deposit_recharge": {
+                "title": "",
+                "type": "number",
+                "required": false
+              },
+              "deposit_recharge_op": {
+                "title": "",
+                "enum": ["=", ">", "<", ">=", "<="]
+              },
+              "email_address": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "email_address_op": {
+                "title": "",
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+              },
+              "user_value_exp_from_creation_date_from": {
+                "title": "datetime or number, ",
+                "type": ["string", "number"],
+                "required": false
+              },
+              "user_value_exp_from_creation_date_from_unit": {
+                "title": "",
+                "enum": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "user_value_exp_from_creation_date_to": {
+                "title": "datetime or number, ",
+                "type": ["string", "number"],
+                "required": false
+              },
+              "user_value_exp_from_creation_date_to_unit": {
+                "title": "",
+                "enum": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "user_value_exp_from_first_login_from": {
+                "title": "datetime or number, ",
+                "type": ["string", "number"],
+                "required": false
+              },
+              "user_value_exp_from_first_login_from_unit": {
+                "title": "",
+                "enum": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "user_value_exp_from_first_login_to": {
+                "title": "datetime or number, ",
+                "type": ["string", "number"],
+                "required": false
+              },
+              "user_value_exp_from_first_login_to_unit": {
+                "title": "",
+                "enum": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "exp_from_renew_user_value_from": {
+                "title": "datetime or number, ",
+                "type": ["string", "number"],
+                "required": false
+              },
+              "exp_from_renew_user_value_from_unit": {
+                "title": "",
+                "enum": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "exp_from_renew_user_value_to": {
+                "title": "datetime or number, ",
+                "type": ["string", "number"],
+                "required": false
+              },
+              "exp_from_renew_user_value_to_unit": {
+                "title": "",
+                "enum": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "exp_monthly_user_value_from": {
+                "title": "datetime or number, ",
+                "type": ["string", "number"],
+                "required": false
+              },
+              "exp_monthly_user_value_from_unit": {
+                "title": "",
+                "enum": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "exp_monthly_user_value_to": {
+                "title": "datetime or number, ",
+                "type": ["string", "number"],
+                "required": false
+              },
+              "exp_monthly_user_value_to_unit": {
+                "title": "",
+                "enum": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "first_login_from": {
+                "title": "datetime or number, ",
+                "type": ["string", "number"],
+                "required": false
+              },
+              "first_login_from_unit": {
+                "title": "",
+                "enum": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "first_login_to": {
+                "title": "datetime or number, ",
+                "type": ["string", "number"],
+                "required": false
+              },
+              "first_login_to_unit": {
+                "title": "",
+                "enum": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "real_first_login_from": {
+                "title": "datetime or number, ",
+                "type": ["string", "number"],
+                "required": false
+              },
+              "real_first_login_from_unit": {
+                "title": "",
+                "enum": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "real_first_login_to": {
+                "title": "datetime or number, ",
+                "type": ["string", "number"],
+                "required": false
+              },
+              "real_first_login_to_unit": {
+                "title": "",
+                "enum": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "group_name": {
+                "title": "list of group names or string of one group name",
+                "type": ["array", "string"],
+                "required": false
+              },
+              "in_ras_ippool": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "in_ras_ippool_op": {
+                "title": "",
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+              },
+              "ippool": {
+                "title": "list of ippool names, or string of one ippool name",
+                "type": ["array", "string"],
+                "required": false
+              },
+              "is_online": {
+                "title": "show online user if set to true, show offline user if set to false",
+                "type": "boolean",
+                "required": false
+              },
+              "online_status": {
+                "title": "show idle, failed and active users if you set to idle, failed or online",
+                "type": "string",
+                "required": false
+              },
+              "is_deposit_transferee": {
+                "title": "true if exists, ",
+                "type": "boolean",
+                "required": false
+              },
+              "is_deposit_transferer": {
+                "title": "true if exists, ",
+                "type": "boolean",
+                "required": false
+              },
+              "isp_names": {
+                "title": "list of isp names, or string of one isp name",
+                "type": ["array", "string"],
+                "required": false
+              },
+              "isp_id": {
+                "title": "array or int, list of ISP IDs, or integer of one ISP ID",
+                "type": ["array", "number"],
+                "required": false
+              },
+              "limit_caller_id": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "limit_caller_id_op": {
+                "title": "",
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+              },
+              "limit_mac": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "limit_mac_op": {
+                "title": "",
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+              },
+              "limit_port": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "limit_port_op": {
+                "title": "",
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+              },
+              "has_limit_ras": {
+                "title": "true if exists, ",
+                "type": "boolean",
+                "required": false
+              },
+              "limit_ras": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "limit_ras_op": {
+                "title": "",
+                "enum": ["and", "or"]
+              },
+              "limit_station_ip": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "limit_station_ip_op": {
+                "title": "",
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+              },
+              "limit_usage_days": {
+                "title": "int or array, integer (number of days), or list of integers (number of days)",
+                "type": ["number", "array"],
+                "required": false
+              },
+              "lock": {
+                "title": "true if exists, user is locked",
+                "type": "boolean",
+                "required": false
+              },
+              "no_lock": {
+                "title": "true if exists, user is not locked",
+                "type": "boolean",
+                "required": false
+              },
+              "lock_reason": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "lock_reason_op": {
+                "title": "",
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+              },
+              "mail_quota": {
+                "title": "",
+                "type": "number",
+                "required": false
+              },
+              "mail_quota_op": {
+                "title": "",
+                "enum": ["=", ">", "<", ">=", "<="]
+              },
+              "activation_required": {
+                "title": "true if exists, User Info Message Center MC Activation Required",
+                "type": "boolean",
+                "required": false
+              },
+              "mikrotik_address_list": {
+                "title": "list of many string (to match according to given operator), or just a string",
+                "type": ["array", "string"],
+                "required": false
+              },
+              "mikrotik_address_list_op": {
+                "title": "",
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+              },
+              "multi_login": {
+                "title": "",
+                "type": "number",
+                "required": false
+              },
+              "multi_login_op": {
+                "title": "",
+                "enum": ["=", ">", "<", ">=", "<="]
+              },
+              "never_expire_users": {
+                "title": "true if exists, users without any kind of expiration date (will never expire)",
+                "type": "boolean",
+                "required": false
+              },
+              "never_logged_in_users": {
+                "title": "true if exists, users that have never logged in",
+                "type": "boolean",
+                "required": false
+              },
+              "not_logged_in_from": {
+                "title": "datetime or number, ",
+                "type": ["string", "number"],
+                "required": false
+              },
+              "not_logged_in_from_unit": {
+                "title": "",
+                "enum": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "not_logged_in_to": {
+                "title": "datetime or number, ",
+                "type": ["string", "number"],
+                "required": false
+              },
+              "not_logged_in_to_unit": {
+                "title": "",
+                "enum": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "normal_username": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "normal_username_op": {
+                "title": "",
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+              },
+              "no_normal_username": {
+                "title": "true if exists, user has no internet username",
+                "type": "boolean",
+                "required": false
+              },
+              "has_notification_profile": {
+                "title": "true if exists, ",
+                "type": "boolean",
+                "required": false
+              },
+              "notification_profile": {
+                "title": "string or array, list of notification profile names. or string of one profile name",
+                "type": ["string", "array"],
+                "required": false
+              },
+              "online_payment": {
+                "title": "true if exists, user has online payment (enabled in User Info Online Payment Online Payment)",
+                "type": "boolean",
+                "required": false
+              },
+              "daily_periodic_credit_change_reset": {
+                "title": "datetime string or epoch time",
+                "type": "string",
+                "required": false
+              },
+              "daily_periodic_credit_change_reset_unit": {
+                "title": "",
+                "enum": [
+                  "epoch",
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "daily_periodic_credit_change_reset_op": {
+                "title": "",
+                "enum": ["=", ">", "<", ">=", "<="]
+              },
+              "monthly_periodic_credit_change_reset": {
+                "title": "datetime string or epoch time",
+                "type": "string",
+                "required": false
+              },
+              "monthly_periodic_credit_change_reset_unit": {
+                "title": "",
+                "enum": [
+                  "epoch",
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "monthly_periodic_credit_change_reset_op": {
+                "title": "",
+                "enum": ["=", ">", "<", ">=", "<="]
+              },
+              "periodic_reset_rule_usage": {
+                "title": "day of week",
+                "type": "string",
+                "required": false
+              },
+              "periodic_reset_rule_usage_op": {
+                "title": "",
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+              },
+              "persistent_lan_mac": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "persistent_lan_ip": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "persistent_lan_ras_ip": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "postpaid": {
+                "title": "true if exists, ",
+                "type": "boolean",
+                "required": false
+              },
+              "prevent_web_login": {
+                "title": "true if exists, ",
+                "type": "boolean",
+                "required": false
+              },
+              "rel_exp_date_from": {
+                "title": "datetime or number, ",
+                "type": ["string", "number"],
+                "required": false
+              },
+              "rel_exp_date_from_unit": {
+                "title": "",
+                "enum": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "rel_exp_date_to": {
+                "title": "datetime or number, ",
+                "type": ["string", "number"],
+                "required": false
+              },
+              "rel_exp_date_to_unit": {
+                "title": "",
+                "enum": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "rel_exp_date_negative_credit": {
+                "title": "datetime or number, ",
+                "type": ["string", "number"],
+                "required": false
+              },
+              "rel_exp_date_negative_credit_unit": {
+                "title": "",
+                "enum": [
+                  "jalali",
+                  "gregorian",
+                  "years",
+                  "months",
+                  "days",
+                  "hours",
+                  "minutes"
+                ]
+              },
+              "rel_exp_date_negative_credit_op": {
+                "title": "",
+                "enum": ["=", ">", "<", ">=", "<="]
+              },
+              "renew_do_not_reset_credit": {
+                "title": "true if exists, ",
+                "type": "boolean",
+                "required": false
+              },
+              "reset_negative_credit_on_renew": {
+                "title": "true if exists, ",
+                "type": "boolean",
+                "required": false
+              },
+              "renew_do_not_reset_credit_on_state_package": {
+                "title": "true if exists, ",
+                "type": "boolean",
+                "required": false
+              },
+              "renew_do_not_reset_credit_on_state_recharged": {
+                "title": "true if exists, ",
+                "type": "boolean",
+                "required": false
+              },
+              "renew_next_group": {
+                "title": "list of group names, or string of group name",
+                "type": ["array", "string"],
+                "required": false
+              },
+              "save_bw_usage": {
+                "title": "true if exists, ",
+                "type": "boolean",
+                "required": false
+              },
+              "second_normal_username": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "second_normal_username_op": {
+                "title": "",
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+              },
+              "serial": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "serial_op": {
+                "title": "",
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+              },
+              "sms_charge": {
+                "title": "",
+                "type": "number",
+                "required": false
+              },
+              "sms_charge_op": {
+                "title": "",
+                "enum": ["=", ">", "<", ">=", "<="]
+              },
+              "user_id": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "user_id_op": {
+                "title": "",
+                "enum": ["=", ">", "<", ">=", "<="]
+              },
+              "user_status": {
+                "title": "pass '0' for Package, '0,1' for Package and Recharged, '0,2' for Package and Temporary Extended",
+                "type": "string",
+                "pattern": "^[0-9]+$",
+                "required": false
+              },
+              "voip_preferred_language": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "voip_preferred_language_op": {
+                "title": "",
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+              },
+              "voip_username": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "voip_username_op": {
+                "title": "",
+                "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+              }
+            }
+          }
+        },
+        {
+          "name": "from",
+          "description": "start index, for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "to",
+          "description": "end index, for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "order_by",
+          "description": "",
+          "schema": {
+            "enum": [
+              "normal_username",
+              "voip_username",
+              "user_id",
+              "group_id",
+              "creation_date",
+              "owner_id",
+              "credit",
+              "deposit",
+              "first_login",
+              "serial",
+              "serial_numeric"
+            ]
+          }
+        },
+        {
+          "name": "desc",
+          "description": "",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (array)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "user.delUser",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["DELETE USER"],
+      "params": [
+        {
+          "name": "user_id",
+          "description": "comma-seperated User IDs",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "delete_comment",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "del_connection_logs",
+          "description": "pass true if you want users' connection logs to be deleted too",
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "del_audit_logs",
+          "description": "pass true if you want users' audit logs to be deleted too",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (null)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "user.killUser",
+      "description": "requires KILL USER permission if kill=true, and CLEAR USER permission is kill=false",
+      "auth_type": ["ADMIN"],
+      "params": [
+        {
+          "name": "user_id",
+          "description": "comma-seperated User IDs",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "ras_ip",
+          "description": "comma-seperated RAS IPs",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "unique_id_val",
+          "description": "Unique ID Value (for exmaple Port, Caller ID, etc)",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "kill",
+          "description": "true means Kill User, false means Clear User",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false,
+          "default": "true"
+        }
+      ],
+      "result": {
+        "name": "Response (null)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "user.killUserByID",
+      "description": "by admin, disconnects all instances of given users",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["KILL USER"],
+      "params": [
+        {
+          "name": "user_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "kill",
+          "description": "true means Kill User, false means Clear User",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false,
+          "default": "true"
+        }
+      ],
+      "result": {
+        "name": "Response (null)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "user.killUserByID",
+      "description": "by user, disconnects all instances of user himself",
+      "auth_type": ["NORMAL_USER", "VOIP_USER"],
+      "params": [],
+      "result": {
+        "name": "Response (null)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "user.killMe",
+      "description": "by user, disconnects selected instance",
+      "auth_type": ["NORMAL_USER", "VOIP_USER"],
+      "params": [
+        {
+          "name": "unique_id_val",
+          "description": "Unique ID Value (for exmaple Port, Caller ID, etc)",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "ras_ip",
+          "description": "RAS IPs",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (null)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "user.getRemainingDurationAndBytes",
+      "description": "by admin",
+      "auth_type": ["ADMIN"],
+      "params": [
+        {
+          "name": "user_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (object)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "user.getRemainingDurationAndBytes",
+      "description": "by user",
+      "auth_type": ["NORMAL_USER", "VOIP_USER"],
+      "params": [],
+      "result": {
+        "name": "Response (object)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "user.renewUsers",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["RENEW USER"],
+      "params": [
+        {
+          "name": "user_id",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "comment",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (object)",
+        "summary": "renewUsers output",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "properties": {
+            "id": {
+              "title": "return null if enter correct parameters",
+              "type": "number"
+            },
+            "result": {
+              "title": "return true if enter correct parameters",
+              "type": "boolean"
+            },
+            "error": {
+              "title": "return null if enter correct parameters",
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "user.rechargeUsers",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["RECHARGE USER"],
+      "params": [
+        {
+          "name": "user_id",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "comment",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (null)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "user.temporaryExtendUsers",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["TEMPORARY EXTEND"],
+      "params": [
+        {
+          "name": "user_id",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "temporary_extend_hours",
+          "description": "hours",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "temporary_extend_credit",
+          "description": "credit",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (null)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "user.updateUserComments",
+      "description": "",
+      "auth_type": ["NORMAL_USER", "VOIP_USER"],
+      "params": [
+        {
+          "name": "update_dic",
+          "description": "",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "title": "Comment Name (user's real name)",
+                "type": "string",
+                "required": false
+              },
+              "phone": {
+                "title": "Comment Phone",
+                "type": "string",
+                "required": false
+              },
+              "cell_phone": {
+                "title": "Comment Cell Phone Number",
+                "type": "string",
+                "required": false
+              },
+              "email": {
+                "title": "Comment Email",
+                "type": "string",
+                "required": false
+              },
+              "address": {
+                "title": "Comment Address",
+                "type": "string",
+                "required": false
+              },
+              "birthdate": {
+                "title": "Comment Date of Birth",
+                "type": "string",
+                "required": false
+              }
+            }
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (null)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "user.reloadUsers",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "params": [
+        {
+          "name": "user_id",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (null)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "user.saveSearchUser",
+      "description": "use SystemNotification.getNotifications() method to see if the report is finished and get the URL to download it",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["SEARCH USER"],
+      "params": [
+        {
+          "name": "conds",
+          "description": "the same as user.searchUser method",
+          "schema": {
+            "type": "object",
+            "properties": {}
+          }
+        },
+        {
+          "name": "order_by",
+          "description": "",
+          "schema": {
+            "enum": [
+              "normal_username",
+              "voip_username",
+              "user_id",
+              "group_id",
+              "creation_date",
+              "owner_id",
+              "credit",
+              "deposit",
+              "first_login",
+              "serial",
+              "serial_numeric"
+            ]
+          }
+        },
+        {
+          "name": "desc",
+          "description": "",
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "basic",
+          "description": "",
+          "schema": {
+            "type": "array",
+            "items": {
+              "title": "",
+              "schema": {
+                "enum": [
+                  "user_id",
+                  "creation_date",
+                  "credit",
+                  "deposit",
+                  "group_id",
+                  "group_name",
+                  "isp_id",
+                  "isp_name",
+                  "nearest_exp_date",
+                  "recharge_deposit",
+                  "status"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "name": "attrs",
+          "description": "",
+          "schema": {
+            "type": "array"
+          }
+        },
+        {
+          "name": "output_type",
+          "description": "",
+          "schema": {
+            "enum": ["csv", "pdf"]
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (null)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "user.changeStatus",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["CHANGE USER ATTRIBUTES"],
+      "params": [
+        {
+          "name": "user_id",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "status",
+          "description": "",
+          "schema": {
+            "enum": ["Package", "Recharged", "Temporary Extended"]
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (null)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "user.getBulkActionsForAdmin",
+      "description": "get list of performed or running Bulk Actions, which admin has access to see them",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["PERFORM BULK ACTION"],
+      "params": [],
+      "result": {
+        "name": "Response (array)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "user.viewBulkActionStatus",
+      "description": "get status of a Bulk Action (that has been started by the admin himself)",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["PERFORM BULK ACTION"],
+      "params": [
+        {
+          "name": "action_id",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (object)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "properties": {
+            "action_id": {
+              "title": "",
+              "type": "string"
+            },
+            "action_name": {
+              "title": "",
+              "type": "string"
+            },
+            "conds": {
+              "title": "",
+              "type": "object",
+              "properties": {}
+            },
+            "requester_id": {
+              "title": "Admin ID",
+              "type": "number"
+            },
+            "requester_username": {
+              "title": "Admin Username",
+              "type": "string"
+            },
+            "remote_ip": {
+              "title": "Admin's Remote IP",
+              "type": "string"
+            },
+            "action_timing": {
+              "title": "",
+              "type": "array",
+              "items": [
+                {
+                  "index": 0,
+                  "title": "epoch time of start",
+                  "type": "int"
+                },
+                {
+                  "index": 1,
+                  "title": "epoch time of end",
+                  "type": "int"
+                }
+              ],
+              "length": "2"
+            },
+            "formated_start_date": {
+              "title": "start datetime string, depending on input date_type",
+              "type": "string"
+            },
+            "formated_end_date": {
+              "title": "end datetime string, depending on input date_type",
+              "type": "string"
+            },
+            "matched_users_count": {
+              "title": "number of all matched users",
+              "type": "number"
+            },
+            "checked_users_count": {
+              "title": "number of done users",
+              "type": "number"
+            },
+            "action_progress": {
+              "title": "percentage of progress (0 to 100)",
+              "type": "number"
+            },
+            "canceled": {
+              "title": "true if the action is canceled",
+              "type": "boolean"
+            },
+            "failed": {
+              "title": "true if the action is failed",
+              "type": "boolean"
+            },
+            "messages": {
+              "title": "list of messages (strings)",
+              "type": "array"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "user.cancelBulkAction",
+      "description": "cancel a Bulk Action (that has been started by the admin himself)",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["PERFORM BULK ACTION"],
+      "params": [
+        {
+          "name": "action_id",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (null)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "user.clearBulkAction",
+      "description": "clear (remove from list) a Bulk Action (that has been started by the admin himself), and is finished",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["PERFORM BULK ACTION"],
+      "params": [
+        {
+          "name": "action_id",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (null)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "user.bulkUpdateUserAttrs",
+      "description": "combines methods 'user.searchUser' and 'user.updateUserAttrs'",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["PERFORM BULK ACTION", "SEARCH USER"],
+      "params": [
+        {
+          "name": "conds",
+          "description": "the same as method 'user.searchUser', parameter 'conds'",
+          "schema": {
+            "type": "object",
+            "properties": {}
+          }
+        },
+        {
+          "name": "attrs_to_update",
+          "description": "the same as method 'user.updateUserAttrs', parameter 'attrs'",
+          "schema": {
+            "type": "object",
+            "properties": {}
+          }
+        },
+        {
+          "name": "attrs_to_del",
+          "description": "the same as method 'user.updateUserAttrs', parameter 'to_del_attrs'",
+          "schema": {
+            "type": "array"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (string)",
+        "summary": "action_id (string)",
+        "schema": {
+          "title": "",
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "user.bulkChangeUserCredit",
+      "description": "combines methods 'user.searchUser' and 'user.changeCreditExtended'",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["PERFORM BULK ACTION", "BULK CHANGE USER CREDIT"],
+      "params": [
+        {
+          "name": "conds",
+          "description": "the same as method 'user.searchUser', parameter 'conds'",
+          "schema": {
+            "type": "object",
+            "properties": {}
+          }
+        },
+        {
+          "name": "credit",
+          "description": "the same as method 'user.changeCreditExtended'",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "change_type",
+          "description": "the same as method 'user.changeCreditExtended'",
+          "schema": {
+            "enum": ["ADD", "SET", "MULTIPLY"]
+          }
+        },
+        {
+          "name": "credit_comment",
+          "description": "the same as method 'user.changeCreditExtended'",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (string)",
+        "summary": "action_id (string)",
+        "schema": {
+          "title": "",
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "user.bulkChangeUserDeposit",
+      "description": "combines methods 'user.searchUser' and 'user.changeDepositExtended'",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["PERFORM BULK ACTION", "BULK CHANGE USER DEPOSIT"],
+      "params": [
+        {
+          "name": "conds",
+          "description": "the same as method 'user.searchUser', parameter 'conds'",
+          "schema": {
+            "type": "object",
+            "properties": {}
+          }
+        },
+        {
+          "name": "deposit",
+          "description": "the same as method 'user.changeDepositExtended'",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "change_type",
+          "description": "the same as method 'user.changeDepositExtended'",
+          "schema": {
+            "enum": ["ADD", "SET", "MULTIPLY"]
+          }
+        },
+        {
+          "name": "deposit_comment",
+          "description": "the same as method 'user.changeDepositExtended'",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (string)",
+        "summary": "action_id (string)",
+        "schema": {
+          "title": "",
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "user.bulkDeleteUser",
+      "description": "combines methods 'user.searchUser' and 'user.delUser'",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["PERFORM BULK ACTION", "BULK DELETE USER"],
+      "params": [
+        {
+          "name": "conds",
+          "description": "the same as method 'user.searchUser', parameter 'conds'",
+          "schema": {
+            "type": "object",
+            "properties": {}
+          }
+        },
+        {
+          "name": "delete_comment",
+          "description": "the same as method 'user.delUser'",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "del_connection_logs",
+          "description": "the same as method 'user.delUser'",
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "del_audit_logs",
+          "description": "the same as method 'user.delUser'",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (string)",
+        "summary": "action_id (string)",
+        "schema": {
+          "title": "",
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "user.bulkRenewUsers",
+      "description": "combines methods 'user.searchUser' and 'user.renewUsers'",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["PERFORM BULK ACTION", "RENEW USER"],
+      "params": [
+        {
+          "name": "conds",
+          "description": "the same as method 'user.searchUser', parameter 'conds'",
+          "schema": {
+            "type": "object",
+            "properties": {}
+          }
+        },
+        {
+          "name": "renew_comment",
+          "description": "the same as method 'user.renewUsers', parameter 'comment'",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (string)",
+        "summary": "action_id (string)",
+        "schema": {
+          "title": "",
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "user.bulkKillUsers",
+      "description": "combines methods 'user.searchUser' and 'user.renewUsers'",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["PERFORM BULK ACTION", "RENEW USER"],
+      "params": [
+        {
+          "name": "conds",
+          "description": "the same as method 'user.searchUser', parameter 'conds'",
+          "schema": {
+            "type": "object",
+            "properties": {}
+          }
+        },
+        {
+          "name": "kill",
+          "description": "true means Kill User, false means Clear User",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false,
+          "default": "true"
+        }
+      ],
+      "result": {
+        "name": "Response (string)",
+        "summary": "action_id (string)",
+        "schema": {
+          "title": "",
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "user.getUsersExpDateFirstLogin",
+      "description": "returns username, expiration date and first login for ALL USERS                returns a large amount of data                for use by CRM only",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["GOD"],
+      "params": [],
+      "result": {
+        "name": "Response (object)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "user.setOneChargeRuleUsage",
+      "description": "set or clear charge rule usage of one rule for one user",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["CHANGE USER ATTRIBUTES"],
+      "params": [
+        {
+          "name": "user_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "charge_rule_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "credit_usage",
+          "description": "pass 0 if you want to reset",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "time_usage",
+          "description": "in seconds, pass 0 if you want to reset",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "traffic_usage",
+          "description": "in bytes, pass 0 if you want to reset",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (null)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "user.setFeshfesheParams",
+      "description": "Added in tag 320, See http://wiki.parspooyesh.com/index.php/Feshfeshe",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["CHANGE USER ATTRIBUTES"],
+      "params": [
+        {
+          "name": "user_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "traffic",
+          "description": "Traffic, in Mega Bytes",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "date_from",
+          "description": "datetime, start date and time, format '%Y-%m-%d %H:%M'",
+          "schema": {
+            "type": "string",
+            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+          }
+        },
+        {
+          "name": "date_to",
+          "description": "datetime, end date and time, format '%Y-%m-%d %H:%M'",
+          "schema": {
+            "type": "string",
+            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (null)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    }
+  ]
+}

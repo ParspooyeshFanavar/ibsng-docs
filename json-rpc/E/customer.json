@@ -1,0 +1,401 @@
+{
+  "openrpc": "1.2.1",
+  "info": {
+    "title": "IBSng: branch E: customer",
+    "version": "1.0.0"
+  },
+  "methods": [
+    {
+      "name": "customer.addNewCustomer",
+      "description": "add a new customer",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["ADD CUSTOMER"],
+      "params": [
+        {
+          "name": "uid",
+          "description": "this feild is optional, generate in server",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "customer_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "isp_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "address",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "mobile_number",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "phone_number",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "email",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "comment",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (object)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "properties": {
+            "customer_id": {
+              "title": "return customer id that add",
+              "type": "number"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "customer.getCustomer",
+      "description": "get information customer with uid or customer_id",
+      "auth_type": ["ADMIN"],
+      "params": [
+        {
+          "name": "uid",
+          "description": "If you don't need uid, send an empty string",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "customer_id",
+          "description": "If you don't need customer_id, send an empty string",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "Response (object)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "properties": {
+            "customer_id": {
+              "title": "",
+              "type": "number"
+            },
+            "uid": {
+              "title": "",
+              "type": "string"
+            },
+            "customer_name": {
+              "title": "",
+              "type": "string"
+            },
+            "customer_name_op": {
+              "title": "",
+              "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
+            },
+            "isp_name": {
+              "title": "",
+              "type": "string"
+            },
+            "address": {
+              "title": "",
+              "type": "string"
+            },
+            "mobile_number": {
+              "title": "",
+              "type": "string"
+            },
+            "phone_number": {
+              "title": "",
+              "type": "string"
+            },
+            "email": {
+              "title": "",
+              "type": "string"
+            },
+            "comment": {
+              "title": "",
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "customer.updateCustomer",
+      "description": "update info customer with uid or customer_id",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["UPDATE CUSTOMER"],
+      "params": [
+        {
+          "name": "customer_id",
+          "description": "If you don't need customer_id , send an empty string",
+          "schema": {
+            "type": "number"
+          },
+          "required": false
+        },
+        {
+          "name": "uid",
+          "description": "If you don't need uid, send an empty string",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "customer_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "isp_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "address",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "mobile_number",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "phone_number",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "email",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "comment",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (null)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "customer.deleteCustomer",
+      "description": "delete info customer with uid or customer_id",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["DELETE CUSTOMER"],
+      "params": [
+        {
+          "name": "uid",
+          "description": "If you don't need uid, send an empty string",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "customer_id",
+          "description": "If you don't need customer_id, sned an empty string",
+          "schema": {
+            "type": "number"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "Response (null)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "customer.searchCustomer",
+      "description": "Search in customer information",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["SEARCH CUSTOMER"],
+      "params": [
+        {
+          "name": "conds",
+          "description": "",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "customer_id": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "uid": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "customer_name": {
+                "title": "",
+                "type": "string",
+                "required": false
+              }
+            }
+          }
+        },
+        {
+          "name": "sort_by",
+          "schema": {
+            "enum": ["customer_name", "customer_id"]
+          }
+        },
+        {
+          "name": "desc",
+          "description": "descending",
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "_from",
+          "description": "pagination start",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "to",
+          "description": "pagination end",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (object)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "properties": {
+            "total_rows": {
+              "title": "Number of total rows",
+              "type": "number"
+            },
+            "report": {
+              "title": "",
+              "type": "array",
+              "items": {
+                "title": "",
+                "type": "object",
+                "params": [
+                  {
+                    "name": "customer_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "cusmert_name",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "mobile_number",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "phone_number",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "comment",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "uid",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "isp_name",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "address",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "email",
+                    "description": "",
+                    "type": "string"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

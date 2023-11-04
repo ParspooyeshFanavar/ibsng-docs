@@ -1,0 +1,923 @@
+{
+  "openrpc": "1.2.1",
+  "info": {
+    "title": "IBSng: branch E: voucher",
+    "version": "1.0.0"
+  },
+  "methods": [
+    {
+      "name": "voucher.searchVoucher",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["SEE VOUCHER"],
+      "params": [
+        {
+          "name": "conds",
+          "description": "",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "voucher_ids": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "batch_ids": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "pins": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "is_used": {
+                "title": "true means voucher is used",
+                "type": "boolean",
+                "required": false
+              },
+              "isp_names": {
+                "title": "list of isp names, or string of one isp name",
+                "type": ["array", "string"],
+                "required": false
+              }
+            }
+          }
+        },
+        {
+          "name": "from",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "to",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "sort_by",
+          "description": "",
+          "schema": {
+            "enum": ["pin", "voucher_id"]
+          }
+        },
+        {
+          "name": "desc",
+          "description": "descending",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (object)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "properties": {
+            "total_rows": {
+              "title": "number of total rows",
+              "type": "number"
+            },
+            "report": {
+              "title": "",
+              "type": "array",
+              "items": {
+                "title": "",
+                "type": "object",
+                "params": [
+                  {
+                    "name": "voucher_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "voucher_pin",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "voucher_serial",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "voucher_is_used",
+                    "description": "",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "voucher_used_date",
+                    "description": "datetime, ",
+                    "type": "string",
+                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+                  },
+                  {
+                    "name": "voucher_user_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "batch_id",
+                    "description": "",
+                    "type": "number"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "voucher.searchBatch",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["SEE VOUCHER"],
+      "params": [
+        {
+          "name": "conds",
+          "description": "",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "isp_names": {
+                "title": "list of isp names, or string of one isp name",
+                "type": ["array", "string"],
+                "required": false
+              },
+              "batch_ids": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "batch_names": {
+                "title": "",
+                "type": "string",
+                "required": false
+              },
+              "is_locked": {
+                "title": "true means batch is locked",
+                "type": "boolean",
+                "required": false
+              },
+              "can_recharge_user": {
+                "title": "true means batch can be used to recharge user",
+                "type": "boolean",
+                "required": false
+              },
+              "can_create_user": {
+                "title": "true means batch can be used to create user",
+                "type": "boolean",
+                "required": false
+              },
+              "credit_from": {
+                "title": "",
+                "type": "number",
+                "required": false
+              },
+              "credit_to": {
+                "title": "",
+                "type": "number",
+                "required": false
+              }
+            }
+          }
+        },
+        {
+          "name": "from",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "to",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "sort_by",
+          "description": "",
+          "schema": {
+            "enum": ["batch_id", "batch_name", "batch_credit"]
+          }
+        },
+        {
+          "name": "desc",
+          "description": "descending",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (object)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "properties": {
+            "total_rows": {
+              "title": "number of total rows",
+              "type": "number"
+            },
+            "report": {
+              "title": "",
+              "type": "array",
+              "items": {
+                "title": "",
+                "type": "object",
+                "params": [
+                  {
+                    "name": "batch_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "batch_name",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "batch_is_locked",
+                    "description": "",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "batch_credit",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "batch_can_create_user",
+                    "description": "",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "batch_can_recharge_user",
+                    "description": "",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "batch_change_target",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "batch_comment",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "batch_creation_date",
+                    "description": "datetime, ",
+                    "type": "string",
+                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+                  },
+                  {
+                    "name": "batch_isp_id",
+                    "description": "int",
+                    "type": "number"
+                  },
+                  {
+                    "name": "batch_allow_use_by_children_isp",
+                    "description": "",
+                    "type": "boolean"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "voucher.voucherRechargeUser",
+      "description": "by admin",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["USE VOUCHER ON USERS"],
+      "params": [
+        {
+          "name": "voucher_pin",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "user_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (number)",
+        "summary": "voucher credit",
+        "schema": {
+          "title": "",
+          "type": "number"
+        }
+      }
+    },
+    {
+      "name": "voucher.voucherRechargeUser",
+      "description": "user needs 'allow_recharge_by_voucher' flag",
+      "auth_type": ["NORMAL_USER", "VOIP_USER"],
+      "params": [
+        {
+          "name": "voucher_pin",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (number)",
+        "summary": "voucher credit",
+        "schema": {
+          "title": "",
+          "type": "number"
+        }
+      }
+    },
+    {
+      "name": "voucher.voucherAddNewUser",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["USE VOUCHER ON USERS", "ADD NEW USER"],
+      "params": [
+        {
+          "name": "voucher_pin",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "isp_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "group_name",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (number)",
+        "summary": "User ID of newly created user",
+        "schema": {
+          "title": "",
+          "type": "number"
+        }
+      }
+    },
+    {
+      "name": "voucher.getBatchVoucherAttrs",
+      "description": "admin needs 'SEE VOUCHER' permission, user needs 'allow_recharge_by_voucher' flag",
+      "auth_type": ["ADMIN", "NORMAL_USER", "VOIP_USER"],
+      "params": [
+        {
+          "name": "voucher_pin",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (object)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "properties": {
+            "voucher_id": {
+              "title": "",
+              "type": "number"
+            },
+            "voucher_pin": {
+              "title": "",
+              "type": "string"
+            },
+            "voucher_serial": {
+              "title": "",
+              "type": "string"
+            },
+            "voucher_is_used": {
+              "title": "",
+              "type": "boolean"
+            },
+            "voucher_used_date": {
+              "title": "datetime, ",
+              "type": "string",
+              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+            },
+            "voucher_user_id": {
+              "title": "",
+              "type": "number"
+            },
+            "batch_id": {
+              "title": "",
+              "type": "number"
+            },
+            "batch_name": {
+              "title": "",
+              "type": "string"
+            },
+            "batch_is_locked": {
+              "title": "",
+              "type": "boolean"
+            },
+            "batch_credit": {
+              "title": "",
+              "type": "number"
+            },
+            "batch_can_create_user": {
+              "title": "",
+              "type": "boolean"
+            },
+            "batch_can_recharge_user": {
+              "title": "",
+              "type": "boolean"
+            },
+            "batch_change_target": {
+              "title": "",
+              "type": "string"
+            },
+            "batch_comment": {
+              "title": "",
+              "type": "string"
+            },
+            "batch_creation_date": {
+              "title": "datetime, ",
+              "type": "string",
+              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+            },
+            "batch_isp_id": {
+              "title": "int",
+              "type": "number"
+            },
+            "batch_allow_use_by_children_isp": {
+              "title": "",
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "voucher.voucherAddBatch",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["CHANGE VOUCHER"],
+      "params": [
+        {
+          "name": "batch_dict",
+          "description": "",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "batch_name": {
+                "title": "",
+                "type": "string"
+              },
+              "is_locked": {
+                "title": "",
+                "type": "boolean",
+                "required": false,
+                "default": "false"
+              },
+              "credit": {
+                "title": "",
+                "type": "number"
+              },
+              "can_recharge_user": {
+                "title": "",
+                "type": "boolean"
+              },
+              "can_create_user": {
+                "title": "",
+                "type": "boolean"
+              },
+              "change_target": {
+                "title": "",
+                "enum": ["credit", "deposit", "deposit_recharge"],
+                "__value_comment__": {
+                  "credit": "Credit",
+                  "deposit": "Renew Deposit",
+                  "deposit_recharge": "Recharge Deposit"
+                }
+              },
+              "allow_use_by_children_isp": {
+                "title": "",
+                "type": "boolean"
+              },
+              "comment": {
+                "title": "",
+                "type": "string"
+              }
+            }
+          }
+        },
+        {
+          "name": "pin_prefix",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "pin_len",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "serial_prefix",
+          "description": "",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "serial_start",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "count",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (number)",
+        "summary": "batch_id",
+        "schema": {
+          "title": "",
+          "type": "number"
+        }
+      }
+    },
+    {
+      "name": "voucher.voucherChangeBatchLockStatus",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["CHANGE VOUCHER"],
+      "params": [
+        {
+          "name": "batch_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "lock",
+          "description": "",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (null)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "voucher.voucherGetBatchByID",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["SEE VOUCHER"],
+      "params": [
+        {
+          "name": "batch_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (object)",
+        "summary": "batch info dict",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "properties": {
+            "batch_id": {
+              "title": "",
+              "type": "number"
+            },
+            "batch_name": {
+              "title": "",
+              "type": "string"
+            },
+            "is_locked": {
+              "title": "",
+              "type": "boolean"
+            },
+            "credit": {
+              "title": "",
+              "type": "number"
+            },
+            "can_recharge_user": {
+              "title": "",
+              "type": "boolean"
+            },
+            "can_create_user": {
+              "title": "",
+              "type": "boolean"
+            },
+            "change_target": {
+              "title": "",
+              "enum": ["credit", "deposit", "deposit_recharge"],
+              "__value_comment__": {
+                "credit": "Credit",
+                "deposit": "Renew Deposit",
+                "deposit_recharge": "Recharge Deposit"
+              }
+            },
+            "isp_name": {
+              "title": "",
+              "type": "string"
+            },
+            "creation_date": {
+              "title": "datetime, ",
+              "type": "string",
+              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+            },
+            "allow_use_by_children_isp": {
+              "title": "",
+              "type": "boolean"
+            },
+            "comment": {
+              "title": "",
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "voucher.getVoucherByID",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["SEE VOUCHER"],
+      "params": [
+        {
+          "name": "voucher_id",
+          "description": "",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (object)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "properties": {
+            "voucher_id": {
+              "title": "",
+              "type": "number"
+            },
+            "batch_id": {
+              "title": "",
+              "type": "number"
+            },
+            "pin": {
+              "title": "",
+              "type": "string"
+            },
+            "serial": {
+              "title": "",
+              "type": "string"
+            },
+            "is_used": {
+              "title": "",
+              "type": "boolean"
+            },
+            "user_id": {
+              "title": "",
+              "type": "number"
+            },
+            "used_date": {
+              "title": "datetime, ",
+              "type": "string",
+              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "voucher.voucherSearchBatch",
+      "description": "",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["SEE VOUCHER"],
+      "params": [
+        {
+          "name": "conds",
+          "description": "",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "isp_names": {
+                "title": "list of isp names, or string of one isp name",
+                "type": ["array", "string"],
+                "required": false
+              },
+              "batch_ids": {
+                "title": "comma-separated Batch IDs",
+                "type": "string",
+                "required": false
+              },
+              "batch_names": {
+                "title": "comma-separated Batch Names",
+                "type": "string",
+                "required": false
+              },
+              "is_locked": {
+                "title": "",
+                "type": "boolean",
+                "required": false
+              },
+              "can_recharge_user": {
+                "title": "",
+                "type": "boolean",
+                "required": false
+              },
+              "can_create_user": {
+                "title": "",
+                "type": "boolean",
+                "required": false
+              },
+              "credit_from": {
+                "title": "only batches with credit >= {credit_from}",
+                "type": "number",
+                "required": false
+              },
+              "credit_to": {
+                "title": "only batches with credit <= {credit_to}",
+                "type": "number",
+                "required": false
+              }
+            }
+          }
+        },
+        {
+          "name": "from",
+          "description": "for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "to",
+          "description": "for pagination",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "sort_by",
+          "schema": {
+            "enum": ["batch_id", "batch_name", "credit"]
+          }
+        },
+        {
+          "name": "desc",
+          "description": "",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (object)",
+        "summary": "",
+        "schema": {
+          "title": "",
+          "type": "object",
+          "properties": {
+            "total_rows": {
+              "title": "total number of results",
+              "type": "number"
+            },
+            "report": {
+              "title": "",
+              "type": "array",
+              "items": {
+                "title": "batch info dict",
+                "type": "object",
+                "params": [
+                  {
+                    "name": "batch_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "batch_name",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "is_locked",
+                    "description": "",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "credit",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "can_create_user",
+                    "description": "",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "can_recharge_user",
+                    "description": "",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "change_target",
+                    "__value_comment__": {
+                      "credit": "Credit",
+                      "deposit": "Renew Deposit",
+                      "deposit_recharge": "Recharge Deposit"
+                    },
+                    "enum": ["credit", "deposit", "deposit_recharge"]
+                  },
+                  {
+                    "name": "comment",
+                    "description": "",
+                    "type": "string"
+                  },
+                  {
+                    "name": "creation_date",
+                    "description": "datetime, ",
+                    "type": "string",
+                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
+                  },
+                  {
+                    "name": "isp_id",
+                    "description": "",
+                    "type": "number"
+                  },
+                  {
+                    "name": "allow_use_by_children_isp",
+                    "description": "",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "is_locked",
+                    "description": "",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "isp_name",
+                    "description": "",
+                    "type": "string"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

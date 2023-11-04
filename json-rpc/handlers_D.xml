@@ -1518,7 +1518,7 @@
     </method>
   </handler>
   <handler name="login" comment="">
-    <method name="webLogin" auth_type="ADMIN, NORMAL_USER, VOIP_USER" comment="added in C_dev_326">
+    <method name="webLogin" auth_type="ANONYMOUS" comment="added in C_dev_326">
       <input type="dict">
         <param name="login_auth_type" type="choice" comment="">
           <choice value="ADMIN" />
@@ -1539,7 +1539,7 @@
         </param>
       </output>
     </method>
-    <method name="login" auth_type="ADMIN, NORMAL_USER, VOIP_USER" comment="login and return Session ID">
+    <method name="login" auth_type="ANONYMOUS" comment="login and return Session ID">
       <input type="dict">
         <param name="login_auth_type" type="choice" comment="">
           <choice value="ADMIN" />
@@ -1553,7 +1553,7 @@
       </input>
       <output type="str" comment="Session ID" />
     </method>
-    <method name="login" auth_type="ADMIN, NORMAL_USER, VOIP_USER" comment="login without generating session">
+    <method name="login" auth_type="ANONYMOUS" comment="login without generating session">
       <input type="dict">
         <param name="login_auth_type" type="choice" comment="">
           <choice value="ADMIN" />
@@ -2024,7 +2024,7 @@
     <method name="adminSearchReceivedMessage" auth_type="ADMIN" requires_perm="SEE MESSAGE CENTER REPORTS" comment="Messages of Users">
       <input type="dict">
         <param name="conds" type="dict" comment="">
-          <param name="owner_type" value="USER" comment="" />
+          <param name="owner_type" type="str" value="USER" comment="" />
           <param name="user_ids" type="int" multi_str="true" optional="true" comment="" />
           <param name="user_deleted" type="bool" optional="true" comment="" />
           <param name="message_ids" type="int" multi_str="true" optional="true" comment="" />
@@ -2106,7 +2106,9 @@
     <method name="adminSearchReceivedMessage" auth_type="ADMIN" requires_perm="SEE MESSAGE CENTER REPORTS" comment="Messages of ISP">
       <input type="dict">
         <param name="conds" type="dict" comment="">
-          <param name="owner_type" value="ISP" comment="" />
+          <param name="owner_type" type="choice" comment="">
+            <choice value="ISP" />
+          </param>
           <param name="isp_ids" type="int" multi_str="true" optional="true" comment="" />
           <param name="message_ids" type="int" multi_str="true" optional="true" comment="" />
           <param name="receive_date_from" type="datetime, float" optional="true" requires_param="receive_date_from_unit" comment="" />
@@ -2263,7 +2265,9 @@
     <method name="adminSearchSentMessage" auth_type="ADMIN" requires_perm="SEE MESSAGE CENTER REPORTS" comment="Messages of Users">
       <input type="dict">
         <param name="conds" type="dict" comment="">
-          <param name="owner_type" value="USER" comment="" />
+          <param name="owner_type" type="choice" comment="">
+            <choice value="USER" />
+          </param>
           <param name="user_ids" type="int" multi_str="true" optional="true" comment="" />
           <param name="user_deleted" type="bool" optional="true" comment="" />
           <param name="message_ids" type="int" multi_str="true" optional="true" comment="" />
@@ -2342,7 +2346,9 @@
     <method name="adminSearchSentMessage" auth_type="ADMIN" requires_perm="SEE MESSAGE CENTER REPORTS" comment="Messages of ISP">
       <input type="dict">
         <param name="conds" type="dict" comment="">
-          <param name="owner_type" value="ISP" comment="" />
+          <param name="owner_type" type="choice" comment="">
+            <choice value="ISP" />
+          </param>
           <param name="isp_ids" type="int" multi_str="true" optional="true" comment="" />
           <param name="message_ids" type="int" multi_str="true" optional="true" comment="" />
           <param name="transfer_date_from" type="datetime, float" optional="true" requires_param="transfer_date_from_unit" comment="" />
@@ -3238,7 +3244,7 @@
           <param name="isp_names" type="list" length="-1" item_type="str"  optional="true" comment="" />
           <param name="ras_ips" type="list" length="-1" item_type="str" optional="true" comment="" />
           <param name="remote_ip" type="str" multi_str="true" optional="true" comment="" />
-          <param name="username_starts_with" type="list or string" optional="true"
+          <param name="username_starts_with" type="list, str" optional="true"
                      comment="Array('A', 'B', 'C'), is like 'ABC'" />
         </param>
       </input>
@@ -3937,7 +3943,7 @@
 			<param name="isp_name" type="str" comment="User ISP name" />
 			<param name="creation_date" type="str" comment="User creation date" />
 			<param name="name" type="str" comment="Name of user" />
-			<param name="sub_service_name" type="Sub service name" comment="" />
+			<param name="sub_service_name" type="str" comment="Sub service name" />
 			<param name="sub_service_charging" type="str" comment="Sub service charging name" />
 			<param name="seb_service_qos" type="str" comment="Sub service QOS name" />
 			<param name="total_credit" type="int" comment="Total credit" />
@@ -4176,7 +4182,7 @@
     <method name="getCreditChanges" auth_type="ADMIN" requires_perm="SEE CREDIT CHANGES" comment="User-View Credit Changes">
       <input type="dict">
         <param name="conds" type="dict" comment="">
-          <param name="user_view" value="" optional="false" comment="" />
+          <param name="user_view" type="any" optional="false" comment="" />
           <param name="user_ids" type="str" multi_str="true" optional="true" comment="" />
           <param name="voip_username" type="str" optional="true" comment="" />
           <param name="admin" type="str" optional="true" comment="admin username" />
@@ -4305,7 +4311,7 @@
     <method name="getCreditChanges" auth_type="NORMAL_USER, VOIP_USER" requires_perm="SEE CREDIT CHANGES" comment="User-View Credit Changes by User">
       <input type="dict">
         <param name="conds" type="dict" comment="">
-          <param name="user_view" value="" optional="false" comment="" />
+          <param name="user_view" type="any" optional="false" comment="" />
           <param name="action" type="list" length="-1" optional="true" comment="">
             <item type="choice">
               <choice value="ADD_USER" comment="" />
@@ -5612,8 +5618,7 @@
     </method>
     <method name="getBWSnapShot" auth_type="ADMIN, NORMAL_USER, VOIP_USER" requires_perm="" comment="">
       <input type="dict">
-        <key type="str" comment="reporting condition" />
-        <value type="dict" comment="">
+        <param name="conds" type="dict" comment="reporting condition">
           <param name="user_id" type="str" comment="unique user id for limit reporting for that user"/>
           <param name="date_from" type="str" comment="start date and time, format '%Y-%m-%d %H:%M'"/>
           <param name="date_to" type="str" comment="start date and time, format '%Y-%m-%d %H:%M'"/>
@@ -5649,7 +5654,7 @@
             <choice value="&lt;=" comment="less equal" />
             <choice value="&gt;=" comment="more equal" />
           </param>
-        </value>
+        </param>
       </input>
       <output type="list" length="3" comment="">
         <item index="0" type="int" comment="epoch time" />
@@ -5659,8 +5664,7 @@
     </method>
     <method name="getGroupBWSnapShot" auth_type="ADMIN" requires_perm="" comment="">
       <input type="dict">
-        <key type="str" comment="reporting condition" />
-        <value type="dict" comment="">
+        <param name="conds" type="dict" comment="reporting condition">
           <param name="group_names" type="str" comment="list of group names"/>
           <param name="date_from" type="str" comment="start date and time, format '%Y-%m-%d %H:%M'"/>
           <param name="date_to" type="str" comment="start date and time, format '%Y-%m-%d %H:%M'"/>
@@ -5696,7 +5700,7 @@
             <choice value="&lt;=" comment="less equal" />
             <choice value="&gt;=" comment="more equal" />
           </param>
-        </value>
+        </param>
       </input>
       <output type="list" length="3" comment="">
         <item index="0" type="int" comment="epoch time" />
@@ -5706,8 +5710,7 @@
     </method>
     <method name="getISPBWSnapShot" auth_type="ADMIN" requires_perm="" comment="">
       <input type="dict">
-        <key type="str" comment="reporting condition" />
-        <value type="dict" comment="">
+        <param name="conds" type="dict" comment="reporting condition">
           <param name="isp_names" type="str" comment="list of isp names"/>
           <param name="date_from" type="str" comment="start date and time, format '%Y-%m-%d %H:%M'"/>
           <param name="date_to" type="str" comment="start date and time, format '%Y-%m-%d %H:%M'"/>
@@ -5743,7 +5746,7 @@
             <choice value="&lt;=" comment="less equal" />
             <choice value="&gt;=" comment="more equal" />
           </param>
-        </value>
+        </param>
       </input>
       <output type="list" length="3" comment="">
         <item index="0" type="int" comment="epoch time" />
@@ -5753,8 +5756,7 @@
     </method>
     <method name="getRasBWSnapShot" auth_type="ADMIN" requires_perm="" comment="">
       <input type="dict">
-        <key type="str" comment="reporting condition" />
-        <value type="dict" comment="">
+        <param name="conds" type="dict" comment="reporting condition">
           <param name="ras_ips" type="str" comment="list of ras ips"/>
           <param name="date_from" type="str" comment="start date and time, format '%Y-%m-%d %H:%M'"/>
           <param name="date_to" type="str" comment="start date and time, format '%Y-%m-%d %H:%M'"/>
@@ -5790,7 +5792,7 @@
             <choice value="&lt;=" comment="less equal" />
             <choice value="&gt;=" comment="more equal" />
           </param>
-        </value>
+        </param>
       </input>
       <output type="list" length="3" comment="">
         <item index="0" type="int" comment="epoch time" />
@@ -6473,7 +6475,7 @@
           <param name="auto_renew_do_not_reset_credit" type="true_if_exists" optional="true" comment="User Info: Flags: Auto Renew No Not Reset Credit" />
           <param name="charge" type="str" optional="true" comment="charge name" />
           <param name="abs_exp_date" type="str" optional="true" requires_param="abs_exp_date_unit" comment="gregorian datetime string" />
-          <param name="abs_exp_date_unit" value="gregorian" optional="true" comment="" />
+          <param name="abs_exp_date_unit" type="str" value="gregorian" optional="true" comment="" />
           <param name="allow_recharge_by_voucher" type="true_if_exists" comment="User Info: Flags: Allow Recharge By Voucher" />
           <param name="allow_user_disconnect" type="true_if_exists" optional="true_if_exists" comment="User Info: Flags: Allow User Disconnect" />
           <param name="assign_dns_1" type="str" optional="true" requires_param="assign_dns_2" comment="" />
@@ -6702,19 +6704,19 @@
           <param name="notification_last_bill_cycle_threshold" type="str" optional="true" comment="which is the last threshold of bill cycle end which IBSng sent it" />
           <param name="notification_last_exp_threshold" type="str" optional="true" comment="which is the last threshold of expiration date  which IBSng sent it" />
           <param name="notification_last_credit1_threshold" type="str" optional="true" comment="which is the last threshold of credit which IBSng sent it" />
-          <param name="unpaid_bill_cycle_end" type="date_str" optional="true" comment="Which is unpaid bill cycle" />
-          <param name="bill_cycle_start" type="date_str" optional="true" comment="which is the bill cycle start" />
-          <param name="bill_cycle_end" type="date_str" optional="true" comment="Which is the bill cycle start" />
+          <param name="unpaid_bill_cycle_end" type="datetime" optional="true" comment="Which is unpaid bill cycle" />
+          <param name="bill_cycle_start" type="datetime" optional="true" comment="which is the bill cycle start" />
+          <param name="bill_cycle_end" type="datetime" optional="true" comment="Which is the bill cycle start" />
 
-          <param name="announce_credit_threshold" type="string" optional="true"
+          <param name="announce_credit_threshold" type="str" optional="true"
                  comment="The threshold to which an announcement will be player for subscriber"/>
-          <param name="chakavak_area_code" type="string" optional="true" comment="Area code of user"/>
+          <param name="chakavak_area_code" type="str" optional="true" comment="Area code of user"/>
           <param name="chakavak_call_blocking_status" type="choice" optional="true" comment="Call blocking">
             <choice value="ONEWAY" comment=""/>
             <choice value="TWOWAY" comment=""/>
             <choice value="BARRED" comment=""/>
           </param>
-          <param name="chakavak_callerid_name" type="string" optional="true"
+          <param name="chakavak_callerid_name" type="str" optional="true"
                  comment="Name of caller id which will be sent for user"/>
           <param name="chakavak_capabilities" type="list" length="-1" item_type="choice" optional="true"
                  comment="Available capabilities for user">
@@ -6723,7 +6725,7 @@
               <choice value="DIVERT" comment=""/>
             </item>
           </param>
-          <param name="chakavak_cc_code" type="string" optional="true" comment=""/>
+          <param name="chakavak_cc_code" type="str" optional="true" comment=""/>
           <param name="chakavak_codec" type="choice" optional="true" comment="Set of codecs user can use">
             <choice value="iLBC@30i" comment=""/>
             <choice value="speex@8000h@20i" comment=""/>
@@ -6749,28 +6751,28 @@
             <choice value="H263-2000" comment=""/>
             <choice value="H264" comment=""/>
           </param>
-          <param name="chakavak_codec_negotiation" type="string" optional="true"
+          <param name="chakavak_codec_negotiation" type="str" optional="true"
                  comment="Perform Early or Late negotiation. Overrides switch defaults">
             <choice value="late" comment=""/>
             <choice value="early" comment=""/>
           </param>
-          <param name="chakavak_codec_transcoding" type="string" optional="true"
+          <param name="chakavak_codec_transcoding" type="str" optional="true"
                  comment="Allow/Disallow transcoding for user">
             <choice value="Enable" comment=""/>
             <choice value="Disable" comment=""/>
           </param>
-          <param name="divert_number_unconditional" type="string" optional="true"
+          <param name="divert_number_unconditional" type="str" optional="true"
                  comment="Unconditional divert number"/>
-          <param name="divert_number_busy" type="string" optional="true" comment="Busy divert number"/>
-          <param name="divert_number_noanswer" type="string" optional="true" comment="No answer divert number"/>
-          <param name="chakavak_limit_client_ip" type="string" optional="true"
+          <param name="divert_number_busy" type="str" optional="true" comment="Busy divert number"/>
+          <param name="divert_number_noanswer" type="str" optional="true" comment="No answer divert number"/>
+          <param name="chakavak_limit_client_ip" type="str" optional="true"
                  comment="List of IP's user allowed to register from (comma separated list of IP's)"/>
-          <param name="chakavak_location" type="string" optional="true" comment="Location of user. Currently unused"/>
-          <param name="chakavak_ringback" type="string" optional="true"
+          <param name="chakavak_location" type="str" optional="true" comment="Location of user. Currently unused"/>
+          <param name="chakavak_ringback" type="str" optional="true"
                  comment="Name of ringback file. Ringbacks should be defined in a separate system and just the selected ringback will be kept in user profile"/>
-          <param name="chakavak_sip_password" type="string" optional="true"
+          <param name="chakavak_sip_password" type="str" optional="true"
                  comment="SIP password. This is different from voip_password and is just used for sip registration"/>
-          <param name="chakavak_voicemail" type="string" optional="true" comment="Voice mail password (Digits only)"/>
+          <param name="chakavak_voicemail" type="str" optional="true" comment="Voice mail password (Digits only)"/>
         </param>
         <param name="to_del_attrs" type="list" comment="list of attributes to be deleted" />
       </input>
@@ -8593,7 +8595,7 @@
       <input type="dict">
         <param name="batch_dict" type="dict" comment="">
           <param name="batch_name" type="str" comment="" />
-          <param name="is_locked" type="bool" default="False" comment="" />
+          <param name="is_locked" type="bool" default="false" comment="" />
           <param name="credit" type="float" comment="" />
           <param name="can_recharge_user" type="bool" comment="" />
           <param name="can_create_user" type="bool" comment="" />
@@ -9400,7 +9402,7 @@
         <param name="failed_users" type="list" item_type="dict" length="">
           <item type="dict">
             <param name="user_id" type="int" />
-            <param name="failure_msg" type="error message" />
+            <param name="failure_msg" type="str" comment="error message" />
           </item>
         </param>
       </output>
