@@ -495,7 +495,8 @@
       ],
       "result": {
         "name": "Response (always true)",
-        "summary": ""
+        "summary": "",
+        "schema": null
       }
     },
     {
