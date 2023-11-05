@@ -1,3 +1,9 @@
+#!/bin/bash
+
+if [ -n "$1" ] ; then
+	cd "$1"
+fi
+
 jd -color admin.std.json admin.json
 jd -color balance.std.json balance.json
 jd -color bw.std.json bw.json
