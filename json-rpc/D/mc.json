@@ -28,6 +28,7 @@
           "name": "view_type",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["SEND", "REPORT"]
           }
         }
@@ -81,14 +82,15 @@
             },
             "provider_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "owner_isp_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "provider_type": {
               "title": "",
+              "type": "string",
               "enum": [
                 "Parspooyesh",
                 "Pishgaman",
@@ -105,6 +107,7 @@
             },
             "msg_type": {
               "title": "",
+              "type": "string",
               "enum": ["SMS", "E-Mail", "Message To Admin", "Message To User"]
             }
           }
@@ -143,6 +146,7 @@
           "name": "provider_type",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": [
               "Parspooyesh",
               "Pishgaman",
@@ -169,6 +173,7 @@
           "name": "msg_type",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["SMS", "E-Mail", "Message To Admin", "Message To User"]
           }
         }
@@ -186,14 +191,15 @@
             },
             "provider_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "owner_isp_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "provider_type": {
               "title": "",
+              "type": "string",
               "enum": [
                 "Parspooyesh",
                 "Pishgaman",
@@ -210,6 +216,7 @@
             },
             "msg_type": {
               "title": "",
+              "type": "string",
               "enum": ["SMS", "E-Mail", "Message To Admin", "Message To User"]
             }
           }
@@ -377,7 +384,7 @@
           "name": "count",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
@@ -414,7 +421,7 @@
           "name": "end_point_group_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         }
       ],
@@ -437,14 +444,14 @@
           "name": "provider_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "end_point_group_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         }
       ],
@@ -467,14 +474,14 @@
           "name": "end_point_group_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "provider_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         }
       ],
@@ -487,11 +494,11 @@
           "properties": {
             "end_point_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "end_point_group_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "end_point_repr": {
               "title": "",
@@ -499,7 +506,7 @@
             },
             "assigned_user_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             }
           }
         }
@@ -522,6 +529,7 @@
               },
               "msg_type": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "SMS",
                   "E-Mail",
@@ -573,6 +581,7 @@
           "name": "msg_type",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["SMS", "E-Mail", "Message To Admin", "Message To User"]
           }
         }
@@ -609,6 +618,7 @@
           "name": "msg_type",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["SMS", "E-Mail", "Message To Admin", "Message To User"]
           }
         },
@@ -622,6 +632,7 @@
         {
           "name": "schedule_date_unit",
           "schema": {
+            "type": "string",
             "enum": [
               "jalali",
               "gregorian",
@@ -666,6 +677,7 @@
           "name": "msg_type",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["SMS", "E-Mail", "Message To Admin", "Message To User"]
           }
         }
@@ -702,6 +714,7 @@
           "name": "msg_type",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["SMS", "E-Mail", "Message To Admin", "Message To User"]
           }
         },
@@ -715,6 +728,7 @@
         {
           "name": "schedule_date_unit",
           "schema": {
+            "type": "string",
             "enum": [
               "jalali",
               "gregorian",
@@ -827,7 +841,7 @@
             "properties": {
               "message_ids": {
                 "title": "",
-                "type": "number",
+                "type": "integer",
                 "required": false
               },
               "receive_date_from": {
@@ -837,6 +851,7 @@
               },
               "receive_date_from_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -854,6 +869,7 @@
               },
               "receive_date_to_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -871,6 +887,7 @@
               },
               "body_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "from": {
@@ -880,10 +897,12 @@
               },
               "from_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "msg_types": {
                 "title": "can be a list (of strings) too, for example: msg_types=['SMS', 'E-Mail']",
+                "type": "string",
                 "enum": [
                   "SMS",
                   "E-Mail",
@@ -898,20 +917,21 @@
           "name": "from",
           "description": "page start index",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "to",
           "description": "page end index",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "order_by",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["message_id", "msg_type", "transfer_date"]
           }
         },
@@ -950,7 +970,7 @@
               },
               "user_ids": {
                 "title": "",
-                "type": "number",
+                "type": "integer",
                 "required": false
               },
               "user_deleted": {
@@ -960,7 +980,7 @@
               },
               "message_ids": {
                 "title": "",
-                "type": "number",
+                "type": "integer",
                 "required": false
               },
               "receive_date_from": {
@@ -970,6 +990,7 @@
               },
               "receive_date_from_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -987,6 +1008,7 @@
               },
               "receive_date_to_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -1004,6 +1026,7 @@
               },
               "body_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "from": {
@@ -1013,10 +1036,12 @@
               },
               "from_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "msg_types": {
                 "title": "can be a list (of strings) too, for example: msg_types=['SMS', 'E-Mail']",
+                "type": "string",
                 "enum": [
                   "SMS",
                   "E-Mail",
@@ -1031,20 +1056,21 @@
           "name": "from",
           "description": "page start index",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "to",
           "description": "page end index",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "order_by",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["message_id", "msg_type", "transfer_date"]
           }
         },
@@ -1079,16 +1105,17 @@
             "properties": {
               "owner_type": {
                 "title": "",
+                "type": "string",
                 "enum": ["ISP"]
               },
               "isp_ids": {
                 "title": "",
-                "type": "number",
+                "type": "integer",
                 "required": false
               },
               "message_ids": {
                 "title": "",
-                "type": "number",
+                "type": "integer",
                 "required": false
               },
               "receive_date_from": {
@@ -1098,6 +1125,7 @@
               },
               "receive_date_from_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -1115,6 +1143,7 @@
               },
               "receive_date_to_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -1132,6 +1161,7 @@
               },
               "body_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "from": {
@@ -1141,10 +1171,12 @@
               },
               "from_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "msg_types": {
                 "title": "can be a list (of strings) too, for example: msg_types=['SMS', 'E-Mail']",
+                "type": "string",
                 "enum": [
                   "SMS",
                   "E-Mail",
@@ -1159,20 +1191,21 @@
           "name": "from",
           "description": "page start index",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "to",
           "description": "page end index",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "order_by",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["message_id", "msg_type", "transfer_date"]
           }
         },
@@ -1206,7 +1239,7 @@
             "properties": {
               "message_ids": {
                 "title": "",
-                "type": "number",
+                "type": "integer",
                 "required": false
               },
               "transfer_date_from": {
@@ -1216,6 +1249,7 @@
               },
               "transfer_date_from_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -1233,6 +1267,7 @@
               },
               "transfer_date_to_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -1250,6 +1285,7 @@
               },
               "body_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "to": {
@@ -1259,10 +1295,12 @@
               },
               "to_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "msg_types": {
                 "title": "can be a list (of strings) too, for example: msg_types=['SMS', 'E-Mail']",
+                "type": "string",
                 "enum": [
                   "SMS",
                   "E-Mail",
@@ -1277,20 +1315,21 @@
           "name": "from",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "to",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "order_by",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["message_id", "msg_type", "transfer_date"]
           }
         },
@@ -1311,11 +1350,11 @@
           "properties": {
             "message_pack_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "message_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "failed": {
               "title": "",
@@ -1331,11 +1370,12 @@
             },
             "msg_type": {
               "title": "",
+              "type": "string",
               "enum": ["SMS", "E-Mail", "Message To Admin", "Message To User"]
             },
             "user_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "transfer_date": {
               "title": "date type (gregorian/jalali) depends on input date_type",
@@ -1375,11 +1415,12 @@
             "properties": {
               "owner_type": {
                 "title": "",
+                "type": "string",
                 "enum": ["USER"]
               },
               "user_ids": {
                 "title": "",
-                "type": "number",
+                "type": "integer",
                 "required": false
               },
               "user_deleted": {
@@ -1389,7 +1430,7 @@
               },
               "message_ids": {
                 "title": "",
-                "type": "number",
+                "type": "integer",
                 "required": false
               },
               "transfer_date_from": {
@@ -1399,6 +1440,7 @@
               },
               "transfer_date_from_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -1416,6 +1458,7 @@
               },
               "transfer_date_to_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -1433,6 +1476,7 @@
               },
               "body_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "to": {
@@ -1442,10 +1486,12 @@
               },
               "to_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "msg_types": {
                 "title": "can be a list (of strings) too, for example: msg_types=['SMS', 'E-Mail']",
+                "type": "string",
                 "enum": [
                   "SMS",
                   "E-Mail",
@@ -1460,20 +1506,21 @@
           "name": "from",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "to",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "order_by",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["message_id", "msg_type", "transfer_date"]
           }
         },
@@ -1494,11 +1541,11 @@
           "properties": {
             "message_pack_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "message_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "failed": {
               "title": "",
@@ -1514,11 +1561,12 @@
             },
             "msg_type": {
               "title": "",
+              "type": "string",
               "enum": ["SMS", "E-Mail", "Message To Admin", "Message To User"]
             },
             "user_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "transfer_date": {
               "title": "date type (gregorian/jalali) depends on input date_type",
@@ -1558,16 +1606,17 @@
             "properties": {
               "owner_type": {
                 "title": "",
+                "type": "string",
                 "enum": ["ISP"]
               },
               "isp_ids": {
                 "title": "",
-                "type": "number",
+                "type": "integer",
                 "required": false
               },
               "message_ids": {
                 "title": "",
-                "type": "number",
+                "type": "integer",
                 "required": false
               },
               "transfer_date_from": {
@@ -1577,6 +1626,7 @@
               },
               "transfer_date_from_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -1594,6 +1644,7 @@
               },
               "transfer_date_to_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -1611,6 +1662,7 @@
               },
               "body_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "to": {
@@ -1620,10 +1672,12 @@
               },
               "to_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "msg_types": {
                 "title": "can be a list (of strings) too, for example: msg_types=['SMS', 'E-Mail']",
+                "type": "string",
                 "enum": [
                   "SMS",
                   "E-Mail",
@@ -1638,20 +1692,21 @@
           "name": "from",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "to",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "order_by",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["message_id", "msg_type", "transfer_date"]
           }
         },
@@ -1672,11 +1727,11 @@
           "properties": {
             "message_pack_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "message_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "failed": {
               "title": "",
@@ -1692,11 +1747,12 @@
             },
             "msg_type": {
               "title": "",
+              "type": "string",
               "enum": ["SMS", "E-Mail", "Message To Admin", "Message To User"]
             },
             "user_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "transfer_date": {
               "title": "date type (gregorian/jalali) depends on input date_type",
@@ -1736,16 +1792,17 @@
             "properties": {
               "owner_type": {
                 "title": "",
+                "type": "string",
                 "enum": ["ISP", "USER"]
               },
               "owner_ids": {
                 "title": "",
-                "type": "number",
+                "type": "integer",
                 "required": false
               },
               "message_ids": {
                 "title": "",
-                "type": "number",
+                "type": "integer",
                 "required": false
               },
               "isp_names": {
@@ -1760,6 +1817,7 @@
               },
               "schedule_date_from_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -1777,6 +1835,7 @@
               },
               "schedule_date_to_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -1794,6 +1853,7 @@
               },
               "body_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "to": {
@@ -1803,6 +1863,7 @@
               },
               "to_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "source": {
@@ -1812,10 +1873,12 @@
               },
               "source_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "msg_types": {
                 "title": "can be a list (of strings) too, for example: msg_types=['SMS', 'E-Mail']",
+                "type": "string",
                 "enum": [
                   "SMS",
                   "E-Mail",
@@ -1830,20 +1893,21 @@
           "name": "from",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "to",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "order_by",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["message_id", "msg_type", "transfer_date"]
           }
         },
@@ -1864,23 +1928,25 @@
           "properties": {
             "message_pack_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "message_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "msg_type": {
               "title": "",
+              "type": "string",
               "enum": ["SMS", "E-Mail", "Message To Admin", "Message To User"]
             },
             "owner_type": {
               "title": "",
+              "type": "string",
               "enum": ["ISP", "USER"]
             },
             "owner_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "scheduled_date": {
               "title": "date type (gregorian/jalali) depends on input date_type",
@@ -1888,7 +1954,7 @@
             },
             "try_count": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "source": {
               "title": "",
@@ -1908,7 +1974,7 @@
             },
             "isp_send_to_all": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "in_process": {
               "title": "",
@@ -1931,7 +1997,7 @@
             "properties": {
               "message_ids": {
                 "title": "",
-                "type": "number",
+                "type": "integer",
                 "required": false
               },
               "schedule_date_from": {
@@ -1941,6 +2007,7 @@
               },
               "schedule_date_from_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -1958,6 +2025,7 @@
               },
               "schedule_date_to_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -1975,6 +2043,7 @@
               },
               "body_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "to": {
@@ -1984,6 +2053,7 @@
               },
               "to_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "source": {
@@ -1993,10 +2063,12 @@
               },
               "source_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "msg_types": {
                 "title": "can be a list (of strings) too, for example: msg_types=['SMS', 'E-Mail']",
+                "type": "string",
                 "enum": [
                   "SMS",
                   "E-Mail",
@@ -2011,20 +2083,21 @@
           "name": "from",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "to",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "order_by",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["message_id", "msg_type", "transfer_date"]
           }
         },
@@ -2045,23 +2118,25 @@
           "properties": {
             "message_pack_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "message_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "msg_type": {
               "title": "",
+              "type": "string",
               "enum": ["SMS", "E-Mail", "Message To Admin", "Message To User"]
             },
             "owner_type": {
               "title": "",
+              "type": "string",
               "enum": ["ISP", "USER"]
             },
             "owner_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "scheduled_date": {
               "title": "date type (gregorian/jalali) depends on input date_type",
@@ -2069,7 +2144,7 @@
             },
             "try_count": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "source": {
               "title": "",
@@ -2089,7 +2164,7 @@
             },
             "isp_send_to_all": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "in_process": {
               "title": "",
@@ -2108,20 +2183,21 @@
           "name": "from",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "to",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "order_by",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["message_id", "msg_type", "transfer_date"]
           }
         },
@@ -2145,7 +2221,7 @@
               "type": "array",
               "items": {
                 "title": "",
-                "type": "list"
+                "type": "array"
               }
             }
           }
@@ -2158,11 +2234,11 @@
       "auth_type": ["NORMAL_USER", "VOIP_USER"],
       "params": [],
       "result": {
-        "name": "Response (number)",
+        "name": "Response (integer)",
         "summary": "Message ID of Last Message",
         "schema": {
           "title": "",
-          "type": "number"
+          "type": "integer"
         }
       }
     },
@@ -2175,7 +2251,7 @@
           "name": "message_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         }
       ],
@@ -2197,13 +2273,14 @@
           "name": "message_ids",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "target_box",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["USER_SEND", "USER_RECEIVE", "QUEUE"]
           }
         }
@@ -2227,13 +2304,14 @@
           "name": "message_ids",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "target_box",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": [
               "USER_SEND",
               "USER_RECEIVE",
@@ -2262,7 +2340,7 @@
           "name": "message_ids",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         }
       ],
@@ -2285,7 +2363,7 @@
           "name": "message_ids",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         }
       ],
@@ -2398,6 +2476,7 @@
           "name": "type",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["ADMIN", "USER"]
           }
         }

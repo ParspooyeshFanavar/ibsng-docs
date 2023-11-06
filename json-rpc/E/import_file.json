@@ -28,15 +28,15 @@
           "properties": {
             "customer": {
               "title": "last sequence of customer id if sequence_type equal CUSTOMER",
-              "type": "number"
+              "type": "integer"
             },
             "user": {
               "title": "last sequence of user id if sequence_type equal USER",
-              "type": "number"
+              "type": "integer"
             },
             "user_balance": {
               "title": "last sequence of user_balance id if sequence_type equal USER_BALANCE",
-              "type": "number"
+              "type": "integer"
             }
           }
         }
@@ -78,7 +78,7 @@
           "properties": {
             "record_file_id": {
               "title": "return the id of generate of import_files table",
-              "type": "number"
+              "type": "integer"
             }
           }
         }
@@ -114,19 +114,19 @@
             },
             "admin_id": {
               "title": "id of admin",
-              "type": "number"
+              "type": "integer"
             },
             "success_count": {
               "title": "number of data success full transfer",
-              "type": "number"
+              "type": "integer"
             },
             "error_count": {
               "title": "number of data error transfer",
-              "type": "number"
+              "type": "integer"
             },
             "import_file_id": {
               "title": "id of import_files table that inserted record",
-              "type": "number"
+              "type": "integer"
             },
             "deleted_at": {
               "title": "datetime, date time of delete data uploaded",
@@ -148,7 +148,7 @@
             },
             "total_row": {
               "title": "total of rows that in file uploaded",
-              "type": "number"
+              "type": "integer"
             },
             "created_at": {
               "title": "datetime, date time of create recorde",
@@ -172,7 +172,7 @@
           "name": "file_import_id",
           "description": "send id of recorde of import_files table that s",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
@@ -201,7 +201,7 @@
           "name": "file_import_id",
           "description": "send id of recorde of import_files table that s",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
@@ -246,7 +246,7 @@
             },
             "import_file_id": {
               "title": "id of recorde in import_files",
-              "type": "number"
+              "type": "integer"
             },
             "address": {
               "title": "address",
@@ -262,7 +262,7 @@
             },
             "customer_id": {
               "title": "customer id",
-              "type": "number"
+              "type": "integer"
             },
             "email": {
               "title": "email",
@@ -274,7 +274,7 @@
             },
             "row_number": {
               "title": "id of recorde ",
-              "type": "number"
+              "type": "integer"
             }
           }
         }

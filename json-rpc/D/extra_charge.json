@@ -55,9 +55,10 @@
             "items": {
               "title": "rule info dict",
               "type": "object",
-              "params": [
-                {
-                  "name": "start_from",
+              "properties": {
+                "start_from": {
+                  "title": "",
+                  "type": "string",
                   "enum": [
                     "user_creation_date",
                     "user_real_first_login",
@@ -68,58 +69,57 @@
                     "child_active_user_creation_date"
                   ]
                 },
-                {
-                  "name": "description",
-                  "description": "",
+                "description": {
+                  "title": "",
                   "type": "string"
                 },
-                {
-                  "name": "period",
+                "period": {
+                  "title": "",
+                  "type": "string",
                   "enum": ["monthly", "start_of_month", "daily", "none"]
                 },
-                {
-                  "name": "period_value",
+                "period_value": {
+                  "title": "",
+                  "type": "string",
                   "enum": ["gregorian", "jalali"]
                 },
-                {
-                  "name": "change_target",
+                "change_target": {
+                  "title": "",
+                  "type": "string",
                   "enum": ["credit", "deposit", "night_free"]
                 },
-                {
-                  "name": "change_action",
+                "change_action": {
+                  "title": "",
+                  "type": "string",
                   "enum": ["SET", "ADD", "MULTIPLY"]
                 },
-                {
-                  "name": "amount",
-                  "description": "",
+                "amount": {
+                  "title": "",
                   "type": "number"
                 },
-                {
-                  "name": "negate_credit",
-                  "description": "",
+                "negate_credit": {
+                  "title": "",
                   "type": "boolean"
                 },
-                {
-                  "name": "pay_back",
-                  "description": "",
+                "pay_back": {
+                  "title": "",
                   "type": "boolean"
                 },
-                {
-                  "name": "ignore_first_time",
-                  "description": "",
+                "ignore_first_time": {
+                  "title": "",
                   "type": "boolean"
                 }
-              ]
+              }
             }
           }
         }
       ],
       "result": {
-        "name": "Response (number)",
+        "name": "Response (integer)",
         "summary": "extra_charge_profile_id",
         "schema": {
           "title": "",
-          "type": "number"
+          "type": "integer"
         }
       }
     },
@@ -133,7 +133,7 @@
           "name": "profile_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
@@ -165,16 +165,16 @@
             "items": {
               "title": "rule info dict",
               "type": "object",
-              "params": [
-                {
-                  "name": "rule_id",
-                  "description": "leave -1 for new rules",
+              "properties": {
+                "rule_id": {
+                  "title": "leave -1 for new rules",
+                  "type": "integer",
                   "required": false,
-                  "default": "-1",
-                  "type": "number"
+                  "default": "-1"
                 },
-                {
-                  "name": "start_from",
+                "start_from": {
+                  "title": "",
+                  "type": "string",
                   "enum": [
                     "user_creation_date",
                     "user_real_first_login",
@@ -185,48 +185,47 @@
                     "child_active_user_creation_date"
                   ]
                 },
-                {
-                  "name": "description",
-                  "description": "",
+                "description": {
+                  "title": "",
                   "type": "string"
                 },
-                {
-                  "name": "period",
+                "period": {
+                  "title": "",
+                  "type": "string",
                   "enum": ["monthly", "start_of_month", "daily", "none"]
                 },
-                {
-                  "name": "period_value",
+                "period_value": {
+                  "title": "",
+                  "type": "string",
                   "enum": ["gregorian", "jalali"]
                 },
-                {
-                  "name": "change_target",
+                "change_target": {
+                  "title": "",
+                  "type": "string",
                   "enum": ["credit", "deposit", "night_free"]
                 },
-                {
-                  "name": "change_action",
+                "change_action": {
+                  "title": "",
+                  "type": "string",
                   "enum": ["SET", "ADD", "MULTIPLY"]
                 },
-                {
-                  "name": "amount",
-                  "description": "",
+                "amount": {
+                  "title": "",
                   "type": "number"
                 },
-                {
-                  "name": "negate_credit",
-                  "description": "",
+                "negate_credit": {
+                  "title": "",
                   "type": "boolean"
                 },
-                {
-                  "name": "pay_back",
-                  "description": "",
+                "pay_back": {
+                  "title": "",
                   "type": "boolean"
                 },
-                {
-                  "name": "ignore_first_time",
-                  "description": "",
+                "ignore_first_time": {
+                  "title": "",
                   "type": "boolean"
                 }
-              ]
+              }
             }
           }
         }
@@ -301,7 +300,7 @@
           "properties": {
             "profile_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "profile_name": {
               "title": "",
@@ -321,14 +320,14 @@
               "items": {
                 "title": "rule info dict",
                 "type": "object",
-                "params": [
-                  {
-                    "name": "rule_id",
-                    "description": "",
-                    "type": "number"
+                "properties": {
+                  "rule_id": {
+                    "title": "",
+                    "type": "integer"
                   },
-                  {
-                    "name": "start_from",
+                  "start_from": {
+                    "title": "",
+                    "type": "string",
                     "enum": [
                       "user_creation_date",
                       "user_real_first_login",
@@ -339,48 +338,47 @@
                       "child_active_user_creation_date"
                     ]
                   },
-                  {
-                    "name": "description",
-                    "description": "",
+                  "description": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "period",
+                  "period": {
+                    "title": "",
+                    "type": "string",
                     "enum": ["monthly", "start_of_month", "daily", "none"]
                   },
-                  {
-                    "name": "period_value",
+                  "period_value": {
+                    "title": "",
+                    "type": "string",
                     "enum": ["gregorian", "jalali"]
                   },
-                  {
-                    "name": "change_target",
+                  "change_target": {
+                    "title": "",
+                    "type": "string",
                     "enum": ["credit", "deposit", "night_free"]
                   },
-                  {
-                    "name": "change_action",
+                  "change_action": {
+                    "title": "",
+                    "type": "string",
                     "enum": ["SET", "ADD", "MULTIPLY"]
                   },
-                  {
-                    "name": "amount",
-                    "description": "",
+                  "amount": {
+                    "title": "",
                     "type": "number"
                   },
-                  {
-                    "name": "negate_credit",
-                    "description": "",
+                  "negate_credit": {
+                    "title": "",
                     "type": "boolean"
                   },
-                  {
-                    "name": "pay_back",
-                    "description": "",
+                  "pay_back": {
+                    "title": "",
                     "type": "boolean"
                   },
-                  {
-                    "name": "ignore_first_time",
-                    "description": "",
+                  "ignore_first_time": {
+                    "title": "",
                     "type": "boolean"
                   }
-                ]
+                }
               }
             }
           }
@@ -397,7 +395,7 @@
           "name": "profile_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         }
       ],
@@ -410,7 +408,7 @@
           "properties": {
             "profile_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "profile_name": {
               "title": "",
@@ -430,14 +428,14 @@
               "items": {
                 "title": "rule info dict",
                 "type": "object",
-                "params": [
-                  {
-                    "name": "rule_id",
-                    "description": "",
-                    "type": "number"
+                "properties": {
+                  "rule_id": {
+                    "title": "",
+                    "type": "integer"
                   },
-                  {
-                    "name": "start_from",
+                  "start_from": {
+                    "title": "",
+                    "type": "string",
                     "enum": [
                       "user_creation_date",
                       "user_real_first_login",
@@ -448,48 +446,47 @@
                       "child_active_user_creation_date"
                     ]
                   },
-                  {
-                    "name": "description",
-                    "description": "",
+                  "description": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "period",
+                  "period": {
+                    "title": "",
+                    "type": "string",
                     "enum": ["monthly", "start_of_month", "daily", "none"]
                   },
-                  {
-                    "name": "period_value",
+                  "period_value": {
+                    "title": "",
+                    "type": "string",
                     "enum": ["gregorian", "jalali"]
                   },
-                  {
-                    "name": "change_target",
+                  "change_target": {
+                    "title": "",
+                    "type": "string",
                     "enum": ["credit", "deposit", "night_free"]
                   },
-                  {
-                    "name": "change_action",
+                  "change_action": {
+                    "title": "",
+                    "type": "string",
                     "enum": ["SET", "ADD", "MULTIPLY"]
                   },
-                  {
-                    "name": "amount",
-                    "description": "",
+                  "amount": {
+                    "title": "",
                     "type": "number"
                   },
-                  {
-                    "name": "negate_credit",
-                    "description": "",
+                  "negate_credit": {
+                    "title": "",
                     "type": "boolean"
                   },
-                  {
-                    "name": "pay_back",
-                    "description": "",
+                  "pay_back": {
+                    "title": "",
                     "type": "boolean"
                   },
-                  {
-                    "name": "ignore_first_time",
-                    "description": "",
+                  "ignore_first_time": {
+                    "title": "",
                     "type": "boolean"
                   }
-                ]
+                }
               }
             }
           }

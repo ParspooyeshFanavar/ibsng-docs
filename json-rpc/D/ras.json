@@ -22,6 +22,7 @@
           "name": "ras_type",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": [
               "ACS2",
               "Cisco-IN",
@@ -57,11 +58,11 @@
         }
       ],
       "result": {
-        "name": "Response (number)",
+        "name": "Response (integer)",
         "summary": "Ras ID",
         "schema": {
           "title": "",
-          "type": "number"
+          "type": "integer"
         }
       }
     },
@@ -92,7 +93,7 @@
             },
             "ras_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "ras_description": {
               "title": "",
@@ -108,6 +109,7 @@
             },
             "ras_type": {
               "title": "",
+              "type": "string",
               "enum": [
                 "ACS2",
                 "Cisco-IN",
@@ -240,7 +242,7 @@
           "name": "ras_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
@@ -254,6 +256,7 @@
           "name": "ras_type",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": [
               "ACS2",
               "Cisco-IN",
@@ -384,7 +387,7 @@
           "name": "ras_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         }
       ],

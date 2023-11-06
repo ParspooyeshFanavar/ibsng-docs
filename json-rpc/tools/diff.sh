@@ -1,3 +1,9 @@
+#!/bin/bash
+
+if [ -n "$1" ] ; then
+	cd "$1"
+fi
+
 delta --paging=never admin.std.json admin.json
 delta --paging=never balance.std.json balance.json
 delta --paging=never bw.std.json bw.json

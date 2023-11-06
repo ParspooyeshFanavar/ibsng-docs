@@ -37,7 +37,7 @@ paramTypeMapping = {
 
 	"str_int": ParamType("string", pattern="^[0-9]+$"),
 
-	"int": ParamType("number"),
+	"int": ParamType("integer"),
 	"float": ParamType("number"),
 	"str_float": ParamType("str", "float as string"),
 
@@ -55,12 +55,12 @@ paramTypeMapping = {
 
 	"null": ParamType("null"),
 	
-	"int, null": ParamType(("number", "null"), "int or null"),
+	"int, null": ParamType(("integer", "null"), "int or null"),
 	"dynamic": ParamType("", "dynamic type"),
 
 	"list, str": ParamType(("array", "string")),
-	"list, int": ParamType(("array", "number"), "array or int"),
-	"int, list": ParamType(("number", "array"), "int or array"),
+	"list, int": ParamType(("array", "integer"), "array or int"),
+	"int, list": ParamType(("integer", "array"), "int or array"),
 	"str, list": ParamType(("string", "array"), "string or array"),
 }
 
@@ -114,6 +114,7 @@ def getChoiceJsonParam(param: "Element") -> dict:
 		if choiceElem.attrib.get("default"):
 			default = value
 	seqauential = False
+	valueType = ""
 	if not values:
 		print(f"choice with no values: {toStr(param)}")
 	elif len(valueTypes) > 1:
@@ -127,6 +128,10 @@ def getChoiceJsonParam(param: "Element") -> dict:
 				seqauential = True
 			else:
 				print(f"non-seqauential integer choice values: {values}")
+		valueType = paramTypeMapping[_type].type
+
+	if not valueType:
+		valueType = "string"
 
 	paramJson = {}
 	if paramName:
@@ -135,12 +140,23 @@ def getChoiceJsonParam(param: "Element") -> dict:
 		paramJson["description"] = description
 	if seqauential:
 		paramJson["schema"] = {
-			"type": "number",
+			"type": "integer",
 			"minimum": values[0],
 			"maximum": values[-1],
 		}
+		if comments:
+			paramJson["schema"]["enum"] = {
+				str(value): comments.get(value, "")
+				for value in values
+			}
 	else:
+		if comments:
+			values = {
+				value: comments.get(value, "")
+				for value in values
+			}
 		paramJson["schema"] = {
+			"type": valueType,
 			"enum": values,
 		}
 	if default is not None:
@@ -152,8 +168,6 @@ def getChoiceJsonParam(param: "Element") -> dict:
 			except ValueError:
 				pass
 		paramJson["default"] = default
-	if comments:
-		paramJson["__value_comment__"] = comments
 	return paramJson
 
 
@@ -175,22 +189,18 @@ def getListItemSchema(item: "Element") -> "dict | list":
 			del itemJson["description"]
 		return itemJson
 	if _type == "dict":
-		params = getParams(item)
-		for param in params:
-			if "schema" in param:
-				param.update(param.pop("schema"))
 		res = {
 			"title": item.attrib.get("comment", ""),
 			"type": "object",
 		}
-		if item.attrib.get("dynamic_keys") == "true":
-			res["dynamic_keys"] = True
-		res["params"] = params
+		setDictParamsSchema(item, res)
 		return res
+
+	newType = paramTypeMapping[_type]
 
 	return {
 		"title": item.attrib.get("comment", ""),
-		"type": _type,
+		"type": newType.type,
 	}
 
 
@@ -227,22 +237,31 @@ def getListSchema(elem: "Element", newType="array") -> "dict | list":
 
 
 def setDynamicKeys(param: "Element", schema: dict):
-	schema["dynamic_keys"] = True
 	key = param.find("key")
 	if key is None:
+		print(toStr(param))
+		schema["additionalProperties"] = {
+			"title": "",
+			"type": "string",
+			"schema": {
+				"type": "",
+			},
+		}
 		return
 	value = param.find("value")
 	if value is None:
 		print(f"<key> without <value>: {toStr(param)}")
 		return
-	schema["__key__"] = {
-		"type": key.attrib.get("type", ""),
-		"title": key.attrib.get("comment", ""),
-	}
-	valueJson = getJsonParam(value)
+
+	valueJson = getJsonParam(value)	
 	if "schema" in valueJson:
 		valueJson.update(valueJson.pop("schema"))
-	schema["__value__"] = valueJson
+	schema["additionalProperties"] = {
+		"title": key.attrib.get("comment", ""),
+		"type": key.attrib.get("type", ""),
+		"schema": valueJson,
+	}
+	
 
 
 def setDictParamsSchema(param: "Element", schema: dict):
@@ -263,7 +282,7 @@ def setDictParamsSchema(param: "Element", schema: dict):
 	if param.attrib.get("dynamic_keys") == "true":
 		setDynamicKeys(param, schema)
 	elif param.find("key") is not None:
-		print("forgot dynamic_keys=true: {toStr(param)}")
+		print(f"forgot dynamic_keys=true: {toStr(param)}")
 
 	schema["properties"] = properties
 
@@ -470,6 +489,8 @@ def getJsonMethod(handlerName: str, method: "Element", authTypes: list[str]):
 		result["schema"] = resultSchema
 		if resultValues:
 			resultSchema["enum"] = resultValues
+	else:
+		result["schema"] = None
 
 	jsonMethod["result"] = result
 	# jsonMethod["errors"] = []

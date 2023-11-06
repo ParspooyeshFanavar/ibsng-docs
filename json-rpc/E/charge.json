@@ -49,7 +49,7 @@
           "properties": {
             "charge_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "charge_name": {
               "title": "",
@@ -61,7 +61,7 @@
             },
             "isp_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "isp_name": {
               "title": "",
@@ -73,29 +73,25 @@
               "items": {
                 "title": "",
                 "type": "object",
-                "params": [
-                  {
-                    "name": "charge_rule_id",
-                    "description": "",
-                    "type": "number"
+                "properties": {
+                  "charge_rule_id": {
+                    "title": "",
+                    "type": "integer"
                   },
-                  {
-                    "name": "charge_rule_description",
-                    "description": "",
+                  "charge_rule_description": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "charge_rule_priority",
-                    "description": "",
-                    "type": "number"
+                  "charge_rule_priority": {
+                    "title": "",
+                    "type": "integer"
                   },
-                  {
-                    "name": "attrs",
-                    "description": "Charge Rule Attributes",
+                  "attrs": {
+                    "title": "Charge Rule Attributes",
                     "type": "object",
                     "properties": {}
                   }
-                ]
+                }
               }
             }
           }
@@ -131,11 +127,11 @@
         }
       ],
       "result": {
-        "name": "Response (number)",
+        "name": "Response (integer)",
         "summary": "Charge ID",
         "schema": {
           "title": "",
-          "type": "number"
+          "type": "integer"
         }
       }
     },
@@ -193,7 +189,7 @@
           "name": "copy_count",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         }
       ],
@@ -216,7 +212,7 @@
           "name": "charge_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
@@ -290,7 +286,7 @@
           "name": "charge_rule_priority",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
@@ -302,11 +298,11 @@
         }
       ],
       "result": {
-        "name": "Response (number)",
+        "name": "Response (integer)",
         "summary": "Charge Rule ID",
         "schema": {
           "title": "",
-          "type": "number"
+          "type": "integer"
         }
       }
     },
@@ -320,7 +316,7 @@
           "name": "charge_rule_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
@@ -334,7 +330,7 @@
           "name": "charge_rule_priority",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
@@ -364,7 +360,7 @@
           "name": "charge_rule_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
@@ -393,7 +389,7 @@
           "name": "charge_rule_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
@@ -408,7 +404,14 @@
           "description": "",
           "schema": {
             "type": "object",
-            "dynamic_keys": true,
+            "additionalProperties": {
+              "title": "",
+              "type": "str",
+              "schema": {
+                "description": "",
+                "type": ""
+              }
+            },
             "properties": {}
           }
         },

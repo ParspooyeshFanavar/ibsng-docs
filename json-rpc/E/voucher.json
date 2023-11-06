@@ -49,20 +49,21 @@
           "name": "from",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "to",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "sort_by",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["pin", "voucher_id"]
           }
         },
@@ -83,7 +84,7 @@
           "properties": {
             "total_rows": {
               "title": "number of total rows",
-              "type": "number"
+              "type": "integer"
             },
             "report": {
               "title": "",
@@ -91,44 +92,37 @@
               "items": {
                 "title": "",
                 "type": "object",
-                "params": [
-                  {
-                    "name": "voucher_id",
-                    "description": "",
-                    "type": "number"
+                "properties": {
+                  "voucher_id": {
+                    "title": "",
+                    "type": "integer"
                   },
-                  {
-                    "name": "voucher_pin",
-                    "description": "",
+                  "voucher_pin": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "voucher_serial",
-                    "description": "",
+                  "voucher_serial": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "voucher_is_used",
-                    "description": "",
+                  "voucher_is_used": {
+                    "title": "",
                     "type": "boolean"
                   },
-                  {
-                    "name": "voucher_used_date",
-                    "description": "datetime, ",
+                  "voucher_used_date": {
+                    "title": "datetime, ",
                     "type": "string",
                     "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
                   },
-                  {
-                    "name": "voucher_user_id",
-                    "description": "",
-                    "type": "number"
+                  "voucher_user_id": {
+                    "title": "",
+                    "type": "integer"
                   },
-                  {
-                    "name": "batch_id",
-                    "description": "",
-                    "type": "number"
+                  "batch_id": {
+                    "title": "",
+                    "type": "integer"
                   }
-                ]
+                }
               }
             }
           }
@@ -194,20 +188,21 @@
           "name": "from",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "to",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "sort_by",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["batch_id", "batch_name", "batch_credit"]
           }
         },
@@ -228,7 +223,7 @@
           "properties": {
             "total_rows": {
               "title": "number of total rows",
-              "type": "number"
+              "type": "integer"
             },
             "report": {
               "title": "",
@@ -236,64 +231,53 @@
               "items": {
                 "title": "",
                 "type": "object",
-                "params": [
-                  {
-                    "name": "batch_id",
-                    "description": "",
+                "properties": {
+                  "batch_id": {
+                    "title": "",
+                    "type": "integer"
+                  },
+                  "batch_name": {
+                    "title": "",
+                    "type": "string"
+                  },
+                  "batch_is_locked": {
+                    "title": "",
+                    "type": "boolean"
+                  },
+                  "batch_credit": {
+                    "title": "",
                     "type": "number"
                   },
-                  {
-                    "name": "batch_name",
-                    "description": "",
-                    "type": "string"
-                  },
-                  {
-                    "name": "batch_is_locked",
-                    "description": "",
+                  "batch_can_create_user": {
+                    "title": "",
                     "type": "boolean"
                   },
-                  {
-                    "name": "batch_credit",
-                    "description": "",
-                    "type": "number"
-                  },
-                  {
-                    "name": "batch_can_create_user",
-                    "description": "",
+                  "batch_can_recharge_user": {
+                    "title": "",
                     "type": "boolean"
                   },
-                  {
-                    "name": "batch_can_recharge_user",
-                    "description": "",
-                    "type": "boolean"
-                  },
-                  {
-                    "name": "batch_change_target",
-                    "description": "",
+                  "batch_change_target": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "batch_comment",
-                    "description": "",
+                  "batch_comment": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "batch_creation_date",
-                    "description": "datetime, ",
+                  "batch_creation_date": {
+                    "title": "datetime, ",
                     "type": "string",
                     "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
                   },
-                  {
-                    "name": "batch_isp_id",
-                    "description": "int",
-                    "type": "number"
+                  "batch_isp_id": {
+                    "title": "int",
+                    "type": "integer"
                   },
-                  {
-                    "name": "batch_allow_use_by_children_isp",
-                    "description": "",
+                  "batch_allow_use_by_children_isp": {
+                    "title": "",
                     "type": "boolean"
                   }
-                ]
+                }
               }
             }
           }
@@ -317,7 +301,7 @@
           "name": "user_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         }
       ],
@@ -381,11 +365,11 @@
         }
       ],
       "result": {
-        "name": "Response (number)",
+        "name": "Response (integer)",
         "summary": "User ID of newly created user",
         "schema": {
           "title": "",
-          "type": "number"
+          "type": "integer"
         }
       }
     },
@@ -411,7 +395,7 @@
           "properties": {
             "voucher_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "voucher_pin": {
               "title": "",
@@ -432,11 +416,11 @@
             },
             "voucher_user_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "batch_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "batch_name": {
               "title": "",
@@ -473,7 +457,7 @@
             },
             "batch_isp_id": {
               "title": "int",
-              "type": "number"
+              "type": "integer"
             },
             "batch_allow_use_by_children_isp": {
               "title": "",
@@ -519,8 +503,8 @@
               },
               "change_target": {
                 "title": "",
-                "enum": ["credit", "deposit", "deposit_recharge"],
-                "__value_comment__": {
+                "type": "string",
+                "enum": {
                   "credit": "Credit",
                   "deposit": "Renew Deposit",
                   "deposit_recharge": "Recharge Deposit"
@@ -548,7 +532,7 @@
           "name": "pin_len",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
@@ -562,23 +546,23 @@
           "name": "serial_start",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "count",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         }
       ],
       "result": {
-        "name": "Response (number)",
+        "name": "Response (integer)",
         "summary": "batch_id",
         "schema": {
           "title": "",
-          "type": "number"
+          "type": "integer"
         }
       }
     },
@@ -592,7 +576,7 @@
           "name": "batch_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
@@ -622,7 +606,7 @@
           "name": "batch_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         }
       ],
@@ -635,7 +619,7 @@
           "properties": {
             "batch_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "batch_name": {
               "title": "",
@@ -659,8 +643,8 @@
             },
             "change_target": {
               "title": "",
-              "enum": ["credit", "deposit", "deposit_recharge"],
-              "__value_comment__": {
+              "type": "string",
+              "enum": {
                 "credit": "Credit",
                 "deposit": "Renew Deposit",
                 "deposit_recharge": "Recharge Deposit"
@@ -697,7 +681,7 @@
           "name": "voucher_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         }
       ],
@@ -710,11 +694,11 @@
           "properties": {
             "voucher_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "batch_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "pin": {
               "title": "",
@@ -730,7 +714,7 @@
             },
             "user_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "used_date": {
               "title": "datetime, ",
@@ -800,19 +784,20 @@
           "name": "from",
           "description": "for pagination",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "to",
           "description": "for pagination",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "sort_by",
           "schema": {
+            "type": "string",
             "enum": ["batch_id", "batch_name", "credit"]
           }
         },
@@ -833,7 +818,7 @@
           "properties": {
             "total_rows": {
               "title": "total number of results",
-              "type": "number"
+              "type": "integer"
             },
             "report": {
               "title": "",
@@ -841,78 +826,62 @@
               "items": {
                 "title": "batch info dict",
                 "type": "object",
-                "params": [
-                  {
-                    "name": "batch_id",
-                    "description": "",
-                    "type": "number"
+                "properties": {
+                  "batch_id": {
+                    "title": "",
+                    "type": "integer"
                   },
-                  {
-                    "name": "batch_name",
-                    "description": "",
+                  "batch_name": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "is_locked",
-                    "description": "",
+                  "is_locked": {
+                    "title": "",
                     "type": "boolean"
                   },
-                  {
-                    "name": "credit",
-                    "description": "",
+                  "credit": {
+                    "title": "",
                     "type": "number"
                   },
-                  {
-                    "name": "can_create_user",
-                    "description": "",
+                  "can_create_user": {
+                    "title": "",
                     "type": "boolean"
                   },
-                  {
-                    "name": "can_recharge_user",
-                    "description": "",
+                  "can_recharge_user": {
+                    "title": "",
                     "type": "boolean"
                   },
-                  {
-                    "name": "change_target",
-                    "__value_comment__": {
+                  "change_target": {
+                    "title": "",
+                    "type": "string",
+                    "enum": {
                       "credit": "Credit",
                       "deposit": "Renew Deposit",
                       "deposit_recharge": "Recharge Deposit"
-                    },
-                    "enum": ["credit", "deposit", "deposit_recharge"]
+                    }
                   },
-                  {
-                    "name": "comment",
-                    "description": "",
+                  "comment": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "creation_date",
-                    "description": "datetime, ",
+                  "creation_date": {
+                    "title": "datetime, ",
                     "type": "string",
                     "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
                   },
-                  {
-                    "name": "isp_id",
-                    "description": "",
-                    "type": "number"
+                  "isp_id": {
+                    "title": "",
+                    "type": "integer"
                   },
-                  {
-                    "name": "allow_use_by_children_isp",
-                    "description": "",
+                  "allow_use_by_children_isp": {
+                    "title": "",
                     "type": "boolean"
                   },
-                  {
-                    "name": "is_locked",
-                    "description": "",
-                    "type": "boolean"
-                  },
-                  {
-                    "name": "isp_name",
-                    "description": "",
+                  "isp_name": {
+                    "title": "",
                     "type": "string"
                   }
-                ]
+                }
               }
             }
           }

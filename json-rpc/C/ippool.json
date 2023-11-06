@@ -27,11 +27,11 @@
         }
       ],
       "result": {
-        "name": "Response (number)",
+        "name": "Response (integer)",
         "summary": "IPPool ID",
         "schema": {
           "title": "",
-          "type": "number"
+          "type": "integer"
         }
       }
     },
@@ -45,7 +45,7 @@
           "name": "ippool_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
@@ -97,11 +97,11 @@
           "name": "ippool_type",
           "description": "",
           "schema": {
-            "enum": ["load_balancing", ""]
-          },
-          "__value_comment__": {
-            "load_balancing": "Load Balancing IPPool",
-            "": "Not a Load Balancing IPPool"
+            "type": "string",
+            "enum": {
+              "load_balancing": "Load Balancing IPPool",
+              "": "Not a Load Balancing IPPool"
+            }
           }
         }
       ],
@@ -137,7 +137,7 @@
           "properties": {
             "ippool_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "ippool_name": {
               "title": "",
@@ -300,6 +300,7 @@
           "name": "balancing_strategy",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["distributive", "fill_first"]
           }
         },
@@ -331,7 +332,7 @@
           "name": "ippool_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
@@ -352,6 +353,7 @@
           "name": "balancing_strategy",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["distributive", "fill_first"]
           }
         },

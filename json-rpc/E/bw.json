@@ -36,6 +36,7 @@
           "name": "host_type",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["Linux", "Mikrotik"]
           }
         }
@@ -73,28 +74,28 @@
           "name": "parent_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "rate_kbits",
           "description": "kilo bits",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "ceil_kbits",
           "description": "kilo bits",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "priority",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         }
       ],
@@ -124,49 +125,49 @@
           "name": "parent_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "default_rate_kbits",
           "description": "kilo bits",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "default_ceil_kbits",
           "description": "kilo bits",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "total_rate_kbits",
           "description": "kilo bits",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "total_ceil_kbits",
           "description": "kilo bits",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "default_priority",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "total_priority",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         }
       ],
@@ -203,6 +204,7 @@
           "name": "protocol",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["tcp", "udp", "icmp", "ip"]
           }
         },
@@ -217,21 +219,21 @@
           "name": "rate_kbits",
           "description": "kilo bit",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "ceil_kbits",
           "description": "kilo bit",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "priority",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         }
       ],
@@ -269,7 +271,7 @@
           "name": "node_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         }
       ],
@@ -282,7 +284,7 @@
           "properties": {
             "interface_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "interface_name": {
               "title": "",
@@ -294,19 +296,19 @@
             },
             "node_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "rate_kbits": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "ceil_kbits": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "priority": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "description": {
               "title": "",
@@ -351,7 +353,7 @@
           "properties": {
             "leaf_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "leaf_name": {
               "title": "",
@@ -359,11 +361,11 @@
             },
             "parent_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "interface_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "interface_name": {
               "title": "",
@@ -375,27 +377,27 @@
             },
             "total_rate_kbits": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "total_ceil_kbits": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "default_rate_kbits": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "default_ceil_kbits": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "default_priority": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "total_priority": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "services": {
               "title": "",
@@ -445,7 +447,7 @@
           "name": "leaf_service_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
@@ -475,7 +477,7 @@
           "name": "node_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         }
       ],
@@ -566,7 +568,7 @@
           "name": "interface_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
@@ -594,6 +596,7 @@
           "name": "host_type",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["Linux", "Mikrotik"]
           }
         }
@@ -617,28 +620,28 @@
           "name": "node_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "rate_kbits",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "ceil_kbits",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "priority",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         }
       ],
@@ -661,7 +664,7 @@
           "name": "leaf_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
@@ -675,42 +678,42 @@
           "name": "default_rate_kbits",
           "description": "kilo bits",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "default_ceil_kbits",
           "description": "kilo bits",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "total_rate_kbits",
           "description": "kilo bits",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "total_ceil_kbits",
           "description": "kilo bits",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "default_priority",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "total_priority",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         }
       ],
@@ -740,7 +743,7 @@
           "name": "leaf_service_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
@@ -754,6 +757,7 @@
           "name": "protocol",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["tcp", "udp", "icmp", "ip"]
           }
         },
@@ -768,21 +772,21 @@
           "name": "rate_kbits",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "ceil_kbits",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "priority",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         }
       ],
@@ -842,7 +846,7 @@
           "name": "static_ip_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
@@ -937,7 +941,7 @@
           "properties": {
             "static_ip_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "ip": {
               "title": "",
@@ -945,7 +949,7 @@
             },
             "tx_leaf_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "tx_leaf_name": {
               "title": "",
@@ -953,7 +957,7 @@
             },
             "rx_leaf_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "rx_leaf_name": {
               "title": "",
@@ -1033,6 +1037,7 @@
           "name": "host_type",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["Linux", "Mikrotik"]
           }
         }

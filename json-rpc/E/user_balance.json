@@ -51,6 +51,7 @@
           "name": "start_time_unit",
           "description": "Date type for output date or datetime params, default is 'gregorian'",
           "schema": {
+            "type": "string",
             "enum": ["gregorian", "jalali"]
           }
         },
@@ -66,6 +67,7 @@
           "name": "expire_time_unit",
           "description": "Date type for output date or datetime params, default is 'gregorian'",
           "schema": {
+            "type": "string",
             "enum": ["gregorian", "jalali"]
           }
         },
@@ -108,7 +110,7 @@
           "properties": {
             "balance_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             }
           }
         }
@@ -123,7 +125,7 @@
           "name": "user_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         }
       ],
@@ -136,7 +138,7 @@
           "properties": {
             "linked_user_id": {
               "title": "int or null, if not set return null",
-              "type": ["number", "null"]
+              "type": ["integer", "null"]
             },
             "balance_name": {
               "title": "name of balance that asssign to user",
@@ -144,11 +146,11 @@
             },
             "balance_id": {
               "title": "id of balacne assign to user",
-              "type": "number"
+              "type": "integer"
             },
             "linked_balance_id": {
               "title": "int or null, if not set return null",
-              "type": ["number", "null"]
+              "type": ["integer", "null"]
             },
             "value": {
               "title": "",
@@ -240,6 +242,7 @@
           "name": "start_time_unit",
           "description": "Date type for output date or datetime params, default is 'gregorian'",
           "schema": {
+            "type": "string",
             "enum": ["gregorian", "jalali"]
           }
         },
@@ -255,6 +258,7 @@
           "name": "expire_time_unit",
           "description": "Date type for output date or datetime params, default is 'gregorian'",
           "schema": {
+            "type": "string",
             "enum": ["gregorian", "jalali"]
           }
         }
@@ -294,7 +298,7 @@
             },
             "linked_user_id": {
               "title": "int or null, if not set return null",
-              "type": ["number", "null"]
+              "type": ["integer", "null"]
             },
             "start_time": {
               "title": "",
@@ -306,15 +310,15 @@
             },
             "balance_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "linked_balance_id": {
               "title": "int or null, if not set return null",
-              "type": ["number", "null"]
+              "type": ["integer", "null"]
             },
             "user_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "initial_value": {
               "title": "",
@@ -395,6 +399,7 @@
         {
           "name": "balance_action",
           "schema": {
+            "type": "string",
             "enum": ["add", "multiply", "set"]
           }
         }
@@ -430,6 +435,7 @@
               },
               "remote_ip_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "chnage_date_from": {
@@ -439,6 +445,7 @@
               },
               "chnage_date_from_unit": {
                 "title": "Date type for output date or datetime params, default is 'gregorian'",
+                "type": "string",
                 "enum": ["gregorian", "jalali"]
               },
               "chnage_date_to": {
@@ -448,6 +455,7 @@
               },
               "chnage_date_to_unit": {
                 "title": "Date type for output date or datetime params, default is 'gregorian'",
+                "type": "string",
                 "enum": ["gregorian", "jalali"]
               },
               "admin_name": {
@@ -474,20 +482,21 @@
           "name": "from",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "to",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "sort_by",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["change_time", "object_id", "admin_id"]
           }
         },
@@ -508,7 +517,7 @@
           "properties": {
             "total_rows": {
               "title": "number of total rows",
-              "type": "number"
+              "type": "integer"
             },
             "report": {
               "title": "",
@@ -516,68 +525,56 @@
               "items": {
                 "title": "",
                 "type": "object",
-                "params": [
-                  {
-                    "name": "user_balance_id",
-                    "description": "",
-                    "type": "number"
+                "properties": {
+                  "user_balance_id": {
+                    "title": "",
+                    "type": "integer"
                   },
-                  {
-                    "name": "user_id",
-                    "description": "",
-                    "type": "number"
+                  "user_id": {
+                    "title": "",
+                    "type": "integer"
                   },
-                  {
-                    "name": "remote_ip",
-                    "description": "",
+                  "remote_ip": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "chnage_log",
-                    "description": "",
+                  "chnage_log": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "isp_name",
-                    "description": "",
+                  "isp_name": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "group_name",
-                    "description": "",
+                  "group_name": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "balance_name",
-                    "description": "",
+                  "balance_name": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "intial_value",
-                    "description": "",
+                  "intial_value": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "old_value",
-                    "description": "",
+                  "old_value": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "new_value",
-                    "description": "",
+                  "new_value": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "action",
-                    "description": "",
+                  "action": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "comment",
-                    "description": "",
+                  "comment": {
+                    "title": "",
                     "type": "string"
                   }
-                ]
+                }
               }
             }
           }

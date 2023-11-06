@@ -43,7 +43,7 @@
           "name": "isp_mapped_user_id",
           "description": "or -1",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
@@ -85,7 +85,7 @@
           "name": "isp_failed_user_id",
           "description": "or -1, removed in C_dev_326",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         }
       ],
@@ -108,7 +108,7 @@
           "name": "isp_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
@@ -136,7 +136,7 @@
           "name": "isp_mapped_user_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
@@ -178,7 +178,7 @@
           "name": "isp_failed_user_id",
           "description": "removed in C_dev_326",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
@@ -258,7 +258,7 @@
           "name": "isp_id",
           "description": "added in C_312",
           "schema": {
-            "type": "number"
+            "type": "integer"
           },
           "required": false
         }
@@ -272,7 +272,7 @@
           "properties": {
             "isp_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "isp_name": {
               "title": "",
@@ -292,7 +292,7 @@
             },
             "isp_mapped_user_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "isp_mapped_user_repr": {
               "title": "",
@@ -304,7 +304,7 @@
             },
             "isp_online_users_count": {
               "title": "added in C_dev_326",
-              "type": "number"
+              "type": "integer"
             },
             "isp_locked": {
               "title": "",
@@ -450,7 +450,7 @@
           "name": "isp_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         }
       ],
@@ -463,7 +463,7 @@
           "properties": {
             "isp_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "header_logo_ext": {
               "title": "header logo file extension, for example 'gif'",
@@ -515,7 +515,7 @@
           "name": "isp_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
@@ -601,7 +601,7 @@
           "name": "isp_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         }
       ],
@@ -629,14 +629,13 @@
             "result": {
               "title": "",
               "type": "object",
-              "dynamic_keys": true,
-              "__key__": {
+              "additionalProperties": {
+                "title": "ISP ID (string for compatibility)",
                 "type": "str_int",
-                "title": "ISP ID (string for compatibility)"
-              },
-              "__value__": {
-                "description": "total credit of users",
-                "type": "number"
+                "schema": {
+                  "description": "total credit of users",
+                  "type": "number"
+                }
               },
               "properties": {}
             }

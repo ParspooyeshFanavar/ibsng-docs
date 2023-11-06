@@ -132,7 +132,8 @@
       ],
       "result": {
         "name": "",
-        "summary": "type depends on {perm_name}"
+        "summary": "type depends on {perm_name}",
+        "schema": null
       }
     },
     {

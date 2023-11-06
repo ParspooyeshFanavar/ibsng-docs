@@ -34,11 +34,11 @@
         }
       ],
       "result": {
-        "name": "Response (number)",
+        "name": "Response (integer)",
         "summary": "Group ID",
         "schema": {
           "title": "",
-          "type": "number"
+          "type": "integer"
         }
       }
     },
@@ -73,7 +73,7 @@
           "name": "copy_count",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         }
       ],
@@ -214,7 +214,7 @@
           "name": "group_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           },
           "required": false
         }
@@ -228,7 +228,7 @@
           "properties": {
             "group_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "group_name": {
               "title": "",
@@ -240,7 +240,7 @@
             },
             "isp_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "isp_name": {
               "title": "",
@@ -270,7 +270,7 @@
           "name": "group_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {

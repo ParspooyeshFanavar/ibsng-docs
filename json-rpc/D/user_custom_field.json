@@ -36,6 +36,7 @@
           "name": "value_type",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["string", "int", "float"]
           }
         },
@@ -43,6 +44,7 @@
           "name": "interface_type",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["text_field", "single_select", "radio_button", "checkbox"]
           }
         },
@@ -80,7 +82,7 @@
           "name": "custom_field_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
@@ -108,6 +110,7 @@
           "name": "value_type",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["string", "int", "float"]
           }
         },
@@ -115,6 +118,7 @@
           "name": "interface_type",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["text_field", "single_select", "radio_button", "checkbox"]
           }
         },

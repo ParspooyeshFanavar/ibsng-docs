@@ -15,6 +15,7 @@
           "name": "normal_sort_by",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": [
               "user_id",
               "normal_username",
@@ -48,6 +49,7 @@
           "name": "voip_sort_by",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": [
               "user_id",
               "voip_username",
@@ -149,71 +151,84 @@
           "properties": {
             "internet_onlines": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "voip_onlines": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "re_onlined": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "accounting_not_started": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "failed_users": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "idle_users": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "ras_acct_not_started": {
               "title": "dict of ras_desc => count",
               "type": "object",
-              "dynamic_keys": true,
+              "additionalProperties": {
+                "title": "ras_desc",
+                "type": "str",
+                "schema": {
+                  "description": "count",
+                  "type": "integer"
+                }
+              },
               "properties": {}
             },
             "ras_description": {
               "title": "dict of ras_desc => count",
               "type": "object",
-              "dynamic_keys": true,
+              "additionalProperties": {
+                "title": "ras_desc",
+                "type": "str",
+                "schema": {
+                  "description": "count",
+                  "type": "integer"
+                }
+              },
               "properties": {}
             },
             "ras_counters": {
               "title": "dict of ras_desc => count_dict",
               "type": "object",
-              "dynamic_keys": true,
-              "__key__": {
+              "additionalProperties": {
+                "title": "Ras ID",
                 "type": "str",
-                "title": "Ras ID"
-              },
-              "__value__": {
-                "description": "a dict containing per-state user count",
-                "type": "object",
-                "properties": {
-                  "ras_total": {
-                    "title": "total number of onlines in this ras",
-                    "type": "number"
-                  },
-                  "ras_reonlined": {
-                    "title": "number of re-onlined users in this ras",
-                    "type": "number"
-                  },
-                  "ras_failed": {
-                    "title": "number of failed users in this ras",
-                    "type": "number"
-                  },
-                  "ras_acct_not_started": {
-                    "title": "number of onlines users with Accounting Not Started status in this ras",
-                    "type": "number"
-                  },
-                  "ras_idle": {
-                    "title": "number of Idle users in this ras",
-                    "type": "number"
+                "schema": {
+                  "description": "a dict containing per-state user count",
+                  "type": "object",
+                  "properties": {
+                    "ras_total": {
+                      "title": "total number of onlines in this ras",
+                      "type": "integer"
+                    },
+                    "ras_reonlined": {
+                      "title": "number of re-onlined users in this ras",
+                      "type": "integer"
+                    },
+                    "ras_failed": {
+                      "title": "number of failed users in this ras",
+                      "type": "integer"
+                    },
+                    "ras_acct_not_started": {
+                      "title": "number of onlines users with Accounting Not Started status in this ras",
+                      "type": "integer"
+                    },
+                    "ras_idle": {
+                      "title": "number of Idle users in this ras",
+                      "type": "integer"
+                    }
                   }
                 }
               },
@@ -248,71 +263,84 @@
           "properties": {
             "internet_onlines": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "voip_onlines": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "re_onlined": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "accounting_not_started": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "failed_users": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "idle_users": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "ras_acct_not_started": {
               "title": "dict of ras_desc => count",
               "type": "object",
-              "dynamic_keys": true,
+              "additionalProperties": {
+                "title": "ras_desc",
+                "type": "str",
+                "schema": {
+                  "description": "count",
+                  "type": "integer"
+                }
+              },
               "properties": {}
             },
             "ras_description": {
               "title": "dict of ras_desc => count",
               "type": "object",
-              "dynamic_keys": true,
+              "additionalProperties": {
+                "title": "ras_desc",
+                "type": "str",
+                "schema": {
+                  "description": "count",
+                  "type": "integer"
+                }
+              },
               "properties": {}
             },
             "ras_counters": {
               "title": "dict of ras_desc => count_dict",
               "type": "object",
-              "dynamic_keys": true,
-              "__key__": {
+              "additionalProperties": {
+                "title": "Ras ID",
                 "type": "str",
-                "title": "Ras ID"
-              },
-              "__value__": {
-                "description": "a dict containing per-state user count",
-                "type": "object",
-                "properties": {
-                  "ras_total": {
-                    "title": "total number of onlines in this ras",
-                    "type": "number"
-                  },
-                  "ras_reonlined": {
-                    "title": "number of re-onlined users in this ras",
-                    "type": "number"
-                  },
-                  "ras_failed": {
-                    "title": "number of failed users in this ras",
-                    "type": "number"
-                  },
-                  "ras_acct_not_started": {
-                    "title": "number of onlines users with Accounting Not Started status in this ras",
-                    "type": "number"
-                  },
-                  "ras_idle": {
-                    "title": "number of Idle users in this ras",
-                    "type": "number"
+                "schema": {
+                  "description": "a dict containing per-state user count",
+                  "type": "object",
+                  "properties": {
+                    "ras_total": {
+                      "title": "total number of onlines in this ras",
+                      "type": "integer"
+                    },
+                    "ras_reonlined": {
+                      "title": "number of re-onlined users in this ras",
+                      "type": "integer"
+                    },
+                    "ras_failed": {
+                      "title": "number of failed users in this ras",
+                      "type": "integer"
+                    },
+                    "ras_acct_not_started": {
+                      "title": "number of onlines users with Accounting Not Started status in this ras",
+                      "type": "integer"
+                    },
+                    "ras_idle": {
+                      "title": "number of Idle users in this ras",
+                      "type": "integer"
+                    }
                   }
                 }
               },
@@ -423,15 +451,17 @@
               },
               "credit_used_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["=", ">", "<", ">=", "<="]
               },
               "duration": {
                 "title": "in seconds",
-                "type": "number",
+                "type": "integer",
                 "required": false
               },
               "duration_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["=", ">", "<", ">=", "<="]
               },
               "login_time_from": {
@@ -441,6 +471,7 @@
               },
               "login_time_from_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -458,6 +489,7 @@
               },
               "login_time_to_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -475,6 +507,7 @@
               },
               "logout_time_from_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -492,6 +525,7 @@
               },
               "logout_time_to_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -514,10 +548,12 @@
               },
               "successful": {
                 "title": "",
+                "type": "string",
                 "enum": ["yes", "no"]
               },
               "service": {
                 "title": "",
+                "type": "string",
                 "enum": ["Internet", "VoIP"]
               },
               "ras_ip": {
@@ -547,6 +583,7 @@
               },
               "caller_id_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["=", ">", "<", ">=", "<="]
               },
               "mac": {
@@ -581,6 +618,7 @@
               },
               "cpm_op": {
                 "title": "comes with cpm",
+                "type": "string",
                 "enum": ["=", ">", "<", ">=", "<="]
               },
               "called_number": {
@@ -590,6 +628,7 @@
               },
               "called_number_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["=", ">", "<", ">=", "<="]
               },
               "prefix_name": {
@@ -599,6 +638,7 @@
               },
               "prefix_name_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["=", ">", "<", ">=", "<="]
               },
               "called_ip": {
@@ -623,20 +663,21 @@
           "name": "from",
           "description": "start index, for pagination",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "to",
           "description": "end index, for pagination",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "sort_by",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": [
               "user_id",
               "credit_used",
@@ -666,7 +707,7 @@
           "properties": {
             "total_rows": {
               "title": "number of total rows",
-              "type": "number"
+              "type": "integer"
             },
             "total_credit": {
               "title": "sum of total rows credit",
@@ -674,15 +715,15 @@
             },
             "total_duration": {
               "title": "sum of total rows duration, in seconds",
-              "type": "number"
+              "type": "integer"
             },
             "total_in_bytes": {
               "title": "sum of total download, in bytes",
-              "type": "number"
+              "type": "integer"
             },
             "total_out_bytes": {
               "title": "sum of total upload, in bytes",
-              "type": "number"
+              "type": "integer"
             },
             "report": {
               "title": "report data of specified page (from - to)",
@@ -690,238 +731,198 @@
               "items": {
                 "title": "",
                 "type": "object",
-                "params": [
-                  {
-                    "name": "connection_log_id",
-                    "description": "",
-                    "type": "number"
+                "properties": {
+                  "connection_log_id": {
+                    "title": "",
+                    "type": "integer"
                   },
-                  {
-                    "name": "user_id",
-                    "description": "",
+                  "user_id": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "service_type",
-                    "description": "",
+                  "service_type": {
+                    "title": "",
+                    "type": "string",
                     "enum": ["Internet", "VoIP"]
                   },
-                  {
-                    "name": "session_start_time",
-                    "description": "datetime, ",
+                  "session_start_time": {
+                    "title": "datetime, ",
                     "type": "string",
                     "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
                   },
-                  {
-                    "name": "session_stop_time",
-                    "description": "datetime, ",
+                  "session_stop_time": {
+                    "title": "datetime, ",
                     "type": "string",
                     "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
                   },
-                  {
-                    "name": "duration",
-                    "description": "Duration of session in seconds",
+                  "duration": {
+                    "title": "Duration of session in seconds",
+                    "type": "integer"
+                  },
+                  "credit_used": {
+                    "title": "",
                     "type": "number"
                   },
-                  {
-                    "name": "credit_used",
-                    "description": "",
+                  "credit_index": {
+                    "title": "",
+                    "type": "integer"
+                  },
+                  "session_before_stop_committed_credit": {
+                    "title": "",
                     "type": "number"
                   },
-                  {
-                    "name": "credit_index",
-                    "description": "",
+                  "session_before_stop_uncommitted_credit": {
+                    "title": "",
                     "type": "number"
                   },
-                  {
-                    "name": "session_before_stop_committed_credit",
-                    "description": "",
-                    "type": "number"
-                  },
-                  {
-                    "name": "session_before_stop_uncommitted_credit",
-                    "description": "",
-                    "type": "number"
-                  },
-                  {
-                    "name": "successful",
-                    "description": "",
+                  "successful": {
+                    "title": "",
                     "type": "boolean"
                   },
-                  {
-                    "name": "caller_id",
-                    "description": "",
-                    "required": false,
+                  "caller_id": {
+                    "title": "",
+                    "type": "string",
+                    "required": false
+                  },
+                  "cpm": {
+                    "title": "",
+                    "type": "number",
+                    "required": false
+                  },
+                  "kill_time": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "cpm",
-                    "description": "",
-                    "required": false,
-                    "type": "number"
-                  },
-                  {
-                    "name": "kill_time",
-                    "description": "",
+                  "kill_reason": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "kill_reason",
-                    "description": "",
-                    "type": "string"
+                  "username": {
+                    "title": "",
+                    "type": "string",
+                    "required": false
                   },
-                  {
-                    "name": "username",
-                    "description": "",
-                    "required": false,
-                    "type": "string"
+                  "remote_ip": {
+                    "title": "",
+                    "type": "string",
+                    "required": false
                   },
-                  {
-                    "name": "remote_ip",
-                    "description": "",
-                    "required": false,
-                    "type": "string"
+                  "mac": {
+                    "title": "",
+                    "type": "string",
+                    "required": false
                   },
-                  {
-                    "name": "mac",
-                    "description": "",
-                    "required": false,
-                    "type": "string"
+                  "bytes_in": {
+                    "title": "",
+                    "type": "integer",
+                    "required": false
                   },
-                  {
-                    "name": "bytes_in",
-                    "description": "",
-                    "required": false,
-                    "type": "number"
+                  "bytes_out": {
+                    "title": "",
+                    "type": "integer",
+                    "required": false
                   },
-                  {
-                    "name": "bytes_out",
-                    "description": "",
-                    "required": false,
-                    "type": "number"
+                  "station_ip": {
+                    "title": "",
+                    "type": "string",
+                    "required": false
                   },
-                  {
-                    "name": "station_ip",
-                    "description": "",
-                    "required": false,
-                    "type": "string"
-                  },
-                  {
-                    "name": "details",
-                    "description": "",
+                  "details": {
+                    "title": "",
                     "type": "array"
                   },
-                  {
-                    "name": "voip_username",
-                    "description": "",
-                    "required": false,
-                    "type": "string"
+                  "voip_username": {
+                    "title": "",
+                    "type": "string",
+                    "required": false
                   },
-                  {
-                    "name": "prefix_name",
-                    "description": "",
-                    "required": false,
-                    "type": "string"
+                  "prefix_name": {
+                    "title": "",
+                    "type": "string",
+                    "required": false
                   },
-                  {
-                    "name": "prefix_cpm",
-                    "description": "",
-                    "required": false,
-                    "type": "number"
+                  "prefix_cpm": {
+                    "title": "",
+                    "type": "number",
+                    "required": false
                   },
-                  {
-                    "name": "called_number",
-                    "description": "",
-                    "required": false,
-                    "type": "string"
+                  "called_number": {
+                    "title": "",
+                    "type": "string",
+                    "required": false
                   },
-                  {
-                    "name": "charge_rule_details",
-                    "description": "",
+                  "charge_rule_details": {
+                    "title": "",
                     "type": "array"
                   },
-                  {
-                    "name": "ras_description",
-                    "description": "",
+                  "ras_description": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "ras_ip",
-                    "description": "",
+                  "ras_ip": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "serial",
-                    "description": "",
+                  "serial": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "dnis",
-                    "description": "",
-                    "required": false,
-                    "type": "string"
+                  "dnis": {
+                    "title": "",
+                    "type": "string",
+                    "required": false
                   },
-                  {
-                    "name": "called_ip",
-                    "description": "",
-                    "required": false,
-                    "type": "string"
+                  "called_ip": {
+                    "title": "",
+                    "type": "string",
+                    "required": false
                   },
-                  {
-                    "name": "prefix_code",
-                    "description": "",
-                    "required": false,
-                    "type": "string"
+                  "prefix_code": {
+                    "title": "",
+                    "type": "string",
+                    "required": false
                   },
-                  {
-                    "name": "voip_provider_id",
-                    "description": "",
-                    "required": false,
-                    "type": "number"
+                  "voip_provider_id": {
+                    "title": "",
+                    "type": "integer",
+                    "required": false
                   },
-                  {
-                    "name": "voip_provider",
-                    "description": "",
-                    "required": false,
-                    "type": "string"
+                  "voip_provider": {
+                    "title": "",
+                    "type": "string",
+                    "required": false
                   },
-                  {
-                    "name": "voip_provider_ip",
-                    "description": "",
-                    "required": false,
-                    "type": "string"
+                  "voip_provider_ip": {
+                    "title": "",
+                    "type": "string",
+                    "required": false
                   },
-                  {
-                    "name": "voip_provider_credit_used",
-                    "description": "",
-                    "required": false,
-                    "type": "number"
+                  "voip_provider_credit_used": {
+                    "title": "",
+                    "type": "number",
+                    "required": false
                   },
-                  {
-                    "name": "voip_provider_prefix_name",
-                    "description": "",
-                    "required": false,
-                    "type": "string"
+                  "voip_provider_prefix_name": {
+                    "title": "",
+                    "type": "string",
+                    "required": false
                   },
-                  {
-                    "name": "voip_provider_prefix_code",
-                    "description": "",
-                    "required": false,
-                    "type": "string"
+                  "voip_provider_prefix_code": {
+                    "title": "",
+                    "type": "string",
+                    "required": false
                   },
-                  {
-                    "name": "voip_provider_cpm",
-                    "description": "",
-                    "required": false,
-                    "type": "number"
+                  "voip_provider_cpm": {
+                    "title": "",
+                    "type": "number",
+                    "required": false
                   },
-                  {
-                    "name": "disconnect_cause",
-                    "description": "",
-                    "required": false,
-                    "type": "string"
+                  "disconnect_cause": {
+                    "title": "",
+                    "type": "string",
+                    "required": false
                   }
-                ]
+                }
               }
             }
           }
@@ -946,15 +947,17 @@
               },
               "credit_used_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["=", ">", "<", ">=", "<="]
               },
               "duration": {
                 "title": "in seconds",
-                "type": "number",
+                "type": "integer",
                 "required": false
               },
               "duration_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["=", ">", "<", ">=", "<="]
               },
               "login_time_from": {
@@ -964,6 +967,7 @@
               },
               "login_time_from_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -981,6 +985,7 @@
               },
               "login_time_to_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -998,6 +1003,7 @@
               },
               "logout_time_from_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -1015,6 +1021,7 @@
               },
               "logout_time_to_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -1027,10 +1034,12 @@
               },
               "successful": {
                 "title": "",
+                "type": "string",
                 "enum": ["yes", "no"]
               },
               "service": {
                 "title": "",
+                "type": "string",
                 "enum": ["Internet", "VoIP"]
               },
               "ras_ip": {
@@ -1050,6 +1059,7 @@
               },
               "caller_id_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["=", ">", "<", ">=", "<="]
               },
               "mac": {
@@ -1084,6 +1094,7 @@
               },
               "cpm_op": {
                 "title": "comes with cpm",
+                "type": "string",
                 "enum": ["=", ">", "<", ">=", "<="]
               },
               "called_number": {
@@ -1093,6 +1104,7 @@
               },
               "called_number_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["=", ">", "<", ">=", "<="]
               },
               "prefix_name": {
@@ -1102,6 +1114,7 @@
               },
               "prefix_name_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["=", ">", "<", ">=", "<="]
               },
               "called_ip": {
@@ -1126,20 +1139,21 @@
           "name": "from",
           "description": "start index, for pagination",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "to",
           "description": "end index, for pagination",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "sort_by",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": [
               "credit_used",
               "login_time",
@@ -1168,7 +1182,7 @@
           "properties": {
             "total_rows": {
               "title": "number of total rows",
-              "type": "number"
+              "type": "integer"
             },
             "total_credit": {
               "title": "sum of total rows credit",
@@ -1176,15 +1190,15 @@
             },
             "total_duration": {
               "title": "sum of total rows duration, in seconds",
-              "type": "number"
+              "type": "integer"
             },
             "total_in_bytes": {
               "title": "sum of total download, in bytes",
-              "type": "number"
+              "type": "integer"
             },
             "total_out_bytes": {
               "title": "sum of total upload, in bytes",
-              "type": "number"
+              "type": "integer"
             },
             "report": {
               "title": "report data of specified page (from - to)",
@@ -1192,148 +1206,124 @@
               "items": {
                 "title": "",
                 "type": "object",
-                "params": [
-                  {
-                    "name": "connection_log_id",
-                    "description": "",
-                    "type": "number"
+                "properties": {
+                  "connection_log_id": {
+                    "title": "",
+                    "type": "integer"
                   },
-                  {
-                    "name": "user_id",
-                    "description": "",
+                  "user_id": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "service_type",
-                    "description": "",
+                  "service_type": {
+                    "title": "",
+                    "type": "string",
                     "enum": ["Internet", "VoIP"]
                   },
-                  {
-                    "name": "session_start_time",
-                    "description": "datetime, ",
+                  "session_start_time": {
+                    "title": "datetime, ",
                     "type": "string",
                     "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
                   },
-                  {
-                    "name": "session_stop_time",
-                    "description": "datetime, ",
+                  "session_stop_time": {
+                    "title": "datetime, ",
                     "type": "string",
                     "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
                   },
-                  {
-                    "name": "duration",
-                    "description": "",
+                  "duration": {
+                    "title": "",
+                    "type": "integer"
+                  },
+                  "credit_index": {
+                    "title": "",
+                    "type": "integer"
+                  },
+                  "credit_used": {
+                    "title": "",
                     "type": "number"
                   },
-                  {
-                    "name": "credit_index",
-                    "description": "",
+                  "before_credit": {
+                    "title": "",
                     "type": "number"
                   },
-                  {
-                    "name": "credit_used",
-                    "description": "",
-                    "type": "number"
-                  },
-                  {
-                    "name": "before_credit",
-                    "description": "",
-                    "type": "number"
-                  },
-                  {
-                    "name": "successful",
-                    "description": "",
+                  "successful": {
+                    "title": "",
                     "type": "boolean"
                   },
-                  {
-                    "name": "caller_id",
-                    "description": "",
-                    "required": false,
+                  "caller_id": {
+                    "title": "",
+                    "type": "string",
+                    "required": false
+                  },
+                  "cpm": {
+                    "title": "",
+                    "type": "number",
+                    "required": false
+                  },
+                  "persistent_lan": {
+                    "title": "",
+                    "type": "string",
+                    "required": false
+                  },
+                  "kill_reason": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "cpm",
-                    "description": "",
-                    "required": false,
-                    "type": "number"
+                  "username": {
+                    "title": "",
+                    "type": "string",
+                    "required": false
                   },
-                  {
-                    "name": "persistent_lan",
-                    "description": "",
-                    "required": false,
-                    "type": "string"
+                  "remote_ip": {
+                    "title": "",
+                    "type": "string",
+                    "required": false
                   },
-                  {
-                    "name": "kill_reason",
-                    "description": "",
-                    "type": "string"
+                  "mac": {
+                    "title": "",
+                    "type": "string",
+                    "required": false
                   },
-                  {
-                    "name": "username",
-                    "description": "",
-                    "required": false,
-                    "type": "string"
+                  "bytes_in": {
+                    "title": "",
+                    "type": "integer",
+                    "required": false
                   },
-                  {
-                    "name": "remote_ip",
-                    "description": "",
-                    "required": false,
-                    "type": "string"
+                  "bytes_out": {
+                    "title": "",
+                    "type": "integer",
+                    "required": false
                   },
-                  {
-                    "name": "mac",
-                    "description": "",
-                    "required": false,
-                    "type": "string"
+                  "station_ip": {
+                    "title": "",
+                    "type": "string",
+                    "required": false
                   },
-                  {
-                    "name": "bytes_in",
-                    "description": "",
-                    "required": false,
-                    "type": "number"
-                  },
-                  {
-                    "name": "bytes_out",
-                    "description": "",
-                    "required": false,
-                    "type": "number"
-                  },
-                  {
-                    "name": "station_ip",
-                    "description": "",
-                    "required": false,
-                    "type": "string"
-                  },
-                  {
-                    "name": "details",
-                    "description": "",
+                  "details": {
+                    "title": "",
                     "type": "array"
                   },
-                  {
-                    "name": "voip_username",
-                    "description": "",
-                    "required": false,
-                    "type": "string"
+                  "voip_username": {
+                    "title": "",
+                    "type": "string",
+                    "required": false
                   },
-                  {
-                    "name": "prefix_name",
-                    "description": "",
-                    "required": false,
-                    "type": "string"
+                  "prefix_name": {
+                    "title": "",
+                    "type": "string",
+                    "required": false
                   },
-                  {
-                    "name": "prefix_cpm",
-                    "description": "",
-                    "required": false,
-                    "type": "number"
+                  "prefix_cpm": {
+                    "title": "",
+                    "type": "number",
+                    "required": false
                   },
-                  {
-                    "name": "called_number",
-                    "description": "",
-                    "required": false,
-                    "type": "string"
+                  "called_number": {
+                    "title": "",
+                    "type": "string",
+                    "required": false
                   }
-                ]
+                }
               }
             }
           }
@@ -1364,20 +1354,21 @@
           "name": "from",
           "description": "start index, for pagination",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "to",
           "description": "end index, for pagination",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "sort_by",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": [
               "credit_used",
               "login_time",
@@ -1568,20 +1559,21 @@
           "name": "from",
           "description": "start index, for pagination",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "to",
           "description": "end index, for pagination",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "order_by",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["creation_date", "normal_username", "sum"]
           }
         }
@@ -1595,14 +1587,14 @@
           "properties": {
             "total_rows": {
               "title": "Number of total rows",
-              "type": "number"
+              "type": "integer"
             },
             "report": {
               "title": "",
               "type": "array",
               "items": {
                 "title": "",
-                "type": "list"
+                "type": "array"
               }
             }
           }
@@ -1627,20 +1619,21 @@
           "name": "from",
           "description": "start index, for pagination",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "to",
           "description": "end index, for pagination",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "order_by",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["creation_date", "normal_username", "sum"]
           }
         }
@@ -1654,14 +1647,14 @@
           "properties": {
             "total_rows": {
               "title": "Number of total rows",
-              "type": "number"
+              "type": "integer"
             },
             "report": {
               "title": "",
               "type": "array",
               "items": {
                 "title": "",
-                "type": "list"
+                "type": "array"
               }
             }
           }
@@ -1686,20 +1679,21 @@
           "name": "from",
           "description": "start index, for pagination",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "to",
           "description": "end index, for pagination",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "order_by",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["creation_date", "normal_username", "sum"]
           }
         }
@@ -1713,14 +1707,14 @@
           "properties": {
             "total_rows": {
               "title": "Number of total rows",
-              "type": "number"
+              "type": "integer"
             },
             "report": {
               "title": "",
               "type": "array",
               "items": {
                 "title": "",
-                "type": "list"
+                "type": "array"
               }
             }
           }
@@ -1745,20 +1739,21 @@
           "name": "from",
           "description": "start index, for pagination",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "to",
           "description": "end index, for pagination",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "order_by",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": [
               "total_credit",
               "total_duration",
@@ -1777,7 +1772,7 @@
           "properties": {
             "total_rows": {
               "title": "Number of total rows",
-              "type": "number"
+              "type": "integer"
             },
             "report": {
               "title": "",
@@ -1785,78 +1780,64 @@
               "items": {
                 "title": "",
                 "type": "object",
-                "params": [
-                  {
-                    "name": "user_id",
-                    "description": "User ID",
-                    "type": "number"
+                "properties": {
+                  "user_id": {
+                    "title": "User ID",
+                    "type": "integer"
                   },
-                  {
-                    "name": "username",
-                    "description": "User username",
+                  "username": {
+                    "title": "User username",
                     "type": "string"
                   },
-                  {
-                    "name": "serial",
-                    "description": "User serial",
+                  "serial": {
+                    "title": "User serial",
                     "type": "string"
                   },
-                  {
-                    "name": "group_name",
-                    "description": "User group name",
+                  "group_name": {
+                    "title": "User group name",
                     "type": "string"
                   },
-                  {
-                    "name": "isp_name",
-                    "description": "User ISP name",
+                  "isp_name": {
+                    "title": "User ISP name",
                     "type": "string"
                   },
-                  {
-                    "name": "creation_date",
-                    "description": "User creation date",
+                  "creation_date": {
+                    "title": "User creation date",
                     "type": "string"
                   },
-                  {
-                    "name": "name",
-                    "description": "Name of user",
+                  "name": {
+                    "title": "Name of user",
                     "type": "string"
                   },
-                  {
-                    "name": "sub_service_name",
-                    "description": "Sub service name",
+                  "sub_service_name": {
+                    "title": "Sub service name",
                     "type": "string"
                   },
-                  {
-                    "name": "sub_service_charging",
-                    "description": "Sub service charging name",
+                  "sub_service_charging": {
+                    "title": "Sub service charging name",
                     "type": "string"
                   },
-                  {
-                    "name": "seb_service_qos",
-                    "description": "Sub service QOS name",
+                  "seb_service_qos": {
+                    "title": "Sub service QOS name",
                     "type": "string"
                   },
-                  {
-                    "name": "total_credit",
-                    "description": "Total credit",
-                    "type": "number"
+                  "total_credit": {
+                    "title": "Total credit",
+                    "type": "integer"
                   },
-                  {
-                    "name": "total_duration",
-                    "description": "Total duration",
-                    "type": "number"
+                  "total_duration": {
+                    "title": "Total duration",
+                    "type": "integer"
                   },
-                  {
-                    "name": "total_in_bytes",
-                    "description": "Total in bytes",
-                    "type": "number"
+                  "total_in_bytes": {
+                    "title": "Total in bytes",
+                    "type": "integer"
                   },
-                  {
-                    "name": "total_out_bytes",
-                    "description": "Total out bytes",
-                    "type": "number"
+                  "total_out_bytes": {
+                    "title": "Total out bytes",
+                    "type": "integer"
                   }
-                ]
+                }
               }
             }
           }
@@ -1881,36 +1862,34 @@
           "name": "from",
           "description": "start index",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "to",
           "description": "end index",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "sort_by",
           "description": "",
           "schema": {
-            "enum": [
-              "user_id",
-              "normal_username",
-              "voip_username",
-              "group_id",
-              "owner_id",
-              "creation_date",
-              "credit",
-              "deposit",
-              "first_login",
-              "serial",
-              "serial_numeric"
-            ]
-          },
-          "__value_comment__": {
-            "owner_id": "owner isp id"
+            "type": "string",
+            "enum": {
+              "user_id": "",
+              "normal_username": "",
+              "voip_username": "",
+              "group_id": "",
+              "owner_id": "owner isp id",
+              "creation_date": "",
+              "credit": "",
+              "deposit": "",
+              "first_login": "",
+              "serial": "",
+              "serial_numeric": ""
+            }
           }
         },
         {
@@ -1948,6 +1927,7 @@
                 "items": {
                   "title": "",
                   "schema": {
+                    "type": "string",
                     "enum": [
                       "prefix_name",
                       "prefix_code",
@@ -1967,20 +1947,21 @@
           "name": "from",
           "description": "start index, for pagination",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "to",
           "description": "end index, for pagination",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "order_by",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": [
               "prefix_name",
               "prefix_code",
@@ -2007,14 +1988,14 @@
           "properties": {
             "total_rows": {
               "title": "total number of rows",
-              "type": "number"
+              "type": "integer"
             },
             "report": {
               "title": "",
               "type": "array",
               "items": {
                 "title": "",
-                "type": "list"
+                "type": "array"
               }
             }
           }
@@ -2039,20 +2020,21 @@
           "name": "from",
           "description": "start index, for pagination",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "to",
           "description": "end index, for pagination",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "order_by",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["creation_date", "normal_username", "sum"]
           }
         }
@@ -2066,14 +2048,14 @@
           "properties": {
             "total_rows": {
               "title": "Number of total rows",
-              "type": "number"
+              "type": "integer"
             },
             "report": {
               "title": "",
               "type": "array",
               "items": {
                 "title": "",
-                "type": "list"
+                "type": "array"
               }
             }
           }
@@ -2113,6 +2095,7 @@
                 "items": {
                   "title": "",
                   "schema": {
+                    "type": "string",
                     "enum": [
                       "ADD_USER",
                       "CHANGE_CREDIT",
@@ -2143,6 +2126,7 @@
               },
               "per_user_credit_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["=", ">", "<", ">=", "<="]
               },
               "isp_credit": {
@@ -2152,6 +2136,7 @@
               },
               "isp_credit_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["=", ">", "<", ">=", "<="]
               },
               "change_time_from": {
@@ -2161,6 +2146,7 @@
               },
               "change_time_from_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -2178,6 +2164,7 @@
               },
               "change_time_to_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -2215,20 +2202,21 @@
           "name": "from",
           "description": "start index, for pagination",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "to",
           "description": "end index, for pagination",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "sort_by",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["change_time", "per_user_credit", "isp_credit"]
           }
         },
@@ -2249,14 +2237,14 @@
           "properties": {
             "total_rows": {
               "title": "Number of total rows",
-              "type": "number"
+              "type": "integer"
             },
             "report": {
               "title": "",
               "type": "array",
               "items": {
                 "title": "",
-                "type": "list"
+                "type": "array"
               }
             },
             "total_per_user_credit": {
@@ -2309,6 +2297,7 @@
                 "items": {
                   "title": "",
                   "schema": {
+                    "type": "string",
                     "enum": [
                       "ADD_USER",
                       "CHANGE_CREDIT",
@@ -2339,6 +2328,7 @@
               },
               "per_user_credit_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["=", ">", "<", ">=", "<="]
               },
               "isp_credit": {
@@ -2348,6 +2338,7 @@
               },
               "isp_credit_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["=", ">", "<", ">=", "<="]
               },
               "change_time_from": {
@@ -2357,6 +2348,7 @@
               },
               "change_time_from_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -2374,6 +2366,7 @@
               },
               "change_time_to_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -2411,20 +2404,21 @@
           "name": "from",
           "description": "start index, for pagination",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "to",
           "description": "end index, for pagination",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "sort_by",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["change_time", "per_user_credit", "isp_credit"]
           }
         },
@@ -2445,14 +2439,14 @@
           "properties": {
             "total_rows": {
               "title": "Number of total rows",
-              "type": "number"
+              "type": "integer"
             },
             "report": {
               "title": "",
               "type": "array",
               "items": {
                 "title": "",
-                "type": "list"
+                "type": "array"
               }
             },
             "total_per_user_credit": {
@@ -2490,6 +2484,7 @@
                 "items": {
                   "title": "",
                   "schema": {
+                    "type": "string",
                     "enum": [
                       "ADD_USER",
                       "CHANGE_CREDIT",
@@ -2520,6 +2515,7 @@
               },
               "per_user_credit_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["=", ">", "<", ">=", "<="]
               },
               "change_time_from": {
@@ -2529,6 +2525,7 @@
               },
               "change_time_from_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -2546,6 +2543,7 @@
               },
               "change_time_to_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -2583,20 +2581,21 @@
           "name": "from",
           "description": "start index, for pagination",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "to",
           "description": "end index, for pagination",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "sort_by",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["change_time", "per_user_credit"]
           }
         },
@@ -2617,14 +2616,14 @@
           "properties": {
             "total_rows": {
               "title": "Number of total rows",
-              "type": "number"
+              "type": "integer"
             },
             "report": {
               "title": "",
               "type": "array",
               "items": {
                 "title": "",
-                "type": "list"
+                "type": "array"
               }
             },
             "total_per_user_credit": {
@@ -2661,39 +2660,30 @@
             "items": {
               "title": "",
               "schema": {
-                "enum": [
-                  "action",
-                  "action_text",
-                  "admin_id",
-                  "admin_name",
-                  "change_time",
-                  "change_time_formatted",
-                  "comment",
-                  "credit_change_id",
-                  "isp_credit",
-                  "isp_id",
-                  "isp_name",
-                  "per_user_credit",
-                  "remote_addr",
-                  "user_id",
-                  "username",
-                  "name",
-                  "serial",
-                  "group",
-                  "group_id",
-                  "before_credit",
-                  "user_ids"
-                ]
-              },
-              "__value_comment__": {
-                "user_id": "in user_view mode only",
-                "username": "in user_view mode only",
-                "name": "in user_view mode only",
-                "serial": "in user_view mode only",
-                "group": "in user_view mode only",
-                "group_id": "in user_view mode only",
-                "before_credit": "in user_view mode only",
-                "user_ids": "in admin-view only (no user_view in conds) "
+                "type": "string",
+                "enum": {
+                  "action": "",
+                  "action_text": "",
+                  "admin_id": "",
+                  "admin_name": "",
+                  "change_time": "",
+                  "change_time_formatted": "",
+                  "comment": "",
+                  "credit_change_id": "",
+                  "isp_credit": "",
+                  "isp_id": "",
+                  "isp_name": "",
+                  "per_user_credit": "",
+                  "remote_addr": "",
+                  "user_id": "in user_view mode only",
+                  "username": "in user_view mode only",
+                  "name": "in user_view mode only",
+                  "serial": "in user_view mode only",
+                  "group": "in user_view mode only",
+                  "group_id": "in user_view mode only",
+                  "before_credit": "in user_view mode only",
+                  "user_ids": "in admin-view only (no user_view in conds) "
+                }
               }
             }
           }
@@ -2702,6 +2692,7 @@
           "name": "sort_by",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["change_time", "per_user_credit", "isp_credit"]
           }
         },
@@ -2716,6 +2707,7 @@
           "name": "output_type",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["csv", "pdf"]
           }
         }
@@ -2757,6 +2749,7 @@
                 "items": {
                   "title": "",
                   "schema": {
+                    "type": "string",
                     "enum": [
                       "ADD_USER",
                       "CHANGE_DEPOSIT",
@@ -2780,6 +2773,7 @@
               },
               "deposit_op": {
                 "title": "comes with deposit cond",
+                "type": "string",
                 "enum": ["=", ">", "<", ">=", "<="]
               },
               "change_time_from": {
@@ -2789,6 +2783,7 @@
               },
               "change_time_from_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -2806,6 +2801,7 @@
               },
               "change_time_to_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -2843,20 +2839,21 @@
           "name": "from",
           "description": "start index, for pagination",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "to",
           "description": "end index, for pagination",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "sort_by",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["change_time", "user_id", "deposit_change"]
           }
         },
@@ -2877,7 +2874,7 @@
           "properties": {
             "total_rows": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "total_deposit": {
               "title": "",
@@ -2889,15 +2886,14 @@
               "items": {
                 "title": "",
                 "type": "object",
-                "params": [
-                  {
-                    "name": "action",
-                    "description": "1 to 10",
-                    "type": "number"
+                "properties": {
+                  "action": {
+                    "title": "1 to 10",
+                    "type": "integer"
                   },
-                  {
-                    "name": "action_text",
-                    "description": "",
+                  "action_text": {
+                    "title": "",
+                    "type": "string",
                     "enum": [
                       "ADD_USER",
                       "CHANGE_DEPOSIT",
@@ -2911,72 +2907,59 @@
                       "VOUCHER"
                     ]
                   },
-                  {
-                    "name": "admin_id",
-                    "description": "",
+                  "admin_id": {
+                    "title": "",
+                    "type": "integer"
+                  },
+                  "admin_name": {
+                    "title": "",
+                    "type": "string"
+                  },
+                  "change_time": {
+                    "title": "gregorian",
+                    "type": "string"
+                  },
+                  "change_time_formatted": {
+                    "title": "depends on input date_type",
+                    "type": "string"
+                  },
+                  "comment": {
+                    "title": "",
+                    "type": "string"
+                  },
+                  "deposit_change": {
+                    "title": "",
                     "type": "number"
                   },
-                  {
-                    "name": "admin_name",
-                    "description": "",
+                  "deposit_change_id": {
+                    "title": "",
+                    "type": "integer"
+                  },
+                  "group_name": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "change_time",
-                    "description": "gregorian",
+                  "isp_id": {
+                    "title": "",
+                    "type": "integer"
+                  },
+                  "isp_name": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "change_time_formatted",
-                    "description": "depends on input date_type",
+                  "remote_addr": {
+                    "title": "Remote IP",
                     "type": "string"
                   },
-                  {
-                    "name": "comment",
-                    "description": "",
-                    "type": "string"
+                  "user_id": {
+                    "title": "",
+                    "type": "integer"
                   },
-                  {
-                    "name": "deposit_change",
-                    "description": "",
-                    "type": "number"
-                  },
-                  {
-                    "name": "deposit_change_id",
-                    "description": "",
-                    "type": "number"
-                  },
-                  {
-                    "name": "group_name",
-                    "description": "",
-                    "type": "string"
-                  },
-                  {
-                    "name": "isp_id",
-                    "description": "",
-                    "type": "number"
-                  },
-                  {
-                    "name": "isp_name",
-                    "description": "",
-                    "type": "string"
-                  },
-                  {
-                    "name": "remote_addr",
-                    "description": "Remote IP",
-                    "type": "string"
-                  },
-                  {
-                    "name": "user_id",
-                    "description": "",
-                    "type": "number"
-                  },
-                  {
-                    "name": "username",
-                    "description": "",
+                  "username": {
+                    "title": "",
                     "type": "string"
                   }
-                ]
+                }
               }
             }
           }
@@ -3005,6 +2988,7 @@
                 "items": {
                   "title": "",
                   "schema": {
+                    "type": "string",
                     "enum": [
                       "ADD_USER",
                       "CHANGE_DEPOSIT",
@@ -3028,6 +3012,7 @@
               },
               "deposit_op": {
                 "title": "comes with deposit cond",
+                "type": "string",
                 "enum": ["=", ">", "<", ">=", "<="]
               },
               "change_time_from": {
@@ -3037,6 +3022,7 @@
               },
               "change_time_from_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -3054,6 +3040,7 @@
               },
               "change_time_to_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -3086,20 +3073,21 @@
           "name": "from",
           "description": "start index, for pagination",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "to",
           "description": "end index, for pagination",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "sort_by",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["change_time", "user_id", "deposit_change"]
           }
         },
@@ -3120,7 +3108,7 @@
           "properties": {
             "total_rows": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "total_deposit": {
               "title": "",
@@ -3132,15 +3120,14 @@
               "items": {
                 "title": "",
                 "type": "object",
-                "params": [
-                  {
-                    "name": "action",
-                    "description": "1 to 10",
-                    "type": "number"
+                "properties": {
+                  "action": {
+                    "title": "1 to 10",
+                    "type": "integer"
                   },
-                  {
-                    "name": "action_text",
-                    "description": "",
+                  "action_text": {
+                    "title": "",
+                    "type": "string",
                     "enum": [
                       "ADD_USER",
                       "CHANGE_DEPOSIT",
@@ -3154,47 +3141,39 @@
                       "VOUCHER"
                     ]
                   },
-                  {
-                    "name": "change_time",
-                    "description": "gregorian",
+                  "change_time": {
+                    "title": "gregorian",
                     "type": "string"
                   },
-                  {
-                    "name": "change_time_formatted",
-                    "description": "depends on input date_type",
+                  "change_time_formatted": {
+                    "title": "depends on input date_type",
                     "type": "string"
                   },
-                  {
-                    "name": "comment",
-                    "description": "",
+                  "comment": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "deposit_change",
-                    "description": "",
+                  "deposit_change": {
+                    "title": "",
                     "type": "number"
                   },
-                  {
-                    "name": "deposit_change_id",
-                    "description": "",
-                    "type": "number"
+                  "deposit_change_id": {
+                    "title": "",
+                    "type": "integer"
                   },
-                  {
-                    "name": "group_name",
-                    "description": "",
+                  "group_name": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "user_id",
-                    "description": "",
-                    "type": "number"
+                  "user_id": {
+                    "title": "",
+                    "type": "integer"
                   },
-                  {
-                    "name": "username",
-                    "description": "",
+                  "username": {
+                    "title": "",
                     "type": "string"
                   }
-                ]
+                }
               }
             }
           }
@@ -3239,6 +3218,7 @@
               },
               "change_time_from_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -3256,6 +3236,7 @@
               },
               "change_time_to_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -3268,6 +3249,7 @@
               },
               "is_user": {
                 "title": "",
+                "type": "string",
                 "enum": ["yes", "no"]
               },
               "isp_names": {
@@ -3287,20 +3269,21 @@
           "name": "from",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "to",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "sort_by",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["change_time", "object_id", "admin_id"]
           }
         },
@@ -3321,7 +3304,7 @@
           "properties": {
             "total_rows": {
               "title": "number of total rows",
-              "type": "number"
+              "type": "integer"
             },
             "report": {
               "title": "",
@@ -3329,73 +3312,61 @@
               "items": {
                 "title": "",
                 "type": "object",
-                "params": [
-                  {
-                    "name": "admin_id",
-                    "description": "",
-                    "type": "number"
+                "properties": {
+                  "admin_id": {
+                    "title": "",
+                    "type": "integer"
                   },
-                  {
-                    "name": "admin_name",
-                    "description": "",
+                  "admin_name": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "attr_name",
-                    "description": "",
+                  "attr_name": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "change_time",
-                    "description": "gregorian",
+                  "change_time": {
+                    "title": "gregorian",
                     "type": "string"
                   },
-                  {
-                    "name": "change_time_formatted",
-                    "description": "depending on input date_type",
+                  "change_time_formatted": {
+                    "title": "depending on input date_type",
                     "type": "string"
                   },
-                  {
-                    "name": "is_user",
-                    "description": "",
-                    "__value_comment__": {
+                  "is_user": {
+                    "title": "",
+                    "type": "string",
+                    "enum": {
                       "t": "true / yes",
                       "f": "false / no"
-                    },
-                    "enum": ["t", "f"]
+                    }
                   },
-                  {
-                    "name": "new_value",
-                    "description": "",
+                  "new_value": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "object_id",
-                    "description": "",
-                    "type": "number"
+                  "object_id": {
+                    "title": "",
+                    "type": "integer"
                   },
-                  {
-                    "name": "old_value",
-                    "description": "",
+                  "old_value": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "remote_ip",
-                    "description": "",
+                  "remote_ip": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "user_audit_log",
-                    "description": "log id",
-                    "type": "number"
+                  "user_audit_log": {
+                    "title": "log id",
+                    "type": "integer"
                   },
-                  {
-                    "name": "username",
-                    "description": "only exists in user-mode (is_user=yes)",
-                    "required": false,
-                    "type": "string"
+                  "username": {
+                    "title": "only exists in user-mode (is_user=yes)",
+                    "type": "string",
+                    "required": false
                   }
-                ]
+                }
               }
             }
           }
@@ -3427,6 +3398,7 @@
           "name": "order_by",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["count", "average_duration", "total_duration"]
           }
         }
@@ -3474,6 +3446,7 @@
               },
               "change_time_from_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -3491,6 +3464,7 @@
               },
               "change_time_to_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -3508,20 +3482,21 @@
           "name": "from",
           "description": "start index, for pagination",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "to",
           "description": "end index, for pagination",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "sort_by",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": [
               "isp_deposit_change_admin_id",
               "isp_deposit_change_isp_id",
@@ -3547,7 +3522,7 @@
           "properties": {
             "total_rows": {
               "title": "number of total rows",
-              "type": "number"
+              "type": "integer"
             },
             "total_deposit_change": {
               "title": "total/sum of deposit change amounts",
@@ -3559,15 +3534,14 @@
               "items": {
                 "title": "",
                 "type": "object",
-                "params": [
-                  {
-                    "name": "isp_deposit_before_change",
-                    "description": "",
+                "properties": {
+                  "isp_deposit_before_change": {
+                    "title": "",
                     "type": "number"
                   },
-                  {
-                    "name": "isp_deposit_change_action",
-                    "description": "",
+                  "isp_deposit_change_action": {
+                    "title": "",
+                    "type": "string",
                     "enum": [
                       "ADD_ISP",
                       "CHANGE_ISP_DEPOSIT",
@@ -3575,68 +3549,56 @@
                       "PENALTY"
                     ]
                   },
-                  {
-                    "name": "isp_deposit_change_admin_id",
-                    "description": "Admin ID",
+                  "isp_deposit_change_admin_id": {
+                    "title": "Admin ID",
+                    "type": "integer"
+                  },
+                  "isp_deposit_change_admin_isp_id": {
+                    "title": "Admin's Owner ISP ID",
+                    "type": "integer"
+                  },
+                  "isp_deposit_change_admin_isp_name": {
+                    "title": "Admin's Owner ISP Name",
+                    "type": "string"
+                  },
+                  "isp_deposit_change_admin_name": {
+                    "title": "Admin Username",
+                    "type": "string"
+                  },
+                  "isp_deposit_change_amount": {
+                    "title": "Changed Amount",
                     "type": "number"
                   },
-                  {
-                    "name": "isp_deposit_change_admin_isp_id",
-                    "description": "Admin's Owner ISP ID",
-                    "type": "number"
-                  },
-                  {
-                    "name": "isp_deposit_change_admin_isp_name",
-                    "description": "Admin's Owner ISP Name",
+                  "isp_deposit_change_comment": {
+                    "title": "Comment",
                     "type": "string"
                   },
-                  {
-                    "name": "isp_deposit_change_admin_name",
-                    "description": "Admin Username",
+                  "isp_deposit_change_id": {
+                    "title": "",
+                    "type": "integer"
+                  },
+                  "isp_deposit_change_isp_id": {
+                    "title": "ISP ID",
+                    "type": "integer"
+                  },
+                  "isp_deposit_change_isp_name": {
+                    "title": "ISP Name",
                     "type": "string"
                   },
-                  {
-                    "name": "isp_deposit_change_amount",
-                    "description": "Changed Amount",
-                    "type": "number"
-                  },
-                  {
-                    "name": "isp_deposit_change_comment",
-                    "description": "Comment",
+                  "isp_deposit_change_remote_addr": {
+                    "title": "Admin's Remote IP",
                     "type": "string"
                   },
-                  {
-                    "name": "isp_deposit_change_id",
-                    "description": "",
-                    "type": "number"
-                  },
-                  {
-                    "name": "isp_deposit_change_isp_id",
-                    "description": "ISP ID",
-                    "type": "number"
-                  },
-                  {
-                    "name": "isp_deposit_change_isp_name",
-                    "description": "ISP Name",
+                  "isp_deposit_change_time": {
+                    "title": "Change time, gregorian",
                     "type": "string"
                   },
-                  {
-                    "name": "isp_deposit_change_remote_addr",
-                    "description": "Admin's Remote IP",
-                    "type": "string"
-                  },
-                  {
-                    "name": "isp_deposit_change_time",
-                    "description": "Change time, gregorian",
-                    "type": "string"
-                  },
-                  {
-                    "name": "isp_deposit_change_time_formatted",
-                    "description": "datetime, Change time, depending on input date_type",
+                  "isp_deposit_change_time_formatted": {
+                    "title": "datetime, Change time, depending on input date_type",
                     "type": "string",
                     "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?$"
                   }
-                ]
+                }
               }
             }
           }
@@ -3672,6 +3634,7 @@
               },
               "temporary_extend_date_from_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -3689,6 +3652,7 @@
               },
               "temporary_extend_date_to_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -3706,20 +3670,21 @@
           "name": "from",
           "description": "start index, for pagination",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "to",
           "description": "end index, for pagination",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "sort_by",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": [
               "temporary_extend_date",
               "user_id",
@@ -3745,7 +3710,7 @@
           "properties": {
             "total_rows": {
               "title": "number of total rows",
-              "type": "number"
+              "type": "integer"
             },
             "report": {
               "title": "",
@@ -3753,63 +3718,52 @@
               "items": {
                 "title": "",
                 "type": "object",
-                "params": [
-                  {
-                    "name": "credit_usage",
-                    "description": "",
+                "properties": {
+                  "credit_usage": {
+                    "title": "",
                     "type": "number"
                   },
-                  {
-                    "name": "duration_seconds",
-                    "description": "",
-                    "type": "number"
+                  "duration_seconds": {
+                    "title": "",
+                    "type": "integer"
                   },
-                  {
-                    "name": "finish_date",
-                    "description": "",
+                  "finish_date": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "finish_date_formatted",
-                    "description": "",
+                  "finish_date_formatted": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "temporary_extend_credit",
-                    "description": "",
+                  "temporary_extend_credit": {
+                    "title": "",
                     "type": "number"
                   },
-                  {
-                    "name": "temporary_extend_date",
-                    "description": "",
+                  "temporary_extend_date": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "temporary_extend_date_formatted",
-                    "description": "",
+                  "temporary_extend_date_formatted": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "temporary_extend_hours",
-                    "description": "",
-                    "type": "number"
+                  "temporary_extend_hours": {
+                    "title": "",
+                    "type": "integer"
                   },
-                  {
-                    "name": "temporary_extend_log_id",
-                    "description": "",
-                    "type": "number"
+                  "temporary_extend_log_id": {
+                    "title": "",
+                    "type": "integer"
                   },
-                  {
-                    "name": "user_id",
-                    "description": "",
-                    "type": "number"
+                  "user_id": {
+                    "title": "",
+                    "type": "integer"
                   },
-                  {
-                    "name": "username",
-                    "description": "starts with 'I: ' for internet users",
+                  "username": {
+                    "title": "starts with 'I: ' for internet users",
                     "type": "string"
                   }
-                ]
+                }
               }
             }
           }
@@ -3840,6 +3794,7 @@
           "name": "date_unit",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": [
               "jalali",
               "gregorian",
@@ -3871,13 +3826,14 @@
           "name": "connection_log_clean",
           "description": "period",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "connection_log_unit",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["Seconds", "Minutes", "Hours", "Days", "Months", "Years"]
           }
         },
@@ -3885,13 +3841,14 @@
           "name": "credit_change_clean",
           "description": "relative time",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "credit_change_unit",
           "description": "relative time unit",
           "schema": {
+            "type": "string",
             "enum": ["Seconds", "Minutes", "Hours", "Days", "Months", "Years"]
           }
         },
@@ -3899,13 +3856,14 @@
           "name": "user_audit_log_clean",
           "description": "relative time",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "user_audit_log_unit",
           "description": "relative time unit",
           "schema": {
+            "type": "string",
             "enum": ["Seconds", "Minutes", "Hours", "Days", "Months", "Years"]
           }
         },
@@ -3913,13 +3871,14 @@
           "name": "snapshots_clean",
           "description": "relative time",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "snapshots_unit",
           "description": "relative time unit",
           "schema": {
+            "type": "string",
             "enum": ["Seconds", "Minutes", "Hours", "Days", "Months", "Years"]
           }
         },
@@ -3927,13 +3886,14 @@
           "name": "bw_snapshots_clean",
           "description": "relative time",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "bw_snapshots_unit",
           "description": "relative time unit",
           "schema": {
+            "type": "string",
             "enum": ["Seconds", "Minutes", "Hours", "Days", "Months", "Years"]
           }
         },
@@ -3941,13 +3901,14 @@
           "name": "web_analyzer_clean",
           "description": "relative time",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "web_analyzer_unit",
           "description": "relative time unit",
           "schema": {
+            "type": "string",
             "enum": ["Seconds", "Minutes", "Hours", "Days", "Months", "Years"]
           }
         }
@@ -3981,12 +3942,13 @@
                 {
                   "index": 0,
                   "title": "relative time",
-                  "type": "int"
+                  "type": "integer"
                 },
                 {
                   "index": 1,
                   "title": "relative time unit",
                   "schema": {
+                    "type": "string",
                     "enum": [
                       "Seconds",
                       "Minutes",
@@ -4007,12 +3969,13 @@
                 {
                   "index": 0,
                   "title": "relative time",
-                  "type": "int"
+                  "type": "integer"
                 },
                 {
                   "index": 1,
                   "title": "relative time unit",
                   "schema": {
+                    "type": "string",
                     "enum": [
                       "Seconds",
                       "Minutes",
@@ -4033,12 +3996,13 @@
                 {
                   "index": 0,
                   "title": "relative time",
-                  "type": "int"
+                  "type": "integer"
                 },
                 {
                   "index": 1,
                   "title": "relative time unit",
                   "schema": {
+                    "type": "string",
                     "enum": [
                       "Seconds",
                       "Minutes",
@@ -4059,12 +4023,13 @@
                 {
                   "index": 0,
                   "title": "relative time",
-                  "type": "int"
+                  "type": "integer"
                 },
                 {
                   "index": 1,
                   "title": "relative time unit",
                   "schema": {
+                    "type": "string",
                     "enum": [
                       "Seconds",
                       "Minutes",
@@ -4085,12 +4050,13 @@
                 {
                   "index": 0,
                   "title": "relative time",
-                  "type": "int"
+                  "type": "integer"
                 },
                 {
                   "index": 1,
                   "title": "relative time unit",
                   "schema": {
+                    "type": "string",
                     "enum": [
                       "Seconds",
                       "Minutes",
@@ -4111,12 +4077,13 @@
                 {
                   "index": 0,
                   "title": "relative time",
-                  "type": "int"
+                  "type": "integer"
                 },
                 {
                   "index": 1,
                   "title": "relative time unit",
                   "schema": {
+                    "type": "string",
                     "enum": [
                       "Seconds",
                       "Minutes",
@@ -4153,6 +4120,7 @@
               },
               "login_time_from_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -4170,6 +4138,7 @@
               },
               "login_time_to_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -4197,6 +4166,7 @@
               },
               "view_period": {
                 "title": "",
+                "type": "string",
                 "enum": ["daily", "weekly", "monthly", "yearly"]
               },
               "included_objects": {
@@ -4210,6 +4180,7 @@
                 "items": {
                   "title": "",
                   "schema": {
+                    "type": "string",
                     "enum": ["duration", "credit", "in_bytes", "out_bytes"]
                   }
                 },
@@ -4222,6 +4193,7 @@
               },
               "called_number_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "prefix_name": {
@@ -4231,6 +4203,7 @@
               },
               "prefix_name_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "called_ip": {
@@ -4269,7 +4242,7 @@
               "type": "array",
               "items": {
                 "title": "",
-                "type": "list"
+                "type": "array"
               }
             }
           }
@@ -4294,36 +4267,22 @@
                 "items": {
                   "title": "",
                   "schema": {
-                    "enum": [
-                      "0",
-                      "1",
-                      "2",
-                      "3",
-                      "4",
-                      "5",
-                      "6",
-                      "7",
-                      "8",
-                      "9",
-                      "10",
-                      "11",
-                      "12"
-                    ]
-                  },
-                  "__value_comment__": {
-                    "0": "_NO_CATEGORY_",
-                    "1": "RAS",
-                    "2": "CHARGE",
-                    "3": "ISP",
-                    "4": "VOIP-TARIFF",
-                    "5": "VOIP-PREFIX-GROUP",
-                    "6": "ADMIN",
-                    "7": "VOIP-PROVIDER",
-                    "8": "VOIP-ROUTING-PROFILE",
-                    "9": "VOIP-ROUTE",
-                    "10": "VOIP-ROUTE-PREFIX",
-                    "11": "ISP PAGE STYLE",
-                    "12": "ONLINE-PAYMENT"
+                    "type": "string",
+                    "enum": {
+                      "0": "_NO_CATEGORY_",
+                      "1": "RAS",
+                      "2": "CHARGE",
+                      "3": "ISP",
+                      "4": "VOIP-TARIFF",
+                      "5": "VOIP-PREFIX-GROUP",
+                      "6": "ADMIN",
+                      "7": "VOIP-PROVIDER",
+                      "8": "VOIP-ROUTING-PROFILE",
+                      "9": "VOIP-ROUTE",
+                      "10": "VOIP-ROUTE-PREFIX",
+                      "11": "ISP PAGE STYLE",
+                      "12": "ONLINE-PAYMENT"
+                    }
                   }
                 },
                 "required": false
@@ -4334,12 +4293,12 @@
                 "items": {
                   "title": "",
                   "schema": {
-                    "enum": ["1", "2", "3"]
-                  },
-                  "__value_comment__": {
-                    "1": "ADD",
-                    "2": "CHANGE",
-                    "3": "DELETE"
+                    "type": "string",
+                    "enum": {
+                      "1": "ADD",
+                      "2": "CHANGE",
+                      "3": "DELETE"
+                    }
                   }
                 },
                 "required": false
@@ -4361,6 +4320,7 @@
               },
               "change_time_from_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -4378,6 +4338,7 @@
               },
               "change_time_to_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -4390,7 +4351,7 @@
               },
               "object_id": {
                 "title": "",
-                "type": "number",
+                "type": "integer",
                 "required": false
               }
             }
@@ -4400,20 +4361,21 @@
           "name": "from",
           "description": "start index, for pagination",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "to",
           "description": "end index, for pagination",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "sort_by",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": [
               "change_time",
               "object_id",
@@ -4441,7 +4403,7 @@
           "properties": {
             "total_rows": {
               "title": "total number of rows",
-              "type": "number"
+              "type": "integer"
             },
             "report": {
               "title": "",
@@ -4449,31 +4411,29 @@
               "items": {
                 "title": "",
                 "type": "object",
-                "params": [
-                  {
-                    "name": "admin_id",
-                    "description": "",
-                    "type": "number"
+                "properties": {
+                  "admin_id": {
+                    "title": "",
+                    "type": "integer"
                   },
-                  {
-                    "name": "admin_name",
-                    "description": "",
+                  "admin_name": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "attr_name",
-                    "description": "",
+                  "attr_name": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "audit_log_id",
-                    "description": "",
-                    "type": "number"
+                  "audit_log_id": {
+                    "title": "",
+                    "type": "integer"
                   },
-                  {
-                    "name": "category",
-                    "description": "",
-                    "__value_comment__": {
+                  "category": {
+                    "title": "",
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 12,
+                    "enum": {
                       "0": "_NO_CATEGORY_",
                       "1": "RAS",
                       "2": "CHARGE",
@@ -4487,14 +4447,11 @@
                       "10": "VOIP-ROUTE-PREFIX",
                       "11": "ISP PAGE STYLE",
                       "12": "ONLINE-PAYMENT"
-                    },
-                    "type": "number",
-                    "minimum": 0,
-                    "maximum": 12
+                    }
                   },
-                  {
-                    "name": "category_repr",
-                    "description": "",
+                  "category_repr": {
+                    "title": "",
+                    "type": "string",
                     "enum": [
                       "_NO_CATEGORY_",
                       "RAS",
@@ -4511,69 +4468,59 @@
                       "ONLINE-PAYMENT"
                     ]
                   },
-                  {
-                    "name": "change_time",
-                    "description": "",
+                  "change_time": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "change_time_formatted",
-                    "description": "",
+                  "change_time_formatted": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "event",
-                    "description": "",
-                    "__value_comment__": {
+                  "event": {
+                    "title": "",
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 3,
+                    "enum": {
                       "1": "ADD",
                       "2": "CHANGE",
                       "3": "DELETE"
-                    },
-                    "type": "number",
-                    "minimum": 1,
-                    "maximum": 3
+                    }
                   },
-                  {
-                    "name": "event_repr",
-                    "description": "",
+                  "event_repr": {
+                    "title": "",
+                    "type": "string",
                     "enum": ["ADD", "CHANGE", "DELETE"]
                   },
-                  {
-                    "name": "isp_id",
-                    "description": "",
-                    "type": "number"
+                  "isp_id": {
+                    "title": "",
+                    "type": "integer"
                   },
-                  {
-                    "name": "isp_name",
-                    "description": "",
+                  "isp_name": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "new_value",
-                    "description": "",
+                  "new_value": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "object_id",
-                    "description": "",
-                    "type": "number"
+                  "object_id": {
+                    "title": "",
+                    "type": "integer"
                   },
-                  {
-                    "name": "object_repr",
-                    "description": "",
+                  "object_repr": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "old_value",
-                    "description": "",
+                  "old_value": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "remote_ip",
-                    "description": "",
+                  "remote_ip": {
+                    "title": "",
                     "type": "string"
                   }
-                ]
+                }
               }
             }
           }
@@ -4598,6 +4545,7 @@
               },
               "requester_type": {
                 "title": "",
+                "type": "string",
                 "enum": ["USER", "ADMIN"]
               },
               "reference_id": {
@@ -4612,6 +4560,7 @@
               },
               "amount_op": {
                 "title": "",
+                "type": "string",
                 "enum": ["=", ">", "<", ">=", "<="]
               },
               "payment_date_from": {
@@ -4621,6 +4570,7 @@
               },
               "payment_date_from_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -4638,6 +4588,7 @@
               },
               "payment_date_to_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -4650,6 +4601,7 @@
               },
               "succeed": {
                 "title": "",
+                "type": "string",
                 "enum": ["yes", "no"]
               },
               "gateway_name": {
@@ -4664,20 +4616,21 @@
           "name": "from",
           "description": "start index, for pagination",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "to",
           "description": "end index, for pagination",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "sort_by",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": [
               "payment_id",
               "gateway_id",
@@ -4707,7 +4660,7 @@
           "properties": {
             "total_rows": {
               "title": "total number of rows",
-              "type": "number"
+              "type": "integer"
             },
             "report": {
               "title": "",
@@ -4715,137 +4668,113 @@
               "items": {
                 "title": "",
                 "type": "object",
-                "params": [
-                  {
-                    "name": "amount",
-                    "description": "",
+                "properties": {
+                  "amount": {
+                    "title": "",
                     "type": "number"
                   },
-                  {
-                    "name": "details",
-                    "description": "",
+                  "details": {
+                    "title": "",
                     "type": "array",
                     "items": {
                       "title": "",
                       "type": "object",
-                      "params": [
-                        {
-                          "name": "comment",
-                          "description": "",
+                      "properties": {
+                        "comment": {
+                          "title": "",
                           "type": "string"
                         },
-                        {
-                          "name": "log_date",
-                          "description": "",
+                        "log_date": {
+                          "title": "",
                           "type": "string"
                         },
-                        {
-                          "name": "log_id",
-                          "description": "",
-                          "type": "number"
+                        "log_id": {
+                          "title": "",
+                          "type": "integer"
                         },
-                        {
-                          "name": "payment_id",
-                          "description": "",
-                          "type": "number"
+                        "payment_id": {
+                          "title": "",
+                          "type": "integer"
                         },
-                        {
-                          "name": "result_code",
-                          "description": "0 if successfull, otherwise Bank's error code",
-                          "type": "number"
+                        "result_code": {
+                          "title": "0 if successfull, otherwise Bank's error code",
+                          "type": "integer"
                         },
-                        {
-                          "name": "result_text",
-                          "description": "'Successful' or text of error",
+                        "result_text": {
+                          "title": "'Successful' or text of error",
                           "type": "string"
                         },
-                        {
-                          "name": "stage_name",
-                          "description": "",
-                          "__value_comment__": {
+                        "stage_name": {
+                          "title": "",
+                          "type": "string",
+                          "enum": {
+                            "Prepare": "",
                             "Settle": "for Bank Mellat only",
+                            "Verify": "",
                             "After-Verify": "only if there was an error after Verify stage"
-                          },
-                          "enum": [
-                            "Prepare",
-                            "Settle",
-                            "Verify",
-                            "After-Verify"
-                          ]
+                          }
                         }
-                      ]
+                      }
                     }
                   },
-                  {
-                    "name": "gateway_id",
-                    "description": "",
-                    "type": "number"
+                  "gateway_id": {
+                    "title": "",
+                    "type": "integer"
                   },
-                  {
-                    "name": "gateway_name",
-                    "description": "",
+                  "gateway_name": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "isp_id",
-                    "description": "",
-                    "type": "number"
+                  "isp_id": {
+                    "title": "",
+                    "type": "integer"
                   },
-                  {
-                    "name": "log_id",
-                    "description": "",
-                    "type": "number"
+                  "log_id": {
+                    "title": "",
+                    "type": "integer"
                   },
-                  {
-                    "name": "payment_date",
-                    "description": "",
+                  "payment_date": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "payment_id",
-                    "description": "",
-                    "type": "number"
+                  "payment_id": {
+                    "title": "",
+                    "type": "integer"
                   },
-                  {
-                    "name": "reference_id",
-                    "description": "",
+                  "reference_id": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "requester_id",
-                    "description": "",
-                    "type": "number"
+                  "requester_id": {
+                    "title": "",
+                    "type": "integer"
                   },
-                  {
-                    "name": "requester_type",
-                    "description": "",
+                  "requester_type": {
+                    "title": "",
+                    "type": "string",
                     "enum": ["USER", "ADMIN"]
                   },
-                  {
-                    "name": "succeed",
-                    "description": "",
-                    "__value_comment__": {
+                  "succeed": {
+                    "title": "",
+                    "type": "string",
+                    "enum": {
                       "t": "true",
                       "f": "false"
-                    },
-                    "enum": ["t", "f"]
+                    }
                   },
-                  {
-                    "name": "unique_id",
-                    "description": "",
+                  "unique_id": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "username",
-                    "description": "user's username",
+                  "username": {
+                    "title": "user's username",
                     "type": "string"
                   },
-                  {
-                    "name": "name",
-                    "description": "user's full name",
+                  "name": {
+                    "title": "user's full name",
                     "type": "string"
                   }
-                ]
+                }
               }
             }
           }
@@ -4870,20 +4799,21 @@
           "name": "from",
           "description": "start index, for pagination",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "to",
           "description": "end index, for pagination",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "sort_by",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": [
               "user_id",
               "credit_used",
@@ -4923,6 +4853,7 @@
           "name": "report_type",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["inout_usages", "credit_usages", "time_usages"]
           }
         },
@@ -4942,6 +4873,7 @@
             "items": {
               "title": "",
               "schema": {
+                "type": "string",
                 "enum": [
                   "user_id",
                   "user_name",
@@ -4959,6 +4891,7 @@
           "name": "sort_by",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["creation_date", "normal_username", "sum"]
           }
         },
@@ -4966,6 +4899,7 @@
           "name": "output_type",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["csv", "pdf"]
           }
         }
@@ -4997,6 +4931,7 @@
           "name": "order_by",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": [
               "prefix_name",
               "prefix_code",
@@ -5017,6 +4952,7 @@
           "name": "output_type",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["csv", "pdf"]
           }
         }
@@ -5048,6 +4984,7 @@
           "name": "sort_by",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": [
               "payment_id",
               "gateway_id",
@@ -5071,6 +5008,7 @@
           "name": "output_type",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["csv", "pdf"]
           }
         }
@@ -5121,19 +5059,19 @@
           "properties": {
             "night_download": {
               "title": "in bytes",
-              "type": "number"
+              "type": "integer"
             },
             "night_upload": {
               "title": "in bytes",
-              "type": "number"
+              "type": "integer"
             },
             "day_download": {
               "title": "in bytes",
-              "type": "number"
+              "type": "integer"
             },
             "day_upload": {
               "title": "in bytes",
-              "type": "number"
+              "type": "integer"
             }
           }
         }

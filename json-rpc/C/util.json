@@ -327,11 +327,11 @@
       "auth_type": ["ADMIN", "NORMAL_USER", "VOIP_USER"],
       "params": [],
       "result": {
-        "name": "Response (number)",
+        "name": "Response (integer)",
         "summary": "ISP ID for Page Style to show to this user/admin",
         "schema": {
           "title": "",
-          "type": "number"
+          "type": "integer"
         }
       }
     },
@@ -349,11 +349,11 @@
         }
       ],
       "result": {
-        "name": "Response (number)",
+        "name": "Response (integer)",
         "summary": "ISP ID for Page Style to show to this user/admin",
         "schema": {
           "title": "",
-          "type": "number"
+          "type": "integer"
         }
       }
     },
@@ -363,11 +363,11 @@
       "auth_type": ["ANONYMOUS"],
       "params": [],
       "result": {
-        "name": "Response (number)",
+        "name": "Response (integer)",
         "summary": "Revision Number of ISP Page Style",
         "schema": {
           "title": "",
-          "type": "number"
+          "type": "integer"
         }
       }
     },
@@ -482,6 +482,7 @@
           "name": "report_status",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["started", "finished"]
           }
         },
@@ -489,13 +490,15 @@
           "name": "report_format",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["csv", "pdf"]
           }
         }
       ],
       "result": {
         "name": "Response (always true)",
-        "summary": ""
+        "summary": "",
+        "schema": null
       }
     },
     {

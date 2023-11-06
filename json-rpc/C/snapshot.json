@@ -15,7 +15,7 @@
           "name": "user_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           },
           "required": false
         },
@@ -103,6 +103,7 @@
           "name": "type",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["internet", "voip"]
           }
         }
@@ -141,6 +142,7 @@
               },
               "date_from_unit": {
                 "title": "date unit",
+                "type": "string",
                 "enum": [
                   "gregorian",
                   "jalali",
@@ -154,6 +156,7 @@
               },
               "date_to_unit": {
                 "title": "date unit",
+                "type": "string",
                 "enum": [
                   "gregorian",
                   "jalali",
@@ -167,8 +170,8 @@
               },
               "date_from_op": {
                 "title": "operation for start date",
-                "enum": ["<", ">", "<=", ">="],
-                "__value_comment__": {
+                "type": "string",
+                "enum": {
                   "<": "less than",
                   ">": "more than",
                   "<=": "less equal",
@@ -177,8 +180,8 @@
               },
               "date_to_op": {
                 "title": "operation for end date",
-                "enum": ["<", ">", "<=", ">="],
-                "__value_comment__": {
+                "type": "string",
+                "enum": {
                   "<": "less than",
                   ">": "more than",
                   "<=": "less equal",
@@ -223,6 +226,7 @@
               },
               "date_from_unit": {
                 "title": "date unit",
+                "type": "string",
                 "enum": [
                   "gregorian",
                   "jalali",
@@ -236,6 +240,7 @@
               },
               "date_to_unit": {
                 "title": "date unit",
+                "type": "string",
                 "enum": [
                   "gregorian",
                   "jalali",
@@ -249,8 +254,8 @@
               },
               "date_from_op": {
                 "title": "operation for start date",
-                "enum": ["<", ">", "<=", ">="],
-                "__value_comment__": {
+                "type": "string",
+                "enum": {
                   "<": "less than",
                   ">": "more than",
                   "<=": "less equal",
@@ -259,8 +264,8 @@
               },
               "date_to_op": {
                 "title": "operation for end date",
-                "enum": ["<", ">", "<=", ">="],
-                "__value_comment__": {
+                "type": "string",
+                "enum": {
                   "<": "less than",
                   ">": "more than",
                   "<=": "less equal",
@@ -305,6 +310,7 @@
               },
               "date_from_unit": {
                 "title": "date unit",
+                "type": "string",
                 "enum": [
                   "gregorian",
                   "jalali",
@@ -318,6 +324,7 @@
               },
               "date_to_unit": {
                 "title": "date unit",
+                "type": "string",
                 "enum": [
                   "gregorian",
                   "jalali",
@@ -331,8 +338,8 @@
               },
               "date_from_op": {
                 "title": "operation for start date",
-                "enum": ["<", ">", "<=", ">="],
-                "__value_comment__": {
+                "type": "string",
+                "enum": {
                   "<": "less than",
                   ">": "more than",
                   "<=": "less equal",
@@ -341,8 +348,8 @@
               },
               "date_to_op": {
                 "title": "operation for end date",
-                "enum": ["<", ">", "<=", ">="],
-                "__value_comment__": {
+                "type": "string",
+                "enum": {
                   "<": "less than",
                   ">": "more than",
                   "<=": "less equal",

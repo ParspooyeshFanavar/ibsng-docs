@@ -64,16 +64,16 @@
           "name": "admin_request_limit",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         }
       ],
       "result": {
-        "name": "Response (number)",
+        "name": "Response (integer)",
         "summary": "Admin ID",
         "schema": {
           "title": "",
-          "type": "number"
+          "type": "integer"
         }
       }
     },
@@ -99,7 +99,7 @@
           "properties": {
             "admin_id": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "username": {
               "title": "",
@@ -135,7 +135,7 @@
             },
             "last_activity": {
               "title": "Epoch Time of admin's last activity",
-              "type": "number"
+              "type": "integer"
             },
             "online_status": {
               "title": "true if online, false if offline",
@@ -278,7 +278,7 @@
           "name": "admin_id",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
@@ -334,7 +334,7 @@
           "name": "admin_request_limit",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         }
       ],
@@ -380,14 +380,14 @@
           "name": "pass_len",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "pass_count",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
@@ -426,6 +426,7 @@
               },
               "creation_date_from_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -443,6 +444,7 @@
               },
               "creation_date_to_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -460,6 +462,7 @@
               },
               "used_date_from_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -477,6 +480,7 @@
               },
               "used_date_to_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -489,10 +493,12 @@
               },
               "expired": {
                 "title": "",
+                "type": "string",
                 "enum": ["yes", "no"]
               },
               "available": {
                 "title": "available means not expired",
+                "type": "string",
                 "enum": ["yes", "no"]
               }
             }
@@ -502,20 +508,21 @@
           "name": "_from",
           "description": "page start index",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "to",
           "description": "page end index",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "sort_by",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["otp_id", "creation_date", "used_date"]
           }
         },
@@ -536,7 +543,7 @@
           "properties": {
             "total_rows": {
               "title": "Number of total rows",
-              "type": "number"
+              "type": "integer"
             },
             "report": {
               "title": "",
@@ -544,58 +551,48 @@
               "items": {
                 "title": "",
                 "type": "object",
-                "params": [
-                  {
-                    "name": "otp_id",
-                    "description": "",
-                    "type": "number"
+                "properties": {
+                  "otp_id": {
+                    "title": "",
+                    "type": "integer"
                   },
-                  {
-                    "name": "admin_id",
-                    "description": "",
-                    "type": "number"
+                  "admin_id": {
+                    "title": "",
+                    "type": "integer"
                   },
-                  {
-                    "name": "admin_name",
-                    "description": "",
+                  "admin_name": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "password",
-                    "description": "str",
+                  "password": {
+                    "title": "str",
                     "type": "string"
                   },
-                  {
-                    "name": "expired",
-                    "description": "yes or no",
+                  "expired": {
+                    "title": "yes or no",
                     "type": "string"
                   },
-                  {
-                    "name": "used_date",
-                    "description": "",
+                  "used_date": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "used_date_formatted",
-                    "description": "",
+                  "used_date_formatted": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "creation_date",
-                    "description": "",
+                  "creation_date": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "creation_date_formatted",
-                    "description": "",
+                  "creation_date_formatted": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "remote_addr",
-                    "description": "",
+                  "remote_addr": {
+                    "title": "",
                     "type": "string"
                   }
-                ]
+                }
               }
             }
           }

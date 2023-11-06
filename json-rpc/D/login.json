@@ -14,6 +14,7 @@
           "name": "login_auth_type",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["ADMIN", "NORMAL_USER", "VOIP_USER"]
           }
         },
@@ -56,6 +57,7 @@
             },
             "auth_type": {
               "title": "",
+              "type": "string",
               "enum": ["ADMIN", "NORMAL_USER", "VOIP_USER"]
             }
           }
@@ -71,6 +73,7 @@
           "name": "login_auth_type",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["ADMIN", "NORMAL_USER", "VOIP_USER"]
           }
         },
@@ -121,6 +124,7 @@
           "name": "login_auth_type",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["ADMIN", "NORMAL_USER", "VOIP_USER"]
           }
         },
@@ -171,6 +175,7 @@
               },
               "login_date_from_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -188,6 +193,7 @@
               },
               "login_date_to_unit": {
                 "title": "",
+                "type": "string",
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -205,20 +211,21 @@
           "name": "_from",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "to",
           "description": "",
           "schema": {
-            "type": "number"
+            "type": "integer"
           }
         },
         {
           "name": "sort_by",
           "description": "",
           "schema": {
+            "type": "string",
             "enum": ["admin_login_history_id", "login_date"]
           }
         },
@@ -239,7 +246,7 @@
           "properties": {
             "total_rows": {
               "title": "",
-              "type": "number"
+              "type": "integer"
             },
             "report": {
               "title": "",
@@ -247,52 +254,44 @@
               "items": {
                 "title": "",
                 "type": "object",
-                "params": [
-                  {
-                    "name": "additional_info",
-                    "description": "",
+                "properties": {
+                  "additional_info": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "admin_id",
-                    "description": "",
-                    "type": "number"
+                  "admin_id": {
+                    "title": "",
+                    "type": "integer"
                   },
-                  {
-                    "name": "admin_name",
-                    "description": "",
+                  "admin_name": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "log_id",
-                    "description": "",
-                    "type": "number"
+                  "log_id": {
+                    "title": "",
+                    "type": "integer"
                   },
-                  {
-                    "name": "login_date",
-                    "description": "",
+                  "login_date": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "login_date_formatted",
-                    "description": "",
+                  "login_date_formatted": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "remote_ip",
-                    "description": "",
+                  "remote_ip": {
+                    "title": "",
                     "type": "string"
                   },
-                  {
-                    "name": "successful",
-                    "description": "",
-                    "__value_comment__": {
+                  "successful": {
+                    "title": "",
+                    "type": "string",
+                    "enum": {
                       "t": "true",
                       "f": "false"
-                    },
-                    "enum": ["t", "f"]
+                    }
                   }
-                ]
+                }
               }
             }
           }
