@@ -1,12 +1,24 @@
-#!/usr/bin/env python2.7
+#!/usr/bin/env python
 
 import requests
 import json
+import os
 
 url = 'http://127.0.0.1:1237'
-auth_type, auth_name, auth_pass = 'ADMIN', 'test_admin', 'test_password'
-#auth_type, auth_name, auth_pass = 'NORMAL_USER', 'test_user', 'test_password'
-auth_remoteaddr = '127.0.0.1'
+
+auth_type = os.environ.get('IBS_AUTH_TYPE', 'ADMIN')
+if auth_type not in ('ADMIN', 'NORMAL_USER', 'VOIP_USER'):
+    raise ValueError('invalid IBS_AUTH_TYPE=%r' % (auth_type,))
+auth_name = os.environ.get('IBS_AUTH_NAME', 'system')
+auth_pass = os.environ.get('IBS_AUTH_PASS')
+if not auth_pass:
+    raise ValueError(
+        "You need to set environment variable IBS_AUTH_PASS"
+        ", and possbly IBS_AUTH_TYPE and IBS_AUTH_NAME."
+    )
+
+auth_remoteaddr = os.environ.get("IBS_ADDR", "127.0.0.1")
+auth_session = os.environ.get('IBS_AUTH_SESSION')
 
 
 #################################################
@@ -31,13 +43,17 @@ def baseCall(method, **params):
     return response['result']
 
 def call(method, **params):
-    params.update(dict(
-        auth_type = auth_type,
-        auth_name = auth_name,
-        auth_pass = auth_pass,
-        auth_remoteaddr = auth_remoteaddr,
-        date_type = 'gregorian',
-    ))
+    if auth_session:
+        print('Using auth_session=%r' % (auth_session,))
+        params['auth_session'] = auth_session
+    else:
+        params.update({
+            'auth_type': auth_type,
+            'auth_name': auth_name,
+            'auth_pass': auth_pass,
+            'auth_remoteaddr': auth_remoteaddr,
+            'date_type': 'gregorian',
+        })
     return baseCall(method, **params)
 
 
@@ -67,10 +83,14 @@ def getOnlineUsers():
     internet_onlines, voip_onlines = callSaveJson(
         '/tmp/onlines.json',
         'report.getOnlineUsers',
-        normal_sort_by='user_id', normal_desc=False, voip_sort_by='user_id', voip_desc=False, conds={},
+        normal_sort_by='user_id',
+        normal_desc=False,
+        voip_sort_by='user_id',
+        voip_desc=False,
+        conds={},
     )
-    print '%4d Internet Onlines'%len(internet_onlines)
-    print '%4d VoIP Onlines'%len(voip_onlines)
+    print('%4d Internet Onlines' % len(internet_onlines))
+    print('%4d VoIP Onlines' % len(voip_onlines))
 
 def updateUsernamePassword(user_id, username, password):
     call(
@@ -102,8 +122,9 @@ def getLockedUsers():
     total_count = result[0]
     total_credit = result[1]
     user_ids = result[2]
-    print total_count, len(user_ids)
-    print user_ids
+    print("total_credit:", total_credit)
+    print("total_count:", total_count, "==", len(user_ids))
+    print("user_ids:", user_ids)
 
 def getUsernameByFailedUserIP(ip):
     return call(
@@ -294,13 +315,13 @@ def test_management_summary():
         'conds': {
             'view_period': 'daily',
             'included_objects': [
-			    'isp',
-			    'isp_mapped_user',
-			    'group',
-			    'ras',
-			    'ras_group',
-			    'ras_isp',
-			    'service',
+                'isp',
+                'isp_mapped_user',
+                'group',
+                'ras',
+                'ras_group',
+                'ras_isp',
+                'service',
             ],
             'report_targets': [
                 'duration',
@@ -428,7 +449,7 @@ def test_adminSearchSentMessage():
     ))
 
 def test_updateUserAttrs(user_id):
-    from time import strptime, mktime
+    # from time import strptime, mktime
     ## real_first_login: no change, no delete
     ## delete assign_dns_1, deletes both
     ## update assign_dns_1, requires assign_dns_2
@@ -585,18 +606,18 @@ def printSystemNotifications():
         key = lambda row: -row['notification_id']
     )
     for row in notifications:
-        print 'ID: %s'%row['notification_id']
-        print 'Date: %s'%row['date']
-        print 'Type: %s'%row['type']
+        print('ID: %s'%row['notification_id'])
+        print('Date: %s'%row['date'])
+        print('Type: %s'%row['type'])
         link = row['links']
         if link:
-            if not '://' in link:
+            if '://' not in link:
                 if not link.startswith('/'):
                     link = '/' + link
                 link = 'http://127.0.0.1' + link
-            print 'Link: %s'%link
-        print 'Message:\n%s'%HTMLParser.HTMLParser().unescape(row['message'])
-        print '_______________________________________________________\n'
+            print('Link: %s'%link)
+        print('Message:\n%s'%HTMLParser.HTMLParser().unescape(row['message']))
+        print('_______________________________________________________\n')
 
 
 def test_searchUser():
@@ -625,8 +646,8 @@ def test_searchUser():
         'user.searchUser',
         **params
     )
-    print 'Found %s users'%count
-    print 'User IDs: %s'%user_ids
+    print('Found %s users' % count)
+    print('User IDs: %s' % user_ids)
 
 
 def test_searchAdminLoginHistory():
@@ -648,46 +669,29 @@ def test_webLogin():
         auth_type="ANONYMOUS",
         auth_name="",
         auth_pass="",
-        login_auth_type=sys.argv[1].upper(),
-        login_auth_name=sys.argv[2],
-        login_auth_pass=sys.argv[3],
-        auth_remoteaddr='127.0.0.1',
+        login_auth_type=auth_type,
+        login_auth_name=auth_name,
+        login_auth_pass=auth_pass,
+        auth_remoteaddr=auth_remoteaddr,
     ), width=10)
 
 def test_login():
-    from pprint import pprint
-    pprint(baseCall(
+    global auth_session
+    _session_id = baseCall(
         'login.login',
         auth_type="ANONYMOUS",
         auth_name="",
         auth_pass="",
-        login_auth_type=sys.argv[1].upper(),
-        login_auth_name=sys.argv[2],
-        login_auth_pass=sys.argv[3],
-        auth_remoteaddr='127.0.0.1',
+        login_auth_type=auth_type,
+        login_auth_name=auth_name,
+        login_auth_pass=auth_pass,
+        auth_remoteaddr=auth_remoteaddr,
         create_session=True,# default is False
-    ))
-
-
-def test_setFeshfesheParams():
-    user_id = 1
-    charge_rule_id = 1
-    '''
-    call(
-        'user.setOneChargeRuleUsage',
-        user_id=user_id,
-        charge_rule_id=charge_rule_id,
-        credit_usage=1234,
-        time_usage=3600,
-        traffic_usage=2345,
-    )'''
-    call(
-        'user.setFeshfesheParams',
-        user_id=user_id,
-        traffic=1200,
-        date_from='2016-01-02',
-        date_to='2017-01-02',
     )
+    print("Session ID:", _session_id)
+    if _session_id:
+        auth_session = _session_id
+
 
 def test_updateUserAttrs_service_price():
     from pprint import pprint
@@ -706,13 +710,11 @@ def test_updateUserAttrs_service_price():
 
 
 if __name__=='__main__':
-    import sys
     from pprint import pprint
     #pprint(call('user.getUserInfo'))  # auth_type == 'NORMAL_USER'
     #pprint(call('user.getUserInfo', user_id = sys.argv[1]))
-    pprint(call('user.getUserInfo', normal_username = sys.argv[1]))
-
-
-
+    #pprint(call('user.getUserInfo', normal_username = sys.argv[1]))
+    test_login()
+    pprint(call('user.getUserInfo', user_id = "1"))
 
 
