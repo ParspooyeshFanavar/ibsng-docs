@@ -52,7 +52,8 @@
           "name": "user_role",
           "description": "The role intended for the user, which can contain the values account or service",
           "schema": {
-            "type": "string"
+            "type": "string",
+            "enum": ["account", "service"]
           }
         },
         {
@@ -181,7 +182,8 @@
                   "properties": {
                     "user_role": {
                       "title": "service or account",
-                      "type": "string"
+                      "type": "string",
+                      "enum": ["account", "service"]
                     },
                     "group_name": {
                       "title": "",
