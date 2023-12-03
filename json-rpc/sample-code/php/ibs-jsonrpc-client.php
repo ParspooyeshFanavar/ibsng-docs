@@ -16,7 +16,7 @@ class IBSjsonrpcClient {
 
     */
     
-    function IBSjsonrpcClient($server_ip, $auth_name, $auth_pass, $auth_type="ADMIN", $server_port="1237", $timeout=1800){
+    function __construct($server_ip, $auth_name, $auth_pass, $auth_type="ADMIN", $server_port="1237", $timeout=1800){
         $this->client = new jsonrpc_client($server_ip. ':' . $server_port);
 
         $this->auth_name = $auth_name;
