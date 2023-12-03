@@ -45,21 +45,22 @@
           "name": "customer_id",
           "description": "The client ID to which we want to assign the user",
           "schema": {
-            "type": "integer"
+            "type": "string"
           }
         },
         {
           "name": "user_role",
           "description": "The role intended for the user, which can contain the values account or service",
           "schema": {
-            "type": "string"
+            "type": "string",
+            "enum": ["account", "service"]
           }
         },
         {
           "name": "parent_user_id",
           "description": "User's parent ID",
           "schema": {
-            "type": "integer"
+            "type": "string"
           }
         }
       ],
@@ -181,7 +182,8 @@
                   "properties": {
                     "user_role": {
                       "title": "service or account",
-                      "type": "string"
+                      "type": "string",
+                      "enum": ["account", "service"]
                     },
                     "group_name": {
                       "title": "",
@@ -2810,12 +2812,12 @@
               },
               "parent_user_id": {
                 "title": "",
-                "type": "integer",
+                "type": "string",
                 "required": false
               },
               "customer_id": {
                 "title": "",
-                "type": "integer",
+                "type": "string",
                 "required": false
               },
               "customer_name": {

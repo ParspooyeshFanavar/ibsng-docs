@@ -10,9 +10,9 @@
 
   - **Legacy / Custom XML file**
 
-    - [handlers_E.xml](https://raw.githubusercontent.com/ParspooyeshFanavar/ibsng-docs/b61eb0e/json-rpc/handlers_E.xml)
-    - [handlers_D.xml](https://raw.githubusercontent.com/ParspooyeshFanavar/ibsng-docs/b61eb0e/json-rpc/handlers_D.xml)
-    - [handlers_C.xml](https://raw.githubusercontent.com/ParspooyeshFanavar/ibsng-docs/b61eb0e/json-rpc/handlers_C.xml)
+    - [handlers_E.xml](https://raw.githubusercontent.com/ParspooyeshFanavar/ibsng-docs/xml/json-rpc/handlers_E.xml)
+    - [handlers_D.xml](https://raw.githubusercontent.com/ParspooyeshFanavar/ibsng-docs/xml/json-rpc/handlers_D.xml)
+    - [handlers_C.xml](https://raw.githubusercontent.com/ParspooyeshFanavar/ibsng-docs/xml/json-rpc/handlers_C.xml)
     - Right-click on one of the links above and select **Save Link As**, then open the xml file with **[Firefox](https://www.mozilla.org/en-US/firefox/)**.
 
   - **Sample codes**
