@@ -466,9 +466,13 @@ class CLI:
 		prefix += param["name"]
 		index = 0
 		while True:
+			items = param.get("items")
+			if not items:
+				print(f"no items in {param}")
+				break
 			try:
 				value = self.askParam(
-					param["items"],
+					items,
 					level + 1,
 					prefix=prefix + f"[{index}]",
 				)
@@ -536,7 +540,8 @@ class CLI:
 				ignore_case=True,
 			)
 
-		requiredStr = ", required" if param.get("required", True) else ""
+		required = param.get("required", True)
+		requiredStr = ", required" if required else ""
 
 		histName = "params." + prefix + title
 		value = prompt(
@@ -546,6 +551,8 @@ class CLI:
 			**promptArgs
 		)
 		if value == "":
+			if required:
+				print(f"{'=' * level} Warning: {title} is required")
 			return None
 
 		if _type == "number":
