@@ -173,10 +173,11 @@ class CLI:
 				auto_suggest=AutoSuggestFromHistory(),
 				completer=WordCompleter(
 					["ADMIN", "USER"],
-					ignore_case=False,
+					ignore_case=True,
 				)
 			)
 			if value:
+				value = value.upper()
 				if value in ("ADMIN", "USER"):
 					return value
 				error(f"invalid auth_type={value!r}")
@@ -301,10 +302,13 @@ class CLI:
 				auto_suggest=AutoSuggestFromHistory(),
 				completer=WordCompleter(
 					branches,
-					ignore_case=False,
+					ignore_case=True,
 				)
 			)
 			if branch:
+				if branch in branches:
+					return branch
+				branch = branch.upper()
 				if branch in branches:
 					return branch
 				error(f"invalid branch={branch!r}")
@@ -330,10 +334,14 @@ class CLI:
 				auto_suggest=AutoSuggestFromHistory(),
 				completer=WordCompleter(
 					options,
-					ignore_case=False,
+					ignore_case=True,
 				)
 			)
 			if value:
+				if value in options:
+					return value
+				# the only non-lowercase: SystemNotification
+				value = value.lower()
 				if value in options:
 					return value
 				error(f"invalid namespace {value!r}")
@@ -342,7 +350,10 @@ class CLI:
 	def getMethod(self) -> str:
 		namespace = self.namespace
 		prefix = namespace + "."
-		options = ["r"]
+		options = [
+			"r",  # re-send / re-try
+			"q",  # quit
+		]
 		for method in self.spec["methods"]:
 			if self.auth.auth_type not in method["auth_type"]:
 				continue
@@ -357,7 +368,7 @@ class CLI:
 				auto_suggest=AutoSuggestFromHistory(),
 				completer=WordCompleter(
 					options,
-					ignore_case=False,
+					ignore_case=True,
 				)
 			)
 			if value:
@@ -402,6 +413,8 @@ class CLI:
 		if method == "r":  # re-send
 			self.resend = True
 			return
+		if method == "q":  # quit
+			sys.exit(0)
 		self.method = method
 		self.resend = False
 
@@ -475,12 +488,13 @@ class CLI:
 	):
 		if "schema" in param:
 			schema = param["schema"]
-			_type = schema["type"]
 		else:
 			schema = param
-			_type = param["type"]
 
+		_type = schema["type"]
+		typesDesc = _type
 		if isinstance(_type, list):
+			typesDesc = " or ".join(_type)
 			_type = _type[0]  # FIXME
 
 		if _type == "object":
@@ -514,14 +528,19 @@ class CLI:
 		promptArgs = {}
 
 		if "enum" in schema:
+			values = schema["enum"]
+			if isinstance(values, dict):
+				values = values.keys()
 			promptArgs["completer"] = WordCompleter(
-				schema["enum"],
-				ignore_case=False,
+				values,
+				ignore_case=True,
 			)
+
+		requiredStr = ", required" if param.get("required", True) else ""
 
 		histName = "params." + prefix + title
 		value = prompt(
-			f"{'>' * level} Parameter: {titleDesc}: ",
+			f"{'>' * level} Parameter: {titleDesc} [{typesDesc}{requiredStr}]: ",
 			history=FileHistory(join(histDir, histName)),
 			auto_suggest=AutoSuggestFromHistory(),
 			**promptArgs
