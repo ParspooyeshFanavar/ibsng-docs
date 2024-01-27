@@ -335,6 +335,8 @@ class CLI:
 				)
 			)
 			if value:
+				if value == "q":
+					sys.exit(0)
 				if value in options:
 					return value
 				# the only non-lowercase: SystemNotification
@@ -369,6 +371,8 @@ class CLI:
 				)
 			)
 			if value:
+				if value == "q":
+					sys.exit(0)
 				if value in options:
 					return value
 				error(f"invalid method {namespace}.{value!r}")
