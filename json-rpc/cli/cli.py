@@ -204,11 +204,8 @@ class CLI:
 			if password:
 				return password
 		import getpass
-		while True:
-			password = getpass.getpass("Password: ")
-			if password:
-				return password
-		return ""
+		password = getpass.getpass("Password: ")
+		return password
 
 	def readAuthSession(self, auth: AuthParams) -> str | None:
 		sessionPath = auth.sessionPath(self.serverHost)
