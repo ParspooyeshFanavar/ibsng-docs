@@ -2838,6 +2838,7 @@
               "abs_exp_date_from_unit": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -2856,6 +2857,7 @@
               "abs_exp_date_to_unit": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -2884,6 +2886,7 @@
               "assign_dns_op": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "has_assign_ip": {
@@ -2899,6 +2902,7 @@
               "assign_ip_op": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "has_assign_netmask": {
@@ -2914,6 +2918,7 @@
               "assign_netmask_op": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "has_assign_route_ip": {
@@ -2929,6 +2934,7 @@
               "assign_route_ip_op": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "asterisk_did_number": {
@@ -2969,6 +2975,7 @@
               "caller_id_op": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "charge": {
@@ -2984,6 +2991,7 @@
               "comment_op": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "name": {
@@ -2994,6 +3002,7 @@
               "name_op": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "postal_code": {
@@ -3004,6 +3013,7 @@
               "postal_code_op": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "phone": {
@@ -3014,6 +3024,7 @@
               "phone_op": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "cell_phone": {
@@ -3024,6 +3035,7 @@
               "cell_phone_op": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "email": {
@@ -3034,6 +3046,7 @@
               "email_op": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "birthdate": {
@@ -3044,6 +3057,7 @@
               "birthdate_unit": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -3057,6 +3071,7 @@
               "birthdate_op": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": ["=", ">", "<", ">=", "<="]
               },
               "address": {
@@ -3067,6 +3082,7 @@
               "address_op": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "has_connection_log_archive": {
@@ -3082,6 +3098,7 @@
               "creation_date_from_unit": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -3100,6 +3117,7 @@
               "creation_date_to_unit": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -3118,6 +3136,7 @@
               "credit_op": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": ["=", ">", "<", ">=", "<="]
               },
               "credit_limit": {
@@ -3133,6 +3152,7 @@
               "custom_field_test_integer_op": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": ["=", ">", "<", ">=", "<="]
               },
               "custom_field_test_string": {
@@ -3143,6 +3163,7 @@
               "custom_field_test_string_op": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "deny_change_password": {
@@ -3158,6 +3179,7 @@
               "deposit_op": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": ["=", ">", "<", ">=", "<="]
               },
               "deposit_recharge": {
@@ -3168,6 +3190,7 @@
               "deposit_recharge_op": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": ["=", ">", "<", ">=", "<="]
               },
               "email_address": {
@@ -3178,6 +3201,7 @@
               "email_address_op": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "user_value_exp_from_creation_date_from": {
@@ -3188,6 +3212,7 @@
               "user_value_exp_from_creation_date_from_unit": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -3206,6 +3231,7 @@
               "user_value_exp_from_creation_date_to_unit": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -3224,6 +3250,7 @@
               "user_value_exp_from_first_login_from_unit": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -3242,6 +3269,7 @@
               "user_value_exp_from_first_login_to_unit": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -3260,6 +3288,7 @@
               "exp_from_renew_user_value_from_unit": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -3278,6 +3307,7 @@
               "exp_from_renew_user_value_to_unit": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -3296,6 +3326,7 @@
               "exp_monthly_user_value_from_unit": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -3314,6 +3345,7 @@
               "exp_monthly_user_value_to_unit": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -3332,6 +3364,7 @@
               "first_login_from_unit": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -3350,6 +3383,7 @@
               "first_login_to_unit": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -3368,6 +3402,7 @@
               "real_first_login_from_unit": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -3386,6 +3421,7 @@
               "real_first_login_to_unit": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -3409,6 +3445,7 @@
               "in_ras_ippool_op": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "ippool": {
@@ -3454,6 +3491,7 @@
               "limit_caller_id_op": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "limit_mac": {
@@ -3464,6 +3502,7 @@
               "limit_mac_op": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "limit_port": {
@@ -3474,6 +3513,7 @@
               "limit_port_op": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "has_limit_ras": {
@@ -3489,6 +3529,7 @@
               "limit_ras_op": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": ["and", "or"]
               },
               "limit_station_ip": {
@@ -3499,6 +3540,7 @@
               "limit_station_ip_op": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "limit_usage_days": {
@@ -3524,6 +3566,7 @@
               "lock_reason_op": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "mail_quota": {
@@ -3534,6 +3577,7 @@
               "mail_quota_op": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": ["=", ">", "<", ">=", "<="]
               },
               "activation_required": {
@@ -3549,6 +3593,7 @@
               "mikrotik_address_list_op": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "multi_login": {
@@ -3559,6 +3604,7 @@
               "multi_login_op": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": ["=", ">", "<", ">=", "<="]
               },
               "never_expire_users": {
@@ -3579,6 +3625,7 @@
               "not_logged_in_from_unit": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -3597,6 +3644,7 @@
               "not_logged_in_to_unit": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -3615,6 +3663,7 @@
               "normal_username_op": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "no_normal_username": {
@@ -3645,6 +3694,7 @@
               "daily_periodic_credit_change_reset_unit": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": [
                   "epoch",
                   "jalali",
@@ -3659,6 +3709,7 @@
               "daily_periodic_credit_change_reset_op": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": ["=", ">", "<", ">=", "<="]
               },
               "monthly_periodic_credit_change_reset": {
@@ -3669,6 +3720,7 @@
               "monthly_periodic_credit_change_reset_unit": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": [
                   "epoch",
                   "jalali",
@@ -3683,6 +3735,7 @@
               "monthly_periodic_credit_change_reset_op": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": ["=", ">", "<", ">=", "<="]
               },
               "periodic_reset_rule_usage": {
@@ -3728,6 +3781,7 @@
               "rel_exp_date_from_unit": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -3746,6 +3800,7 @@
               "rel_exp_date_to_unit": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -3764,6 +3819,7 @@
               "rel_exp_date_negative_credit_unit": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": [
                   "jalali",
                   "gregorian",
@@ -3777,6 +3833,7 @@
               "rel_exp_date_negative_credit_op": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": ["=", ">", "<", ">=", "<="]
               },
               "renew_do_not_reset_credit": {
@@ -3817,6 +3874,7 @@
               "second_normal_username_op": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "serial": {
@@ -3827,6 +3885,7 @@
               "serial_op": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "sms_charge": {
@@ -3837,6 +3896,7 @@
               "sms_charge_op": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": ["=", ">", "<", ">=", "<="]
               },
               "user_id": {
@@ -3847,6 +3907,7 @@
               "user_id_op": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": ["=", ">", "<", ">=", "<="]
               },
               "user_status": {
@@ -3863,6 +3924,7 @@
               "voip_preferred_language_op": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               },
               "voip_username": {
@@ -3873,6 +3935,7 @@
               "voip_username_op": {
                 "title": "",
                 "type": "string",
+                "required": false,
                 "enum": ["like", "ilike", "starts_with", "ends_with", "equals"]
               }
             }
