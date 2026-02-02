@@ -273,6 +273,66 @@
       }
     },
     {
+      "name": "user_balance.changeUserBalancesValueByType",
+      "description": "change value of all user balances by balance type",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["CHANGE USER BALANCE VALUE"],
+      "params": [
+        {
+          "name": "user_id",
+          "schema": {
+            "type": "integer"
+          }
+        },
+        {
+          "name": "balance_type",
+          "description": "balance type identifier (e.g. tb2)",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "balance_change_value",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "balance_action",
+          "schema": {
+            "type": "string",
+            "enum": ["CHANGE_VALUE_ADD", "CHANGE_VALUE_SET", "CHANGE_VALUE_MULTIPLY"]
+          }
+        },
+        {
+          "name": "balance_change_comment",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "order_id",
+          "description": "optional order reference id",
+          "schema": {
+            "type": "integer"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "Response (object)",
+        "summary": "number of affected user balances",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "affected_rows": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    {
       "name": "user_balance.getUserBalanceInfo",
       "description": "get user_balance_id and return the info",
       "auth_type": ["ADMIN"],
