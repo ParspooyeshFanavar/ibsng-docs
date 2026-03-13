@@ -6,6 +6,161 @@
   },
   "methods": [
     {
+      "name": "user.bulkOrderPackage",
+      "description": "bulk action for adding order package",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["PERFORM BULK ACTION"],
+      "params": [
+        {
+          "name": "package_name",
+          "description": "package name created in packages",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "force_priority",
+          "description": "priority for using package",
+          "schema": {
+            "type": "integer"
+          }
+        },
+        {
+          "name": "new_priority",
+          "description": "new value for priority of package",
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (object)",
+        "summary": "bulkOrderPackage response",
+        "schema": {
+          "type": "string",
+          "result": "string",
+          "error": "string",
+          "id": "integer"
+        }
+      }
+    },
+    {
+      "name": "user.bulkAddUserBalance",
+      "description": "bulk action for adding balance to users",
+      "auth_type": ["ADMIN"],
+      "requires_perm": ["PERFORM BULK ACTION"],
+      "params": [
+        {
+          "name": "balance_id",
+          "description": "balance id",
+          "schema": {
+            "type": "integer"
+          }
+        },
+        {
+          "name": "initial_value",
+          "description": "initial value for adding balance",
+          "schema": {
+            "type": "integer"
+          }
+        },
+        {
+          "name": "priority",
+          "description": "priority of balance",
+          "schema": {
+            "type": "integer"
+          }
+        },
+        {
+          "name": "start_time",
+          "description": "starting date of balance",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "start_time_unit",
+          "description": "starting date of balance unit ['Jalali','Gregorian']",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "expire_time",
+          "description": "expire date of balance",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "expire_time_unit",
+          "description": "expire date of balance unit ['Jalali','Gregorian']",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "udr_tag",
+          "description": "udr_tag of balance",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "qos",
+          "description": "QOS of Balance",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "comment",
+          "description": "comment for Balance",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "linked_user_id",
+          "description": "linked_user_id",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "linked_balance_id",
+          "description": "prepopulated with balance name",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "expire_from_first_use",
+          "description": "value for expire_from_first_use",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "expire_from_first_use_unit",
+          "description": "units for expire_from_first_use ['','Days','Jalali','Gregorian']",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "Response (object)",
+        "summary": "bulkAddUserBalance response",
+        "schema": {
+          "type": "string",
+          "result": "string",
+          "error": "string",
+          "id": "integer"
+        }
+      }
+    },
+    {
       "name": "user.addNewUsers",
       "description": "",
       "auth_type": ["ADMIN"],
